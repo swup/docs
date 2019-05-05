@@ -1,0 +1,34 @@
+---
+layout: default
+title: Getting Started
+has_children: true
+nav_order: 1
+permalink: /getting-started
+has_toc: false
+---
+# Getting Started
+Looking for **what's new in v2**? Head over [here](TODO).
+
+New to swup? Little intro: 
+ 
+* It's just ridiculously [easy to use](/getting-started/example), even for beginners.
+* Define as many [containers](/options#containers) to replace as you want! You can tell swup to replace even the smallest parts of the page, so you can work with the rest for your animation.
+* Use swup [events](/events) to run your JavaScript, trigger analytics, close sidebars or anything you need…
+* Forget about timing. swup [detects the end of your animations](/options#animation-selector) and controls the whole lifecycle of transition automatically.
+* Don't worry about browser history… swup takes care of it, changes the url when it's needed and preserves browser native behavior on popState events.
+* Has some cool additional features for even better experience like [cache](/options#cache), smart [preload](/plugins/preload-plugin) without DDOSing your server, badass smooth "acceleration based" [scroll](/plugins/scroll-plugin) control, helpful [debug mode](/plugins/debug-plugin), or support for [forms](/plugins/forms-plugin).
+
+In case you like to do your animations in JavaScript, you may want to check out **[js-plugin](/plugins/js-plugin)**.
+
+If you're having trouble implementing swup, checkout [Common Issues](https://github.com/swup/swup/wiki/Common-Issues), [Closed Issues](https://github.com/swup/swup/issues?q=is%3Aissue+is%3Aclosed) or open a [new one](https://github.com/swup/swup/issues/new).
+
+Swup is released under [MIT license](https://github.com/swup/swup/blob/master/LICENSE).
+
+## Some websites using swup
+To get an idea of what swup does...
+* [Tvoříme lepší svět - Panasonic](https://plzen.cz.panasonic.com/)  
+* [25 let - Raiffeisen stavební spořitelna](https://www.rsts.cz/25let/)  
+* [Plan-k - KPMG](https://www.plan-k.cz/)  
+* [Dělej, co tě baví - Decathlon](http://delejcotebavi.decathlon.cz/)  
+* [Kyle Decker - Personal website](https://kyledecker.me/)  
+
