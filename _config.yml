@@ -38,7 +38,7 @@ ga_tracking: UA-65615068-6
 
 # Build settings
 markdown: kramdown
-remote_theme: swup/template
+remote_theme: swup/docs
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
