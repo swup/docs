@@ -38,7 +38,7 @@ ga_tracking: UA-65615068-6
 
 # Build settings
 markdown: kramdown
-remote_theme: swup/docs-template
+remote_theme: swup/template
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
@@ -55,3 +55,4 @@ plugins:
 #   - vendor/gems/
 #   - vendor/ruby/
 
+exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile"]
