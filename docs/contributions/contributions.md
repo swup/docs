@@ -10,7 +10,7 @@ has_toc: false
 # Contributions
 Any contributions or suggestions are more than welcome. If you have a suggestion, [open an issue](https://github.com/swup/swup/issues/new). 
 Creating [plugins](/plugins/create-plugin) and [themes](/themes/create-theme) is encouraged and if the use case is general, 
-there is no problem in making it official swup plugin - contact me at gmarcuk@gmail.com. 
+there is no problem in making it official swup plugin - contact me at <a href="mailto:gmarcuk@gmail.com?subject=I want to be a swup contributor">gmarcuk@gmail.com</a>. 
   
 If you just can't get your head around how much swup makes your life easier, you can [buy me a beer](https://www.paypal.me/gmrchk).  
 
