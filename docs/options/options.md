@@ -47,7 +47,7 @@ Option defaults to the single container of id `#swup`.
 
 ```javascript
 const options = {
-  container: ['#swup']
+  containers: ['#swup']
 };
 ```
 
@@ -59,19 +59,6 @@ This drastically improves speed for static sites but should be disabled for dyna
 const options = {
     cache: true
 };
-```
-
-## Page Class Prefix
-Some CSS styles are very often based on the class of the page defined in the `body` element.
-Swup replaces the `body` classes for each loaded page. However, the site may use the `body` class attribute for functionality such as opening of some sort of menu by adding class to the body element.
-In that case, you may want to define a prefix for your page style classes such as `page-`, so only those are replaced by swup.
-By default option is set to `''` and all classes of body element are replaced during the transition.
-In case the class attribute on body is not used at all, the class replacement can be disabled all together by setting the option to `false`.
-
-```javascript
-const options = {
-    pageClassPrefix: ''
-}
 ```
 
 ## Skip popState Handling
@@ -110,17 +97,16 @@ The default option object look like...
 
 ```javascript 
 const options = {
-  linkSelector: 'a[href^="' + window.location.origin + '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
-  containers: ['#swup'],
+  animateHistoryBrowsing: false
   animationSelector: '[class*="transition-"]',
+  containers: ['#swup'],
   cache: true,
-  pageClassPrefix: '',
+  linkSelector: 'a[href^="' + window.location.origin + '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
   skipPopStateHandling: function(event) {
     if (event.state && event.state.source == 'swup') {
       return false;
     }
     return true;
   },
-  animateHistoryBrowsing: false
 };
 ```
