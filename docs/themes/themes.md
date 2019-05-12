@@ -14,4 +14,4 @@ but purpose is to provide easy way to include required CSS or HTML structure for
 
 # You can try out initially available official templates below, just choose one and head to some other page...  
 
-Additionally to the plugins (which only get `mount` and `unmount` methods), themes get several helper methods that should easy up development. Find out more about creating your own theme [here](/themes/create-theme).
+Additionally to the plugins (which only get `mount` and `unmount` methods), themes get several helper methods that should easy up development. Find out more about creating your own theme [here]({{ "/themes/create-theme" | relative_url }}).

@@ -10,8 +10,8 @@ First thing we need to do is prepare our HTML content.
 Define the elements that are being animated and elements (**containers**) that need to be replaced.
 Let's assume we want to fade in/out the content of `main` element and replace it's contents.
 
-Add `swup` [id to tell swup](/options/#elements) to replace the content of that element
-and your [animation class](/options/#animation-selector) to tell swup to wait for that element to animate.
+Add `swup` [id to tell swup]({{ "/options/#containers" | relative_url }}) to replace the content of that element
+and your [animation class]({{ "/options/#animation-selector" | relative_url }}) to tell swup to wait for that element to animate.
 Both are adjustable in options and are not related to each other (you can animate completely different elements than the containers).
 
 ```html
@@ -55,6 +55,6 @@ html.is-animating .transition-fade {
 **And believe it or not, that's it!**
 We're all set, or at least for our simple fade in/fade out example…  
 Swup loads the page, handles classes for the css animation, waits for the animation to finish/page to load, replaces content and fades your content back.
-Swup also changes the title of your page to the loaded one, and exchanges classes of body element (more in [options](/options) section).
+Swup also changes the title of your page to the loaded one, and exchanges classes of body element (more in [options]({{ "/options" | relative_url }}) section).
 
-Would you like to try it out yourself? Head to the [demo page](/getting-started/demo).
+Would you like to try it out yourself? Head to the [demo page]({{ "/getting-started/demo" | relative_url }}).

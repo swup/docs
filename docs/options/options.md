@@ -17,6 +17,7 @@ const swup = new Swup(options);
 
 ## Link Selector
 Link selector defines link elements that will trigger the transition. By default, the selector takes any link with `href` attribute starting with `/`, `#` or current domain.
+You can modify this option to include SVG links or exclude some other. 
 
 ```javascript
 const options = {

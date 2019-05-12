@@ -9,7 +9,7 @@ permalink: /getting-started/how-it-works
 
 Apart from loading the contents of the new page and replacing required parts in DOM, swup is built around CSS transition.
 The main thing that needs to be done is defining hidden state in CSS.
-Swup detects the end of transition of animated elements and proceeds to replacing the content and animating your page back.
+Swup detects the end of transition of animated elements and proceeds to replacing the content of containers and animating your page back.
 For the animations based on CSS to be possible, swup uses several classes that are assigned to the `html` tag through the process of page transition.
 
 - `is-animating` - This class is assigned to the html tag once link is clicked and is removed shortly after the content of the page is replaced. Used for defining styles for an unloaded page. 

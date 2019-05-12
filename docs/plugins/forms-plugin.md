@@ -14,9 +14,9 @@ In case of `GET` method, swup serializes the data into url.
 For `POST` requests, swup wraps the data and sends it via POST request. 
 
 **Note:** This feature is rather experimental and serves to enable submission of simple forms such as "search on website" form. 
-The response from the server must be a valid page with all elements that need to be replaced by swup.
+The response from the server must be a valid page with all containers that need to be replaced by swup.
 This method does not support submission of files, or other advanced features. 
-If you're looking for such features, please, use swup [API](/api) to send requests. 
+If you're looking for such features, please, use swup [API]({{ "/api" | relative_url }}) to send requests. 
 
 ## Instalation
 This plugin can be installed with npm
