@@ -10,8 +10,8 @@ First thing we need to do is prepare our HTML content.
 Define the elements that are being animated and elements (**containers**) that need to be replaced.
 Let's assume we want to fade in/out the content of `main` element and replace it's contents.
 
-Add `swup` [id to tell swup]({{ "/options/#containers" | relative_url }}) to replace the content of that element
-and your [animation class]({{ "/options/#animation-selector" | relative_url }}) to tell swup to wait for that element to animate.
+Add `swup` [id to tell swup]({{ "/options#containers" | relative_url }}) to replace the content of that element
+and your [animation class]({{ "/options#animation-selector" | relative_url }}) to tell swup to wait for that element to animate.
 Both are adjustable in options and are not related to each other (you can animate completely different elements than the containers).
 
 ```html
