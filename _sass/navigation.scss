@@ -61,18 +61,24 @@
   position: relative;
 
   @include mq(md) {
-    margin: 0 auto 20px;
+    margin: 0 auto 14px;
     @include fs-5;
   }
 
   .navigation-list-child-list {
     display: block;
+
+    .navigation-list-item {
+      &::before {
+        margin-top: 0.75em;
+      }
+    }
   }
 
   &::before {
     position: absolute;
-    margin-top: 0.8em;
-    margin-left: -0.8em;
+    margin-top: 0.7em;
+    margin-left: -0.7em;
     background: #FE5B6A;
     width: 8px;
     height: 8px;
@@ -90,8 +96,8 @@
 
 .navigation-list-link {
   display: block;
-  padding-top: $sp-1;
-  padding-bottom: $sp-1;
+  padding-top: .1rem;
+  padding-bottom: .1rem;
   color: $body-heading-color;
   border-bottom: none;
 
