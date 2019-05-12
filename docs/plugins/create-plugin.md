@@ -8,8 +8,9 @@ permalink: /plugins/create-plugin
 
 # Create Plugin
 Anyone can create and publish swup plugins. 
-
-Start with heading to [this repo](https://github.com/swup/plugin-template) and follow the instructions there. 
+To create new plugin, install [swup CLI]({{ "/cli" | relative_url }}) which can create one from a template for you. 
+ 
+Alternatively you can head over to [this template repo](https://github.com/swup/plugin-template) and follow the instructions there. 
 
 ## Tips
 - Checkout existing plugins before creating one.

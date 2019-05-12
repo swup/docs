@@ -8,8 +8,9 @@ permalink: /themes/create-theme
 
 # Create Plugin
 Anyone can create and publish swup themes. 
-
-Start with heading to [this repo](https://github.com/swup/theme-template) and follow the instructions there. 
+To create new theme, install [swup CLI]({{ "/cli" | relative_url }}) which can create one from a template for you. 
+ 
+Alternatively you can head over to [this template repo](https://github.com/swup/theme-template) and follow the instructions there. 
 
 ## Tips
 - Checkout existing themes before creating one.
