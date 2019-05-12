@@ -58,6 +58,7 @@
   @include fs-4;
   font-weight: 600;
   margin: 0 auto 10px;
+  position: relative;
 
   @include mq(md) {
     margin: 0 auto 20px;
