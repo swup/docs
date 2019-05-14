@@ -88,6 +88,10 @@ a:not([class]) {
   }
 }
 
+ul a:not([class]) {
+  background-image: none;
+}
+
 code {
   font-family: $mono-font-family;
   font-size: 12px;

@@ -91,6 +91,7 @@
     font-weight: 800;
 
     @include mq(md) {
+      padding-right: 100px;
       margin-top: 1em;
     }
   }

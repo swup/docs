@@ -154,8 +154,9 @@
   margin-bottom: -20px;
 
   @include mq(md) {
-    margin-top: $sp-7;
-    padding-top: $sp-3;
+    margin-top: 3.5rem;
+    padding-top: 3.5rem;
+    padding-bottom: 2.5rem;
     overflow-y: auto;
     flex: 1 1 auto;
     margin-bottom: 0;

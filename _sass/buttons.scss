@@ -101,6 +101,22 @@
   }
 }
 
+.btn-repo {
+  border: 2px solid #2D2E82;
+  color: #2D2E82;
+  border-radius: 3px;
+  background: #fff;
+  width: 100%;
+  text-align: center;
+
+  @include mq(md) {
+    position: absolute;
+    margin-top: 14px;
+    right: 2rem;
+    width: auto;
+  }
+}
+
 .btn-primary {
   @include btn-color($white, $btn-primary-color);
 }
