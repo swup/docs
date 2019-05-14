@@ -50,6 +50,16 @@
                                 {% endfor %}
                             </ul>
                         {% endif %}
+
+                        <footer class="edit-this-page">
+                            <p>
+                                {% if page.has_children == true %}
+                                    Found a mistake or want to contribute? <a href="https://github.com/swup/docs/blob/master/docs{{ page.url }}{{ page.url }}.md" target="_blank">Edit this page</a> on Github.
+                                {% else %}
+                                    Found a mistake or want to contribute? <a href="https://github.com/swup/docs/blob/master/docs{{ page.url }}.md" target="_blank">Edit this page</a> on Github.
+                                {% endif %}
+                            </p>
+                        </footer>
                     </div>
                 </div>
             </div>
