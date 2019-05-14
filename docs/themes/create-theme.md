@@ -2,7 +2,7 @@
 layout: default
 title: Create Theme 🎉
 parent: Themes
-nav_order: 10
+nav_order: 4
 permalink: /themes/create-theme
 ---
 
@@ -15,7 +15,9 @@ Alternatively you can head over to [this template repo](https://github.com/swup/
 ## Tips
 - Checkout existing themes before creating one.
 - Swup instance is automatically assigned to the theme instance and can be accessed under `this.swup` in `mount`/`unmount` methods.
-* Swup theme automatically sets swup animationSelector option to `[class*="swup-transition-"]` to prevent bugs related to other libraries using the same classes. Use `swup-transition-*` for your theme classes. 
+- Swup theme automatically sets swup animationSelector option to `[class*="swup-transition-"]` to prevent bugs related to other libraries using the same classes. Use `swup-transition-*` for your theme classes.
+- You can use `.css`/`.styl`/`.scss` to manage your styles. 
+- Unlike plugins, themes need a bundling to include CSS files in the bundle. For this reason, `npm run build` command is used for building both, npm version (/lib) and standalone version (/dist). 
 - Themes get a few special helper methods below. These are primarily there because swup theme will automatically cleanup the use of these methods in case the theme is disabled. 
     * `applyStyles` to prepend style tag with defined content in the head tag.
     * `addClassName` to add `swup-transition-[name]` classname to an element.
