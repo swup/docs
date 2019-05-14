@@ -4,6 +4,7 @@ title: Slide Theme
 parent: Themes
 nav_order: 2
 permalink: /themes/slide-theme
+repo_link: /slide-theme
 ---
 
 # Swup Slide Theme

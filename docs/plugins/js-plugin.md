@@ -4,6 +4,7 @@ title: JS Plugin
 parent: Plugins
 nav_order: 5
 permalink: /plugins/js-plugin
+repo_link: /js-plugin
 ---
 
 # Swup JS plugin (swupjs)

@@ -4,6 +4,7 @@ title: Create Plugin 🎉
 parent: Plugins
 nav_order: 11
 permalink: /plugins/create-plugin
+repo_link: /create-plugin
 ---
 
 # Create Plugin

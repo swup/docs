@@ -4,6 +4,7 @@ title: GTM Plugin
 parent: Plugins
 nav_order: 7
 permalink: /plugins/google-tag-manager-plugin
+repo_link: /gtm-plugin
 ---
 
 # Swup GTM plugin

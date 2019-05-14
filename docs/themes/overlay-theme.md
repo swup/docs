@@ -4,6 +4,7 @@ title: Overlay Theme
 parent: Themes
 nav_order: 3
 permalink: /themes/overlay-theme
+repo_link: /overlay-theme
 ---
 
 # Swup Overlay Theme

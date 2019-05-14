@@ -4,6 +4,7 @@ title: Fade Theme
 parent: Themes
 nav_order: 1
 permalink: /themes/fade-theme
+repo_link: /fade-theme
 ---
 
 # Swup Fade Theme

@@ -36,6 +36,10 @@
                 </div>
                 <div class="main-content">
                     <div id="main-content" class="page-content" role="main">
+                        {% if page.repo_link %}
+                            <a href="https://github.com/swup{{ page.repo_link }}" class="btn btn-repo fs-5 mb-4">Repo</a>
+                        {% endif %}
+
                         {{ content }}
 
                         {% if page.has_children == true and page.has_toc != false %}

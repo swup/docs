@@ -4,6 +4,7 @@ title: Preload Plugin
 parent: Plugins
 nav_order: 4
 permalink: /plugins/preload-plugin
+repo_link: /preload-plugin
 ---
 
 # Swup Preload plugin

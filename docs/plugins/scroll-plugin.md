@@ -4,6 +4,7 @@ title: Scroll Plugin
 parent: Plugins
 nav_order: 3
 permalink: /plugins/scroll-plugin
+repo_link: /scroll-plugin
 ---
 
 # Swup Scroll plugin

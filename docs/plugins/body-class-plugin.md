@@ -4,6 +4,7 @@ title: Body Class Plugin
 parent: Plugins
 nav_order: 10
 permalink: /plugins/body-class-plugin
+repo_link: /body-class-plugin
 ---
 
 # Swup Body Class plugin

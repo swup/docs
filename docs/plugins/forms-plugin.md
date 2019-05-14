@@ -4,6 +4,7 @@ title: Forms Plugin
 parent: Plugins
 nav_order: 2
 permalink: /plugins/forms-plugin
+repo_link: /forms-plugin
 ---
 
 # Swup Forms plugin

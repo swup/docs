@@ -4,6 +4,7 @@ title: GA Plugin
 parent: Plugins
 nav_order: 6
 permalink: /plugins/google-analytics-plugin
+repo_link: /ga-plugin
 ---
 
 # Swup GA plugin

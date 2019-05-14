@@ -4,6 +4,7 @@ title: Debug Plugin
 parent: Plugins
 nav_order: 1
 permalink: /plugins/debug-plugin
+repo_link: /debug-plugin
 ---
 
 # Swup Debug plugin
