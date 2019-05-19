@@ -82,14 +82,18 @@
 
     .navigation-list-item {
       &::before {
-        margin-top: 0.75em;
+        margin-top: 0.7em;
+
+        @include mq(md) {
+          margin-top: 0.75em;
+        }
       }
     }
   }
 
   &::before {
     position: absolute;
-    margin-top: 0.7em;
+    margin-top: 0.65em;
     margin-left: -0.7em;
     background: #FE5B6A;
     width: 8px;
@@ -97,6 +101,10 @@
     border-radius: 50%;
     content: "";
     opacity: 0;
+
+    @include mq(md) {
+      margin-top: 0.7em;
+    }
   }
 
   &.active {

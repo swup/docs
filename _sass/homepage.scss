@@ -3,7 +3,7 @@
     margin: 0 auto 4rem;
     max-width: 400px;
     display: block;
-    width: 100%;
+    width: 80%;
 
     @media (min-width: 800px) {
       height: 173px;
@@ -22,6 +22,7 @@
     max-width: 500px;
     line-height: 1.4;
     margin: 0 auto 2rem !important;
+    padding: 0 !important;
   }
 
   .main-buttons {
