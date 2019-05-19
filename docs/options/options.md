@@ -69,8 +69,8 @@ This can be useful for returning custom response from a server, or any other pro
 ```javascript
 const options = {
     requestHeaders: {
-        'X-Requested-With': 'swup',     // so we can tell request comes from server     
-        'Accept': 'text/html, application/xhtml+xml'    // to explicitly define what we are expecting
+        'X-Requested-With': 'swup',     // so we can tell request comes from swup     
+        'Accept': 'text/html, application/xhtml+xml'    // to explicitly define what response we are expecting
     }
 };
 ```
