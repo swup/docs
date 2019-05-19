@@ -28,10 +28,10 @@ Default options:
 let options = {
     url: window.location.pathname + window.location.search,
     method: 'GET',
-    data: null
+    data: null,
+    header: {},
 };
 ```
-`X-Requested-With` request header is set to `swup`.
 A response object is passed into a callback.
 
 ## getCurrentUrl

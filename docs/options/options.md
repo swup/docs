@@ -62,6 +62,19 @@ const options = {
 };
 ```
 
+## Request Headers
+Swup sets two headers of the request by default and headers can be adjusted with `requestHeaders` option. 
+This can be useful for returning custom response from a server, or any other processing on a server side.  
+
+```javascript
+const options = {
+    requestHeaders: {
+        'X-Requested-With': 'swup',     // so we can tell request comes from server     
+        'Accept': 'text/html, application/xhtml+xml'    // to explicitly define what we are expecting
+    }
+};
+```
+
 ## Skip popState Handling
 Swup is built around browser history API, but sometimes some other tools manipulating the browser history can be used as well.
 For this reason, swup places a source property into every history state object it creates, so it can be later identified (swup also modifies current history record on start, to include the "swup" source property as well).
