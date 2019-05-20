@@ -24,11 +24,3 @@ If you're having trouble implementing swup, checkout [Common Issues](https://git
 
 Swup is released under [MIT license](https://github.com/swup/swup/blob/master/LICENSE).
 
-## Some websites using swup
-To get an idea of what swup does...
-* [Tvoříme lepší svět - Panasonic](https://plzen.cz.panasonic.com/)  
-* [25 let - Raiffeisen stavební spořitelna](https://www.rsts.cz/25let/)  
-* [Plan-k - KPMG](https://www.plan-k.cz/)  
-* [Dělej, co tě baví - Decathlon](http://delejcotebavi.decathlon.cz/)  
-* [Kyle Decker - Personal website](https://kyledecker.me/)  
-
