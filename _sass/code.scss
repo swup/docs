@@ -32,9 +32,13 @@ pre.highlight {
 }
 
 code.highlighter-rouge {
-  padding: $sp-1;
+  padding: 0 $sp-1;
   background-image: linear-gradient(-170deg, rgba(#60DDCD, .2) 0%, rgba(#357b72, .2) 100%);
   border-color: transparent;
+
+  @include mq(md) {
+    padding: $sp-1;
+  }
 }
 
 .highlight .c { color: #586e75; } // comment //
