@@ -45,4 +45,6 @@ const swup = new Swup({
 Plugin adds two methods to the swup instance - `preloadPage` and `preloadPages`.   
 `preloadPage` accepts URL path and returns a promise describing loading of the page.   
 `preloadPages` scans DOM for links with `[data-swup-preload]` attribute and calls `preloadPage` for each URL. 
+
+Plugin also adds `pagePreloaded` and `hoverLink` events to swup, that can be listened to with `on` method. 
  

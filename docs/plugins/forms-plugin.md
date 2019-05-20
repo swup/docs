@@ -55,3 +55,6 @@ By default, any form with `data-swup-form` attribute is selected.
 ```javascript
 new SwupFormsPlugin({formSelector: 'form[data-swup-form]'});
 ```
+
+## Changes of swup instance
+Plugin adds `submitForm` and `openFormSubmitInNewTab` events to swup, that can be listened to with `on` method.  

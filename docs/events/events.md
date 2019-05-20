@@ -72,9 +72,6 @@ document.addEventListener('swup:contentReplaced', (event) => {
 | **popState**                  | triggers on popstate events (back forward button)                                                	                        |
 | **samePage**                  | triggers when link leading to the same page is clicked                                           	                        |
 | **samePageWithHash**          | triggers when link leading to the same page with `#someElement` in the href attribute is clicked 	                        |
-| **scrollDone**                | triggers when built in scroll is done                                                            	                        |
-| **scrollStart**               | triggers when built in scroll is started                                                         	                        |
-| **submitForm**                | triggers when form is submitted trough swup (right before submission)                            	                        |
 | **transitionStart**           | triggers when trasition start (`loadPage` method is called)                                     	                        |
 | **transitionEnd**             | triggers when transition ends (content is replaced and all animations are done                           	                |
 | **willReplaceContent**        | triggers right before the content of page is replaced                                            	                        |
