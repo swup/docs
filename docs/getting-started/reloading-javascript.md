@@ -1,0 +1,79 @@
+---
+layout: default
+title: Reloading Javascript
+parent: Getting Started
+nav_order: 5
+permalink: /getting-started/reloading-javascript
+---
+# Reloading Javascript
+Since swup removes the page reloads from site, it also removes a standard lifecycle of scripts. 
+By default, scripts get enabled when the page is loaded. Often we would find ourselves waiting for whole page to load before executing the script.
+
+```javascript
+document.addEventListener("DOMContentLoaded", () => {
+    // run whatever we need
+});
+```
+
+After the browser leaves the page, there is no need to "clean up" the scripts, as page reload will simply remove everything, and start with creating the whole window/document again.
+
+Similar approach needs to be used with swup. 
+Swup [events]({{ "/events" | relative_url }}) are perfect for this purpose. 
+Let's say we would like to run different set of scripts for each page.
+Let's put such scripts in one function we can call to enable everything. 
+Each script in the function has a condition, so we don't try to run the script when the elements are not there (for example, when the carousel is only placed on the homepage).
+
+```javascript
+function init() {
+    if (document.querySelector('#carousel')) {
+        // something like new Carousel('#carousel')
+    }
+    
+    if (document.querySelector('#lightbox')) {
+        // something like $('#lightbox').lightbox()
+    }
+    
+    if (document.querySelector('#something-else')) {
+        // ...
+    }
+}
+```
+
+When the features are separated in some way, like the example above, we are just one step away from using swup events to run whatever we need, whenever we need.
+In this particular example we would probably like to run this on each page view. 
+
+```javascript
+const swup = new Swup();
+
+// run once 
+init();
+
+// this event runs for every page view after initial load
+swup.on('contentReplaced', init);
+```
+
+As we mentioned before, unlike native browser reload, the page is not able to cleanup all the instances, listeners and mess we have made when page was loaded. 
+Swup `willReplaceContent` event can help with that. 
+
+```javascript
+function unloud() {
+    if (document.querySelector('#carousel')) {
+        // carousel.destroy()
+    }
+    // ...
+}
+
+swup.on('willReplaceContent', unloud);
+```
+
+This is only an example, but it should give some people an idea of how to approach such situation. 
+
+## Component based approach 
+
+I would very much recommend using component based approach together with swup, like the one provided by [Gia framework](https://github.com/giantcz/gia).
+Gia provides a simple, yet powerful way of managing scripts with `mount`/`unmount` lifecycle methods, 
+automatic scope for scripts and more cool stuff like lazy loading assets when needed, smart element auto selectors and more. 
+
+Oh and [here]({{ "/plugins/gia-plugin" | relative_url }}) is a plugin for that.  
+
+
