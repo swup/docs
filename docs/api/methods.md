@@ -52,13 +52,13 @@ const handler = event => console.log(event)
 swup.on('clickLink', handler);
 
 // unregister event handler
-swup.on('clickLink', handler);
+swup.off('clickLink', handler);
 
 // unregister all handlers for given event
-swup.on('clickLink');
+swup.off('clickLink');
 
 // unregister all handlers for all events
-swup.on('clickLink');
+swup.off();
 ```
 
 ## destroy
