@@ -16,6 +16,9 @@ npm install swup
 
 ```html
 <script src="./dist/swup.js"></script>
+ 
+<!-- or directly from unpkg -->
+<script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script>  
 ```
 
 ## Run Swup
