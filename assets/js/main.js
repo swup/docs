@@ -7,5 +7,6 @@ var swup = new Swup({
     }),
     new SwupSlideTheme(),
     new SwupBodyClassPlugin(),
+    new SwupGaPlugin(),
   ],
 });
