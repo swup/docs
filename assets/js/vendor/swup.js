@@ -273,12 +273,13 @@ var Swup = function () {
 			linkSelector: 'a[href^="' + window.location.origin + '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
 			cache: true,
 			containers: ['#swup'],
+			requestHeaders: {
+				'X-Requested-With': 'swup',
+				Accept: 'text/html, application/xhtml+xml'
+			},
 			plugins: [],
 			skipPopStateHandling: function skipPopStateHandling(event) {
-				if (event.state && event.state.source == 'swup') {
-					return false;
-				}
-				return true;
+				return !(event.state && event.state.source === 'swup');
 			}
 		};
 
@@ -354,7 +355,7 @@ var Swup = function () {
 			}
 
 			// add event listeners
-			this.delegatedListeners.click = (0, _delegate2.default)(document, this.options.LINK_SELECTOR, 'click', this.linkClickHandler.bind(this));
+			this.delegatedListeners.click = (0, _delegate2.default)(document, this.options.linkSelector, 'click', this.linkClickHandler.bind(this));
 			window.addEventListener('popstate', this.popStateHandler.bind(this));
 
 			// initial save to cache
@@ -656,6 +657,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _helpers = __webpack_require__(0);
 
 var loadPage = function loadPage(data, popstate) {
@@ -722,14 +725,14 @@ var loadPage = function loadPage(data, popstate) {
 	} else {
 		if (!this.preloadPromise || this.preloadPromise.route != data.url) {
 			xhrPromise = new Promise(function (resolve, reject) {
-				(0, _helpers.fetch)(data, function (response, request) {
-					if (request.status === 500) {
+				(0, _helpers.fetch)(_extends({}, data, { headers: _this.options.requestHeaders }), function (response) {
+					if (response.status === 500) {
 						_this.triggerEvent('serverError');
 						reject(data.url);
 						return;
 					} else {
 						// get json data
-						var page = _this.getPageData(response, request);
+						var page = _this.getPageData(response);
 						if (page != null) {
 							page.url = data.url;
 						} else {
@@ -876,32 +879,35 @@ Object.defineProperty(exports, "__esModule", {
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var fetch = function fetch(options) {
+var fetch = function fetch(setOptions) {
 	var callback = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
 	var defaults = {
 		url: window.location.pathname + window.location.search,
 		method: 'GET',
-		data: null
+		data: null,
+		headers: {}
 	};
 
-	var data = _extends({}, defaults, options);
+	var options = _extends({}, defaults, setOptions);
 
 	var request = new XMLHttpRequest();
 
 	request.onreadystatechange = function () {
 		if (request.readyState === 4) {
 			if (request.status !== 500) {
-				callback(request.responseText, request);
+				callback(request);
 			} else {
-				callback(null, request);
+				callback(request);
 			}
 		}
 	};
 
-	request.open(data.method, data.url, true);
-	request.setRequestHeader('X-Requested-With', 'swup');
-	request.send(data.data);
+	request.open(options.method, options.url, true);
+	Object.keys(options.headers).forEach(function (key) {
+		request.setRequestHeader(key, options.headers[key]);
+	});
+	request.send(options.data);
 	return request;
 };
 
@@ -975,6 +981,7 @@ var markSwupElements = function markSwupElements(element, containers) {
 			console.warn('Element ' + containers[i] + ' is not in current page.');
 		} else {
 			(0, _utils.queryAll)(containers[i]).forEach(function (item, index) {
+				console.log(containers[i]);
 				(0, _utils.queryAll)(containers[i], element)[index].dataset.swup = blocks;
 				blocks++;
 			});
@@ -1061,6 +1068,8 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
 var _utils = __webpack_require__(1);
 
 var _helpers = __webpack_require__(0);
@@ -1078,6 +1087,9 @@ var renderPage = function renderPage(page, popstate) {
 			random: Math.random(),
 			source: 'swup'
 		}, document.title, link.getPath());
+
+		// save new record for redirected url
+		this.cache.cacheUrl(_extends({}, page, { url: link.getPath() }));
 	}
 
 	// only add for non-popstate transitions
@@ -1232,23 +1244,12 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 var updateTransition = function updateTransition(from, to, custom) {
-	// homepage case
-	if (from == '/') {
-		from = '/homepage';
-	}
-	if (to == '/') {
-		to = '/homepage';
-	}
-
 	// transition routes
 	this.transition = {
-		from: from.replace('/', ''),
-		to: to.replace('/', '')
+		from: from,
+		to: to,
+		custom: custom
 	};
-
-	if (custom) {
-		this.transition.custom = custom;
-	}
 };
 
 exports.default = updateTransition;
@@ -1299,11 +1300,13 @@ Object.defineProperty(exports, "__esModule", {
 
 var _helpers = __webpack_require__(0);
 
-var getPageData = function getPageData(html, request) {
+var getPageData = function getPageData(request) {
 	// this method can be replaced in case other content than html is expected to be received from server
 	// this function should always return {title, pageClass, originalContent, blocks, responseURL}
 	// in case page has invalid structure - return null
+	var html = request.responseText;
 	var pageObject = (0, _helpers.getDataFromHTML)(html, this.options.containers);
+
 	if (pageObject) {
 		pageObject.responseURL = request.responseURL ? request.responseURL : window.location.href;
 	} else {

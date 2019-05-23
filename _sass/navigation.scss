@@ -127,6 +127,15 @@
   }
 }
 
+.main-nav {
+  @include mq(md) {
+    margin-right: -20px;
+    left: 0;
+    position: relative;
+    width: calc(100% + 20px);
+  }
+}
+
 // Small screen nav
 
 .main-nav,

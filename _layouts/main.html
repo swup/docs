@@ -9,7 +9,7 @@
                     <img src="{{ "/assets/images/swup-logo.svg" | relative_url }}" alt="{{ site.title }}"/>
                 </a>
                 <span class="fs-3"><button class="js-main-nav-trigger navigation-list-toggle btn btn-outline" type="button" data-text-toggle="Hide">Menu</button></span>
-                <div class="navigation main-nav js-main-nav" id="nav">
+                <div class="navigation main-nav js-main-nav">
                     {% include nav.html %}
                 </div>
             </div>
@@ -34,12 +34,17 @@
                         {% endif %}
                     </label>
                 </div>
-                <div class="main-content">
+                <div class="main-content" id="swup">
                     <div id="main-content" class="page-content" role="main">
                         {{ content }}
                     </div>
                 </div>
             </div>
         </div>
+        <script type="text/javascript" src="{{ "/assets/js/vendor/swup.js" | absolute_url }}"></script>
+        <script type="text/javascript" src="{{ "/assets/js/vendor/SwupDebugPlugin.min.js" | absolute_url }}"></script>
+        <script type="text/javascript" src="{{ "/assets/js/vendor/SwupScrollPlugin.min.js" | absolute_url }}"></script>
+        <script type="text/javascript" src="{{ "/assets/js/vendor/SwupSlideTheme.min.js" | absolute_url }}"></script>
+        <script type="text/javascript" src="{{ "/assets/js/main.js" | absolute_url }}"></script>
     </body>
 </html>
