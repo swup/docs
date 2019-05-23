@@ -9,6 +9,14 @@
   padding: $sp-2;
   text-align: center;
   height: 60px;
+  transition: opacity 1s 1s;
+  opacity: 1;
+
+  .page--homepage & {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+    transition: opacity .2s;
+  }
 
   @include mq(md) {
     position: absolute;

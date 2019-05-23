@@ -11,7 +11,6 @@ function removeEvent(el, type, handler) {
 
 function toggleNav(){
   const nav = document.querySelector('.js-main-nav');
-  const auxNav = document.querySelector('.js-aux-nav');
   const navTrigger = document.querySelector('.js-main-nav-trigger');
   const search = document.querySelector('.js-search');
 
@@ -20,7 +19,6 @@ function toggleNav(){
     var textToggle = navTrigger.getAttribute('data-text-toggle');
 
     nav.classList.toggle('nav-open');
-    auxNav.classList.toggle('nav-open');
     navTrigger.classList.toggle('nav-open');
     search.classList.toggle('nav-open');
     navTrigger.innerText = textToggle;
@@ -28,6 +26,16 @@ function toggleNav(){
     textToggle = text;
   })
 }
+
+document.addEventListener('swup:contentReplaced', function() {
+  const nav = document.querySelector('.js-main-nav');
+  const navTrigger = document.querySelector('.js-main-nav-trigger');
+  const search = document.querySelector('.js-search');
+
+  nav.classList.remove('nav-open');
+  navTrigger.classList.remove('nav-open');
+  search.classList.remove('nav-open');
+});
 
 // Site search
 

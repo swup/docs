@@ -6,5 +6,6 @@ var swup = new Swup({
       animateScroll: false
     }),
     new SwupSlideTheme(),
+    new SwupBodyClassPlugin(),
   ],
 });

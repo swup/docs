@@ -21,10 +21,11 @@
   flex-wrap: wrap;
   padding-top: $gutter-spacing-sm;
   padding-bottom: $gutter-spacing-sm;
-  transition: transform .8s, opacity .8s;
+  transition: opacity .3s;
   overflow: hidden;
 
   @include mq(md) {
+    transition: transform .3s .2s, opacity .3s .2s;
     flex-wrap: nowrap;
     position: fixed;
     width: $nav-width + 16px;
@@ -43,7 +44,8 @@
 
   .page--homepage & {
     opacity: 0;
-    transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-40%, 0, 0);
+    transition: transform 0s .2s, opacity .2s;
   }
 }
 
@@ -58,6 +60,7 @@
     -webkit-overflow-scrolling: touch;
     overflow-x: hidden;
     overflow-y: scroll;
+    min-height: 100vh;
   }
 }
 
@@ -106,11 +109,12 @@
 }
 
 .page-header {
-  transition: .8s;
   justify-content: flex-end;
   display: flex;
+  transition: opacity .8s;
 
   @include mq(md) {
+    transition: transform .8s .2s, opacity .8s;
     position: fixed;
     width: 100%;
     background-color: $body-background-color;
@@ -140,9 +144,7 @@
 .navigation,
 .site-title,
 .site-footer {
-
   @include container;
-
   width: 100%;
 
   @include mq(lg) {
@@ -170,6 +172,7 @@
 body {
   position: relative;
   padding-bottom: $sp-10;
+  transition: .2s;
 
   @include mq(md) {
     position: static;
