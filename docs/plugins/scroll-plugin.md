@@ -7,7 +7,7 @@ permalink: /plugins/scroll-plugin
 repo_link: /scroll-plugin
 ---
 
-# Swup Scroll plugin
+# Scroll plugin
 Plugin adds awesome "acceleration based" automatic scrolling into the process of transition. Scrolling behaviour is customizable with [options](#options).
 
 ## Instalation

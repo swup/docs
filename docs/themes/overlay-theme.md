@@ -7,7 +7,7 @@ permalink: /themes/overlay-theme
 repo_link: /overlay-theme
 ---
 
-# Swup Overlay Theme
+# Overlay Theme
 Theme for slide in/out animation of overlay. 
 
 ## Instalation

@@ -7,7 +7,7 @@ permalink: /plugins/google-tag-manager-plugin
 repo_link: /gtm-plugin
 ---
 
-# Swup GTM plugin
+# GTM plugin
 Google Tag Manager Plugin triggers VirtualPageview event on `contentReplaced` (on each page change) which can be associated with a page view within GTM.
 Event object also includes virtualPageURL holding the url of the page and virtualPageTitle holding the title of the page.
 Note that this event is not triggered at the first load, so the first page view must be triggered elsewhere.

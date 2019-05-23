@@ -7,7 +7,7 @@ permalink: /themes/slide-theme
 repo_link: /slide-theme
 ---
 
-# Swup Slide Theme
+# Slide Theme
 Theme for slide in/out animation. Makes content slide out (+fade) in one direction, and slide in from the other.
 
 ## Instalation

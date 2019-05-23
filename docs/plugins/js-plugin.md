@@ -7,7 +7,7 @@ permalink: /plugins/js-plugin
 repo_link: /js-plugin
 ---
 
-# Swup JS plugin (swupjs)
+# JS plugin (swupjs)
 
 Plugin modifies swup for use with JavaScript animations. Timing and animations are based on JavaScript, not CSS transitions.
 

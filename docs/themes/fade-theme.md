@@ -7,7 +7,7 @@ permalink: /themes/fade-theme
 repo_link: /fade-theme
 ---
 
-# Swup Fade Theme
+# Fade Theme
 Basic theme for fade in/out animation of the main container.
 
 ## Instalation

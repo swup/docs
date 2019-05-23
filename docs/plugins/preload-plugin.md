@@ -7,7 +7,7 @@ permalink: /plugins/preload-plugin
 repo_link: /preload-plugin
 ---
 
-# Swup Preload plugin
+# Preload plugin
 Plugin adds preload functionality. Firstly, any link element found in DOM with the `[data-swup-preload]` attribute is automatically preloaded. 
 Swup also tries to speed up the process of loading by starting the preload on hover over the link. 
 In case one request is already running for preload from hover, swup won't start another request, to prevent unnecessary overloading of server.  

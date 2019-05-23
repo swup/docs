@@ -7,7 +7,7 @@ permalink: /plugins/debug-plugin
 repo_link: /debug-plugin
 ---
 
-# Swup Debug plugin
+# Debug plugin
 Debug plugin adds some useful functionality to the swup for development purposes. 
 Mainly, it outputs all the events in a console as they happen, which can be useful for debugging. 
 

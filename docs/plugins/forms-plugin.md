@@ -7,7 +7,7 @@ permalink: /plugins/forms-plugin
 repo_link: /forms-plugin
 ---
 
-# Swup Forms plugin
+# Forms plugin
 Plugin adds support form forms. Any form that matches the [formSelector](#formSelector) is sent via swup (with transition).
 
 Swup will take the form data and submit it with appropriate `method` and `action` based on form attributes, where method defaults to `GET` and action defaults to current url.

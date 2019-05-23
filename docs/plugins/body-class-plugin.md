@@ -7,7 +7,7 @@ permalink: /plugins/body-class-plugin
 repo_link: /body-class-plugin
 ---
 
-# Swup Body Class plugin
+# Body Class plugin
 
 Some CSS styles are very often based on the class of the page defined in the `body` element.
 Swup replaces the `body` classes for each loaded page.

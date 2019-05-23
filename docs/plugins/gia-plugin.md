@@ -7,7 +7,7 @@ permalink: /plugins/gia-plugin
 repo_link: /gia-plugin
 ---
 
-# Swup Gia Plugin
+# Gia Plugin
 Swup plugin for simple implementation with [Gia framework](https://github.com/giantcz/gia). 
 Plugin automatically reloads components when it's needed only for the replaced containers. 
 
