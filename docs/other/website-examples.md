@@ -5,6 +5,7 @@ has_children: false
 nav_order: 9
 permalink: /swup-usage-examples
 has_toc: false
+parent: Other
 ---
 
 # Example of websites using swup

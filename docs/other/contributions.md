@@ -5,6 +5,7 @@ has_children: false
 nav_order: 8
 permalink: /contributions
 has_toc: false
+parent: Other
 ---
 
 # Contributions
