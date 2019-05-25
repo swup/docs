@@ -2,7 +2,7 @@
 layout: default
 title: Forms Plugin
 parent: Plugins
-nav_order: 2
+nav_order: 3
 permalink: /plugins/forms-plugin
 repo_link: /forms-plugin
 ---

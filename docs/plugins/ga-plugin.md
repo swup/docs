@@ -2,7 +2,7 @@
 layout: default
 title: GA Plugin
 parent: Plugins
-nav_order: 6
+nav_order: 4
 permalink: /plugins/google-analytics-plugin
 repo_link: /ga-plugin
 ---

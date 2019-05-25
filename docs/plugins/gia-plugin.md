@@ -2,7 +2,7 @@
 layout: default
 title: Gia Plugin
 parent: Plugins
-nav_order: 11
+nav_order: 5
 permalink: /plugins/gia-plugin
 repo_link: /gia-plugin
 ---

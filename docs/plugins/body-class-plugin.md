@@ -2,7 +2,7 @@
 layout: default
 title: Body Class Plugin
 parent: Plugins
-nav_order: 10
+nav_order: 1
 permalink: /plugins/body-class-plugin
 repo_link: /body-class-plugin
 ---

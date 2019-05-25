@@ -2,7 +2,7 @@
 layout: default
 title: Preload Plugin
 parent: Plugins
-nav_order: 4
+nav_order: 9
 permalink: /plugins/preload-plugin
 repo_link: /preload-plugin
 ---

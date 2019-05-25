@@ -66,7 +66,11 @@ function unloud() {
 swup.on('willReplaceContent', unloud);
 ```
 
-This is only an example, but it should give some people an idea of how to approach such situation. 
+This is only an example, but it should give some people an idea of how to approach such situation.
+
+**Note:** There is a [scripts plugin]({{ "/plugins/scripts-plugin" | relative_url }}) which can also help you in situations, 
+where you're not in control over what scripts are included in a page. 
+Keep in mind that it's usage is discouraged.
 
 ## Component based approach 
 

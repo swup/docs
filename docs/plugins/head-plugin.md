@@ -2,7 +2,7 @@
 layout: default
 title: Head Plugin
 parent: Plugins
-nav_order: 12
+nav_order: 7
 permalink: /plugins/head-plugin
 repo_link: /head-plugin
 ---

@@ -2,7 +2,7 @@
 layout: default
 title: JS Plugin
 parent: Plugins
-nav_order: 5
+nav_order: 8
 permalink: /plugins/js-plugin
 repo_link: /js-plugin
 ---
