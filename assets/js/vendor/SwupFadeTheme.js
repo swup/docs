@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["SwupSlideTheme"] = factory();
+		exports["SwupFadeTheme"] = factory();
 	else
-		root["SwupSlideTheme"] = factory();
+		root["SwupFadeTheme"] = factory();
 })(window, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -140,46 +140,37 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var SlideTheme = function (_Theme) {
-	_inherits(SlideTheme, _Theme);
+var FadeTheme = function (_Theme) {
+	_inherits(FadeTheme, _Theme);
 
-	function SlideTheme(options) {
-		_classCallCheck(this, SlideTheme);
+	function FadeTheme(options) {
+		_classCallCheck(this, FadeTheme);
 
-		var _this = _possibleConstructorReturn(this, (SlideTheme.__proto__ || Object.getPrototypeOf(SlideTheme)).call(this));
+		var _this = _possibleConstructorReturn(this, (FadeTheme.__proto__ || Object.getPrototypeOf(FadeTheme)).call(this));
 
-		_this.name = 'SlideTheme';
+		_this.name = 'FadeTheme';
 
 
 		var defaultOptions = {
-			mainElement: '#swup',
-			reversed: false
+			mainElement: '#swup'
 		};
 
 		_this.options = _extends({}, defaultOptions, options);
 		return _this;
 	}
 
-	_createClass(SlideTheme, [{
+	_createClass(FadeTheme, [{
 		key: 'mount',
 		value: function mount() {
 			this.applyStyles(_index2.default);
 			this.addClassName(this.options.mainElement, 'main');
-			if (this.options.reversed) {
-				document.documentElement.classList.add('swup-theme-reverse');
-			}
-		}
-	}, {
-		key: 'unmount',
-		value: function unmount() {
-			document.documentElement.classList.remove('swup-theme-reverse');
 		}
 	}]);
 
-	return SlideTheme;
+	return FadeTheme;
 }(_theme2.default);
 
-exports.default = SlideTheme;
+exports.default = FadeTheme;
 
 /***/ }),
 /* 2 */
@@ -224,6 +215,9 @@ var Theme = function () {
 			// save original and replace animationSelector option
 			this._originalAnimationSelectorOption = String(this.swup.options.animationSelector);
 			this.swup.options.animationSelector = '[class*="swup-transition-"]';
+
+			// add classes after each content replace
+			this.swup.on('contentReplaced', this._addClassNameToElement);
 		}
 	}, {
 		key: '_afterUnmount',
@@ -292,12 +286,11 @@ var Theme = function () {
 	}, {
 		key: 'addClassName',
 		value: function addClassName(selector, name) {
+			// save so it can be later removed
 			this._classNameAddedToElements.push({ selector: selector, name: name });
 
-			// save so it can be later removed
+			// add class the first time
 			this._addClassNameToElement();
-
-			this.swup.on('contentReplaced', this._addClassNameToElement);
 		}
 
 		// this is here so we can tell if plugin was created by extending this class
@@ -315,7 +308,7 @@ exports.default = Theme;
 
 exports = module.exports = __webpack_require__(4)(false);
 // Module
-exports.push([module.i, ".swup-transition-main {\n  opacity: 1;\n  transition: opacity 0.3s, transform 0.4s;\n  transform: translate3d(0, 0, 0);\n}\nhtml.is-animating .swup-transition-main {\n  opacity: 0;\n  transform: translate3d(0, -60px, 0);\n}\nhtml.is-animating.is-leaving .swup-transition-main {\n  opacity: 0;\n  transform: translate3d(0, 60px, 0);\n}\nhtml.is-animating.swup-theme-reverse .swup-transition-main {\n  opacity: 0;\n  transform: translate3d(0, 60px, 0);\n}\nhtml.is-animating.swup-theme-reverse.is-leaving .swup-transition-main {\n  opacity: 0;\n  transform: translate3d(0, -60px, 0);\n}\n", ""]);
+exports.push([module.i, ".swup-transition-main {\n    opacity: 1;\n    transition: opacity .4s;\n}\n\nhtml.is-animating .swup-transition-main {\n    opacity: 0;\n}", ""]);
 
 
 

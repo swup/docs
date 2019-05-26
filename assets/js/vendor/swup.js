@@ -861,6 +861,11 @@ var getDataFromHTML = function getDataFromHTML(html, containers) {
 		originalContent: html,
 		blocks: blocks
 	};
+
+	// to prevent memory leaks
+	fakeDom.innerHTML = '';
+	fakeDom = null;
+
 	return json;
 };
 
@@ -981,7 +986,6 @@ var markSwupElements = function markSwupElements(element, containers) {
 			console.warn('Element ' + containers[i] + ' is not in current page.');
 		} else {
 			(0, _utils.queryAll)(containers[i]).forEach(function (item, index) {
-				console.log(containers[i]);
 				(0, _utils.queryAll)(containers[i], element)[index].dataset.swup = blocks;
 				blocks++;
 			});
