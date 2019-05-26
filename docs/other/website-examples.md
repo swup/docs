@@ -2,7 +2,7 @@
 layout: default
 title: Swup usage examples
 has_children: false
-nav_order: 9
+nav_order: 3
 permalink: /swup-usage-examples
 has_toc: false
 parent: Other
