@@ -37,8 +37,8 @@ A response object is passed into a callback.
 ## getCurrentUrl
 Return current page url. 
 
-## getDataFromHTML
-Accepts two arguments - html content and array of containers (swup [container option]({{ "/options#containers" | relative_url }})).
+## getDataFromHtml
+Accepts two arguments - html content and array of container selectors (swup [container option]({{ "/options#containers" | relative_url }})).
 Returns object required for cache.
 
 ## transitionEnd
