@@ -111,7 +111,7 @@ The default option object look like...
 
 ```javascript 
 const options = {
-  animateHistoryBrowsing: false
+  animateHistoryBrowsing: false,
   animationSelector: '[class*="transition-"]',
   containers: ['#swup'],
   cache: true,
