@@ -10,7 +10,7 @@ repo_link: /overlay-theme
 # Overlay Theme
 Theme for slide in/out animation of overlay. 
 
-## Instalation
+## Installation
 
 This theme can be installed with npm
 

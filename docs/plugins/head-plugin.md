@@ -14,7 +14,7 @@ Primary reason for this can be usage of different style files included with a `l
 
 **Note:** This plugin is rather experimental and any improvements or comments are more than welcome.
 
-## Instalation
+## Installation
 
 This plugin can be installed with npm
 

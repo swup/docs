@@ -19,7 +19,7 @@ window.ga('set', 'page', window.location.pathname + window.location.search);
 window.ga('send', 'pageview');
 ```
 
-## Instalation
+## Installation
 This plugin can be installed with npm
 
 ```bash

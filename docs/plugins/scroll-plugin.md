@@ -10,7 +10,7 @@ repo_link: /scroll-plugin
 # Scroll plugin
 Plugin adds awesome "acceleration based" automatic scrolling into the process of transition. Scrolling behaviour is customizable with [options](#options).
 
-## Instalation
+## Installation
 This plugin can be installed with npm
 
 ```bash

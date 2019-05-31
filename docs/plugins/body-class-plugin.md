@@ -12,7 +12,7 @@ repo_link: /body-class-plugin
 Some CSS styles are very often based on the class of the page defined in the `body` element.
 Swup replaces the `body` classes for each loaded page.
 
-## Instalation
+## Installation
 
 This plugin can be installed with npm
 
