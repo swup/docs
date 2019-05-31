@@ -16,7 +16,7 @@ Plugin rewrites swups `log` method, so any output provided by plugins is visible
 Plugin also tries to detect some common mistakes, and outputs a suggestions into a console.   
 The list of mistakes the plugin detects is expected to grow over time. 
 
-## Instalation
+## Installation
 This plugin can be installed with npm
 
 ```bash
