@@ -10,7 +10,7 @@ parent: Other
 
 # Common Issues
 
-## Inccorect link attributes
+## Incorrect link attributes
 Swup is by default set to do the transition for any link with `href` attribute starting with the current domain, `/` or `#`. People often use different `href` attributes like `about.html`.
 ```html
 <!-- this is fine -->
