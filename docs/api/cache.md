@@ -48,7 +48,7 @@ swup.exists('/docs');   // true/false
 ## remove
 Removes single record from cache based on passed url. 
 ```javascript
-swup.empty('/docs');
+swup.remove('/docs');
 ```
 
 ## empty
