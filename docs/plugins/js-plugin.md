@@ -13,7 +13,7 @@ Plugin modifies swup for use with JavaScript animations. Timing and animations a
 
 Plugin provides the similar, but improved functionality as deprecated [swupjs](https://github.com/swup/swupjs).
 
-## Instalation
+## Installation
 
 This plugin can be installed with npm
 

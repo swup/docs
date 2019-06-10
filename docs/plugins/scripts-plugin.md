@@ -20,7 +20,7 @@ to prevent creating of multiple instances of swup and prevent unnecessary swup c
 Re-running your scripts without destroying remains of previous run can lead to memory leaks and breaking of the page.
 Use at own risk.
 
-## Instalation
+## Installation
 
 This plugin can be installed with npm
 

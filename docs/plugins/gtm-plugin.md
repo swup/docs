@@ -22,7 +22,7 @@ window.dataLayer.push({
 });
 ```
 
-## Instalation
+## Installation
 This plugin can be installed with npm
 
 ```bash

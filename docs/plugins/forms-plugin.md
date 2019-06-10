@@ -19,7 +19,7 @@ The response from the server must be a valid page with all containers that need 
 This method does not support submission of files, or other advanced features. 
 If you're looking for such features, please, use swup [API]({{ "/api" | relative_url }}) to send requests. 
 
-## Instalation
+## Installation
 This plugin can be installed with npm
 
 ```bash
