@@ -40,6 +40,7 @@ const swup = new Swup({
 });
 ```
 
-## mainElement Option
+## Options
+### mainElement 
 Changes the selector of the elements to fade in/out. Defaults to `#swup`.
 
