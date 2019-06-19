@@ -36,7 +36,7 @@ To run this theme, include an instance in the swup options.
 
 ```javascript
 const swup = new Swup({
-  theme: [new SwupOverlayTheme()]
+  plugins: [new SwupOverlayTheme()]
 });
 ```
 
