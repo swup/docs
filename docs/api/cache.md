@@ -33,12 +33,6 @@ Returns page object of current page.
 swup.getCurrentPage();
 ```
 
-## getCurrentPage
-Returns page object of current page.
-```javascript
-swup.getCurrentPage();
-```
-
 ## exists
 Returns whether page exist in cache based on passed url.
 ```javascript
