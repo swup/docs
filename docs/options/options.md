@@ -44,7 +44,8 @@ Containers option usually contains the main element with the content of the page
 This creates a possibility of animating elements on the page while still replacing it's parts.
 Another good example where this is helpful is the *change language* link, which usually appears the same across the site (no animation needed),
 but leads to a different URL on each page.
-Option defaults to the single container of id `#swup`.
+Option defaults to the single container of id `#swup`. 
+Keep in mind that only elements inside of `body` tag are supported. 
 
 ```javascript
 const options = {
