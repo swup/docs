@@ -69,9 +69,9 @@ document.addEventListener('swup:contentReplaced', (event) => {
 | **pagePreloaded**             | triggers when the preload of some page is done (differs from **pageLoaded** only by the source of event - hover/click) 	|
 | **pageRetrievedFromCache**    | triggers when page is retrieved from cache and no request is necessary                                                 	|
 | **pageView**                  | similar to **contentReplaced**, except it is once triggered on load                                                    	|
-| **popState**                  | triggers on popstate events (back forward button)                                                	                        |
+| **popState**                  | triggers on popstate events (back/forward button)                                                	                        |
 | **samePage**                  | triggers when link leading to the same page is clicked                                           	                        |
 | **samePageWithHash**          | triggers when link leading to the same page with `#someElement` in the href attribute is clicked 	                        |
-| **transitionStart**           | triggers when trasition start (`loadPage` method is called)                                     	                        |
+| **transitionStart**           | triggers when transition start (`loadPage` method is called)                                     	                        |
 | **transitionEnd**             | triggers when transition ends (content is replaced and all animations are done                           	                |
 | **willReplaceContent**        | triggers right before the content of page is replaced                                            	                        |
