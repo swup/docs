@@ -6,7 +6,7 @@ nav_order: 4
 permalink: /themes/create-theme
 ---
 
-# Create Plugin
+# Create Theme
 Anyone can create and publish swup themes. 
 To create new theme, install [swup CLI]({{ "/cli" | relative_url }}) which can create one from a template for you. 
  
