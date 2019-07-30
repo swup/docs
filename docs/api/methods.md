@@ -76,20 +76,20 @@ swup.use(new SwupScrollPlugin());
 ## unuse
 Disables plugin. Accepts plugin name or instance. 
 ```javascript
-swup.unuse('SwupScrollPlugin');
+swup.unuse('ScrollPlugin');
 ```
 
 ## findPlugin
 Returns plugin instance with a given name of a plugin. 
 ```javascript
-const plugin = swup.findPlugin('SwupScrollPlugin');
+const pluginInstance = swup.findPlugin('ScrollPlugin');
 ```
 
 ## getAnimationPromises
 Returns array of promises for the animated elements (each promise gets resolved when animation of an element is finished). 
 This method can be modified to return array of other promises swup should wait for before proceeding in page transition. 
 ```javascript
-const arrayOfPromises = swup.findPlugin('SwupScrollPlugin');
+const arrayOfPromises = swup.getAnimationPromises();
 ```
 
 ## getPageData
