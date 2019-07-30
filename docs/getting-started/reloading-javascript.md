@@ -56,14 +56,14 @@ As we mentioned before, unlike native browser reload, the page is not able to cl
 Swup `willReplaceContent` event can help with that. 
 
 ```javascript
-function unloud() {
+function unload() {
     if (document.querySelector('#carousel')) {
         // carousel.destroy()
     }
     // ...
 }
 
-swup.on('willReplaceContent', unloud);
+swup.on('willReplaceContent', unload);
 ```
 
 This is only an example, but it should give some people an idea of how to approach such situation.
