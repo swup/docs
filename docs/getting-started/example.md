@@ -58,6 +58,6 @@ html.is-animating .transition-fade {
 **And believe it or not, that's it!**
 We're all set, or at least for our simple fade in/fade out example…  
 Swup loads the page, handles classes for the css animation, waits for the animation to finish/page to load, replaces content and fades your content back.
-Swup also changes the title of your page to the loaded one, and exchanges classes of body element (more in [options]({{ "/options" | relative_url }}) section).
+Swup also changes the title of your page to the loaded one (more in [options]({{ "/options" | relative_url }}) or [plugins]({{ "/plugins" | relative_url }})).
 
 Would you like to try it out yourself? Head to the [demo page]({{ "/getting-started/demo" | relative_url }}).
