@@ -10,32 +10,26 @@ function removeEvent(el, type, handler) {
 // Show/hide mobile menu
 
 function toggleNav(){
-  const nav = document.querySelector('.js-main-nav');
-  const navTrigger = document.querySelector('.js-main-nav-trigger');
-  const search = document.querySelector('.js-search');
+  var nav = document.querySelector('.js-main-nav');
+  var navTrigger = document.querySelector('.js-main-nav-trigger');
+  var search = document.querySelector('.js-search');
+  var openText = navTrigger.innerText;
+  var closeText = navTrigger.getAttribute('data-text-toggle');
 
   addEvent(navTrigger, 'click', function(){
-    var text = navTrigger.innerText;
-    var textToggle = navTrigger.getAttribute('data-text-toggle');
-
     nav.classList.toggle('nav-open');
     navTrigger.classList.toggle('nav-open');
     search.classList.toggle('nav-open');
-    navTrigger.innerText = textToggle;
-    navTrigger.setAttribute('data-text-toggle', text);
-    textToggle = text;
-  })
+    navTrigger.innerText = nav.className.indexOf('nav-open') === -1 ? openText : closeText;
+  });
+
+  document.addEventListener('swup:contentReplaced', function() {
+    nav.classList.remove('nav-open');
+    navTrigger.classList.remove('nav-open');
+    search.classList.remove('nav-open');
+    navTrigger.innerText = nav.className.indexOf('nav-open') === -1 ? openText : closeText;
+  });
 }
-
-document.addEventListener('swup:contentReplaced', function() {
-  const nav = document.querySelector('.js-main-nav');
-  const navTrigger = document.querySelector('.js-main-nav-trigger');
-  const search = document.querySelector('.js-search');
-
-  nav.classList.remove('nav-open');
-  navTrigger.classList.remove('nav-open');
-  search.classList.remove('nav-open');
-});
 
 // Site search
 
