@@ -1,7 +1,7 @@
 window.otherLinksConfig = [
     {
         name: 'Kinet',
-        description: 'Touch, responsive, flickable carousels.',
+        description: 'Kind of a most lightweight animation library of all. Changes value with that spring effect, but keeps the rest to you.',
         img: 'https://user-images.githubusercontent.com/9338324/62900410-5ad31500-bd5a-11e9-8a12-479c86bad9f5.gif',
         link: 'https://github.com/gmrchk/kinet',
     },
@@ -27,5 +27,11 @@ window.otherLinksConfig = [
         description: 'Lightweight JavaScript animation library with a simple, yet powerful API.',
         img: 'https://user-images.githubusercontent.com/9338324/62901777-da161800-bd5d-11e9-8012-4605429177d4.gif',
         link: 'https://github.com/juliangarnier/anime/',
+    },
+    {
+        name: 'webftp',
+        description: 'React + Electron FTP client experiment',
+        img: 'https://user-images.githubusercontent.com/9338324/50801034-54238180-12e3-11e9-9571-f7dc75f13092.gif',
+        link: 'https://github.com/gmrchk/webftp',
     },
 ];
