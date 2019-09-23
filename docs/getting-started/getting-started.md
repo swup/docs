@@ -24,3 +24,8 @@ If you're having trouble implementing swup, checkout [Common Issues]({{ "/common
 
 Swup is released under [MIT license](https://github.com/swup/swup/blob/master/LICENSE).
 
+[Become a backer or sponsor on Open Collective](https://opencollective.com/swup)
+
+<a href="https://opencollective.com/swup/donate" class="no-link"><img src="https://opencollective.com/swup/donate/button@2x.png?color=blue" width="300" /></a>
+
+
