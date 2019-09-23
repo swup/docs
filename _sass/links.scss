@@ -1,0 +1,81 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+.links {
+  position: absolute;
+  top: 10rem;
+  left: calc(400px + 50%);
+  opacity: 1;
+  transition: opacity .4s 1s;
+  margin: 0 auto 40px;
+  display: none;
+
+  @media (min-width: 1400px) {
+    display: block;
+  }
+
+  h2 {
+    font-size: 14px !important;
+    color: #27262b;
+    margin: 20px auto 20px;
+  }
+
+  html.is-animating & {
+    transition: opacity .25s;
+    opacity: 0;
+  }
+
+  .page--homepage & {
+    display: none;
+  }
+
+  &__item {
+    display: block;
+    font-size: 14px;
+    width: 270px;
+    padding: 18px;
+    border-radius: 16px;
+    background: #eaeaef;
+    margin: 0 0 20px 20px;
+
+    .has-no-img & {
+      margin-left: 0;
+    }
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 16px;
+    margin: 0 auto;
+  }
+
+  &__img {
+    display: block;
+    margin: -12px -9px 16px -30px;
+    border-radius: 4px;
+    box-shadow: 0 0 0 6px #eaeaef;
+    max-width: calc(100% + 40px);
+    background: #fff;
+    overflow: hidden;
+
+    img {
+      margin: 0 0 -2px;
+      display: block;
+    }
+  }
+
+  &__buttons {
+    text-align: right;
+
+    .btn-link {
+      margin: 0 0 0 10px;
+    }
+  }
+}

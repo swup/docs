@@ -158,11 +158,76 @@ function pageFocus() {
 }
 
 
+function links() {
+  var config = window.otherLinksConfig;
+
+  var displayed = null;
+  var template = `
+        <a class="links__item" href="{link}" data-link>
+            <div class="links__img" data-link-img><img src="{img}" /></div>
+            <div class="links__name">{name}</div>
+            <div class="links__description">{description}</div>
+        </a>`;
+
+  var linksContainer = document.querySelector('[data-links]');
+  var linksAll = document.querySelector('[data-links-all]');
+
+  function addLink(item) {
+    var link = document.createElement('div');
+
+    link.innerHTML = template
+        .replace('{link}', item.link)
+        .replace('{name}', item.name)
+        .replace('{description}', item.description)
+        .replace('{img}', item.img);
+
+    if (!item.img) {
+      link.querySelector('[data-link-img]').outerHTML = '';
+      link.classList.add('has-no-img');
+    }
+
+    linksContainer.appendChild(link);
+  }
+
+  function empty () {
+    linksContainer.innerHTML = '';
+  }
+
+  function showLink(index) {
+    addLink(config[index]);
+  }
+
+  function showLinks() {
+    for (var i = 0; i < config.length; i++) {
+      if (i !== displayed) {
+        showLink(i);
+      }
+    }
+
+    linksAll.style.display = 'none';
+  }
+
+  linksAll.addEventListener('click', showLinks);
+
+  function refresh() {
+    var index = Math.floor(Math.random() * config.length);
+    displayed = index;
+    linksAll.style.display = 'inline-block';
+
+    empty();
+    showLink(index);
+  }
+
+  refresh();
+  swup.on('contentReplaced', refresh);
+}
+
 // Document ready
 
 function ready(){
   toggleNav();
   pageFocus();
+  links();
   if (typeof lunr !== 'undefined') {
     initSearch();
   }
