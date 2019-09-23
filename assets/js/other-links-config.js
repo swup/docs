@@ -31,7 +31,7 @@ window.otherLinksConfig = [
     {
         name: 'webftp',
         description: 'React + Electron FTP client experiment',
-        img: 'https://user-images.githubusercontent.com/9338324/50801034-54238180-12e3-11e9-9571-f7dc75f13092.gif',
+        img: 'https://user-images.githubusercontent.com/9338324/65454648-ddfd8580-de45-11e9-8440-b54618e49023.gif',
         link: 'https://github.com/gmrchk/webftp',
     },
 ];
