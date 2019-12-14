@@ -34,4 +34,10 @@ window.otherLinksConfig = [
         img: 'https://user-images.githubusercontent.com/9338324/50801034-54238180-12e3-11e9-9571-f7dc75f13092.gif',
         link: 'https://github.com/gmrchk/webftp',
     },
+    {
+        name: 'Fred Adams',
+        description: 'Personal website of Fred Adams, young web developer',
+        img: 'https://xtrp.io/api/content/static_files/misc/fred_adams_small_v2_ad.jpg',
+        link: 'https://xtrp.io/'
+    }
 ];
