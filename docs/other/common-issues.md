@@ -147,3 +147,7 @@ Since search engines are improving and starting to simulate actual devices brows
 **[head-plugin]({{ "/plugins/head-plugin" | relative_url }})** could help solve that, as well as deleting the tag from head. There are also other, more reliable alternatives to make search engines index your site correctly, like sitemap.
 
 See [this issue](https://github.com/swup/swup/issues/130) for more information.
+
+## Improving accessibility 
+Since we're dynamically re-rendering parts of the page, it's ideal to add `aria-live="polite"` attribute to the swup containers for screen readers.  
+Unfortunately, this attribute [cannot be added dynamically](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) after page load to work, so it needs to be added manually.  
