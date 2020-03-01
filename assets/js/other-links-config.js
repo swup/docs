@@ -34,4 +34,10 @@ window.otherLinksConfig = [
         img: 'https://user-images.githubusercontent.com/9338324/50801034-54238180-12e3-11e9-9571-f7dc75f13092.gif',
         link: 'https://github.com/gmrchk/webftp',
     },
+    {
+        name: 'Looking for a job in Prague?',
+        description: "Would you like to work with React, Node.js, GraphQL, Kafka and Microservice Architecture? Let's talk! 😎",
+        img: 'https://user-images.githubusercontent.com/9338324/75632922-f5b11500-5c00-11ea-86a9-53daf7af9c8b.png',
+        link: 'mailto:gmarcuk@gmail.com?subject=I%20want%20a%20job&body=Here%20is%20my%20CV',
+    },
 ];
