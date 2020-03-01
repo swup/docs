@@ -45,3 +45,19 @@ const swup = new Swup({
 Changes color of the overlay element.   
 Defaults to `#2D2E82`.
 
+### duration 
+Changes the duration of the overlay animation.    
+Defaults to 600 (ms).
+
+### direction 
+Changes the direction of the overlay animation.    
+Defaults to `to-right`. Available values: `to-right`, `to-left`, `to-bottom` and `to-top`.
+
+### Default options
+```javascript
+new SwupOverlayTheme({
+    color: '#2D2E82',
+    duration: 600,
+    direction: 'to-right',
+});
+```
