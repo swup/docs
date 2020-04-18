@@ -2,7 +2,7 @@
 layout: default
 title: Common Issues
 has_children: false
-nav_order: 1
+nav_order: 2
 permalink: /common-issues
 has_toc: false
 parent: Other

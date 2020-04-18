@@ -2,7 +2,7 @@
 layout: default
 title: Contributions
 has_children: false
-nav_order: 2
+nav_order: 3
 permalink: /contributions
 has_toc: false
 parent: Other
