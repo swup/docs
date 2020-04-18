@@ -9,7 +9,7 @@ parent: Other
 ---
 
 # Changelog
-* [Swup](/#swup)  
+* [Swup](#swup)  
 
 ## Main swup package
 Started at version 2.0.9
