@@ -133,6 +133,13 @@
     color: $body-heading-color;
     text-decoration: none;
   }
+
+  img {
+    width: 14px;
+    display: inline-block;
+    margin: 0 0 0 2px;
+    transform: translate(0px, 1px);
+  }
 }
 
 .main-nav {

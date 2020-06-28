@@ -48,7 +48,14 @@
                                 {% for child in children_list %}
                                 {% if child.parent == page.title and child.title != page.title %}
                                 <li>
-                                    <a href="{{ child.url | absolute_url }}">{{ child.title }}</a>
+                                    {% if child.external_link %}
+                                        <a href="{{ child.external_link }}" target="_blank">
+                                            {{ child.title }}
+                                            <img src="{{ "/assets/images/external-link-symbol.svg" | relative_url }}" alt="{{ child.title }}"/>
+                                        </a>
+                                    {% else %}
+                                        <a href="{{ child.url | absolute_url }}">{{ child.title }}</a>
+                                    {% endif %}
                                 </li>
                                 {% endif %}
                                 {% endfor %}

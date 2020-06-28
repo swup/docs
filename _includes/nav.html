@@ -18,18 +18,13 @@
                       {% if page.url == child.url or page.parent == child.title %}
                         {% assign second_level_url = child.url | absolute_url %}
                       {% endif %}
-                      <a href="{{ child.url | absolute_url }}" class="navigation-list-link{% if page.url == child.url %} active{% endif %}">{{ child.title }}</a>
-                      {% if child.has_children %}
-                        {% assign grand_children_list = site.html_pages | sort:"nav_order" %}
-                        <ul class="navigation-list-child-list">
-                          {% for grand_child in grand_children_list %}
-                            {% if grand_child.parent == child.title %}
-                              <li class="navigation-list-item {% if page.url == grand_child.url %} active{% endif %}">
-                                <a href="{{ grand_child.url | absolute_url }}" class="navigation-list-link{% if page.url == grand_child.url %} active{% endif %}">{{ grand_child.title }}</a>
-                              </li>
-                            {% endif %}
-                          {% endfor %}
-                        </ul>
+                      {% if child.external_link %}
+                        <a href="{{ child.external_link }}" class="navigation-list-link" target="_blank">
+                          {{ child.title }}
+                          <img src="{{ "/assets/images/external-link-symbol.svg" | relative_url }}" alt="{{ child.title }}"/>
+                        </a>
+                      {% else %}
+                        <a href="{{ child.url | absolute_url }}" class="navigation-list-link{% if page.url == child.url %} active{% endif %}">{{ child.title }}</a>
                       {% endif %}
                     </li>
                   {% endif %}

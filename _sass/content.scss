@@ -61,6 +61,13 @@
         color: $grey-dk-000;
         content: "•";
       }
+
+      img {
+        width: 14px;
+        display: inline-block;
+        margin: 0 0 0 2px;
+        transform: translate(0px, 1px);
+      }
     }
   }
 

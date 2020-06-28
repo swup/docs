@@ -2,7 +2,7 @@
 layout: default
 title: CLI
 has_children: true
-nav_order: 7
+nav_order: 8
 permalink: /cli
 has_toc: false
 ---
