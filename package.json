@@ -18,7 +18,7 @@
   },
   "scripts": {
     "test": "start-server-and-test test:server http://localhost:8080 test:run",
-    "test:server": "http-server _site",
+    "test:server": "http-server _site -s",
     "test:run": "swup validate"
   }
 }
