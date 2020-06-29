@@ -7,7 +7,7 @@ permalink: /getting-started
 has_toc: false
 ---
 # Getting Started
-Looking for **what's new in v2**? Head over [here](https://medium.com/@gmarcuk/introducing-swup-v2-814e40316dee).
+Looking for **what's new in v2**? Head over [here](https://medium.com/@gmarcuk/introducing-swup-v2-814e40316dee) or check [changelog]({{ "/changelog" | relative_url }}) for recent changes.
 
 New to swup? Little intro: 
  
@@ -17,12 +17,16 @@ New to swup? Little intro:
 * Forget about timing. swup [detects the end of your animations]({{ "/options#animation-selector" | relative_url }}) and controls the whole lifecycle of transition automatically.
 * Don't worry about browser history… swup takes care of it, changes the url when it's needed and preserves browser native behavior on popState events.
 * Has some cool additional features for even better experience like [cache]({{ "/options#cache" | relative_url }}), smart [preload]({{ "/plugins/preload-plugin" | relative_url }}) without DDOSing your server, badass smooth "acceleration based" [scroll]({{ "/plugins/scroll-plugin" | relative_url }}) control, helpful [debug plugin]({{ "/plugins/debug-plugin" | relative_url }}), support for [forms]({{ "/plugins/forms-plugin" | relative_url }}) and much more.
+* Like to make sure your site has no bugs? We do too... you can use swup [CI/CD integration]({{ "/ci-cd" | relative_url }}) for that, or just use [swup CLI]({{ "/cli" | relative_url }}) to check manually.
+* Be sure to checkout cool [third-party integrations]({{ "/third-party-integrations" | relative_url }}) as well. 
 
 In case you like to do your animations in JavaScript, you may want to check out **[js-plugin]({{ "/plugins/js-plugin" | relative_url }})**.
 
 If you're having trouble implementing swup, checkout [Common Issues]({{ "/common-issues" | relative_url }}), [Closed Issues](https://github.com/swup/swup/issues?q=is%3Aissue+is%3Aclosed) or open a [new one](https://github.com/swup/swup/issues/new).
 
 Swup is released under [MIT license](https://github.com/swup/swup/blob/master/LICENSE).
+
+<p><div style="position:relative;height:35px;width:107px"><iframe src="https://github.com/sponsors/gmrchk/button" title="Sponsor gmrchk" height="35" width="107" style="border: 0;"></iframe></div></p>
 
 [Become a backer or sponsor on Open Collective](https://opencollective.com/swup)
 
