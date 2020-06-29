@@ -17,6 +17,7 @@ New to swup? Little intro:
 * Forget about timing. swup [detects the end of your animations]({{ "/options#animation-selector" | relative_url }}) and controls the whole lifecycle of transition automatically.
 * Don't worry about browser history… swup takes care of it, changes the url when it's needed and preserves browser native behavior on popState events.
 * Has some cool additional features for even better experience like [cache]({{ "/options#cache" | relative_url }}), smart [preload]({{ "/plugins/preload-plugin" | relative_url }}) without DDOSing your server, badass smooth "acceleration based" [scroll]({{ "/plugins/scroll-plugin" | relative_url }}) control, helpful [debug plugin]({{ "/plugins/debug-plugin" | relative_url }}), support for [forms]({{ "/plugins/forms-plugin" | relative_url }}) and much more.
+* Like to make sure your site has no bugs? We do too... you can use swup [CI/CD integration]({{ "/ci-cd" | relative_url }}) for that, or just use [swup CLI]({{ "/cli" | relative_url }}) to check manually.
 
 In case you like to do your animations in JavaScript, you may want to check out **[js-plugin]({{ "/plugins/js-plugin" | relative_url }})**.
 
