@@ -6,7 +6,7 @@
   "license": "MIT",
   "bugs": "https://github.com/pmarsceill/just-the-docs/issues",
   "devDependencies": {
-    "@swup/cli": "^4.0.1",
+    "@swup/cli": "^4.0.2",
     "http-server": "^0.12.1",
     "start-server-and-test": "^1.11.0",
     "stylelint": "^10.0.1",
