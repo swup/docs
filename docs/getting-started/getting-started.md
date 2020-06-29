@@ -7,7 +7,7 @@ permalink: /getting-started
 has_toc: false
 ---
 # Getting Started
-Looking for **what's new in v2**? Head over [here](https://medium.com/@gmarcuk/introducing-swup-v2-814e40316dee).
+Looking for **what's new in v2**? Head over [here](https://medium.com/@gmarcuk/introducing-swup-v2-814e40316dee) or check [changelog]({{ "/changelog" | relative_url }}) for recent changes.
 
 New to swup? Little intro: 
  
@@ -24,6 +24,8 @@ In case you like to do your animations in JavaScript, you may want to check out 
 If you're having trouble implementing swup, checkout [Common Issues]({{ "/common-issues" | relative_url }}), [Closed Issues](https://github.com/swup/swup/issues?q=is%3Aissue+is%3Aclosed) or open a [new one](https://github.com/swup/swup/issues/new).
 
 Swup is released under [MIT license](https://github.com/swup/swup/blob/master/LICENSE).
+
+<p><div style="position:relative;height:35px;width:107px"><iframe src="https://github.com/sponsors/gmrchk/button" title="Sponsor gmrchk" height="35" width="107" style="border: 0;"></iframe></div></p>
 
 [Become a backer or sponsor on Open Collective](https://opencollective.com/swup)
 
