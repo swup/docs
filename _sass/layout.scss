@@ -112,11 +112,11 @@
 .search-holder {
   display: block;
   width: 100%;
-  padding: 30px 10px 10px;
+  padding: 50px 10px 10px;
 
   @include mq(md) {
     padding: 16px 20px 0 0;
-    width: 340px;
+    width: 470px;
     height: 44px;
     display: flex;
   }
@@ -171,7 +171,7 @@
 }
 
 .navigation {
-  padding: 20px 20px 0;
+  padding: 50px 20px 0;
   margin-bottom: -20px;
 
   @include mq(md) {

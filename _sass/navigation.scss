@@ -167,20 +167,20 @@
 
 .aux-nav {
   display: block;
-  top: 80px;
+  top: 100px;
   left: 10px;
   position: absolute;
 
   @include mq(md) {
     position: relative;
-    top: 0;
+    top: -1px;
     left: 0;
   }
 }
 
 .navigation-list-toggle {
   position: absolute;
-  top: 74px;
+  top: 100px;
   right: 10px;
 
   @include mq(md) {
