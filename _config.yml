@@ -17,7 +17,7 @@ title: Swup
 email: gmarcuk@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   Complete, flexible, extensible and easy to use page transition library for your web.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "https://swup.js.org" # the subpath of your site, e.g. /blog
 url: "https://swup.js.org" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: gmrchk
 github_username:  gmrchk
