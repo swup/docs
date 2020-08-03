@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Contributions
+description: Any contributions or suggestions are more than welcome
 has_children: false
 nav_order: 3
 permalink: /contributions

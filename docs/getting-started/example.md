@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Example
+description: A few steps to get swup working on your site
 parent: Getting Started
 nav_order: 3
 permalink: /getting-started/example

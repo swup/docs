@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Getting Started
+description: Complete, flexible, extensible, open source, free, and easy to use page transition library for your web
 has_children: true
 nav_order: 1
 permalink: /getting-started

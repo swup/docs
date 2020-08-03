@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Themes
+description: List of official themes
 has_children: true
 nav_order: 5
 permalink: /themes

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Methods
+description: Methods to control swup instance from your code
 nav_order: 1
 parent: API
 permalink: /api/methods

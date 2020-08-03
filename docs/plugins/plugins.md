@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Plugins
+description: List of available official plugins
 has_children: true
 nav_order: 4
 permalink: /plugins

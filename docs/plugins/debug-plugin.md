@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Debug Plugin
+description: Plugin to display debug information and tips
 parent: Plugins
 nav_order: 2
 permalink: /plugins/debug-plugin

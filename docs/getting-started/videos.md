@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Video tutorials
+description: A few video tutorials by people around the web
 has_children: false
 nav_order: 6
 permalink: /getting-started/videos

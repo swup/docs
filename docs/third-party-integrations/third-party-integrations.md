@@ -1,6 +1,7 @@
 ---
 layout: default
 title: 3rd Party Integrations
+description: List of external integrations done by awesome people around the web
 has_children: true
 nav_order: 6
 permalink: /third-party-integrations
