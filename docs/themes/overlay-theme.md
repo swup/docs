@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Overlay Theme
+description: Theme to hide pages behind overlay on the transition
 parent: Themes
 nav_order: 3
 permalink: /themes/overlay-theme

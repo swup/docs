@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Body Class Plugin
+description: Plugin to replace body classes for each loaded page
 parent: Plugins
 nav_order: 1
 permalink: /plugins/body-class-plugin

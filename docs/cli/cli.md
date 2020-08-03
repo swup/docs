@@ -1,6 +1,7 @@
 ---
 layout: default
 title: CLI
+description: Swup handy CLI serves to start creating plugins and themes in a matter of seconds, or validate your site setup
 has_children: true
 nav_order: 8
 permalink: /cli
@@ -8,7 +9,7 @@ has_toc: false
 ---
 
 # CLI
-Swup handy CLI serves to start creating plugins and themes in a matter of seconds. 
+Swup handy CLI serves to start creating plugins and themes in a matter of seconds, or validate your site setup.
 
 ## Installation
 Install swup CLI globally on your machine

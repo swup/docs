@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Cache
+description: Swup cache methods
 nav_order: 2
 parent: API
 permalink: /api/cache

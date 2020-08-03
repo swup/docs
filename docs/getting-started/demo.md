@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Demo
+description: Here are some demo links
 parent: Getting Started
 nav_order: 4
 permalink: /getting-started/demo

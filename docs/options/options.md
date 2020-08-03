@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Options
+description: Swup has a several options that can be passed into a constructor as an object
 has_children: true
 nav_order: 2
 permalink: /options

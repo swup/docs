@@ -1,6 +1,7 @@
 ---
 layout: default
 title: CI/CD
+description: You can test your site after each deployment, or as a part of the deploy process
 has_children: true
 nav_order: 8
 permalink: /ci-cd

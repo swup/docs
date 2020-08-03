@@ -1,6 +1,7 @@
 ---
 layout: default
 title: API
+description: The instance of the swup can be imported and used across your sites JavaScript to enable some additional features.
 has_children: true
 nav_order: 7
 permalink: /api

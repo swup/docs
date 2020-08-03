@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Preload Plugin
+description: Plugin to preload pages ahead of time
 parent: Plugins
 nav_order: 9
 permalink: /plugins/preload-plugin

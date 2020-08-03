@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Head Plugin
+description: Plugin to replace tags in the head tag
 parent: Plugins
 nav_order: 7
 permalink: /plugins/head-plugin

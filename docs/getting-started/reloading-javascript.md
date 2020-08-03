@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Reloading Javascript
+description: Since swup removes the page reloads from site, it also removes a standard lifecycle of scripts
 parent: Getting Started
 nav_order: 5
 permalink: /getting-started/reloading-javascript

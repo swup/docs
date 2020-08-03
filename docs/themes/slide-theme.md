@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Slide Theme
+description: Theme to slide and fade pages on the transition
 parent: Themes
 nav_order: 2
 permalink: /themes/slide-theme

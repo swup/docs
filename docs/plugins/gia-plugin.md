@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Gia Plugin
+description: Plugin to enable Gia components in swup containers
 parent: Plugins
 nav_order: 5
 permalink: /plugins/gia-plugin

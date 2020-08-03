@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Create Theme 🎉
+description: Create your own theme
 parent: Themes
 nav_order: 4
 permalink: /themes/create-theme

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Helpers
+description: Helpers that can be used for developing plugins, themes or anything else around swup
 nav_order: 3
 parent: API
 permalink: /api/helpers

@@ -1,6 +1,7 @@
 ---
 layout: default
 title: GTM Plugin
+description: Plugin to trigger GTM page view events
 parent: Plugins
 nav_order: 6
 permalink: /plugins/google-tag-manager-plugin

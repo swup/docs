@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Fade Theme
+description: Theme to fade pages on the transition
 parent: Themes
 nav_order: 1
 permalink: /themes/fade-theme
