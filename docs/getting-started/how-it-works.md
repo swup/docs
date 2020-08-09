@@ -8,7 +8,8 @@ permalink: /getting-started/how-it-works
 ---
 # How it works
 
-Think of swup as being pjax on steroids. Apart from loading the contents of the new page and replacing required parts in DOM, swup is built around CSS transition.
+Think of swup as being pjax on steroids. The concepts are similar to those use in barba.js or other transition libraries, but swup gives more attention to ease of use and flexibility.    
+Apart from loading the contents of the new page and replacing required parts in DOM, swup is built around CSS transition.
 The main thing that needs to be done is defining hidden state in CSS.
 Swup detects the end of transition of animated elements and proceeds to replacing the content of containers and animating your page back.
 For the animations based on CSS to be possible, swup uses several classes that are assigned to the `html` tag through the process of page transition.
