@@ -7,7 +7,7 @@ nav_order: 5
 permalink: /getting-started/reloading-javascript
 ---
 # Reloading Javascript
-Since swup removes the page reloads from site, it also removes a standard lifecycle of scripts. 
+Since swup removes the page reloads from site, it also removes a standard lifecycle of scripts, which come with a set of problems that those pjax-like libraries bring.  
 By default, scripts get enabled when the page is loaded. Often we would find ourselves waiting for whole page to load before executing the script.
 
 ```javascript
