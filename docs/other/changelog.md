@@ -11,6 +11,11 @@ parent: Other
 
 # Changelog
 
+### @swup/docs - new Matomo plugin
+* Matomo plugin by [jdraserschieb](https://github.com/jdraserschieb) 👏
+
+---
+
 ### @swup/cli@4.0.0 - new CLI validate command in 
 New [CLI validate command]({{ "/cli#validating-site" | relative_url }}) for validating running sites manually, or for use with [CI/CD pipeline]({{ "/ci-cd" | relative_url }}).
 
