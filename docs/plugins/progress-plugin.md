@@ -3,7 +3,7 @@ layout: default
 title: Progress Bar Plugin
 description: Plugin for displaying a loading indicator 
 parent: Plugins
-nav_order: 4
+nav_order: 11
 permalink: /plugins/progress-plugin
 repo_link: /progress-plugin
 ---

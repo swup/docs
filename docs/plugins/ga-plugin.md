@@ -3,7 +3,7 @@ layout: default
 title: GA Plugin
 description: Plugin to trigger GA page views
 parent: Plugins
-nav_order: 4
+nav_order: 5
 permalink: /plugins/google-analytics-plugin
 repo_link: /ga-plugin
 ---
