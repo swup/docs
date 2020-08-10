@@ -3,7 +3,7 @@ layout: default
 title: Create Plugin 🎉
 description: Create your own plugin
 parent: Plugins
-nav_order: 12
+nav_order: 14
 permalink: /plugins/create-plugin
 ---
 

@@ -3,7 +3,7 @@ layout: default
 title: Forms Plugin
 description: Plugin to submit forms with transitions
 parent: Plugins
-nav_order: 3
+nav_order: 4
 permalink: /plugins/forms-plugin
 repo_link: /forms-plugin
 ---

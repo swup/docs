@@ -3,7 +3,7 @@ layout: default
 title: Scroll Plugin
 description: Plugin to control scroll position of the page 
 parent: Plugins
-nav_order: 11
+nav_order: 13
 permalink: /plugins/scroll-plugin
 repo_link: /scroll-plugin
 ---
