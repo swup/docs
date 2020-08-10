@@ -14,8 +14,12 @@ parent: Other
 ### @swup/a11y-plugin - new Accessibility plugin
 * Accessibility plugin by [daun](https://github.com/daun) 👏
 
+---
+
 ### @swup/progress-plugin - new Progress Bar plugin
 * Progress Bar plugin by [daun](https://github.com/daun) 👏
+
+---
 
 ### @swup/matomo-plugin - new Matomo plugin
 * Matomo plugin by [jdraserschieb](https://github.com/jdraserschieb) 👏
