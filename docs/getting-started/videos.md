@@ -11,6 +11,9 @@ parent: Getting Started
 
 # Videos about swup
 
+## by AnimatiCSS (in Spanish)
+<div class="iframe"><iframe width="560" height="315" src="https://www.youtube.com/watch?v=mJIQ9621VUs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+
 ## by Web Dev Simplified
 <div class="iframe"><iframe width="560" height="315" src="https://www.youtube.com/embed/eVwH3VL1EsA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
 
