@@ -37,7 +37,8 @@ By default, you can add `[data-no-swup]` attribute to the link, if you want to e
 ## Animation Selector
 
 As swup is built on animations, it is required to define the elements that are being animated. Usually, you would like to give the elements some common class or class prefix.
-By default option is set to `[class*='transition-']`, which selects all elements with class attribute containing `transition-`.
+By default option is set to `[class*='transition-']`, which selects all elements with class attribute containing `transition-`.  
+Note that class `swup-...` is also used internally by swup (for example `swup-enabled`), so setting the option to `[class*='swup-']` won't work. Use `[class*='swup-transition-']` instead.
 
 ```javascript
 const options = {
