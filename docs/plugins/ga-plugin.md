@@ -20,6 +20,8 @@ window.ga('set', 'page', window.location.pathname + window.location.search);
 window.ga('send', 'pageview');
 ```
 
+**Note:** It has been reported that the plugin stopped working in some cases. It probably depends on the method used to load GA as well. If you encounter a problem, consider switching to [Gtag plugin](https://github.com/joshuaHallee/swup-gtag-plugin).
+
 ## Installation
 This plugin can be installed with npm
 
