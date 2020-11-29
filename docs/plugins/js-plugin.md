@@ -3,7 +3,7 @@ layout: default
 title: JS Plugin
 description: Plugin to use JS animations instead of CSS
 parent: Plugins
-nav_order: 9
+nav_order: 11
 permalink: /plugins/js-plugin
 repo_link: /js-plugin
 ---

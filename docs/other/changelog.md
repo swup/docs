@@ -11,6 +11,11 @@ parent: Other
 
 # Changelog
 
+### @swup/custom-payload-plugin - new Custom Payload plugin
+* Custom Payload plugin 🎉
+
+---
+
 ### @swup/a11y-plugin - new Accessibility plugin
 * Accessibility plugin by [daun](https://github.com/daun) 👏
 

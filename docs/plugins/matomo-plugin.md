@@ -3,7 +3,7 @@ layout: default
 title: Matomo Plugin
 description: Plugin to trigger Matomo page views
 parent: Plugins
-nav_order: 4
+nav_order: 12
 permalink: /plugins/matomo-plugin
 repo_link: /matomo-plugin
 ---
