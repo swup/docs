@@ -94,6 +94,8 @@ const arrayOfPromises = swup.getAnimationPromises();
 ```
 
 ## getPageData
+**Note:** This method is rather internal and is utilized by [custom payload plugin]({{ "/plugins/custom-payload-plugin" | relative_url }}). Use the plugin instead. 
+
 Gets `response` object received from server.
 Returns page data that are store by swup in cache.
 This method can be modified to accept other types of response from server, but must always return at least the fields below. 
