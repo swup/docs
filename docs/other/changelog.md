@@ -11,7 +11,12 @@ parent: Other
 
 # Changelog
 
-### @swup/swup@2.0.12 - Fix bug where animateHistoryBrowsing option was ignored for OUT animations
+### @swup/head-plugin@1.1.0 - add `persistAssets` and `persistTags` options
+* Adds ability to persist tags and stop the plugin from removing certain tags. Especially useful for stopping the plugin from removing scripts/styles added by external scripts. [PR](https://github.com/swup/head-plugin/pull/11) by [daun](https://github.com/daun) 👏
+
+---
+
+### @swup/swup@2.0.12 - fix bug where animateHistoryBrowsing option was ignored for OUT animations
 * Problem mainly for JS plugin. Related issue [here](https://github.com/swup/swup/issues/264). 
 
 ---
