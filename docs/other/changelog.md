@@ -11,6 +11,11 @@ parent: Other
 
 # Changelog
 
+### @swup/swup@2.0.12 - Fix bug where animateHistoryBrowsing option was ignored for OUT animations
+* Problem mainly for JS plugin. Related issue [here](https://github.com/swup/swup/issues/264). 
+
+---
+
 ### @swup/custom-payload-plugin - new Custom Payload plugin
 * Custom Payload plugin 🎉
 
