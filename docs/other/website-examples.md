@@ -12,8 +12,8 @@ parent: Other
 # Example of websites using swup
 To get an idea of what swup does...  
 
-* [Metropolis Moving: NYC's Friendliest Moving Professionals | Brooklyn, New York](https://metropolismoving.com/)
-* [Karachi Website Design & Web Development Company Pakistan | Pexsol](https://www.pexsol.com/)
+* [Metropolis Moving: NYC's Friendliest Moving Professionals - Brooklyn, New York](https://metropolismoving.com/)
+* [Karachi Website Design & Web Development Company Pakistan - Pexsol](https://www.pexsol.com/)
 * [FELIX GAUDLITZ](felixgaudlitz.com)   
 * [Kyle Decker - Personal website](https://kyledecker.me/)   
 * [Tvoříme lepší svět - Panasonic](https://plzen.cz.panasonic.com/)   
