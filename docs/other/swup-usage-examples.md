@@ -21,4 +21,4 @@ To get an idea of what swup does...
 * [Plan-k - KPMG](https://www.plan-k.cz/)   
 * [Dělej, co tě baví - Decathlon](http://delejcotebavi.decathlon.cz/)   
 
-If you'd like to share your work utilizing swup with me or others, please, drop me a link at <a href="mailto:gmarcuk@gmail.com?subject=My awesome project using swup">gmarcuk@gmail.com</a>, or just [edit the page](https://github.com/swup/docs/blob/master/docs/swup-usage-examples.md) on GitHub yourself.
+If you'd like to share your work utilizing swup with me or others, please, drop me a link at <a href="mailto:gmarcuk@gmail.com?subject=My awesome project using swup">gmarcuk@gmail.com</a>, or just [edit the page](https://github.com/swup/docs/blob/master/docs/other/swup-usage-examples.md) on GitHub yourself.
