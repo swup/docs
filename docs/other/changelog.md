@@ -11,6 +11,11 @@ parent: Other
 
 # Changelog
 
+### @swup/swup@2.0.13 - update broken links
+* Just a tiny update of broken links. 
+
+---
+
 ### @swup/head-plugin@1.1.0 - add `persistAssets` and `persistTags` options
 * Adds ability to persist tags and stop the plugin from removing certain tags. Especially useful for stopping the plugin from removing scripts/styles added by external scripts. [PR](https://github.com/swup/head-plugin/pull/11) by [daun](https://github.com/daun) 👏
 
