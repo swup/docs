@@ -11,6 +11,13 @@ parent: Other
 
 # Changelog
 
+### @swup/docs - new third-party integrations listed 
+* HTML Lang plugin by [mashvp](https://github.com/mashvp) 👏
+* Meta Tags plugin by [Accudio](https://github.com/Accudio) 👏
+* Morph plugin by [daun](https://github.com/daun) 👏
+
+---
+
 ### @swup/head-plugin@1.1.0 - add `persistAssets` and `persistTags` options
 * Adds ability to persist tags and stop the plugin from removing certain tags. Especially useful for stopping the plugin from removing scripts/styles added by external scripts. [PR](https://github.com/swup/head-plugin/pull/11) by [daun](https://github.com/daun) 👏
 
