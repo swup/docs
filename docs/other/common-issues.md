@@ -4,7 +4,7 @@ title: Common Issues
 description: Description of common issue or caveats people encounter
 has_children: false
 nav_order: 2
-permalink: /common-issues
+permalink: /other/common-issues
 has_toc: false
 parent: Other
 ---

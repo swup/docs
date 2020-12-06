@@ -4,7 +4,7 @@ title: Changelog
 description: Changelog of swup related packages
 has_children: false
 nav_order: 1
-permalink: /changelog
+permalink: /other/changelog
 has_toc: false
 parent: Other
 ---

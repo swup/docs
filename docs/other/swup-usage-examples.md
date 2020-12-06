@@ -4,7 +4,7 @@ title: Swup usage examples
 description: A few exmaples of websites using swup
 has_children: false
 nav_order: 4
-permalink: /swup-usage-examples
+permalink: /other/swup-usage-examples
 has_toc: false
 parent: Other
 ---
