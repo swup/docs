@@ -7,4 +7,5 @@ nav_order: 1
 permalink: /newsletter
 has_toc: false
 nav_exclude: true
+sitemap: false
 ---
