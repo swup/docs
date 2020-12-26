@@ -11,6 +11,12 @@ parent: Other
 
 # Changelog
 
+### @swup/docs - some changes to the swup docs 
+* Sites using swup can now be found in [dedicated GitHub discussion](https://github.com/swup/swup/discussions/333), where anyone can leave their own links.
+* You can now signup for a swup newsletter, to get notified of any major updates. 
+
+---
+
 ### @swup/forms-plugin@1.1.0 - support for `data-swup-transition`
 * Add support for `data-swup-transition` on form element, which will make swup choose correct animation based on the attribute content, just like it does with links.
 
