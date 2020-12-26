@@ -15,6 +15,8 @@ Swup will take the form data and submit it with appropriate `method` and `action
 In case of `GET` method, swup serializes the data into url. 
 For `POST` requests, swup wraps the data and sends it via POST request. 
 
+This form also considers the `data-swup-transition` attribute on the form element to use the appropriate animation. 
+
 **Note:** This feature is rather experimental and serves to enable submission of simple forms such as "search on website" form. 
 The response from the server must be a valid page with all containers that need to be replaced by swup.
 This method does not support submission of files, or other advanced features. 

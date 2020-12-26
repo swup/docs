@@ -11,6 +11,11 @@ parent: Other
 
 # Changelog
 
+### @swup/forms-plugin@1.1.0 - support for `data-swup-transition`
+* Add support for `data-swup-transition` on form element, which will make swup choose correct animation based on the attribute content, just like it does with links.
+
+---
+
 ### @swup/docs - new third-party integrations listed 
 * HTML Lang plugin by [mashvp](https://github.com/mashvp) 👏
 * Meta Tags plugin by [Accudio](https://github.com/Accudio) 👏
