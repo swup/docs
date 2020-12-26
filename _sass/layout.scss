@@ -100,15 +100,15 @@
     height: 100%;
     border: 0;
   }
+}
 
-  .newsletter {
-    margin-top: 60px;
+.newsletter {
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+
+  iframe {
     position: relative;
-    overflow: hidden;
-
-    iframe {
-      position: relative;
-    }
   }
 }
 
