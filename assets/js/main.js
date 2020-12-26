@@ -35,6 +35,12 @@ function checkTheme() {
   }
 };
 
+if (document.querySelector('iframe#newsletter')) {
+  document.querySelector('iframe#newsletter').addEventListener('load', function () {
+    this.style.height = this.contentWindow.document.documentElement.scrollHeight + 'px';
+  });
+}
+
 function resizeNewsletterIframe() {
   var iframe = document.querySelector('iframe#newsletter');
   iframe.style.height = iframe.contentWindow.document.documentElement.scrollHeight + 'px';
