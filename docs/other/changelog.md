@@ -14,6 +14,7 @@ parent: Other
 ### @swup/docs - some changes to the swup docs 
 * Sites using swup can now be found in [dedicated GitHub discussion](https://github.com/swup/swup/discussions/333), where anyone can leave their own links.
 * You can now signup for a swup newsletter, to get notified of any major updates. 
+* Add link to list of all swup repositories.
 
 ---
 
