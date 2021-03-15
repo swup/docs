@@ -32,7 +32,7 @@ parent: Other
 ---
 
 ### @swup/forms-plugin@1.1.1 - fix import from swup dependency import
-* Exports changed in swup package made this plugin incompatible with lates swup. Fixed in [PR](https://github.com/swup/forms-plugin/pull/13) by [fracsi](https://github.com/fracsi).
+* Exports changed in swup package made this plugin incompatible with lates swup. Fixed in [PR](https://github.com/swup/forms-plugin/pull/13) by [fracsi](https://github.com/fracsi). 👏
 
 ---
 
