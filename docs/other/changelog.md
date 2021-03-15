@@ -11,6 +11,31 @@ parent: Other
 
 # Changelog
 
+### @swup/a11y-plugin@2.0.0 - Plugin now has a unified name of `SwupA11yPlugin`. **This is a breaking change!**
+* Given the plugins unusual name, the official name of the plugin was `SwupA11yPlugin`, while the global reference created by the plugin imported with a script was `SwupA11YPlugin`. The plugin name is now unified for all use cases. [PR](https://github.com/swup/a11y-plugin/pull/4) by [daun](https://github.com/daun) 👏
+
+---
+
+### @swup/ga-plugin@1.1.0 - Plugin now supports GTAG.
+* GA can be loaded in different ways to the page. Plugin now tries to use the new standard of global `window.gtag` implementation, and fallbacks to the old `window.ga`. New `gaMeasurementId` option was added for the new implementation. [PR](https://github.com/swup/ga-plugin/pull/4) by [studio-blueboat](https://github.com/studio-blueboat) 👏
+
+---
+
+### @swup/head-plugin@1.2.0 - Head plugin now replaces the `lang`. 
+* Head plugin now replaces the `lang`, since that's a pretty related to it's original purpose of replacing meta/other tags inside of the `head` tag. [PR](https://github.com/swup/head-plugin/pull/10) by [daun](https://github.com/daun) 👏
+
+---
+
+### @swup/progress-plugin@1.0.1 - Mark style tag with data attribute to allow identification
+* Mark style tag with data attribute to allow identification. [PR](https://github.com/swup/head-plugin/pull/11) by [daun](https://github.com/daun) 👏
+
+---
+
+### @swup/forms-plugin@1.1.1 - fix import from swup dependency import
+* Exports changed in swup package made this plugin incompatible with lates swup. Fixed in [PR](https://github.com/swup/forms-plugin/pull/13) by [fracsi](https://github.com/fracsi).
+
+---
+
 ### @swup/docs - some changes to the swup docs 
 * Sites using swup can now be found in [dedicated GitHub discussion](https://github.com/swup/swup/discussions/333), where anyone can leave their own links.
 * You can now signup for a swup newsletter, to get notified of any major updates. 
