@@ -8,7 +8,7 @@ permalink: /plugins/livewire-plugin
 repo_link: /livewire-plugin
 ---
 
-# Livewire Plugin
+# Laravel Livewire Plugin
 
 [Laravel Livewire](https://laravel-livewire.com/) doesn't work by default with Swup.
 The Livewire components work on initial page load but stop working on subsequent pages rendered by Swup.
