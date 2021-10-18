@@ -159,7 +159,12 @@ function pageFocus() {
 
 
 function links() {
-  var config = window.otherLinksConfig;
+  var config = window.otherLinksConfig.filter(function(item) {
+    return !item.always;
+  });
+  var configAlwaysDisplayed = window.otherLinksConfig.filter(function(item) {
+    return item.always;
+  });
 
   var displayed = null;
   var template = `
@@ -194,6 +199,12 @@ function links() {
   }
 
   function showLink(index) {
+    for (var i = 0; i < configAlwaysDisplayed.length; i++) {
+      if (i !== displayed) {
+        addLink(configAlwaysDisplayed[i]);
+      }
+    }
+
     addLink(config[index]);
   }
 

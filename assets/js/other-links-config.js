@@ -40,4 +40,11 @@ window.otherLinksConfig = [
         img: 'https://user-images.githubusercontent.com/9338324/75632922-f5b11500-5c00-11ea-86a9-53daf7af9c8b.png',
         link: 'mailto:gmarcuk@gmail.com?subject=I%20want%20a%20job&body=Here%20is%20my%20CV',
     },
+    {
+        name: 'Blobity',
+        description: "The cursor is the heart of any interaction with the web. Why not take it to the next level? 🚀",
+        img: 'https://user-images.githubusercontent.com/9338324/137640895-7a9f25c0-4741-48b4-9c9a-c12fe4e352bc.png',
+        link: 'https://blobity.dev/',
+        always: true
+    },
 ];
