@@ -198,10 +198,12 @@ function links() {
     linksContainer.innerHTML = '';
   }
 
-  function showLink(index) {
-    for (var i = 0; i < configAlwaysDisplayed.length; i++) {
-      if (i !== displayed) {
-        addLink(configAlwaysDisplayed[i]);
+  function showLink(index, withAlwaysDisplayedLinks) {
+    if (withAlwaysDisplayedLinks) {
+      for (var i = 0; i < configAlwaysDisplayed.length; i++) {
+        if (i !== displayed) {
+          addLink(configAlwaysDisplayed[i]);
+        }
       }
     }
 
@@ -211,7 +213,7 @@ function links() {
   function showLinks() {
     for (var i = 0; i < config.length; i++) {
       if (i !== displayed) {
-        showLink(i);
+        showLink(i, false);
       }
     }
 
@@ -226,7 +228,7 @@ function links() {
     linksAll.style.display = 'inline-block';
 
     empty();
-    showLink(index);
+    showLink(index, true);
   }
 
   refresh();
