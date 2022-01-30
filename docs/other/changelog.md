@@ -11,6 +11,11 @@ parent: Other
 
 # Changelog
 
+### @swup/livewire-plugin@1.0.0 - new Livewire Plugin 
+* Plugin to refresh Laravel Livewire components after swup page transition by [aerni](https://github.com/aerni) 👏
+
+---
+
 ### @swup/a11y-plugin@2.0.0 - Plugin now has a unified name of `SwupA11yPlugin`. **This is a breaking change!**
 * Given the plugins unusual name, the official name of the plugin was `SwupA11yPlugin`, while the global reference created by the plugin imported with a script was `SwupA11YPlugin`. The plugin name is now unified for all use cases. [PR](https://github.com/swup/a11y-plugin/pull/4) by [daun](https://github.com/daun) 👏
 
