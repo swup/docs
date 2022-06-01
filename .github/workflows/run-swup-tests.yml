@@ -21,9 +21,7 @@ jobs:
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-      - run: env
-    
+    steps:    
       - name: Checkout Current Repo
         uses: actions/checkout@v2
 
@@ -43,8 +41,8 @@ jobs:
             
       - name: Configure Bundler
         run: |
-            echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> "$BASH_ENV"
-            source $BASH_ENV
+            echo 'export BUNDLER_VERSION=$(cat Gemfile.lock | tail -1 | tr -d " ")' >> $GITHUB_ENV
+            source $GITHUB_ENV
             gem install bundler
             
       - name: Install Dependencies
