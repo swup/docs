@@ -159,7 +159,12 @@ function pageFocus() {
 
 
 function links() {
-  var config = window.otherLinksConfig;
+  var config = window.otherLinksConfig.filter(function(item) {
+    return !item.always;
+  });
+  var configAlwaysDisplayed = window.otherLinksConfig.filter(function(item) {
+    return item.always;
+  });
 
   var displayed = null;
   var template = `
@@ -193,14 +198,22 @@ function links() {
     linksContainer.innerHTML = '';
   }
 
-  function showLink(index) {
+  function showLink(index, withAlwaysDisplayedLinks) {
+    if (withAlwaysDisplayedLinks) {
+      for (var i = 0; i < configAlwaysDisplayed.length; i++) {
+        if (i !== displayed) {
+          addLink(configAlwaysDisplayed[i]);
+        }
+      }
+    }
+
     addLink(config[index]);
   }
 
   function showLinks() {
     for (var i = 0; i < config.length; i++) {
       if (i !== displayed) {
-        showLink(i);
+        showLink(i, false);
       }
     }
 
@@ -215,7 +228,7 @@ function links() {
     linksAll.style.display = 'inline-block';
 
     empty();
-    showLink(index);
+    showLink(index, true);
   }
 
   refresh();
