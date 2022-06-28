@@ -40,7 +40,7 @@ import Swup from 'swup';
 const swup = new Swup(); // only this line when included with script tag
 ```
 
-At this point your page is already enhanced as swup will stop page from reloading a replace the content.
+At this point your page is already enhanced as swup will stop page from reloading and replace the content.
 This is especially good with a [preload plugin]({{ "/plugins/preload-plugin" | relative_url }}) which can make your page blazing fast.
 
 ...but let's continue. Add CSS for the element animation.
