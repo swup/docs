@@ -61,7 +61,7 @@ new SwupScrollPlugin({
 ```
 
 ## Changes of swup instance
-Plugins ads `scrollTo` method to the swup instance, which can be later used for custom scrolling. 
+Plugin adds `scrollTo` method to the swup instance, which can be later used for custom scrolling. 
 Method accepts offset in pixels or element you want to scroll to.
 
 Plugin also adds `scrollStart` and `scrollDone` events to swup, that can be listened to with `on` method.  
