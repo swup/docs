@@ -13,7 +13,7 @@ Think of swup as being pjax on steroids. The concepts are similar to those used 
 Apart from loading the contents of the new page and replacing the required parts in the DOM, swup is built around CSS transitions.
 The main thing that needs to be done is defining a hidden state in CSS.
 
-Swup waits for all elements on the current page that contain the class `transition-[something]` to finish their transition and then proceeds to replacing the content of containers and animating your page back. We recommend that you set the `transition-[something]` class on **only one element** for each page. Swup will look at this element's `transition-duration` CSS property, to determine how long it should wait before switching to a new page. All other elements you want to animate during page transitions should be animated independently (without using a separate `transition-[something]` class for each of them).
+Swup waits for all elements on the current page that contain the class `transition-[something]` to finish their transition and then proceeds to replacing the content of containers and animating your page back. We recommend that you set the `transition-[something]` class on **only one element** for each page. All other elements you want to animate during page transitions should be animated independently (without using a separate `transition-[something]` class for each of them).
 
 For the animations based on CSS to be possible, swup uses several classes that are assigned to the `html` tag through the process of a page transition. 
 
