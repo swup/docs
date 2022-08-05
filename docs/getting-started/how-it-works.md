@@ -8,13 +8,12 @@ permalink: /getting-started/how-it-works
 ---
 # How it works
 
-Think of swup as being pjax on steroids. The concepts are similar to those used in barba.js or other transition libraries, but swup gives more attention to ease of use and flexibility.    
+Think of swup as being pjax on steroids. The concepts are similar to those used in barba.js or other transition libraries, but swup pays more attention to ease of use and flexibility.    
 
-Apart from loading the contents of the new page and replacing required parts in DOM, swup is built around CSS transition.
-The main thing that needs to be done is defining hidden state in CSS.
+Apart from loading the contents of the new page and replacing the required parts in the DOM, swup is built around CSS transitions.
+The main thing that needs to be done is defining a hidden state in CSS.
 
-Swup detects the end of transition of animated elements and proceeds to replacing the content of containers and animating your page back.
-For the animations based on CSS to be possible, swup uses several classes that are assigned to the `html` tag through the process of page transition.
+Swup detects the end of all transitions on elements that contain the class `transition-[something]` and proceeds to replacing the content of containers and animating your page back. For the animations based on CSS to be possible, swup uses several classes that are assigned to the `html` tag through the process of a page transition.
 
 - `is-animating` - This class is assigned to the html tag once link is clicked and is removed shortly after the content of the page is replaced. Used for defining styles for an unloaded page. 
 - `is-changing` - Assigned once a link is clicked and removed when the whole process of transition of pages is done. Used for showing some loading.
@@ -25,4 +24,4 @@ For the animations based on CSS to be possible, swup uses several classes that a
   Class can be used to change animation for different URLs.
   
 ## Note for new users
-We recommend that you set the `transition-[something]` class on **only one element** on each page. Swup will look at this element's `transition-duration` CSS property to determine, how long it should wait before switching to a new page. All other elements you want to animate during page transitions should be animated independently (without using a separate `transition-[something]` class for each of them).
+We recommend that you set the `transition-[something]` class on **only one element** on each page. Swup will look at this element's `transition-duration` CSS property, to determine how long it should wait before switching to a new page. All other elements you want to animate during page transitions should be animated independently (without using a separate `transition-[something]` class for each of them).
