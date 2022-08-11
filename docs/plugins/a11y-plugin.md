@@ -58,6 +58,7 @@ const swup = new Swup({
 
 The plugin should work out of the box if you use proper semantic markup for your
 content, i.e. `main` for your content area and `h1` or `h2` for your headings.
+See the options below for customizing what elements to look for.
 
 ```html
 <header>
@@ -67,6 +68,18 @@ content, i.e. `main` for your content area and `h1` or `h2` for your headings.
   <h1>Page Title</h1> <!-- will be announced -->
   <p>Lorem ipsum dolor sit amet</p>
 </main>
+```
+
+## Styling
+
+Browsers will display a visible outline around the main content area when it
+receives focus after navigation. Make sure to remove the outline in your CSS
+if that isn't the desired behavior.
+
+```css
+main[tabindex="-1"] {
+  outline: none;
+}
 ```
 
 ## Options
@@ -101,5 +114,6 @@ How to announce the new page title.
 
 ### urlTemplate
 
-How to announce the new page url. Only used as fallback if neither a title tag
-nor a heading were found.
+How to announce the new page url.
+
+Only used as fallback if neither a title tag nor a heading were found.

@@ -15,6 +15,13 @@ However, page view event is by default triggered in [Javascripts tracking snippe
 
 Simplified code run by this plugin on `contentReplaced` event: 
 ```javascript
+// in case GTAG script is used on page
+window.gtag('config', GA_MEASUREMENT_ID, {
+    page_title: title,
+    page_path: url
+});
+
+// in case GA script is used on page
 window.ga('set', 'title', document.title);
 window.ga('set', 'page', window.location.pathname + window.location.search);
 window.ga('send', 'pageview');
@@ -48,5 +55,22 @@ To run this plugin, include an instance in the swup options.
 ```javascript
 const swup = new Swup({
   plugins: [new SwupGaPlugin()]
+});
+```
+
+## Options
+
+### gaMeasurementId
+This option is only required for the case where GA is used through GTAG, eg. it's loaded with something like this.
+```html
+<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+```
+The `window.gtag` requires this ID for each page trigger, so it needs to be passed into an instance of this plugin.
+
+```javascript
+const swup = new Swup({
+  plugins: [new SwupGaPlugin({
+      gaMeasurementId: GA_MEASUREMENT_ID,
+  })],
 });
 ```

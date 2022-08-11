@@ -19,6 +19,7 @@
   "scripts": {
     "test": "start-server-and-test test:server http://localhost:8080 test:run",
     "test:server": "http-server _site -s",
-    "test:run": "swup validate"
+    "test:run": "swup validate",
+    "plugins:download-readmes": "node ./lib/tasks/download-plugin-readmes.js"
   }
 }
