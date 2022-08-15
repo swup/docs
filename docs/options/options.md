@@ -108,17 +108,17 @@ const options = {
 
 ## Animate History Browsing
 
-Option enables the animation on popstate events. Swup adds `is-popstate` class to html tag for the whole process of animation on back/forward browsing.
-
-Note that when this option is enabled, swup disables browser native scroll control (sets [scrollRestoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration) to `manual`) and takes over this task.
-This means that position of scroll on previous page(s) is not preserved (but [can be implemented manually](https://github.com/swup/swup/issues/48#issuecomment-423854819) based on use case).
-Otherwise swup scrolls to top/#element on popstate as it does with normal browsing. Default value is `false`.
+This option enables the animations also if navigating using the browser history. Swup adds the class `is-popstate` to the html tag for the whole process of the animation on back/forward browsing.
 
 ```javascript
 const options = {
   animateHistoryBrowsing: false
 };
 ```
+
+⚠️ **Important Note**: This option was added to Swup due to popular request but should be used with caution. When the option is set to `true`, Swup has to disable all native browser scrolling behavior (sets [scrollRestoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration) to `manual`). We encourage you do strongly consider the consequences of doing so: 
+
+The scroll positions on previous page(s) or between page reloads are **not being preserved** (but [can be implemented manually](https://github.com/swup/swup/issues/48#issuecomment-423854819) based on the use case). Otherwise, Swup will scroll to the top/#element on `popstate` as the browser would do. The default value is `false`.
 
 ## Default Options
 
