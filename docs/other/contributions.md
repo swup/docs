@@ -10,6 +10,7 @@ parent: Other
 ---
 
 # Contributions
+
 Any contributions or suggestions are more than welcome.
 If you have a suggestion, [open an issue](https://github.com/swup/swup/issues/new) or [open a discussion](https://github.com/swup/swup/discussions/new).
 
