@@ -3,7 +3,7 @@ layout: default
 title: Scripts Plugin
 description: Plugin to re-run scripts on the page on each page transition
 parent: Plugins
-nav_order: 15
+nav_order: 16
 permalink: /plugins/scripts-plugin
 repo_link: /scripts-plugin
 ---
