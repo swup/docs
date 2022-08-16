@@ -116,7 +116,7 @@ const options = {
 };
 ```
 
-⚠️ **Important Note**: This option was added to Swup due to popular request but should be used with caution. When the option is set to `true`, Swup has to disable all native browser scrolling behavior (sets [scrollRestoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration) to `manual`). We encourage you do strongly consider the consequences of doing so: 
+⚠️ **Important Note**: This option was added to Swup due to popular request but should be used with caution. When the option is set to `true`, Swup has to disable all native browser scrolling behavior (sets [scrollRestoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration) to `manual`). We encourage you do strongly consider the consequences of doing so:
 
 The scroll positions on previous page(s) or between page reloads are **not being preserved** (but [can be implemented manually](https://github.com/swup/swup/issues/48#issuecomment-423854819) based on the use case). Otherwise, Swup will scroll to the top/#element on `popstate` as the browser would do. The default value is `false`.
 

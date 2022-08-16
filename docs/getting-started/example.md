@@ -7,7 +7,8 @@ nav_order: 3
 permalink: /getting-started/example
 ---
 # Example
-First thing we need to do is prepare our HTML content. 
+
+First thing we need to do is prepare our HTML content.
 Define the elements that are being animated and elements (**containers**) that need to be replaced.
 Let's assume we want to fade in/out the content of `main` element and replace it's contents.
 

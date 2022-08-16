@@ -9,10 +9,12 @@ has_toc: false
 ---
 
 # Plugins
+
 Some functionality is only necessary in certain projects.
 For this reason, swup has support for plugins that can, but don't have to be used.
 
 ## Plugin Installation
+
 ```javascript
 import Swup from 'swup';
 import ScrollPlugin from '@swup/scroll-plugin';
@@ -28,6 +30,7 @@ const swup = new Swup(options);
 ```
 
 ## Plugin Methods
+
 Alternatively, you can use swup `use`, `unuse` methods to run/remove plugins.
 Method `findPlugin` can be particularly useful for manipulating the plugin directly or using its methods.
 

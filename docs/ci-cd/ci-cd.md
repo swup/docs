@@ -9,16 +9,17 @@ has_toc: false
 ---
 
 # CI/CD
-You can test your site after each deployment, or as a part of the deploy process. 
+
+You can test your site after each deployment, or as a part of the deploy process.
 For this you can use [swup cli]({{ "/cli" | relative_url }}), which now has a `validate` command with a bunch of options.
 
-Note that `validate` command runs test against a live site, while checking the pages in a headless browser. 
+Note that `validate` command runs test against a live site, while checking the pages in a headless browser.
 This means the site needs to be running on some domain, or can be temporarily started just for checks.
 You can use this docs site as an example, which is using a [CircleCI pipeline](https://github.com/swup/docs/blob/master/.circleci/config.yml) with [http-server package](https://github.com/swup/docs/blob/master/package.json#L20) to start a server and validate site on each PR.
 
-Instead of using the [command line options]({{ "/cli" | relative_url }}), you can also define the options in a `swup.config.js` file in the root of your project. 
+Instead of using the [command line options]({{ "/cli" | relative_url }}), you can also define the options in a `swup.config.js` file in the root of your project.
 This file needs to default export an object, similar to the one below.
-This example also shows defaults which will be used if not defined in this file or through CLI option. 
+This example also shows defaults which will be used if not defined in this file or through CLI option.
 
 ```javascript
 export default {
@@ -38,4 +39,3 @@ export default {
     },
 }
 ```
-

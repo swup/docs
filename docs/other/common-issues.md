@@ -149,11 +149,13 @@ Since search engines are improving and starting to simulate actual devices brows
 
 See [this issue](https://github.com/swup/swup/issues/130) for more information.
 
-## Improving accessibility 
+## Improving accessibility
+
 Since we're dynamically re-rendering parts of the page, it's ideal to add `aria-live="polite"` attribute to the swup containers for screen readers.  
 Unfortunately, this attribute [cannot be added dynamically](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) after page load to work, so it needs to be added manually.  
 
-## Sending partial response for swup 
-Swup can receive only partial response with containers, to make the payload of requests smaller. 
+## Sending partial response for swup
+
+Swup can receive only partial response with containers, to make the payload of requests smaller.
 However, note that there can be unexpected behaviour in such situations as described [here](https://github.com/swup/swup/issues/246) for Ctrl+Shift+T (reopening recently closed tab).
-This can likely be prevented by using POST requests from swup for getting this partial response (not implemented yet, as there were no requests for it - tiny modification of swup is needed), or by sending this partial response in other format like JSON, which can be handled as described [here](https://swup.js.org/api/methods#getPageData). 
+This can likely be prevented by using POST requests from swup for getting this partial response (not implemented yet, as there were no requests for it - tiny modification of swup is needed), or by sending this partial response in other format like JSON, which can be handled as described [here](https://swup.js.org/api/methods#getPageData).
