@@ -46,7 +46,7 @@ const swup = new Swup({
 
 ### mainElement
 
-Changes the selector of the elements to slide in/out.  
+Changes the selector of the elements to slide in/out.
 Defaults to `#swup`.
 
 ### reversed

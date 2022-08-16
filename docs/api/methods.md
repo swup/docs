@@ -123,10 +123,10 @@ This method can be modified to accept other types of response from server, but m
 
 ```javascript
 const json = {
-    title: 'Page title',    
+    title: 'Page title',
     pageClass: 'body-class',
     originalContent: 'html content of page',
-    blocks: ['<div id="swup"></div>'], 
+    blocks: ['<div id="swup"></div>'],
     responseURL: '/redirected-url'
 };
 ```
@@ -138,4 +138,4 @@ Triggers swup event. Accepts two arguments - `eventName` and optional `eventObje
 ## log
 
 Does nothing by default, but outputs passed content when [debug plugin]({{ "/plugins/debug-plugin" | relative_url }}) is used.
-Accepts two arguments - `name` (the content of message) and optional log object which gets printed in a console groups.  
+Accepts two arguments - `name` (the content of message) and optional log object which gets printed in a console groups.

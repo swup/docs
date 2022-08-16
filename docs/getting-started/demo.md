@@ -6,6 +6,7 @@ parent: Getting Started
 nav_order: 4
 permalink: /getting-started/demo
 ---
+
 # Demo
 
 Here is a little [demo](https://swup.github.io/swup-gia-demo/index.html) to fork.

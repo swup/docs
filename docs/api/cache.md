@@ -17,10 +17,10 @@ Creates a cache record.
 
 ```javascript
 swup.cache.cacheUrl({
-    title: 'Page title',    
+    title: 'Page title',
     pageClass: 'body-class',
     originalContent: 'html content of page',
-    blocks: ['<div id="swup"></div>'], 
+    blocks: ['<div id="swup"></div>'],
     responseURL: '/redirected-url'
 });
 ```

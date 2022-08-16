@@ -7,6 +7,7 @@ nav_order: 1
 permalink: /getting-started
 has_toc: false
 ---
+
 # Getting Started
 
 Looking for **what's new in v2**? Head over [here](https://medium.com/@gmarcuk/introducing-swup-v2-814e40316dee) or check [changelog]({{ "/other/changelog" | relative_url }}) for recent changes.

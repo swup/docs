@@ -6,9 +6,10 @@ parent: Getting Started
 nav_order: 5
 permalink: /getting-started/reloading-javascript
 ---
+
 # Reloading Javascript
 
-Since swup removes the page reloads from site, it also removes a standard lifecycle of scripts, which come with a set of problems that those pjax-like libraries bring.  
+Since swup removes the page reloads from site, it also removes a standard lifecycle of scripts, which come with a set of problems that those pjax-like libraries bring.
 By default, scripts get enabled when the page is loaded. Often we would find ourselves waiting for whole page to load before executing the script.
 
 ```javascript
@@ -30,11 +31,11 @@ function init() {
     if (document.querySelector('#carousel')) {
         // something like new Carousel('#carousel')
     }
-    
+
     if (document.querySelector('#lightbox')) {
         // something like $('#lightbox').lightbox()
     }
-    
+
     if (document.querySelector('#something-else')) {
         // ...
     }
@@ -47,7 +48,7 @@ In this particular example we would probably like to run this on each page view.
 ```javascript
 const swup = new Swup();
 
-// run once 
+// run once
 init();
 
 // this event runs for every page view after initial load
@@ -80,4 +81,4 @@ I would very much recommend using component based approach together with swup, l
 Gia provides a simple, yet powerful way of managing scripts with `mount`/`unmount` lifecycle methods,
 automatic scope for scripts and more cool stuff like lazy loading assets when needed, smart element auto selectors and more.
 
-Oh and [here]({{ "/plugins/gia-plugin" | relative_url }}) is a plugin for that.  
+Oh and [here]({{ "/plugins/gia-plugin" | relative_url }}) is a plugin for that.

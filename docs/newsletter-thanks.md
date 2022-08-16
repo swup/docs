@@ -12,4 +12,4 @@ sitemap: false
 
 # You're subscribed! 😎
 
-You'll now receive any major news we send out. Don't worry, there won't be any spam heading your way. 
+You'll now receive any major news we send out. Don't worry, there won't be any spam heading your way.

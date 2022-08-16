@@ -13,7 +13,7 @@ Helpers that can be used for developing plugins, themes or anything else around 
 Helpers can be accessed from npm under `swup/lib/helpers`.
 
 ```javascript
-import { classify } from 'swup/lib/helpers'; 
+import { classify } from 'swup/lib/helpers';
 ```
 
 ## classify

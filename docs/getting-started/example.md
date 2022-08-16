@@ -6,6 +6,7 @@ parent: Getting Started
 nav_order: 3
 permalink: /getting-started/example
 ---
+
 # Example
 
 First thing we need to do is prepare our HTML content.
@@ -58,7 +59,7 @@ html.is-animating .transition-fade {
 ```
 
 **And believe it or not, that's it!**
-We're all set, or at least for our simple fade in/fade out example…  
+We're all set, or at least for our simple fade in/fade out example…
 Swup loads the page, handles classes for the css animation, waits for the animation to finish/page to load, replaces content and fades your content back.
 Swup also changes the title of your page to the loaded one (more in [options]({{ "/options" | relative_url }}) or [plugins]({{ "/plugins" | relative_url }})).
 

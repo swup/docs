@@ -6,6 +6,7 @@ parent: Getting Started
 nav_order: 1
 permalink: /getting-started/how-it-works
 ---
+
 # How it works
 
 Think of swup as being pjax on steroids. The concepts are similar to those used in barba.js or other transition libraries, but swup pays more attention to ease of use and flexibility.

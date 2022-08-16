@@ -38,5 +38,5 @@ Method `findPlugin` can be particularly useful for manipulating the plugin direc
 const swup = new Swup();
 swup.use(new ScrollPlugin());   // start plugin
 
-swup.findPlugin('ScrollPlugin');   // returns instance of plugin 
+swup.findPlugin('ScrollPlugin');   // returns instance of plugin
 ```

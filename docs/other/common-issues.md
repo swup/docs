@@ -93,7 +93,7 @@ html.is-animating .swup-transition-fade {
 </main>
 ```
 
-## Escaped characters inside <noscript>
+## Escaped characters inside `<noscript>`
 
 Some browsers (Safari, older versions of IE) escape characters inside of `noscript` tags when placed into the DOM with `element.innerHTML` as swup does. That is usually not an issue unless the contents of the `noscript` tags are further used in your JavaScript code. If that's the case, the characters need to be unescaped with [regex replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace), a pretty creative way using `textarea` mentioned [in this thread](https://github.com/gmrchk/swup/issues/107) or in any other way.
 
@@ -126,7 +126,7 @@ Not so good thing is that some IE versions will ignore a link leading to that an
 ```js
 // run only for IE
 document.querySelectorAll('[href^="#"]').forEach(link => {
-  link.addEventListener("click", event => {
+  link.addEventListener('click', event => {
     document.documentElement.scrollTop =
       Math.round(
         document.querySelector(event.target.hash).getBoundingClientRect().top
@@ -151,8 +151,8 @@ See [this issue](https://github.com/swup/swup/issues/130) for more information.
 
 ## Improving accessibility
 
-Since we're dynamically re-rendering parts of the page, it's ideal to add `aria-live="polite"` attribute to the swup containers for screen readers.  
-Unfortunately, this attribute [cannot be added dynamically](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) after page load to work, so it needs to be added manually.  
+Since we're dynamically re-rendering parts of the page, it's ideal to add `aria-live="polite"` attribute to the swup containers for screen readers.
+Unfortunately, this attribute [cannot be added dynamically](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) after page load to work, so it needs to be added manually.
 
 ## Sending partial response for swup
 
