@@ -8,11 +8,13 @@ permalink: /api/variables
 ---
 
 # Variables
+
 A few variables accessible in swup instance that could be helpful.
 
 ## transition
-Holds information about latest transition in a form of object. 
-Variable is always set right at the beginning of transition (after `loadPage` method call) so it can be used further on. 
+
+Holds information about latest transition in a form of object.
+Variable is always set right at the beginning of transition (after `loadPage` method call) so it can be used further on.
 
 ```javascript
 swup.transition = {
@@ -23,10 +25,13 @@ swup.transition = {
 ```
 
 ## options
+
 Holds currently set options after merging set options.
 
 ## scrollToElement
+
 Holds id of element that swup needs to scroll to after content replace (`href="/docs#this_is_scrollToElement"`).
 
 ## plugins
-Array of all plugin instances currently enabled on swup. 
+
+Array of all plugin instances currently enabled on swup.

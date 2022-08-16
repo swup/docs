@@ -9,6 +9,7 @@ repo_link: /slide-theme
 ---
 
 # Slide Theme
+
 Theme for slide in/out animation. Makes content slide out (+fade) in one direction, and slide in from the other.
 
 ## Installation
@@ -42,10 +43,13 @@ const swup = new Swup({
 ```
 
 ## Options
-### mainElement 
-Changes the selector of the elements to slide in/out.  
+
+### mainElement
+
+Changes the selector of the elements to slide in/out.
 Defaults to `#swup`.
 
 ### reversed
-Makes the direction reversed. 
-Defaults to `false`. 
+
+Makes the direction reversed.
+Defaults to `false`.

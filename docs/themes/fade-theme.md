@@ -9,6 +9,7 @@ repo_link: /fade-theme
 ---
 
 # Fade Theme
+
 Basic theme for fade in/out animation of the main container.
 
 ## Installation
@@ -42,6 +43,7 @@ const swup = new Swup({
 ```
 
 ## Options
-### mainElement 
-Changes the selector of the elements to fade in/out. Defaults to `#swup`.
 
+### mainElement
+
+Changes the selector of the elements to fade in/out. Defaults to `#swup`.

@@ -8,4 +8,4 @@ permalink: /other
 has_toc: true
 ---
 
-# More stuff about swup 
+# More stuff about swup

@@ -17,6 +17,7 @@
     "@primer/css": "^12.2.3"
   },
   "scripts": {
+    "lint": "npx markdownlint-cli --fix docs/**/*.md",
     "test": "start-server-and-test test:server http://localhost:8080 test:run",
     "test:server": "http-server _site -s",
     "test:run": "swup validate",

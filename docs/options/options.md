@@ -37,7 +37,7 @@ By default, you can add `[data-no-swup]` attribute to the link, if you want to e
 ## Animation Selector
 
 As swup is built on animations, it is required to define the elements that are being animated. Usually, you would like to give the elements some common class or class prefix.
-By default option is set to `[class*='transition-']`, which selects all elements with class attribute containing `transition-`.  
+By default option is set to `[class*='transition-']`, which selects all elements with class attribute containing `transition-`.
 Note that class `swup-...` is also used internally by swup (for example `swup-enabled`), so setting the option to `[class*='swup-']` won't work. Use `[class*='swup-transition-']` instead.
 
 ```javascript
@@ -53,7 +53,7 @@ Containers option usually contains the main element with the content of the page
 This creates a possibility of animating elements on the page while still replacing it's parts.
 Another good example where this is helpful is the _change language_ link, which usually appears the same across the site (no animation needed),
 but leads to a different URL on each page.
-Option defaults to the single container of id `#swup`.  
+Option defaults to the single container of id `#swup`.
 **Note:** Keep in mind that only elements **inside** of `body` tag are supported.
 
 ```javascript
@@ -116,7 +116,7 @@ const options = {
 };
 ```
 
-⚠️ **Important Note**: This option was added to Swup due to popular request but should be used with caution. When the option is set to `true`, Swup has to disable all native browser scrolling behavior (sets [scrollRestoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration) to `manual`). We encourage you do strongly consider the consequences of doing so: 
+⚠️ **Important Note**: This option was added to Swup due to popular request but should be used with caution. When the option is set to `true`, Swup has to disable all native browser scrolling behavior (sets [scrollRestoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration) to `manual`). We encourage you do strongly consider the consequences of doing so:
 
 The scroll positions on previous page(s) or between page reloads are **not being preserved** (but [can be implemented manually](https://github.com/swup/swup/issues/48#issuecomment-423854819) based on the use case). Otherwise, Swup will scroll to the top/#element on `popstate` as the browser would do. The default value is `false`.
 
