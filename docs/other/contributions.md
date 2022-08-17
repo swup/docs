@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Contributions
-description: Any contributions or suggestions are more than welcome
+description: How to contribute to swup's development
 has_children: false
 nav_order: 4
 permalink: /other/contributions
@@ -11,22 +11,37 @@ parent: Other
 
 # Contributions
 
-Any contributions or suggestions are more than welcome.
-If you have a suggestion, question or feature request, [open an issue](https://github.com/swup/swup/issues/new), [a discussion](https://github.com/swup/swup/discussions/new) or create a [pull request]([url](https://github.com/swup/swup/pulls)).
+Any contributions are more than welcome.
+
+If you have a question, suggestion, or feature request, feel free to
+
+- [start a discussion](https://github.com/swup/swup/discussions/new)
+- [open an issue](https://github.com/swup/swup/issues/new)
+- [create a pull request](https://github.com/swup/swup/pulls)
+
+## Pull Requests
+
+If you would like to see a new feature in swup, we encourage you to fork swup and create a [pull request]([url](https://github.com/swup/swup/pulls))! 
 
 Please make sure to run the swup tests locally before creating your PR on GitHub: 
+
 ```shell
 npm install && npm run test
 ```
 
+## Plugins & Themes
+
 Creating [plugins]({{ "/plugins/create-plugin" | relative_url }}) and [themes]({{ "/themes/create-theme" | relative_url }}) is encouraged.
-You can list your plugin or plugin idea [here](https://github.com/swup/swup/discussions/335).
+You can list your plugin or plugin idea in the [Plugin Ideas](https://github.com/swup/swup/discussions/335) discussion thread.
 
-If you would like to see a new feature in swup, we encourage you to fork swup and create a [pull request]([url](https://github.com/swup/swup/pulls))! 
+## Join Us
 
-If you think you're proficient in the swup ecosystem and you'd like to join the team, please contact me at <a href="mailto:gmarcuk@gmail.com?subject=I want to be a swup contributor">gmarcuk@gmail.com</a>.
+If you think you're proficient in the swup ecosystem and you'd like to join the team, please get in touch at <a href="mailto:gmarcuk@gmail.com?subject=I want to be a swup contributor">gmarcuk@gmail.com</a>.
 
-If you'd like to support swup financially, please do so [here](https://opencollective.com/swup), or at [GitHub sponsors](https://github.com/sponsors/gmrchk).
-Any contribution is much appreciated.
+## Support Us
+
+If you'd like to support swup financially, please do so on our [Open Collective](https://opencollective.com/swup) page or through [GitHub sponsors](https://github.com/sponsors/gmrchk). Any contribution is much appreciated.
+
+## Acknowledgements
 
 Swup logo created by [Honza Jura](https://twitter.com/honzajura).
