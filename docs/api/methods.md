@@ -46,10 +46,14 @@ swup.preloadPages();
 ## scrollTo
 
 Added to swup instance by [scroll plugin]({{ "/plugins/scroll-plugin" | relative_url }}).
-Smoothly scrolls to required position. Accepts amount in pixels element you want to scroll to.
+Smoothly scrolls to the requested position. Accepts either the amount in pixels or the `HtmlElement` you want to scroll to. 
+At the moment, method only supports vertical scrolling.
 
 ```javascript
-swup.scrollTo(document.body, 2000);
+// scroll vertically to 2000px
+swup.scrollTo(2000);
+// scroll vertically to an element
+swup.scrollTo(document.querySelector('#my-section'));
 ```
 
 ## on/off
