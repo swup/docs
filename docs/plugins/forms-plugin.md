@@ -73,5 +73,23 @@ new SwupFormsPlugin({
 
 ## Changes of the swup instance
 
-The plugin adds the `submitForm` and `openFormSubmitInNewTab` events to swup
-that can be listened to with the `on` method.
+The plugin adds two events to swup:
+
+### `submitForm` 
+
+Triggered every time a form is being submitted:
+
+```js
+swup.on('submitForm', e => console.log(e));
+```
+
+### `openFormSubmitInNewTab`
+
+Triggered each time a form is being submitted to a new tab or window. This will happen if the user has pressed either the `Command` (Mac), `Control` (Windows) or `Shift` key while submitting the form. The plugin normalizes that behavior across browsers.
+
+## Browser support
+
+Form submissions are serialized using the
+[URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
+browser API. If you need to support older browsers such as IE 11, you should add
+a [polyfill](https://github.com/ungap/url-search-params).
