@@ -9,8 +9,8 @@
     "@swup/cli": "^4.0.3",
     "http-server": "^0.12.1",
     "start-server-and-test": "^1.11.0",
-    "stylelint": "^10.0.1",
-    "stylelint-config-primer": "^6.0.0",
+    "stylelint": "^14.13.0",
+    "stylelint-config-primer": "^11.1.1",
     "stylelint-selector-no-utility": "^4.0.0"
   },
   "dependencies": {
