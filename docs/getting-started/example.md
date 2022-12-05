@@ -24,7 +24,7 @@ Both are adjustable in options and are not related to each other (you can animat
   </head>
   <body>
     <main id="swup" class="transition-fade">
-      <h1>This is homepage</h1>
+      <h1>Homepage</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua.

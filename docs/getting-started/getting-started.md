@@ -10,8 +10,6 @@ has_toc: false
 
 # Getting Started
 
-Looking for **what's new in v2**? Head over [here](https://medium.com/@gmarcuk/introducing-swup-v2-814e40316dee) or check [changelog]({{ "/other/changelog" | relative_url }}) for recent changes.
-
 New to swup? Little intro:
 
 * It's just ridiculously [easy to use]({{ "/getting-started/example" | relative_url }}), even for beginners.

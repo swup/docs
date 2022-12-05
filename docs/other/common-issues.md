@@ -11,24 +11,6 @@ parent: Other
 
 # Common Issues
 
-## Incorrect link attributes
-
-Swup is by default set to do the transition for any link with `href` attribute starting with the current domain, `/` or `#`. People often use different `href` attributes like `about.html`.
-
-```html
-<!-- this is fine -->
-<a href="http://example.com/about">
-  <a href="http://example.com/about.html">
-    <a href="/about">
-      <a href="/about.html">
-        <a href="#about">
-          <!-- this is not fine -->
-          <a href="about.html"></a></a></a></a></a
-></a>
-```
-
-Default behavior can be changed with [linkSelector]({{ "/options#link-selector" | relative_url }}) option.
-
 ## Missing style for transition-\* class
 
 Swup waits for any element with class `transition-[something]` to finish the transition. Styles with the hidden state, normal state, and the duration need to be defined for such elements, like in the example below where the element fades out/in.
@@ -145,7 +127,7 @@ Since search engines are improving and starting to simulate actual devices brows
 <link rel="canonical" href="..." />
 ```
 
-**[head-plugin]({{ "/plugins/head-plugin" | relative_url }})** could help solve that, as well as deleting the tag from head. There are also other, more reliable alternatives to make search engines index your site correctly, like sitemap.
+The **[head-plugin]({{ "/plugins/head-plugin" | relative_url }})** could help solve that, as well as deleting the tag from head. There are also other, more reliable alternatives to make search engines index your site correctly, like sitemap.
 
 See [this issue](https://github.com/swup/swup/issues/130) for more information.
 

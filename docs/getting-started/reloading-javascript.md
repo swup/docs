@@ -48,10 +48,14 @@ In this particular example we would probably like to run this on each page view.
 ```javascript
 const swup = new Swup();
 
-// run once
-init();
+// run once when page loads
+if (document.readyState === 'complete') {
+  init();
+} else {
+  document.addEventListener('DOMContentLoaded', () => init());
+}
 
-// this event runs for every page view after initial load
+// run after every additional navigation by swup
 swup.on('contentReplaced', init);
 ```
 

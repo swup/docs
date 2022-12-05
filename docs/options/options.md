@@ -19,26 +19,46 @@ const swup = new Swup(options);
 
 ## Link Selector
 
-Link selector defines link elements that will trigger the transition. By default, the selector takes any link with `href` attribute starting with `/`, `#` or current domain.
-You can modify this option to include SVG links or exclude some other.
+Defines which link elements will trigger page visits. By
+default, all `a` elements with an `href` attribute will receive clicks.
 
 ```javascript
 const options = {
-  linkSelector:
-    'a[href^="' +
-    window.location.origin +
-    '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])'
+  linkSelector: 'a[href]'
 };
 ```
 
-In case you want to exclude links for some routes, lightbox or any other functionality, extend the selector.
-By default, you can add `[data-no-swup]` attribute to the link, if you want to exclude just a few.
+To allow swup to take over clicks on
+[map areas](https://www.w3schools.com/tags/tag_area.asp) or
+[SVG links](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/a),
+append the selector:
+
+```javascript
+const options = {
+  linkSelector: 'a[href], area[href], svg a[*|href]'
+};
+```
+
+## Ignoring links
+
+Allows ignoring specific links through a callback. By default, all
+links to other domains and all links with the `data-no-swup` attribute are
+ignored.
+
+```javascript
+const options = {
+  ignoreLink: (el) => (
+    el.origin !== window.location.origin ||
+    el.closest('[data-no-swup]')
+  )
+};
+```
 
 ## Animation Selector
 
-As swup is built on animations, it is required to define the elements that are being animated. Usually, you would like to give the elements some common class or class prefix.
-By default option is set to `[class*='transition-']`, which selects all elements with class attribute containing `transition-`.
-Note that class `swup-...` is also used internally by swup (for example `swup-enabled`), so setting the option to `[class*='swup-']` won't work. Use `[class*='swup-transition-']` instead.
+Defines the elements that are being animated. Usually, they will have a common
+class or class prefix. The default option will select all elements with
+classnames starting with `transition-`.
 
 ```javascript
 const options = {
@@ -48,24 +68,30 @@ const options = {
 
 ## Containers
 
-Containers option defines the array of selectors of containers, where the content needs to be replaced.
-Containers option usually contains the main element with the content of the page, but can include any element that is present across all pages.
-This creates a possibility of animating elements on the page while still replacing it's parts.
-Another good example where this is helpful is the _change language_ link, which usually appears the same across the site (no animation needed),
-but leads to a different URL on each page.
-Option defaults to the single container of id `#swup`.
-**Note:** Keep in mind that only elements **inside** of `body` tag are supported.
+Defines the containers that have their content replaced on page visits. They
+will at least include the main element with the content of the page, but can
+include any element that is present across all pages.
+
+This allows animating one set of elements on the page while still replacing
+other, non-animated, parts of it: a common example would be the global site
+navigation that will not animate across pages but still needs to be updated if
+the language changes.
+
+Defaults to a single container of id `#swup`.
+
+**Note:** Only elements **inside** of the `body` tag are supported.
 
 ```javascript
 const options = {
-  containers: ["#swup"]
+  containers: ['#swup']
 };
 ```
 
 ## Cache
 
-Swup has a built-in cache, meaning that it stores previously loaded contents of the pages in memory in a form of an object.
-This drastically improves speed for static sites but should be disabled for dynamic sites. Cache option defaults to `true`.
+Swup has a built-in cache and will keep previously loaded pages in memory.
+This drastically improves speed but should be disabled for highly dynamic sites
+that need up-to-date responses on each request. Defaults to `true`.
 
 ```javascript
 const options = {
@@ -75,14 +101,14 @@ const options = {
 
 ## Request Headers
 
-Swup sets two headers of the request by default and headers can be adjusted with `requestHeaders` option.
-This can be useful for returning custom response from a server, or any other processing on a server side.
+Adjust request headers sent with swup requests. Useful for returning custom
+payloads from the server or other server-side pre-processing.
 
 ```javascript
 const options = {
   requestHeaders: {
-    "X-Requested-With": "swup", // so we can tell request comes from swup
-    Accept: "text/html, application/xhtml+xml" // to explicitly define what response we are expecting
+    'X-Requested-With': 'swup', // identify swup requests
+    'Accept': 'text/html, application/xhtml+xml' // define expected response
   }
 };
 ```
@@ -97,12 +123,7 @@ The function accepts one argument - the popstate event. Option defaults to the f
 
 ```javascript
 const options = {
-  skipPopStateHandling: function(event) {
-    if (event.state && event.state.source == "swup") {
-      return false;
-    }
-    return true;
-  }
+  skipPopStateHandling: (event) => event.state?.source !== 'swup'
 };
 ```
 
@@ -128,17 +149,18 @@ The default option object look like...
 const options = {
   animateHistoryBrowsing: false,
   animationSelector: '[class*="transition-"]',
-  containers: ["#swup"],
   cache: true,
-  linkSelector:
-    'a[href^="' +
-    window.location.origin +
-    '"]:not([data-no-swup]), a[href^="/"]:not([data-no-swup]), a[href^="#"]:not([data-no-swup])',
-  skipPopStateHandling: function(event) {
-    if (event.state && event.state.source == "swup") {
-      return false;
-    }
-    return true;
-  }
+  containers: ['#swup'],
+  ignoreLink: (el) => (
+    el.origin !== window.location.origin ||
+    el.closest('[data-no-swup]')
+  ),
+  linkSelector: 'a[href]',
+  plugins: [],
+  requestHeaders: {
+    'X-Requested-With': 'swup',
+    'Accept': 'text/html, application/xhtml+xml'
+  },
+  skipPopStateHandling: (event) => event.state?.source !== 'swup'
 };
 ```

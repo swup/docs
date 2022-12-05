@@ -10,10 +10,10 @@ permalink: /api/helpers
 # Helpers
 
 Helpers that can be used for developing plugins, themes or anything else around swup.
-Helpers can be accessed from npm under `swup/lib/helpers`.
+Helpers can be imported from  `swup/helpers`.
 
 ```javascript
-import { classify } from 'swup/lib/helpers';
+import { classify } from 'swup/helpers';
 ```
 
 ## classify
@@ -49,7 +49,3 @@ Return current page url.
 
 Accepts two arguments - html content and array of container selectors (swup [container option]({{ "/options#containers" | relative_url }})).
 Returns object required for cache.
-
-## transitionEnd
-
-Function that returns a correct supported form of `transitionend` event.
