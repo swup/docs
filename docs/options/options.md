@@ -129,6 +129,21 @@ const options = {
 };
 ```
 
+## resolvePath
+
+This option is a callback function that receives a URL path as an argument and needs to return a path. It is meant for more complex cases where `skipPopStateHandling` is not sufficient enough. Inside the callback, you can check for certain conditions and, if these conditions apply, resolve a group of URLs to the same one:
+
+```javascript
+const options = {
+  resolvePath: (path) => {
+    if (path.startsWith('/projects/?')) return '/projects/';
+    return path;
+  }
+}
+```
+
+The above example tells Swup to treat all these paths that start with `/projects/?` as one. It will now ignore all changes to the URL (through link clicks or history browsing) if the previous and next URL resolve to the same one. It will also use the resolved path for its cache (if active) and for storing and restoring the scroll position (if the SwupScrollPlugin is in use).
+
 ## animateHistoryBrowsing
 
 This option enables the animations also if navigating using the browser history. Swup adds the class `is-popstate` to the html tag for the whole process of the transition on back/forward browsing.
