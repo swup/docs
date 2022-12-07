@@ -154,7 +154,7 @@ const options = {
 
 ## animateHistoryBrowsing
 
-This option enables the animations also if navigating using the browser history. Swup adds the class `is-popstate` to the html tag for the whole process of the transition on back/forward browsing.
+History visits triggered by the back and forward buttons of the browser will skip all animations to allow faster navigation. If you need animations on history visits, set this option to `true`. When enabled, swup will add the class `is-popstate` to the html tag during the transitions of those visits. The default value is `false`.
 
 ```javascript
 const options = {
@@ -162,9 +162,7 @@ const options = {
 };
 ```
 
-⚠️ **Important Note**: This option was added due to popular request but should be used with caution. When the option is set to `true`, swup has to disable all native browser scrolling behavior (sets [scrollRestoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration) to `manual`). We encourage you to strongly consider the consequences of doing so:
-
-The scroll positions on previous page(s) or between page reloads are **not being preserved** (but [can be implemented manually](https://github.com/swup/swup/issues/48#issuecomment-423854819), depending on the use case). Otherwise, Swup will scroll to the top/#element on `popState` as the browser would do. The default value is `false`.
+⚠️ **Important Note**: This option was added due to popular request but should be used with caution. When enabled, swup has to disable all native browser scrolling behavior (sets [scrollRestoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration) to `manual`). We encourage you to strongly consider the consequences of doing so: The scroll positions on previous page(s) or between page reloads are **not being preserved** (but [can be implemented manually](https://github.com/swup/swup/issues/48#issuecomment-423854819), depending on the use case). Otherwise, Swup will scroll to the top/#element on `popState` as the browser would do.
 
 ## Default Options
 
