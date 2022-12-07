@@ -28,7 +28,7 @@ const options = {
 };
 ```
 
-To allow swup to take over clicks on
+To allow Swup to take over clicks on
 [map areas](https://www.w3schools.com/tags/tag_area.asp) or
 [SVG links](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/a),
 append the selector:
@@ -99,7 +99,7 @@ const options = {
 
 ## requestHeaders
 
-Adjust request headers that should be sent with each swup request. Useful for returning custom
+Adjust request headers that should be sent with each Swup request. Useful for returning custom
 payloads from the server or other server-side pre-processing.
 
 ```javascript
@@ -115,8 +115,8 @@ const options = {
 
 Swup is built around the [History API](https://developer.mozilla.org/en-US/docs/Web/API/History), but sometimes some other tools manipulating the browser history can be used as well.
 
-For this reason, swup places a `source` property into every history `state` object it creates, so it can be identified later (swup also modifies the current history record on start, to include the `source: swup` property as well).
-On `popState` events, swup only handles the records that were created by swup.
+For this reason, Swup places a `source` property into every history `state` object it creates, so it can be identified later (Swup also modifies the current history record on start, to include the `source: swup` property as well).
+On `popState` events, Swup only handles the records that were created by Swup.
 
 This behavior can be modified by the callback `skipPopStateHandling`, which should return a `boolean` (`false`: handle the `popState` event, `true`: do nothing).
 The callback receives one argument - the `popState` event.
