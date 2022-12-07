@@ -29,7 +29,7 @@ Or use the latest browser build from unpkg:
 
 ## Run Swup
 
-To run swup, create new Swup instance.
+To run swup, create a new Swup instance.
 
 ```javascript
 import Swup from 'swup';

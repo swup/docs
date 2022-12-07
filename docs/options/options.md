@@ -142,7 +142,7 @@ const options = {
 }
 ```
 
-The above example tells Swup to treat all these paths that start with `/projects/?` as one. It will now ignore all changes to the URL (through link clicks or history browsing) if the previous and next URL resolve to the same one. It will also use the resolved path for its cache (if active) and for storing and restoring the scroll position (if the SwupScrollPlugin is in use).
+The above example tells swup to treat all these paths that start with `/projects/?` as one. It will now ignore all changes to the URL (through link clicks or history browsing) if the previous and next URL resolve to the same one. It will also use the resolved path for its cache (if active) and for storing and restoring the scroll position (if the SwupScrollPlugin is in use).
 
 The option defaults to this:
 
@@ -162,7 +162,7 @@ const options = {
 };
 ```
 
-⚠️ **Important Note**: This option was added to Swup due to popular request but should be used with caution. When the option is set to `true`, Swup has to disable all native browser scrolling behavior (sets [scrollRestoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration) to `manual`). We encourage you to strongly consider the consequences of doing so:
+⚠️ **Important Note**: This option was added due to popular request but should be used with caution. When the option is set to `true`, swup has to disable all native browser scrolling behavior (sets [scrollRestoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration) to `manual`). We encourage you to strongly consider the consequences of doing so:
 
 The scroll positions on previous page(s) or between page reloads are **not being preserved** (but [can be implemented manually](https://github.com/swup/swup/issues/48#issuecomment-423854819), depending on the use case). Otherwise, Swup will scroll to the top/#element on `popState` as the browser would do. The default value is `false`.
 
