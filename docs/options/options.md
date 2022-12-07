@@ -131,18 +131,34 @@ const options = {
 
 ## resolvePath
 
-This option is a callback function that receives a URL path as an argument and needs to return a path. It is meant for more complex cases where `skipPopStateHandling` is not sufficient enough. Inside the callback, you can check for certain conditions and, if these conditions apply, resolve a group of URLs to the same one:
+This option provides a way of rewriting URLs before swup will attempt to load
+them. In practice, it's an advanced way of telling swup which visits to ignore.
+By resolving different paths to a single path, swup will treat all these
+paths as a single resource and ignore any visits between them. You can then
+handle any changes on the page yourself: updating content, title tag, etc.
+without swup getting in the way. Swup will also use the resolved path for its
+cache and for restoring the scroll position if using the scroll plugin.
+
+An example use case would be a project listing with purely client-side filtering
+based on the query parameters. The server will always respond with the full list
+of all projects. In that case, you'll want to handle any visits between
+`/projects/?sort=date` and `/projects/?sort=title` yourself, telling swup that
+nothing has changed and no fetch request to the new URL is necessary.
+
+The callback function receives a URL path as an argument and needs to return a
+path:
 
 ```javascript
 const options = {
   resolvePath: (path) => {
-    if (path.startsWith('/projects/?')) return '/projects/';
-    return path;
+    if (path.startsWith('/projects/?')) {
+      return '/projects/';
+    } else {
+      return path;
+    }
   }
 }
 ```
-
-The above example tells swup to treat all these paths that start with `/projects/?` as one. It will now ignore all changes to the URL (through link clicks or history browsing) if the previous and next URL resolve to the same one. It will also use the resolved path for its cache (if active) and for storing and restoring the scroll position (if the SwupScrollPlugin is in use).
 
 The option defaults to this:
 
