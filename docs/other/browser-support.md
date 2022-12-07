@@ -15,11 +15,11 @@ parent: Other
 
 | Chrome | Firefox | Edge | Safari | iOS |
 |--------|---------|------|--------|-----|
-| 33+    | 29+     | 12+  | 7+     | 8+  |
+| 41+    | 35+     | 15+  | 9+     | 9+  |
 
-## Partial support with polyfills
+## Improved support with polyfills
 
-Including a [Promise polyfill](https://github.com/stefanpenner/es6-promise) will add IE11 to supported browsers.
+Including polyfills for [Promise](https://github.com/stefanpenner/es6-promise) and [Element.closest](https://github.com/idmadj/element-closest-polyfill) will add support for Edge 12 and Internet Explorer 11.
 
 | Chrome | Firefox | Edge | Safari | iOS | IE  |
 |--------|---------|------|--------|-----| --- |
