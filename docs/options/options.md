@@ -144,6 +144,14 @@ const options = {
 
 The above example tells Swup to treat all these paths that start with `/projects/?` as one. It will now ignore all changes to the URL (through link clicks or history browsing) if the previous and next URL resolve to the same one. It will also use the resolved path for its cache (if active) and for storing and restoring the scroll position (if the SwupScrollPlugin is in use).
 
+The option defaults to this:
+
+```javascript
+const options = {
+  resolvePath: (path) => path
+};
+```
+
 ## animateHistoryBrowsing
 
 This option enables the animations also if navigating using the browser history. Swup adds the class `is-popstate` to the html tag for the whole process of the transition on back/forward browsing.
