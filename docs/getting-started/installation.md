@@ -9,29 +9,34 @@ permalink: /getting-started/installation
 
 ## Installation
 
-If using a bundler, install swup from npm:
+There are two ways to install the package.
+
+### 1. Bundler
+
+If you're using a bundler in your project, install swup from npm:
 
 ```shell
 $ npm install swup
 ```
 
-If you're not bundling your scripts, include the UMD build from the `dist` folder:
+In your application, import swup and create a new instance:
 
-```html
-<script src="./dist/index.umd.js"></script>
+```js
+import Swup from 'swup';
+
+const swup = new Swup({ /* options */ });
 ```
 
-Or use the latest browser build from unpkg:
+### 2. CDN
+
+If you're not using a bundler and want to get started quickly, you can include the minified production file from a CDN:
 
 ```html
 <script src="https://unpkg.com/swup@3"></script>
 ```
 
-## Run Swup
-
-To run swup, create a new Swup instance.
+In your main script, create a new instance:
 
 ```javascript
-import Swup from 'swup';
-const swup = new Swup(); // only this line when included with script tag
+const swup = new Swup();
 ```

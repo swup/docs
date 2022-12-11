@@ -29,7 +29,7 @@ Both are adjustable in options and are not related to each other (you can animat
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua.
       </p>
-      <a href="/someOtherPage">Go to other page</a>
+      <a href="/other-page">Go to other page</a>
     </main>
   </body>
 </html>
@@ -38,8 +38,7 @@ Both are adjustable in options and are not related to each other (you can animat
 Enable swup.
 
 ```javascript
-import Swup from 'swup';
-const swup = new Swup(); // only this line when included with script tag
+const swup = new Swup();
 ```
 
 At this point your page is already enhanced as swup will stop page from reloading a replace the content.
