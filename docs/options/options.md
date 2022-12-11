@@ -13,8 +13,9 @@ has_toc: false
 Swup has several options that can be passed in during initialization:
 
 ```javascript
-const options = {};
-const swup = new Swup(options);
+const swup = new Swup({
+  /* options */
+});
 ```
 
 ## linkSelector
@@ -23,9 +24,9 @@ Defines which link elements will trigger page visits. By
 default, all `a` elements with an `href` attribute will receive clicks.
 
 ```javascript
-const options = {
+{
   linkSelector: 'a[href]'
-};
+}
 ```
 
 To allow swup to take over clicks on
@@ -34,9 +35,9 @@ To allow swup to take over clicks on
 append the selector:
 
 ```javascript
-const options = {
+{
   linkSelector: 'a[href], area[href], svg a[*|href]'
-};
+}
 ```
 
 ## ignoreLink
@@ -45,12 +46,12 @@ Allows ignoring specific links through a callback. By default, all
 links to other domains and all links with the `data-no-swup` attribute are being ignored.
 
 ```javascript
-const options = {
+{
   ignoreLink: (el) => (
     el.origin !== window.location.origin ||
     el.closest('[data-no-swup]')
   )
-};
+}
 ```
 
 ## animationSelector
@@ -60,9 +61,9 @@ class or class prefix. The default option will select all elements with
 classNames starting with `transition-`.
 
 ```javascript
-const options = {
+{
   animationSelector: '[class*="transition-"]'
-};
+}
 ```
 
 ## containers
@@ -80,9 +81,9 @@ Defaults to a single container of id `#swup`.
 **Note:** Only elements **inside** of the `body` tag are supported.
 
 ```javascript
-const options = {
+{
   containers: ['#swup']
-};
+}
 ```
 
 ## cache
@@ -92,9 +93,9 @@ This drastically improves speed but should be disabled for highly dynamic sites
 that need up-to-date responses on each request. Defaults to `true`.
 
 ```javascript
-const options = {
+{
   cache: true
-};
+}
 ```
 
 ## requestHeaders
@@ -103,12 +104,12 @@ Adjust request headers that should be sent with each swup request. Useful for re
 payloads from the server or other server-side pre-processing.
 
 ```javascript
-const options = {
+{
   requestHeaders: {
     'X-Requested-With': 'swup', // identify swup requests
     'Accept': 'text/html, application/xhtml+xml' // define expected response
   }
-};
+}
 ```
 
 ## skipPopStateHandling
@@ -124,9 +125,9 @@ The callback receives one argument - the `popState` event.
 The option defaults to this:
 
 ```javascript
-const options = {
+{
   skipPopStateHandling: (event) => event.state?.source !== 'swup'
-};
+}
 ```
 
 ## resolveUrl
@@ -149,7 +150,7 @@ The callback function receives a relative URL as an argument and needs to
 return a URL as well:
 
 ```javascript
-const options = {
+{
   resolveUrl: (url) => {
     if (url.startsWith('/projects/?')) {
       return '/projects/';
@@ -160,22 +161,16 @@ const options = {
 }
 ```
 
-The option defaults to this:
-
-```javascript
-const options = {
-  resolveUrl: (url) => url
-};****
-```
+The option defaults to `(url) => url`.
 
 ## animateHistoryBrowsing
 
 History visits triggered by the back and forward buttons of the browser will skip all animations to allow faster navigation. If you need animations on history visits, set this option to `true`. When enabled, swup will add the class `is-popstate` to the html tag during the transitions of those visits. The default value is `false`.
 
 ```javascript
-const options = {
+{
   animateHistoryBrowsing: false
-};
+}
 ```
 
 ⚠️ **Important Note**: This option was added due to popular request but should be used with caution. When enabled, swup has to disable all native browser scrolling behavior (sets [scrollRestoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration) to `manual`). We encourage you to strongly consider the consequences of doing so: The scroll positions on previous page(s) or between page reloads are **not being preserved** (but [can be implemented manually](https://github.com/swup/swup/issues/48#issuecomment-423854819), depending on the use case). Otherwise, Swup will scroll to the top/#element on `popState` as the browser would do.
@@ -185,7 +180,7 @@ const options = {
 The default option object look like...
 
 ```javascript
-const options = {
+{
   animateHistoryBrowsing: false,
   animationSelector: '[class*="transition-"]',
   cache: true,
@@ -201,5 +196,5 @@ const options = {
     'Accept': 'text/html, application/xhtml+xml'
   },
   skipPopStateHandling: (event) => event.state?.source !== 'swup'
-};
+}
 ```
