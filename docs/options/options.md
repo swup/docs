@@ -129,14 +129,14 @@ const options = {
 };
 ```
 
-## resolvePath
+## resolveUrl
 
 This option provides a way of rewriting URLs before swup will attempt to load
 them. In practice, it's an advanced way of telling swup which visits to ignore.
 By resolving different paths to a single path, swup will treat all these
-paths as a single resource and ignore any visits between them. You can then
+as a single resource and ignore any visits between them. You can then
 handle any changes on the page yourself: updating content, title tag, etc.
-without swup getting in the way. Swup will also use the resolved path for its
+without swup getting in the way. Swup will also use the resolved URL for its
 cache and for restoring the scroll position if using the scroll plugin.
 
 An example use case would be a project listing with purely client-side filtering
@@ -145,13 +145,13 @@ of all projects. In that case, you'll want to handle any visits between
 `/projects/?sort=date` and `/projects/?sort=title` yourself, telling swup that
 nothing has changed and no fetch request to the new URL is necessary.
 
-The callback function receives a URL path as an argument and needs to return a
-path:
+The callback function receives a relative URL as an argument and needs to
+return a URL as well:
 
 ```javascript
 const options = {
-  resolvePath: (path) => {
-    if (path.startsWith('/projects/?')) {
+  resolveUrl: (url) => {
+    if (url.startsWith('/projects/?')) {
       return '/projects/';
     } else {
       return path;
@@ -164,8 +164,8 @@ The option defaults to this:
 
 ```javascript
 const options = {
-  resolvePath: (path) => path
-};
+  resolveUrl: (url) => url
+};****
 ```
 
 ## animateHistoryBrowsing
