@@ -60,6 +60,8 @@ Defines the elements that are being animated. Usually, they will have a common
 class or class prefix. The default option will select all elements with
 classNames starting with `transition-`.
 
+Swup will wait for all CSS transitions and keyframe animations to finish on these elements before swapping in the content of the new page.
+
 ```javascript
 {
   animationSelector: '[class*="transition-"]'
