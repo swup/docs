@@ -11,22 +11,6 @@ parent: Other
 
 # Common Issues
 
-## Missing style for transition-\* class
-
-Swup waits for any element with class `transition-[something]` to finish the transition. Styles with the hidden state, normal state, and the duration need to be defined for such elements, like in the example below where the element fades out/in.
-
-```css
-.transition-fade {
-  transition: 0.4s;
-  opacity: 1;
-}
-html.is-animating .transition-fade {
-  opacity: 0;
-}
-```
-
-In case the styles are missing and the element does not transition to any other state, swup will still wait for the element to finish the transition. However, the transition will never finish (as it never even starts) and swup gets stuck at `willReplaceContent` event of the lifecycle.
-
 ## Overusing transition-\* class
 
 Swup waits for any element with class `transition-[something]` to finish the transition. While there is an unlimited number of elements that can have this class, only one is actually required. People tend to use a class with a format of `transition-[something]` on any element that is animating, which is not necessary and often leads to bugs. For example, misspelled class name would lead to styles not being defined for that element (see issue above).
