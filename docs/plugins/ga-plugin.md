@@ -11,9 +11,9 @@ repo_link: /ga-plugin
 # GA plugin
 Google Analytics plugin triggers pageview event on `contentReplaced` (on each page change). 
 Note that this event is not triggered at the first load, so the first page view must be triggered elsewhere. 
-However, page view event is by default triggered in [Javascripts tracking snippet](https://developers.google.com/analytics/devguides/collection/analyticsjs/#the_javascript_tracking_snippet) used for embedding GA.  
+However, page view event is by default triggered in [Javascripts tracking snippet](https://developers.google.com/analytics/devguides/collection/analyticsjs/#the_javascript_tracking_snippet) used for embedding GA. 
+Simplified code run by this plugin on `contentReplaced` event:
 
-Simplified code run by this plugin on `contentReplaced` event: 
 ```javascript
 // in case GTAG script is used on page
 window.gtag('config', GA_MEASUREMENT_ID, {
