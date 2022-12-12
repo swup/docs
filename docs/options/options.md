@@ -149,16 +149,15 @@ of all projects. In that case, you'll want to handle any visits between
 nothing has changed and no fetch request to the new URL is necessary.
 
 The callback function receives a relative URL as an argument and needs to
-return a URL as well:
+return a relative URL as well:
 
 ```javascript
 {
   resolveUrl: (url) => {
     if (url.startsWith('/projects/?')) {
       return '/projects/';
-    } else {
-      return path;
     }
+    return url;
   }
 }
 ```
