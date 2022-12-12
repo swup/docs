@@ -24,6 +24,7 @@ window.dataLayer.push({
 ```
 
 ## Installation
+
 This plugin can be installed with npm
 
 ```bash

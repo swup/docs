@@ -16,7 +16,7 @@ There are two ways to install the package.
 If you're using a bundler in your project, install swup from npm:
 
 ```shell
-$ npm install swup
+npm install swup
 ```
 
 In your application, import swup and create a new instance:

@@ -75,7 +75,7 @@ new SwupFormsPlugin({
 
 The plugin adds two events to swup:
 
-### `submitForm` 
+### `submitForm`
 
 Triggered every time a form is being submitted:
 
