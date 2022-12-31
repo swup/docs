@@ -40,17 +40,13 @@ append the selector:
 }
 ```
 
-## ignoreLink
+## ignoreVisit
 
-Allows ignoring specific links through a callback. By default, all
-links to other domains and all links with the `data-no-swup` attribute are being ignored.
+Allows ignoring specific visits through a callback. By default, swup will ignore links with a `data-no-swup` attribute on itself or any parent element. The callback receives the URL of the new page as well as a copy of the element that triggered it, if any.
 
 ```javascript
 {
-  ignoreLink: (el) => (
-    el.origin !== window.location.origin ||
-    el.closest('[data-no-swup]')
-  )
+  ignoreVisit: (href, { el } = {}) => el?.closest('[data-no-swup]')
 }
 ```
 
@@ -186,10 +182,7 @@ The default option object look like...
   animationSelector: '[class*="transition-"]',
   cache: true,
   containers: ['#swup'],
-  ignoreLink: (el) => (
-    el.origin !== window.location.origin ||
-    el.closest('[data-no-swup]')
-  ),
+  ignoreVisit: (href, { el } = {}) => el?.closest('[data-no-swup]'),
   linkSelector: 'a[href]',
   plugins: [],
   requestHeaders: {
