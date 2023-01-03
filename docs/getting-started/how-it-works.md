@@ -18,10 +18,8 @@ When a user navigates your website, swup waits for all elements on the current p
 
 For the animations based on CSS to be possible, swup uses several classes that are assigned to the `html` tag through the process of a page transition:
 
-- `to-[path of next page in URL-friendly form]` - Assigned once a link is clicked and removed when the whole process of transition of pages is done.
-  Custom class can be also added by adding `data-swup-transition` to the link, where `to-[content of data-swup-transition attribute]` is added to html.
-  Class can be used to change animation for different URLs.
 - `is-animating` — Assigned once a link is clicked. Removed after the page content is replaced. Used for defining styles of unloaded pages.
 - `is-changing` — Assigned once a link is clicked. Removed after the whole transition process. Used for showing loading state.
 - `is-leaving` — Assigned once a link is clicked. Removed right before the content is replaced. Used to identify the **leave** phase of the transition. Combine with `is-animating` to create differing **leave** and **enter** transitions.
 - `is-rendering` — Assigned right before the content is replaced. Removed after the whole transition process. Used to identify the **enter** phase of the transition. Combine with `is-animating` to create differing **leave** and **enter** transitions.
+- `to-[custom-transition]` — Assigned if the clicked link has a `[data-swup-transition]` attribute. Can be used to change the animation for a specific URL.
