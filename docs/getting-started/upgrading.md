@@ -17,6 +17,7 @@ Swup 3 is mostly backward-compatible. Most projects should keep running fine aft
 
 - [Multiple CSS transitions](#multiple-css-transitions)
 - [Link selector](#link-selector)
+- [HTML classnames](#html-classnames)
 - [Script import](#script-import)
 - [Helper imports](#helper-imports)
 - [Plugin authors](#plugin-authors)
@@ -51,6 +52,31 @@ const swup = new Swup({
 +    el?.matches('[data-no-swup], [href$=".pdf"]')
 +  )
 });
+```
+
+### HTML classnames
+
+Swup 3 will no longer by default add `to-*` classnames to the html tag
+representing the URL of the new page.
+
+```diff
+-  <html class="is-animating to-about">
++  <html class="is-animating">
+```
+
+If your site requires those classnames to choose between animations based on the
+URL of the current or next page, you can use the 
+[Route Name Plugin](/plugins/route-name-plugin). Setting its `paths` option will
+restore the previous behavior and add `from-*` and `to-*` classes.
+
+```js
+const swup = new Swup({
+  plugins: [new SwupRouteNamePlugin({ paths: true })]
+});
+```
+
+```html
+<html class="is-animating from-homepage to-about">
 ```
 
 ### Script import
