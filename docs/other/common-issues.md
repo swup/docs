@@ -11,9 +11,9 @@ parent: Other
 
 # Common Issues
 
-## Overusing transition-\* class
+## Overusing the `transition-*` class
 
-Swup waits for any element with class `transition-[something]` to finish the transition. While there is an unlimited number of elements that can have this class, only one is actually required. People tend to use a class with a format of `transition-[something]` on any element that is animating, which is not necessary and often leads to bugs. For example, misspelled class name would lead to styles not being defined for that element (see issue above).
+Swup waits for any element with a `transition-[something]` class to finish the transition. While there is an unlimited number of elements that can have this class, only one is actually required. People tend to use a class with a format of `transition-[something]` on any element that is animating, which is not necessary and often leads to bugs. For example, misspelled class name would lead to styles not being defined for that element (see issue above).
 
 It is recommended to use one element with class with a format `transition-[something]` to set a transition duration for swup and make any other transition happen independently.
 
@@ -29,7 +29,7 @@ html.is-animating .fade {
 
 The styles in the example above will still animate the element for the transition, but swup won't wait for the elements to finish the transition. If the main transition (the transition of the one element with class `transition-*`) has at least similar timing to all the others, there should be no issue with using this approach.
 
-## Libraries using transition-\* classes
+## Libraries using `transition-*` classes
 
 Some other libraries can use a class in a form of `transition-*` for its own functionality. A great example of such a third party code is the [Foundation framework](https://foundation.zurb.com/).
 

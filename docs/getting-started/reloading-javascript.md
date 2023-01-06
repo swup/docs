@@ -13,7 +13,7 @@ Since swup removes the page reloads from site, it also removes a standard lifecy
 By default, scripts get enabled when the page is loaded. Often we would find ourselves waiting for whole page to load before executing the script.
 
 ```javascript
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener('DOMContentLoaded', () => {
     // run whatever we need
 });
 ```
