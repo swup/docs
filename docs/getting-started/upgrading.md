@@ -65,7 +65,7 @@ representing the URL of the new page.
 ```
 
 If your site requires those classnames to choose between animations based on the
-URL of the current or next page, you can use the 
+URL of the current or next page, you can use the
 [Route Name Plugin](/plugins/route-name-plugin). Setting its `paths` option will
 restore the previous behavior and add `from-*` and `to-*` classes.
 
@@ -85,7 +85,7 @@ If you're including the UMD version of swup in a script tag, you'll need to upda
 
 ```diff
 - <script src="./dist/swup.js"></script>
-+ <script src="./dist/index.umd.js"></script>
++ <script src="./dist/Swup.umd.js"></script>
 ```
 
 Same for the CDN version:
@@ -97,11 +97,11 @@ Same for the CDN version:
 
 ### Helper imports
 
-Swup 3 exports ESM modules and defines custom export maps. If you have been importing swup helpers or utils from the `lib` folder directly, you need to update the import paths:
+Swup 3 exports ESM modules and defines named exports. If you have been importing swup helpers or utils from the `lib` folder directly, you need to update the import paths:
 
 ```diff
 - import { getPageData } from 'swup/lib/helpers';
-+ import { getPageData } from 'swup/helpers';
++ import { getPageData } from 'swup';
 ```
 
 #### Removed helpers
@@ -114,7 +114,7 @@ The `Link` helper, used internally for parsing URL parts from link elements, has
 - import { Link } from 'swup/lib/helpers';
 - const url = new Link(linkEl.href).getAddress();
 - const hash = new Link(linkEl.href).getHash();
-+ import { Location } from 'swup/helpers';
++ import { Location } from 'swup';
 + const { url, hash } = Location.fromElement(linkEl);
 ```
 
@@ -122,15 +122,15 @@ The `Link` helper, used internally for parsing URL parts from link elements, has
 
 #### Update import paths of helpers and utils
 
-- `swup/lib/helpers` → `swup/helpers`
-- `swup/lib/utils` → `swup/utils`
+- `swup/lib/helpers` → `swup`
+- `swup/lib/utils` → `swup`
 
 #### Switch to `Location` helper
 
 Use the new `Location` helper for parsing URLs instead of the old `Link` class.
 
 ```js
-import { Location } from 'swup/helpers';
+import { Location } from 'swup';
 const { url, hash } = Location.fromElement(linkEl);
 ```
 

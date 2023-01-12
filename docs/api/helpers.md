@@ -10,10 +10,9 @@ permalink: /api/helpers
 # Helpers
 
 Helpers that can be used for developing plugins, themes or anything else around swup.
-Helpers can be imported from  `swup/helpers`.
 
 ```javascript
-import { getCurrentUrl, updateHistoryRecord } from 'swup/helpers';
+import { getCurrentUrl, updateHistoryRecord } from 'swup';
 ```
 
 ## Location
