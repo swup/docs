@@ -3,7 +3,7 @@ layout: default
 title: Contributions
 description: How to contribute to swup's development
 has_children: false
-nav_order: 4
+nav_order: 3
 permalink: /other/contributions
 has_toc: false
 parent: Other
@@ -21,9 +21,9 @@ If you have a question, suggestion, or feature request, feel free to
 
 ## Pull Requests
 
-If you would like to see a new feature in swup, we encourage you to fork swup and create a [pull request]([url](https://github.com/swup/swup/pulls))! 
+If you would like to see a new feature in swup, we encourage you to fork swup and create a [pull request]([url](https://github.com/swup/swup/pulls))!
 
-Please make sure to run the swup tests locally before creating your PR on GitHub: 
+Please make sure to run the swup tests locally before creating your PR on GitHub:
 
 ```shell
 npm install && npm run test

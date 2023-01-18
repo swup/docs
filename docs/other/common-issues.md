@@ -3,7 +3,7 @@ layout: default
 title: Common Issues
 description: Description of common issue or caveats people encounter
 has_children: false
-nav_order: 2
+nav_order: 1
 permalink: /other/common-issues
 has_toc: false
 parent: Other
@@ -11,43 +11,9 @@ parent: Other
 
 # Common Issues
 
-## Incorrect link attributes
+## Overusing the `transition-*` class
 
-Swup is by default set to do the transition for any link with `href` attribute starting with the current domain, `/` or `#`. People often use different `href` attributes like `about.html`.
-
-```html
-<!-- this is fine -->
-<a href="http://example.com/about">
-  <a href="http://example.com/about.html">
-    <a href="/about">
-      <a href="/about.html">
-        <a href="#about">
-          <!-- this is not fine -->
-          <a href="about.html"></a></a></a></a></a
-></a>
-```
-
-Default behavior can be changed with [linkSelector]({{ "/options#link-selector" | relative_url }}) option.
-
-## Missing style for transition-\* class
-
-Swup waits for any element with class `transition-[something]` to finish the transition. Styles with the hidden state, normal state, and the duration need to be defined for such elements, like in the example below where the element fades out/in.
-
-```css
-.transition-fade {
-  transition: 0.4s;
-  opacity: 1;
-}
-html.is-animating .transition-fade {
-  opacity: 0;
-}
-```
-
-In case the styles are missing and the element does not transition to any other state, swup will still wait for the element to finish the transition. However, the transition will never finish (as it never even starts) and swup gets stuck at `willReplaceContent` event of the lifecycle.
-
-## Overusing transition-\* class
-
-Swup waits for any element with class `transition-[something]` to finish the transition. While there is an unlimited number of elements that can have this class, only one is actually required. People tend to use a class with a format of `transition-[something]` on any element that is animating, which is not necessary and often leads to bugs. For example, misspelled class name would lead to styles not being defined for that element (see issue above).
+Swup waits for any element with a `transition-[something]` class to finish the transition. While there is an unlimited number of elements that can have this class, only one is actually required. People tend to use a class with a format of `transition-[something]` on any element that is animating, which is not necessary and often leads to bugs. For example, misspelled class name would lead to styles not being defined for that element (see issue above).
 
 It is recommended to use one element with class with a format `transition-[something]` to set a transition duration for swup and make any other transition happen independently.
 
@@ -63,7 +29,7 @@ html.is-animating .fade {
 
 The styles in the example above will still animate the element for the transition, but swup won't wait for the elements to finish the transition. If the main transition (the transition of the one element with class `transition-*`) has at least similar timing to all the others, there should be no issue with using this approach.
 
-## Libraries using transition-\* classes
+## Libraries using `transition-*` classes
 
 Some other libraries can use a class in a form of `transition-*` for its own functionality. A great example of such a third party code is the [Foundation framework](https://foundation.zurb.com/).
 
@@ -145,7 +111,7 @@ Since search engines are improving and starting to simulate actual devices brows
 <link rel="canonical" href="..." />
 ```
 
-**[head-plugin]({{ "/plugins/head-plugin" | relative_url }})** could help solve that, as well as deleting the tag from head. There are also other, more reliable alternatives to make search engines index your site correctly, like sitemap.
+The **[head-plugin]({{ "/plugins/head-plugin" | relative_url }})** could help solve that, as well as deleting the tag from head. There are also other, more reliable alternatives to make search engines index your site correctly, like sitemap.
 
 See [this issue](https://github.com/swup/swup/issues/130) for more information.
 

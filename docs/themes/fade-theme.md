@@ -10,7 +10,7 @@ repo_link: /fade-theme
 
 # Fade Theme
 
-Basic theme for fade in/out animation of the main container.
+Basic theme for a fade-in/fade-out animation of the main container.
 
 ## Installation
 

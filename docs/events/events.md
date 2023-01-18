@@ -10,51 +10,31 @@ has_toc: false
 
 # Events
 
-As we are replacing the native functionality of the browser,
-there is a need for a lifecycle that would replace the standard browser page lifecycle (_load page_ and _leave page_).
+As we are replacing the native lifecycle of a browser visit,
+we need events that let us imitate that lifecycle in our scripts.
 
-Swup emits bunch of events, that we can use to enable JavaScript, trigger analytics, and much more.
-Handlers are registered and unregistered with swups `on` and `off` methods.
-
-When possible, swup also passes original event into the handler
-(clickLink, hoverLink, and such events get `delegateTarget` property as the referenced element due to the event propagation).
+Swup emits a list of events that can be used to implement custom logic, initialize components, trigger analytics, and much more. Listen to events using the `on()` and `off` methods.
 
 ```javascript
-// trigger page view for GTM
-swup.on('pageView', function() {
-  dataLayer.push({
-    event: 'VirtualPageview',
-    virtualPageURL: window.location.pathname,
-    virtualPageTitle: document.title
-  });
+// Add a new handler
+swup.on('pageView', () => {
+  console.log('New page loaded');
 });
 
-swup.on('contentReplaced', function() {
-  swup.options.containers.forEach((selector) => {
-    // load scripts for all elements with 'selector'
-  });
-});
+swup.off('pageView', handler); // remove a single handler
+swup.off('pageView'); // remove all 'pageView' handlers
+swup.off(); // remove all handlers for all events
 ```
 
-```javascript
-swup.off('pageView', handler); // removes single handler of 'pageView' event
-swup.off('pageView'); // removes all handlers for 'pageView' event
-swup.off(); // removes all handlers for all events
-```
-
-**Note:** example with enabling scripts above assumes using component based approach, like the one used by [Gia framework](https://github.com/giantcz/gia).
-
-For backward compatibility, all events are also triggered on the `document` with **swup:** prefix.
+For backward compatibility, all events are also triggered on the `document` with a `swup:` prefix.
 
 ```javascript
-document.addEventListener('swup:contentReplaced', (event) => {
-  // do something when content is replaced
-});
+document.addEventListener('swup:contentReplaced', () => {});
 ```
 
 ## List of all events
 
-|         EventName          |                                                      Description                                                       |
+|         Event name          |                                                      Description                                                       |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | **animationInDone**        | triggers when transition of all animated elements is done (after content is replaced)                                  |
 | **animationInStart**       | triggers when animation _IN_ starts (class `is-animating` is removed from html tag)                                    |
@@ -77,3 +57,27 @@ document.addEventListener('swup:contentReplaced', (event) => {
 | **transitionStart**        | triggers when transition start (`loadPage` method is called)                                                           |
 | **transitionEnd**          | triggers when transition ends (content is replaced and all animations are done                                         |
 | **willReplaceContent**     | triggers right before the content of page is replaced                                                                  |
+
+## Examples
+
+### Trigger analytics page views
+
+```javascript
+swup.on('pageView', () => {
+  dataLayer.push({
+    event: 'VirtualPageview',
+    virtualPageURL: window.location.pathname,
+    virtualPageTitle: document.title
+  });
+});
+```
+
+### Initialize new components on the page
+
+```javascript
+swup.on('contentReplaced', () => {
+  swup.options.containers.forEach((selector) => {
+    // load scripts for all elements with 'selector'
+  });
+});
+```

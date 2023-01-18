@@ -10,7 +10,7 @@ repo_link: /slide-theme
 
 # Slide Theme
 
-Theme for slide in/out animation. Makes content slide out (+fade) in one direction, and slide in from the other.
+Theme for a slide-in/slide-out animation. Makes content slide out (+fade) in one direction, and slide in from the other.
 
 ## Installation
 

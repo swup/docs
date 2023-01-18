@@ -9,8 +9,9 @@ repo_link: /gia-plugin
 ---
 
 # Gia Plugin
-Swup plugin for simple implementation with [Gia framework](https://github.com/giantcz/gia). 
-Plugin automatically reloads components when it's needed only for the replaced containers. 
+
+Swup plugin for simple implementation with [Gia framework](https://github.com/giantcz/gia).
+Plugin automatically reloads components when it's needed only for the replaced containers.
 
 ## Installation
 
@@ -42,10 +43,10 @@ const swup = new Swup({
 });
 ```
 
-
 ## Options
 
 ### components
+
 Defines components object to be used for mount/unmount. Defaults to empty object.
 
 ```javascript
@@ -62,6 +63,7 @@ new SwupGiaPlugin({components: components});
 ```
 
 ### firstLoad
+
 Defines whether plugin should load the component on start. Defaults to `true`.
 
 ```javascript
@@ -69,6 +71,7 @@ new SwupGiaPlugin({firstLoad: true});
 ```
 
 ### log
+
 Defines whether plugin should let Gia report info on mounting/unmounting of components (like setting `log` variable with [Gia config](https://github.com/giantcz/gia#config)).
 Defaults to `false`.
 

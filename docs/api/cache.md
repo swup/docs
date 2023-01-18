@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Cache
-description: Swup cache methods
+description: Swup's cache and its interface
 nav_order: 2
 parent: API
 permalink: /api/cache
@@ -9,57 +9,58 @@ permalink: /api/cache
 
 # Cache
 
-Swup cache methods.
+Swup's cache is available as `swup.cache`. See below for the available methods.
 
 ## cacheUrl
 
-Creates a cache record.
+Creates a cache record. The `url`, `title`, `blocks` and `originalContent` properties are required.
 
 ```javascript
 swup.cache.cacheUrl({
+    url: '/url-to-page',
     title: 'Page title',
-    pageClass: 'body-class',
-    originalContent: 'html content of page',
     blocks: ['<div id="swup"></div>'],
+    originalContent: '<html>...</html>',
+    pageClass: 'body-class',
     responseURL: '/redirected-url'
 });
 ```
 
 ## getPage
 
-Returns page object from cache based on passed url.
+Returns the page object if the given URL is cached. Returns `undefined` otherwise.
 
 ```javascript
-swup.cache.getPage('/docs');
+const page = swup.cache.getPage('/about');
 ```
 
 ## getCurrentPage
 
-Returns page object of current page.
+Returns the page object of the current page.
 
 ```javascript
-swup.cache.getCurrentPage();
+const page = swup.cache.getCurrentPage();
 ```
 
 ## exists
 
-Returns whether page exist in cache based on passed url.
+Check if the given URL has been cached.
 
 ```javascript
-swup.cache.exists('/docs');   // true/false
+const isCached = swup.cache.exists('/about');
 ```
 
 ## remove
 
-Removes single record from cache based on passed url.
+Removes a single page from the cache.
 
 ```javascript
-swup.cache.remove('/docs');
+swup.cache.remove('/about');
 ```
 
 ## empty
 
-Removes all records from cache.
+Removes all pages from the cache.
 
 ```javascript
 swup.cache.empty();

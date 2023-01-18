@@ -10,10 +10,9 @@ has_toc: true
 
 # Themes
 
-Themes are essentially plugins with a different purpose.
-All the technicalities are identical to plugins (like enabling/disabling one),
-but purpose is to provide easy way to include required CSS or HTML structure
-for the transitions to enable event more **Plug&Play** vibe.
+Themes are predefined transitions to get up and running quickly.
+
+Technically, they are identical to plugins in how they're structured and used, but with a focus on adding required CSS and manipulating HTML if necessary.
 
 Try out the default themes here:
 

@@ -10,7 +10,7 @@ repo_link: /overlay-theme
 
 # Overlay Theme
 
-Theme for slide in/out animation of overlay.
+Theme for a slide-in/slide-out animation of an overlay.
 
 ## Installation
 
@@ -51,8 +51,8 @@ Defaults to `#2D2E82`.
 
 ### duration
 
-Changes the duration of the overlay animation.
-Defaults to 600 (ms).
+Changes the duration of the overlay animation, in milliseconds.
+Defaults to `600` (ms).
 
 ### direction
 
