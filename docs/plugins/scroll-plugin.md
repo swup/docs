@@ -14,22 +14,20 @@ Adds awesome "acceleration based" automatic scrolling into the process of page t
 
 ## Installation
 
-This plugin can be installed with npm
+Install the plugin from npm and import it into your bundle.
 
 ```bash
 npm install @swup/scroll-plugin
 ```
 
-and included with an import:
-
-```shell
+```js
 import SwupScrollPlugin from '@swup/scroll-plugin';
 ```
 
-or included from the dist folder
+Or include the minified production file from a CDN:
 
 ```html
-<script src="./dist/SwupScrollPlugin.js"></script>
+<script src="https://unpkg.com/@swup/scroll-plugin@2"></script>
 ```
 
 ## Usage
