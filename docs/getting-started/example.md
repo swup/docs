@@ -6,8 +6,10 @@ parent: Getting Started
 nav_order: 3
 permalink: /getting-started/example
 ---
+
 # Example
-First thing we need to do is prepare our HTML content. 
+
+First thing we need to do is prepare our HTML content.
 Define the elements that are being animated and elements (**containers**) that need to be replaced.
 Let's assume we want to fade in/out the content of `main` element and replace it's contents.
 
@@ -22,12 +24,12 @@ Both are adjustable in options and are not related to each other (you can animat
   </head>
   <body>
     <main id="swup" class="transition-fade">
-      <h1>This is homepage</h1>
+      <h1>Homepage</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua.
       </p>
-      <a href="/someOtherPage">Go to other page</a>
+      <a href="/other-page">Go to other page</a>
     </main>
   </body>
 </html>
@@ -36,8 +38,7 @@ Both are adjustable in options and are not related to each other (you can animat
 Enable swup.
 
 ```javascript
-import Swup from 'swup';
-const swup = new Swup(); // only this line when included with script tag
+const swup = new Swup();
 ```
 
 At this point your page is already enhanced as swup will stop page from reloading a replace the content.
@@ -57,7 +58,7 @@ html.is-animating .transition-fade {
 ```
 
 **And believe it or not, that's it!**
-We're all set, or at least for our simple fade in/fade out example…  
+We're all set, or at least for our simple fade in/fade out example…
 Swup loads the page, handles classes for the css animation, waits for the animation to finish/page to load, replaces content and fades your content back.
 Swup also changes the title of your page to the loaded one (more in [options]({{ "/options" | relative_url }}) or [plugins]({{ "/plugins" | relative_url }})).
 

@@ -9,20 +9,26 @@ repo_link: /forms-plugin
 ---
 
 # Forms plugin
-Plugin adds support for forms. Any form that matches the [formSelector](#formSelector) is sent via swup (with transition).
 
-Swup will take the form data and submit it with appropriate `method` and `action` based on form attributes, where method defaults to `GET` and action defaults to current url.
-In case of `GET` method, swup serializes the data into url. 
-For `POST` requests, swup wraps the data and sends it via POST request. 
+Add support for sending forms via swup.
 
-This form also considers the `data-swup-transition` attribute on the form element to use the appropriate animation. 
+Forms matching the customizable [selector](#formselector) `form[data-swup-form]`
+will be serialized and submitted by swup. The appropriate `method` and `action`
+are derived from the form's attributes. If not specified otherwise, forms are
+submitted as `GET` requests to the current url.
 
-**Note:** This feature is rather experimental and serves to enable submission of simple forms such as "search on website" form. 
-The response from the server must be a valid page with all containers that need to be replaced by swup.
-This method does not support submission of files, or other advanced features. 
-If you're looking for such features, please, use swup [API]({{ "/api" | relative_url }}) to send requests. 
+The server response must be a valid page with all containers to be replaced by
+swup.
+
+If a `data-swup-transition` attribute is found on the form element, it is used
+to select the swup animation.
+
+**Note:** This plugin is appropriate for simple use cases like search inputs or
+contact forms. For more complex requirements involving file uploads or custom
+serialization, it is recommended to use the swup API directly.
 
 ## Installation
+
 This plugin can be installed with npm
 
 ```bash
@@ -42,6 +48,7 @@ or included from the dist folder
 ```
 
 ## Usage
+
 To run this plugin, include an instance in the swup options.
 
 ```javascript
@@ -51,13 +58,38 @@ const swup = new Swup({
 ```
 
 ## Options
+
 ### formSelector
-`formSelector` option defines a selector for forms which should be sent via swup (with transition as any other request). 
-By default, any form with `data-swup-form` attribute is selected.
+
+The `formSelector` option defines a selector for forms which should be sent via
+swup (with transition as any other request). By default, any form with a
+`data-swup-form` attribute is selected.
 
 ```javascript
-new SwupFormsPlugin({formSelector: 'form[data-swup-form]'});
+new SwupFormsPlugin({
+  formSelector: 'form[data-swup-form]'
+});
 ```
 
-## Changes of swup instance
-Plugin adds `submitForm` and `openFormSubmitInNewTab` events to swup, that can be listened to with `on` method.  
+## Changes of the swup instance
+
+The plugin adds two events to swup:
+
+### `submitForm`
+
+Triggered every time a form is being submitted:
+
+```js
+swup.on('submitForm', e => console.log(e));
+```
+
+### `openFormSubmitInNewTab`
+
+Triggered each time a form is being submitted to a new tab or window. This will happen if the user has pressed either the `Command` (Mac), `Control` (Windows) or `Shift` key while submitting the form. The plugin normalizes that behavior across browsers.
+
+## Browser support
+
+Form submissions are serialized using the
+[URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
+browser API. If you need to support older browsers such as IE 11, you should add
+a [polyfill](https://github.com/ungap/url-search-params).

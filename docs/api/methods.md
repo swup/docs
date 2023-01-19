@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Methods
-description: Methods to control swup instance from your code
+description: Methods on the swup instance
 nav_order: 1
 parent: API
 permalink: /api/methods
@@ -10,44 +10,24 @@ permalink: /api/methods
 # Methods
 
 ## loadPage
-Navigates to a route with the animations and all... (can be used to submit forms).
+
+Navigate and transition to a URL, optionally modifying the request method and sending query or form data. Setting a `customTransition` works like setting the `data-swup-transition` attribute on a link.
+
 ```javascript
 swup.loadPage({
-  url: '/someRoute', // route of request (defaults to current url)
+  url: '/about', // URL of request (defaults to current url)
   method: 'GET', // method of request (defaults to "GET")
-  data: data, // data passed into XMLHttpRequest send method
-  customTransition: '' // name of your transition used for adding custom class to html element and choosing custom animation in swupjs (as setting data-swup-transition attribute on link)
+  data: data, // data passed into XMLHttpRequest.send()
+  customTransition: '' // name of transition to use
 });
 ```
 
-**Note:** `loadPage` function is used to submit forms with swup.
-For more information on submitting forms with `XMLHttpRequest`, refer to [Sending forms through JavaScript](https://developer.mozilla.org/en-US/docs/Learn/HTML/Forms/Sending_forms_through_JavaScript).
-
-## preloadPage
-Added to swup instance by [preload plugin]({{ "/plugins/preload-plugin" | relative_url }}).
-Preload a page and saves it into cache. 
-```javascript
-swup.preloadPage('/page-url');
-```
-
-## preloadPages
-Added to swup instance by [preload plugin]({{ "/plugins/preload-plugin" | relative_url }}).
-Finds all links in a page with `data-swup-preload` attribute and preloads pages they link to.   
-```javascript
-swup.preloadPages();
-```
-
-## scrollTo
-Added to swup instance by [scroll plugin]({{ "/plugins/scroll-plugin" | relative_url }}).
-Smoothly scrolls to required position. Accepts amount in pixels element you want to scroll to.
-```javascript
-swup.scrollTo(document.body, 2000);
-```
-
 ## on/off
-Un/registers a handler for swup event. 
+
+Un/register a handler for swup events.
+
 ```javascript
-const handler = event => console.log(event)
+const handler = event => console.log(event);
 
 // register event handler
 swup.on('clickLink', handler);
@@ -63,56 +43,109 @@ swup.off();
 ```
 
 ## destroy
-Disables swup. 
+
+Disables swup.
+
 ```javascript
 swup.destroy();
 ```
 
-## use
-Enables plugin.
-```javascript
-swup.use(new SwupScrollPlugin());
-```
+## use/unuse
 
-## unuse
-Disables plugin. Accepts plugin name or instance. 
+Enable and disable plugins.
+
 ```javascript
+// Enable plugin: accepts an instantiated instance
+swup.use(new SwupScrollPlugin());
+
+// Disable plugin: accepts either name or instance
 swup.unuse('ScrollPlugin');
 ```
 
 ## findPlugin
-Returns plugin instance with a given name of a plugin. 
+
+Returns the plugin instance by that name, if enabled.
+
 ```javascript
 const pluginInstance = swup.findPlugin('ScrollPlugin');
 ```
 
 ## getAnimationPromises
-Returns array of promises for the animated elements (each promise gets resolved when animation of an element is finished). 
-This method can be modified to return array of other promises swup should wait for before proceeding in page transition. 
+
+Get an array of Promises that resolve when all animations have finished on the elements that swup identified as animation containers.
+
+This method can be overwritten to return a custom array of Promises that swup should wait for before proceeding with the page transition.
+
 ```javascript
-const arrayOfPromises = swup.getAnimationPromises();
+await Promise.all(swup.getAnimationPromises());
+// Animations have finished now
 ```
 
 ## getPageData
-**Note:** This method is rather internal and is utilized by [custom payload plugin]({{ "/plugins/custom-payload-plugin" | relative_url }}). Use the plugin instead. 
 
-Gets `response` object received from server.
-Returns page data that are store by swup in cache.
-This method can be modified to accept other types of response from server, but must always return at least the fields below. 
+**Note:** This method is rather internal and is utilized by [custom payload plugin]({{ "/plugins/custom-payload-plugin" | relative_url }}). Use the plugin instead.
+
+Given an XHR request object, returns an object for further use in swup. Expects HTML as return type. Can be overwritten to accept and parse other return types from server, but must always return at least the fields below.
+
 ```javascript
 const json = {
-    title: 'Page title',    
-    pageClass: 'body-class',
-    originalContent: 'html content of page',
-    blocks: ['<div id="swup"></div>'], 
-    responseURL: '/redirected-url'
+  title: 'Page title',
+  originalContent: '<html>...</html>',
+  blocks: ['<div id="swup"></div>'],
+  pageClass: 'body-class',
+  responseURL: '/redirected-url'
 };
 ```
 
 ## triggerEvent
-Triggers swup event. Accepts two arguments - `eventName` and optional `eventObject`.
+
+Trigger a swup event. Pass the event name and an optional event object of the original event that triggered it.
+
+```javascript
+swup.triggerEvent('transitionEnd', popstateEvent);
+```
 
 ## log
-Does nothing by default, but outputs passed content when [debug plugin]({{ "/plugins/debug-plugin" | relative_url }}) is used. 
-Accepts two arguments - `name` (the content of message) and optional log object which gets printed in a console groups.  
 
+Does nothing by default, but outputs the passed content when the [debug plugin]({{ "/plugins/debug-plugin" | relative_url }}) is used.
+Accepts two arguments, the content of message and an optional log object which gets printed in a console group.
+
+```javascript
+swup.log('Something happened', { lorem: 'ipsum' });
+```
+
+## Methods added by plugins
+
+These methods are not present on swup by default, but will require installing the mentioned plugins to become available.
+
+### preloadPage
+
+Added by the [preload plugin]({{ "/plugins/preload-plugin" | relative_url }}).
+Preload a page and save it into the cache.
+
+```javascript
+swup.preloadPage('/page-url');
+```
+
+### preloadPages
+
+Added by the [preload plugin]({{ "/plugins/preload-plugin" | relative_url }}).
+Finds all links on the page with a `data-swup-preload` attribute and preloads the URLs they point to.
+
+```javascript
+swup.preloadPages();
+```
+
+### scrollTo
+
+Added by the [scroll plugin]({{ "/plugins/scroll-plugin" | relative_url }}).
+Smoothly scroll to the requested position. Accepts either the amount in pixels or the element you want to scroll to.
+Currently only supports vertical scrolling.
+
+```javascript
+// scroll vertically to 2000px
+swup.scrollTo(2000);
+
+// scroll vertically to an element
+swup.scrollTo(document.querySelector('#footer'));
+```

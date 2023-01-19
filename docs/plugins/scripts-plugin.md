@@ -3,7 +3,7 @@ layout: default
 title: Scripts Plugin
 description: Plugin to re-run scripts on the page on each page transition
 parent: Plugins
-nav_order: 15
+nav_order: 16
 permalink: /plugins/scripts-plugin
 repo_link: /scripts-plugin
 ---
@@ -54,6 +54,7 @@ const swup = new Swup({
 ## Options
 
 ### `head` and `body`
+
 Plugin has two boolean options - `head` and `body`. Both are by default set to `true`.
 Options can be used to disable re-running of scripts globally in head or body of the page.
 
@@ -65,12 +66,12 @@ new SwupScriptsPlugin({
 ```
 
 ### optin
+
 In some situations, you might not have control over inserted scripts into the page (through GTM for example).
-In that case, switching `optin` option to `true` will only reload the scripts explicitly marked with `data-swup-reload-script` attribute. 
+In that case, switching `optin` option to `true` will only reload the scripts explicitly marked with `data-swup-reload-script` attribute.
 
 ```javascript
 new SwupScriptsPlugin({
   optin: false
 });
 ```
-

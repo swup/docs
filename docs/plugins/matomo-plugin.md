@@ -9,6 +9,7 @@ repo_link: /matomo-plugin
 ---
 
 # Matomo Plugin
+
 **by [jdraserschieb](https://github.com/jdraserschieb)**  
 
 Matomo plugin triggers pageview event on `contentReplaced` (on each page change).

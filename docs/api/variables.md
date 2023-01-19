@@ -8,25 +8,38 @@ permalink: /api/variables
 ---
 
 # Variables
+
 A few variables accessible in swup instance that could be helpful.
 
 ## transition
-Holds information about latest transition in a form of object. 
-Variable is always set right at the beginning of transition (after `loadPage` method call) so it can be used further on. 
+
+Holds information about the latest transition. Set at the beginning of the current transition to be used further on (right after the `loadPage` method call).
 
 ```javascript
-swup.transition = {
-    from: 'homepage',   // route of previous page
-    to: 'docs',         // route of next page
-    custom: 'slide-in'  // content 'data-swup-transition' attribute or content of customTransition property passed to loadPage method
+swup.transition === {
+    from: '/about',     // route of previous page
+    to: '/team',        // route of next page
+    custom: 'slide-in'  // content of [data-swup-transition] attribute or customTransition property passed to loadPage()
 }
 ```
 
-## options
-Holds currently set options after merging set options.
+## currentPageUrl
 
-## scrollToElement
-Holds id of element that swup needs to scroll to after content replace (`href="/docs#this_is_scrollToElement"`).
+The URL of the page last navigated to, after any redirects.
+
+## options
+
+Current options, after merging swup defaults and user options.
 
 ## plugins
-Array of all plugin instances currently enabled on swup. 
+
+Array of all plugin instances currently enabled on swup.
+
+## scrollToElement
+
+Holds the hash/id of any element that needs to be scrolled to after navigation. Used by the scroll plugin.
+
+```javascript
+// After clicking a link to /about#team
+swup.scrollToElement === '#team'
+```

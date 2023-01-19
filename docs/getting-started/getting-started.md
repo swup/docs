@@ -1,36 +1,64 @@
 ---
 layout: default
 title: Getting Started
-description: Complete, flexible, extensible, open source, free, and easy to use page transition library for your web
+description: Complete, flexible, extensible, and easy-to-use page transition library for your server-side rendered website
 has_children: true
 nav_order: 1
 permalink: /getting-started
 has_toc: false
 ---
+
 # Getting Started
-Looking for **what's new in v2**? Head over [here](https://medium.com/@gmarcuk/introducing-swup-v2-814e40316dee) or check [changelog]({{ "/other/changelog" | relative_url }}) for recent changes.
 
-New to swup? Little intro: 
- 
-* It's just ridiculously [easy to use]({{ "/getting-started/example" | relative_url }}), even for beginners.
-* Define as many [containers]({{ "/options#containers" | relative_url }}) to replace as you want! You can tell swup to replace even the smallest parts of the page, so you can work with the rest for your animation.
-* Use swup [events]({{ "/events" | relative_url }}) to run your JavaScript, trigger analytics, close sidebars or anything you need…
-* Forget about timing. swup [detects the end of your animations]({{ "/options#animation-selector" | relative_url }}) and controls the whole lifecycle of transition automatically.
-* Don't worry about browser history… swup takes care of it, changes the url when it's needed and preserves browser native behavior on popState events.
-* Has some cool additional features for even better experience like [cache]({{ "/options#cache" | relative_url }}), smart [preload]({{ "/plugins/preload-plugin" | relative_url }}) without DDOSing your server, badass smooth "acceleration based" [scroll]({{ "/plugins/scroll-plugin" | relative_url }}) control, helpful [debug plugin]({{ "/plugins/debug-plugin" | relative_url }}), support for [forms]({{ "/plugins/forms-plugin" | relative_url }}) and much more.
-* Like to make sure your site has no bugs? We do too... you can use swup [CI/CD integration]({{ "/ci-cd" | relative_url }}) for that, or just use [swup CLI]({{ "/cli" | relative_url }}) to check manually.
-* Be sure to checkout cool [third-party integrations]({{ "/third-party-integrations" | relative_url }}) as well. 
+Swup is an extensible and easy-to-use page transition library for server-side rendered websites. It
+handles the complete lifecycle of a page visit by intercepting link clicks, loading the new page in the
+background, replacing the content and transitioning between the old and the new page.
 
-In case you like to do your animations in JavaScript, you may want to check out **[js-plugin]({{ "/plugins/js-plugin" | relative_url }})**.
+Its goal is to make adding transitions to a site as simple as possible, while providing lots of
+other quality-of-life improvements.
 
-If you're having trouble implementing swup, checkout [Common Issues]({{ "/other/common-issues" | relative_url }}), [Closed Issues](https://github.com/swup/swup/issues?q=is%3Aissue+is%3Aclosed) or open a [new one](https://github.com/swup/swup/issues/new).
+## Features
 
-Swup is released under [MIT license](https://github.com/swup/swup/blob/master/LICENSE).
+- 🎯 Extremely [easy to use](/getting-started/example), even for beginners
+- ✨ Auto-detects [CSS transitions](/getting-started/how-it-works) for perfect timing
+- 🔗 Updates URLs and preserves native browser history behavior
+- 📦 Uses a [cache](https://swup.js.org/api/cache) to speed up subsequent page loads
+- 💡 Offers [events](https://swup.js.org/events) for hooking into the lifecycle
+- 🔌 Has a powerful [plugin system](https://swup.js.org/plugins) and many official and third-party plugins
+- 🎨 Provides ready-to-go [themes](https://swup.js.org/themes) to get started quickly
+
+## Plugins
+
+Swup's core is very small by design. All extended features can be added via [plugins]({{ "/plugins" | relative_url }}). Some examples:
+
+- Install a [progress bar]({{ "/plugins/progress-plugin" | relative_url }})
+- Enable [smooth scrolling]({{ "/plugins/scroll-plugin" | relative_url }}) between visits
+- Update [meta tags and stylesheets]({{ "/plugins/head-plugin" | relative_url }}) after page loads
+- Add support for [preloading pages]({{ "/plugins/preload-plugin" | relative_url }}) in the background
+- Perform your [animations in JS]({{ "/plugins/js-plugin" | relative_url }}) instead of CSS transitions
+- Animate [form submissions]({{ "/plugins/forms-plugin" | relative_url }})
+- Improve [screen reader accessibility]({{ "/plugins/a11y-plugin" | relative_url }})
+- Get help in [debug mode]({{ "/plugins/debug-plugin" | relative_url }})
+
+Check out the list of [all official plugins]({{ "/plugins" | relative_url }}) as well as [third-party integrations]({{ "/third-party-integrations" | relative_url }}).
+
+## Having trouble?
+
+If you're having trouble implementing swup, check out [Common Issues]({{ "/other/common-issues" | relative_url }}), look at [closed issues](https://github.com/gmrchk/swup/issues?q=is%3Aissue+is%3Aclosed) or create a [new discussion](https://github.com/swup/swup/discussions/new).
+
+## CLI
+
+Like to make sure your site has no bugs? You can use swup's [CI/CD integration]({{ "/ci-cd" | relative_url }}) for that, or use the official [swup CLI]({{ "/cli" | relative_url }}) to check your site manually.
+
+## Want to Contribute?
+
+Become a sponsor on [Open Collective](https://opencollective.com/swup) or support development through
+[GitHub sponsors](https://github.com/sponsors/gmrchk).
 
 <p><div style="position:relative;height:35px;width:107px"><iframe src="https://github.com/sponsors/gmrchk/button" title="Sponsor gmrchk" height="35" width="107" style="border: 0;"></iframe></div></p>
 
-[Become a backer or sponsor on Open Collective](https://opencollective.com/swup)
+<a href="https://opencollective.com/swup/donate" class="no-link"><img src="https://opencollective.com/swup/donate/button@2x.png?color=blue" width="220" /></a>
 
-<a href="https://opencollective.com/swup/donate" class="no-link"><img src="https://opencollective.com/swup/donate/button@2x.png?color=blue" width="300" /></a>
+## License
 
-
+Swup is released under the [MIT license](https://github.com/swup/swup/blob/master/LICENSE).

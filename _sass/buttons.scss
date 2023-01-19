@@ -132,3 +132,9 @@
 .btn-green {
   @include btn-color($white, $green-100);
 }
+
+.btn-filled {
+  text-decoration: none;
+  background-color: #fff;
+  color: #2D2E82;
+}

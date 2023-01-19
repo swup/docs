@@ -9,6 +9,7 @@ repo_link: /livewire-plugin
 ---
 
 # Laravel Livewire Plugin
+
 **by [aerni](https://github.com/aerni)**
 
 [Laravel Livewire](https://laravel-livewire.com/) doesn't work by default with Swup.
@@ -41,6 +42,6 @@ To run this plugin, include an instance in the swup options.
 
 ```javascript
 const swup = new Swup({
-    plugins: [new SwupLivewirePlugin()]
+  plugins: [new SwupLivewirePlugin()]
 });
 ```
