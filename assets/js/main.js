@@ -44,9 +44,31 @@ if (document.querySelector('iframe#newsletter')) {
 function resizeNewsletterIframe() {
   var iframe = document.querySelector('iframe#newsletter');
   iframe.style.height = iframe.contentWindow.document.documentElement.scrollHeight + 'px';
-};
+}
+
+function addHeadlineLinks() {
+  document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(function(element) {
+    const anchor = document.createElement('a');
+    const link = window.location.origin + window.location.pathname + '#' + element.id;
+
+    anchor.href = link;
+    anchor.className = 'headline-anchor';
+    anchor.innerHTML = '#';
+
+    anchor.addEventListener('click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      navigator.clipboard.writeText(link);
+    });
+
+    element.appendChild(anchor);
+  })
+}
 
 checkTheme();
 swup.on('pageView', checkTheme);
 resizeNewsletterIframe();
 swup.on('pageView', resizeNewsletterIframe);
+addHeadlineLinks();
+swup.on('pageView', addHeadlineLinks);
+
