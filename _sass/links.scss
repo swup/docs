@@ -85,6 +85,10 @@
   opacity: 0.2;
 }
 
+.main-headline .headline-anchor {
+  display: none;
+}
+
 @media all and (hover: hover) {
   .headline-anchor {
     visibility: hidden;
@@ -95,5 +99,3 @@
     }
   }
 }
-
-
