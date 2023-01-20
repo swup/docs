@@ -47,7 +47,7 @@ function resizeNewsletterIframe() {
 }
 
 function addHeadlineLinks() {
-  document.getElementById('main-content').querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(function(element) {
+  document.getElementById('main-content').querySelectorAll('h2, h3, h4, h5, h6').forEach(function(element) {
     const anchor = document.createElement('a');
     const link = window.location.origin + window.location.pathname + '#' + element.id;
 
