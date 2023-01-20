@@ -56,8 +56,6 @@ function addHeadlineLinks() {
     anchor.innerHTML = '#';
 
     anchor.addEventListener('click', function(event) {
-      event.preventDefault();
-      event.stopPropagation();
       navigator.clipboard.writeText(link);
     });
 
