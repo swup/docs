@@ -42,11 +42,15 @@ append the selector:
 
 ## ignoreVisit
 
-Allows ignoring specific visits through a callback. By default, swup will ignore links with a `data-no-swup` attribute on itself or any parent element. The callback receives the URL of the new page as well as a copy of the element that triggered it, if any.
+Allows ignoring specific visits through a callback. By default, swup will ignore links with a `data-no-swup` attribute on itself or any parent element. The callback receives the URL of the new page, as well as a copy of the element that triggered it, if any.
+
+The URL argument is the relative URL, excluding origin, but including any query parameters and hash.
+
+Note: when navigating programmatically via `swup.loadPage({ url })`, the callback will **not** receive the `el` argument since the visit wasn't triggered by any element.
 
 ```javascript
 {
-  ignoreVisit: (href, { el } = {}) => el?.closest('[data-no-swup]')
+  ignoreVisit: (url, { el } = {}) => el?.closest('[data-no-swup]')
 }
 ```
 
