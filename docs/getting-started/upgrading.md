@@ -48,7 +48,7 @@ const swup = new Swup({
 -    a[href^="/"]:not([data-no-swup]):not([href$=".pdf"]),
 -    a[href^="#"]:not([data-no-swup])
 -  `
-+  ignoreVisit: (href, { el } = {}) => (
++  ignoreVisit: (url, { el } = {}) => (
 +    el?.matches('[data-no-swup], [href$=".pdf"]')
 +  )
 });
