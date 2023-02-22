@@ -10,32 +10,33 @@ repo_link: /route-name-plugin
 
 # Route Name Plugin
 
-Use named routes to allow choosing between swup animations.
+Use path and route names to allow choosing between swup animations.
 
-Given a list of URL patterns, this plugin will use
+This plugin will add classnames to the html tag reflecting the previous and
+next page's URL, e.g. `from-about` or `to-team`.
+
+If given a list of URL patterns, it will use
 [path-to-regexp](https://www.npmjs.com/package/path-to-regexp) to identify
-the previous and current routes and add additional classnames to allow switching
-CSS animations based on the route name, e.g.: `from-route-home` and
-`to-route-project`.
+named routes and will use those for classnames, e.g. `from-route-home` or
+`to-route-project`. This is especially handy for multi-language or
+wildcard URLs.
 
 ## Installation
 
-This plugin can be installed with npm
+Install the plugin from npm and import it into your bundle.
 
 ```bash
 npm install @swup/route-name-plugin
 ```
 
-and included with import
-
-```shell
+```js
 import SwupRouteNamePlugin from '@swup/route-name-plugin';
 ```
 
-or included from the dist folder
+Or include the minified production file from a CDN:
 
 ```html
-<script src="./dist/SwupRouteNamePlugin.js"></script>
+<script src="https://unpkg.com/@swup/route-name-plugin@2"></script>
 ```
 
 ## Usage
@@ -59,9 +60,14 @@ const swup = new Swup({
 
 ## Classes
 
-The plugin will add `from-route-*` and `to-route-*` classes to the `html` tag.
+### Named routes
+
+When passed a list of `routes`, the plugin will add `from-route-*` and
+`to-route-*` classes to the `html` tag, reflecting the identified route names
+of the current and next page.
 
 ```html
+<!-- Navigating from /en/ to /en/project/some-project/ -->
 <html class="is-animating from-route-home to-route-project">
 ```
 
@@ -93,33 +99,49 @@ is mostly useful to disable transitions between pages with identical layout.
 <html class="is-animating from-route-project to-route-project to-same-route">
 ```
 
+### Paths
+
+When the `paths` option is enabled, the plugin will add `from-*` and
+`to-*` classes to the `html` tag, reflecting the raw URLs of the current and
+next page.
+
+```html
+<!-- Navigating from /about/ to /team/ -->
+<html class="is-animating from-about to-team">
+```
+
 ## Options
 
 All options with their default values:
 
 ```javascript
 {
-  routes: [{ name: 'any', path: '(.*)' }],
-  unknownName: 'unknown',
-  pathToRegexpOptions: {}
+  routes: [],
+  unknownRoute: 'unknown',
+  matchOptions: {},
+  paths: false
 }
 ```
 
 ### routes
 
 Array of patterns for identifying named routes. Both `name` and `path` are
-required.
-
-The `path` needs to be a valid route pattern that
+required. The `path` needs to be a valid route pattern that
 [path-to-regexp](https://www.npmjs.com/package/path-to-regexp) will understand.
 
-Order matters: the first found route name is used.
+Here, order matters: the first found route name is used.
 
-### unknownName
+### unknownRoute
 
 Default route name if no match was found among available patterns.
 
-### pathToRegexpOptions
+### matchOptions
 
 Options passed to [path-to-regexp](https://www.npmjs.com/package/path-to-regexp)
 for matching. Useful if you want to change case sensitivity, delimiters, etc.
+
+### paths
+
+By default, the plugin will only add classnames for identified named routes.
+To also add simple `from-*` and `to-*` for the raw URLs of the previous and
+next page, set this option to `true`.
