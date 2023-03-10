@@ -8,13 +8,17 @@ permalink: /plugins/custom-payload-plugin
 repo_link: /custom-payload-plugin
 ---
 
+
+
 # Custom Payload Plugin
 
-The plugin adds support for sending a custom payload format from server, to reduce the size of payload data.
-An example of such payload can be a JSON with page title and swup containers only.
+This is a plugin for [swup](https://swup.js.org/) - complete, flexible, extensible and easy to use page transition library for your web.
+
+The plugin adds support for sending a custom payload format from server, to reduce the size of payload data. 
+An example of such payload can be a JSON with page title and swup containers only. 
 This custom payload can be sent from server based on the `X-Requested-With` header which swup sets to value `swup`.
 
-## Installation
+## Instalation
 
 This plugin can be installed with npm
 
