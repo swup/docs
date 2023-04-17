@@ -1,85 +1,55 @@
 <!DOCTYPE html>
-
 <html lang="en-US">
   {% include "head.njk" %}
   <body>
     <div class="page-wrap">
       <div class="side-bar">
         <a href="/" class="site-title fs-6 lh-tight">
-          <img src="/assets/images/swup-logo.svg" alt="{{ site.title }}" />
+          <img src="/assets/images/swup-logo.svg" alt="{{ site.title }}"/>
         </a>
         <span class="fs-3"></span>
-          <button
-            class="js-main-nav-trigger navigation-list-toggle btn btn-outline"
-            type="button"
-            data-text-toggle="Hide">
-            Menu
-          </button>
-        </span>
-        <div class="navigation main-nav js-main-nav">
-          {% include "nav.njk" %}
-        </div>
-      </div>
-      <div
-        class="main-content-wrap js-main-content"
-        tabindex="0"
-        id="main">
-        <div class="page-header">
-          <div class="search-holder">
-            <div id="search" class="search"></div>
-            <script src="/_pagefind/pagefind-ui.js" onload="new PagefindUI({ element: '#search', showImages: false });"></script>
-          </div>
-
-          <!-- <ul class="list-style-none text-small mb-md-1 pb-4 pb-md-0 aux-nav">
-          <li class="d-inline-block my-0 mr-2">
-          <a class="github-button" href="https://github.com/gmrchk/swup" data-size="large" data-icon="octicon-star" data-show-count="true" data-size="medium" aria-label="Star gmrchk/swup on GitHub">Star</a>
-          </li>
-          <li class="d-inline-block my-0 mr-2">
-          <iframe src="https://github.com/sponsors/gmrchk/button" title="Sponsor gmrchk" height="35" width="107" style="border: 0; margin: -3px 0;"></iframe>
-          </li>
-          </ul> -->
-        </div>
-        <div class="main-content" id="swup">
-          <div
-            id="main-content"
-            class="page-content"
-            role="main">
-            {% if repo_link %}
-              <a href="https://github.com/swup{{ repo_link }}" class="btn btn-repo fs-5 mb-4">Repo</a>
-            {% endif %}
-
-            <article data-pagefind-body>{{ content | safe }}</article>
-
-            {% if has_children == true and has_toc != false %}
-              {% set children_list = collections.all | prepareMenuItems({parentTitle: title}) %}
-              <ul>
-                {% for child in children_list %}
-                    <li>
-                      {% if child.data.external_link %}
-                        <a href="{{ child.data.external_link }}" target="_blank">
-                          {{ child.data.title }}
-                          <img src="/assets/images/external-link-symbol.svg" alt="{{ child.data.title }}" />
-                        </a>
-                      {% else %}
-                        <a href="{{ child.url }}">{{ child.data.title }}</a>
-                      {% endif %}
-                    </li>
-                {% endfor %}
-              </ul>
-            {% endif %}
-
-            <footer class="edit-this-page">
-              <p>
-                Found a mistake or want to contribute?
-                <a href="https://github.com/swup/docs/blob/master{{ page.filePathStem }}.md" target="_blank">Edit this page</a>
-                on Github.
-              </p>
-            </footer>
-          </div>
-        </div>
-        {% include "sidebar.njk" %}
+        <button class="js-main-nav-trigger navigation-list-toggle btn btn-outline" type="button" data-text-toggle="Hide">
+          Menu
+        </button>
+      </span>
+      <div class="navigation main-nav js-main-nav">
+        {% include "nav.njk" %}
       </div>
     </div>
-    {% include "scripts.njk" %}
+    <div class="main-content-wrap js-main-content" tabindex="0" id="main">
+      {% include "main-header.njk" %}
+      <div class="main-content" id="swup">
+        <div id="main-content" class="page-content" role="main">
+          {% if repo_link %}
+            <a href="https://github.com/swup{{ repo_link }}" class="btn btn-repo fs-5 mb-4">Repo</a>
+          {% endif %}
+          <article data-pagefind-body>{{ content | safe }}</article>
+          {% if has_children == true and has_toc != false %}
+            {% set children_list = collections.all | prepareMenuItems({parentTitle: title}) %}
+            <ul>
+              {% for child in children_list %}
+                <li>
+                  {% if child.data.external_link %}
+                    <a href="{{ child.data.external_link }}" target="_blank">
+                      {{ child.data.title }} <img src="/assets/images/external-link-symbol.svg" alt="{{ child.data.title }}"/>
+                    </a>
+                  {% else %}
+                    <a href="{{ child.url }}">{{ child.data.title }}</a>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          <footer class="edit-this-page">
+            <p>
+              Found a mistake or want to contribute?
+              <a href="https://github.com/swup/docs/blob/master{{ page.filePathStem }}.md" target="_blank">Edit this page</a>
+              on Github.
+            </p>
+          </footer>
+        </div>
+      </div>
+      {% include "sidebar.njk" %}
+    </div>
   </body>
-</html>
+</html></div>{% include "scripts.njk" %}</body></html>
