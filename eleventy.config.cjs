@@ -1,10 +1,9 @@
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const { execSync } = require("child_process");
-const shikiEleventyPlugin = require("./lib/11ty/shiki-eleventy-plugin.js");
+const Shiki = require('markdown-it-shiki').default;
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(shikiEleventyPlugin, { theme: "github-dark-dimmed" });
   eleventyConfig.addFilter("prepareMenuItems", prepareMenuItems);
 
   // Assets will be taken care of by WebPack
@@ -13,7 +12,16 @@ module.exports = function (eleventyConfig) {
   // Add support for anchors on headlines
   eleventyConfig.setLibrary(
     "md",
-    markdownIt({ html: true }).use(markdownItAnchor)
+    markdownIt({ html: true })
+      .use(markdownItAnchor)
+      /**
+       * Ready for dark mode
+       * @see https://github.com/antfu/markdown-it-shiki#dark-mode
+       */
+      .use(Shiki, {
+        theme: 'github-dark-dimmed',
+        highlightLines: true
+      })
   );
 
   // Run PageFind after every regeneration

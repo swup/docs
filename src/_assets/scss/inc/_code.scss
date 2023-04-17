@@ -1,4 +1,4 @@
-pre.shiki {
+.shiki {
 	box-sizing: border-box;
 	padding: 0.7rem 1rem;
 	@include mq(md) {
@@ -6,8 +6,24 @@ pre.shiki {
 	}
 	border-radius: $border-radius;
 }
-pre.shiki code {
+.shiki code {
 	font-family: $mono-font-family;
 	font-size: 14px;
 	line-height: 1;
+}
+
+/*
+* Highlight lines
+* @see https://github.com/antfu/markdown-it-shiki#highlight-lines
+*/
+code[v-pre] {
+  display: flex;
+  flex-direction: column;
+}
+
+.shiki .highlighted {
+  background: #7f7f7f20;
+  display: block;
+  margin: 0 -1rem;
+  padding: 0 1rem;
 }
