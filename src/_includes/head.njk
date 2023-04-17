@@ -1,0 +1,40 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="Description" content="{{ description | default(site.description, true) }}">
+  <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+  <link href="/assets/just-the-docs.css" rel="stylesheet">
+
+
+  {% if title %}
+    <title>{{ title }} | {{ site.title }}</title>
+  {% else %}
+    <title>Swup - complete, flexible, extensible and easy to use page transition library.</title>
+  {% endif %}
+
+  {% if layout != "newsletter" %}
+    {% if site.ga_tracking != nil %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_tracking }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', '{{ site.ga_tracking }}');
+      GA_MEASURE_ID = '{{ site.ga_tracking }}';
+    </script>
+    {% endif %}
+
+    <script type="text/javascript" src="/assets/just-the-docs.js"></script>
+
+  {% endif %}
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="icon" type="image/png" href="/assets/images/icon.png">
+
+  <script async defer rel="prefetch" src="https://buttons.github.io/buttons.js"></script>
+
+  <meta property="og:image" content="/assets/images/og.png" />
+
+</head>

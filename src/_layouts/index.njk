@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+    {% include "head.njk" %}
+    <body class="page--homepage">
+        <div class="page-wrap">
+            <div class="side-bar">
+                <span class="fs-3"><button class="js-main-nav-trigger navigation-list-toggle btn btn-outline" type="button" data-text-toggle="Hide">Menu</button></span>
+                <div class="navigation main-nav js-main-nav">
+                    {% include "nav.njk" %}
+                </div>
+            </div>
+            <div class="main-content-wrap js-main-content" tabindex="0" id="main">
+                <div class="main-content" id="swup">
+                    <div id="main-content" class="page-content" role="main">
+                        {{ content | safe }}
+                    </div>
+                </div>
+                {% include "sidebar.njk" %}
+            </div>
+        </div>
+        {% include "scripts.njk" %}
+    </body>
+</html>
