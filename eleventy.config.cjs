@@ -44,7 +44,7 @@ function prepareMenuItems(pages, { parentTitle = null } = {}) {
       .sort((a, b) => Math.sign(a.data.nav_order - b.data.nav_order))
       // Respect `nav_exclude`
       .filter((page) => !page.data.nav_exclude)
-      // Apply parentTitle if set
+      // Filter for matching parentTitle if set
       .filter(
         (page) =>
           !parentTitle || parentTitle === page.data.parent
