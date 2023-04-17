@@ -1,23 +1,4 @@
 /**
- * WebPack Config to be used with classic backend servers (e.g. WordPress, ...)
- * Copyright: Rasso Hilbr <mail@rassohilber.com>
- * License: ISC
- *
- * Features:
- *    – Transpilation of JS(+TypeScript) and SCSS
- *    – Support for dynamic imports [e.g. await import(...)]
- *    – Handling of assets (Fonts, Images)
- *    – HTTPS support
- *    – Support for css autoprefixer and logical properties
- *    – Debugging over local network (BrowserSync Proxy)
- *    – Live reloading with automatic snippet injection
- *    - Optionally watches extra files and reloads the browser if they change
- *
- * Usage: See "scripts" in package.json
- *
- */
-
-/**
  * Imports
  */
 import path from "path";
@@ -26,14 +7,9 @@ import RemoveEmptyScriptsPlugin from "webpack-remove-empty-scripts";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import LiveReloadPlugin from "webpack-livereload-plugin";
 import CopyPlugin from "copy-webpack-plugin";
-import FaviconsWebpackPlugin from "favicons-webpack-plugin";
-import * as dotenv from "dotenv";
 import { ESBuildMinifyPlugin } from "esbuild-loader";
 import { resolveToEsbuildTarget } from "esbuild-plugin-browserslist";
 import browserslist from "browserslist";
-import { BundleAnalyzerPlugin } from "webpack-bundle-analyzer";
-import findup from "findup-sync";
-dotenv.config({ path: findup(".env") });
 
 /**
  * Settings
@@ -44,26 +20,10 @@ const settings = {
     "just-the-docs": "./src/_assets/js/just-the-docs.js",
   },
   outputPath: "./_site/assets",
-  /**
-   * Switched from `es2017` to browserslist:
-   * @see https://github.com/nihalgonsalves/esbuild-plugin-browserslist
-   */
   target: resolveToEsbuildTarget(browserslist(), {
     printUnknownTargets: false,
-  }), // Alpine.js requires at least es2017
+  }),
 };
-
-/**
- * Live Reloading
- */
-const initLiveReloadPlugin = () => {
-  const options = {
-    useSourceHash: true,
-    appendScriptTag: true,
-  };
-  return new LiveReloadPlugin(options);
-};
-
 
 /**
  * Setup the config
@@ -142,11 +102,11 @@ let config = {
   },
   resolve: {
     extensionAlias: {
-      '.js': ['.ts', '.js'],
-      '.mjs': ['.mts', '.mjs'],
+      ".js": [".ts", ".js"],
+      ".mjs": [".mts", ".mjs"],
     },
     alias: {
-      '~': path.resolve(__dirname, 'assets-src/'),
+      "~": path.resolve(__dirname, "./src/_assets/"),
     },
   },
   optimization: {
@@ -158,36 +118,13 @@ let config = {
     ],
   },
   plugins: [
-    // new BundleAnalyzerPlugin(),
     new RemoveEmptyScriptsPlugin(),
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
     new CopyPlugin({
-      patterns: [
-        { from: "./src/_assets/images", to: "images" },
-      ],
+      patterns: [{ from: "./src/_assets/images", to: "images" }],
     }),
-    // new FaviconsWebpackPlugin({
-    //   logo: "./assets-src/static/favicon.png",
-    //   prefix: "static/",
-    //   mode: "webapp",
-    //   favicons: {
-    //     appName: process.env.NAME,
-    //     appShortName: process.env.SHORT_NAME,
-    //     appDescription: null,
-    //     start_url: "/",
-    //     display: "standalone",
-    //     lang: null,
-    //     background: "#fff",
-    //     theme_color: "#000",
-    //     icons: {
-    //       yandex: false,
-    //       windows: false,
-    //       appleStartup: false,
-    //     },
-    //   },
-    // }),
   ],
 };
 
@@ -203,7 +140,12 @@ export default (env, argv) => {
 
   if (argv.mode === "development") {
     config.devtool = "cheap-source-map";
-    config.plugins.push(initLiveReloadPlugin());
+    config.plugins.push(
+      new LiveReloadPlugin({
+        useSourceHash: true,
+        appendScriptTag: true,
+      })
+    );
   }
 
   return config;
