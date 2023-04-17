@@ -1,7 +1,7 @@
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const { execSync } = require("child_process");
-const Shiki = require('markdown-it-shiki').default;
+const Shiki = require("markdown-it-shiki").default;
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("prepareMenuItems", prepareMenuItems);
@@ -10,9 +10,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.ignores.add("./src/_assets/**");
 
   // Add support for anchors on headlines
-  eleventyConfig.setLibrary(
-    "md",
-    markdownIt({ html: true })
+  eleventyConfig.amendLibrary("md", (mdLib) => {
+    mdLib
       .use(markdownItAnchor)
       /**
        * Ready for dark mode
@@ -20,9 +19,13 @@ module.exports = function (eleventyConfig) {
        */
       .use(Shiki, {
         theme: 'github-dark-dimmed',
-        highlightLines: true
-      })
-  );
+        // theme: {
+        //   dark: "min-dark",
+        //   light: "min-light",
+        // },
+        highlightLines: true,
+      });
+  });
 
   // Run PageFind after every regeneration
   eleventyConfig.on("eleventy.after", () => {
@@ -53,9 +56,6 @@ function prepareMenuItems(pages, { parentTitle = null } = {}) {
       // Respect `nav_exclude`
       .filter((page) => !page.data.nav_exclude)
       // Filter for matching parentTitle if set
-      .filter(
-        (page) =>
-          !parentTitle || parentTitle === page.data.parent
-      )
+      .filter((page) => !parentTitle || parentTitle === page.data.parent)
   );
 }
