@@ -182,6 +182,8 @@
   position: absolute;
   top: 100px;
   right: 1rem;
+  display: block;
+  line-height: 1;
 
   @include mq(md) {
     display: none !important;

@@ -1,10 +1,10 @@
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
 const { execSync } = require("child_process");
+const shikiEleventyPlugin = require("./lib/11ty/shiki-eleventy-plugin.js");
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(shikiEleventyPlugin, { theme: "github-dark-dimmed" });
   eleventyConfig.addFilter("prepareMenuItems", prepareMenuItems);
 
   // Assets will be taken care of by WebPack
