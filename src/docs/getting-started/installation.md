@@ -7,11 +7,11 @@ parent: Getting Started
 permalink: /getting-started/installation/
 ---
 
-## Installation
+# Installation
 
 There are two ways to install the package.
 
-### 1. Bundler
+## 1. Bundler
 
 If you're using a bundler in your project, install swup from npm:
 
@@ -27,7 +27,7 @@ import Swup from 'swup';
 const swup = new Swup({ /* options */ });
 ```
 
-### 2. CDN
+## 2. CDN
 
 If you're not using a bundler and want to get started quickly, you can include the minified production file from a CDN:
 
