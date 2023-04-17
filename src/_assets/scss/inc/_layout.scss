@@ -124,14 +124,14 @@
     flex-direction: row;
     justify-content: flex-end;
     gap: 1rem;
-    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
   }
 
   pointer-events: none;
-  // align-items: center;
-  // flex-wrap: wrap;
-
-
 
   > * {
     pointer-events: all;
@@ -153,6 +153,9 @@
     display: flex;
     margin: 0;
     padding: 0;
+    @include mq(md) {
+      padding-block-start: 0.4rem;
+    }
     li {
       margin: 0;
       position: relative;
