@@ -5,6 +5,7 @@ import SwupDebugPlugin from "@swup/debug-plugin";
 import SwupScrollPlugin from "@swup/scroll-plugin";
 import SwupBodyClassPlugin from "@swup/body-class-plugin";
 import SwupGtagPlugin from "swup-gtag-plugin";
+import SwupPreloadPlugin from "@swup/preload-plugin";
 
 // Swup Themes
 import SwupSlideTheme from '@swup/slide-theme';
@@ -24,6 +25,7 @@ var swup = new Swup({
     }),
     new SwupSlideTheme(),
     new SwupBodyClassPlugin(),
+    new SwupPreloadPlugin(),
     new SwupGtagPlugin({
       gaMeasurementId: GA_MEASURE_ID
     }),

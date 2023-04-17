@@ -23,6 +23,7 @@
     "@swup/debug-plugin": "^3.0.0",
     "@swup/fade-theme": "^1.0.5",
     "@swup/overlay-theme": "^1.1.1",
+    "@swup/preload-plugin": "^2.1.0",
     "@swup/scroll-plugin": "^2.0.2",
     "@swup/slide-theme": "^1.0.5",
     "swup": "^3.0.6",
