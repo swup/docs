@@ -13,9 +13,9 @@
     "build": "npm run build:eleventy && npm run build:assets",
     "clean": "rm -rf _site",
     "lint": "npx markdownlint-cli --fix docs/**/*.md",
-    "test": "start-server-and-test test:start http://127.0.0.1:8080 test:run",
-    "test:serve": "http-server --port 8080 --silent _site",
-    "test:start": "npm run build && npm run test:serve",
+    "test": "start-server-and-test test:start http://127.0.0.1:7987 test:run",
+    "test:serve": "http-server --port 7987 --silent _site",
+    "test:start": "SITE_URL=http://127.0.0.1:7987 npm run build && npm run test:serve",
     "test:run": "swup validate",
     "plugins:download-readmes": "node ./lib/tasks/download-plugin-readmes.js"
   },
