@@ -64,12 +64,12 @@ function getMarkdownItInstance() {
 function prepareMenuItems(pages, { parentTitle = null } = {}) {
 	return (
 		pages
-			// Respect `nav_order`
-			.sort((a, b) => Math.sign(a.data.nav_order - b.data.nav_order))
 			// Respect `nav_exclude`
 			.filter((page) => !page.data.nav_exclude)
 			// Filter for matching parentTitle if set
 			.filter((page) => !parentTitle || parentTitle === page.data.parent)
+			// Respect `nav_order`
+			.sort((a, b) => Math.sign(a.data.nav_order - b.data.nav_order))
 	);
 }
 
