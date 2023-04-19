@@ -12,8 +12,8 @@
     <title>Swup - complete, flexible, extensible and easy to use page transition library.</title>
   {% endif %}
 
-  {% if layout != "newsletter" %}
-    {% if site.ga_tracking != nil %}
+
+  {% if site.ga_tracking != nil %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_tracking }}"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -23,11 +23,9 @@
       gtag('config', '{{ site.ga_tracking }}');
       GA_MEASURE_ID = '{{ site.ga_tracking }}';
     </script>
-    {% endif %}
-
-    <script type="text/javascript" src="/assets/just-the-docs.js"></script>
-
   {% endif %}
+
+  <script type="text/javascript" src="/assets/just-the-docs.js"></script>
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
