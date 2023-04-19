@@ -25,14 +25,14 @@ customMarkdownIt.use(Shiki, {
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('prepareMenuItems', prepareMenuItems);
-	eleventyConfig.addFilter('maybeLoadContentSource', maybeLoadContentSource);
+	eleventyConfig.addFilter('maybeLoadRemoteReadme', maybeLoadRemoteReadme);
 
 	// Assets will be taken care of by WebPack
 	eleventyConfig.ignores.add('./src/_assets/**');
 
 	/**
 	 * Use or own markdown version, to be able to also use it
-	 * further down in maybeLoadContentSource()
+	 * further down in maybeLoadRemoteReadme()
 	 */
 	eleventyConfig.setLibrary('md', customMarkdownIt);
 
@@ -74,15 +74,19 @@ function prepareMenuItems(pages, { parentTitle = null } = {}) {
 }
 
 /**
- * Load remote Source if url is defined
- * @param {local content (fallback)} content
- * @returns
+ * Load remote Readme if repo_link is defined
  */
-async function maybeLoadContentSource(content, { url = '', title = '' } = {}) {
-	if (url == null) return content;
+async function maybeLoadRemoteReadme(content, { repo_link = '', title = '' } = {}) {
+	if (repo_link == null) return content;
 
-	url = url.trim();
-	if (!url) return content;
+	repo_link = repo_link
+		.trim()
+		// Remove leading slash
+		.replace(/^\//, '');
+
+	if (!repo_link) return content;
+
+	const url = `https://raw.githubusercontent.com/swup/${repo_link}/master/readme.md`;
 
 	const result = await EleventyFetch(url, {
 		duration: '60s',

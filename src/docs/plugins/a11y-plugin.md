@@ -6,5 +6,4 @@ parent: Plugins
 nav_order: 1
 permalink: /plugins/a11y-plugin/
 repo_link: /a11y-plugin
-content_source: https://raw.githubusercontent.com/swup/a11y-plugin/master/readme.md
 ---
