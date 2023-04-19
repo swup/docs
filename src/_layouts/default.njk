@@ -45,7 +45,11 @@
           <footer class="edit-this-page">
             <p>
               Found a mistake or want to contribute?
-              <a href="https://github.com/swup/docs/blob/master/src{{ page.filePathStem }}.md" target="_blank">Edit this page</a>
+              {% if repo_link %}
+                <a href="https://github.com/swup{{ repo_link }}/blob/master/readme.md" target="_blank">Edit this page</a>
+              {% else %}
+                <a href="https://github.com/swup/docs/blob/master/src{{ page.filePathStem }}.md" target="_blank">Edit this page</a>
+              {% endif %}
               on Github.
             </p>
           </footer>
