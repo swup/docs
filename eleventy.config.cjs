@@ -86,7 +86,7 @@ async function maybeLoadRemoteReadme(content, { repo_link = '', title = '' } = {
 
 	if (!repo_link) return content;
 
-	const url = `https://raw.githubusercontent.com/swup/${repo_link}/master/readme.md`;
+	const url = `${repo_link.replace('github.com', 'raw.githubusercontent.com')}/master/readme.md`;
 
 	let result = await EleventyFetch(url, {
 		duration: '60s',

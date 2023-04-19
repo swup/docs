@@ -5,7 +5,7 @@ description: Plugin to preload pages ahead of time
 parent: Plugins
 nav_order: 13
 permalink: /plugins/preload-plugin/
-repo_link: /preload-plugin
+repo_link: https://github.com/swup/preload-plugin
 ---
 
-⚠️ This page content is loaded from the repository README.md file. Edit the file in the source repository. 
+⚠️ This page content is loaded from the repository README.md file. Edit the file in the source repository.
