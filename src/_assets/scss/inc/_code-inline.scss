@@ -1,4 +1,6 @@
 *:not(pre) > code:not([class]) {
+	font-family: $mono-font-family;
+	font-size: 0.85em;
 	padding: 0.2rem 0.25rem;
 	background-image: linear-gradient(
 		-170deg,
