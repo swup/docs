@@ -3,8 +3,6 @@ name: Deploy to GH pages
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
   workflow_dispatch:
 
 permissions:
@@ -24,6 +22,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
         id: pages
+      - name: Configure GH pages
         uses: actions/configure-pages@v3
       - name: install
         run: npm ci
