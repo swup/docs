@@ -12,7 +12,7 @@
     "build:assets": "webpack --mode=production  --progress --stats minimal",
     "build": "npm run build:eleventy && npm run build:assets",
     "clean": "rm -rf _site",
-    "lint": "npx markdownlint-cli --fix docs/**/*.md",
+    "lint": "prettier 'src/' --write",
     "test": "start-server-and-test test:start http://127.0.0.1:7987 test:run",
     "test:serve": "http-server --port 7987 --silent _site",
     "test:start": "SITE_URL=http://127.0.0.1:7987 npm run build && npm run test:serve",
@@ -52,7 +52,7 @@
     "postcss": "^8.4.6",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.8.3",
-    "prettier": "2.7.1",
+    "prettier": "^2.7.1",
     "sass": "^1.62.0",
     "sass-loader": "^12.6.0",
     "shiki": "^0.14.1",
@@ -63,5 +63,6 @@
     "webpack-cli": "^4.9.2",
     "webpack-livereload-plugin": "^3.0.2",
     "webpack-remove-empty-scripts": "^0.7.3"
-  }
+  },
+  "prettier": "@swup/prettier-config"
 }

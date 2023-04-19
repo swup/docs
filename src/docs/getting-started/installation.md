@@ -24,7 +24,9 @@ In your application, import swup and create a new instance:
 ```js
 import Swup from 'swup';
 
-const swup = new Swup({ /* options */ });
+const swup = new Swup({
+  /* options */
+});
 ```
 
 ## 2. CDN

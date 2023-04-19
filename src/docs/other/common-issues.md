@@ -54,9 +54,7 @@ html.is-animating .swup-transition-fade {
 ```
 
 ```html
-<main id="swup" class="swup-transition-fade">
-  ...
-</main>
+<main id="swup" class="swup-transition-fade">...</main>
 ```
 
 ## Escaped characters inside `<noscript>`
@@ -91,12 +89,11 @@ Not so good thing is that some IE versions will ignore a link leading to that an
 
 ```js
 // run only for IE
-document.querySelectorAll('[href^="#"]').forEach(link => {
-  link.addEventListener('click', event => {
+document.querySelectorAll('[href^="#"]').forEach((link) => {
+  link.addEventListener('click', (event) => {
     document.documentElement.scrollTop =
-      Math.round(
-        document.querySelector(event.target.hash).getBoundingClientRect().top
-      ) + window.pageYOffset;
+      Math.round(document.querySelector(event.target.hash).getBoundingClientRect().top) +
+      window.pageYOffset;
   });
 });
 ```

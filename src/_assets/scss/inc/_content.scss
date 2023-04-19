@@ -5,123 +5,123 @@
 //
 
 .page-content {
-  a {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
+	a {
+		overflow: hidden;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
 
-  ul,
-  ol {
-    padding-left: 1.5em;
-  }
+	ul,
+	ol {
+		padding-left: 1.5em;
+	}
 
-  ol {
-    list-style-type: none;
-    counter-reset: step-counter;
+	ol {
+		list-style-type: none;
+		counter-reset: step-counter;
 
-    > li {
-      position: relative;
+		> li {
+			position: relative;
 
-      &::before {
-        position: absolute;
-        top: 0.2em;
-        left: -1.6em;
-        color: $grey-dk-000;
-        content: counter(step-counter);
-        counter-increment: step-counter;
-        @include fs-3;
+			&::before {
+				position: absolute;
+				top: 0.2em;
+				left: -1.6em;
+				color: $grey-dk-000;
+				content: counter(step-counter);
+				counter-increment: step-counter;
+				@include fs-3;
 
-        @include mq(sm) {
-          top: 0.11em;
-        }
-      }
+				@include mq(sm) {
+					top: 0.11em;
+				}
+			}
 
-      ol {
-        counter-reset: sub-counter;
+			ol {
+				counter-reset: sub-counter;
 
-        li {
-          &::before {
-            content: counter(sub-counter, lower-alpha);
-            counter-increment: sub-counter;
-          }
-        }
-      }
-    }
-  }
+				li {
+					&::before {
+						content: counter(sub-counter, lower-alpha);
+						counter-increment: sub-counter;
+					}
+				}
+			}
+		}
+	}
 
-  ul {
-    list-style: none;
+	ul {
+		list-style: none;
 
-    > li {
-      &::before {
-        position: absolute;
-        margin-left: -1.4em;
-        color: $grey-dk-000;
-        content: "•";
-      }
+		> li {
+			&::before {
+				position: absolute;
+				margin-left: -1.4em;
+				color: $grey-dk-000;
+				content: '•';
+			}
 
-      img {
-        width: 14px;
-        display: inline-block;
-        margin: 0 0 0 2px;
-        transform: translate(0px, 1px);
-      }
-    }
-  }
+			img {
+				width: 14px;
+				display: inline-block;
+				margin: 0 0 0 2px;
+				transform: translate(0px, 1px);
+			}
+		}
+	}
 
-  .task-list {
-    padding-left: 0;
-  }
+	.task-list {
+		padding-left: 0;
+	}
 
-  .task-list-item {
-    display: flex;
-    align-items: center;
+	.task-list-item {
+		display: flex;
+		align-items: center;
 
-    &::before {
-      content: "";
-    }
-  }
+		&::before {
+			content: '';
+		}
+	}
 
-  .task-list-item-checkbox {
-    margin-right: 0.6em;
-  }
+	.task-list-item-checkbox {
+		margin-right: 0.6em;
+	}
 
-  hr + * {
-    margin-top: 0;
-  }
+	hr + * {
+		margin-top: 0;
+	}
 
-  h1:first-of-type {
-    margin-top: 0;
-    margin-bottom: 0.3em;
-    font-weight: 800;
+	h1:first-of-type {
+		margin-top: 0;
+		margin-bottom: 0.3em;
+		font-weight: 800;
 
-    @include mq(md) {
-      padding-right: 100px;
-      margin-top: 1em;
-    }
-  }
+		@include mq(md) {
+			padding-right: 100px;
+			margin-top: 1em;
+		}
+	}
 
-  dl {
-    display: grid;
-    grid-template-columns: max-content 1fr;
-  }
+	dl {
+		display: grid;
+		grid-template-columns: max-content 1fr;
+	}
 
-  dt,
-  dd {
-    margin: 0.25em 0;
-  }
+	dt,
+	dd {
+		margin: 0.25em 0;
+	}
 
-  dt {
-    text-align: right;
+	dt {
+		text-align: right;
 
-    &::after {
-      content: ":";
-    }
-  }
+		&::after {
+			content: ':';
+		}
+	}
 
-  dd {
-    margin-left: 1em;
-    font-weight: 500;
-  }
+	dd {
+		margin-left: 1em;
+		font-weight: 500;
+	}
 }

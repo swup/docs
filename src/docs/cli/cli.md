@@ -43,7 +43,7 @@ To create new plugin, run following command.
 swup create --name MyName
 ```
 
-Swup CLI will create *SwupMyNamePlugin* folder, download plugin template and use defined name where it needs to.
+Swup CLI will create _SwupMyNamePlugin_ folder, download plugin template and use defined name where it needs to.
 
 To start creating a theme, define a type flag.
 
@@ -51,7 +51,7 @@ To start creating a theme, define a type flag.
 swup create --name MyName --type theme
 ```
 
-Swup CLI will create *SwupMyNameTheme* folder, download theme template and use defined name where it needs to.
+Swup CLI will create _SwupMyNameTheme_ folder, download theme template and use defined name where it needs to.
 
 ## Validating site
 
@@ -61,9 +61,9 @@ The validation can also be part of your [CI/CD pipeline](/ci-cd).
 
 Validation checks three main things that can cause troubles to swup:
 
-* That all pages have the same number of containers.
-* That all animated elements have some CSS transition duration set.
-* That all animated elements have some CSS property animated when the swup transition starts (with class `is-animating`).
+- That all pages have the same number of containers.
+- That all animated elements have some CSS transition duration set.
+- That all animated elements have some CSS property animated when the swup transition starts (with class `is-animating`).
 
 **These checks should prevent any situation where swup would be stuck for some reason.**
 

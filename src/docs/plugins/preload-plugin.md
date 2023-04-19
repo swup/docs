@@ -44,13 +44,14 @@ const swup = new Swup({
   plugins: [new SwupPreloadPlugin()]
 });
 ```
+
 ## Options
 
 ### throttle
 
 Type: `Number`, Default: `5`
 
-The *concurrency limit* for simultaneous requests when hovering links on pointer devices.
+The _concurrency limit_ for simultaneous requests when hovering links on pointer devices.
 
 ## Changes of the swup instance
 

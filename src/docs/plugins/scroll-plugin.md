@@ -90,15 +90,17 @@ For finer control, you can pass an object:
 ```javascript
 // Using a simple boolean...
 {
-  animateScroll: !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  animateScroll: !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 }
 // ...or this little monster, with full control over everything:
 {
-  animateScroll: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? false : {
-    betweenPages: true,
-    samePageWithHash: true,
-    samePage: true
-  }
+  animateScroll: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    ? false
+    : {
+        betweenPages: true,
+        samePageWithHash: true,
+        samePage: true
+      };
 }
 ```
 
@@ -113,10 +115,10 @@ Customize how the scroll target is found on the page. Defaults to standard brows
 ```javascript
 {
   // Use a custom data attribute instead of id
-  getAnchorElement: hash => {
-    hash = hash.replace('#', '')
-    return document.querySelector(`[data-scroll-target="${hash}"]`)
-  }
+  getAnchorElement: (hash) => {
+    hash = hash.replace('#', '');
+    return document.querySelector(`[data-scroll-target="${hash}"]`);
+  };
 }
 ```
 
@@ -146,7 +148,7 @@ overflowing containers.
 ```js
 {
   // Always restore the scroll position of overflowing tables and sidebars
-  scrollContainers: '.overflowing-table, .overflowing-sidebar'
+  scrollContainers: '.overflowing-table, .overflowing-sidebar';
 }
 ```
 
@@ -159,7 +161,7 @@ recorded for that page. See [Reset vs. restore](#reset-vs-restore) for an explan
 ```js
 {
   // Don't scroll back up for custom back-links, mimicking the browser back button
-  shouldResetScrollPosition: (link) => !link.matches('.backlink')
+  shouldResetScrollPosition: (link) => !link.matches('.backlink');
 }
 ```
 
@@ -178,7 +180,7 @@ new SwupScrollPlugin({
   getAnchorElement: null,
   offset: 0,
   scrollContainers: `[data-swup-scroll-container]`,
-  shouldResetScrollPosition: htmlAnchorElement => true
+  shouldResetScrollPosition: (htmlAnchorElement) => true
 });
 ```
 

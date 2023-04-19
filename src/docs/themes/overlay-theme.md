@@ -63,8 +63,8 @@ Defaults to `to-right`. Available values: `to-right`, `to-left`, `to-bottom` and
 
 ```javascript
 new SwupOverlayTheme({
-    color: '#2D2E82',
-    duration: 600,
-    direction: 'to-right',
+  color: '#2D2E82',
+  duration: 600,
+  direction: 'to-right'
 });
 ```
