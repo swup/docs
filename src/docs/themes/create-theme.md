@@ -4,7 +4,7 @@ title: Create Theme 🎉
 description: Create your own theme
 parent: Themes
 nav_order: 4
-permalink: /themes/create-theme/
+permalink: https://github.com/swup/themes/create-theme/
 ---
 
 # Create Theme
