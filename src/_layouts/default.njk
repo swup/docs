@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  {% include "head.njk" %}
+  <body>
+    <div class="page-wrap">
+      <div class="side-bar">
+        <a href="/" class="site-title fs-6 lh-tight">
+          <img src="/assets/images/swup-logo.svg" alt="{{ site.title }}"/>
+        </a>
+        <span class="fs-3"></span>
+        <button class="js-main-nav-trigger navigation-list-toggle btn btn-outline" type="button" data-text-toggle="Hide">
+          Menu
+        </button>
+      </span>
+      <div class="navigation main-nav js-main-nav">
+        {% include "nav.njk" %}
+      </div>
+    </div>
+    <div class="main-content-wrap js-main-content" tabindex="0" id="main">
+      {% include "main-header.njk" %}
+      <div class="main-content" id="swup">
+        <div id="main-content" class="page-content" role="main">
+          {% if repo_link %}
+            <a href="https://github.com/swup{{ repo_link }}" class="btn btn-repo fs-5 mb-4">Repo</a>
+          {% endif %}
+          <article data-pagefind-body>{{ content | safe }}</article>
+          {% if has_children == true and has_toc != false %}
+            {% set children_list = collections.all | prepareMenuItems({parentTitle: title}) %}
+            <ul>
+              {% for child in children_list %}
+                <li>
+                  {% if child.data.external_link %}
+                    <a href="{{ child.data.external_link }}" target="_blank">
+                      {{ child.data.title }} <img src="/assets/images/external-link-symbol.svg" alt="{{ child.data.title }}"/>
+                    </a>
+                  {% else %}
+                    <a href="{{ child.url }}">{{ child.data.title }}</a>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+          <footer class="edit-this-page">
+            <p>
+              Found a mistake or want to contribute?
+              <a href="https://github.com/swup/docs/blob/master/src{{ page.filePathStem }}.md" target="_blank">Edit this page</a>
+              on Github.
+            </p>
+          </footer>
+        </div>
+      </div>
+      {% include "sidebar.njk" %}
+    </div>
+  </body>
+</html></div>{% include "scripts.njk" %}</body></html>

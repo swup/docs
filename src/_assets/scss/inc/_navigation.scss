@@ -1,0 +1,228 @@
+//
+// Main nav, breadcrumb, etc...
+//
+
+.site-title {
+  display: block;
+  flex: 1 1 auto;
+  color: $body-heading-color;
+  padding: $sp-2;
+  text-align: center;
+  height: 60px;
+  transition: opacity 1s 1s;
+  opacity: 1;
+
+  .page--homepage & {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+    transition: opacity .2s;
+  }
+
+  @include mq(md) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 101;
+    height: auto;
+    padding: $sp-5 4rem $sp-5;
+
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      height: 30px;
+      pointer-events: none;
+      background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1) 30%, rgba(255, 255, 255, 0));
+    }
+  }
+
+  img {
+    max-height: 100%;
+  }
+}
+
+.navigation-list {
+  padding: 0 0 $sp-4;
+  margin-top: $sp-4;
+  margin-bottom: 0;
+  list-style: none;
+
+  @include mq(md) {
+    margin-top: 0;
+  }
+}
+
+.navigation-list-child-list {
+  padding-left: 0;
+  list-style: none;
+
+  .navigation-list-link {
+    color: $nav-child-link-color;
+  }
+
+  .navigation-list-item {
+    position: relative;
+    margin: 0 auto;
+    font-weight: 400;
+
+    @include mq(md) {
+      @include fs-4;
+    }
+  }
+}
+
+.navigation-list-item {
+  @include fs-4;
+  font-weight: 600;
+  margin: 0 auto 10px;
+  position: relative;
+
+  @include mq(md) {
+    margin: 0 auto 14px;
+    @include fs-5;
+  }
+
+  .navigation-list-child-list {
+    display: block;
+
+    .navigation-list-item {
+      &::before {
+        margin-top: 0.7em;
+
+        @include mq(md) {
+          margin-top: 0.75em;
+        }
+      }
+    }
+  }
+
+  &::before {
+    position: absolute;
+    margin-top: 0.65em;
+    margin-left: -0.7em;
+    background: #FE5B6A;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    content: "";
+    opacity: 0;
+
+    @include mq(md) {
+      margin-top: 0.7em;
+    }
+  }
+
+  &.active {
+    &::before {
+      opacity: 1;
+    }
+  }
+}
+
+.navigation-list-link {
+  display: block;
+  padding-top: .1rem;
+  padding-bottom: .1rem;
+  color: $body-heading-color;
+  border-bottom: none;
+
+  &.active {
+    color: $body-heading-color;
+    text-decoration: none;
+  }
+
+  img {
+    width: 14px;
+    display: inline-block;
+    margin: 0 0 0 2px;
+    transform: translate(0px, 1px);
+  }
+}
+
+.main-nav {
+  @include mq(md) {
+    margin-right: -20px;
+    left: 0;
+    position: relative;
+    width: calc(100% + 20px);
+  }
+}
+
+// Small screen nav
+
+.main-nav,
+.aux-nav {
+  display: none;
+
+  &.nav-open {
+    display: block;
+  }
+  @include mq(md) {
+    display: block;
+  }
+}
+
+.aux-nav {
+  display: block;
+  top: 100px;
+  left: 10px;
+  position: absolute;
+
+  @include mq(md) {
+    position: relative;
+    top: -1px;
+    left: 0;
+  }
+}
+
+.navigation-list-toggle {
+  position: absolute;
+  top: 100px;
+  right: 1rem;
+  display: block;
+  line-height: 1;
+
+  @include mq(md) {
+    display: none !important;
+  }
+}
+
+// Breadcrumb nav
+.breadcrumb-nav {
+  @include mq(md) {
+    margin-top: -$sp-4;
+    transform: translateY(-1rem);
+  }
+}
+
+.breadcrumb-nav-list {
+  padding-left: 0;
+  margin-bottom: $sp-3;
+  list-style: none;
+}
+
+.breadcrumb-nav-list-item {
+  display: table-cell;
+  @include fs-2;
+
+  &::before {
+    display: none;
+  }
+
+  &::after {
+    display: inline-block;
+    margin-right: $sp-2;
+    margin-left: $sp-2;
+    color: $grey-dk-000;
+    content: "/";
+  }
+
+  &:last-child {
+    &::after {
+      content: "";
+    }
+  }
+}

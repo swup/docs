@@ -1,0 +1,23 @@
+name: tests
+
+on:
+  push:
+    branches: ["master", "next"]
+  pull_request:
+    branches: ["master", "next"]
+  workflow_dispatch:
+
+jobs:
+  checkout-and-test:
+    name: Run tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: install
+        run: npm ci
+      - name: Run swup validate tests
+        run: npm run test
