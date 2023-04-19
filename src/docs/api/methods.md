@@ -27,7 +27,7 @@ swup.loadPage({
 Un/register a handler for swup events.
 
 ```javascript
-const handler = event => console.log(event);
+const handler = (event) => console.log(event);
 
 // register event handler
 swup.on('clickLink', handler);

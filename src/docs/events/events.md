@@ -34,7 +34,7 @@ document.addEventListener('swup:contentReplaced', () => {});
 
 ## List of all events
 
-|         Event name          |                                                      Description                                                       |
+| Event name                 | Description                                                                                                            |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | **animationInDone**        | triggers when transition of all animated elements is done (after content is replaced)                                  |
 | **animationInStart**       | triggers when animation _IN_ starts (class `is-animating` is removed from html tag)                                    |

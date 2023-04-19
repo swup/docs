@@ -78,7 +78,7 @@ The plugin adds two events to swup:
 Triggered every time a form is being submitted:
 
 ```js
-swup.on('submitForm', e => console.log(e));
+swup.on('submitForm', (e) => console.log(e));
 ```
 
 ### `openFormSubmitInNewTab`

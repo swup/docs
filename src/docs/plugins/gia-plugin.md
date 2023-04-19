@@ -50,16 +50,16 @@ const swup = new Swup({
 Defines components object to be used for mount/unmount. Defaults to empty object.
 
 ```javascript
-import Component from 'gia/Component'
+import Component from 'gia/Component';
 
 class SampleComponent extends Component {
-    // ...
+  // ...
 }
 
 const components = {
-    SampleComponent: SampleComponent
-}
-new SwupGiaPlugin({components: components});
+  SampleComponent: SampleComponent
+};
+new SwupGiaPlugin({ components: components });
 ```
 
 ### firstLoad
@@ -67,7 +67,7 @@ new SwupGiaPlugin({components: components});
 Defines whether plugin should load the component on start. Defaults to `true`.
 
 ```javascript
-new SwupGiaPlugin({firstLoad: true});
+new SwupGiaPlugin({ firstLoad: true });
 ```
 
 ### log
@@ -76,5 +76,5 @@ Defines whether plugin should let Gia report info on mounting/unmounting of comp
 Defaults to `false`.
 
 ```javascript
-new SwupGiaPlugin({log: false});
+new SwupGiaPlugin({ log: false });
 ```

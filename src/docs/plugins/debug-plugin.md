@@ -54,5 +54,5 @@ If `true`, the plugin will store the swup instance on the global window object, 
 ```javascript
 new SwupDebugPlugin({
   globalInstance: true
-})
+});
 ```

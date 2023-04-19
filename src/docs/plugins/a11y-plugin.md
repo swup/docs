@@ -61,11 +61,11 @@ content, i.e. `main` for your content area and `h1` or `h2` for your headings.
 See the options below for customizing what elements to look for.
 
 ```html
-<header>
-  Logo
-</header>
-<main> <!-- will be focussed -->
-  <h1>Page Title</h1> <!-- will be announced -->
+<header>Logo</header>
+<main>
+  <!-- will be focussed -->
+  <h1>Page Title</h1>
+  <!-- will be announced -->
   <p>Lorem ipsum dolor sit amet</p>
 </main>
 ```
@@ -77,7 +77,7 @@ receives focus after navigation. Make sure to remove the outline in your CSS
 if that isn't the desired behavior.
 
 ```css
-main[tabindex="-1"] {
+main[tabindex='-1'] {
   outline: none;
 }
 ```

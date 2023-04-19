@@ -12,7 +12,7 @@
     "build:assets": "webpack --mode=production  --progress --stats minimal",
     "build": "npm run build:eleventy && npm run build:assets",
     "clean": "rm -rf _site",
-    "lint": "prettier 'src/_assets/' --write",
+    "lint": "prettier 'src/' --write",
     "test": "start-server-and-test test:start http://127.0.0.1:7987 test:run",
     "test:serve": "http-server --port 7987 --silent _site",
     "test:start": "SITE_URL=http://127.0.0.1:7987 npm run build && npm run test:serve",

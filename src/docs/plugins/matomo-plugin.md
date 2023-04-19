@@ -9,6 +9,7 @@ repo_link: /matomo-plugin
 ---
 
 # Matomo Plugin
+
 **by [jdraserschieb](https://github.com/jdraserschieb)**
 
 Matomo plugin triggers pageview event on `contentReplaced` (on each page change).
@@ -29,6 +30,7 @@ Install the plugin from npm and import it into your bundle.
 ```bash
 npm install @swup/matomo-plugin
 ```
+
 ```js
 import SwupMatomoPlugin from '@swup/matomo-plugin';
 ```

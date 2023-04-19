@@ -76,7 +76,7 @@ const swup = new Swup({
 ```
 
 ```html
-<html class="is-animating from-homepage to-about">
+<html class="is-animating from-homepage to-about"></html>
 ```
 
 ### Script import
