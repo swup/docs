@@ -23,7 +23,9 @@
           {% if repo_link %}
             <a href="https://github.com/swup{{ repo_link }}" class="btn btn-repo fs-5 mb-4">Repo</a>
           {% endif %}
-          <article data-pagefind-body>{{ content | safe }}</article>
+          <article data-pagefind-body>
+            {{ content | maybeLoadContentSource({url: content_source, title: title}) | safe }}
+          </article>
           {% if has_children == true and has_toc != false %}
             {% set children_list = collections.all | prepareMenuItems({parentTitle: title}) %}
             <ul>
