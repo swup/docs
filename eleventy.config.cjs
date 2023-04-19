@@ -88,11 +88,16 @@ async function maybeLoadRemoteReadme(content, { repo_link = '', title = '' } = {
 
 	const url = `https://raw.githubusercontent.com/swup/${repo_link}/master/readme.md`;
 
-	const result = await EleventyFetch(url, {
+	let result = await EleventyFetch(url, {
 		duration: '60s',
 		type: 'text'
 	});
-	const rendered = customMarkdownIt.render(result).trim();
-	// Remove "Swup" from possible h1. We are already on the swup website :)
-	return rendered.replace(/(^<h1.+?>).+?(<\/h1>)/i, `$1${title}$2`);
+
+	// Replace the first h1 with the title from the local front matter
+	result = result.trim().replace(/^#\s.+$/mi, `# ${title}`);
+
+	// Honor <!-- swup-docs-ignore-start -->Ignore me!<!-- swup-docs-ignore-end -->
+	result = result.replace(/<!--(?:\s+)swup-docs-ignore-start(?:\s+)-->.+?<!--(?:\s+)swup-docs-ignore-end(?:\s+)-->/gis, '');
+
+	return customMarkdownIt.render(result);
 }
