@@ -16,11 +16,12 @@ A few variables accessible in swup instance that could be helpful.
 Holds information about the latest transition. Set at the beginning of the current transition to be used further on (right after the `loadPage` method call).
 
 ```javascript
-swup.transition === {
-    from: '/about',     // route of previous page
-    to: '/team',        // route of next page
-    custom: 'slide-in'  // content of [data-swup-transition] attribute or customTransition property passed to loadPage()
-}
+swup.transition ===
+  {
+    from: '/about', // route of previous page
+    to: '/team', // route of next page
+    custom: 'slide-in' // content of [data-swup-transition] attribute or customTransition property passed to loadPage()
+  };
 ```
 
 ## currentPageUrl
@@ -41,5 +42,5 @@ Holds the hash/id of any element that needs to be scrolled to after navigation. 
 
 ```javascript
 // After clicking a link to /about#team
-swup.scrollToElement === '#team'
+swup.scrollToElement === '#team';
 ```

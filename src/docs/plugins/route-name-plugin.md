@@ -68,7 +68,7 @@ of the current and next page.
 
 ```html
 <!-- Navigating from /en/ to /en/project/some-project/ -->
-<html class="is-animating from-route-home to-route-project">
+<html class="is-animating from-route-home to-route-project"></html>
 ```
 
 You can then choose between animations based on the identified routes.
@@ -96,7 +96,7 @@ If from and to routes are identical, it will add the class `to-same-route`. This
 is mostly useful to disable transitions between pages with identical layout.
 
 ```html
-<html class="is-animating from-route-project to-route-project to-same-route">
+<html class="is-animating from-route-project to-route-project to-same-route"></html>
 ```
 
 ### Paths
@@ -107,7 +107,7 @@ next page.
 
 ```html
 <!-- Navigating from /about/ to /team/ -->
-<html class="is-animating from-about to-team">
+<html class="is-animating from-about to-team"></html>
 ```
 
 ## Options

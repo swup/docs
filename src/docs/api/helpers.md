@@ -66,10 +66,8 @@ updateHistoryRecord(null, { custom: 'data' });
 Install a delegated event listener on the document using `delegate-it`.
 
 ```javascript
-swup.delegatedListeners.formSubmit = delegateEvent(
-    'form',
-    'submit',
-    (event) => console.log('Form submitted')
+swup.delegatedListeners.formSubmit = delegateEvent('form', 'submit', (event) =>
+  console.log('Form submitted')
 );
 ```
 
@@ -85,9 +83,9 @@ Wrapper around swup's XHR request implementation. Receives an options object and
 
 ```javascript
 fetch({ url: '/about', method: 'POST', data: {} }, (req) => {
-    if (req.status !== 500) {
-        /* process response */
-    }
+  if (req.status !== 500) {
+    /* process response */
+  }
 });
 ```
 

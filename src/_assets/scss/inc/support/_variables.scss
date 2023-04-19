@@ -2,9 +2,11 @@
 // Typography
 //
 
-$body-font-family: -apple-system, BlinkMacSystemFont, "helvetica neue", helvetica, roboto, noto, "segoe ui", arial, sans-serif !default;
-$mono-font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-$root-font-size: 16px !default;         // Base font-size for rems
+$body-font-family: -apple-system, BlinkMacSystemFont, 'helvetica neue', helvetica, roboto, noto,
+	'segoe ui', arial, sans-serif !default;
+$mono-font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Monaco, Consolas,
+	'Liberation Mono', 'Courier New', monospace;
+$root-font-size: 16px !default; // Base font-size for rems
 $body-line-height: 1.4 !default;
 $body-heading-line-height: 1.15 !default;
 
@@ -66,11 +68,11 @@ $base-button-color: #f7f7f7 !default;
 //
 
 $media-queries: (
-  xs: 320px,
-  sm: 500px,
-  md: 740px,
-  lg: 1120px,
-  xl: 1400px
+	xs: 320px,
+	sm: 500px,
+	md: 740px,
+	lg: 1120px,
+	xl: 1400px
 ) !default;
 
 //
@@ -80,17 +82,17 @@ $media-queries: (
 $spacing-unit: 1rem; // 1rem == 16px
 
 $spacers: (
-  sp-0: 0,
-  sp-1: $spacing-unit * 0.25,
-  sp-2: $spacing-unit * 0.5,
-  sp-3: $spacing-unit * 0.75,
-  sp-4: $spacing-unit,
-  sp-5: $spacing-unit * 1.5,
-  sp-6: $spacing-unit * 2,
-  sp-7: $spacing-unit * 2.5,
-  sp-8: $spacing-unit * 3,
-  sp-9: $spacing-unit * 3.5,
-  sp-10: $spacing-unit * 4
+	sp-0: 0,
+	sp-1: $spacing-unit * 0.25,
+	sp-2: $spacing-unit * 0.5,
+	sp-3: $spacing-unit * 0.75,
+	sp-4: $spacing-unit,
+	sp-5: $spacing-unit * 1.5,
+	sp-6: $spacing-unit * 2,
+	sp-7: $spacing-unit * 2.5,
+	sp-8: $spacing-unit * 3,
+	sp-9: $spacing-unit * 3.5,
+	sp-10: $spacing-unit * 4
 ) !default;
 
 $sp-1: map-get($spacers, sp-1) !default; // 0.25 rem == 4px
@@ -122,9 +124,9 @@ $nav-width: 232px !default;
 $content-width: 800px !default;
 
 $media-queries: (
-  xs: 320px,
-  sm: 500px,
-  md: 740px,
-  lg: 800px,
-  xl: 1316px
+	xs: 320px,
+	sm: 500px,
+	md: 740px,
+	lg: 800px,
+	xl: 1316px
 ) !default;

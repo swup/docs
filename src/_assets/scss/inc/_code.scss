@@ -17,13 +17,13 @@
 * @see https://github.com/antfu/markdown-it-shiki#highlight-lines
 */
 code[v-pre] {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .shiki .highlighted {
-  background: #7f7f7f20;
-  display: block;
-  margin: 0 -1rem;
-  padding: 0 1rem;
+	background: #7f7f7f20;
+	display: block;
+	margin: 0 -1rem;
+	padding: 0 1rem;
 }

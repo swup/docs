@@ -40,17 +40,18 @@ To run this plugin, include an instance in the swup options.
 
 ```javascript
 const customPayloadOption = {
-    generatePageObject: (request) => {  // receives request object created by swup which contains server response
-        // parse data from request here and prepare it for return
+  generatePageObject: (request) => {
+    // receives request object created by swup which contains server response
+    // parse data from request here and prepare it for return
 
-        return {
-            title,  // required - title of page
-            blocks, // required - containers on page in correct order (as marked by [data-swup] attributes in DOM)
-            pageClass, // not requered - class of body element (but might be required by some plugin like Body Class plugin)
-            originalContent,    // not required - whole page html content (but might be required by some plugin)
-        };
-    }
-}
+    return {
+      title, // required - title of page
+      blocks, // required - containers on page in correct order (as marked by [data-swup] attributes in DOM)
+      pageClass, // not requered - class of body element (but might be required by some plugin like Body Class plugin)
+      originalContent // not required - whole page html content (but might be required by some plugin)
+    };
+  }
+};
 
 const swup = new Swup({
   plugins: [new SwupCustomPayloadPlugin(customPayloadOption)]

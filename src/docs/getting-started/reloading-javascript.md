@@ -14,7 +14,7 @@ By default, scripts get enabled when the page is loaded. Often we would find our
 
 ```javascript
 document.addEventListener('DOMContentLoaded', () => {
-    // run whatever we need
+  // run whatever we need
 });
 ```
 
@@ -28,17 +28,17 @@ Each script in the function has a condition, so we don't try to run the script w
 
 ```javascript
 function init() {
-    if (document.querySelector('#carousel')) {
-        // something like new Carousel('#carousel')
-    }
+  if (document.querySelector('#carousel')) {
+    // something like new Carousel('#carousel')
+  }
 
-    if (document.querySelector('#lightbox')) {
-        // something like $('#lightbox').lightbox()
-    }
+  if (document.querySelector('#lightbox')) {
+    // something like $('#lightbox').lightbox()
+  }
 
-    if (document.querySelector('#something-else')) {
-        // ...
-    }
+  if (document.querySelector('#something-else')) {
+    // ...
+  }
 }
 ```
 
@@ -64,10 +64,10 @@ Swup `willReplaceContent` event can help with that.
 
 ```javascript
 function unload() {
-    if (document.querySelector('#carousel')) {
-        // carousel.destroy()
-    }
-    // ...
+  if (document.querySelector('#carousel')) {
+    // carousel.destroy()
+  }
+  // ...
 }
 
 swup.on('willReplaceContent', unload);

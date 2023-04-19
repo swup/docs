@@ -38,9 +38,11 @@ To run this plugin, include an instance in the swup options.
 
 ```javascript
 const swup = new Swup({
-  plugins: [new SwupJsPlugin([
-    // your custom transition objects
-  ])]
+  plugins: [
+    new SwupJsPlugin([
+      // your custom transition objects
+    ])
+  ]
 });
 ```
 
@@ -56,8 +58,8 @@ const options = [
   {
     from: '(.*)', // matches any route
     to: '(.*)', // matches any route
-    out: next => next(), // immediately continues
-    in: next => next() // immediately continues
+    out: (next) => next(), // immediately continues
+    in: (next) => next() // immediately continues
   }
 ];
 ```
@@ -72,6 +74,7 @@ More on that [here](#choosing-the-animation).
 ## Animation Function
 
 The animation function receives two parameters:
+
 - The `next()` function
 - an object that contains information about the current animation.
 

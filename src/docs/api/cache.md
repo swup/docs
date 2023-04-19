@@ -17,12 +17,12 @@ Creates a cache record. The `url`, `title`, `blocks` and `originalContent` prope
 
 ```javascript
 swup.cache.cacheUrl({
-    url: '/url-to-page',
-    title: 'Page title',
-    blocks: ['<div id="swup"></div>'],
-    originalContent: '<html>...</html>',
-    pageClass: 'body-class',
-    responseURL: '/redirected-url'
+  url: '/url-to-page',
+  title: 'Page title',
+  blocks: ['<div id="swup"></div>'],
+  originalContent: '<html>...</html>',
+  pageClass: 'body-class',
+  responseURL: '/redirected-url'
 });
 ```
 
