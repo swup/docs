@@ -145,6 +145,7 @@
 		align-items: center;
 		margin: 0;
 		padding: 0;
+		margin-bottom: 0.4rem;
 		@include mq(md) {
 			padding-block-start: 0.4rem;
 		}
