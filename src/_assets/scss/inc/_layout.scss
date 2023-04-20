@@ -155,12 +155,13 @@
 			a {
 				display: block;
 				width: 1.8rem;
-				opacity: 0.6;
+				opacity: 0.5;
 				transition: opacity 200ms;
 				@include hover {
 					opacity: 1;
 				}
 				svg {
+					fill: $grey-dk-300;
 					display: block;
 					width: 100%;
 				}
