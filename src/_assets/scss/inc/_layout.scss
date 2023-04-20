@@ -113,6 +113,7 @@
 	@include mq(md) {
 		flex-direction: row;
 		justify-content: flex-end;
+		align-items: flex-start;
 		gap: 1rem;
 		position: absolute;
 		top: 0;
@@ -127,7 +128,7 @@
 		pointer-events: all;
 	}
 
-	&_search {
+	&__search {
 		flex: none;
 		display: block;
 		width: 100%;
@@ -138,9 +139,10 @@
 		}
 	}
 
-	&_buttons {
+	&__buttons {
 		list-style: none;
 		display: flex;
+		align-items: center;
 		margin: 0;
 		padding: 0;
 		@include mq(md) {
@@ -148,8 +150,21 @@
 		}
 		li {
 			margin: 0;
-			position: relative;
-			top: 0.1em;
+			line-height: 0;
+
+			a {
+				display: block;
+				width: 1.8rem;
+				opacity: 0.6;
+				transition: opacity 200ms;
+				@include hover {
+					opacity: 1;
+				}
+				svg {
+					display: block;
+					width: 100%;
+				}
+			}
 		}
 	}
 }
