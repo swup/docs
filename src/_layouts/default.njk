@@ -24,8 +24,10 @@
             <a href="{{ repo_link }}" class="btn btn-repo fs-5 mb-4">Repo</a>
           {% endif %}
           {% if external_link %}
-          <h1>{{ title }} </h1>
-          <p>You will be redirected to <a href="{{ external_link }}">{{ external_link }}</a></p>
+          <article>
+            <h1>{{ title }}</h1>
+            <p>You will be redirected to <a href="{{ external_link }}">{{ external_link }}</a></p>
+          </article>
           {% else %}
           <article data-pagefind-body>
             {{ content | maybeLoadRemoteReadme({repo_link: repo_link, title: title}) | safe }}
