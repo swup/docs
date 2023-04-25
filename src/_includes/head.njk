@@ -12,6 +12,12 @@
     <title>Swup - complete, flexible, extensible and easy to use page transition library.</title>
   {% endif %}
 
+  {% if external_link %}
+    <!-- This page is merely a redirect, exclude it from search engines -->
+    <meta name="robots" content="noindex, follow">
+    <meta http-equiv="refresh" content="0; URL='{{ external_link }}'">
+  {% endif %}
+
 
   {% if site.ga_tracking != nil %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_tracking }}"></script>
