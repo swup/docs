@@ -15,6 +15,7 @@
   {% if external_link %}
     <!-- This page is merely a redirect, exclude it from search engines -->
     <meta name="robots" content="noindex, follow">
+    <meta http-equiv="refresh" content="0; URL='{{ external_link }}'">
   {% endif %}
 
 
