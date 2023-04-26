@@ -3,6 +3,7 @@ const markdownItAnchor = require('markdown-it-anchor');
 const { execSync } = require('child_process');
 const Shiki = require('markdown-it-shiki').default;
 const EleventyFetch = require('@11ty/eleventy-fetch');
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 const customMarkdownIt = markdownIt({
 	html: true,
@@ -26,6 +27,7 @@ customMarkdownIt.use(Shiki, {
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('prepareMenuItems', prepareMenuItems);
 	eleventyConfig.addFilter('maybeLoadRemoteReadme', maybeLoadRemoteReadme);
+	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
 	// Assets will be taken care of by WebPack
 	eleventyConfig.ignores.add('./src/_assets/**');
