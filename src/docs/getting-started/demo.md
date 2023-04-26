@@ -4,8 +4,8 @@ title: Demo
 eleventyNavigation:
   key: Demo
   parent: Getting Started
+  order: 4
 description: Here are some demo links
-nav_order: 4
 permalink: /getting-started/demo/
 ---
 

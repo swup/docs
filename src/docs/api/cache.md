@@ -4,8 +4,8 @@ title: Cache
 eleventyNavigation:
   key: Cache
   parent: API
+  order: 2
 description: Swup's cache and its interface
-nav_order: 2
 permalink: /api/cache/
 ---
 

@@ -4,8 +4,8 @@ title: How it works
 eleventyNavigation:
   key: How it works
   parent: Getting Started
+  order: 1
 description: A simple explanation of how swup gets things done
-nav_order: 1
 permalink: /getting-started/how-it-works/
 ---
 

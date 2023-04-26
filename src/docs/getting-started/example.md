@@ -4,8 +4,8 @@ title: Example
 eleventyNavigation:
   key: Example
   parent: Getting Started
+  order: 3
 description: A few steps to get swup working on your site
-nav_order: 3
 permalink: /getting-started/example/
 ---
 

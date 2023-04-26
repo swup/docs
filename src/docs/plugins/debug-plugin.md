@@ -4,8 +4,8 @@ title: Debug Plugin
 eleventyNavigation:
   key: Debug Plugin
   parent: Plugins
+  order: 5
 description: Plugin to display debug information and tips
-nav_order: 5
 permalink: /plugins/debug-plugin/
 repo_link: https://github.com/swup/debug-plugin
 ---

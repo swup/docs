@@ -3,8 +3,8 @@ layout: default
 title: Plugins
 eleventyNavigation:
   key: Plugins
+  order: 4
 description: List of available official plugins
-nav_order: 4
 permalink: /plugins/
 has_toc: false
 ---

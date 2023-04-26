@@ -4,8 +4,8 @@ title: Create Plugin 🎉
 eleventyNavigation:
   key: Create Plugin 🎉
   parent: Plugins
+  order: 100
 description: Create your own plugin
-nav_order: 100
 permalink: /plugins/create-plugin/
 ---
 

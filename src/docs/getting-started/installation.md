@@ -4,8 +4,8 @@ title: Installation
 eleventyNavigation:
   key: Installation
   parent: Getting Started
+  order: 2
 description: Swup can be installed in few ways
-nav_order: 2
 permalink: /getting-started/installation/
 ---
 

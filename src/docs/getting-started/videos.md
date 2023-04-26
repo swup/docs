@@ -4,8 +4,8 @@ title: Video tutorials
 eleventyNavigation:
   key: Video tutorials
   parent: Getting Started
+  order: 6
 description: A few video tutorials by people around the web
-nav_order: 6
 permalink: /getting-started/videos/
 has_toc: false
 ---

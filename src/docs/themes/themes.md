@@ -3,8 +3,8 @@ layout: default
 title: Themes
 eleventyNavigation:
   key: Themes
+  order: 5
 description: List of official themes
-nav_order: 5
 permalink: /themes/
 has_toc: true
 ---

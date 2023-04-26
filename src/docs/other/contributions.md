@@ -4,8 +4,8 @@ title: Contributions
 eleventyNavigation:
   key: Contributions
   parent: Other
+  order: 3
 description: How to contribute to swup's development
-nav_order: 3
 permalink: /other/contributions/
 has_toc: false
 ---

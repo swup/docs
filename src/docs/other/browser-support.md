@@ -4,8 +4,8 @@ title: Browser Support
 eleventyNavigation:
   key: Browser Support
   parent: Other
+  order: 2
 description:
-nav_order: 2
 permalink: /other/browser-support/
 has_toc: false
 ---

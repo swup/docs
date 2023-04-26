@@ -4,8 +4,8 @@ title: Reloading Javascript
 eleventyNavigation:
   key: Reloading Javascript
   parent: Getting Started
+  order: 5
 description: Since swup removes the page reloads from site, it also removes a standard lifecycle of scripts
-nav_order: 5
 permalink: /getting-started/reloading-javascript/
 ---
 

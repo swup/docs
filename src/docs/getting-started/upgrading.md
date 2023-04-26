@@ -4,8 +4,8 @@ title: Upgrading
 eleventyNavigation:
   key: Upgrading
   parent: Getting Started
+  order: 7
 description: Instructions on upgrading swup in your projects
-nav_order: 7
 permalink: /getting-started/upgrading/
 ---
 
