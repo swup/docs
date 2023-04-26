@@ -6,7 +6,7 @@ eleventyNavigation:
   parent: Themes
   order: 4
 description: Create your own theme
-permalink: https://github.com/swup/themes/create-theme/
+permalink: /themes/create-theme/
 ---
 
 # Create Theme
