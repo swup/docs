@@ -128,7 +128,7 @@
 }
 
 .navigation-list-link {
-	display: block;
+	display: inline-block;
 	padding-top: 0.1rem;
 	padding-bottom: 0.1rem;
 	color: $body-heading-color;
@@ -230,4 +230,14 @@
 			content: '';
 		}
 	}
+}
+
+.navigation-list a[href^="http"] {
+  padding-right: 1.2em;
+  content: "\00A0";
+  background-image: var(--external-link-icon);
+  background-repeat: no-repeat;
+  background-position: 100% 60%;
+  background-color: transparent;
+  background-size: 1.2em;
 }
