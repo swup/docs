@@ -1,0 +1,22 @@
+<nav>
+    <ul class="page-nav">
+    {% set nextPage = collections.all | prepareMenuItems | getNextCollectionItem(page) %}
+    {% set previousPage = collections.all | prepareMenuItems | getPreviousCollectionItem(page) %}
+
+    {% if nextPage %}
+        <li class="page-nav_item">
+        <a class="page-nav_link" href="{{ nextPage.url }}">
+            {{ nextPage.data.title }}
+        </a>
+        </li>
+    {% endif %}
+
+    {% if previousPage %}
+        <li class="page-nav_item">
+        <a class="page-nav_link" href="{{ previousPage.url }}">
+            {{ previousPage.data.title }}
+        </a>
+        </li>
+    {% endif %}
+    </ul>
+</nav>
