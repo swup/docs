@@ -61,6 +61,7 @@ function addHeadlineLinks() {
 		.getElementById('main-content')
 		.querySelectorAll('h2, h3, h4, h5, h6')
 		.forEach(function (element) {
+			if (!element.matches('[id]')) return;
 			const anchor = document.createElement('a');
 			const link = window.location.origin + window.location.pathname + '#' + element.id;
 
