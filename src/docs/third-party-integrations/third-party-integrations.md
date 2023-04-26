@@ -3,8 +3,8 @@ layout: default
 title: 3rd Party Integrations
 eleventyNavigation:
   key: 3rd Party Integrations
+  order: 6
 description: List of external integrations done by awesome people around the web
-nav_order: 6
 permalink: /third-party-integrations/
 has_toc: true
 ---
