@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Forms Plugin
+eleventyNavigation:
+  key: Forms Plugin
+  parent: Plugins
 description: Plugin to submit forms with transitions
-parent: Plugins
 nav_order: 6
 permalink: /plugins/forms-plugin/
 repo_link: https://github.com/swup/forms-plugin

@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Installation
+eleventyNavigation:
+  key: Installation
+  parent: Getting Started
 description: Swup can be installed in few ways
 nav_order: 2
-parent: Getting Started
 permalink: /getting-started/installation/
 ---
 

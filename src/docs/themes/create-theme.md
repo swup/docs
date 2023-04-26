@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Create Theme 🎉
+eleventyNavigation:
+  key: Create Theme 🎉
+  parent: Themes
 description: Create your own theme
-parent: Themes
 nav_order: 4
 permalink: https://github.com/swup/themes/create-theme/
 ---

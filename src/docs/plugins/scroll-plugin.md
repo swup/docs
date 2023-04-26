@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Scroll Plugin
+eleventyNavigation:
+  key: Scroll Plugin
+  parent: Plugins
 description: Plugin to control scroll position of the page
-parent: Plugins
 nav_order: 17
 permalink: /plugins/scroll-plugin/
 repo_link: https://github.com/swup/scroll-plugin

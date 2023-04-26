@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Demo
+eleventyNavigation:
+  key: Demo
+  parent: Getting Started
 description: Here are some demo links
-parent: Getting Started
 nav_order: 4
 permalink: /getting-started/demo/
 ---

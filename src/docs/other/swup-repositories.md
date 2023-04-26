@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Swup repositories
-has_children: false
+eleventyNavigation:
+  key: Swup repositories
+  parent: Other
 nav_order: 6
 has_toc: false
-parent: Other
 external_link: https://github.com/swup
 ---

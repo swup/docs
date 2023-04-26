@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Getting Started
-has_children: true
+eleventyNavigation:
+  key: Getting Started
 nav_order: 1
 permalink: /getting-started/
 has_toc: false

@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Matomo Plugin
+eleventyNavigation:
+  key: Matomo Plugin
+  parent: Plugins
 description: Plugin to trigger Matomo page views
-parent: Plugins
 nav_order: 12
 permalink: /plugins/matomo-plugin/
 repo_link: https://github.com/swup/matomo-plugin

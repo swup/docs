@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Sites using swup
-has_children: false
+eleventyNavigation:
+  key: Sites using swup
+  parent: Other
 nav_order: 5
 has_toc: false
-parent: Other
 external_link: https://github.com/swup/swup/discussions/333
 ---

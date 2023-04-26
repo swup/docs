@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Progress Bar Plugin
+eleventyNavigation:
+  key: Progress Bar Plugin
+  parent: Plugins
 description: Plugin for displaying a loading indicator
-parent: Plugins
 nav_order: 14
 permalink: /plugins/progress-plugin/
 repo_link: https://github.com/swup/progress-plugin

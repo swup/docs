@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Methods
+eleventyNavigation:
+  key: Methods
+  parent: API
 description: Methods on the swup instance
 nav_order: 1
-parent: API
 permalink: /api/methods/
 ---
 

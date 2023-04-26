@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Scripts Plugin
+eleventyNavigation:
+  key: Scripts Plugin
+  parent: Plugins
 description: Plugin to re-run scripts on the page on each page transition
-parent: Plugins
 nav_order: 16
 permalink: /plugins/scripts-plugin/
 repo_link: https://github.com/swup/scripts-plugin

@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Discussions
-has_children: false
+eleventyNavigation:
+  key: Discussions
+  parent: Other
 nav_order: 7
 has_toc: false
-parent: Other
 external_link: https://github.com/swup/swup/discussions
 ---

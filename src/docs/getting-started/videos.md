@@ -1,12 +1,13 @@
 ---
 layout: default
 title: Video tutorials
+eleventyNavigation:
+  key: Video tutorials
+  parent: Getting Started
 description: A few video tutorials by people around the web
-has_children: false
 nav_order: 6
 permalink: /getting-started/videos/
 has_toc: false
-parent: Getting Started
 ---
 
 # Videos about swup

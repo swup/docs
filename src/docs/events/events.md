@@ -1,8 +1,9 @@
 ---
 layout: default
 title: Events
+eleventyNavigation:
+  key: Events
 description: Swup emits bunch of events, that we can use to enable JavaScript, trigger analytics, and much more
-has_children: true
 nav_order: 3
 permalink: /events/
 has_toc: false

@@ -1,8 +1,10 @@
 ---
 layout: default
 title: Example
+eleventyNavigation:
+  key: Example
+  parent: Getting Started
 description: A few steps to get swup working on your site
-parent: Getting Started
 nav_order: 3
 permalink: /getting-started/example/
 ---
