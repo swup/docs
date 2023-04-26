@@ -5,6 +5,7 @@ eleventyNavigation:
   key: Swup repositories
   parent: Other
   order: 6
+  url: https://github.com/swup
 has_toc: false
-external_link: https://github.com/swup
+permalink: false
 ---

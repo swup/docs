@@ -5,6 +5,7 @@ eleventyNavigation:
   key: Discussions
   parent: Other
   order: 7
+  url: https://github.com/swup/swup/discussions
 has_toc: false
-external_link: https://github.com/swup/swup/discussions
+permalink: false
 ---
