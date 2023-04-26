@@ -60,7 +60,7 @@
 	}
 }
 
-.navigation-list-child-list {
+.navigation-list-item > ul {
 	padding-left: 0;
 	list-style: none;
 
@@ -90,7 +90,7 @@
 		@include fs-5;
 	}
 
-	.navigation-list-child-list {
+	.navigation-list-item > ul {
 		display: block;
 
 		.navigation-list-item {

@@ -2,34 +2,13 @@
   role="navigation"
   aria-label="Main navigation"
   id="nav">
-  <ul class="navigation-list">
-    {% set pages_list = collections.all | prepareMenuItems %}
-    {% for node in pages_list %}
-      {% if node.data.parent == nil %}
-        <li class="navigation-list-item{% if page.url == node.page.url %} active{% endif %}">
-          <a href="{{ node.page.url }}" class="navigation-list-link{% if url == node.url %} active{% endif %}">{{ node.data.title }}</a>
-          {% set children_list = collections.all | prepareMenuItems({parentTitle: node.data.title}) %}
-          {% if children_list != blank %}
-            <ul class="navigation-list-child-list ">
-              {% for child in children_list %}
-                <li class="navigation-list-item {% if page.url == child.page.url %} active{% endif %}">
-                  {% if child.data.external_link %}
-                    <a
-                      href="{{ child.data.external_link }}"
-                      class="navigation-list-link"
-                      target="_blank">
-                      {{ child.data.title }}
-                      <img src="/assets/images/external-link-symbol.svg" alt="{{ child.data.title }}" />
-                    </a>
-                  {% else %}
-                    <a href="{{ child.page.url }}" class="navigation-list-link{% if url == child.page.url %} active{% endif %}">{{ child.data.title }}</a>
-                  {% endif %}
-                </li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        </li>
-      {% endif %}
-    {% endfor %}
-  </ul>
+  {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
+    listClass: "navigation-list",
+    listItemClass: "navigation-list-item",
+    listItemHasChildrenClass: "has-children",
+    activeListItemClass: "active",
+    anchorClass: "navigation-list-link",
+    activeAnchorClass: "",
+    activeKey: eleventyNavigation.key
+  }) | safe }}
 </nav>
