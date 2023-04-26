@@ -7,7 +7,6 @@ eleventyNavigation:
   order: 1
 description: Description of common issue or caveats people encounter
 permalink: /other/common-issues/
-has_toc: false
 ---
 
 # Common Issues

@@ -6,7 +6,6 @@ eleventyNavigation:
   order: 6
 description: List of external integrations done by awesome people around the web
 permalink: /third-party-integrations/
-has_toc: true
 ---
 
 # 3rd Party Integrations

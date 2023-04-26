@@ -6,7 +6,6 @@ eleventyNavigation:
   order: 3
 description: Swup emits bunch of events, that we can use to enable JavaScript, trigger analytics, and much more
 permalink: /events/
-has_toc: false
 ---
 
 # Events

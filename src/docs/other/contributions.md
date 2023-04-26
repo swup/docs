@@ -7,7 +7,6 @@ eleventyNavigation:
   order: 3
 description: How to contribute to swup's development
 permalink: /other/contributions/
-has_toc: false
 ---
 
 # Contributions

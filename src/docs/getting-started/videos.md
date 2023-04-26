@@ -7,7 +7,6 @@ eleventyNavigation:
   order: 6
 description: A few video tutorials by people around the web
 permalink: /getting-started/videos/
-has_toc: false
 ---
 
 # Videos about swup

@@ -6,7 +6,6 @@ eleventyNavigation:
   order: 5
 description: List of official themes
 permalink: /themes/
-has_toc: true
 ---
 
 # Themes

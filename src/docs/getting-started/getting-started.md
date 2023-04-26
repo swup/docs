@@ -5,7 +5,6 @@ eleventyNavigation:
   key: Getting Started
   order: 1
 permalink: /getting-started/
-has_toc: false
 ---
 
 # Getting Started

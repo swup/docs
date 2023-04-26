@@ -6,7 +6,6 @@ eleventyNavigation:
   order: 7
 description: Methods and helpers available on the swup instance
 permalink: /api/
-has_toc: true
 ---
 
 # API

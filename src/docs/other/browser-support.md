@@ -7,7 +7,6 @@ eleventyNavigation:
   order: 2
 description:
 permalink: /other/browser-support/
-has_toc: false
 ---
 
 # Browser Support

@@ -6,7 +6,6 @@ eleventyNavigation:
   order: 8
 description: You can test your site after each deployment, or as a part of the deploy process
 permalink: /ci-cd/
-has_toc: false
 ---
 
 # CI/CD

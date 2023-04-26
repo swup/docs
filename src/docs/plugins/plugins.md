@@ -6,7 +6,6 @@ eleventyNavigation:
   order: 4
 description: List of available official plugins
 permalink: /plugins/
-has_toc: false
 ---
 
 # Plugins

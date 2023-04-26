@@ -6,6 +6,5 @@ eleventyNavigation:
   parent: Other
   order: 5
   url: https://github.com/swup/swup/discussions/333
-has_toc: false
 permalink: false
 ---

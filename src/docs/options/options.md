@@ -6,7 +6,6 @@ eleventyNavigation:
   order: 2
 description: Swup has a several options that can be passed into a constructor as an object
 permalink: /options/
-has_toc: false
 ---
 
 # Options
