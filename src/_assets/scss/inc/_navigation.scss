@@ -232,8 +232,7 @@
 	}
 }
 
-.navigation-list a[href^='http'],
-.toc a[href^='http'] {
+.navigation-list a.external-link {
 	padding-right: 1.2em;
 	content: '\00A0';
 	background-image: var(--external-link-icon);
@@ -243,7 +242,9 @@
 	background-size: 1.2em;
 }
 
-.toc a[href^='http'] {
+.toc a.external-link {
+	font-weight: 500;
+	padding-right: 1.2em;
 	background-image: linear-gradient(#60ddcd 0%, #60ddcd 100%), var(--external-link-icon);
 	background-repeat: repeat-x, no-repeat;
 	background-position: 0 100%, 100% 60%;
