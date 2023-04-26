@@ -81,6 +81,7 @@ a {
 }
 
 .main-content a:not([class]),
+.main-content a.external-link,
 .btn-link {
 	text-decoration: none;
 	background-image: linear-gradient(#60ddcd 0%, #60ddcd 100%);
@@ -108,6 +109,7 @@ a {
 		background-size: 1px 6px, 1.2em;
 	}
 }
+
 .headline-anchor {
 	font-weight: normal;
 }
