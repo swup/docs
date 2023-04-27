@@ -77,9 +77,26 @@ function addHeadlineLinks() {
 		});
 }
 
+function isTouch() {
+	return !window.matchMedia('(hover: hover)').matches;
+}
+
+function prepareExternalLinks() {
+	// Don't do anything on touch devices
+	if (isTouch()) return;
+	// Open external links in a new tab for very specific contexts, only
+	document
+		.querySelectorAll('.navigation-list a[href], .main-content ul a[href]')
+		.forEach((el) => {
+			if (el.origin === window.location.origin) return;
+			el.target = '_blank';
+		});
+}
+
 function initPageView() {
 	checkTheme();
 	addHeadlineLinks();
+	prepareExternalLinks();
 }
 swup.on('pageView', initPageView);
 initPageView();
