@@ -80,8 +80,7 @@ a {
 	text-decoration: none;
 }
 
-.main-content a:not([class]),
-.main-content a.external-link,
+.main-content a:not(.btn),
 .btn-link {
 	text-decoration: none;
 	background-image: linear-gradient(#60ddcd 0%, #60ddcd 100%);
@@ -96,22 +95,6 @@ a {
 	&:hover {
 		background-size: 1px 6px;
 	}
-}
-
-.main-content ul a.external-link {
-	font-weight: 500;
-	padding-right: 1.2em;
-	background-image: linear-gradient(#60ddcd 0%, #60ddcd 100%), var(--external-link-icon);
-	background-repeat: repeat-x, no-repeat;
-	background-position: 0 100%, 100% 60%;
-	background-size: 1px 2px, 1.2em;
-	&:hover {
-		background-size: 1px 6px, 1.2em;
-	}
-}
-
-.headline-anchor {
-	font-weight: normal;
 }
 
 figure {
