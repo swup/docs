@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Upgrading
+eleventyNavigation:
+  key: Upgrading
+  parent: Getting Started
+  order: 7
 description: Instructions on upgrading swup in your projects
-nav_order: 7
-parent: Getting Started
 permalink: /getting-started/upgrading/
 ---
 
@@ -15,12 +17,19 @@ Swup 3 is mostly backward-compatible. Most projects should keep running fine aft
 
 ## Contents
 
-- [Multiple CSS transitions](#multiple-css-transitions)
-- [Link selector](#link-selector)
-- [HTML classnames](#html-classnames)
-- [Script import](#script-import)
-- [Helper imports](#helper-imports)
-- [Plugin authors](#plugin-authors)
+- [Upgrading](#upgrading)
+  - [Upgrading from swup 2 to 3](#upgrading-from-swup-2-to-3)
+  - [Contents](#contents)
+    - [Multiple CSS transitions](#multiple-css-transitions)
+    - [Link selector](#link-selector)
+    - [HTML classnames](#html-classnames)
+    - [Script import](#script-import)
+    - [Helper imports](#helper-imports)
+      - [Removed helpers](#removed-helpers)
+    - [Plugin authors](#plugin-authors)
+      - [Update import paths of helpers and utils](#update-import-paths-of-helpers-and-utils)
+      - [Switch to `Location` helper](#switch-to-location-helper)
+      - [Use event delegation helper](#use-event-delegation-helper)
 
 ### Multiple CSS transitions
 

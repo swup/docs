@@ -1,6 +1,5 @@
 ---
 layout: index
-nav_exclude: true
 permalink: /
 ---
 

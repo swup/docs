@@ -3,6 +3,7 @@ const markdownItAnchor = require('markdown-it-anchor');
 const { execSync } = require('child_process');
 const Shiki = require('markdown-it-shiki').default;
 const EleventyFetch = require('@11ty/eleventy-fetch');
+const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 
 const customMarkdownIt = markdownIt({
 	html: true,
@@ -24,8 +25,9 @@ customMarkdownIt.use(Shiki, {
 });
 
 module.exports = function (eleventyConfig) {
-	eleventyConfig.addFilter('prepareMenuItems', prepareMenuItems);
+	eleventyConfig.addFilter('sortByOrder', sortByOrder);
 	eleventyConfig.addFilter('maybeLoadRemoteReadme', maybeLoadRemoteReadme);
+	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
 	// Assets will be taken care of by WebPack
 	eleventyConfig.ignores.add('./src/_assets/**');
@@ -52,25 +54,19 @@ module.exports = function (eleventyConfig) {
 	};
 };
 
-function getMarkdownItInstance() {
-	return;
-}
-
 /**
  * Prepare menu items for usage in the njk templates
  * @param {array} pages   An array of all pages available.
  * @returns
  */
-function prepareMenuItems(pages, { parentTitle = null } = {}) {
-	return (
-		pages
-			// Respect `nav_exclude`
-			.filter((page) => !page.data.nav_exclude)
-			// Filter for matching parentTitle if set
-			.filter((page) => !parentTitle || parentTitle === page.data.parent)
-			// Respect `nav_order`
-			.sort((a, b) => Math.sign(a.data.nav_order - b.data.nav_order))
-	);
+function sortByOrder(pages) {
+	return pages.sort((a, b) => {
+		const orders = {
+			a: a.data.eleventyNavigation?.order || 0,
+			b: b.data.eleventyNavigation?.order || 0,
+		}
+		Math.sign(orders.a - orders.b);
+	});
 }
 
 /**
@@ -94,10 +90,13 @@ async function maybeLoadRemoteReadme(content, { repo_link = '', title = '' } = {
 	});
 
 	// Replace the first h1 with the title from the local front matter
-	result = result.trim().replace(/^#\s.+$/mi, `# ${title}`);
+	result = result.trim().replace(/^#\s.+$/im, `# ${title}`);
 
 	// Honor <!-- swup-docs-ignore-start -->Ignore me!<!-- swup-docs-ignore-end -->
-	result = result.replace(/<!--(?:\s+)swup-docs-ignore-start(?:\s+)-->.+?<!--(?:\s+)swup-docs-ignore-end(?:\s+)-->/gis, '');
+	result = result.replace(
+		/<!--(?:\s+)swup-docs-ignore-start(?:\s+)-->.+?<!--(?:\s+)swup-docs-ignore-end(?:\s+)-->/gis,
+		''
+	);
 
 	return customMarkdownIt.render(result);
 }

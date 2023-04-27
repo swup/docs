@@ -1,11 +1,11 @@
 ---
 layout: default
 title: CLI
+eleventyNavigation:
+  key: CLI
+  order: 9
 description: Swup handy CLI serves to start creating plugins and themes in a matter of seconds, or validate your site setup
-has_children: true
-nav_order: 8
 permalink: /cli/
-has_toc: false
 ---
 
 # CLI

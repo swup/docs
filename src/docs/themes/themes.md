@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Themes
+eleventyNavigation:
+  key: Themes
+  order: 5
 description: List of official themes
-has_children: true
-nav_order: 5
 permalink: /themes/
-has_toc: true
 ---
 
 # Themes

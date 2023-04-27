@@ -1,11 +1,11 @@
 ---
 layout: default
 title: API
+eleventyNavigation:
+  key: API
+  order: 7
 description: Methods and helpers available on the swup instance
-has_children: true
-nav_order: 7
 permalink: /api/
-has_toc: true
 ---
 
 # API

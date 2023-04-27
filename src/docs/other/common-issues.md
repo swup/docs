@@ -1,12 +1,12 @@
 ---
 layout: default
 title: Common Issues
+eleventyNavigation:
+  key: Common Issues
+  parent: Other
+  order: 1
 description: Description of common issue or caveats people encounter
-has_children: false
-nav_order: 1
 permalink: /other/common-issues/
-has_toc: false
-parent: Other
 ---
 
 # Common Issues

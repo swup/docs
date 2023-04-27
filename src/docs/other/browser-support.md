@@ -1,12 +1,12 @@
 ---
 layout: default
 title: Browser Support
+eleventyNavigation:
+  key: Browser Support
+  parent: Other
+  order: 2
 description:
-has_children: false
-nav_order: 2
 permalink: /other/browser-support/
-has_toc: false
-parent: Other
 ---
 
 # Browser Support

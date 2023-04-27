@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Helpers
+eleventyNavigation:
+  key: Helpers
+  parent: API
+  order: 3
 description: Helpers that can be used for developing plugins, themes or anything else around swup
-nav_order: 3
-parent: API
 permalink: /api/helpers/
 ---
 

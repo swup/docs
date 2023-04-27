@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Preload Plugin
+eleventyNavigation:
+  key: Preload Plugin
+  parent: Plugins
+  order: 13
 description: Plugin to preload pages ahead of time
-parent: Plugins
-nav_order: 13
 permalink: /plugins/preload-plugin/
 repo_link: https://github.com/swup/preload-plugin
 ---

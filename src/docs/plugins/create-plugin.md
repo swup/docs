@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Create Plugin 🎉
+eleventyNavigation:
+  key: Create Plugin 🎉
+  parent: Plugins
+  order: 100
 description: Create your own plugin
-parent: Plugins
-nav_order: 100
 permalink: /plugins/create-plugin/
 ---
 

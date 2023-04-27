@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Body Class Plugin
+eleventyNavigation:
+  key: Body Class Plugin
+  parent: Plugins
+  order: 2
 description: Plugin to replace body classes for each loaded page
-parent: Plugins
-nav_order: 2
 permalink: /plugins/body-class-plugin/
 repo_link: https://github.com/swup/body-class-plugin
 ---
