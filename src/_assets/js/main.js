@@ -77,10 +77,12 @@ function addHeadlineLinks() {
 		});
 }
 
-checkTheme();
-swup.on('pageView', checkTheme);
-addHeadlineLinks();
-swup.on('pageView', addHeadlineLinks);
+function initPageView() {
+	checkTheme();
+	addHeadlineLinks();
+}
+swup.on('pageView', initPageView);
+initPageView();
 
 function resetSearch() {
 	document.querySelector('.pagefind-ui__search-clear')?.click();
