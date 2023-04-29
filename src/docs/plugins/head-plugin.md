@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Head Plugin
+eleventyNavigation:
+  key: Head Plugin
+  parent: Plugins
+  order: 10
 description: Plugin to replace tags in the head tag
-parent: Plugins
-nav_order: 10
 permalink: /plugins/head-plugin/
 repo_link: https://github.com/swup/head-plugin
 ---

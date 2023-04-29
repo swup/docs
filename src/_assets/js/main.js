@@ -61,6 +61,7 @@ function addHeadlineLinks() {
 		.getElementById('main-content')
 		.querySelectorAll('h2, h3, h4, h5, h6')
 		.forEach(function (element) {
+			if (!element.matches('[id]')) return;
 			const anchor = document.createElement('a');
 			const link = window.location.origin + window.location.pathname + '#' + element.id;
 
@@ -76,10 +77,29 @@ function addHeadlineLinks() {
 		});
 }
 
-checkTheme();
-swup.on('pageView', checkTheme);
-addHeadlineLinks();
-swup.on('pageView', addHeadlineLinks);
+function isTouch() {
+	return !window.matchMedia('(hover: hover)').matches;
+}
+
+function prepareExternalLinks() {
+	// Don't do anything on touch devices
+	if (isTouch()) return;
+	// Open external links in a new tab for very specific contexts, only
+	document
+		.querySelectorAll('.navigation-list a[href], .main-content ul a[href]')
+		.forEach((el) => {
+			if (el.origin === window.location.origin) return;
+			el.target = '_blank';
+		});
+}
+
+function initPageView() {
+	checkTheme();
+	addHeadlineLinks();
+	prepareExternalLinks();
+}
+swup.on('pageView', initPageView);
+initPageView();
 
 function resetSearch() {
 	document.querySelector('.pagefind-ui__search-clear')?.click();

@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Gia Plugin
+eleventyNavigation:
+  key: Gia Plugin
+  parent: Plugins
+  order: 8
 description: Plugin to enable Gia components in swup containers
-parent: Plugins
-nav_order: 8
 permalink: /plugins/gia-plugin/
 repo_link: https://github.com/swup/gia-plugin
 ---

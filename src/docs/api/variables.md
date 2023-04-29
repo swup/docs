@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Variables
+eleventyNavigation:
+  key: Variables
+  parent: API
+  order: 4
 description: A few variables accessible in swup instance that could be helpful
-nav_order: 4
-parent: API
 permalink: /api/variables/
 ---
 

@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Changelog
-has_children: false
-nav_order: 4
-has_toc: false
-parent: Other
-external_link: https://github.com/swup/swup/blob/master/CHANGELOG.md
+eleventyNavigation:
+  key: Changelog
+  parent: Other
+  order: 4
+  url: https://github.com/swup/swup/blob/master/CHANGELOG.md
+permalink: false
 ---

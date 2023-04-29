@@ -5,13 +5,19 @@
   <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
   <link href="/assets/just-the-docs.css" rel="stylesheet">
 
-
   {% if title %}
     <title>{{ title }} | {{ site.title }}</title>
   {% else %}
     <title>Swup - complete, flexible, extensible and easy to use page transition library.</title>
   {% endif %}
 
+  {% if external_link %}
+    <!-- This page is merely a redirect, exclude it from search engines -->
+    <meta name="robots" content="noindex, follow">
+    <meta http-equiv="refresh" content="0; URL='{{ external_link }}'">
+  {% endif %}
+
+  <link rel="canonical" href="{{ site.url }}{{ page.url | url }}">
 
   {% if site.ga_tracking != nil %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_tracking }}"></script>

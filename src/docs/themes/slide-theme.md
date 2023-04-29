@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Slide Theme
+eleventyNavigation:
+  key: Slide Theme
+  parent: Themes
+  order: 2
 description: Theme to slide and fade pages on the transition
-parent: Themes
-nav_order: 2
 permalink: /themes/slide-theme/
 repo_link: https://github.com/swup/slide-theme
 ---

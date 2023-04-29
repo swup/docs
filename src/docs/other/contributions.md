@@ -1,12 +1,12 @@
 ---
 layout: default
 title: Contributions
+eleventyNavigation:
+  key: Contributions
+  parent: Other
+  order: 3
 description: How to contribute to swup's development
-has_children: false
-nav_order: 3
 permalink: /other/contributions/
-has_toc: false
-parent: Other
 ---
 
 # Contributions

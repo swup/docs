@@ -1,11 +1,11 @@
 ---
 layout: default
 title: Options
+eleventyNavigation:
+  key: Options
+  order: 2
 description: Swup has a several options that can be passed into a constructor as an object
-has_children: true
-nav_order: 2
 permalink: /options/
-has_toc: false
 ---
 
 # Options

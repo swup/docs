@@ -23,25 +23,23 @@
           {% if repo_link %}
             <a href="{{ repo_link }}" class="btn btn-repo fs-5 mb-4">Repo</a>
           {% endif %}
+          {% if external_link %}
+          <article>
+            <h1>{{ title }}</h1>
+            <p>You will be redirected to <a href="{{ external_link }}">{{ external_link }}</a></p>
+          </article>
+          {% else %}
           <article data-pagefind-body>
             {{ content | maybeLoadRemoteReadme({repo_link: repo_link, title: title}) | safe }}
           </article>
-          {% if has_children == true and has_toc != false %}
-            {% set children_list = collections.all | prepareMenuItems({parentTitle: title}) %}
-            <ul>
-              {% for child in children_list %}
-                <li>
-                  {% if child.data.external_link %}
-                    <a href="{{ child.data.external_link }}" target="_blank">
-                      {{ child.data.title }} <img src="/assets/images/external-link-symbol.svg" alt="{{ child.data.title }}"/>
-                    </a>
-                  {% else %}
-                    <a href="{{ child.url }}">{{ child.data.title }}</a>
-                  {% endif %}
-                </li>
-              {% endfor %}
-            </ul>
           {% endif %}
+
+          {% set children = collections.all | eleventyNavigation(eleventyNavigation.key) %}
+          {% if children | length %}
+          <h2>In this Section</h2>
+          {{ children | eleventyNavigationToHtml({listClass: "toc"}) | safe }}
+          {% endif %}
+
           <footer class="edit-this-page">
             <p>
               Found a mistake or want to contribute?

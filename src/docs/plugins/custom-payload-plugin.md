@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Custom Payload Plugin
+eleventyNavigation:
+  key: Custom Payload Plugin
+  parent: Plugins
+  order: 4
 description: Plugin to allow receiving of custom payload formats from the server
-parent: Plugins
-nav_order: 4
 permalink: /plugins/custom-payload-plugin/
 repo_link: https://github.com/swup/custom-payload-plugin
 ---

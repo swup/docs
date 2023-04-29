@@ -1,9 +1,11 @@
 ---
 layout: default
 title: Example
+eleventyNavigation:
+  key: Example
+  parent: Getting Started
+  order: 3
 description: A few steps to get swup working on your site
-parent: Getting Started
-nav_order: 3
 permalink: /getting-started/example/
 ---
 
@@ -29,7 +31,7 @@ Both are adjustable in options and are not related to each other (you can animat
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua.
       </p>
-      <a href="/other-page">Go to other page</a>
+      <a href="/other-page/">Go to other page</a>
     </main>
   </body>
 </html>
