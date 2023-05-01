@@ -28,6 +28,9 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('sortByOrder', sortByOrder);
 	eleventyConfig.addFilter('maybeLoadRemoteReadme', maybeLoadRemoteReadme);
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
+	eleventyConfig.addFilter('getPreviousAndNextPage', getPreviousAndNextPage);
+
+
 
 	// Assets will be taken care of by WebPack
 	eleventyConfig.ignores.add('./src/_assets/**');
@@ -63,8 +66,8 @@ function sortByOrder(pages) {
 	return pages.sort((a, b) => {
 		const orders = {
 			a: a.data.eleventyNavigation?.order || 0,
-			b: b.data.eleventyNavigation?.order || 0,
-		}
+			b: b.data.eleventyNavigation?.order || 0
+		};
 		Math.sign(orders.a - orders.b);
 	});
 }
@@ -99,4 +102,36 @@ async function maybeLoadRemoteReadme(content, { repo_link = '', title = '' } = {
 	);
 
 	return customMarkdownIt.render(result);
+}
+
+/**
+ * Recoursively flatten an array of objects containing children
+ *
+ * @see https://stackoverflow.com/a/35272973/586823
+ *
+ * @param {array} into
+ * @param {array|null} node
+ * @returns
+ */
+function flatten(into, node){
+    if(node == null) return into;
+    if(Array.isArray(node)) return node.reduce(flatten, into);
+    into.push(node);
+    return flatten(into, node.children);
+}
+
+/**
+ * Find the previous and next pages, relative to the current page
+ *
+ * @param {array} navigation
+ * @param {string} key The eleventyNavigation.key of the current page
+ * @returns
+ */
+function getPreviousAndNextPage(navigation, key) {
+	const flattened = flatten([], navigation);
+	const index = flattened.findIndex((page) => page.key === key);
+	return {
+		next: flattened[index + 1] || flattened[0],
+		previous: flattened[index - 1] || flattened[flattened.length - 1],
+	}
 }
