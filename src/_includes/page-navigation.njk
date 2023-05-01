@@ -1,17 +1,17 @@
 {% set nav = collections.all | getPreviousAndNextPage %}
-<nav>
-    <ul class="page-nav">
-        {% if nav.previous %}
-        <li class="page-nav_item">
-            <a class="page-nav_link" href="{{ nav.previous.url }}">
-                {% feather "arrow-left" %} {{ nav.previous.title }}
+<nav class="page-nav">
+    <ul class="page-nav_items">
+        {% if nav.next %}
+        <li class="page-nav_item --next">
+            <a class="page-nav_link" href="{{ nav.next.url }}" title="Next Page: {{ nav.next.title }}">
+                <span>{{ nav.next.title }}</span> {% feather "arrow-right" %}
             </a>
         </li>
         {% endif %}
-        {% if nav.next %}
-        <li class="page-nav_item">
-            <a class="page-nav_link" href="{{ nav.next.url }}">
-                {% feather "arrow-right" %} {{ nav.next.title }}
+        {% if nav.previous %}
+        <li class="page-nav_item --previous">
+            <a class="page-nav_link" href="{{ nav.previous.url }}" title="Previous Page: {{ nav.previous.title }}">
+                {% feather "arrow-left" %} <span>{{ nav.previous.title }}</span>
             </a>
         </li>
         {% endif %}
