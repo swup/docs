@@ -134,8 +134,8 @@ function getPreviousAndNextPage(nodes) {
 	const flattened = flatten([], navigation);
 	const index = flattened.findIndex((page) => page.key === key);
 	return {
-		next: flattened[index + 1] || flattened[0],
-		previous: flattened[index - 1] || flattened[flattened.length - 1]
+		next: flattened[index + 1],
+		previous: flattened[index - 1]
 	};
 }
 
