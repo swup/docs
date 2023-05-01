@@ -3,14 +3,14 @@
     <ul class="page-nav">
         <li class="page-nav_item">
             <a class="page-nav_link" href="{{ nav.previous.url }}">
-                Previous: <br>
-                {{ nav.previous.title }}
+                Previous page<br>
+                {% feather "arrow-left" %} {{ nav.previous.title }}
             </a>
         </li>
         <li class="page-nav_item">
             <a class="page-nav_link" href="{{ nav.next.url }}">
-                Next: <br>
-                {{ nav.next.title }}
+                Next page<br>
+                {% feather "arrow-right" %} {{ nav.next.title }}
             </a>
         </li>
     </ul>

@@ -4,6 +4,7 @@ const { execSync } = require('child_process');
 const Shiki = require('markdown-it-shiki').default;
 const EleventyFetch = require('@11ty/eleventy-fetch');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
+const feather = require('feather-icons');
 
 const customMarkdownIt = markdownIt({
 	html: true,
@@ -29,8 +30,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('maybeLoadRemoteReadme', maybeLoadRemoteReadme);
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addFilter('getPreviousAndNextPage', getPreviousAndNextPage);
-
-
+	eleventyConfig.addShortcode('feather', renderFeatherIcon);
 
 	// Assets will be taken care of by WebPack
 	eleventyConfig.ignores.add('./src/_assets/**');
@@ -113,11 +113,11 @@ async function maybeLoadRemoteReadme(content, { repo_link = '', title = '' } = {
  * @param {array|null} node
  * @returns
  */
-function flatten(into, node){
-    if(node == null) return into;
-    if(Array.isArray(node)) return node.reduce(flatten, into);
-    into.push(node);
-    return flatten(into, node.children);
+function flatten(into, node) {
+	if (node == null) return into;
+	if (Array.isArray(node)) return node.reduce(flatten, into);
+	into.push(node);
+	return flatten(into, node.children);
 }
 
 /**
@@ -132,6 +132,19 @@ function getPreviousAndNextPage(navigation, key) {
 	const index = flattened.findIndex((page) => page.key === key);
 	return {
 		next: flattened[index + 1] || flattened[0],
-		previous: flattened[index - 1] || flattened[flattened.length - 1],
+		previous: flattened[index - 1] || flattened[flattened.length - 1]
+	};
+}
+
+/**
+ * Render a feather icon using a shortcode
+ *
+ * @param {string} iconName
+ * @returns
+ */
+function renderFeatherIcon(iconName) {
+	if (!iconName) {
+		throw new Error('[feather] the iconName must be specified');
 	}
+	return feather.icons[iconName].toSvg({ 'stroke-linecap': 'square' });
 }

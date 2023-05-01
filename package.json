@@ -43,6 +43,7 @@
     "debug": "^4.3.4",
     "esbuild-loader": "^2.18.0",
     "esbuild-plugin-browserslist": "^0.6.0",
+    "feather-icons": "^4.29.0",
     "http-server": "^14.1.1",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.7",
