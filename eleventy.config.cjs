@@ -131,11 +131,11 @@ function getPreviousAndNextPage(nodes) {
 	const key = this.ctx.eleventyNavigation.key || this.ctx.title;
 	if (!key) return {};
 	const navigation = eleventyNavigationPlugin.navigation.find(nodes);
-	const flattened = flatten([], navigation);
-	const index = flattened.findIndex((page) => page.key === key);
+	const pages = flatten([], navigation).filter((page) => page.url.startsWith("/"));
+	const index = pages.findIndex((page) => page.key === key);
 	return {
-		next: flattened[index + 1],
-		previous: flattened[index - 1]
+		next: pages[index + 1],
+		previous: pages[index - 1]
 	};
 }
 
