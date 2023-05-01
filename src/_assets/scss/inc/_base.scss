@@ -174,35 +174,30 @@ html.is-animating.is-leaving .swup-transition-main {
 	list-style: none;
 	margin: 0;
 	padding: 0;
-	// display: grid;
-	// grid-template-rows: 1fr 1fr;
-	@include mq(sm) {
-		padding: 0.5em;
-		display: flex;
-		justify-content: stretch;
-		// grid-template-rows: 1fr;
-		// grid-template-columns: 1fr 1fr;
-	}
+	padding: 0.5em;
+	display: flex;
+	justify-content: stretch;
 }
 .page-nav_item {
 	margin: 0;
-	flex: 1;
+	flex: none;
+	width: 50%;
 	--arrow-direction: -1;
 	&.--next {
 		--arrow-direction: 1;
-		border-bottom: 1px solid #ddd;
+		border-left: 1px solid #ddd;
 		text-align: right;
-		@include mq(sm) {
-			order: 2;
-			border-bottom: none;
-			border-left: 1px solid #ddd;
-		}
 	}
 }
 .page-nav_link {
 	display: block;
+	position: relative;
+	white-space: nowrap;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
 	margin: 0;
-	padding: 0.8em;
+	padding: 0.5em 0.7em;
 	font-weight: 500;
 	.feather {
 		transition: transform 150ms;
