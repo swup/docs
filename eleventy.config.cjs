@@ -4,6 +4,7 @@ const { execSync } = require('child_process');
 const Shiki = require('markdown-it-shiki').default;
 const EleventyFetch = require('@11ty/eleventy-fetch');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
+// const { navigation } = require('@11ty/eleventy-navigation');
 const feather = require('feather-icons');
 
 const customMarkdownIt = markdownIt({
@@ -123,11 +124,13 @@ function flatten(into, node) {
 /**
  * Find the previous and next pages, relative to the current page
  *
- * @param {array} navigation
- * @param {string} key The eleventyNavigation.key of the current page
+ * @param {array} nodes
  * @returns
  */
-function getPreviousAndNextPage(navigation, key) {
+function getPreviousAndNextPage(nodes) {
+	const key = this.ctx.eleventyNavigation.key || this.ctx.title;
+	if (!key) return {};
+	const navigation = eleventyNavigationPlugin.navigation.find(nodes);
 	const flattened = flatten([], navigation);
 	const index = flattened.findIndex((page) => page.key === key);
 	return {

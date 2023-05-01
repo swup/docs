@@ -1,17 +1,19 @@
-{% set nav = collections.all | eleventyNavigation | getPreviousAndNextPage(eleventyNavigation.key) %}
+{% set nav = collections.all | getPreviousAndNextPage %}
 <nav>
     <ul class="page-nav">
+        {% if nav.previous %}
         <li class="page-nav_item">
             <a class="page-nav_link" href="{{ nav.previous.url }}">
-                Previous page<br>
                 {% feather "arrow-left" %} {{ nav.previous.title }}
             </a>
         </li>
+        {% endif %}
+        {% if nav.next %}
         <li class="page-nav_item">
             <a class="page-nav_link" href="{{ nav.next.url }}">
-                Next page<br>
                 {% feather "arrow-right" %} {{ nav.next.title }}
             </a>
         </li>
+        {% endif %}
     </ul>
 </nav>
