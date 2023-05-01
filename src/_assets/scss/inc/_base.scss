@@ -148,3 +148,69 @@ html.is-animating.is-leaving .swup-transition-main {
 }
 
 @import 'links';
+
+/*
+* Feather icons
+*/
+.feather {
+	position: relative;
+	display: inline-block;
+	width: 1.2em;
+	height: 1.2em;
+	vertical-align: middle;
+	position: relative;
+	top: -0.1em;
+}
+
+/*
+* Page Navigation
+*/
+.page-nav {
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	color: #5c5962;
+}
+.page-nav_items {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	padding: 0.5em;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+.page-nav_item {
+	margin: 0;
+	--arrow-direction: -1;
+	&.--next {
+		--arrow-direction: 1;
+		text-align: right;
+		grid-column: 2;
+	}
+}
+.page-nav_item + .page-nav_item {
+	border-left: 1px solid #ddd;
+}
+.page-nav_link {
+	display: block;
+	position: relative;
+	white-space: nowrap;
+	width: 100%;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	margin: 0;
+	padding: 0.5em 0.7em;
+	font-weight: 500;
+	.feather {
+		transition: transform 150ms;
+	}
+}
+@include hoverSupport {
+	.page-nav_link:hover .feather {
+		transform: translateX(calc(var(--arrow-direction) * 0.1em));
+	}
+}
+.page-nav_item_label {
+	display: block;
+	text-transform: uppercase;
+	font-size: 0.65em;
+}

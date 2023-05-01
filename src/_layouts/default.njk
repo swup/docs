@@ -42,19 +42,19 @@
 
           <footer class="edit-this-page">
             <p>
-              Found a mistake or want to contribute?
+              {% feather "edit" %}
               {% if repo_link %}
-                <a href="{{ repo_link }}/blob/master/readme.md" target="_blank">Edit this page</a>
+                <a href="{{ repo_link }}/blob/master/readme.md" target="_blank">Suggest changes to this page</a>
               {% else %}
-                <a href="https://github.com/swup/docs/blob/master/src{{ page.filePathStem }}.md" target="_blank">Edit this page</a>
+                <a href="https://github.com/swup/docs/blob/master/src{{ page.filePathStem }}.md" target="_blank">Suggest changes to this page</a>
               {% endif %}
-              on Github.
             </p>
+
           </footer>
         </div>
+        {% include "page-navigation.njk" %}
       </div>
       {% include "sidebar.njk" %}
     </div>
-  </div>{% include "scripts.njk" %}
-</body>
-</html>
+  </body>
+</html></div>{% include "scripts.njk" %}</body></html>
