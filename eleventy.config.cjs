@@ -149,10 +149,10 @@ function renderFeatherIcon(iconName) {
 	if (!iconName) {
 		throw new Error('[feather] the iconName must be specified');
 	}
-	let result = "";
+	let result = '';
 	try {
 		result = feather.icons[iconName].toSvg({ 'stroke-linecap': 'square' });
-	} catch(e) {
+	} catch (e) {
 		console.warn(e);
 	}
 	return result;
