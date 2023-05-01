@@ -175,19 +175,20 @@ html.is-animating.is-leaving .swup-transition-main {
 	margin: 0;
 	padding: 0;
 	padding: 0.5em;
-	display: flex;
-	justify-content: stretch;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
 }
 .page-nav_item {
 	margin: 0;
-	flex: none;
-	width: 50%;
 	--arrow-direction: -1;
 	&.--next {
 		--arrow-direction: 1;
-		border-left: 1px solid #ddd;
 		text-align: right;
+		grid-column: 2;
 	}
+}
+.page-nav_item + .page-nav_item {
+	border-left: 1px solid #ddd;
 }
 .page-nav_link {
 	display: block;
