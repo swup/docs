@@ -39,15 +39,15 @@ Swup's core is very small by design. All extended features can be added via [plu
 - Improve [screen reader accessibility](/plugins/a11y-plugin)
 - Get help in [debug mode](/plugins/debug-plugin)
 
-Check out the list of [all official plugins](/plugins) as well as [third-party integrations](/third-party-integrations).
+Check out the list of [all official plugins](/plugins/) as well as [third-party integrations](/third-party-integrations/).
 
 ## Having trouble?
 
-If you're having trouble implementing swup, check out [Common Issues](/other/common-issues), look at [closed issues](https://github.com/gmrchk/swup/issues?q=is%3Aissue+is%3Aclosed) or create a [new discussion](https://github.com/swup/swup/discussions/new).
+If you're having trouble implementing swup, check out [Common Issues](/other/common-issues/), look at [closed issues](https://github.com/swup/swup/issues?q=is%3Aissue+is%3Aclosed) or create a [new discussion](https://github.com/swup/swup/discussions/new).
 
 ## CLI
 
-Like to make sure your site has no bugs? You can use swup's [CI/CD integration](/ci-cd) for that, or use the official [swup CLI](/cli) to check your site manually.
+Like to make sure your site has no bugs? You can use swup's [CI/CD integration](/ci-cd/) for that, or use the official [swup CLI](/cli/) to check your site manually.
 
 ## Want to Contribute?
 
