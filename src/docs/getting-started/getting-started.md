@@ -18,13 +18,13 @@ other quality-of-life improvements.
 
 ## Features
 
-- 🎯 Extremely [easy to use](/getting-started/example), even for beginners
-- ✨ Auto-detects [CSS transitions](/getting-started/how-it-works) for perfect timing
+- 🎯 Extremely [easy to use](/getting-started/example/), even for beginners
+- ✨ Auto-detects [CSS transitions](/getting-started/how-it-works/) for perfect timing
 - 🔗 Updates URLs and preserves native browser history behavior
-- 📦 Uses a [cache](https://swup.js.org/api/cache) to speed up subsequent page loads
-- 💡 Offers [events](https://swup.js.org/events) for hooking into the lifecycle
-- 🔌 Has a powerful [plugin system](https://swup.js.org/plugins) and many official and third-party plugins
-- 🎨 Provides ready-to-go [themes](https://swup.js.org/themes) to get started quickly
+- 📦 Uses a [cache](/api/cache/) to speed up subsequent page loads
+- 💡 Offers [events](/events/) for hooking into the lifecycle
+- 🔌 Has a powerful [plugin system](/plugins/) and many official and third-party plugins
+- 🎨 Provides ready-to-go [themes](/themes/) to get started quickly
 
 ## Plugins
 
