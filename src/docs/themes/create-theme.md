@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Create Theme 🎉
+title: Create a Theme 🎉
 eleventyNavigation:
-  key: Create Theme 🎉
+  key: Create a Theme 🎉
   parent: Themes
   order: 4
 description: Create your own theme
 permalink: /themes/create-theme/
 ---
 
-# Create Theme
+# Create a Theme
 
 Anyone can create and publish swup themes.
 To create a new theme, install the [swup CLI](/cli) which can create them from a template.

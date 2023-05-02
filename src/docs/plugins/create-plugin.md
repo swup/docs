@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Create Plugin 🎉
+title: Create a Plugin 🎉
 eleventyNavigation:
-  key: Create Plugin 🎉
+  key: Create a Plugin 🎉
   parent: Plugins
   order: 100
 description: Create your own plugin
 permalink: /plugins/create-plugin/
 ---
 
-# Create Plugin
+# Create a Plugin
 
 Anyone can create and publish swup plugins.
 To create new plugin, install [swup CLI](/cli) which can create one from a template for you.
