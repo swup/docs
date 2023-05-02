@@ -31,7 +31,7 @@ npm install && npm run test
 
 ## Plugins & Themes
 
-Creating [plugins](/plugins/create-plugin) and [themes](/themes/create-theme) is encouraged.
+Creating [plugins](/plugins/create-plugin/) and [themes](/themes/create-theme/) is encouraged.
 You can list your plugin or plugin idea in the [Plugin Ideas](https://github.com/swup/swup/discussions/335) discussion thread.
 
 ## Join Us

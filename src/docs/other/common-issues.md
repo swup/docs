@@ -108,7 +108,7 @@ Since search engines are improving and starting to simulate actual devices brows
 <link rel="canonical" href="..." />
 ```
 
-The **[head-plugin](/plugins/head-plugin)** could help solve that, as well as deleting the tag from head. There are also other, more reliable alternatives to make search engines index your site correctly, like sitemap.
+The **[head-plugin](/plugins/head-plugin/)** could help solve that, as well as deleting the tag from head. There are also other, more reliable alternatives to make search engines index your site correctly, like sitemap.
 
 See [this issue](https://github.com/swup/swup/issues/130) for more information.
 

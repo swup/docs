@@ -57,7 +57,7 @@ Swup CLI will create _SwupMyNameTheme_ folder, download theme template and use d
 
 Validate command will run a set of tests on your site, meaning it will actually open each page in a headless browser and check that each page is working correctly with swup.
 This way swup doesn't need to handle invalid pages with some workaround like hard refresh after timeout, and can be safely be used on huge sites with many pages (and big probability of mistakes in pages).
-The validation can also be part of your [CI/CD pipeline](/ci-cd).
+The validation can also be part of your [CI/CD pipeline](/ci-cd/).
 
 Validation checks three main things that can cause troubles to swup:
 
@@ -77,7 +77,7 @@ swup validate --baseUrl=https://swup.js.org/
 
 The command will make swup CLI crawl your site, find all pages and run the tests against each page.
 
-The command also has a bunch of options you can use, or you can use a [swup project config](/ci-cd) file for settings those as well.
+The command also has a bunch of options you can use, or you can use a [swup project config](/ci-cd/) file for settings those as well.
 
 ```
 USAGE

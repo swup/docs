@@ -12,7 +12,7 @@ permalink: /themes/create-theme/
 # Create a Theme
 
 Anyone can create and publish swup themes.
-To create a new theme, install the [swup CLI](/cli) which can create them from a template.
+To create a new theme, install the [swup CLI](/cli/) which can create them from a template.
 
 Alternatively, head over to [the template repo](https://github.com/swup/theme-template) and follow the instructions there.
 
@@ -28,5 +28,5 @@ Alternatively, head over to [the template repo](https://github.com/swup/theme-te
   - `addClassName` to add the `swup-transition-[name]` classname to an element.
   - `applyHTML` to append a `div` element with defined HTML content.
 - If you feel like this should be an official theme under the `@swup` organization and the world could use a thing like this, contact me at gmarcuk@gmail.com.
-- Use swup's `log` method to output any relevant information when the [debug plugin](/plugins/debug-plugin) is used.
+- Use swup's `log` method to output any relevant information when the [debug plugin](/plugins/debug-plugin/) is used.
 - Themes should clean up after themselves in the `unmount` method, especially any changes to swup or any event listeners added.

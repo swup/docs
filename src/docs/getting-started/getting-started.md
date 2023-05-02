@@ -28,16 +28,16 @@ other quality-of-life improvements.
 
 ## Plugins
 
-Swup's core is very small by design. All extended features can be added via [plugins](/plugins). Some examples:
+Swup's core is very small by design. All extended features can be added via [plugins](/plugins/). Some examples:
 
-- Install a [progress bar](/plugins/progress-plugin)
-- Enable [smooth scrolling](/plugins/scroll-plugin) between visits
-- Update [meta tags and stylesheets](/plugins/head-plugin) after page loads
-- Add support for [preloading pages](/plugins/preload-plugin) in the background
-- Perform your [animations in JS](/plugins/js-plugin) instead of CSS transitions
-- Animate [form submissions](/plugins/forms-plugin)
-- Improve [screen reader accessibility](/plugins/a11y-plugin)
-- Get help in [debug mode](/plugins/debug-plugin)
+- Install a [progress bar](/plugins/progress-plugin/)
+- Enable [smooth scrolling](/plugins/scroll-plugin/) between visits
+- Update [meta tags and stylesheets](/plugins/head-plugin/) after page loads
+- Add support for [preloading pages](/plugins/preload-plugin/) in the background
+- Perform your [animations in JS](/plugins/js-plugin/) instead of CSS transitions
+- Animate [form submissions](/plugins/forms-plugin/)
+- Improve [screen reader accessibility](/plugins/a11y-plugin/)
+- Get help in [debug mode](/plugins/debug-plugin/)
 
 Check out the list of [all official plugins](/plugins/) as well as [third-party integrations](/third-party-integrations/).
 

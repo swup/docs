@@ -75,7 +75,7 @@ representing the URL of the new page.
 
 If your site requires those classnames to choose between animations based on the
 URL of the current or next page, you can use the
-[Route Name Plugin](/plugins/route-name-plugin). Setting its `paths` option will
+[Route Name Plugin](/plugins/route-name-plugin/). Setting its `paths` option will
 restore the previous behavior and add `from-*` and `to-*` classes.
 
 ```js
