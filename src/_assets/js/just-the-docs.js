@@ -65,9 +65,9 @@ function links() {
 			.replace('{link}', item.link)
 			.replace('{name}', item.name)
 			.replace('{description}', item.description)
-			.replace('{img}', item.img);
+			.replace('{img}', item.img || '');
 
-		if (!item.img) {
+		if (item.img == null) {
 			link.querySelector('[data-link-img]').outerHTML = '';
 			link.classList.add('has-no-img');
 		}

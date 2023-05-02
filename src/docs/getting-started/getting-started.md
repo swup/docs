@@ -18,36 +18,36 @@ other quality-of-life improvements.
 
 ## Features
 
-- 🎯 Extremely [easy to use](/getting-started/example), even for beginners
-- ✨ Auto-detects [CSS transitions](/getting-started/how-it-works) for perfect timing
+- 🎯 Extremely [easy to use](/getting-started/example/), even for beginners
+- ✨ Auto-detects [CSS transitions](/getting-started/how-it-works/) for perfect timing
 - 🔗 Updates URLs and preserves native browser history behavior
-- 📦 Uses a [cache](https://swup.js.org/api/cache) to speed up subsequent page loads
-- 💡 Offers [events](https://swup.js.org/events) for hooking into the lifecycle
-- 🔌 Has a powerful [plugin system](https://swup.js.org/plugins) and many official and third-party plugins
-- 🎨 Provides ready-to-go [themes](https://swup.js.org/themes) to get started quickly
+- 📦 Uses a [cache](/api/cache/) to speed up subsequent page loads
+- 💡 Offers [events](/events/) for hooking into the lifecycle
+- 🔌 Has a powerful [plugin system](/plugins/) and many official and third-party plugins
+- 🎨 Provides ready-to-go [themes](/themes/) to get started quickly
 
 ## Plugins
 
-Swup's core is very small by design. All extended features can be added via [plugins](/plugins). Some examples:
+Swup's core is very small by design. All extended features can be added via [plugins](/plugins/). Some examples:
 
-- Install a [progress bar](/plugins/progress-plugin)
-- Enable [smooth scrolling](/plugins/scroll-plugin) between visits
-- Update [meta tags and stylesheets](/plugins/head-plugin) after page loads
-- Add support for [preloading pages](/plugins/preload-plugin) in the background
-- Perform your [animations in JS](/plugins/js-plugin) instead of CSS transitions
-- Animate [form submissions](/plugins/forms-plugin)
-- Improve [screen reader accessibility](/plugins/a11y-plugin)
-- Get help in [debug mode](/plugins/debug-plugin)
+- Install a [progress bar](/plugins/progress-plugin/)
+- Enable [smooth scrolling](/plugins/scroll-plugin/) between visits
+- Update [meta tags and stylesheets](/plugins/head-plugin/) after page loads
+- Add support for [preloading pages](/plugins/preload-plugin/) in the background
+- Perform your [animations in JS](/plugins/js-plugin/) instead of CSS transitions
+- Animate [form submissions](/plugins/forms-plugin/)
+- Improve [screen reader accessibility](/plugins/a11y-plugin/)
+- Get help in [debug mode](/plugins/debug-plugin/)
 
-Check out the list of [all official plugins](/plugins) as well as [third-party integrations](/third-party-integrations).
+Check out the list of [all official plugins](/plugins/) as well as [third-party integrations](/third-party-integrations/).
 
 ## Having trouble?
 
-If you're having trouble implementing swup, check out [Common Issues](/other/common-issues), look at [closed issues](https://github.com/gmrchk/swup/issues?q=is%3Aissue+is%3Aclosed) or create a [new discussion](https://github.com/swup/swup/discussions/new).
+If you're having trouble implementing swup, check out [Common Issues](/other/common-issues/), look at [closed issues](https://github.com/swup/swup/issues?q=is%3Aissue+is%3Aclosed) or create a [new discussion](https://github.com/swup/swup/discussions/new).
 
 ## CLI
 
-Like to make sure your site has no bugs? You can use swup's [CI/CD integration](/ci-cd) for that, or use the official [swup CLI](/cli) to check your site manually.
+Like to make sure your site has no bugs? You can use swup's [CI/CD integration](/ci-cd/) for that, or use the official [swup CLI](/cli/) to check your site manually.
 
 ## Want to Contribute?
 

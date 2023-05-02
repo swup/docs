@@ -85,7 +85,7 @@ await Promise.all(swup.getAnimationPromises());
 
 ## getPageData
 
-**Note:** This method is rather internal and is utilized by [custom payload plugin](/plugins/custom-payload-plugin). Use the plugin instead.
+**Note:** This method is rather internal and is utilized by [custom payload plugin](/plugins/custom-payload-plugin/). Use the plugin instead.
 
 Given an XHR request object, returns an object for further use in swup. Expects HTML as return type. Can be overwritten to accept and parse other return types from server, but must always return at least the fields below.
 
@@ -109,7 +109,7 @@ swup.triggerEvent('transitionEnd', popstateEvent);
 
 ## log
 
-Does nothing by default, but outputs the passed content when the [debug plugin](/plugins/debug-plugin) is used.
+Does nothing by default, but outputs the passed content when the [debug plugin](/plugins/debug-plugin/) is used.
 Accepts two arguments, the content of message and an optional log object which gets printed in a console group.
 
 ```javascript
@@ -122,7 +122,7 @@ These methods are not present on swup by default, but will require installing th
 
 ### preloadPage
 
-Added by the [preload plugin](/plugins/preload-plugin).
+Added by the [preload plugin](/plugins/preload-plugin/).
 Preload a page and save it into the cache.
 
 ```javascript
@@ -131,7 +131,7 @@ swup.preloadPage('/page-url');
 
 ### preloadPages
 
-Added by the [preload plugin](/plugins/preload-plugin).
+Added by the [preload plugin](/plugins/preload-plugin/).
 Finds all links on the page with a `data-swup-preload` attribute and preloads the URLs they point to.
 
 ```javascript
@@ -140,7 +140,7 @@ swup.preloadPages();
 
 ### scrollTo
 
-Added by the [scroll plugin](/plugins/scroll-plugin).
+Added by the [scroll plugin](/plugins/scroll-plugin/).
 Smoothly scroll to the requested position. Accepts either the amount in pixels or the element you want to scroll to.
 Currently only supports vertical scrolling.
 
