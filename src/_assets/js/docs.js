@@ -1,3 +1,5 @@
+import '../scss/docs.scss';
+
 // Swup Core
 import Swup from 'swup';
 // Swup Plugins

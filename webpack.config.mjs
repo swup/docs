@@ -16,8 +16,7 @@ import browserslist from "browserslist";
  */
 const settings = {
   entryPoints: {
-    main: ["./src/_assets/js/main.js"],
-    "just-the-docs": "./src/_assets/js/just-the-docs.js",
+    docs: ["./src/_assets/js/docs.js"],
   },
   outputPath: "./_site/assets",
   target: resolveToEsbuildTarget(browserslist(), {
