@@ -6,6 +6,7 @@ const EleventyFetch = require('@11ty/eleventy-fetch');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 // const { navigation } = require('@11ty/eleventy-navigation');
 const feather = require('feather-icons');
+const fs = require('fs');
 
 const customMarkdownIt = markdownIt({
 	html: true,
@@ -32,6 +33,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addFilter('getPreviousAndNextPage', getPreviousAndNextPage);
 	eleventyConfig.addShortcode('feather', renderFeatherIcon);
+	eleventyConfig.addFilter('fileDate', fileDate);
 
 	// Assets will be taken care of by WebPack
 	eleventyConfig.ignores.add('./src/_assets/**');
@@ -131,7 +133,7 @@ function getPreviousAndNextPage(nodes) {
 	const key = this.ctx.eleventyNavigation.key || this.ctx.title;
 	if (!key) return {};
 	const navigation = eleventyNavigationPlugin.navigation.find(nodes);
-	const pages = flatten([], navigation).filter((page) => page.url.startsWith("/"));
+	const pages = flatten([], navigation).filter((page) => page.url.startsWith('/'));
 	const index = pages.findIndex((page) => page.key === key);
 	return {
 		next: pages[index + 1],
@@ -156,4 +158,21 @@ function renderFeatherIcon(iconName) {
 		console.warn(e);
 	}
 	return result;
+}
+
+/**
+ * Get the file date for a given path
+ *
+ * @see https://github.com/11ty/eleventy/issues/869#issuecomment-768119046
+ *
+ * @returns string
+ */
+function fileDate(inputPath, key = 'birthtime') {
+	if (!inputPath) return undefined;
+	const options = {
+		year: 'numeric',
+		month: 'long',
+		day: 'numeric'
+	};
+	return new Intl.DateTimeFormat('en-US', options).format(fs.statSync(inputPath)[key]);
 }
