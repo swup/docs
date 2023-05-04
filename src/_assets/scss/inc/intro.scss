@@ -1,9 +1,11 @@
-.intro {
-  min-height: 100vh;
+.front-page {
   background: var(--swup-blue);
-  color: var(--red-10);
   background-image: radial-gradient(ellipse at top, var(--swup-blue) 30%, var(--swup-blue-dark) 60%);
   background-size: cover;
+}
+.intro {
+  min-height: 100vh;
+  color: var(--red-10);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,6 +16,8 @@
   width: 100%;
   max-width: 650px;
   padding-inline: var(--size-fluid-3);
+  position: relative;
+  transform: translateY(-5%);
 }
 .intro_logo {
   display: block;
@@ -28,7 +32,7 @@
   fill: white;
 }
 .intro_slogan {
-  font-size: var(--font-size-5);
+  font-size: var(--font-size-fluid-1);
   font-weight: var(--font-weight-4);
   color: var(--text-1);
 }

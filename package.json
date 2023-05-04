@@ -19,6 +19,8 @@
     "test:run": "swup validate -a"
   },
   "dependencies": {
+    "@alpinejs/focus": "^3.12.0",
+    "@alpinejs/persist": "^3.12.0",
     "@swup/body-class-plugin": "^2.0.1",
     "@swup/debug-plugin": "^3.0.0",
     "@swup/fade-theme": "^1.0.5",
@@ -26,6 +28,8 @@
     "@swup/preload-plugin": "^2.1.0",
     "@swup/scroll-plugin": "^2.0.2",
     "@swup/slide-theme": "^1.0.5",
+    "alpinejs": "^3.12.0",
+    "gsap": "^3.11.5",
     "modern-normalize": "^1.1.0",
     "open-props": "^1.5.8",
     "swup": "^3.0.6",

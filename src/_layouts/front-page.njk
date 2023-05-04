@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en-US" color-scheme="dark">
+<html lang="en-US">
     {% include "head.njk" %}
-    <body>
-        <div class="intro">
+    <body class="front-page">
+        <div class="intro" id="swup">
             <div class="intro_body">
                 <a class="intro_logo" href="/getting-started/">
                     <svg class="intro_logo_svg" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 995.73 428.99">
@@ -37,7 +37,7 @@
                     </svg>
                 </a>
                 <h1 class="intro_slogan">{{ site.description }}</h1>
-                <p class="intro_buttons buttons">
+                <p class="buttons">
                     <a href="/getting-started/" class="button button--filled">Docs</a>
                     <a href="https://github.com/swup/swup" class="button">GitHub</a>
                 </p>
