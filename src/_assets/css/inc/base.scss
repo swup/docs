@@ -1,0 +1,38 @@
+:root {
+  --swup-blue: hsl(239, 49%, 34%);
+  --swup-blue-dark: hsl(239, 49%, 24%);
+  --swup-red: #fe5b6a;
+  --swup-green: #60ddcd;
+
+  --text-1: var(--gray-9);
+  --text-2: var(--gray-7);
+
+  --background: white;
+
+  line-height: 1.4;
+
+  @media (--OSdark) {
+    --text-1: var(--gray-1);
+    --text-2: var(--gray-2);
+    --background: var(--gray-12);
+  }
+}
+
+a {
+  color: var(--text-1);
+  font-weight: var(--font-weight-4);
+}
+
+html {
+  color: var(--text-1);
+  background: var(--background);
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, h5, h6, p, ul {
+  margin-top: 0;
+  margin-bottom: var(--size-5);
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

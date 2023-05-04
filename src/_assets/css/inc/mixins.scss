@@ -1,0 +1,15 @@
+@mixin hover {
+  &:not(.is-disabled):not(:disabled) {
+    @media (--mouse) {
+      &:hover {
+        @content;
+      }
+    }
+    &.is-active {
+      @content;
+    }
+    &:active {
+      @content;
+    }
+  }
+}

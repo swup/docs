@@ -1,0 +1,37 @@
+.intro {
+  min-height: 100vh;
+  background: var(--swup-blue);
+  color: var(--red-10);
+  background-image: radial-gradient(ellipse at top, var(--swup-blue) 30%, var(--swup-blue-dark) 60%);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  --text-1: white;
+  text-align: center;
+}
+.intro_body {
+  width: 100%;
+  max-width: 650px;
+  padding-inline: var(--size-fluid-3);
+}
+.intro_logo {
+  display: block;
+  margin-inline: auto;
+  width: 80%;
+}
+.intro_logo_svg {
+  display: block;
+  width: 100%;
+}
+.intro_logo_svg .letter {
+  fill: white;
+}
+.intro_slogan {
+  font-size: var(--font-size-5);
+  font-weight: var(--font-weight-4);
+  color: var(--text-1);
+}
+.intro_body > * + * {
+  margin-top: var(--size-7);
+}

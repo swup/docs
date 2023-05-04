@@ -1,0 +1,20 @@
+@use "./inc/mixins";
+
+/*
+* Modern Normalize
+* @see https://github.com/sindresorhus/modern-normalize
+*/
+@import 'modern-normalize/modern-normalize';
+
+/*
+* Variables in media queries aren't detected by the JIT compiler.
+* Let's include them directly
+*/
+@import 'open-props/media';
+
+/*
+* Finally, our actual styles :)
+*/
+@import "./inc/base";
+@import "./inc/buttons";
+@import "./inc/intro";

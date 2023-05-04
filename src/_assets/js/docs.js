@@ -1,4 +1,4 @@
-import '../scss/docs.scss';
+import '../css/docs.scss';
 
 // Swup Core
 import Swup from 'swup';
@@ -59,8 +59,9 @@ function checkTheme() {
 }
 
 function addHeadlineLinks() {
-	document
-		.getElementById('main-content')
+	const mainContent = document.querySelector('#main-content');
+	if (!mainContent) return;
+	mainContent
 		.querySelectorAll('h2, h3, h4, h5, h6')
 		.forEach(function (element) {
 			if (!element.matches('[id]')) return;
