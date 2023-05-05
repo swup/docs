@@ -22,6 +22,10 @@
   transform: translateY(-5%);
 }
 
+.intro .button {
+  position: relative;
+}
+
 .intro_body>*+* {
   margin-top: var(--size-7);
 }

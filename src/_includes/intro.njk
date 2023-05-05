@@ -1,31 +1,31 @@
 <div class="intro" x-data="Intro">
     <div class="intro_body">
         <a class="intro_logo swup-logo-link" href="/getting-started/">
-            <div class="swup-logo">
-                <div class="swup-logo_part" data-part="s">
+            <div class="swup-logo" x-ref="logo">
+                <div class="swup-logo_part" data-part="s" x-ref="s">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 191 234.78"><title>swup-logo-s</title><path class="cls-1" d="M61.51,166.39c5,15.5,19,22.5,37.49,20.5,19-2,31.5-10.83,31.5-25.33,0-10-7-14.26-22.5-16.62l-45-5.25c-34-4.4-58-19.37-58-56.87C5,39.32,44,6.2,94,.92c56.5-6,87.5,17.75,95,59l-59,6.24c-4-12.08-14.5-20.47-35-18.31C80,49.44,65.5,58,65.5,72c0,9,6,13.37,20,15.39l46,5.64c39,5.38,59.5,24.71,59.5,58.71,0,45.5-39.5,76.67-91.5,82.17-54.5,5.76-93-16.18-99.5-61Z"/></svg>
                 </div>
-                <div class="swup-logo_part" data-part="w">
+                <div class="swup-logo_part" data-part="w" x-ref="w">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 319.06 252.95"><title>swup-logo-w</title><path class="cls-1" d="M258.67,6.36V135c0,15.38-3.1,27.18-9.22,35.07-5.61,7.25-13.89,11.36-25.29,12.56s-19.68-1.15-25.29-7.22c-6.12-6.6-9.22-17.74-9.22-33.12V13.65L129.36,20V148.67c0,15.38-3.1,27.17-9.21,35.06-5.62,7.25-13.89,11.36-25.3,12.57s-19.67-1.16-25.29-7.22c-6.11-6.6-9.21-17.74-9.21-33.12V27.32L0,33.7v133c0,29.85,9.11,53.47,26.34,68.3,16.55,14.24,40.24,20.19,68.51,17.2,26.25-2.77,48.5-12.36,64.75-27.79,16.28,12,38.48,16.89,64.61,14.12,28.4-3,52.14-14,68.64-31.7,17.15-18.42,26.21-44,26.21-73.84V0Z"/></svg>
                 </div>
-                <div class="swup-logo_part" data-part="u">
+                <div class="swup-logo_part" data-part="u" x-ref="u">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 197.18 239.91"><title>swup-logo-u</title><path class="cls-1" d="M98.57,238.94c33.15-3.5,55.72-14.34,72.27-32.08,17.23-18.47,26.34-44,26.34-73.86V0L136.83,6.37V135c0,15.38-3.1,27.18-9.21,35.07-5.62,7.25-13.5,12.58-29,14.23s-23.44-2-29.06-8.09c-6.11-6.6-9.21-17.75-9.21-33.12V14.42L0,20.79v133c0,29.86,9.11,53.47,26.34,68.31C42.84,236.38,65.41,242.44,98.57,238.94Z"/></svg>
                 </div>
-                <div class="swup-logo_part" data-part="p">
+                <div class="swup-logo_part" data-part="p" x-ref="p">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 324.09"><title>swup-logo-p</title><path class="cls-1" d="M62,317.54,0,324.09v-306L62,11.5V30.05C72,17,94,3.17,118,.63c65-6.87,102,43.23,102,106.23s-37,120.4-102,127.27c-24,2.54-46-6.64-56-17.58ZM62,160c7.5,14.71,24,23.46,42,21.56,33.5-3.54,53.5-32.65,53.5-68.15,0-36-20-60.89-53.5-57.35-18.5,2-34.5,14.65-42,30.44Z"/></svg>
                 </div>
-                <div class="swup-logo_part" data-part="dot1">
+                <div class="swup-logo_part" data-part="dot1" x-ref="dot1">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65.92 65.92"><title>swup-logo-dot</title><path class="cls-1" d="M65.92,33.41c0,17.86-15.11,32.51-33.42,32.51A32.64,32.64,0,0,1,0,33.41C0,14.65,14.65,0,32.5,0A33.31,33.31,0,0,1,65.92,33.2Z"/></svg>
                 </div>
-                <div class="swup-logo_part" data-part="dot2">
+                <div class="swup-logo_part" data-part="dot2" x-ref="dot2">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65.92 65.92"><title>swup-logo-dot</title><path class="cls-1" d="M65.92,33.41c0,17.86-15.11,32.51-33.42,32.51A32.64,32.64,0,0,1,0,33.41C0,14.65,14.65,0,32.5,0A33.31,33.31,0,0,1,65.92,33.2Z"/></svg>
                 </div>
             </div>
         </a>
-        <h1 class="intro_slogan">{{ site.description }}</h1>
-        <p class="buttons">
-            <a href="/getting-started/" class="button button--filled">Docs</a>
-            <a href="https://github.com/swup/swup" class="button">GitHub</a>
+        <h1 class="intro_slogan" x-ref="slogan">{{ site.description }}</h1>
+        <p class="buttons" x-ref="buttons">
+            <a href="/getting-started/" class="button button--filled" x-ref="button1">Docs</a>
+            <a href="https://github.com/swup/swup" class="button" x-ref="button2">GitHub</a>
         </p>
     </div>
 </div>
