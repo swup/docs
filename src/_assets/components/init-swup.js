@@ -23,7 +23,7 @@ export default function() {
 	var swup = new Swup({
 		containers: ['#swup'],
 		plugins: [
-			new SwupDebugPlugin(),
+			// new SwupDebugPlugin(),
 			new SwupScrollPlugin({
 				animateScroll: {
 					betweenPages: false,
