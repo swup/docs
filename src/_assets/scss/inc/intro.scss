@@ -13,6 +13,9 @@
   --text-1: white;
   text-align: center;
 }
+.intro, .intro * {
+  transform-origin: top;
+}
 
 .intro_body {
   width: 100%;

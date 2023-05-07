@@ -7,6 +7,7 @@ Alpine.plugin(focus);
 import Intro from './alpine/Intro/Intro.js';
 
 export default function () {
+	window.Alpine = Alpine;
 	Alpine.data('Intro', Intro);
 	Alpine.start();
 }
