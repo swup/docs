@@ -4,7 +4,10 @@ export default () => {
 	const tl = gsap.timeline({delay: 0.2});
 	return {
 
-		init() {
+		async init() {
+
+			await this.$nextTick();
+
 			const popIn = {
 				y: 50,
 				duration: 0.4,
