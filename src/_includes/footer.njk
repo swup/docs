@@ -1,0 +1,12 @@
+<footer id="footer">
+  <p>
+    {% feather "edit" %}
+    {% if repo_link %}
+      <a href="{{ repo_link }}/blob/master/readme.md" target="_blank">Suggest changes to this page</a>
+    {% else %}
+      <a href="https://github.com/swup/docs/blob/master/src{{ page.filePathStem }}.md" target="_blank">Suggest changes to this page</a>
+    {% endif %}
+  </p>
+
+  {% include "page-navigation.njk" %}
+</footer>

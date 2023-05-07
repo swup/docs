@@ -2,9 +2,13 @@
 <html lang="en-US">
     {% include "head.njk" %}
     <body class="front-page">
-        <main id="swup">
-            {% include "intro.njk" %}
-        </main>
+        {% include "header.njk" %}
+        {% include "nav.njk" %}
+        <div id="swup">
+            <main>
+                {% include "intro.njk" %}
+            </main>
+        </div>
         {% include "scripts.njk" %}
     </body>
 </html>
