@@ -1,18 +1,26 @@
 :root {
-  --swup-blue: hsl(239, 49%, 34%);
-  --swup-blue-dark: hsl(239, 49%, 24%);
-  --swup-red: #fe5b6a;
-  --swup-green: #60ddcd;
+  --swup-blue-hsl: 239, 49%, 34%;
+  --swup-blue: hsl(var(--swup-blue-hsl));
 
-  --text-1: var(--gray-9-hsl);
-  --text-2: var(--gray-7-hsl);
+  --swup-blue-dark-hsl: 239, 49%, 24%;
+  --swup-blue-dark: hsl(var(--swup-blue-dark-hsl));
+
+  --swup-red-hsl: 354, 99%, 68%;
+  --swup-red: hsl(var(--swup-red-hsl));
+
+  --swup-green-hsl: 172, 65%, 62%;
+  --swup-green: hsl(var(--swup-green-hsl));
+
+  --text-1: var(--gray-9);
+  --text-2: var(--gray-7);
   --background: white;
+  --transparent-background: hsl(var(--gray-9-hsl) / 10%);
 
-  line-height: 1.4;
+  line-height: 1.6;
 
   @media (--OSdark) {
-    --text-1: var(--gray-1-hsl);
-    --text-2: var(--gray-2-hsl);
+    --text-1: --gray-1;
+    --text-2: --gray-2;
     --background: var(--gray-12-hsl);
   }
 }
@@ -35,7 +43,12 @@ h1, h2, h3, h4, h5, h6, p, ul {
     margin-bottom: 0;
   }
 }
+h1, h2, h3, h4, h5, h6 {
+  word-wrap: break-word;
+  line-height: 1.1;
+}
 
 body {
-  transition: 200ms;
+  transition: 150ms;
+  font-size: 16px;
 }

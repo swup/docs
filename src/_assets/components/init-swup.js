@@ -101,7 +101,7 @@ function prepareExternalLinks() {
 	if (isTouch()) return;
 	// Open external links in a new tab for very specific contexts, only
 	document
-		.querySelectorAll('.navigation-list a[href], .main-content ul a[href]')
+		.querySelectorAll('.nav_list a[href], .main-content ul a[href]')
 		.forEach((el) => {
 			if (el.origin === window.location.origin) return;
 			el.target = '_blank';

@@ -3,11 +3,11 @@
   aria-label="Main navigation"
   class="nav hide-on-front-page">
   {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
-    listClass: "navigation-list",
-    listItemClass: "navigation-list-item",
-    listItemHasChildrenClass: "has-children",
+    listClass: "nav_list",
+    listItemClass: "nav_list_item",
+    listItemHasChildrenClass: "--has-children",
     activeListItemClass: "active",
-    anchorClass: "navigation-list-link",
+    anchorClass: "nav_list_link",
     activeAnchorClass: "",
     activeKey: eleventyNavigation.key
   }) | safe }}
