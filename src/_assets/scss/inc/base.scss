@@ -36,19 +36,19 @@ html {
   font-family: var(--font-sans);
 }
 
-h1, h2, h3, h4, h5, h6, p, ul {
-  margin-top: 0;
-  margin-bottom: var(--size-5);
-  &:last-child {
-    margin-bottom: 0;
-  }
-}
-h1, h2, h3, h4, h5, h6 {
-  word-wrap: break-word;
-  line-height: 1.1;
-}
 
 body {
-  transition: 150ms;
+  transition: 450ms;
   font-size: 16px;
+  &.front-page {
+    background-color: var(--swup-blue-dark);
+  }
+}
+
+#swup {
+  position: relative;
+  z-index: 2;
+}
+::selection {
+  background-color: var(--swup-green);
 }

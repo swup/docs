@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
 
 export default () => {
-	const tl = gsap.timeline({delay: 0.2});
+	const tl = gsap.timeline({delay: 0.5});
 	return {
 
 		async init() {
@@ -16,12 +16,14 @@ export default () => {
 				clearProps: 'all',
 				transition: 'none'
 			}
+
 			tl.from(this.$refs.logo, {
 				y: 50,
 				scaleY: 3,
 				ease: "quint.out",
 				duration: 0.7
-			});
+			}, 0);
+
 			const letterDelay = "<0.1";
 			tl.from(this.$refs.s, popIn, 0);
 			tl.from(this.$refs.w, popIn, letterDelay);

@@ -1,11 +1,10 @@
 .front-page {
-  background-color: var(--swup-blue);
-  background-image: radial-gradient(ellipse at top, var(--swup-blue) 30%, var(--swup-blue-dark) 60%);
-  background-size: cover;
+  background-color: var(--swup-blue-dark);
 }
-.front-page .hide-on-front-page {
-  display: none;
-}
+
+// .front-page .hide-on-front-page {
+//   display: none;
+// }
 
 .intro {
   min-height: 100vh;
@@ -15,6 +14,18 @@
   justify-content: center;
   --text-1: white;
   text-align: center;
+}
+.intro_background {
+  background-image: radial-gradient(ellipse at top, var(--swup-blue) 30%, var(--swup-blue-dark) 60%);
+  background-size: cover;
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 400ms;
+  @at-root .front-page & {
+    opacity: 1;
+  }
 }
 .intro, .intro * {
   transform-origin: top;

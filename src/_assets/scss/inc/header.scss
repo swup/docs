@@ -9,7 +9,14 @@
     left: 0;
     width: 100%;
   }
-  z-index: 3;
+  transition: opacity 400ms 400ms;
+
+  @at-root body.front-page & {
+    opacity: 0;
+    pointer-events: 0;
+    transition: none;
+  }
+  z-index: 4;
   pointer-events: none;
   a, button {
     pointer-events: all;

@@ -1,0 +1,31 @@
+<div class="page">
+  <main>
+    {% if repo_link %}
+      <a href="{{ repo_link }}" class="button repo-link">Repo</a>
+    {% endif %}
+
+    <div class="page_body" data-pagefind-body>
+      {{ content | maybeLoadRemoteReadme({repo_link: repo_link, title: title}) | safe }}
+    </div>
+
+    {% set children = collections.all | eleventyNavigation(eleventyNavigation.key) %}
+    {% if children | length %}
+      <div class="children">
+        <h2>In this Section</h2>
+        {{ children | eleventyNavigationToHtml({listClass: "children"}) | safe }}
+      </div>
+    {% endif %}
+  </main>
+  <footer id="footer">
+    <p>
+      {% feather "edit" %}
+      {% if repo_link %}
+        <a href="{{ repo_link }}/blob/master/readme.md" target="_blank">Suggest changes to this page</a>
+      {% else %}
+        <a href="https://github.com/swup/docs/blob/master/src{{ page.filePathStem }}.md" target="_blank">Suggest changes to this page</a>
+      {% endif %}
+    </p>
+
+    {% include "page-navigation.njk" %}
+  </footer>
+</div>
