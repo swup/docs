@@ -104,12 +104,11 @@ function isTouch() {
 
 function adjustActiveMenuItem(path) {
 	const wrap = document.querySelector('.nav_inner');
-	const activeLink = document.querySelector(`.nav a[href="${path}"]`);
+	const activeLink = [...document.querySelectorAll(`.nav a[href="${path}"]`)].pop();
 	const rect = activeLink.getBoundingClientRect();
-	const top = rect.top + rect.height / 2 - wrap.scrollTop;
+	const top = rect.top + rect.height / 2 + wrap.scrollTop;
 	const indicator = document.querySelector('.nav_indicator');
 	indicator.style.setProperty('--offset-y', `${top}px`);
-
 }
 
 function prepareExternalLinks() {

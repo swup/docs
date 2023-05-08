@@ -4,8 +4,8 @@ const { execSync } = require('child_process');
 const Shiki = require('markdown-it-shiki').default;
 const EleventyFetch = require('@11ty/eleventy-fetch');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
-// const { navigation } = require('@11ty/eleventy-navigation');
 const feather = require('feather-icons');
+const { JSDOM } = require('jsdom');
 
 const customMarkdownIt = markdownIt({
 	html: true,
@@ -33,6 +33,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('getPreviousAndNextPage', getPreviousAndNextPage);
 	eleventyConfig.addShortcode('feather', renderFeatherIcon);
 	eleventyConfig.addShortcode('timestamp', () => Date.now());
+	eleventyConfig.addTransform('navigation', transformNavigation);
 
 	// Assets will be taken care of by WebPack
 	eleventyConfig.ignores.add('./src/_assets/**');
@@ -132,7 +133,7 @@ function getPreviousAndNextPage(nodes) {
 	const key = this.ctx.eleventyNavigation.key || this.ctx.title;
 	if (!key) return {};
 	const navigation = eleventyNavigationPlugin.navigation.find(nodes);
-	const pages = flatten([], navigation).filter((page) => page.url.startsWith("/"));
+	const pages = flatten([], navigation).filter((page) => page.url.startsWith('/'));
 	const index = pages.findIndex((page) => page.key === key);
 	return {
 		next: pages[index + 1],
@@ -157,4 +158,24 @@ function renderFeatherIcon(iconName) {
 		console.warn(e);
 	}
 	return result;
+}
+
+function transformNavigation(content, file) {
+	// Bail early if not a HTML file
+	if (!file || !file.endsWith('.html')) return content;
+
+	const jsdom = new JSDOM(content);
+	const { document } = jsdom.window;
+
+	const nakedItems = document.querySelectorAll('.nav_list > li:not(.--has-children)');
+	nakedItems.forEach(el => {
+		const linkText = `All ${el.textContent.toLowerCase()}`;
+		const ul = document.createElement('ul');
+		ul.append(el.cloneNode(true));
+		ul.querySelector('a').textContent = linkText;
+		el.append(ul);
+		el.classList.add('--has-children');
+	});
+
+	return jsdom.serialize();
 }
