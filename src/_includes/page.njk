@@ -4,13 +4,13 @@
       <a href="{{ repo_link }}" class="button repo-link">Repo</a>
     {% endif %}
 
-    <div class="page_body" data-pagefind-body>
+    <div class="page_body text" data-pagefind-body>
       {{ content | maybeLoadRemoteReadme({repo_link: repo_link, title: title}) | safe }}
     </div>
 
     {% set children = collections.all | eleventyNavigation(eleventyNavigation.key) %}
     {% if children | length %}
-      <div class="children">
+      <div class="children text">
         <h2>In this Section</h2>
         {{ children | eleventyNavigationToHtml({listClass: "children"}) | safe }}
       </div>

@@ -40,7 +40,7 @@ export default () => {
 				duration: 0.4,
 				clearProps: 'all',
 			};
-			tl.from(this.$refs.slogan, fadeIn, "<0.7");
+			tl.from(this.$refs.slogan, fadeIn, "<0.3");
 
 			tl.from(this.$refs.button1, fadeIn, letterDelay);
 			tl.from(this.$refs.button2, fadeIn, letterDelay);

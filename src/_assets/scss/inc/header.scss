@@ -1,7 +1,7 @@
 .header {
   display: flex;
   gap: var(--size-1);
-  padding: var(--size-4) var(--size-fluid-4);
+  padding: var(--size-8);
   align-items: center;
   @media (--lg-n-above) {
     position: fixed;
@@ -23,7 +23,7 @@
   }
 }
 .header_logo {
-  width: var(--size-fluid-6);
+  width: var(--size-11);
   margin-inline-end: auto;
   position: relative;
   transform: translateY(-10%);

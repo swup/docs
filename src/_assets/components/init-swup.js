@@ -53,14 +53,21 @@ export default function() {
 
 	});
 
-	swup.on('pageView', initPageView);
-	initPageView();
+	swup.on('pageView', onSwupPageView);
+	onSwupPageView();
+
+	swup.on('clickLink', onSwupClickLink);
 }
 
-function initPageView() {
+function onSwupPageView() {
 	checkTheme();
 	addHeadlineLinks();
 	prepareExternalLinks();
+	adjustActiveMenuItem(window.location.pathname);
+}
+
+function onSwupClickLink(e) {
+	adjustActiveMenuItem(e.target.pathname);
 }
 
 function checkTheme() {
@@ -95,6 +102,15 @@ function isTouch() {
 	return !window.matchMedia('(hover: hover)').matches;
 }
 
+function adjustActiveMenuItem(path) {
+	const wrap = document.querySelector('.nav_inner');
+	const activeLink = document.querySelector(`.nav a[href="${path}"]`);
+	const rect = activeLink.getBoundingClientRect();
+	const top = rect.top + rect.height / 2 - wrap.scrollTop;
+	const indicator = document.querySelector('.nav_indicator');
+	indicator.style.setProperty('--offset-y', `${top}px`);
+
+}
 
 function prepareExternalLinks() {
 	// Don't do anything on touch devices

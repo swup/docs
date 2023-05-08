@@ -1,14 +1,17 @@
 <nav
   role="navigation"
   aria-label="Main navigation"
-  class="nav hide-on-front-page">
-  {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
-    listClass: "nav_list",
-    listItemClass: "nav_list_item",
-    listItemHasChildrenClass: "--has-children",
-    activeListItemClass: "active",
-    anchorClass: "nav_list_link",
-    activeAnchorClass: "",
-    activeKey: eleventyNavigation.key
-  }) | safe }}
+  class="nav">
+  <div class="nav_inner">
+    {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
+      listClass: "nav_list",
+      listItemClass: "nav_list_item",
+      listItemHasChildrenClass: "--has-children",
+      activeListItemClass: "active",
+      anchorClass: "nav_list_link",
+      activeAnchorClass: "",
+      activeKey: eleventyNavigation.key
+    }) | safe }}
+    <i aria-hidden="true" class="nav_indicator"></i>
+  </div>
 </nav>

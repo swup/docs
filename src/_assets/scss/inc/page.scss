@@ -1,30 +1,27 @@
 .page {
   padding-inline: var(--size-fluid-4);
   margin-inline: auto;
-  padding-block: 150px;
+  padding-block: var(--size-12);
   @media (--md-n-above) {
     max-width: 800px;
   }
 }
-.page_body {
-  > h1:first-of-type {
-    font-size: var(--font-size-fluid-3);
-    margin-block-start: 0;
-  }
-  h1, h2 {
-    font-size: var(--font-size-fluid-2);
-    font-weight: var(--font-weight-8);
-  }
-  h1, h2, h3, h4, h5, h6, p, ul {
-    margin-top: 0;
-    margin-block: 0.5em;
-    &:last-child {
-      margin-bottom: 0;
-    }
+
+.text {
+  h1, h2, h3, h4, h5, h6, p, ul, li, iframe {
+    margin-block: 0.75em;
   }
   h1, h2, h3, h4, h5, h6 {
     word-wrap: break-word;
     line-height: 1.1;
+  }
+  h1, h2 {
+    font-size: var(--font-size-fluid-2);
+    font-weight: var(--font-weight-8);
+    margin-block: 1.5em 0;
+  }
+  ul {
+    padding-inline-start: 1em;
   }
   a {
     text-decoration: none;
@@ -40,6 +37,11 @@
       background-size: 1px 3px;
     }
   }
+}
+
+.page_body h1:first-of-type {
+    font-size: var(--font-size-fluid-3);
+    margin-block-start: 0;
 }
 .shiki {
   width: 100%;
