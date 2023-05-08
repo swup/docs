@@ -3,8 +3,7 @@
   background-image: radial-gradient(ellipse at top, var(--swup-blue) 30%, var(--swup-blue-dark) 60%);
   background-size: cover;
 }
-.front-page #header,
-.front-page #nav {
+.front-page .hide-on-front-page {
   display: none;
 }
 

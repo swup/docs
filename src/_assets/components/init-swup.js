@@ -24,6 +24,7 @@ export default function() {
 		containers: ['#swup'],
 		plugins: [
 			// new SwupDebugPlugin(),
+
 			new SwupScrollPlugin({
 				animateScroll: {
 					betweenPages: false,

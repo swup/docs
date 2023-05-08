@@ -11,10 +11,12 @@
 * Let's include them directly
 */
 @import 'open-props/media';
+@import "open-props/colors-hsl";
 
 /*
 * Finally, our actual styles :)
 */
+@import "./inc/utils";
 @import "./inc/base";
 @import "./inc/buttons";
 @import "./inc/front-page";

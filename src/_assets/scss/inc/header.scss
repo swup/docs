@@ -1,7 +1,26 @@
-#header {
+.header {
   display: flex;
   border: 2px solid red;
-  > * {
-    flex: 1;
-  }
+  gap: var(--size-2);
+  padding: var(--size-4);
+  align-items: flex-start;
 }
+.header_logo {
+  width: var(--size-fluid-7);
+  margin-inline-end: auto;
+}
+.header_button {
+  position: relative;
+  display: inline-block;
+  width: var(--size-fluid-4);
+  height: var(--size-fluid-4);
+  border-radius: var(--radius-round);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.header_button svg {
+  pointer-events: none;
+}
+
