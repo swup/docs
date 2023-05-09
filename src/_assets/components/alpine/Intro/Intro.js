@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
 
 export default () => {
-	const tl = gsap.timeline({delay: 2});
+	const tl = gsap.timeline({delay: 0.5});
 	return {
 
 		async init() {
