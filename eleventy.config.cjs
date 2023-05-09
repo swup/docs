@@ -33,7 +33,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('getPreviousAndNextPage', getPreviousAndNextPage);
 	eleventyConfig.addShortcode('feather', renderFeatherIcon);
 	eleventyConfig.addShortcode('timestamp', () => Date.now());
-	eleventyConfig.addTransform('navigation', transformNavigation);
+	// eleventyConfig.addTransform('dummy', dummyTransform);
 
 	// Assets will be taken care of by WebPack
 	eleventyConfig.ignores.add('./src/_assets/**');
@@ -160,22 +160,14 @@ function renderFeatherIcon(iconName) {
 	return result;
 }
 
-function transformNavigation(content, file) {
+function dummyTransform(content, file) {
 	// Bail early if not a HTML file
 	if (!file || !file.endsWith('.html')) return content;
 
 	const jsdom = new JSDOM(content);
 	const { document } = jsdom.window;
 
-	const nakedItems = document.querySelectorAll('.nav_list > li:not(.--has-children)');
-	nakedItems.forEach(el => {
-		const linkText = `All ${el.textContent.toLowerCase()}`;
-		const ul = document.createElement('ul');
-		ul.append(el.cloneNode(true));
-		ul.querySelector('a').textContent = linkText;
-		el.append(ul);
-		el.classList.add('--has-children');
-	});
+	// Do something with document
 
 	return jsdom.serialize();
 }
