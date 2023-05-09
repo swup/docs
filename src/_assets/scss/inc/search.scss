@@ -50,6 +50,7 @@
   inset: 0;
   background: rgb(0 0 0 / 0.6);
   z-index: -1;
+  cursor: no-drop;
 }
 .search-modal_panel {
   height: 100%;
@@ -58,6 +59,7 @@
   align-items: flex-start;
   padding: var(--size-fluid-3);
   overflow: auto;
+  pointer-events: none;
 }
 .search-modal_body {
   border-radius: var(--radius-2);
@@ -66,4 +68,5 @@
   background: white;
   width: 100%;
   max-width: 600px;
+  pointer-events: all;
 }

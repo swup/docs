@@ -14,33 +14,34 @@
   <template x-teleport="body">
     <!-- Modal -->
     <div
+        class="search-modal"
         x-show="isOpen"
-        style="display: none"
         x-on:keydown.escape.prevent.stop="close"
         role="dialog"
         aria-modal="true"
-        x-id="['modal-title']"
-        :aria-labelledby="$id('modal-title')"
-        class="search-modal"
     >
         <!-- Backdrop -->
-        <div x-show="isOpen" x-transition.opacity class="search-modal_backdrop"></div>
+        <div
+          x-show="isOpen"
+          x-on:click="close"
+          x-transition.opacity
+          class="search-modal_backdrop">
+        </div>
 
         <!-- Panel -->
         <div
             x-show="isOpen" x-transition
-            x-on:click="close"
             class="search-modal_panel"
         >
             <div
-                x-on:click.stop
                 x-trap.noscroll.inert="isOpen"
                 class="search-modal_body"
             >
-                <div id="search"></div>
+                <div id="search" x-on:click="onSearchClick"></div>
                 <script src="/_pagefind/pagefind-ui.js" async onload="new PagefindUI({ element: '#search', showImages: false });"></script>
             </div>
         </div>
     </div>
   </template>
+
 </div>
