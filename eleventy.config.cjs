@@ -33,7 +33,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('getPreviousAndNextPage', getPreviousAndNextPage);
 	eleventyConfig.addShortcode('feather', renderFeatherIcon);
 	eleventyConfig.addShortcode('timestamp', () => Date.now());
-	// eleventyConfig.addTransform('dummy', dummyTransform);
+	eleventyConfig.addTransform('dummy', dummyTransform);
 
 	// Assets will be taken care of by WebPack
 	eleventyConfig.ignores.add('./src/_assets/**');
@@ -167,7 +167,7 @@ function dummyTransform(content, file) {
 	const jsdom = new JSDOM(content);
 	const { document } = jsdom.window;
 
-	// Do something with document
+	// Do something with the document
 
 	return jsdom.serialize();
 }
