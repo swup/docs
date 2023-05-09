@@ -47,6 +47,9 @@ body {
 ::selection {
   background-color: var(--swup-green);
 }
+ul {
+  list-style: disc;
+}
 ::marker {
   color: var(--swup-green);
 }

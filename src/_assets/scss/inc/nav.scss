@@ -43,7 +43,7 @@
   width: calc(100% + 50px);
   padding-right: 50px;
   @media (--md-n-above) {
-    padding-top: var(--size-12);
+    padding-top: calc(var(--size-12) + 0.2rem);
   }
 }
 

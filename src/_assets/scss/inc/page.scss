@@ -1,9 +1,11 @@
 .page {
-  padding-inline: var(--size-fluid-4);
+  padding-inline: var(--size-4);
   margin-inline: auto;
-  padding-block: var(--size-12);
+  padding-block: var(--size-11);
+
   @media (--md-n-above) {
     max-width: 800px;
+    padding-block: var(--size-12);
   }
 }
 
