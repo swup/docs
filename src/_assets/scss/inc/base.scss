@@ -45,3 +45,9 @@ body {
 ::marker {
   color: var(--swup-green);
 }
+
+.js [x-cloak] {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+}
