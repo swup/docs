@@ -15,6 +15,7 @@
   --text-2: var(--gray-7);
   --background: white;
   --transparent-background: hsl(var(--gray-9-hsl) / 10%);
+  --border-color: var(--gray-3);
 
   line-height: 1.6;
 
@@ -22,12 +23,14 @@
     --text-1: --gray-1;
     --text-2: --gray-2;
     --background: var(--gray-12-hsl);
+    --border-color: var(--gray-9);
   }
 }
 
 a {
   color: var(--text-1);
   font-weight: var(--font-weight-4);
+  text-decoration: none;
 }
 html {
   color: var(--text-1);
@@ -47,13 +50,33 @@ body {
 ::marker {
   color: var(--swup-green);
 }
-#swup {
-  @at-root .front-page & {
 
-  }
+/*
+* Don't render an outline for a focused main element
+* @see
+*/
+main[tabindex="-1"] {
+  outline: none;
 }
+
+/*
+* Hide alpine components initially
+*/
 .js [x-cloak] {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+}
+
+/*
+* Default style for feather icons
+*/
+.feather {
+  position: relative;
+  display: inline-block;
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: middle;
+  position: relative;
+  top: -0.1em;
 }
