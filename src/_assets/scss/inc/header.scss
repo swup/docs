@@ -40,16 +40,6 @@
   position: relative;
   top: -0.05em;
 }
-
-.header_logo.--desktop {
-  width: var(--size-11);
-  margin-inline-end: auto;
-  position: relative;
-  transform: translateY(-10%);
-  @media (--md-n-lower) {
-    display: none;
-  }
-}
 .social-link {
   display: inline-block;
   align-items: center;
