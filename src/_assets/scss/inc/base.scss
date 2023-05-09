@@ -35,19 +35,9 @@ html {
   background: var(--background);
   font-family: var(--font-sans);
 }
-
-
 body {
   transition: 450ms;
   font-size: 16px;
-  &.front-page {
-    background-color: var(--swup-blue-dark);
-  }
-}
-
-#swup {
-  position: relative;
-  z-index: 2;
 }
 ::selection {
   background-color: var(--swup-green);
