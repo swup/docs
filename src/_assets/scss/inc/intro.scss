@@ -1,15 +1,15 @@
 
 .intro {
-  min-height: 100vh;
-  color: var(--red-10);
   display: flex;
   align-items: center;
   justify-content: center;
   --text-1: white;
   text-align: center;
+  padding-block: var(--size-fluid-6);
+  min-height: 100svh;
 }
 .intro_background {
-  background-image: radial-gradient(ellipse at top, var(--swup-blue) 30%, var(--swup-blue-dark) 60%);
+  background-image: radial-gradient(ellipse at bottom, var(--swup-blue) 30%, var(--swup-blue-dark) 60%);
   background-size: cover;
   position: fixed;
   inset: 0;
@@ -26,7 +26,7 @@
 }
 
 .intro_body {
-  width: 100%;
+  width: 80%;
   max-width: 650px;
   padding-inline: var(--size-fluid-3);
   position: relative;

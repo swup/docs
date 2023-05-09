@@ -29,7 +29,6 @@ a {
   color: var(--text-1);
   font-weight: var(--font-weight-4);
 }
-
 html {
   color: var(--text-1);
   background: var(--background);
@@ -38,6 +37,9 @@ html {
 body {
   transition: 450ms;
   font-size: 16px;
+  &.front-page {
+    background: var(--swup-blue);
+  }
 }
 ::selection {
   background-color: var(--swup-green);
@@ -45,7 +47,11 @@ body {
 ::marker {
   color: var(--swup-green);
 }
+#swup {
+  @at-root .front-page & {
 
+  }
+}
 .js [x-cloak] {
   visibility: hidden;
   opacity: 0;
