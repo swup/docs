@@ -1,5 +1,9 @@
 <div class="search" x-data="Search">
-  <button type="button" class="search_toggle" x-on:click="open">
+  <button
+    type="button"
+    class="search_toggle"
+    x-on:click="open"
+    x-on:keydown.window="onKeyDown">
     {% feather "search" %}
     <span class="search_toggle_label">Search</span>
     <span class="search_toggle_keys">
@@ -7,6 +11,36 @@
     </span>
   </button>
 
-  <div id="search"></div>
-  <script src="/_pagefind/pagefind-ui.js" async onload="new PagefindUI({ element: '#search', showImages: false });"></script>
+  <template x-teleport="body">
+    <!-- Modal -->
+    <div
+        x-show="isOpen"
+        style="display: none"
+        x-on:keydown.escape.prevent.stop="close"
+        role="dialog"
+        aria-modal="true"
+        x-id="['modal-title']"
+        :aria-labelledby="$id('modal-title')"
+        class="search-modal"
+    >
+        <!-- Backdrop -->
+        <div x-show="isOpen" x-transition.opacity class="search-modal_backdrop"></div>
+
+        <!-- Panel -->
+        <div
+            x-show="isOpen" x-transition
+            x-on:click="close"
+            class="search-modal_panel"
+        >
+            <div
+                x-on:click.stop
+                x-trap.noscroll.inert="isOpen"
+                class="search-modal_body"
+            >
+                <div id="search"></div>
+                <script src="/_pagefind/pagefind-ui.js" async onload="new PagefindUI({ element: '#search', showImages: false });"></script>
+            </div>
+        </div>
+    </div>
+  </template>
 </div>
