@@ -1,12 +1,15 @@
 import { gsap } from "gsap";
 
 export default () => {
-	const tl = gsap.timeline({delay: 0.5});
+	const tl = gsap.timeline({delay: 2});
 	return {
 
 		async init() {
+			this.$root.style.visibility = 'hidden';
 
 			await this.$nextTick();
+
+			this.$root.style.visibility = 'visible';
 
 			const popIn = {
 				y: 50,
@@ -22,7 +25,7 @@ export default () => {
 				scaleY: 3,
 				ease: "quint.out",
 				duration: 0.7
-			}, 0);
+			});
 
 			const letterDelay = "<0.1";
 			tl.from(this.$refs.s, popIn, 0);
