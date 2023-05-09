@@ -103,8 +103,10 @@ function isTouch() {
 }
 
 function adjustActiveMenuItem(path) {
-	const wrap = document.querySelector('.nav_inner');
 	const activeLink = [...document.querySelectorAll(`.nav a[href="${path}"]`)].pop();
+	if (!activeLink) return;
+
+	const wrap = activeLink.closest('.nav_inner');
 	const rect = activeLink.getBoundingClientRect();
 	const top = rect.top + rect.height / 2 + wrap.scrollTop;
 	const indicator = document.querySelector('.nav_indicator');
