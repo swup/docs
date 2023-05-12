@@ -1,12 +1,31 @@
 .intro {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding-block: var(--gap);
   min-height: 100svh;
-  --color: var(--swup-blue);
+
+  @at-root .light & {
+    --color: var(--swup-blue);
+  }
+  @at-root .dark & {
+    // --color: var(--swup-green);
+  }
   color: var(--color);
+}
+
+.intro_background {
+  position: absolute;
+  inset: 0;
+
+  @at-root .dark & {
+    background-image: radial-gradient(var(--color-transparent), transparent 50%);
+    background-size: 100vmax 100vmax;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 .intro,
@@ -43,11 +62,14 @@
   width: 100%;
   aspect-ratio: 16 / 6.9;
   position: relative;
+  @at-root .dark & {
+    filter: drop-shadow(2px 2px 10px rgba(0 0 0 / 0.3));
+  }
 }
 
 .intro_logo .swup-logo {
   width: 100%;
   display: block;
   position: absolute;
-  fill: var(--swup-blue);
+  fill: currentColor;
 }

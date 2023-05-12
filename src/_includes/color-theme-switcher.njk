@@ -1,0 +1,6 @@
+<div x-data="ColorThemeSwitcher" x-cloak>
+  <button type="button" x-on:click="switchTheme">
+      <span x-show="scheme === 'light'">{% feather "sun" %}</span>
+      <span x-show="scheme === 'dark'">{% feather "moon" %}</span>
+  </button>
+</div>
