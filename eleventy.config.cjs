@@ -19,10 +19,6 @@ customMarkdownIt.use(markdownItAnchor);
  */
 customMarkdownIt.use(Shiki, {
 	theme: 'github-dark-dimmed',
-	// theme: {
-	//   dark: "min-dark",
-	//   light: "min-light",
-	// },
 	highlightLines: true
 });
 

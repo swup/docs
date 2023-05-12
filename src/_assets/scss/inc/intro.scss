@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  --text-1: white;
   text-align: center;
   padding-block: var(--size-fluid-6);
   min-height: 100svh;
@@ -48,65 +47,16 @@
 }
 
 .intro_logo {
+  display: block;
   margin-inline: auto;
   width: 100%;
-}
-
-.swup-logo {
-  position: relative;
-  width: 100%;
   aspect-ratio: 16 / 6.9;
-}
-
-.swup-logo-link {
   position: relative;
-  display: block;
-}
-.swup-logo svg {
-  display: block;
-  fill: white;
 }
 
-.swup-logo_part {
+.intro_logo .swup-logo {
+  width: 100%;
+  display: block;
   position: absolute;
-
-  &[data-part=s] {
-    width: 19.2%;
-    bottom: 1.2%;
-  }
-
-  &[data-part=w] {
-    width: 32.1%;
-    left: 21.2%;
-    bottom: 6.4%;
-  }
-
-  &[data-part=u] {
-    width: 19.9%;
-    left: 55.4%;
-    bottom: 15%;
-  }
-
-  &[data-part=p] {
-    width: 22.2%;
-    left: 77.8%;
-    bottom: 0%;
-  }
-
-  &[data-part=dot1] {
-    width: 6.6%;
-    left: 46.7%;
-    bottom: 70.3%;
-    svg {
-      fill: var(--swup-red);
-    }
-  }
-  &[data-part=dot2] {
-    width: 6.6%;
-    left: 55.1%;
-    bottom: 84.7%;
-    svg {
-      fill: var(--swup-green);
-    }
-  }
+  fill: var(--swup-blue);
 }

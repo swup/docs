@@ -7,6 +7,8 @@ export default () => {
 		async init() {
 			this.$root.style.visibility = 'hidden';
 
+			this.sliceLogo();
+
 			await this.$nextTick();
 
 			this.$root.style.visibility = 'visible';
@@ -20,7 +22,7 @@ export default () => {
 				transition: 'none'
 			}
 
-			tl.from(this.$refs.logo, {
+			tl.from(this.$refs.link, {
 				y: 50,
 				scaleY: 3,
 				ease: "quint.out",
@@ -48,6 +50,19 @@ export default () => {
 			tl.from(this.$refs.button1, fadeIn, letterDelay);
 			tl.from(this.$refs.button2, fadeIn, letterDelay);
 
+		},
+
+		sliceLogo() {
+			const refs = ['s', 'w', 'u', 'p', 'dot1', 'dot2'];
+			const paths = this.$refs.logo.querySelectorAll('path');
+			const parentNode = this.$refs.logo.parentNode;
+			paths.forEach((path, index) => {
+				const clone = this.$refs.logo.cloneNode();
+				clone.setAttribute('x-ref', refs[index]);
+				clone.append(path.cloneNode());
+				parentNode.append(clone);
+			})
+			this.$refs.logo.remove();
 		}
 
 	}
