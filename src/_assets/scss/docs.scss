@@ -7,13 +7,6 @@
 @import 'modern-normalize/modern-normalize';
 
 /*
-* Variables in media queries aren't detected by the JIT compiler.
-* Let's include them directly
-*/
-@import 'open-props/media';
-@import "open-props/colors-hsl";
-
-/*
 * Finally, our actual styles :)
 */
 @import "./inc/utils";

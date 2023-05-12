@@ -31,7 +31,6 @@
     "alpinejs": "^3.12.0",
     "gsap": "^3.11.5",
     "modern-normalize": "^1.1.0",
-    "open-props": "^1.5.8",
     "swup": "^3.0.6",
     "swup-gtag-plugin": "^0.0.0"
   },
@@ -59,10 +58,8 @@
     "minimist": "^1.2.5",
     "pagefind": "^0.12.0",
     "postcss": "^8.4.6",
-    "postcss-jit-props": "^1.0.13",
     "postcss-loader": "^6.2.1",
     "postcss-preset-env": "^7.8.3",
-    "postcss-prune-var": "^1.0.5",
     "prettier": "^2.7.1",
     "sass": "^1.62.0",
     "sass-loader": "^12.6.0",
