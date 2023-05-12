@@ -5,33 +5,37 @@ button {
   border: none;
   color: inherit;
 }
+
 .buttons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: var(--size-fluid-2);
+  gap: var(--gap);
 }
+
 .button {
   position: relative;
   display: block;
   text-decoration: none;
-  border: var(--border-size-2) solid var(--text-1);
-  border-radius: var(--radius-round);
+  border: var(--border) var(--color);
+  border-radius: var(--border-radius);
   font-size: var(--font-size-fluid-1);
+  color: var(--color);
   font-weight: 500;
   padding: 0.3em 1.2em 0.35em;
   transition: all 150ms;
 
   &.button--filled {
-    background-color: var(--text-1);
-    color: var(--swup-blue);
+    background-color: var(--color);
+    color: var(--background);
   }
+
   @include mixins.hover {
-    background-color: var(--text-1);
-    color: var(--swup-blue);
+    background-color: var(--color);
+    color: var(--background);
     transform: translateY(-3%);
-    box-shadow: var(--shadow-3);
+    box-shadow: var(--shadow-1);
   }
 
 }

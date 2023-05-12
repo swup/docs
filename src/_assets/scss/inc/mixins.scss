@@ -1,6 +1,6 @@
 @mixin hover {
   &:not(.is-disabled):not(:disabled) {
-    @media (--mouse) {
+    @media all and (hover: hover) {
       &:hover {
         @content;
       }
@@ -11,5 +11,11 @@
     &:active {
       @content;
     }
+  }
+}
+
+@mixin hoverSupport {
+  @media all and (hover: hover) {
+    @content;
   }
 }

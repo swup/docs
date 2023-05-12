@@ -1,32 +1,22 @@
-
 .intro {
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-block: var(--size-fluid-6);
+  padding-block: var(--gap);
   min-height: 100svh;
+  --color: var(--swup-blue);
+  color: var(--color);
 }
-.intro_background {
-  background-image: radial-gradient(ellipse at bottom, var(--swup-blue) 30%, var(--swup-blue-dark) 60%);
-  background-size: cover;
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  opacity: 0;
-  transition: opacity 250ms;
-  @at-root .front-page & {
-    transition-duration: 400ms;
-    opacity: 1;
-  }
-}
-.intro, .intro * {
+
+.intro,
+.intro * {
   transform-origin: top;
 }
 
 .intro_body {
   width: 80%;
-  max-width: 650px;
+  max-width: 600px;
   padding-inline: var(--size-fluid-3);
   position: relative;
   transform: translateY(-5%);
@@ -37,13 +27,14 @@
 }
 
 .intro_body>*+* {
-  margin-top: var(--size-7);
+  margin-top: var(--gap);
 }
 
 .intro_slogan {
   font-size: var(--font-size-fluid-1);
-  font-weight: var(--font-weight-4);
-  color: var(--text-1);
+  max-width: 500px;
+  margin-inline: auto;
+  font-weight: 500;
 }
 
 .intro_logo {

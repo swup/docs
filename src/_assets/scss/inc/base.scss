@@ -1,52 +1,28 @@
-:root {
-  --swup-blue-hsl: 239, 49%, 34%;
-  --swup-blue: hsl(var(--swup-blue-hsl));
-
-  --swup-blue-dark-hsl: 239, 49%, 24%;
-  --swup-blue-dark: hsl(var(--swup-blue-dark-hsl));
-
-  --swup-red-hsl: 354, 99%, 68%;
-  --swup-red: hsl(var(--swup-red-hsl));
-
-  --swup-green-hsl: 172, 65%, 62%;
-  --swup-green: hsl(var(--swup-green-hsl));
-
-  --text-1: var(--gray-9);
-  --text-2: var(--gray-7);
-  --background: white;
-  --transparent-background: hsl(var(--gray-9-hsl) / 10%);
-  --border-color: var(--gray-3);
-
-  line-height: 1.6;
-
-  @media (--OSdark) {
-    --text-1: --gray-1;
-    --text-2: --gray-2;
-    --background: var(--gray-12-hsl);
-    --border-color: var(--gray-9);
-  }
-}
-
-a {
-  color: var(--text-1);
-  font-weight: var(--font-weight-4);
-  text-decoration: none;
-}
 html {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+body {
   color: var(--text-1);
   background: var(--background);
   font-family: var(--font-sans);
 }
-body {
-  transition: 450ms;
-  font-size: 16px;
+
+a {
+  color: inherit;
+  font-weight: 400;
+  text-decoration: none;
 }
+
 ::selection {
   background-color: var(--swup-green);
 }
+
 ul {
   list-style: disc;
 }
+
 ::marker {
   color: var(--swup-green);
 }

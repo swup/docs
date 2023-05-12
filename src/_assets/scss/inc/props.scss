@@ -1,0 +1,39 @@
+:root {
+  color-scheme: light dark;
+
+  --swup-blue: hsl(239 49% 30%);
+  --swup-red: hsl(354 99% 68%);
+  --swup-green: hsl(172 65% 62%);
+
+  --color: rgb(0 0 0);
+  --background: rgb(255 255 255);
+  --color-transparent: rgb(0 0 0 / 0.3);
+
+  --font-sans: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
+  --font-mono: Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace;
+
+  --font-size-fluid-0: clamp(.75rem, 2vw, 1rem);
+  --font-size-fluid-1: clamp(1rem, 4vw, 1.5rem);
+  --font-size-fluid-2: clamp(1.5rem, 6vw, 2.5rem);
+  --font-size-fluid-3: clamp(2rem, 9vw, 3.5rem);
+
+  --gap: clamp(1rem, 2vw, 2rem);
+  --gap-x2: calc(var(--gap) * 2);
+
+  --border: 2px solid;
+  --border-radius: 0.6em;
+
+  --shadow-color: 239 49% 30%;
+  --shadow-strength: 10%;
+
+  --shadow-1:
+    0 -1px 3px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 1px 2px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
+    0 2px 5px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
+    0 4px 12px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
+    0 12px 15px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+
+  @media (prefers-color-scheme: dark) {
+
+  }
+}
