@@ -17,7 +17,7 @@
   position: relative;
   margin: 0;
   padding-inline-start: var(--gap);
-  padding-block: var(--gap);
+  padding-block: var(--gap-x2);
   overflow: auto;
   height: 100%;
 
@@ -71,7 +71,7 @@
   background: var(--swup-red);
   border-radius: var(--radius-round);
   top: 0;
-  left: calc(var(--gap) * 0.5);
+  left: calc(var(--gap) * 0.7);
   transform: translateY(calc(var(--offset-y) - 50%)) translateX(-50%);
   transition: transform 300ms var(--ease-squish-2);
 }

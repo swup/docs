@@ -13,6 +13,11 @@
   z-index: 4;
   pointer-events: none;
 
+  @include bp(1600, max) {
+    background: var(--background);
+    border-bottom: 1px solid var(--color-transparent-1);
+  }
+
   @at-root body.front-page & {
     opacity: 0;
     pointer-events: 0;
@@ -21,14 +26,17 @@
   }
 }
 .header::after {
-  content: "";
-  display: block;
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(var(--background) 30%, transparent);
-  z-index: -1;
-  height: calc(100% + var(--gap));
-  opacity: 0.9;
+  // content: "";
+  // display: block;
+  // position: absolute;
+  // inset: 0;
+  // background: linear-gradient(var(--background), transparent);
+  // @include bp(1500) {
+  //   background: none;
+  // }
+  // z-index: -1;
+  // height: calc(100% + var(--gap));
+  // opacity: 0.9;
 }
 .header a,
 .header button {

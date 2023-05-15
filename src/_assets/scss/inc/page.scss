@@ -1,7 +1,6 @@
 .page {
   padding: var(--gap);
-  padding-block-end: var(--header-height);
-
+  padding-block: var(--gap-x2);
   width: min(90ch, 100%);
   margin-inline: auto;
 }
