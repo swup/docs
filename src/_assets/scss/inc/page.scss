@@ -1,13 +1,13 @@
 .page {
   padding: var(--gap);
-  padding-block: var(--gap-x2);
+  padding-block: var(--gap);
   width: min(90ch, 100%);
   margin-inline: auto;
 }
 
 .text {
   > *:not(:first-child) {
-    margin-block: 0.75em;
+    margin-block: 1.5rem;
   }
   h1, h2, h3, h4, h5, h6 {
     word-wrap: break-word;
@@ -16,7 +16,10 @@
   h1, h2 {
     font-size: var(--font-size-fluid-2);
     font-weight: 800;
-    margin-block: 1.5em 0;
+    // margin-block: 1.5em 0;
+  }
+  h3, h4 {
+    font-size: var(--font-size-fluid-1);
   }
   ul {
     padding-inline-start: 1em;
@@ -44,6 +47,26 @@
       margin: 0;
     }
   }
+  .headline_anchor {
+    background: none;
+
+    --opacity: 0.3;
+    @include mixins.hover {
+      --opacity: 1;
+    }
+
+    &::after {
+      content: "#";
+      display: inline-block;
+      margin-inline-start: 0.2em;
+      transform: scale(0.8);
+      font-weight: normal;
+      transition: opacity 100ms;
+      opacity: var(--opacity);
+    }
+
+  }
+
 }
 
 .edit-this-page {
@@ -65,8 +88,9 @@
   width: 100%;
   overflow: auto;
   padding: 0.6em 1em;
-  border-radius: 0.4em;
-  font-size: var(--font-size-0);
+  border-radius: var(--radius-0);
+  font-size: 0.9rem;
+  line-height: 1.3;
 }
 
 .shiki ::selection {

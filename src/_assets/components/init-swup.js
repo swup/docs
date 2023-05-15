@@ -30,6 +30,10 @@ export default function() {
 					betweenPages: false,
 					samePageWithHash: true,
 					samePage: true
+				},
+				offset: () => {
+					const navPaddingTop = parseInt(getComputedStyle(document.querySelector('.nav .nav_inner')).paddingTop, 10);
+					return document.querySelector('.header').offsetHeight + navPaddingTop
 				}
 			}),
 			new SwupSlideTheme(),
@@ -77,23 +81,24 @@ function checkTheme() {
 }
 
 function addHeadlineLinks() {
-	const mainContent = document.querySelector('#main-content');
+	const mainContent = document.querySelector('.page_body');
 	if (!mainContent) return;
 	mainContent
 		.querySelectorAll('h2, h3, h4, h5, h6')
 		.forEach(function (element) {
 			if (!element.matches('[id]')) return;
 			const anchor = document.createElement('a');
-			const link = window.location.origin + window.location.pathname + '#' + element.id;
+			const url = window.location.origin + window.location.pathname + '#' + element.id;
 
-			anchor.href = link;
-			anchor.className = 'headline-anchor';
-			anchor.innerHTML = '#';
+			anchor.href = url;
+			anchor.className = 'headline_anchor';
+			anchor.innerHTML = element.textContent;
 
 			anchor.addEventListener('click', function (event) {
-				navigator.clipboard.writeText(link);
+				navigator.clipboard.writeText(url);
 			});
 
+			element.innerHTML = '';
 			element.appendChild(anchor);
 		});
 }
