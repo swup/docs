@@ -65,7 +65,7 @@ export default function() {
 
 function onSwupPageView() {
 	checkTheme();
-	addHeadlineLinks();
+	initHeadlineLinks();
 	prepareExternalLinks();
 	adjustActiveMenuItem(window.location.pathname);
 }
@@ -80,27 +80,12 @@ function checkTheme() {
 	}
 }
 
-function addHeadlineLinks() {
-	const mainContent = document.querySelector('.page_body');
-	if (!mainContent) return;
-	mainContent
-		.querySelectorAll('h2, h3, h4, h5, h6')
-		.forEach(function (element) {
-			if (!element.matches('[id]')) return;
-			const anchor = document.createElement('a');
-			const url = window.location.origin + window.location.pathname + '#' + element.id;
-
-			anchor.href = url;
-			anchor.className = 'headline_anchor';
-			anchor.innerHTML = element.textContent;
-
-			anchor.addEventListener('click', function (event) {
-				navigator.clipboard.writeText(url);
-			});
-
-			element.innerHTML = '';
-			element.appendChild(anchor);
+function initHeadlineLinks() {
+	document.querySelectorAll('.page_body .header-anchor').forEach(anchor => {
+		anchor.addEventListener('click', function (event) {
+			navigator.clipboard.writeText(anchor.href);
 		});
+	});
 }
 
 function isTouch() {

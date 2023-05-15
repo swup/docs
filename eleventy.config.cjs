@@ -12,7 +12,9 @@ const customMarkdownIt = markdownIt({
 	breaks: false,
 	linkify: true
 });
-customMarkdownIt.use(markdownItAnchor);
+customMarkdownIt.use(markdownItAnchor, {
+	permalink: markdownItAnchor.permalink.headerLink({ safariReaderFix: true })
+});
 /**
  * Ready for dark mode
  * @see https://github.com/antfu/markdown-it-shiki#dark-mode
