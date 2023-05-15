@@ -149,7 +149,7 @@ function renderFeatherIcon(iconName) {
 	}
 	let result = '';
 	try {
-		result = feather.icons[iconName].toSvg({ 'stroke-linecap': 'square' });
+		result = feather.icons[iconName].toSvg({ 'stroke-linecap': 'round' });
 	} catch (e) {
 		console.warn(e);
 	}
