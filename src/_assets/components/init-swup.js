@@ -21,7 +21,7 @@ let currentTheme = 'SlideTheme';
 
 export default function() {
 	var swup = new Swup({
-		containers: ['#swup'],
+		containers: ['#swup', '#breadcrumb'],
 		plugins: [
 			// new SwupDebugPlugin(),
 

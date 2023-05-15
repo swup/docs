@@ -36,9 +36,20 @@
 .site-title_swup {
   font-weight: bold;
 }
-.site-title_breadcrumb {
+.site-title_slash {
+  opacity: 0.5;
+}
+#breadcrumb {
   opacity: 0.5;
   position: relative;
+  transition: opacity .3s, transform .4s;
+  @at-root .is-animating & {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  @at-root .is-animating.is-leaving & {
+    transform: translateY(50%);
+  }
 }
 .header_utils {
   display: flex;
