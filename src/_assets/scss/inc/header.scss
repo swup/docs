@@ -25,19 +25,6 @@
     position: absolute;
   }
 }
-.header::after {
-  // content: "";
-  // display: block;
-  // position: absolute;
-  // inset: 0;
-  // background: linear-gradient(var(--background), transparent);
-  // @include bp(1500) {
-  //   background: none;
-  // }
-  // z-index: -1;
-  // height: calc(100% + var(--gap));
-  // opacity: 0.9;
-}
 .header a,
 .header button {
   pointer-events: all;
