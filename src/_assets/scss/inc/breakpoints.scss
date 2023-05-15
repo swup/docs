@@ -1,0 +1,39 @@
+$media-direction: min; // min / max — default is min (mobile first)
+
+$breakpoints: (
+  default: "",
+  xs: 420px,
+  s: 667px,
+  m: 1024px,
+  l: 1280px,
+  xl: 1480px,
+);
+
+/* --------------------------------------------------
+
+   Breakpoint Mixin
+   -------------------------------------------------- */
+
+// $breakpoint = die Größe die ihr braucht.
+// Ihr könnt aber auch anstelle von 'xs', 's', 'm', 'l', 'xl' einfach einen Wert eintragen.
+// Das macht Sinn wenn man mal einen speziellen Breakpoint braucht. Den muss man dann nicht zwingend in die Sass Map packen.
+// $direction: $media-direction = das was ihr in den Settings eingestellt habt.
+@mixin bp($breakpoint, $direction: $media-direction) {
+  // Es wird gecheckt ob der Wert in der Sass Map vorhanden ist
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Ausgabe
+    @media (#{$direction}-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  }
+
+  // Wenn ihr oben einen Wert eingetragen habt wird hier gecheckt ob ihr einen Einheit angehängt habt. Falls nicht wird px genutzt.
+  @else if unitless($breakpoint) {
+    $breakpoint: $breakpoint + 0px;
+
+    // Ausgabe
+    @media (#{$direction}-width: $breakpoint) {
+      @content;
+    }
+  }
+}

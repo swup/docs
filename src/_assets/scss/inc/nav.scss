@@ -1,50 +1,39 @@
 .nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 90%;
-  max-width: 250px;
-  height: 100%;
-  background: white;
-  z-index: 10;
+  height: calc(100svh - var(--header-height));
+  position: sticky;
+  top: var(--header-height);
   overflow: hidden;
 
-  @media (--md-n-above) {
-    z-index: 3;
-    background: transparent;
-  }
-
-  transition: transform 250ms,
-  opacity 500ms 250ms;
-  transform: translateX(-100%);
-
-  @media (--md-n-above) {
-    transform: translateX(0%);
+  @include bp(m, max) {
+    display: none;
   }
 
   @at-root body.front-page & {
-    transition: none;
-    opacity: 0;
-    transform: translateX(-100%) !important;
+    display: none;
   }
 }
+
 .nav_inner {
   position: relative;
-  mask-image: linear-gradient(180deg,
-      transparent,
-      transparent var(--size-11),
-      black calc(var(--size-11) + 30px));
   margin: 0;
-  padding-left: var(--size-8);
-  padding-bottom: var(--size-8);
+  padding-inline-start: var(--gap);
+  padding-block: var(--gap);
   overflow: auto;
-  overscroll-behavior: contain;
   height: 100%;
+
+  /* Don't propagate scrolling to the main container */
+  overscroll-behavior: contain;
+
+  /* Fade to transparent at top and bottom */
+  mask-image: linear-gradient(to bottom,
+    transparent,
+    black var(--gap),
+    black calc(100% - var(--gap)),
+    transparent);
+
+  /* Hide the scroll bar */
   width: calc(100% + 50px);
   padding-right: 50px;
-  @media (--md-n-above) {
-    padding-top: calc(var(--size-12) + 0.2rem);
-  }
 }
 
 .nav ul {
@@ -52,12 +41,11 @@
   padding: 0;
   list-style: none;
 }
-
-.nav_list>li {
-  margin-bottom: var(--size-3);
+.nav_list > li {
+  margin-block-end: 0.75em;
 }
-
 .nav_list>li>a {
+  display: inline-block;
   font-weight: bold;
 }
 
@@ -68,7 +56,7 @@
 .nav_list_link {
   display: inline-block;
   text-decoration: none;
-  margin-block-end: var(--size-1);
+  padding-block: 0.1em;
 }
 
 .nav_indicator {
@@ -79,8 +67,9 @@
   background: var(--swup-red);
   border-radius: var(--radius-round);
   top: 0;
-  left: 2em;
+  left: calc(var(--gap) * 0.5);
   transform: translateY(calc(var(--offset-y) - 50%));
   transition: transform 300ms;
-  transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000); /* easeOutQuart */
+  /* easeOutQuart */
+  transition-timing-function: cubic-bezier(0.165, 0.840, 0.440, 1.000);
 }

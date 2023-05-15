@@ -107,8 +107,9 @@ function adjustActiveMenuItem(path) {
 	if (!activeLink) return;
 
 	const wrap = activeLink.closest('.nav_inner');
+	const wrapRect = wrap.getBoundingClientRect();
 	const rect = activeLink.getBoundingClientRect();
-	const top = rect.top + rect.height / 2 + wrap.scrollTop;
+	const top = rect.top + rect.height / 2 + wrap.scrollTop - wrapRect.top;
 	const indicator = document.querySelector('.nav_indicator');
 	indicator.style.setProperty('--offset-y', `${top}px`);
 }

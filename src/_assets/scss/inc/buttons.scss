@@ -4,6 +4,9 @@ button {
   background: none;
   border: none;
   color: inherit;
+  * {
+    pointer-events: none;
+  }
 }
 
 .buttons {
@@ -19,7 +22,7 @@ button {
   display: block;
   text-decoration: none;
   border: var(--border) var(--color);
-  border-radius: var(--border-radius);
+  border-radius: var(--radius-1);
   font-size: var(--font-size-fluid-1);
   color: var(--color);
   font-weight: 500;

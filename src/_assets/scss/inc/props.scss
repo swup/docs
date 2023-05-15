@@ -1,5 +1,4 @@
 :root {
-  color-scheme: light dark;
 
   --swup-blue: hsl(239 50% 30%);
   --swup-red: hsl(354 99% 68%);
@@ -7,9 +6,9 @@
 
   --color: rgb(0 0 0);
   --background: rgb(255 255 255);
-  --color-transparent: rgb(0 0 0 / 0.3);
+  --color-transparent: rgb(0 0 0 / 0.1);
+  --color-transparent-dark: rgb(0 0 0 / 0.2);
 
-  --font-sans: system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;
   --font-mono: Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace;
 
   --font-size-fluid-0: clamp(.75rem, 2vw, 1rem);
@@ -20,8 +19,12 @@
   --gap: clamp(1rem, 2vw, 2rem);
   --gap-x2: calc(var(--gap) * 2);
 
+  --header-height: calc(var(--gap) * 2 + 2rem);
+
   --border: 2px solid;
-  --border-radius: 0.6em;
+  --radius-round: 1000px;
+  --radius-0: 0.4em;
+  --radius-1: 0.5em;
 
   --shadow-color: 239 49% 30%;
   --shadow-strength: 10%;
@@ -36,7 +39,8 @@
 
 .dark {
   // --swup-blue: hsl(239 60% 60%);
-  --color: rgb(255 255 255);
+  --color: rgb(230 230 230);
   --background:hsl(239 50% 5%);
   --color-transparent: rgb(255 255 255 / 0.15);
+  --color-transparent-dark: rgb(255 255 255 / 0.2);
 }

@@ -1,12 +1,11 @@
 html {
-  font-size: 16px;
+  font-size: 17px;
   line-height: 1.6;
 }
 
 body {
   color: var(--color);
   background: var(--background);
-  font-family: var(--font-sans);
 }
 
 a {
@@ -42,4 +41,14 @@ main[tabindex="-1"] {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+}
+
+/*
+* Container
+*/
+.default .container {
+  @include bp(m) {
+    display: grid;
+    grid-template-columns: 250px 1fr 250px;
+  }
 }

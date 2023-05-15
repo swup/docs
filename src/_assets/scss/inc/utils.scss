@@ -1,3 +1,22 @@
+html {
+  color-scheme: light dark;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+iframe {
+  display: block;
+  background: transparent;
+}
+
+/*
+* Hide things visually, still shwo them to screen readers
+*/
 .sr-only {
   position: absolute;
   left: -10000px;
@@ -5,12 +24,4 @@
   width: 1px;
   height: 1px;
   overflow: hidden;
-}
-img {
-  display: block;
-  max-width: 100%;
-}
-iframe {
-  display: block;
-  background: transparent;
 }

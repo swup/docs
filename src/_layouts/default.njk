@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr" class="no-js">
   {% include "head.njk" %}
-  <body>
+  <body class="default">
     {% include "header.njk" %}
-    {% include "nav.njk" %}
-    <div id="swup">
-      {% include "page.njk" %}
+    <div class="container">
+      {% include "nav.njk" %}
+      <div id="swup">
+        {% include "page.njk" %}
+      </div>
     </div>
     {% include "scripts.njk" %}
   </body>

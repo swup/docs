@@ -4,7 +4,6 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding-block: var(--gap);
   min-height: 100svh;
 
   @at-root .light & {
@@ -20,11 +19,14 @@
   position: absolute;
   inset: 0;
 
+  background-size: 100vmax 100vmax;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  background-image: radial-gradient(hsl(239 50% 30% / 0.1), transparent 50%);
+
   @at-root .dark & {
-    background-image: radial-gradient(var(--color-transparent), transparent 50%);
-    background-size: 100vmax 100vmax;
-    background-repeat: no-repeat;
-    background-position: center;
+    background-image: radial-gradient(rgb(255 255 255 / 0.1), transparent 50%);
   }
 }
 
@@ -34,6 +36,7 @@
 }
 
 .intro_body {
+  margin-block: var(--gap-x2);
   width: 80%;
   max-width: 600px;
   padding-inline: var(--size-fluid-3);
@@ -63,7 +66,7 @@
   aspect-ratio: 16 / 6.9;
   position: relative;
   @at-root .dark & {
-    filter: drop-shadow(2px 2px 10px rgba(0 0 0 / 0.3));
+    filter: drop-shadow(4px 4px 1px rgba(0 0 0 / 0.4));
   }
 }
 
