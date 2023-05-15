@@ -1,24 +1,21 @@
 button.search_toggle {
-  border-radius: var(--radius-round);
-  display: flex;
-  align-items: center;
-  width: auto;
-
-  @media (hover) {
-    background: var(--color-transparent);
-    padding-inline: 0.7em 1em;
+  @include bp(m) {
+    padding-inline: 0.7em;
   }
+}
+button.search_toggle svg {
+  position: relative;
+  left: 0;
+  top: 0;
+  transform: none;
 }
 .search_toggle_label {
   margin-inline: 0.5em 3em;
-  display: none;
-  @media (hover) {
-    display: block;
-  }
 }
 .search_toggle_keys {
   font-size: 0.7em;
   opacity: 0.4;
+  margin-right: 0.5em;
 }
 
 .search-modal {

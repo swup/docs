@@ -63,14 +63,25 @@
   height: 2.5rem;
   display: block;
   border-radius: var(--radius-round);
-  width: 2rem;
-  height: 2rem;
+  height: var(--button-size);
+  min-width: var(--button-size);
   background: var(--color-transparent);
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include mixins.hover {
+    background: var(--color-transparent-strong);
+  }
 }
 .header_utils svg {
   display: block;
   width: var(--icon-size);
   height: var(--icon-size);
+  // position: absolute;
+  // top: 50%;
+  // left: 50%;
+  // transform: translate(-50%, -50%);
 }
 
 [data-toggle-nav] {

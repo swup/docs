@@ -7,7 +7,7 @@
   --color: rgb(0 0 0);
   --background: rgb(255 255 255);
   --color-transparent: rgb(0 0 0 / 0.1);
-  --color-transparent-dark: rgb(0 0 0 / 0.2);
+  --color-transparent-strong: rgb(0 0 0 / 0.2);
 
   --font-mono: Dank Mono,Operator Mono,Inconsolata,Fira Mono,ui-monospace,SF Mono,Monaco,Droid Sans Mono,Source Code Pro,monospace;
 
@@ -42,5 +42,5 @@
   --color: rgb(230 230 230);
   --background:hsl(239 50% 5%);
   --color-transparent: rgb(255 255 255 / 0.15);
-  --color-transparent-dark: rgb(255 255 255 / 0.2);
+  --color-transparent-strong: rgb(255 255 255 / 0.2);
 }
