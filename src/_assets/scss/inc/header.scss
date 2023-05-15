@@ -1,5 +1,5 @@
 .header {
-  --button-size: 2.5rem;
+  --button-size: clamp(2rem, 5vw, 2.5rem);
   --icon-size: calc(var(--button-size) * 0.5);
 
   display: flex;
@@ -12,12 +12,23 @@
   transition: opacity 400ms 400ms;
   z-index: 4;
   pointer-events: none;
+
   @at-root body.front-page & {
     opacity: 0;
     pointer-events: 0;
     transition: none;
     position: absolute;
   }
+}
+.header::after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(var(--background) 30%, transparent);
+  z-index: -1;
+  height: calc(100% + var(--gap));
+  opacity: 0.9;
 }
 .header a,
 .header button {
@@ -47,15 +58,11 @@
 .site-title_breadcrumb {
   display: flex;
   align-items: center;
-  opacity: 0.4;
+  color: var(--color-transparent-3);
   position: relative;
   transition: opacity .3s, transform .4s;
   @at-root .is-animating & {
     opacity: 0;
-    // transform: translateY(-50%);
-  }
-  @at-root .is-animating.is-leaving & {
-    // transform: translateY(50%);
   }
   svg {
     width: 0.9em;
@@ -78,13 +85,13 @@
   border-radius: var(--radius-round);
   height: var(--button-size);
   min-width: var(--button-size);
-  background: var(--color-transparent);
+  background: var(--color-transparent-1);
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   @include mixins.hover {
-    background: var(--color-transparent-strong);
+    background: var(--color-transparent-2);
   }
 }
 .header_buttons svg {

@@ -103,15 +103,23 @@ function isTouch() {
 }
 
 function adjustActiveMenuItem(path) {
-	const activeLink = [...document.querySelectorAll(`.nav a[href="${path}"]`)].pop();
-	if (!activeLink) return;
 
-	const wrap = activeLink.closest('.nav_inner');
-	const wrapRect = wrap.getBoundingClientRect();
-	const rect = activeLink.getBoundingClientRect();
-	const top = rect.top + rect.height / 2 + wrap.scrollTop - wrapRect.top;
-	const indicator = document.querySelector('.nav_indicator');
-	indicator.style.setProperty('--offset-y', `${top}px`);
+	const navs = document.querySelectorAll('.nav .nav_inner');
+	navs.forEach(wrap => {
+		const activeLink = wrap.querySelector(`.nav a[href="${path}"]`);
+		if (!activeLink) return;
+
+		const wrapRect = wrap.getBoundingClientRect();
+		const rect = activeLink.getBoundingClientRect();
+		const top = rect.top + rect.height / 2 + wrap.scrollTop - wrapRect.top;
+		const indicator = document.querySelector('.nav_indicator');
+		indicator.style.setProperty('--offset-y', `${top}px`);
+	})
+
+	document.querySelectorAll('.mobile-nav a').forEach(a => {
+		if (a.origin !== window.location.origin) return;
+		a.classList.toggle('is-active', a.pathname === window.location.pathname);
+	})
 }
 
 function prepareExternalLinks() {

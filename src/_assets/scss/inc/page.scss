@@ -7,7 +7,7 @@
 }
 
 .text {
-  h1, h2, h3, h4, h5, h6, p, ul, li, iframe {
+  > *:not(:first-child) {
     margin-block: 0.75em;
   }
   h1, h2, h3, h4, h5, h6 {
@@ -36,6 +36,15 @@
       background-size: 1px 3px;
     }
   }
+  .iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    iframe {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+    }
+  }
 }
 
 .edit-this-page {
@@ -47,7 +56,7 @@
 
 .page_body h1:first-of-type {
     font-size: var(--font-size-fluid-3);
-    margin-block-start: 0;
+    margin-block-start: -0.1em;
 }
 
 /*
@@ -80,7 +89,7 @@
 * Page Navigation
 */
 .page-nav {
-	border: 1px solid var(--color-transparent);
+	border: 1px solid var(--color-transparent-1);
 	border-radius: var(--radius-1);
 }
 .page-nav_items {
@@ -102,7 +111,7 @@
 	}
 }
 .page-nav_item + .page-nav_item {
-	border-left: 1px solid var(--color-transparent);
+	border-left: 1px solid var(--color-transparent-1);
 }
 .page-nav_link {
 	white-space: nowrap;
