@@ -42,7 +42,8 @@ button.search_toggle svg {
 .search-modal_body {
 	border-radius: var(--radius-2);
 	box-shadow: var(--shadow-1);
-	background: white;
+	background: var(--background);
+	border: 1px solid var(--color-transparent-1);
 	width: 100%;
 	max-width: 600px;
 	pointer-events: all;
@@ -69,10 +70,13 @@ button.search_toggle svg {
 	width: 100%;
 	appearance: none;
 	border: none;
+	background: transparent;
+	color: inherit;
 	margin-left: 0.5rem;
 	&:focus {
 		outline: 0;
 	}
+
 }
 
 .search_ui_no-results {
