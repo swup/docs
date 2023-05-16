@@ -122,11 +122,26 @@
 	background-color: rgb(255 255 255 / 0.2) !important;
 	color: unset;
 }
+.code-block {
+	position: relative;
+}
+.code-block_copy {
+	position: absolute;
+	top: 0.5rem;
+	right: 0.5rem;
+	background: rgb(0 0 0 / 0.5);
+	color: white;
+	font-family: var(--font-mono);
+	border-radius: var(--radius-1);
+	font-size: 0.6em;
+	padding: 0.5em 0.7em;
+	text-transform: uppercase;
+}
 
 /*
 * Inline code blocks
 */
-.text *:not(pre) code {
+.text *:not(pre) > code {
 	font-size: 0.8em;
 	padding: 0.2rem 0.25rem;
 	background-image: linear-gradient(

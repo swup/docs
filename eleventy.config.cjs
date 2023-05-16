@@ -6,7 +6,7 @@ const EleventyFetch = require('@11ty/eleventy-fetch');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const feather = require('feather-icons');
 const { JSDOM } = require('jsdom');
-
+const MarkdownItCodeEnhancements = require('./lib/markdown-it-code-enhancements');
 const customMarkdownIt = markdownIt({
 	html: true,
 	breaks: false,
@@ -20,9 +20,10 @@ customMarkdownIt.use(markdownItAnchor, {
  * @see https://github.com/antfu/markdown-it-shiki#dark-mode
  */
 customMarkdownIt.use(Shiki, {
-	theme: 'github-dark-dimmed',
+	theme: 'github-dark',
 	highlightLines: true
 });
+customMarkdownIt.use(MarkdownItCodeEnhancements);
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('sortByOrder', sortByOrder);
