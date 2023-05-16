@@ -15,7 +15,8 @@ a {
 }
 
 ::selection {
-  background-color: var(--swup-green);
+  background-color: var(--swup-red);
+  color: white;
 }
 
 :focus-visible {
