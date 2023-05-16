@@ -99,11 +99,6 @@
 .page_body h1:first-of-type {
 	font-size: var(--font-size-fluid-3);
 	margin-block-start: -0.1em;
-	pointer-events: none;
-
-	a::after {
-		display: none;
-	}
 }
 
 /*
