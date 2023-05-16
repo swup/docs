@@ -26,7 +26,7 @@ button.search_toggle svg {
 .search-modal_backdrop {
 	position: absolute;
 	inset: 0;
-	background: rgb(0 0 0 / 0.6);
+	background: rgb(0 0 0 / 0.8);
 	z-index: -1;
 	cursor: no-drop;
 }
@@ -35,16 +35,78 @@ button.search_toggle svg {
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
-	padding: var(--size-fluid-3);
+	padding: var(--gap-x2);
 	overflow: auto;
-	pointer-events: none;
+	// pointer-events: none;
 }
 .search-modal_body {
 	border-radius: var(--radius-2);
-	box-shadow: var(--shadow-2);
-	padding: var(--size-fluid-3);
+	box-shadow: var(--shadow-1);
 	background: white;
 	width: 100%;
 	max-width: 600px;
 	pointer-events: all;
+	overflow: hidden;
+}
+
+/*
+* Search UI
+*/
+.search_ui mark {
+	font-weight: 800;
+	background: none;
+	color: inherit;
+}
+.search_ui_form {
+	display: flex;
+	align-items: center;
+	padding: 1rem;
+}
+
+.search_ui_input {
+	display: block;
+	width: 100%;
+	appearance: none;
+	border: none;
+	margin-left: 0.5rem;
+	&:focus {
+		outline: 0;
+	}
+}
+
+.search_ui_no-results {
+	border-top: 1px solid var(--color-transparent-1);
+	padding-inline: 1rem;
+	padding-block: 0.7rem 0.8rem;
+	margin: 0;
+}
+
+.search_ui_results {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	user-select: none;
+}
+.search_ui_result_link {
+	border-top: 1px solid var(--color-transparent-1);
+	display: block;
+	padding-inline: 1rem;
+	padding-block: 1rem 1.3rem;
+	@include mixins.hover {
+		background: var(--color-transparent-1);
+	}
+	&:focus {
+		outline: 0;
+		background: var(--swup-red) !important;
+		color: white !important;
+	}
+}
+.search_ui_result_title {
+	margin-block: 0;
+	font-weight: 800;
+	font-size: var(--font-size-fluid-1);
+}
+.search_ui_result_excerpt {
+	margin-block: 0;
+	font-size: 0.8rem;
 }

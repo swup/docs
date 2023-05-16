@@ -22,23 +22,46 @@
     >
         <!-- Backdrop -->
         <div
+          class="search-modal_backdrop"
           x-show="isOpen"
           x-on:click="close"
           x-transition.opacity
-          class="search-modal_backdrop">
+        >
         </div>
 
         <!-- Panel -->
         <div
-            x-show="isOpen" x-transition
-            class="search-modal_panel"
+          class="search-modal_panel"
+          x-show="isOpen" x-transition
         >
             <div
-                x-trap.noscroll.inert="isOpen"
-                class="search-modal_body"
+              class="search-modal_body"
+              x-trap.noscroll.inert="isOpen"
             >
-                <div id="search" x-on:click="onSearchClick"></div>
-                <script src="/_pagefind/pagefind-ui.js" async onload="new PagefindUI({ element: '#search', showImages: false });"></script>
+                <div x-data="SearchUI" class="search_ui">
+                  <form class="search_ui_form">
+                    {% feather "search" %}
+                    <input class="search_ui_input" type="text" x-model="term"></input>
+                  </form>
+
+                  <template x-if="term.length > 1 && !isSearching && !results.length">
+                    <p class="search_ui_no-results">No results found</p>
+                  </template>
+
+                  <template x-if="results.length">
+                    <ul class="search_ui_results">
+                    <template x-for="result in results" :key="result.url">
+                      <li class="search_ui_result">
+                        <a class="search_ui_result_link" :href="result.url">
+                          <h3 class="search_ui_result_title" x-text="result.meta.title"></h3>
+                          <p class="search_ui_result_excerpt" x-html="result.excerpt"></p>
+                        </a>
+                      </li>
+                    </template>
+                    </ul>
+                  </template>
+                </div>
+
             </div>
         </div>
     </div>

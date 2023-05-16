@@ -10,11 +10,13 @@ import Page from './alpine/Page/Page.js';
 import ColorThemeSwitcher from './alpine/ColorThemeSwitcher/ColorThemeSwitcher.js';
 import SwupThemeSwitcher from './alpine/SwupThemeSwitcher/SwupThemeSwitcher.js';
 import MobileNav from './alpine/MobileNav/MobileNav.js';
+import SearchUI from './alpine/SearchUI/SearchUI.js';
 
 export default function () {
 	window.Alpine = Alpine;
 	Alpine.data('Intro', Intro);
 	Alpine.data('Search', Search);
+	Alpine.data('SearchUI', SearchUI);
 	Alpine.data('Page', Page);
 	Alpine.data('ColorThemeSwitcher', ColorThemeSwitcher);
 	Alpine.data('SwupThemeSwitcher', SwupThemeSwitcher);
