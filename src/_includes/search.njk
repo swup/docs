@@ -17,6 +17,8 @@
         class="search-modal"
         x-show="isOpen"
         x-on:keydown.escape.prevent.stop="close"
+        x-on:swup-transition-start.window="close"
+        x-on:swup-same-page.window="close"
         role="dialog"
         aria-modal="true"
     >
@@ -24,7 +26,6 @@
         <div
           class="search-modal_backdrop"
           x-show="isOpen"
-          x-on:click="close"
           x-transition.opacity
         >
         </div>
@@ -32,14 +33,20 @@
         <!-- Panel -->
         <div
           class="search-modal_panel"
-          x-show="isOpen" x-transition
+          x-show="isOpen"
+          x-transition
+          x-on:click="close"
         >
             <div
               class="search-modal_body"
               x-trap.noscroll.inert="isOpen"
             >
-                <div x-data="SearchUI" class="search_ui">
-                  <form class="search_ui_form">
+                <div
+                  class="search_ui"
+                  x-data="SearchUI"
+                  x-on:search-opened.window="reset"
+                >
+                  <form class="search_ui_form" x-on:click.stop>
                     {% feather "search" %}
                     <input class="search_ui_input" type="text" x-model="term"></input>
                   </form>
@@ -48,8 +55,7 @@
                     <p class="search_ui_no-results">No results found</p>
                   </template>
 
-                  <template x-if="results.length">
-                    <ul class="search_ui_results">
+                  <ul class="search_ui_results" x-show="results.length">
                     <template x-for="result in results" :key="result.url">
                       <li class="search_ui_result">
                         <a class="search_ui_result_link" :href="result.url">
@@ -58,8 +64,8 @@
                         </a>
                       </li>
                     </template>
-                    </ul>
-                  </template>
+                  </ul>
+
                 </div>
 
             </div>

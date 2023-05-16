@@ -7,12 +7,12 @@ export default () => {
 		results: [],
 		isSearching: false,
 		init() {
-			this.$watch('isOpen', (value) => {!value && this.clear()});
 			this.$watch('term', this.search.bind(this));
 		},
-		clear() {
+		reset() {
 			this.results = [];
 			this.isSearching = false;
+			this.term = '';
 		},
 		async search(term) {
 			if (term.trim().length < 2) {
@@ -23,7 +23,8 @@ export default () => {
 			this.isSearching = true;
 			const pagefind = await import(/* webpackIgnore: true */ '/_pagefind/pagefind.js');
 			const search = await pagefind.search(term);
-			this.results = await Promise.all(search.results.slice(0, postsPerPage).map(r => r.data()));
+			const results = await Promise.all(search.results.slice(0, postsPerPage).map(r => r.data()));
+			this.results = results;
 			this.isSearching = false;
 		}
 	};

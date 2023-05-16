@@ -28,7 +28,6 @@ button.search_toggle svg {
 	inset: 0;
 	background: rgb(0 0 0 / 0.8);
 	z-index: -1;
-	cursor: no-drop;
 }
 .search-modal_panel {
 	height: 100%;
@@ -37,6 +36,7 @@ button.search_toggle svg {
 	align-items: flex-start;
 	padding: var(--gap-x2);
 	overflow: auto;
+	cursor: no-drop;
 	// pointer-events: none;
 }
 .search-modal_body {
@@ -47,6 +47,7 @@ button.search_toggle svg {
 	max-width: 600px;
 	pointer-events: all;
 	overflow: hidden;
+	cursor: auto;
 }
 
 /*

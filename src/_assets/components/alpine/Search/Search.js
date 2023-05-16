@@ -1,6 +1,6 @@
 export default () => {
 	return {
-		isOpen: true,
+		isOpen: false,
 		metaKey: navigator.platform.indexOf('Mac') === 0 ? '⌘' : 'Ctrl+',
 		onKeyDown(e) {
 			if (e.key === '/') return this.open();
@@ -10,6 +10,7 @@ export default () => {
 		},
 		open() {
 			this.isOpen = true;
+			this.$dispatch('search-opened');
 		},
 		close() {
 			this.isOpen = false;

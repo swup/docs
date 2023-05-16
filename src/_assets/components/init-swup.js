@@ -64,7 +64,14 @@ export default function () {
 	swup.on('pageView', onSwupPageView);
 	onSwupPageView();
 
+	swup.on('samePage', () => dispatchSwupEvent('same-page'));
+	swup.on('transitionStart', () => dispatchSwupEvent('transition-start'));
+
 	swup.on('clickLink', onSwupClickLink);
+}
+
+function dispatchSwupEvent(eventName) {
+	window.dispatchEvent(new Event(`swup-${eventName}`));
 }
 
 function onSwupPageView() {
