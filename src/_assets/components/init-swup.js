@@ -12,6 +12,8 @@ import SwupSlideTheme from '@swup/slide-theme';
 import SwupFadeTheme from '@swup/fade-theme';
 import SwupOverlayTheme from '@swup/overlay-theme';
 
+import { isTouch } from '~/utils';
+
 const themes = {
 	FadeTheme: SwupFadeTheme,
 	SlideTheme: SwupSlideTheme,
@@ -79,10 +81,6 @@ function checkTheme() {
 	if (document.querySelector('input[name="theme"]')) {
 		document.querySelector(`input[name="theme"][value="${currentTheme}"]`).checked = true;
 	}
-}
-
-function isTouch() {
-	return !window.matchMedia('(hover: hover)').matches;
 }
 
 function adjustActiveMenuItem(path) {

@@ -1,4 +1,5 @@
 import tippy from 'tippy.js';
+import { isTouch } from '~/utils';
 
 export default () => {
 
@@ -12,11 +13,13 @@ export default () => {
 				const copyButton = block.querySelector('.code-block_copy');
 				const copyText = block.querySelector('.shiki > code').textContent;
 
-				tippy(copyButton, {
-					animation: 'none',
-					placement: 'bottom',
-					content: 'Copy'
-				});
+				if (!isTouch()) {
+					tippy(copyButton, {
+						animation: 'none',
+						placement: 'bottom',
+						content: 'Copy'
+					});
+				}
 
 				const copiedTip = tippy(copyButton, {
 					animation: 'none',
