@@ -9,6 +9,7 @@
       // Second, fall back to the media query
       return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
+    document.documentElement.classList.remove('light', 'dark');
     document.documentElement.classList.add(getColorSchemePreference());
   </script>
 

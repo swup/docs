@@ -3,12 +3,6 @@
 	--swup-red: hsl(354 99% 68%);
 	--swup-green: hsl(172 65% 62%);
 
-	--color: rgb(0 0 0);
-	--background: rgb(255 255 255);
-	--color-transparent-1: rgb(0 0 0 / 0.1);
-	--color-transparent-2: rgb(0 0 0 / 0.2);
-	--color-transparent-3: rgb(0 0 0 / 0.5);
-
 	--font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco,
 		Droid Sans Mono, Source Code Pro, monospace;
 
@@ -54,11 +48,23 @@
 		0 12px 15px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
 }
 
+.light {
+	--color: rgb(0 0 0);
+	--background: rgb(255 255 255);
+	--color-transparent-1: rgb(0 0 0 / 0.1);
+	--color-transparent-2: rgb(0 0 0 / 0.2);
+	--color-transparent-3: rgb(0 0 0 / 0.5);
+}
+
 .dark {
-	// --swup-blue: hsl(239 60% 60%);
 	--color: rgb(230 230 230);
 	--background: hsl(239 50% 5%);
 	--color-transparent-1: rgb(255 255 255 / 0.15);
 	--color-transparent-2: rgb(255 255 255 / 0.2);
 	--color-transparent-3: rgb(255 255 255 / 0.5);
+}
+
+.light, .dark {
+	color: var(--color);
+	background: var(--background);
 }
