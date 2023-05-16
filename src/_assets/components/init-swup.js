@@ -67,7 +67,6 @@ export default function () {
 
 function onSwupPageView() {
 	checkTheme();
-	initHeadlineLinks();
 	prepareExternalLinks();
 	adjustActiveMenuItem(window.location.pathname);
 }
@@ -80,14 +79,6 @@ function checkTheme() {
 	if (document.querySelector('input[name="theme"]')) {
 		document.querySelector(`input[name="theme"][value="${currentTheme}"]`).checked = true;
 	}
-}
-
-function initHeadlineLinks() {
-	document.querySelectorAll('.page_body .header-anchor').forEach((anchor) => {
-		anchor.addEventListener('click', function (event) {
-			navigator.clipboard.writeText(anchor.href);
-		});
-	});
 }
 
 function isTouch() {

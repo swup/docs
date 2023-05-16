@@ -154,6 +154,22 @@
 }
 
 /*
+* Tippy custom styles
+*/
+.tippy-box {
+	font-size: 0.8rem;
+	font-family: var(--font-mono);
+	color: rgb(0 0 0 / 0.8);
+	background: var(--swup-green);
+}
+.tippy-content {
+	padding: 0.3em 0.5em;
+}
+.tippy-arrow {
+	color: var(--swup-green);
+}
+
+/*
 * Page Navigation
 */
 .page-nav {

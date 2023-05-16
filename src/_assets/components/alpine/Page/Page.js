@@ -1,12 +1,11 @@
 import tippy from 'tippy.js';
-import 'tippy.js/dist/tippy.css';
-import 'tippy.js/themes/light.css';
 
 export default () => {
 
 	return {
 		init() {
-			this.initCodeBlocks()
+			this.initHeadlineLinks();
+			this.initCodeBlocks();
 		},
 		initCodeBlocks() {
 			this.$root.querySelectorAll('.code-block').forEach(block => {
@@ -14,18 +13,12 @@ export default () => {
 				const copyText = block.querySelector('.shiki > code').textContent;
 
 				tippy(copyButton, {
-					theme: 'light',
 					animation: 'none',
 					placement: 'bottom',
-					content: (reference) => {
-						const title = reference.getAttribute('title')
-						reference.removeAttribute('title');
-						return title;
-					}
+					content: 'Copy'
 				});
 
 				const copiedTip = tippy(copyButton, {
-					theme: 'light',
 					animation: 'none',
 					placement: 'bottom',
 					trigger: 'click',
@@ -37,6 +30,22 @@ export default () => {
 
 				copyButton.addEventListener('click', e => navigator.clipboard.writeText(copyText))
 			})
+		},
+		initHeadlineLinks() {
+			document.querySelectorAll('.page_body .header-anchor').forEach((anchor) => {
+				const copiedTip = tippy(anchor, {
+					placement: 'right',
+					trigger: 'click',
+					content: 'Copied URL',
+					offset: [0, 15],
+					onShow() {
+						setTimeout(copiedTip.hide, 2000)
+					}
+				});
+				anchor.addEventListener('click', function (event) {
+					navigator.clipboard.writeText(anchor.href);
+				});
+			});
 		}
 	};
 };

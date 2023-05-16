@@ -8,6 +8,13 @@
 @import 'modern-normalize/modern-normalize';
 
 /*
+* Tippy styles
+* @see https://atomiks.github.io/tippyjs/v6/themes/
+*/
+@import 'tippy.js/dist/tippy.css';
+@import 'tippy.js/themes/light.css';
+
+/*
 * Finally, our actual styles :)
 */
 @import './inc/props';
