@@ -1,6 +1,4 @@
-
 export default () => {
-
 	return {
 		navHTML: '',
 		isOpen: false,
@@ -15,6 +13,6 @@ export default () => {
 		},
 		close() {
 			this.isOpen = false;
-		},
-	}
-}
+		}
+	};
+};

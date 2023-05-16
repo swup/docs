@@ -1,6 +1,4 @@
-
 export default () => {
-
 	return {
 		isOpen: false,
 		metaKey: navigator.platform.indexOf('Mac') === 0 ? '⌘' : 'Ctrl+',
@@ -19,5 +17,5 @@ export default () => {
 		onSearchClick(e) {
 			if (e.target.matches('.pagefind-ui__result-link')) this.close();
 		}
-	}
-}
+	};
+};

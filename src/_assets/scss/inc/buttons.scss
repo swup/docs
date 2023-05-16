@@ -1,44 +1,43 @@
 button {
-  appearance: none;
-  cursor: pointer;
-  background: none;
-  border: none;
-  color: inherit;
-  * {
-    pointer-events: none;
-  }
+	appearance: none;
+	cursor: pointer;
+	background: none;
+	border: none;
+	color: inherit;
+	* {
+		pointer-events: none;
+	}
 }
 
 .buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: var(--gap);
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: var(--gap);
 }
 
 .button {
-  position: relative;
-  display: block;
-  text-decoration: none;
-  border: var(--border) var(--color);
-  border-radius: var(--radius-1);
-  font-size: var(--font-size-fluid-1);
-  color: var(--color);
-  font-weight: 500;
-  padding: 0.3em 1.2em 0.35em;
-  transition: all 150ms;
+	position: relative;
+	display: block;
+	text-decoration: none;
+	border: var(--border) var(--color);
+	border-radius: var(--radius-1);
+	font-size: var(--font-size-fluid-1);
+	color: var(--color);
+	font-weight: 500;
+	padding: 0.3em 1.2em 0.35em;
+	transition: all 150ms;
 
-  &.button--filled {
-    background-color: var(--color);
-    color: var(--background);
-  }
+	&.button--filled {
+		background-color: var(--color);
+		color: var(--background);
+	}
 
-  @include mixins.hover {
-    background-color: var(--color);
-    color: var(--background);
-    transform: translateY(-3%);
-    box-shadow: var(--shadow-1);
-  }
-
+	@include mixins.hover {
+		background-color: var(--color);
+		color: var(--background);
+		transform: translateY(-3%);
+		box-shadow: var(--shadow-1);
+	}
 }

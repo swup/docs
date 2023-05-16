@@ -1,18 +1,18 @@
 table {
-  display: block;
+	display: block;
 	width: 100%;
 	max-width: 100%;
 	margin-block: var(--size-3);
 	overflow-x: auto;
 	border-collapse: separate;
-  border-spacing: 0;
+	border-spacing: 0;
 	border: 1px solid var(--gray-2);
-  border-radius: var(--radius-2);
-  font-size: var(--font-size-0);
+	border-radius: var(--radius-2);
+	font-size: var(--font-size-0);
 
 	@media (--sm-n-above) {
-    display: table;
-    font-size: var(--font-size-1);
+		display: table;
+		font-size: var(--font-size-1);
 	}
 }
 
@@ -29,23 +29,22 @@ td {
 	}
 }
 tr:last-child td {
-  border-bottom: 0;
+	border-bottom: 0;
 }
-
 
 tr:first-child th:first-child,
 tr:first-child td:first-child {
-  border-top-left-radius: var(--radius-2);
+	border-top-left-radius: var(--radius-2);
 }
 tr:first-child th:last-child,
 tr:first-child td:last-child {
-  border-top-right-radius: var(--radius-2);
+	border-top-right-radius: var(--radius-2);
 }
 tr:last-child td:first-child {
-  border-bottom-left-radius: var(--radius-2);
+	border-bottom-left-radius: var(--radius-2);
 }
 tr:last-child td:last-child {
-  border-bottom-right-radius: var(--radius-2);
+	border-bottom-right-radius: var(--radius-2);
 }
 
 thead {

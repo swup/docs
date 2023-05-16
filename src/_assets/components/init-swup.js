@@ -19,7 +19,7 @@ const themes = {
 };
 let currentTheme = 'SlideTheme';
 
-export default function() {
+export default function () {
 	var swup = new Swup({
 		containers: ['#swup', '#breadcrumb'],
 		plugins: [
@@ -32,8 +32,11 @@ export default function() {
 					samePage: true
 				},
 				offset: () => {
-					const navPaddingTop = parseInt(getComputedStyle(document.querySelector('.nav .nav_inner')).paddingTop, 10);
-					return document.querySelector('.header').offsetHeight + navPaddingTop
+					const navPaddingTop = parseInt(
+						getComputedStyle(document.querySelector('.nav .nav_inner')).paddingTop,
+						10
+					);
+					return document.querySelector('.header').offsetHeight + navPaddingTop;
 				}
 			}),
 			new SwupSlideTheme(),
@@ -54,7 +57,6 @@ export default function() {
 		swup.use(new themes[event.target.value]());
 		currentTheme = event.target.value;
 		swup.cache.empty();
-
 	});
 
 	swup.on('pageView', onSwupPageView);
@@ -81,7 +83,7 @@ function checkTheme() {
 }
 
 function initHeadlineLinks() {
-	document.querySelectorAll('.page_body .header-anchor').forEach(anchor => {
+	document.querySelectorAll('.page_body .header-anchor').forEach((anchor) => {
 		anchor.addEventListener('click', function (event) {
 			navigator.clipboard.writeText(anchor.href);
 		});
@@ -93,9 +95,8 @@ function isTouch() {
 }
 
 function adjustActiveMenuItem(path) {
-
 	const navs = document.querySelectorAll('.nav .nav_inner');
-	navs.forEach(wrap => {
+	navs.forEach((wrap) => {
 		const activeLink = wrap.querySelector(`.nav a[href="${path}"]`);
 		if (!activeLink) return;
 
@@ -104,22 +105,20 @@ function adjustActiveMenuItem(path) {
 		const top = rect.top + rect.height / 2 + wrap.scrollTop - wrapRect.top;
 		const indicator = document.querySelector('.nav_indicator');
 		indicator.style.setProperty('--offset-y', `${top}px`);
-	})
+	});
 
-	document.querySelectorAll('.mobile-nav a').forEach(a => {
+	document.querySelectorAll('.mobile-nav a').forEach((a) => {
 		if (a.origin !== window.location.origin) return;
 		a.classList.toggle('is-active', a.pathname === window.location.pathname);
-	})
+	});
 }
 
 function prepareExternalLinks() {
 	// Don't do anything on touch devices
 	if (isTouch()) return;
 	// Open external links in a new tab for very specific contexts, only
-	document
-		.querySelectorAll('.nav_list a[href], .main-content ul a[href]')
-		.forEach((el) => {
-			if (el.origin === window.location.origin) return;
-			el.target = '_blank';
-		});
+	document.querySelectorAll('.nav_list a[href], .main-content ul a[href]').forEach((el) => {
+		if (el.origin === window.location.origin) return;
+		el.target = '_blank';
+	});
 }

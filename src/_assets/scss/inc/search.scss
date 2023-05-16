@@ -1,50 +1,50 @@
 button.search_toggle {
-  @include bp(m) {
-    padding-inline: 0.7em;
-  }
+	@include bp(m) {
+		padding-inline: 0.7em;
+	}
 }
 button.search_toggle svg {
-  position: relative;
-  left: 0;
-  top: 0;
-  transform: none;
+	position: relative;
+	left: 0;
+	top: 0;
+	transform: none;
 }
 .search_toggle_label {
-  margin-inline: 0.5em 3em;
+	margin-inline: 0.5em 3em;
 }
 .search_toggle_keys {
-  font-size: 0.7em;
-  opacity: 0.4;
-  margin-right: 0.5em;
+	font-size: 0.7em;
+	opacity: 0.4;
+	margin-right: 0.5em;
 }
 
 .search-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 100;
+	position: fixed;
+	inset: 0;
+	z-index: 100;
 }
 .search-modal_backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgb(0 0 0 / 0.6);
-  z-index: -1;
-  cursor: no-drop;
+	position: absolute;
+	inset: 0;
+	background: rgb(0 0 0 / 0.6);
+	z-index: -1;
+	cursor: no-drop;
 }
 .search-modal_panel {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: var(--size-fluid-3);
-  overflow: auto;
-  pointer-events: none;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding: var(--size-fluid-3);
+	overflow: auto;
+	pointer-events: none;
 }
 .search-modal_body {
-  border-radius: var(--radius-2);
-  box-shadow: var(--shadow-2);
-  padding: var(--size-fluid-3);
-  background: white;
-  width: 100%;
-  max-width: 600px;
-  pointer-events: all;
+	border-radius: var(--radius-2);
+	box-shadow: var(--shadow-2);
+	padding: var(--size-fluid-3);
+	background: white;
+	width: 100%;
+	max-width: 600px;
+	pointer-events: all;
 }

@@ -1,96 +1,96 @@
 .header {
-  --button-size: clamp(2rem, 5vw, 2.5rem);
-  --icon-size: calc(var(--button-size) * 0.5);
+	--button-size: clamp(2rem, 5vw, 2.5rem);
+	--icon-size: calc(var(--button-size) * 0.5);
 
-  display: flex;
-  padding-inline: var(--gap);
-  height: var(--header-height);
-  gap: 1rem;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  transition: opacity 400ms 400ms;
-  z-index: 4;
-  pointer-events: none;
+	display: flex;
+	padding-inline: var(--gap);
+	height: var(--header-height);
+	gap: 1rem;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	transition: opacity 400ms 400ms;
+	z-index: 4;
+	pointer-events: none;
 
-  @include bp(1600, max) {
-    background: var(--background);
-    border-bottom: 1px solid var(--color-transparent-1);
-  }
+	@include bp(1600, max) {
+		background: var(--background);
+		border-bottom: 1px solid var(--color-transparent-1);
+	}
 
-  @at-root body.front-page & {
-    opacity: 0;
-    pointer-events: 0;
-    transition: none;
-    position: absolute;
-  }
+	@at-root body.front-page & {
+		opacity: 0;
+		pointer-events: 0;
+		transition: none;
+		position: absolute;
+	}
 }
 .header a,
 .header button {
-  pointer-events: all;
+	pointer-events: all;
 }
 
 /*
 * Site Title
 */
 .site-title {
-  display: flex;
-  align-items: center;
-  margin-inline-end: auto;
-  font-size: 1.1em;
+	display: flex;
+	align-items: center;
+	margin-inline-end: auto;
+	font-size: 1.1em;
 }
 .site-title_image {
-  display: block;
-  width: var(--button-size);
-  height: var(--button-size);
-  position: relative;
-  top: 0.1em;
-  margin-inline-end: 0.5em;
+	display: block;
+	width: var(--button-size);
+	height: var(--button-size);
+	position: relative;
+	top: 0.1em;
+	margin-inline-end: 0.5em;
 }
 .site-title_swup {
-  font-weight: bold;
+	font-weight: bold;
 }
 .site-title_breadcrumb {
-  display: flex;
-  align-items: center;
-  color: var(--color-transparent-3);
-  position: relative;
-  transition: opacity .3s, transform .4s;
-  @at-root .is-animating & {
-    opacity: 0;
-  }
-  svg {
-    width: 0.9em;
-    height: 0.9em;
-    position: relative;
-    top: 0.05em;
-  }
+	display: flex;
+	align-items: center;
+	color: var(--color-transparent-3);
+	position: relative;
+	transition: opacity 0.3s, transform 0.4s;
+	@at-root .is-animating & {
+		opacity: 0;
+	}
+	svg {
+		width: 0.9em;
+		height: 0.9em;
+		position: relative;
+		top: 0.05em;
+	}
 }
 
 /*
 * Header Buttons
 */
 .header_buttons {
-  display: flex;
-  gap: 0.5rem;
+	display: flex;
+	gap: 0.5rem;
 }
 .header_button {
-  height: 2.5rem;
-  display: block;
-  border-radius: var(--radius-round);
-  height: var(--button-size);
-  min-width: var(--button-size);
-  background: var(--color-transparent-1);
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @include mixins.hover {
-    background: var(--color-transparent-2);
-  }
+	height: 2.5rem;
+	display: block;
+	border-radius: var(--radius-round);
+	height: var(--button-size);
+	min-width: var(--button-size);
+	background: var(--color-transparent-1);
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@include mixins.hover {
+		background: var(--color-transparent-2);
+	}
 }
 .header_buttons svg {
-  display: block;
-  width: var(--icon-size);
-  height: var(--icon-size);
+	display: block;
+	width: var(--icon-size);
+	height: var(--icon-size);
 }
