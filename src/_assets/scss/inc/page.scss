@@ -7,12 +7,6 @@
 .page main {
 	position: relative;
 }
-.page .repo-link {
-	position: absolute;
-	right: 0;
-	top: 0;
-	margin-top: 0.2em;
-}
 
 .text {
 	a {
@@ -108,7 +102,15 @@
 .page_body h1:first-of-type {
 	font-size: var(--font-size-fluid-3);
 	margin-block-start: -0.1em;
-	margin-right: 100px;
+}
+.repo-link + .page_body h1:first-of-type {
+	padding-right: calc(var(--font-size-fluid-2) * 3);
+}
+.repo-link {
+	position: absolute;
+	right: 0;
+	top: 0;
+	margin-top: 0.2em;
 }
 
 /*
