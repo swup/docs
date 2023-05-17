@@ -12,14 +12,16 @@ button {
 .buttons {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
 	align-items: center;
 	gap: var(--gap);
+}
+.buttons.is-centered {
+	justify-content: center;
 }
 
 .button {
 	position: relative;
-	display: block;
+	display: inline-block;
 	text-decoration: none;
 	border: var(--border) var(--color);
 	border-radius: var(--radius-1);
@@ -38,6 +40,5 @@ button {
 	@include mixins.hover {
 		background-color: var(--color);
 		color: var(--background);
-		box-shadow: var(--shadow-1);
 	}
 }

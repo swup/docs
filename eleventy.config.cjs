@@ -12,12 +12,17 @@ const customMarkdownIt = markdownIt({
 	breaks: false,
 	linkify: true
 });
+/**
+ * Anchors for headings lower then H1 (H2, H3, ...)
+ * @see https://github.com/valeriangalliat/markdown-it-anchor
+ */
 customMarkdownIt.use(markdownItAnchor, {
-	permalink: markdownItAnchor.permalink.headerLink({ safariReaderFix: true })
+	permalink: markdownItAnchor.permalink.headerLink({ safariReaderFix: true }),
+	level: 2
 });
 /**
- * Ready for dark mode
- * @see https://github.com/antfu/markdown-it-shiki#dark-mode
+ * Code Highligting
+ * @see https://github.com/antfu/markdown-it-shiki
  */
 customMarkdownIt.use(Shiki, {
 	theme: 'github-dark',
@@ -27,7 +32,7 @@ customMarkdownIt.use(MarkdownItCodeEnhancements);
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('sortByOrder', sortByOrder);
-	eleventyConfig.addFilter('maybeLoadRemoteReadme', maybeLoadRemoteReadme);
+	eleventyConfig.addFilter('prepareContent', prepareContent);
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addFilter('getPreviousAndNextPage', getPreviousAndNextPage);
 	eleventyConfig.addShortcode('feather', renderFeatherIcon);
@@ -62,6 +67,7 @@ module.exports = function (eleventyConfig) {
 
 /**
  * Prepare menu items for usage in the njk templates
+ *
  * @param {array} pages   An array of all pages available.
  * @returns
  */
@@ -76,29 +82,48 @@ function sortByOrder(pages) {
 }
 
 /**
- * Load remote Readme if repo_link is defined
+ * Prepare the content of a page
+ *
+ * @param {string} content
+ * @returns {string}
  */
-async function maybeLoadRemoteReadme(content) {
-	let { repo_link, title } = this.ctx;
+async function prepareContent(content) {
+
+	content = await maybeLoadRemoteReadme(content, this.ctx);
+
+	content = modifyMainTitle(content, this.ctx);
+
+	return content;
+}
+
+/**
+ * Load remote Readme if repo_link is defined
+ *
+ * @param {string} content
+ * @param {object} ctx The current context
+ * @returns {Promise<string>}
+ */
+async function maybeLoadRemoteReadme(content, ctx) {
+	const { repo_link } = ctx;
 
 	if (repo_link == null) return content;
 
 	repo_link = repo_link
 		.trim()
-		// Remove leading slash
+		// Remove possible leading slash
 		.replace(/^\//, '');
 
 	if (!repo_link) return content;
 
-	const url = `${repo_link.replace('github.com', 'raw.githubusercontent.com')}/master/readme.md`;
+	const repoURL = `${repo_link.replace(
+		'github.com',
+		'raw.githubusercontent.com'
+	)}/master/readme.md`;
 
-	let result = await EleventyFetch(url, {
+	let result = await EleventyFetch(repoURL, {
 		duration: '60s',
 		type: 'text'
 	});
-
-	// Replace the first h1 with the title from the local front matter
-	result = result.trim().replace(/^#\s.+$/im, `# ${title}`);
 
 	// Honor <!-- swup-docs-ignore-start -->Ignore me!<!-- swup-docs-ignore-end -->
 	result = result.replace(
@@ -110,13 +135,35 @@ async function maybeLoadRemoteReadme(content) {
 }
 
 /**
+ * Modifies the first H1 of a rendered page
+ *
+ * @param {string} content
+ * @param {object} ctx The current context
+ * @returns {string}
+ */
+function modifyMainTitle(content, ctx) {
+	const { repo_link, title } = ctx;
+
+	const repoLinkHTML = !repo_link
+		? ''
+		: /* html */ `
+		<div class="page_body_header_buttons">
+			<a class="repo-link button" href="${repo_link}">Repo</a>
+		</div>
+	`.trim();
+
+	const headerHTML = /* html */ `<div class="page_body_header"><h1>${title}</h1>${repoLinkHTML}</div>`;
+	return content.trim().replace(/^<h1.*?>(.+?)<\/h1>/, headerHTML);
+}
+
+/**
  * Recoursively flatten an array of objects containing children
  *
  * @see https://stackoverflow.com/a/35272973/586823
  *
  * @param {array} into
  * @param {array|null} node
- * @returns
+ * @returns {array}
  */
 function flatten(into, node) {
 	if (node == null) return into;
@@ -129,7 +176,7 @@ function flatten(into, node) {
  * Find the previous and next pages, relative to the current page
  *
  * @param {array} nodes
- * @returns
+ * @returns {object}
  */
 function getPreviousAndNextPage(nodes) {
 	const key = this.ctx.eleventyNavigation.key || this.ctx.title;
@@ -147,7 +194,7 @@ function getPreviousAndNextPage(nodes) {
  * Render a feather icon using a shortcode
  *
  * @param {string} iconName
- * @returns
+ * @returns {string}
  */
 function renderFeatherIcon(iconName) {
 	if (!iconName) {

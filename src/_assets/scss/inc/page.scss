@@ -1,6 +1,6 @@
 .page {
 	padding-inline: var(--gap);
-	margin-block: var(--gap) var(--gap-x2);
+	margin-block: var(--gap-x2);
 	width: min(80ch, 100%);
 	margin-inline: auto;
 }
@@ -9,7 +9,7 @@
 }
 
 .text {
-	a {
+	a:not(.button) {
 		text-decoration: none;
 		background-image: linear-gradient(var(--swup-green) 0%, var(--swup-green) 100%);
 		background-repeat: repeat-x;
@@ -26,7 +26,7 @@
 	}
 
 	> *:not(:first-child) {
-		margin-block: 1.5rem;
+		margin-block: 1.3em;
 	}
 
 	h1,
@@ -99,18 +99,24 @@
 	margin: 0;
 }
 
-.page_body h1:first-of-type {
+.page_body_header {
+	// @include bp(xs) {
+	// 	display: flex;
+	// 	align-items: flex-start;
+	// 	gap: 1rem;
+	// }
+}
+.page_body_header h1 {
 	font-size: var(--font-size-fluid-3);
 	margin-block-start: -0.1em;
+	flex: 1;
+	margin-bottom: 0.5rem;
+	display: inline;
 }
-.repo-link + .page_body h1:first-of-type {
-	padding-right: calc(var(--font-size-fluid-2) * 3);
-}
-.repo-link {
-	position: absolute;
-	right: 0;
-	top: 0;
-	margin-top: 0.4em;
+.page_body_header .button {
+	position: relative;
+	margin-left: 0.5em;
+	top: -0.3em;
 }
 
 /*

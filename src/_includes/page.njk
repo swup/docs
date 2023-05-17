@@ -1,11 +1,8 @@
 <div class="page" x-data="Page">
   <main>
 
-    {% if repo_link %}
-      <a href="{{ repo_link }}" class="button repo-link">Repo</a>
-    {% endif %}
     <div class="page_body text" data-pagefind-body>
-      {{ content | maybeLoadRemoteReadme | safe }}
+      {{ content | prepareContent | safe }}
     </div>
 
     {% set children = collections.all | eleventyNavigation(eleventyNavigation.key) %}
