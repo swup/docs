@@ -74,9 +74,12 @@
 		background: none;
 
 		--opacity: 0.3;
+		@media (hover) {
+			--opacity: 0;
+		}
 
 		@include mixins.hover {
-			--opacity: 1;
+			--opacity: 0.3;
 		}
 
 		&::after {
