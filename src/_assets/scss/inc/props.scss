@@ -50,6 +50,7 @@
 
 .light {
 	--color: rgb(0 0 0);
+	--color-dimmed: rgb(100 100 100);
 	--background: rgb(255 255 255);
 	--color-transparent-1: rgb(0 0 0 / 0.1);
 	--color-transparent-2: rgb(0 0 0 / 0.2);
@@ -58,6 +59,7 @@
 
 .dark {
 	--color: rgb(230 230 230);
+	--color-dimmed: rgb(130 130 130);
 	--background: hsl(239 50% 5%);
 	--color-transparent-1: rgb(255 255 255 / 0.15);
 	--color-transparent-2: rgb(255 255 255 / 0.2);
