@@ -26,7 +26,8 @@ button {
 	font-size: var(--font-size-fluid-1);
 	color: var(--color);
 	font-weight: 500;
-	padding: 0.2em 1em 0.25em;
+	padding: 0.2em 0.8em 0.25em;
+	line-height: 1.4;
 	transition: all 150ms;
 
 	&.button--filled {
