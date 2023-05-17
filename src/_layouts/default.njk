@@ -1,13 +1,2 @@
 {% extends "base.njk" %}
-{% block body %}
-  <body class="default">
-    {% include "header.njk" %}
-    <div class="container">
-      {% include "nav.njk" %}
-      <div id="swup">
-        {% include "page.njk" %}
-      </div>
-    </div>
-    {% include "scripts.njk" %}
-  </body>
-{% endblock %}
+{% block content %}{% include "page.njk" %}{% endblock %}

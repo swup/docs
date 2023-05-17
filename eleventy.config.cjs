@@ -32,6 +32,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('getPreviousAndNextPage', getPreviousAndNextPage);
 	eleventyConfig.addShortcode('feather', renderFeatherIcon);
 	eleventyConfig.addShortcode('timestamp', () => Date.now());
+	eleventyConfig.addShortcode('bodyClass', renderBodyClass);
 	eleventyConfig.addTransform('main-heading', transformMainHeading);
 
 	// Assets will be taken care of by WebPack
@@ -157,6 +158,10 @@ function renderFeatherIcon(iconName) {
 		console.warn(e);
 	}
 	return result;
+}
+
+function renderBodyClass() {
+	console.log(this);
 }
 
 function transformMainHeading(content, file) {
