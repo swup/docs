@@ -173,12 +173,10 @@ function transformMainHeading(content, file) {
 	const jsdom = new JSDOM(content);
 	const { document } = jsdom.window;
 
-	// Do something with the document
+	// Unwrap the anchor link in the first H1
 	const h1 = document.querySelector('.page_body > h1:first-of-type');
 	if (!h1) return content;
 	h1.innerHTML = h1.textContent;
-	h1.setAttribute('data-pagefind-sort', 'weight[data-weight]');
-	h1.setAttribute('data-weight', '10');
 
 	return jsdom.serialize();
 }
