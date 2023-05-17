@@ -3,7 +3,10 @@
 	--icon-size: calc(var(--button-size) * 0.5);
 
 	display: flex;
-	padding-inline: var(--gap);
+	padding-inline: var(--gap) calc(var(--gap) * 0.5);
+	@include bp(m) {
+		padding-inline: var(--gap);
+	}
 	height: var(--header-height);
 
 	gap: 1rem;
