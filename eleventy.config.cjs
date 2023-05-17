@@ -104,7 +104,7 @@ async function prepareContent(content) {
  * @returns {Promise<string>}
  */
 async function maybeLoadRemoteReadme(content, ctx) {
-	const { repo_link } = ctx;
+	let { repo_link } = ctx;
 
 	if (repo_link == null) return content;
 
@@ -148,7 +148,7 @@ function modifyMainTitle(content, ctx) {
 		? ''
 		: /* html */ `
 		<div class="page_body_header_buttons">
-			<a class="repo-link button" href="${repo_link}">Repo</a>
+			<a class="button is-external" target="_blank" href="${repo_link}">Repo</a>
 		</div>
 	`.trim();
 
