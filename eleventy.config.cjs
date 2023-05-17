@@ -78,7 +78,9 @@ function sortByOrder(pages) {
 /**
  * Load remote Readme if repo_link is defined
  */
-async function maybeLoadRemoteReadme(content, { repo_link = '', title = '' } = {}) {
+async function maybeLoadRemoteReadme(content) {
+	let { repo_link, title } = this.ctx;
+
 	if (repo_link == null) return content;
 
 	repo_link = repo_link
