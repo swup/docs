@@ -12,6 +12,8 @@ import SwupSlideTheme from '@swup/slide-theme';
 import SwupFadeTheme from '@swup/fade-theme';
 import SwupOverlayTheme from '@swup/overlay-theme';
 
+import { gsap } from 'gsap';
+
 import { isTouch } from '~/utils';
 
 const themes = {
@@ -100,7 +102,11 @@ function adjustActiveMenuItem(path) {
 		const rect = activeLink.getBoundingClientRect();
 		const top = rect.top + rect.height / 2 + wrap.scrollTop - wrapRect.top;
 		const indicator = document.querySelector('.nav_indicator');
-		indicator.style.setProperty('--offset-y', `${top}px`);
+		gsap.to(indicator, {
+			top,
+			ease: 'back.out',
+			duration: 0.3
+		})
 	});
 
 	document.querySelectorAll('.mobile-nav a').forEach((a) => {
