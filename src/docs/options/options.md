@@ -3,7 +3,8 @@ layout: default
 title: Options
 eleventyNavigation:
   key: Options
-  order: 2
+  order: 1
+  parent: API
 description: Swup has a several options that can be passed into a constructor as an object
 permalink: /options/
 ---

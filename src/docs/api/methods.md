@@ -4,7 +4,7 @@ title: Methods
 eleventyNavigation:
   key: Methods
   parent: API
-  order: 1
+  order: 3
 description: Methods on the swup instance
 permalink: /api/methods/
 ---

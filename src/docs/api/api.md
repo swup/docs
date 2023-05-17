@@ -3,7 +3,7 @@ layout: default
 title: API
 eleventyNavigation:
   key: API
-  order: 7
+  order: 2
 description: Methods and helpers available on the swup instance
 permalink: /api/
 ---
