@@ -1,9 +1,9 @@
 <div class="page" x-data="Page">
   <main>
+
     {% if repo_link %}
       <a href="{{ repo_link }}" class="button repo-link">Repo</a>
     {% endif %}
-
     <div class="page_body text" data-pagefind-body>
       {{ content | maybeLoadRemoteReadme({repo_link: repo_link, title: title}) | safe }}
     </div>

@@ -26,7 +26,7 @@ button {
 	font-size: var(--font-size-fluid-1);
 	color: var(--color);
 	font-weight: 500;
-	padding: 0.3em 1.2em 0.35em;
+	padding: 0.2em 1em 0.25em;
 	transition: all 150ms;
 
 	&.button--filled {
@@ -37,7 +37,6 @@ button {
 	@include mixins.hover {
 		background-color: var(--color);
 		color: var(--background);
-		transform: translateY(-3%);
 		box-shadow: var(--shadow-1);
 	}
 }
