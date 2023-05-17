@@ -79,11 +79,11 @@ function dispatchSwupEvent(eventName) {
 function onSwupPageView() {
 	checkTheme();
 	prepareExternalLinks();
-	adjustActiveMenuItem(window.location.pathname);
+	adjustNavIndicators(window.location.pathname);
 }
 
 function onSwupClickLink(e) {
-	adjustActiveMenuItem(e.target.pathname);
+	adjustNavIndicators(e.target.pathname);
 }
 
 function checkTheme() {
@@ -92,24 +92,41 @@ function checkTheme() {
 	}
 }
 
-function adjustActiveMenuItem(path) {
-	const navs = document.querySelectorAll('.nav .nav_inner');
-	navs.forEach((wrap) => {
-		const activeLink = wrap.querySelector(`.nav a[href="${path}"]`);
+function adjustNavIndicators(path) {
+
+	document.querySelectorAll('.nav_indicator').forEach(indicator => {
+		const wrap = indicator.closest('.nav_inner');
+		const activeLink = wrap.querySelector(`a[href="${path}"]`);
 		if (!activeLink) return;
 
 		const wrapRect = wrap.getBoundingClientRect();
 		const rect = activeLink.getBoundingClientRect();
 		const top = rect.top + rect.height / 2 + wrap.scrollTop - wrapRect.top;
-		const indicator = document.querySelector('.nav_indicator');
+
 		gsap.to(indicator, {
 			top,
 			ease: 'back.out',
 			duration: 0.3
 		})
-	});
 
-	document.querySelectorAll('.mobile-nav a').forEach((a) => {
+	})
+	// const navs = document.querySelectorAll('.nav_inner');
+	// navs.forEach((wrap) => {
+	// 	const activeLink = wrap.querySelector(`a[href="${path}"]`);
+	// 	if (!activeLink) return;
+
+	// 	const wrapRect = wrap.getBoundingClientRect();
+	// 	const rect = activeLink.getBoundingClientRect();
+	// 	const top = rect.top + rect.height / 2 + wrap.scrollTop - wrapRect.top;
+	// 	const indicator = document.querySelector('.nav_indicator');
+	// 	gsap.to(indicator, {
+	// 		top,
+	// 		ease: 'back.out',
+	// 		duration: 0.3
+	// 	})
+	// });
+
+	document.querySelectorAll('.nav a').forEach((a) => {
 		if (a.origin !== window.location.origin) return;
 		a.classList.toggle('is-active', a.pathname === window.location.pathname);
 	});

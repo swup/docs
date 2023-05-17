@@ -1,8 +1,8 @@
 <nav
   role="navigation"
   aria-label="Main navigation"
-  class="nav">
-  <div class="nav_inner">
+  class="nav nav--desktop">
+  <div class="nav_inner" x-ref="navInner">
     {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
       listClass: "nav_list",
       listItemClass: "nav_list_item",
