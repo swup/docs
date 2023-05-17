@@ -5,6 +5,7 @@
 	display: flex;
 	padding-inline: var(--gap);
 	height: var(--header-height);
+
 	gap: 1rem;
 	align-items: center;
 	position: sticky;
@@ -72,15 +73,19 @@
 */
 .header_buttons {
 	display: flex;
-	gap: 0.5rem;
+	// gap: min(0.5rem, 2%);
+	@include bp(m) {
+		gap: 0.5rem;
+	}
 }
 .header_button {
-	height: 2.5rem;
 	display: block;
 	border-radius: var(--radius-round);
 	height: var(--button-size);
 	min-width: var(--button-size);
-	background: var(--color-transparent-1);
+	@include bp(m) {
+		background: var(--color-transparent-1);
+	}
 	padding: 0;
 	display: flex;
 	justify-content: center;
