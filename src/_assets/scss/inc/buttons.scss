@@ -10,35 +10,87 @@ button {
 }
 
 .buttons {
+	margin: 0;
+	padding: 0;
+	list-style: none;
 	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: var(--gap);
-}
-.buttons.is-centered {
 	justify-content: center;
+	gap: 0.7em;
+	font-size: calc(var(--button-size) * 0.4);
+	--icon-size: calc(var(--button-size) * 0.5);
 }
-
 .button {
-	position: relative;
-	display: inline-block;
-	text-decoration: none;
-	border: var(--border) var(--color);
-	border-radius: var(--radius-1);
-	font-size: var(--font-size-fluid-1);
-	color: var(--color);
-	font-weight: 500;
-	padding: 0.2em 0.8em 0.25em;
-	line-height: 1.4;
-	transition: all 150ms;
-
-	&.button--filled {
-		background-color: var(--color);
-		color: var(--background);
-	}
-
+	font-size: 1rem;
+	display: block;
+	border-radius: var(--radius-round);
+	height: var(--button-size);
+	min-width: var(--button-size);
+	background: var(--color-transparent-0);
+	padding-inline: calc(var(--button-size) * 0.5);
+	display: flex;
+	gap: 0.35em;
+	justify-content: center;
+	align-items: center;
+	font-size: inherit;
 	@include mixins.hover {
-		background-color: var(--color);
-		color: var(--background);
+		background: var(--color-transparent-2);
 	}
 }
+.button svg {
+	display: block;
+	width: var(--icon-size);
+	height: var(--icon-size);
+	position: relative;
+	&:first-child {
+		margin-inline-start: calc(var(--button-size) * -0.2);
+	}
+	&:last-child {
+		margin-inline-end: calc(var(--button-size) * -0.2);
+	}
+}
+.button_label {
+	position: relative;
+}
+
+.button--circle {
+	padding: 0;
+	width: var(--button-size);
+	svg {
+		margin: 0 !important;
+	}
+}
+
+
+// .buttons {
+// 	display: flex;
+// 	flex-wrap: wrap;
+// 	align-items: center;
+// 	gap: var(--gap);
+// }
+// .buttons.is-centered {
+// 	justify-content: center;
+// }
+
+// .button {
+// 	position: relative;
+// 	display: inline-block;
+// 	text-decoration: none;
+// 	border: var(--border) var(--color);
+// 	border-radius: var(--radius-1);
+// 	font-size: var(--font-size-fluid-1);
+// 	color: var(--color);
+// 	font-weight: 500;
+// 	padding: 0.2em 0.8em 0.25em;
+// 	line-height: 1.4;
+// 	transition: all 150ms;
+
+// 	&.button--filled {
+// 		background-color: var(--color);
+// 		color: var(--background);
+// 	}
+
+// 	@include mixins.hover {
+// 		background-color: var(--color);
+// 		color: var(--background);
+// 	}
+// }

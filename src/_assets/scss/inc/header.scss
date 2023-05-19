@@ -1,6 +1,4 @@
 .header {
-	--button-size: clamp(2.2rem, 6vw, 2.5rem);
-	--icon-size: calc(var(--button-size) * 0.5);
 
 	display: flex;
 	padding-inline: var(--gap) calc(var(--gap) * 0.5);
@@ -53,6 +51,10 @@
 }
 .site-title_swup {
 	font-weight: bold;
+	display: none;
+	@include bp(300) {
+		display: block;
+	}
 }
 .site-title_breadcrumb {
 	display: flex;
@@ -69,36 +71,4 @@
 		position: relative;
 		top: 0.05em;
 	}
-}
-
-/*
-* Header Buttons
-*/
-.header_buttons {
-	display: flex;
-	// gap: min(0.5rem, 2%);
-	@include bp(m) {
-		gap: 0.5rem;
-	}
-}
-.header_button {
-	display: block;
-	border-radius: var(--radius-round);
-	height: var(--button-size);
-	min-width: var(--button-size);
-	@include bp(m) {
-		background: var(--color-transparent-1);
-	}
-	padding: 0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	@include mixins.hover {
-		background: var(--color-transparent-2);
-	}
-}
-.header_buttons svg {
-	display: block;
-	width: var(--icon-size);
-	height: var(--icon-size);
 }

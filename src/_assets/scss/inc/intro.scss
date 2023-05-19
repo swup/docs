@@ -44,8 +44,8 @@
 	transform: translateY(-5%);
 }
 
-.intro .button {
-	position: relative;
+.intro_buttons {
+	--button-size: clamp(2.2rem, 4vw, 3.5rem)
 }
 
 .intro_body > * + * {

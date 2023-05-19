@@ -1,6 +1,6 @@
 .page {
 	padding-inline: var(--gap);
-	margin-block: var(--gap-x2);
+	margin-block: var(--gap-x2) calc(var(--gap-x2) * 2);
 	width: min(80ch, 100%);
 	margin-inline: auto;
 }
@@ -117,14 +117,10 @@
 	max-width: 70%;
 	margin-block-start: -0.2em;
 }
-.page_body_header_buttons {
+.page_body_header .buttons {
 	position: relative;
 	display: block;
 	margin-inline-start: auto;
-}
-.page_body_header .button {
-	font-size: 0.35em;
-	display: block;
 }
 
 /*
@@ -206,79 +202,16 @@
 }
 
 /*
-* Page Navigation
+* Page Nav
 */
-.page-nav {
-	border: 1px solid var(--color-transparent-1);
-	border-radius: var(--radius-1);
-}
-
-.page-nav_items {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	padding: 0.5em;
-	display: grid;
-	grid-template-columns: 50% 50%;
-}
-
-.page-nav_item {
-	margin: 0;
-	padding-inline: 0.7em;
-	--arrow-direction: -1;
-
-	&.--next {
-		--arrow-direction: 1;
-		text-align: right;
-		grid-column: 2;
-	}
-}
-
-.page-nav_item + .page-nav_item {
-	border-left: 1px solid var(--color-transparent-1);
-}
-
-.page-nav_link {
-	white-space: nowrap;
-	width: 100%;
-	margin: 0;
-	padding-block: 0.5em;
-	font-weight: 500;
-	line-height: 1;
-	display: grid;
-	gap: 0.3rem;
-	grid-template-columns: 1rem 1fr;
-
-	@at-root .--next & {
-		grid-template-columns: 1fr 1rem;
-	}
-
-	span {
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-
-	.feather {
-		transition: transform 150ms;
-	}
-}
-
-@include mixins.hoverSupport {
-	.page-nav_link:hover .feather {
-		transform: translateX(calc(var(--arrow-direction) * 0.1em));
-	}
-}
-
-.page-nav_item_label {
-	display: block;
-	text-transform: uppercase;
-	font-size: 0.65em;
+.page-nav_buttons {
+	justify-content: space-between;
 }
 
 /*
 * Scoped style for feather icons
 */
-.page .feather {
+.page *:not(.button) > .feather {
 	position: relative;
 	display: inline-block;
 	width: 1.2em;

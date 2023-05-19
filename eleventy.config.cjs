@@ -147,8 +147,8 @@ function modifyMainTitle(content, ctx) {
 	const repoLinkHTML = !repo_link
 		? ''
 		: /* html */ `
-		<div class="page_body_header_buttons">
-			<a class="button is-external" target="_blank" href="${repo_link}">Repo</a>
+		<div class="buttons">
+			<a class="button is-external" target="_blank" href="${repo_link}"><span class="button_label">Repo</span></a>
 		</div>
 	`.trim();
 

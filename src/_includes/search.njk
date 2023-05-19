@@ -1,12 +1,22 @@
 <div class="search" x-data="Search">
+  <!-- mobile button -->
   <button
+    class="button button--circle m:hidden"
     type="button"
-    class="header_button search_toggle"
     x-on:click="open"
     x-on:keydown.window="onKeyDown">
     {% feather "search" %}
-    <span class="search_toggle_label m:max:hidden">Search</span>
-    <span class="search_toggle_keys m:max:hidden">
+  </button>
+
+  <!-- desktop button -->
+  <button
+    class="button m:max:hidden"
+    type="button"
+    x-on:click="open"
+    x-on:keydown.window="onKeyDown">
+    {% feather "search" %}
+    <span class="button_label">Search</span>
+    <span class="search_toggle_keys">
       <span x-text="metaKey"></span>K
     </span>
   </button>

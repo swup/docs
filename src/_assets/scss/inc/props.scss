@@ -46,12 +46,15 @@
 		0 2px 5px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
 		0 4px 12px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
 		0 12px 15px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+
+	--button-size: clamp(2.2rem, 4vw, 2.7rem);
 }
 
 .light {
 	--color: rgb(0 0 0);
 	--color-dimmed: rgb(100 100 100);
 	--background: rgb(255 255 255);
+	--color-transparent-0: rgb(0 0 0 / 0.07);
 	--color-transparent-1: rgb(0 0 0 / 0.1);
 	--color-transparent-2: rgb(0 0 0 / 0.2);
 	--color-transparent-3: rgb(0 0 0 / 0.5);
@@ -61,6 +64,7 @@
 	--color: rgb(230 230 230);
 	--color-dimmed: rgb(130 130 130);
 	--background: hsl(239 50% 5%);
+	--color-transparent-0: rgb(255 255 255 / 0.08);
 	--color-transparent-1: rgb(255 255 255 / 0.15);
 	--color-transparent-2: rgb(255 255 255 / 0.2);
 	--color-transparent-3: rgb(255 255 255 / 0.5);

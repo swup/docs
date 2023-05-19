@@ -15,7 +15,8 @@ button.search_toggle svg {
 .search_toggle_keys {
 	font-size: 0.7em;
 	opacity: 0.4;
-	margin-right: 0.5em;
+	margin-inline-start: var(--button-size);
+	margin-inline-end: calc(var(--button-size) * -0.1);
 }
 
 .search-modal {
