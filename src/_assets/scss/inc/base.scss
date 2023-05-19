@@ -67,9 +67,8 @@ main[tabindex='-1'] {
 */
 ul.nav_list a[href^='http'],
 ul.children a[href^='http'] {
-	--underline-color: #60ddcd;
 	padding-right: 1.2em;
-	background-image: linear-gradient(var(--underline-color) 0%, var(--underline-color) 100%), var(--external-link-icon);
+	background-image: linear-gradient(var(--link-underline-color) 0%, var(--link-underline-color) 100%), var(--external-link-icon);
 	background-repeat: no-repeat;
 	background-position: 0 100%, 100% 60%;
 	background-size: calc(100% - 1.2em) 2px, 1.2em;
@@ -78,5 +77,5 @@ ul.children a[href^='http'] {
 	}
 }
 ul.nav_list a[href^='http'] {
-	--underline-color: transparent;
+	--link-underline-color: transparent;
 }

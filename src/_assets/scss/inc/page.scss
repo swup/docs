@@ -11,7 +11,7 @@
 .text {
 	a:not([class]) {
 		text-decoration: none;
-		background-image: linear-gradient(var(--swup-green) 0%, var(--swup-green) 100%);
+		background-image: linear-gradient(var(--link-underline-color) 0%, var(--link-underline-color) 100%);
 		background-repeat: repeat-x;
 		background-position: 0 100%;
 		background-size: 1px 2px;
