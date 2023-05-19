@@ -26,7 +26,9 @@ button {
 	background: var(--color-transparent-0);
 	--button-height: 2.6em;
 	--button-max-width: calc(100vw - var(--gap-x2));
-	border: 1px solid var(--color-transparent-0);
+	@at-root .dark & {
+		border: 1px solid var(--color-transparent-0);
+	}
 	height: var(--button-height);
 	padding-inline: 1.2em;
 	max-width: var(--button-max-width);
