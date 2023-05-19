@@ -6,7 +6,7 @@
 	--font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco,
 		Droid Sans Mono, Source Code Pro, monospace;
 
-	--font-size-fluid-0: clamp(0.75rem, 2vw, 1rem);
+	--font-size-fluid-0: clamp(0.75rem, 3vw, 1.25rem);
 	--font-size-fluid-1: clamp(1rem, 3vw, 1.5rem);
 	--font-size-fluid-2: clamp(1.5rem, 3vw, 2.5rem);
 	--font-size-fluid-3: clamp(2rem, 5vw, 3.5rem);
@@ -46,8 +46,6 @@
 		0 2px 5px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
 		0 4px 12px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
 		0 12px 15px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
-
-	--button-size: clamp(2.2rem, 4vw, 2.7rem);
 }
 
 .light {

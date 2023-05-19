@@ -4,6 +4,7 @@ button {
 	background: none;
 	border: none;
 	color: inherit;
+	font: inherit;
 	* {
 		pointer-events: none;
 	}
@@ -16,81 +17,79 @@ button {
 	display: flex;
 	justify-content: center;
 	gap: 0.7em;
-	font-size: calc(var(--button-size) * 0.4);
-	--icon-size: calc(var(--button-size) * 0.5);
+	flex-wrap: wrap;
+	font-size: 1rem;
 }
 .button {
-	font-size: 1rem;
-	display: block;
+	display: inline-block;
 	border-radius: var(--radius-round);
-	height: var(--button-size);
-	min-width: var(--button-size);
 	background: var(--color-transparent-0);
-	padding-inline: calc(var(--button-size) * 0.5);
+	--button-height: 2.6em;
+	--button-max-width: calc(100vw - var(--gap-x2));
+	height: var(--button-height);
+	padding-inline: 1.2em;
+	max-width: var(--button-max-width);
 	display: flex;
-	gap: 0.35em;
-	justify-content: center;
 	align-items: center;
-	font-size: inherit;
+	justify-content: flex-start;
+	gap: 0.5em;
+	font-weight: inherit;
+	transition-property: background, color;
+	transition-duration: 180ms;
+	white-space: nowrap;
 	@include mixins.hover {
-		background: var(--color-transparent-2);
+		background: var(--color);
+		color: var(--background);
+	}
+	> * {
+		position: relative;
+		top: -0.05em;
+	}
+}
+@include bp(m, max) {
+	.header .buttons {
+		gap: 0;
+	}
+	.header .button {
+		background: none;
 	}
 }
 .button svg {
-	display: block;
-	width: var(--icon-size);
-	height: var(--icon-size);
+	width: 1.2em;
+	height: 1.2em;
 	position: relative;
+	flex: none;
+}
+.button:not(.button--circle) svg {
 	&:first-child {
-		margin-inline-start: calc(var(--button-size) * -0.2);
+		margin-inline-start: -0.3em;
 	}
 	&:last-child {
-		margin-inline-end: calc(var(--button-size) * -0.2);
+		margin-inline-end: -0.3em;
 	}
 }
 .button_label {
-	position: relative;
+	max-width: calc(var(--button-max-width, 3000px) - var(--button-height));
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .button--circle {
 	padding: 0;
-	width: var(--button-size);
-	svg {
-		margin: 0 !important;
+	width: var(--button-height);
+	height: var(--button-height);
+	justify-content: center;
+}
+
+.buttons--large {
+	font-size: var(--font-size-fluid-0);
+	.button {
+		padding-inline: calc( 1em + var(--button-height) * 0.3);
+		font-weight: 500;
 	}
 }
 
-
-// .buttons {
-// 	display: flex;
-// 	flex-wrap: wrap;
-// 	align-items: center;
-// 	gap: var(--gap);
-// }
-// .buttons.is-centered {
-// 	justify-content: center;
-// }
-
-// .button {
-// 	position: relative;
-// 	display: inline-block;
-// 	text-decoration: none;
-// 	border: var(--border) var(--color);
-// 	border-radius: var(--radius-1);
-// 	font-size: var(--font-size-fluid-1);
-// 	color: var(--color);
-// 	font-weight: 500;
-// 	padding: 0.2em 0.8em 0.25em;
-// 	line-height: 1.4;
-// 	transition: all 150ms;
-
-// 	&.button--filled {
-// 		background-color: var(--color);
-// 		color: var(--background);
-// 	}
-
-// 	@include mixins.hover {
-// 		background-color: var(--color);
-// 		color: var(--background);
-// 	}
-// }
+.button--filled {
+	background: var(--color);
+	color: var(--background);
+}

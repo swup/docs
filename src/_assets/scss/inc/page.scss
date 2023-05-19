@@ -205,7 +205,9 @@
 * Page Nav
 */
 .page-nav_buttons {
-	justify-content: space-between;
+	@include bp(xs) {
+		justify-content: space-between;
+	}
 }
 
 /*
