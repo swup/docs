@@ -113,23 +113,34 @@
 	margin-block: -0.3em 0.5em;
 	line-height: 1;
 	position: relative;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: flex-start;
+	gap: 1rem;
 }
 .page_body_header h1 {
 	font-size: 1em;
 	margin: 0;
 	position: relative;
 	z-index: 1;
-	top: -0.175em;
 }
-.page_body_header_buttons {
-	position: absolute;
-	top: 0;
-	right: 0;
-	z-index: 2;
+
+@include bp(xs) {
+	.page_body_header {
+		display: block;
+	}
+	.page_body_header_buttons {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 2;
+	}
+	.page_body_header_buttons + h1 {
+			margin-right: 4em;
+			top: -0.15em;
+	}
 }
-.page_body_header_buttons + h1 {
-	margin-right: 4em;
-}
+
 
 /*
 * Code Blocks
