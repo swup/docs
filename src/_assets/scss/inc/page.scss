@@ -104,23 +104,25 @@
 
 .page_body_header {
 	font-size: var(--font-size-fluid-3);
-	margin-bottom: 0.5rem;
-	margin-block: -0.2em 0.5em;
+	margin-block: -0.3em 0.5em;
 	line-height: 1;
-	display: flex;
-	align-items: flex-start;
+	position: relative;
 }
 .page_body_header h1 {
 	font-size: 1em;
 	margin: 0;
-	flex: 1;
-	max-width: 70%;
-	margin-block-start: -0.2em;
-}
-.page_body_header .buttons {
 	position: relative;
-	display: block;
-	margin-inline-start: auto;
+	z-index: 1;
+	top: -0.175em;
+}
+.page_body_header_buttons {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 2;
+}
+.page_body_header_buttons + h1 {
+	margin-right: 4em;
 }
 
 /*
@@ -208,6 +210,9 @@
 	@include bp(xs) {
 		justify-content: space-between;
 	}
+}
+.page-nav_item.--next:first-child {
+	margin-inline-start: auto;
 }
 
 /*
