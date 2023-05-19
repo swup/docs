@@ -49,15 +49,7 @@ button {
 		top: -0.05em;
 	}
 }
-@include bp(m, max) {
-	.header .buttons {
-		gap: 0;
-	}
-	.header .button {
-		background: none;
-		border: none;
-	}
-}
+
 .button svg {
 	width: 1.2em;
 	height: 1.2em;
@@ -76,6 +68,20 @@ button {
 	max-width: calc(var(--button-max-width, 3000px) - var(--button-height));
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+@include bp(m, max) {
+	.header .buttons {
+		gap: 0;
+	}
+	.header .button {
+		background: none;
+		border: none;
+	}
+	.header .button svg {
+		width: 1.5em;
+		height: 1.5em;
+	}
 }
 
 .button--circle {
