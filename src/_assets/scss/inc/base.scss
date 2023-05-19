@@ -61,3 +61,22 @@ main[tabindex='-1'] {
 		grid-template-columns: 250px minmax(0, 1fr) 250px;
 	}
 }
+
+/*
+* External Links
+*/
+ul.nav_list a[href^='http'],
+ul.children a[href^='http'] {
+	--underline-color: #60ddcd;
+	padding-right: 1.2em;
+	background-image: linear-gradient(var(--underline-color) 0%, var(--underline-color) 100%), var(--external-link-icon);
+	background-repeat: no-repeat;
+	background-position: 0 100%, 100% 60%;
+	background-size: calc(100% - 1.2em) 2px, 1.2em;
+	@include mixins.hover {
+		background-size: calc(100% - 1.2em) 4px, 1.2em;
+	}
+}
+ul.nav_list a[href^='http'] {
+	--underline-color: transparent;
+}

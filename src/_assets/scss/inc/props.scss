@@ -46,6 +46,10 @@
 		0 2px 5px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 4%)),
 		0 4px 12px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 5%)),
 		0 12px 15px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 7%));
+
+	--external-link-icon-light: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' %3E%3Cline x1='7' y1='17' x2='17' y2='7'%3E%3C/line%3E%3Cpolyline points='7 7 17 7 17 17'%3E%3C/polyline%3E%3C/svg%3E");
+	--external-link-icon-dark: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round' %3E%3Cline x1='7' y1='17' x2='17' y2='7'%3E%3C/line%3E%3Cpolyline points='7 7 17 7 17 17'%3E%3C/polyline%3E%3C/svg%3E");
+
 }
 
 .light {
@@ -56,6 +60,7 @@
 	--color-transparent-1: rgb(0 0 0 / 0.1);
 	--color-transparent-2: rgb(0 0 0 / 0.2);
 	--color-transparent-3: rgb(0 0 0 / 0.5);
+	--external-link-icon: var(--external-link-icon-light);
 }
 
 .dark {
@@ -66,6 +71,7 @@
 	--color-transparent-1: rgb(255 255 255 / 0.15);
 	--color-transparent-2: rgb(255 255 255 / 0.2);
 	--color-transparent-3: rgb(255 255 255 / 0.5);
+	--external-link-icon: var(--external-link-icon-dark);
 }
 
 .light, .dark {

@@ -63,7 +63,10 @@
 	padding: 0;
 }
 .nav_list > li > ul a {
-	color: var(--color-dimmed);
+	opacity: 0.6;
+	@include mixins.hover {
+		opacity: 1;
+	}
 }
 .nav_list_item {
 	margin-block: 0.2em;
