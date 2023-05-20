@@ -15,7 +15,6 @@ button {
 	padding: 0;
 	list-style: none;
 	display: flex;
-	justify-content: center;
 	gap: 0.7em;
 	flex-wrap: wrap;
 	font-size: clamp(0.8rem, 2vw, 1rem);
@@ -40,6 +39,7 @@ button {
 	transition-property: background, color;
 	transition-duration: 150ms;
 	white-space: nowrap;
+	cursor: pointer;
 	@include mixins.hover {
 		background: var(--color);
 		color: var(--background);
@@ -47,6 +47,7 @@ button {
 	> * {
 		position: relative;
 		top: -0.05em;
+		cursor: pointer;
 	}
 }
 
