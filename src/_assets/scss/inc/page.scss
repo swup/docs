@@ -224,9 +224,7 @@
 * Page Nav
 */
 .page-nav_buttons {
-	@include bp(xs) {
-		justify-content: space-between;
-	}
+	justify-content: space-between;
 }
 .page-nav_item.--next:first-child {
 	margin-inline-start: auto;

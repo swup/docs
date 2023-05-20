@@ -25,11 +25,12 @@ button {
 	background: var(--color-transparent-0);
 	--button-height: 2.6em;
 	--button-max-width: calc(100vw - var(--gap-x2));
+	--button-padding: 1.2em;
 	@at-root .dark & {
 		border: 1px solid var(--color-transparent-0);
 	}
 	height: var(--button-height);
-	padding-inline: 1.2em;
+	padding-inline: var(--button-padding);
 	max-width: var(--button-max-width);
 	display: flex;
 	align-items: center;
@@ -40,6 +41,7 @@ button {
 	transition-duration: 150ms;
 	white-space: nowrap;
 	cursor: pointer;
+	font-weight: 500;
 	@include mixins.hover {
 		background: var(--color);
 		color: var(--background);
@@ -59,10 +61,10 @@ button {
 }
 .button:not(.button--circle) svg {
 	&:first-child {
-		margin-inline-start: -0.3em;
+		margin-inline-start: calc(var(--button-padding) * -0.3);
 	}
 	&:last-child {
-		margin-inline-end: -0.3em;
+		margin-inline-end: calc(var(--button-padding) * -0.3);
 	}
 }
 .button_label {
@@ -83,6 +85,10 @@ button {
 		width: 1.3rem;
 		height: 1.3rem;
 	}
+}
+
+.button--search {
+	font-weight: normal;
 }
 
 .button--circle {
