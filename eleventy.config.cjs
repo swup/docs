@@ -1,5 +1,6 @@
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
+const tableOfContents = require('eleventy-plugin-toc');
 const { execSync } = require('child_process');
 const Shiki = require('markdown-it-shiki').default;
 const EleventyFetch = require('@11ty/eleventy-fetch');
@@ -34,11 +35,12 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('sortByOrder', sortByOrder);
 	eleventyConfig.addFilter('prepareContent', prepareContent);
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
+	eleventyConfig.addPlugin(tableOfContents, { tags: ['h2', 'h3'] });
 	eleventyConfig.addFilter('getPreviousAndNextPage', getPreviousAndNextPage);
 	eleventyConfig.addShortcode('feather', renderFeatherIcon);
 	eleventyConfig.addShortcode('timestamp', () => Date.now());
 	eleventyConfig.addShortcode('bodyClass', renderBodyClass);
-	eleventyConfig.addTransform('main-heading', transformMainHeading);
+	// eleventyConfig.addTransform('main-heading', transformMainHeading);
 
 	// Assets will be taken care of by WebPack
 	eleventyConfig.ignores.add('./src/_assets/**');
@@ -88,7 +90,6 @@ function sortByOrder(pages) {
  * @returns {string}
  */
 async function prepareContent(content) {
-
 	content = await maybeLoadRemoteReadme(content, this.ctx);
 
 	content = modifyMainTitle(content, this.ctx);

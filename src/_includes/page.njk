@@ -1,4 +1,4 @@
-<div class="page" x-data="Page">
+<article class="page" x-data="Page">
   <main>
 
     <div class="page_body text" data-pagefind-body>
@@ -28,4 +28,8 @@
 
     {% include "page-nav.njk" %}
   </footer>
-</div>
+</article>
+<aside aria-label="Article">
+  <h4>On this page</h4>
+  {{ content | toc | safe }}
+</aside>

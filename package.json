@@ -47,6 +47,7 @@
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.6.0",
     "debug": "^4.3.4",
+    "eleventy-plugin-toc": "^1.1.5",
     "esbuild-loader": "^2.18.0",
     "esbuild-plugin-browserslist": "^0.6.0",
     "feather-icons": "^4.29.0",
