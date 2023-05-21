@@ -29,7 +29,9 @@
     {% include "page-nav.njk" %}
   </footer>
 </article>
-<aside aria-label="Article">
-  <h4>On this page</h4>
+<aside class="toc" aria-label="Article">
+  {% if content | toc %}
+  <h4 class="toc_title">On this page</h4>
   {{ content | toc | safe }}
+  {% endif %}
 </aside>

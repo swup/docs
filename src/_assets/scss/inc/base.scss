@@ -52,13 +52,17 @@ main[tabindex='-1'] {
 /*
 * Container
 */
-.default .container {
-	@include bp(m) {
+@include bp(m) {
+	.default .container {
 		display: grid;
 		grid-template-columns: 250px minmax(0, 1fr);
 	}
-	@include bp(xl) {
-		grid-template-columns: 250px minmax(0, 1fr) 250px;
+}
+@include bp(xl) {
+	.default #swup {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 250px;
+		align-items: start;
 	}
 }
 
@@ -78,4 +82,42 @@ ul.children a[href^='http'] {
 }
 ul.nav_list a[href^='http'] {
 	--link-underline-color: transparent;
+}
+
+
+/*
+* TOC
+*/
+.toc {
+	padding-block: var(--gap);
+	padding-inline: 0 var(--gap);
+	position: sticky;
+	top: var(--header-height);
+	--_items-spacing: 0.25em;
+	@include bp(xl, max) {
+		display: none;
+	}
+}
+.toc_title {
+	margin-block: 0;
+}
+.toc_nav {
+	margin-block: var(--_items-spacing) 0;
+	font-size: 0.8rem;
+}
+.toc_nav ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.toc_nav ol ol {
+	padding-left: 1.5em;
+}
+.toc_nav a {
+	display: inline-block;
+	padding-block: var(--_items-spacing);
+	color: var(--color-transparent-3);
+	@include mixins.hover {
+		color: var(--color);
+	}
 }
