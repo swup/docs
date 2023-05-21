@@ -11,6 +11,7 @@ import ColorSchemeSwitcher from './alpine/ColorSchemeSwitcher/ColorSchemeSwitche
 import SwupThemeSwitcher from './alpine/SwupThemeSwitcher/SwupThemeSwitcher.js';
 import MobileNav from './alpine/MobileNav/MobileNav.js';
 import SearchUI from './alpine/SearchUI/SearchUI.js';
+import TableOfContents from './alpine/TableOfContents/TableOfContents.js';
 
 export default function () {
 	window.Alpine = Alpine;
@@ -21,5 +22,6 @@ export default function () {
 	Alpine.data('ColorSchemeSwitcher', ColorSchemeSwitcher);
 	Alpine.data('SwupThemeSwitcher', SwupThemeSwitcher);
 	Alpine.data('MobileNav', MobileNav);
+	Alpine.data('TableOfContents', TableOfContents);
 	Alpine.start();
 }
