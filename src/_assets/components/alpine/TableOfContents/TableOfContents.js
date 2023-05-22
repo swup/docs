@@ -11,7 +11,7 @@ export default () => {
 			this.onResize();
 		},
 		bindings: {
-			"x-on:resize.window": "onResize",
+			'x-on:resize.window': 'onResize'
 		},
 		onResize() {
 			// Stop observing if the TOC is not visible
@@ -63,12 +63,13 @@ export default () => {
 		 * @returns void
 		 */
 		updateCurrentSection() {
-			const currentSection = this.sections.find((section) => {
-				const rect = section.getBoundingClientRect();
-				// ignore invisible sections
-				if (!rect.height) return false;
-				return rect.top < this.horizon;
-			}) || this.sections[this.sections.length - 1];
+			const currentSection =
+				this.sections.find((section) => {
+					const rect = section.getBoundingClientRect();
+					// ignore invisible sections
+					if (!rect.height) return false;
+					return rect.top < this.horizon;
+				}) || this.sections[this.sections.length - 1];
 
 			this.$root.querySelector('a.is-active')?.classList.remove('is-active');
 			this.$root.querySelector(`a[href="#${currentSection.id}"]`)?.classList.add('is-active');
