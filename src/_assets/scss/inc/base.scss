@@ -71,13 +71,18 @@ main[tabindex='-1'] {
 */
 ul.nav_list a[href^='http'],
 ul.children a[href^='http'] {
-	padding-right: 1.2em;
-	background-image: linear-gradient(var(--link-underline-color) 0%, var(--link-underline-color) 100%), var(--external-link-icon);
-	background-repeat: no-repeat;
-	background-position: 0 100%, 100% 60%;
-	background-size: calc(100% - 1.2em) 2px, 1.2em;
-	@include mixins.hover {
-		background-size: calc(100% - 1.2em) 4px, 1.2em;
+	--_icon-size: 1.2em;
+	&::after {
+		content: "";
+		display: inline-block;
+		width: var(--_icon-size);
+		height: var(--_icon-size);
+		vertical-align: middle;
+		position: relative;
+		top: -0.01em;
+		background-image: var(--external-link-icon);
+		background-repeat: no-repeat;
+		background-size: contain;
 	}
 }
 ul.nav_list a[href^='http'] {

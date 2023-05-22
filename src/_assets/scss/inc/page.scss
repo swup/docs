@@ -14,17 +14,13 @@
 .text {
 	a:not([class]) {
 		text-decoration: none;
-		background-image: linear-gradient(var(--link-underline-color) 0%, var(--link-underline-color) 100%);
-		background-repeat: repeat-x;
-		background-position: 0 100%;
-		background-size: 1px 2px;
-		padding: 0 0 1px 0;
 		font-weight: 500;
-		border: none;
-		transition: background-size 100ms;
-
+		background-image: linear-gradient(var(--link-underline-color) 0%, var(--link-underline-color) 100%);
+		background-repeat: no-repeat;
+		background-position: 0 100%;
+		background-size: calc(100% - var(--_icon-size, 0px)) 2px;
 		@include mixins.hover {
-			background-size: 1px 3px;
+			background-size: calc(100% - var(--_icon-size, 0px)) 4px;
 		}
 	}
 
