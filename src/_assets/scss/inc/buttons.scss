@@ -105,6 +105,9 @@ button {
 		font-weight: 500;
 	}
 }
+.buttons--centered {
+	justify-content: center;
+}
 
 .button--filled {
 	background: var(--color);
