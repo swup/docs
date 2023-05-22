@@ -35,7 +35,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('sortByOrder', sortByOrder);
 	eleventyConfig.addFilter('prepareContent', prepareContent);
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
-	eleventyConfig.addPlugin(tableOfContents, { tags: ['h2', 'h3'], wrapperClass: 'toc_nav' });
+	eleventyConfig.addPlugin(tableOfContents, { tags: ['h2', 'h3', 'h4'], wrapperClass: 'toc_nav' });
 	eleventyConfig.addFilter('getPreviousAndNextPage', getPreviousAndNextPage);
 	eleventyConfig.addShortcode('feather', renderFeatherIcon);
 	eleventyConfig.addShortcode('timestamp', () => Date.now());
