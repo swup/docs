@@ -39,7 +39,7 @@ export default () => {
 				const copiedTip = tippy(anchor, {
 					placement: 'right',
 					trigger: 'click',
-					content: 'Copied URL',
+					content: 'URL copied!',
 					offset: [0, 15],
 					onShow() {
 						setTimeout(copiedTip.hide, 2000)

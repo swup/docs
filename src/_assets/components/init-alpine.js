@@ -7,10 +7,11 @@ Alpine.plugin(focus);
 import Intro from './alpine/Intro/Intro.js';
 import Search from './alpine/Search/Search.js';
 import Page from './alpine/Page/Page.js';
-import ColorThemeSwitcher from './alpine/ColorThemeSwitcher/ColorThemeSwitcher.js';
+import ColorSchemeSwitcher from './alpine/ColorSchemeSwitcher/ColorSchemeSwitcher.js';
 import SwupThemeSwitcher from './alpine/SwupThemeSwitcher/SwupThemeSwitcher.js';
 import MobileNav from './alpine/MobileNav/MobileNav.js';
 import SearchUI from './alpine/SearchUI/SearchUI.js';
+import TableOfContents from './alpine/TableOfContents/TableOfContents.js';
 
 export default function () {
 	window.Alpine = Alpine;
@@ -18,8 +19,9 @@ export default function () {
 	Alpine.data('Search', Search);
 	Alpine.data('SearchUI', SearchUI);
 	Alpine.data('Page', Page);
-	Alpine.data('ColorThemeSwitcher', ColorThemeSwitcher);
+	Alpine.data('ColorSchemeSwitcher', ColorSchemeSwitcher);
 	Alpine.data('SwupThemeSwitcher', SwupThemeSwitcher);
 	Alpine.data('MobileNav', MobileNav);
+	Alpine.data('TableOfContents', TableOfContents);
 	Alpine.start();
 }

@@ -1,11 +1,8 @@
-<div class="page" x-data="Page">
+<article class="page" x-data="Page">
   <main>
 
-    {% if repo_link %}
-      <a href="{{ repo_link }}" class="button repo-link">Repo</a>
-    {% endif %}
     <div class="page_body text" data-pagefind-body>
-      {{ content | maybeLoadRemoteReadme | safe }}
+      {{ content | prepareContent | safe }}
     </div>
 
     {% set children = collections.all | eleventyNavigation(eleventyNavigation.key) %}
@@ -31,4 +28,12 @@
 
     {% include "page-nav.njk" %}
   </footer>
-</div>
+</article>
+<aside class="toc" aria-label="Article">
+  {% if content | toc %}
+  <div x-data="TableOfContents" x-bind="bindings">
+    <h4 class="toc_title">On this page</h4>
+    {{ content | toc | safe }}
+    {% endif %}
+  </div>
+</aside>

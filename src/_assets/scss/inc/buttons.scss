@@ -4,39 +4,109 @@ button {
 	background: none;
 	border: none;
 	color: inherit;
+	font: inherit;
 	* {
 		pointer-events: none;
 	}
 }
 
 .buttons {
+	margin: 0;
+	padding: 0;
+	list-style: none;
 	display: flex;
+	gap: 0.7em;
 	flex-wrap: wrap;
-	justify-content: center;
+	font-size: clamp(0.8rem, 2vw, 1rem);
+}
+.button {
+	display: inline-block;
+	border-radius: var(--radius-round);
+	background: var(--color-transparent-0);
+	--button-height: 2.6em;
+	--button-max-width: calc(100vw - var(--gap-x2));
+	--button-padding: 1.2em;
+	@at-root .dark & {
+		border: 1px solid var(--color-transparent-0);
+	}
+	height: var(--button-height);
+	padding-inline: var(--button-padding);
+	max-width: var(--button-max-width);
+	display: flex;
 	align-items: center;
-	gap: var(--gap);
+	justify-content: flex-start;
+	gap: 0.5em;
+	font-weight: inherit;
+	transition-property: background, color;
+	transition-duration: 150ms;
+	white-space: nowrap;
+	cursor: pointer;
+	font-weight: 500;
+	@include mixins.hover {
+		background: var(--color);
+		color: var(--background);
+	}
+	> * {
+		position: relative;
+		top: -0.05em;
+		cursor: pointer;
+	}
 }
 
-.button {
+.button svg {
+	width: 1.2em;
+	height: 1.2em;
 	position: relative;
-	display: block;
-	text-decoration: none;
-	border: var(--border) var(--color);
-	border-radius: var(--radius-1);
-	font-size: var(--font-size-fluid-1);
-	color: var(--color);
-	font-weight: 500;
-	padding: 0.2em 1em 0.25em;
-	transition: all 150ms;
-
-	&.button--filled {
-		background-color: var(--color);
-		color: var(--background);
+	flex: none;
+}
+.button:not(.button--circle) svg {
+	&:first-child {
+		margin-inline-start: calc(var(--button-padding) * -0.3);
 	}
-
-	@include mixins.hover {
-		background-color: var(--color);
-		color: var(--background);
-		box-shadow: var(--shadow-1);
+	&:last-child {
+		margin-inline-end: calc(var(--button-padding) * -0.3);
 	}
+}
+.button_label {
+	max-width: calc(var(--button-max-width, 3000px) - var(--button-height));
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+@include bp(m, max) {
+	.header .buttons {
+		gap: 0.2rem;
+	}
+	.header .button {
+		background: none;
+		border: none;
+	}
+	.header .button svg {
+		width: 1.3rem;
+		height: 1.3rem;
+	}
+}
+
+.button--search {
+	font-weight: normal;
+}
+
+.button--circle {
+	padding: 0;
+	width: var(--button-height);
+	height: var(--button-height);
+	justify-content: center;
+}
+
+.buttons--large {
+	font-size: clamp(1rem, 3vw, 1.35rem);
+	.button {
+		padding-inline: calc( 1em + var(--button-height) * 0.3);
+		font-weight: 500;
+	}
+}
+
+.button--filled {
+	background: var(--color);
+	color: var(--background);
 }

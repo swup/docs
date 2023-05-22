@@ -15,8 +15,5 @@ export default () => {
 		close() {
 			this.isOpen = false;
 		},
-		onSearchClick(e) {
-			if (e.target.matches('.pagefind-ui__result-link')) this.close();
-		}
 	};
 };

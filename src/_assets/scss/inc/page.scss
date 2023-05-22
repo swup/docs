@@ -1,17 +1,20 @@
 .page {
 	padding-inline: var(--gap);
-	margin-block: var(--gap) var(--gap-x2);
+	padding-block: var(--gap-x2) calc(var(--gap-x2) * 2);
 	width: min(80ch, 100%);
 	margin-inline: auto;
+	@include bp(m) {
+		padding-block-start: var(--gap);
+	}
 }
 .page main {
 	position: relative;
 }
 
 .text {
-	a {
+	a:not([class]) {
 		text-decoration: none;
-		background-image: linear-gradient(var(--swup-green) 0%, var(--swup-green) 100%);
+		background-image: linear-gradient(var(--link-underline-color) 0%, var(--link-underline-color) 100%);
 		background-repeat: repeat-x;
 		background-position: 0 100%;
 		background-size: 1px 2px;
@@ -25,8 +28,8 @@
 		}
 	}
 
-	> *:not(:first-child) {
-		margin-block: 1.5rem;
+	> * + * {
+		margin-block: 1em 0;
 	}
 
 	h1,
@@ -35,6 +38,7 @@
 	h4,
 	h5,
 	h6 {
+		font-weight: 800;
 		word-wrap: break-word;
 		line-height: 1.1;
 
@@ -46,17 +50,22 @@
 	h1,
 	h2 {
 		font-size: var(--font-size-fluid-2);
-		font-weight: 800;
+
 		// margin-block: 1.5em 0;
 	}
 
 	h3,
-	h4 {
+	h4,
+	h5,
+	h6 {
 		font-size: var(--font-size-fluid-1);
 	}
 
 	ul {
-		padding-inline-start: 1em;
+		padding-inline-start: 1.1em;
+	}
+	li {
+		margin-block-end: 0.5em;
 	}
 
 	.iframe {
@@ -74,9 +83,12 @@
 		background: none;
 
 		--opacity: 0.3;
+		@media (hover) {
+			--opacity: 0;
+		}
 
 		@include mixins.hover {
-			--opacity: 1;
+			--opacity: 0.3;
 		}
 
 		&::after {
@@ -99,19 +111,39 @@
 	margin: 0;
 }
 
-.page_body h1:first-of-type {
+.page_body_header {
 	font-size: var(--font-size-fluid-3);
-	margin-block-start: -0.1em;
+	margin-block: 0 0.5em;
+	line-height: 1;
+	position: relative;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: flex-start;
+	gap: 1rem;
 }
-.repo-link + .page_body h1:first-of-type {
-	padding-right: calc(var(--font-size-fluid-2) * 3);
+.page_body_header h1 {
+	font-size: 1em;
+	margin: 0;
+	position: relative;
+	z-index: 1;
 }
-.repo-link {
-	position: absolute;
-	right: 0;
-	top: 0;
-	margin-top: 0.2em;
+
+@include bp(xs) {
+	.page_body_header {
+		display: block;
+	}
+	.page_body_header_buttons {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 2;
+	}
+	.page_body_header_buttons + h1 {
+			margin-right: 4em;
+			top: -0.15em;
+	}
 }
+
 
 /*
 * Code Blocks
@@ -192,79 +224,19 @@
 }
 
 /*
-* Page Navigation
+* Page Nav
 */
-.page-nav {
-	border: 1px solid var(--color-transparent-1);
-	border-radius: var(--radius-1);
+.page-nav_buttons {
+	justify-content: space-between;
 }
-
-.page-nav_items {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	padding: 0.5em;
-	display: grid;
-	grid-template-columns: 50% 50%;
-}
-
-.page-nav_item {
-	margin: 0;
-	padding-inline: 0.7em;
-	--arrow-direction: -1;
-
-	&.--next {
-		--arrow-direction: 1;
-		text-align: right;
-		grid-column: 2;
-	}
-}
-
-.page-nav_item + .page-nav_item {
-	border-left: 1px solid var(--color-transparent-1);
-}
-
-.page-nav_link {
-	white-space: nowrap;
-	width: 100%;
-	margin: 0;
-	padding-block: 0.5em;
-	font-weight: 500;
-	line-height: 1;
-	display: grid;
-	gap: 0.3rem;
-	grid-template-columns: 1rem 1fr;
-
-	@at-root .--next & {
-		grid-template-columns: 1fr 1rem;
-	}
-
-	span {
-		overflow: hidden;
-		text-overflow: ellipsis;
-	}
-
-	.feather {
-		transition: transform 150ms;
-	}
-}
-
-@include mixins.hoverSupport {
-	.page-nav_link:hover .feather {
-		transform: translateX(calc(var(--arrow-direction) * 0.1em));
-	}
-}
-
-.page-nav_item_label {
-	display: block;
-	text-transform: uppercase;
-	font-size: 0.65em;
+.page-nav_item.--next:first-child {
+	margin-inline-start: auto;
 }
 
 /*
 * Scoped style for feather icons
 */
-.page .feather {
+.page *:not(.button) > .feather {
 	position: relative;
 	display: inline-block;
 	width: 1.2em;

@@ -16,8 +16,15 @@ Technically, they are identical to plugins in how they're structured and used, b
 
 Try out the default themes here:
 
-<div class="theme-selector">
-    <label><input type="radio" name="theme" value="FadeTheme"> Fade theme</label>
-    <label><input type="radio" name="theme" value="SlideTheme"> Slide theme</label>
-    <label><input type="radio" name="theme" value="OverlayTheme"> Overlay theme</label>
-</div>
+<form class="theme-selector buttons">
+  <label class="button"><input type="radio" name="theme" value="SlideTheme" class="sr-only">
+    <span class="button_label">Slide theme</span>
+  </label>
+  <label class="button"><input type="radio" name="theme" value="FadeTheme" class="sr-only">
+    <span class="button_label">Fade theme</span>
+  </label>
+  <label class="button"><input type="radio" name="theme" value="OverlayTheme" class="sr-only">
+    <span class="button_label">Overlay theme</span>
+  </label>
+</form>
+
