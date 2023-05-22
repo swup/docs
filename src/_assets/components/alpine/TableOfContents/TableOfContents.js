@@ -5,7 +5,8 @@ export default () => {
 		windowHeight: 0,
 		horizon: 150,
 		sections: [],
-		init() {
+		async init() {
+			await this.$nextTick();
 			this.prepareSections();
 			this.onResize();
 		},
