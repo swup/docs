@@ -2,14 +2,14 @@
 layout: default
 title: Reloading JavaScript
 eleventyNavigation:
-  key: Reloading Javascript
+  key: Reloading JavaScript
   parent: Getting Started
   order: 5
 description: Since swup removes the page reloads from site, it also removes a standard lifecycle of scripts
 permalink: /getting-started/reloading-javascript/
 ---
 
-# Reloading Javascript
+# Reloading JavaScript
 
 Swup turns your server-side rendered website into a progressively enhanced [SPA](https://en.wikipedia.org/wiki/Single-page_application). Because of that, some native lifecycle events need to be augmented by you:
 
