@@ -28,7 +28,7 @@ ul {
 	list-style: disc;
 }
 
-::marker {
+ul ::marker {
 	color: var(--swup-green);
 }
 
