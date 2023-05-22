@@ -1,4 +1,7 @@
 // Swup Core
+// For debugging unreleased versions:
+// import Swup from '../../../_packages/swup/src/index.js';
+// For deployment:
 import Swup from 'swup';
 // Swup Plugins
 import SwupDebugPlugin from '@swup/debug-plugin';
