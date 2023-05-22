@@ -137,8 +137,8 @@ function adjustNavIndicators(path) {
 
 		gsap.to(indicator, {
 			top,
-			ease: 'back.out',
-			duration: 0.3
+			ease: 'power4.out',
+			duration: 0.35
 		})
 
 	})
