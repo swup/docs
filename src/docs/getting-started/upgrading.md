@@ -15,22 +15,6 @@ permalink: /getting-started/upgrading/
 
 Swup 3 is mostly backward-compatible. Most projects should keep running fine after upgrading. However, there's a few situations where you will have to make changes.
 
-## Contents
-
-- [Upgrading](#upgrading)
-  - [Upgrading from swup 2 to 3](#upgrading-from-swup-2-to-3)
-  - [Contents](#contents)
-    - [Multiple CSS transitions](#multiple-css-transitions)
-    - [Link selector](#link-selector)
-    - [HTML classnames](#html-classnames)
-    - [Script import](#script-import)
-    - [Helper imports](#helper-imports)
-      - [Removed helpers](#removed-helpers)
-    - [Plugin authors](#plugin-authors)
-      - [Update import paths of helpers and utils](#update-import-paths-of-helpers-and-utils)
-      - [Switch to `Location` helper](#switch-to-location-helper)
-      - [Use event delegation helper](#use-event-delegation-helper)
-
 ### Multiple CSS transitions
 
 Swup 3 will wait for the longest CSS transition to finish before replacing the page content. Previously, swup would only wait for the first transitioned property before continuing. This is a breaking change if you're combining transitions of differing durations in a single container.
