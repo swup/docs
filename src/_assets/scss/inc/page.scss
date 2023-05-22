@@ -1,8 +1,11 @@
 .page {
 	padding-inline: var(--gap);
-	margin-block: var(--gap-x2) calc(var(--gap-x2) * 2);
+	padding-block: var(--gap-x2) calc(var(--gap-x2) * 2);
 	width: min(80ch, 100%);
 	margin-inline: auto;
+	@include bp(m) {
+		padding-block-start: var(--gap);
+	}
 }
 .page main {
 	position: relative;
@@ -110,7 +113,7 @@
 
 .page_body_header {
 	font-size: var(--font-size-fluid-3);
-	margin-block: -0.3em 0.5em;
+	margin-block: 0 0.5em;
 	line-height: 1;
 	position: relative;
 	display: flex;
