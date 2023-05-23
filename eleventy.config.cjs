@@ -1,5 +1,6 @@
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
+const slugify = require('@sindresorhus/slugify');
 const tableOfContents = require('eleventy-plugin-toc');
 const { execSync } = require('child_process');
 const Shiki = require('markdown-it-shiki').default;
@@ -19,7 +20,8 @@ const customMarkdownIt = markdownIt({
  */
 customMarkdownIt.use(markdownItAnchor, {
 	permalink: markdownItAnchor.permalink.headerLink({ safariReaderFix: true }),
-	level: 2
+	level: 2,
+	slugify: (s) => slugify(s)
 });
 /**
  * Code Highligting
@@ -35,11 +37,13 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('sortByOrder', sortByOrder);
 	eleventyConfig.addFilter('prepareContent', prepareContent);
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
-	eleventyConfig.addPlugin(tableOfContents, { tags: ['h2', 'h3', 'h4'], wrapperClass: 'toc_nav' });
+	eleventyConfig.addPlugin(tableOfContents, {
+		tags: ['h2', 'h3', 'h4'],
+		wrapperClass: 'toc_nav'
+	});
 	eleventyConfig.addFilter('getPreviousAndNextPage', getPreviousAndNextPage);
 	eleventyConfig.addShortcode('feather', renderFeatherIcon);
 	eleventyConfig.addShortcode('timestamp', () => Date.now());
-
 
 	// Assets will be taken care of by WebPack
 	eleventyConfig.ignores.add('./src/_assets/**');
