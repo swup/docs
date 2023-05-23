@@ -11,114 +11,111 @@ permalink: /getting-started/reloading-javascript/
 
 # Reloading JavaScript
 
-Swup turns your server-side rendered website into a progressively enhanced [SPA](https://en.wikipedia.org/wiki/Single-page_application). Because of that, some native lifecycle events need to be augmented by you:
+Swup takes control of the page load lifecycle. Instead of having the browser
+recompile scripts between page changes, it keeps the current page instance alive
+and only updates the content containers to match the content of the new page.
 
-1. Usually, scripts are being initialized when the whole page is loaded. Often we would find ourselves waiting for the whole page to load before executing our script:
+This means two things:
+
+- You can not rely on standard browser events to trigger your custom code
+- You have to pay attention to not leaking memory by undoing any changes
+
+## Triggering custom code
+
+Swup updates pages without a full reload, so you can't rely on `DOMContentLoaded`
+or other events to trigger your code as they will only ever run once on initial
+load.
 
 ```javascript
 document.addEventListener('DOMContentLoaded', () => {
-  // run whatever we need
+  // This only runs once, so we need some other event for triggering code
 });
 ```
-When working with swup, the `DOMConentLoaded` event won't be triggered except for the first visit.
 
-2. When navigating between pages, usually there is no need to "clean up" our custom scripts, as the browser will tear down everything and start with creating the whole `window`/`document` again from scratch.
+Instead, we can trigger code after each page change by hooking into swup's
+[events](/events/). Combining the browser event and swup events, we end up with
+a template for reliably running code to initialize elements on the page:
 
-There are a few routes that you can take to automatically intitialize/destroy your custom JavaScript when using swup:
+```javascript
+document.addEventListener('DOMContentLoaded', () => {
+  // This runs on initial load
+});
 
-## Alpine.js
-
-In our experience, swup works very well together with the framework [Alpine.js](https://alpinejs.dev/). There, every component will be initialized/destroyed automatically, without you having to do any extra work. _It just works_ ™️. First initialize both libraries in your JS:
-
-```js
-import Swup from 'swup';
-import Alpine from 'alpinejs';
-
-const swup = new Swup();
-Alpine.start();
-```
-...and then enjoy automatic initialization in your components:
-
-```html
-<div id="swup">
-  <div
-    x-data="{ name : 'My Component' }"
-    x-init="console.log(name + ' initialized!')"
-  >
-    My Component
-  </div>
-</div>
+swup.on('pageView', () => {
+  // This runs after every page change
+});
 ```
 
-## Gia Framework
+## Initializing components
 
-Another framework that's a good fit for swup is [Gia](https://github.com/giantcz/gia). Gia provides a simple yet powerful way of managing scripts with `mount`/`unmount` lifecycle methods, automatic scope for scripts and more stuff like lazy loading assets when needed, smart element auto selectors and more.
-
-We have an official [Gia plugin](/plugins/gia-plugin/) that will automatically mount/unmount your components.
-
-## Swup's event system
-
-Swup provides a rich set of [events](/events/). Here's how you can use these to re-initialize your scripts:
-
-Let's say we would like to run different set of scripts for each page.
-
-We'll put all these scripts in one `init` function that we can call repeatedly to initialize everything.
-Each script in the function has a condition, so we won't try to run the script when the related elements are not in the DOM (for example, when your carousel is only being rendered on your homepage).
+We'll collect our scripts in one `init` function that we can call repeatedly to
+initialize everything. Each script has a condition to make sure it's only run
+when a related element is found on the page.
 
 ```javascript
 function init() {
   if (document.querySelector('#carousel')) {
-    // something like new Carousel('#carousel')
+    // new Carousel('#carousel')
   }
 
   if (document.querySelector('#lightbox')) {
-    // something like $('#lightbox').lightbox()
+    // $('#lightbox').lightbox()
   }
 
   if (document.querySelector('#something-else')) {
-    // ...
+    // and so on
   }
 }
 ```
 
-When the features are separated in some way, like the example above, we are just one step away from using swup events to run whatever we need, whenever we need.
-
-In this particular example we would probably like to run this on each page view.
+Then we register the correct event handlers and we're good to go.
 
 ```javascript
 const swup = new Swup();
 
-// run once when page loads
+// Run once when page loads
 if (document.readyState === 'complete') {
   init();
 } else {
   document.addEventListener('DOMContentLoaded', () => init());
 }
 
-// run after every additional navigation by swup
-swup.on('pageView', init);
+// Run after every additional navigation by swup
+swup.on('pageView', () => init());
 ```
 
-As we mentioned before, unlike the native browser reload, the page is not able to cleanup all the instances, listeners and mess we have created when the page was loaded 😄
+## Using component frameworks
 
-Swup's `willReplaceContent` event can help with that:
+While the above example is a perfectly fine solution to achieve code execution
+on page change, we suggest looking into JS frameworks that can help you automate
+some of this by mounting and unmounting components automatically and providing
+lifecycle hooks.
+
+- [Alpine.js](https://alpinejs.dev)
+- [Stimulus](https://stimulus.hotwired.dev)
+- [Gia](https://github.com/giantcz/gia) + official [Gia plugin](/plugins/gia-plugin/)
+
+## Avoiding memory leaks
+
+Swup keeps a persistent session in memory, so objects leaking memory will not be
+cleaned up automatically as they would be on a full page refresh. While this
+should not be a problem on most sites, be aware that in special case you will
+need to clean up after yourself by hooking into swup's `willReplaceContent`
+event.
 
 ```javascript
 function unload() {
   if (document.querySelector('#carousel')) {
     // carousel.destroy()
   }
-  // ...
 }
 
-swup.on('willReplaceContent', unload);
+swup.on('willReplaceContent', () => unload());
 ```
 
-This is only an example, but it should give you a rough idea of how to approach these scenarios.
+## Third-party script tags
 
-## Conclusion
-
-None of the above options are mutually exclusive. You can mix and match them as you need.
-
-**And a final note:** There is a [scripts plugin](/plugins/scripts-plugin/) which can also help you in edge case situations,
-where you're not in control over what scripts are included in a page. **Keep in mind that the scripts plugin should be seen as a last resort if none of the other options are available to you.**
+If you're not in control over the scripts included on the page, there is an
+official [scripts plugin](/plugins/scripts-plugin/) to help with reloading
+`script` tags. **Keep in mind that this is a last resort if none of the other
+options are available to you.**
