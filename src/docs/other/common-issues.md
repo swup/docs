@@ -59,9 +59,9 @@ html.is-animating .swup-transition-fade {
 
 ## Escaped characters inside `<noscript>`
 
-Some browsers (Safari, older versions of IE) escape characters inside of `noscript` tags when placed into the DOM with `element.innerHTML` as swup does. That is usually not an issue unless the contents of the `noscript` tags are further used in your JavaScript code. If that's the case, the characters need to be unescaped with [regex replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace), a pretty creative way using `textarea` mentioned [in this thread](https://github.com/gmrchk/swup/issues/107) or in any other way.
+Some browsers (Safari, older versions of IE) escape characters inside of `noscript` tags when placed into the DOM with `element.innerHTML` as swup does. That is usually not an issue unless the contents of the `noscript` tags are further used in your JavaScript code. If that's the case, the characters need to be unescaped with [regex replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace), a pretty creative way using `textarea` mentioned [in this thread](https://github.com/swup/swup/issues/107) or in any other way.
 
-See [this issue](https://github.com/gmrchk/swup/issues/107) for more information.
+See [this issue](https://github.com/swup/swup/issues/107) for more information.
 
 ## Scroll control offset
 
