@@ -3,7 +3,9 @@
 // import Swup from '../../../_packages/swup/src/index.js';
 // For deployment:
 import Swup from 'swup';
+
 // Swup Plugins
+import SwupA11yPlugin from '@swup/a11y-plugin';
 import SwupDebugPlugin from '@swup/debug-plugin';
 import SwupScrollPlugin from '@swup/scroll-plugin';
 import SwupBodyClassPlugin from '@swup/body-class-plugin';
@@ -32,6 +34,8 @@ export default function () {
 		containers: ['#swup', '#breadcrumb'],
 		plugins: [
 			// new SwupDebugPlugin(),
+
+			new SwupA11yPlugin(),
 
 			new SwupScrollPlugin({
 				animateScroll: {
