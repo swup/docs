@@ -16,7 +16,7 @@ export default () => {
 			'x-on:scroll.window.throttle.10ms': 'markCurrentSection'
 		},
 		updateHorizon() {
-			this.horizon = this.$root.getBoundingClientRect().top + 30;
+			this.horizon = this.$root.getBoundingClientRect().top + 50;
 		},
 		// Store a reference to all sections in reversed order
 		prepareSections() {
