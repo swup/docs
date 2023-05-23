@@ -65,6 +65,9 @@
 	@at-root .dark & {
 		filter: drop-shadow(4px 4px 1px rgba(0 0 0 / 0.4));
 	}
+	@media screen and (orientation: landscape) {
+		max-width: 60vw;
+	}
 }
 
 .intro_logo .swup-logo {
