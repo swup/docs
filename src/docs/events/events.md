@@ -82,3 +82,23 @@ swup.on('contentReplaced', () => {
   });
 });
 ```
+### Listening to swup's DOM events
+
+```js
+document.addEventListener('swup:contentReplaced', () => {
+  // do something
+})
+```
+
+### Listening to swup events using Alpine.js
+
+If you want to listen to swup events inside your [Alpine.js](https://alpinejs.dev/directives/data) components, you need to make use of the [`.camel` modifier](https://alpinejs.dev/directives/on#camel), since camelCase is not supported in HTML attribute names. For example, listening for the `contentReplaced` event would work like this:
+
+```html
+<div
+  x-data
+  x-on:swup:content-replaced.camel.document="console.log('content replaced!')"
+>
+  My Alpine Component
+</div>
+```
