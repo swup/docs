@@ -39,8 +39,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('getPreviousAndNextPage', getPreviousAndNextPage);
 	eleventyConfig.addShortcode('feather', renderFeatherIcon);
 	eleventyConfig.addShortcode('timestamp', () => Date.now());
-	eleventyConfig.addShortcode('bodyClass', renderBodyClass);
-	// eleventyConfig.addTransform('main-heading', transformMainHeading);
+
 
 	// Assets will be taken care of by WebPack
 	eleventyConfig.ignores.add('./src/_assets/**');
@@ -220,23 +219,4 @@ function renderFeatherIcon(iconName) {
 		console.warn(e);
 	}
 	return result;
-}
-
-function renderBodyClass() {
-	console.log(this);
-}
-
-function transformMainHeading(content, file) {
-	// Bail early if not a HTML file
-	if (!file || !file.endsWith('.html')) return content;
-
-	const jsdom = new JSDOM(content);
-	const { document } = jsdom.window;
-
-	// Unwrap the anchor link in the first H1
-	const h1 = document.querySelector('.page_body > h1:first-of-type');
-	if (!h1) return content;
-	h1.innerHTML = h1.textContent;
-
-	return jsdom.serialize();
 }
