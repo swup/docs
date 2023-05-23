@@ -4,7 +4,7 @@ title: Common Issues
 eleventyNavigation:
   key: Common Issues
   parent: Other
-  order: 1
+  order: 2
 description: Description of common issue or caveats people encounter
 permalink: /other/common-issues/
 ---
