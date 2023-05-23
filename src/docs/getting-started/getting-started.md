@@ -54,9 +54,10 @@ Like to make sure your site has no bugs? You can use swup's [CI/CD integration](
 Become a sponsor on [Open Collective](https://opencollective.com/swup) or support development through
 [GitHub sponsors](https://github.com/sponsors/gmrchk).
 
-<p><div style="position:relative;height:35px;width:107px"><iframe src="https://github.com/sponsors/gmrchk/button" title="Sponsor gmrchk" height="35" width="107" style="border: 0;"></iframe></div></p>
-
-<a href="https://opencollective.com/swup/donate" class="no-link"><img src="https://opencollective.com/swup/donate/button@2x.png?color=blue" width="220" /></a>
+<div class="buttons">
+  <a href="https://opencollective.com/swup/donate" target="_blank" class="button">Donate to Our Open Collective</a>
+  <a href="https://github.com/sponsors/gmrchk" target="_blank" class="button">Sponsor Us on GitHub</a>
+</div>
 
 ## License
 
