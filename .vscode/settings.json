@@ -1,0 +1,10 @@
+// @see https://marketplace.visualstudio.com/items?itemName=vunguyentuan.vscode-css-variables#i-want-to-add-files-in-node_modules-folder
+{
+  "cssVariables.lookupFiles": [
+    "**/*.css",
+    "**/*.scss",
+    "**/*.sass",
+    "**/*.less",
+    "node_modules/open-props/open-props.min.css"
+  ]
+}

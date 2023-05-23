@@ -1,0 +1,85 @@
+<div class="search" x-data="Search">
+  <!-- mobile button -->
+  <button
+    class="button button--circle m:hidden"
+    type="button"
+    x-on:click="open"
+    x-on:keydown.window="onKeyDown">
+    {% feather "search" %}
+  </button>
+
+  <!-- desktop button -->
+  <button
+    class="button m:max:hidden button--search"
+    type="button"
+    x-on:click="open"
+    x-on:keydown.window="onKeyDown">
+    {% feather "search" %}
+    <span class="button_label">Search</span>
+    <span class="search_toggle_keys">
+      <span x-text="metaKey"></span>K
+    </span>
+  </button>
+
+  <template x-teleport="body">
+    <!-- Modal -->
+    <div
+        class="search-modal"
+        x-show="isOpen"
+        x-on:keydown.escape.prevent.stop="close"
+        x-on:swup:transition-start.camel.document="close"
+        role="dialog"
+        aria-modal="true"
+    >
+        <!-- Backdrop -->
+        <div
+          class="search-modal_backdrop"
+          x-show="isOpen"
+          x-transition.opacity
+        >
+        </div>
+
+        <!-- Panel -->
+        <div
+          class="search-modal_panel"
+          x-show="isOpen"
+          x-transition
+          x-on:click="close"
+        >
+            <div
+              class="search-modal_body light"
+              x-trap.noscroll.inert="isOpen"
+            >
+                <div
+                  class="search_ui"
+                  x-data="SearchUI"
+                  x-on:search-opened.window="reset"
+                >
+                  <form class="search_ui_form" x-on:click.stop>
+                    {% feather "search" %}
+                    <input class="search_ui_input" type="text" x-model="term"></input>
+                  </form>
+
+                  <template x-if="term.length > 1 && !isSearching && !results.length">
+                    <p class="search_ui_no-results">No results found</p>
+                  </template>
+
+                  <ul class="search_ui_results" x-show="results.length">
+                    <template x-for="result in results" :key="result.url">
+                      <li class="search_ui_result">
+                        <a class="search_ui_result_link" :href="result.url">
+                          <h3 class="search_ui_result_title" x-text="result.meta.title"></h3>
+                          <p class="search_ui_result_excerpt" x-html="result.excerpt"></p>
+                        </a>
+                      </li>
+                    </template>
+                  </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+  </template>
+
+</div>

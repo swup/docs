@@ -1,0 +1,77 @@
+.header {
+	width: 100%;
+	display: flex;
+	padding-inline: var(--gap) calc(var(--gap) * 0.5);
+	@include bp(m) {
+		padding-inline: var(--gap);
+	}
+	height: var(--header-height);
+
+	gap: 1rem;
+	align-items: center;
+	position: sticky;
+	top: 0;
+	transition: opacity 300ms;
+	transition-delay: 400ms;
+	z-index: 4;
+	pointer-events: none;
+
+	@include bp(1600, max) {
+		background: var(--background);
+		border-bottom: 1px solid var(--color-transparent-1);
+	}
+
+	@at-root body.front-page & {
+		opacity: 0;
+		pointer-events: 0;
+		transition-delay: 0ms;
+		position: absolute;
+		* { pointer-events: none !important; }
+	}
+}
+.header a,
+.header button {
+	pointer-events: all;
+}
+
+/*
+* Site Title
+*/
+.site-title {
+	display: flex;
+	align-items: center;
+	margin-inline-end: auto;
+	font-size: 1.1em;
+}
+.site-title_image {
+	display: block;
+	--size: clamp(2.2rem, 4vw, 2.5rem);
+	width: var(--size);
+	height: var(--size);
+	position: relative;
+	top: 0.1em;
+	margin-inline-end: 0.5em;
+}
+.site-title_swup {
+	font-weight: bold;
+	display: none;
+	@include bp(300) {
+		display: block;
+	}
+}
+.site-title_breadcrumb {
+	display: flex;
+	align-items: center;
+	color: var(--color-transparent-3);
+	position: relative;
+	transition: opacity 0.3s, transform 0.4s;
+	@at-root .is-animating & {
+		opacity: 0;
+	}
+	svg {
+		width: 0.9em;
+		height: 0.9em;
+		position: relative;
+		top: 0.05em;
+	}
+}

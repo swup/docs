@@ -1,23 +1,39 @@
 <head>
+  <script>
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    document.documentElement.classList.replace('no-js', 'js');
+    // This function needs to run as early as possible to prevent a FOUC
+    function getColorSchemePreference() {
+      // First, try local storage
+      const preference = localStorage && localStorage.getItem('color-scheme');
+      if (preference) return preference;
+      // Second, fall back to the media query
+      return mediaQuery.matches ? 'dark' : 'light';
+    }
+    function setColorThemeClass() {
+      document.documentElement.classList.remove('light', 'dark');
+      document.documentElement.classList.add(getColorSchemePreference());
+    }
+    mediaQuery.addEventListener('change', setColorThemeClass);
+    setColorThemeClass();
+  </script>
+
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="Description" content="{{ description | default(site.description, true) }}">
-  <link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
-  <link href="/assets/just-the-docs.css" rel="stylesheet">
+  <meta name="description" content="{{ description | default(site.description, true) }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:image" content="/assets/images/og.png">
+
 
   {% if title %}
-    <title>{{ title }} | {{ site.title }}</title>
+    <title>{{ title }} — {{ site.title }}</title>
   {% else %}
-    <title>Swup - complete, flexible, extensible and easy to use page transition library.</title>
-  {% endif %}
-
-  {% if external_link %}
-    <!-- This page is merely a redirect, exclude it from search engines -->
-    <meta name="robots" content="noindex, follow">
-    <meta http-equiv="refresh" content="0; URL='{{ external_link }}'">
+    <title>{{ site.title }} — {{ site.description }}</title>
   {% endif %}
 
   <link rel="canonical" href="{{ site.url }}{{ page.url | url }}">
+  <link rel="stylesheet" href="/assets/docs.css?v={% timestamp %}">
+  <link rel="icon" type="image/png" href="/assets/images/icon.png">
 
   {% if site.ga_tracking != nil %}
     <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_tracking }}"></script>
@@ -30,13 +46,4 @@
       GA_MEASURE_ID = '{{ site.ga_tracking }}';
     </script>
   {% endif %}
-
-  <script type="text/javascript" src="/assets/just-the-docs.js"></script>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="icon" type="image/png" href="/assets/images/icon.png">
-
-  <meta property="og:image" content="/assets/images/og.png" />
-
 </head>

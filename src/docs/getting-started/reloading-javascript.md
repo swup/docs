@@ -1,90 +1,121 @@
 ---
 layout: default
-title: Reloading Javascript
+title: Reloading JavaScript
 eleventyNavigation:
-  key: Reloading Javascript
+  key: Reloading JavaScript
   parent: Getting Started
   order: 5
 description: Since swup removes the page reloads from site, it also removes a standard lifecycle of scripts
 permalink: /getting-started/reloading-javascript/
 ---
 
-# Reloading Javascript
+# Reloading JavaScript
 
-Since swup removes the page reloads from site, it also removes a standard lifecycle of scripts, which come with a set of problems that those pjax-like libraries bring.
-By default, scripts get enabled when the page is loaded. Often we would find ourselves waiting for whole page to load before executing the script.
+Swup takes control of the page load lifecycle. Instead of having the browser
+recompile scripts between page changes, it keeps the current page instance alive
+and only updates the content containers to match the content of the new page.
+
+This means two things:
+
+- You can not rely on standard browser events to trigger your custom code
+- You have to pay attention to not leaking memory by undoing any changes
+
+## Triggering custom code
+
+Swup updates pages without a full reload, so you can't rely on `DOMContentLoaded`
+or other events to trigger your code as they will only ever run once on initial
+load.
 
 ```javascript
 document.addEventListener('DOMContentLoaded', () => {
-  // run whatever we need
+  // This only runs once, so we need some other event for triggering code
 });
 ```
 
-After the browser leaves the page, there is no need to "clean up" the scripts, as page reload will simply remove everything, and start with creating the whole window/document again.
+Instead, we can trigger code after each page change by hooking into swup's
+[events](/events/). Combining the browser event and swup events, we end up with
+a template for reliably running code to initialize elements on the page:
 
-Similar approach needs to be used with swup.
-Swup [events](/events/) are perfect for this purpose.
-Let's say we would like to run different set of scripts for each page.
-Let's put such scripts in one function we can call to enable everything.
-Each script in the function has a condition, so we don't try to run the script when the elements are not there (for example, when the carousel is only placed on the homepage).
+```javascript
+document.addEventListener('DOMContentLoaded', () => {
+  // This runs on initial load
+});
+
+swup.on('pageView', () => {
+  // This runs after every page change
+});
+```
+
+## Initializing components
+
+We'll collect our scripts in one `init` function that we can call repeatedly to
+initialize everything. Each script has a condition to make sure it's only run
+when a related element is found on the page.
 
 ```javascript
 function init() {
   if (document.querySelector('#carousel')) {
-    // something like new Carousel('#carousel')
+    // new Carousel('#carousel')
   }
 
   if (document.querySelector('#lightbox')) {
-    // something like $('#lightbox').lightbox()
+    // $('#lightbox').lightbox()
   }
 
   if (document.querySelector('#something-else')) {
-    // ...
+    // and so on
   }
 }
 ```
 
-When the features are separated in some way, like the example above, we are just one step away from using swup events to run whatever we need, whenever we need.
-In this particular example we would probably like to run this on each page view.
+Then we register the correct event handlers and we're good to go.
 
 ```javascript
 const swup = new Swup();
 
-// run once when page loads
+// Run once when page loads
 if (document.readyState === 'complete') {
   init();
 } else {
   document.addEventListener('DOMContentLoaded', () => init());
 }
 
-// run after every additional navigation by swup
-swup.on('contentReplaced', init);
+// Run after every additional navigation by swup
+swup.on('pageView', () => init());
 ```
 
-As we mentioned before, unlike native browser reload, the page is not able to cleanup all the instances, listeners and mess we have made when page was loaded.
-Swup `willReplaceContent` event can help with that.
+## Using component frameworks
+
+While the above example is a perfectly fine solution to achieve code execution
+on page change, we suggest looking into JS frameworks that can help you automate
+some of this by mounting and unmounting components automatically and providing
+lifecycle hooks.
+
+- [Alpine.js](https://alpinejs.dev)
+- [Stimulus](https://stimulus.hotwired.dev)
+- [Gia](https://github.com/giantcz/gia) + official [Gia plugin](/plugins/gia-plugin/)
+
+## Avoiding memory leaks
+
+Swup keeps a persistent session in memory, so objects leaking memory will not be
+cleaned up automatically as they would be on a full page refresh. While this
+should not be a problem on most sites, be aware that in special case you will
+need to clean up after yourself by hooking into swup's `willReplaceContent`
+event.
 
 ```javascript
 function unload() {
   if (document.querySelector('#carousel')) {
     // carousel.destroy()
   }
-  // ...
 }
 
-swup.on('willReplaceContent', unload);
+swup.on('willReplaceContent', () => unload());
 ```
 
-This is only an example, but it should give some people an idea of how to approach such situation.
+## Third-party script tags
 
-**Note:** There is a [scripts plugin](/plugins/scripts-plugin/) which can also help you in situations,
-where you're not in control over what scripts are included in a page.
-Keep in mind that it's usage is discouraged.
-
-## Component based approach
-
-I would very much recommend using component based approach together with swup, like the one provided by [Gia framework](https://github.com/giantcz/gia).
-Gia provides a simple, yet powerful way of managing scripts with `mount`/`unmount` lifecycle methods,
-automatic scope for scripts and more cool stuff like lazy loading assets when needed, smart element auto selectors and more.
-
-Oh and [here](/plugins/gia-plugin/) is a plugin for that.
+If you're not in control over the scripts included on the page, there is an
+official [scripts plugin](/plugins/scripts-plugin/) to help with reloading
+`script` tags. **Keep in mind that this is a last resort if none of the other
+options are available to you.**

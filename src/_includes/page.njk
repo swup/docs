@@ -1,0 +1,39 @@
+<article class="page" x-data="Page">
+  <main>
+
+    <div class="page_body text" data-pagefind-body>
+      {{ content | prepareContent | safe }}
+    </div>
+
+    {% set children = collections.all | eleventyNavigation(eleventyNavigation.key) %}
+    {% if children | length %}
+      <div class="children text">
+        <h2>In this Section</h2>
+        {{ children | eleventyNavigationToHtml({listClass: "children"}) | safe }}
+      </div>
+    {% endif %}
+  </main>
+  <footer id="footer">
+
+    <div class="edit-this-page text">
+      <p>
+        {% feather "edit" %}
+        {% if repo_link %}
+          <a href="{{ repo_link }}/blob/master/readme.md" target="_blank">Suggest changes to this page</a>
+        {% else %}
+          <a href="https://github.com/swup/docs/blob/master/src{{ page.filePathStem }}.md" target="_blank">Suggest changes to this page</a>
+        {% endif %}
+      </p>
+    </div>
+
+    {% include "page-nav.njk" %}
+  </footer>
+</article>
+<aside class="toc" aria-label="Article">
+  {% if content | prepareContent | toc %}
+    <div x-data="TableOfContents" x-bind="bindings">
+      <h4 class="toc_title">On this page</h4>
+      {{ content | prepareContent | toc | safe }}
+    </div>
+  {% endif %}
+</aside>

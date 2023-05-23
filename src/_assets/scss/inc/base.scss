@@ -1,0 +1,133 @@
+html {
+	font-size: 17px;
+	line-height: 1.6;
+	overflow-y: scroll;
+	@supports(scrollbar-gutter: stable) {
+		overflow-y: auto;
+		scrollbar-gutter: stable;
+	}
+}
+
+body {
+	color: var(--color);
+	background: var(--background);
+}
+
+a {
+	color: inherit;
+	font-weight: 400;
+	text-decoration: none;
+}
+
+::selection {
+	background-color: var(--swup-red);
+	color: white;
+}
+
+:focus-visible {
+	outline-offset: 0;
+	outline: 2px solid var(--swup-red);
+}
+
+ul {
+	list-style: disc;
+}
+
+ul ::marker {
+	color: var(--swup-green);
+}
+
+/*
+* Don't render an outline for a focused main element
+* @see https://swup.js.org/plugins/a11y-plugin/#styling
+*/
+main[tabindex='-1'] {
+	outline: none;
+}
+
+/*
+* Hide alpine components initially
+*/
+.js [x-cloak] {
+	visibility: hidden;
+	opacity: 0;
+	pointer-events: none;
+}
+
+/*
+* Container
+*/
+@include bp(m) {
+	.default .container {
+		display: grid;
+		grid-template-columns: 250px minmax(0, 1fr);
+	}
+}
+@include bp(xl) {
+	.default #swup {
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) 250px;
+		align-items: start;
+	}
+}
+
+/*
+* External Links
+*/
+ul.nav_list a[href^='http'],
+ul.children a[href^='http'] {
+	--_icon-size: 1.2em;
+	&::after {
+		content: "";
+		display: inline-block;
+		width: var(--_icon-size);
+		height: var(--_icon-size);
+		vertical-align: middle;
+		position: relative;
+		top: -0.01em;
+		background-image: var(--external-link-icon);
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+}
+ul.nav_list a[href^='http'] {
+	--link-underline-color: transparent;
+}
+
+
+/*
+* TOC
+*/
+.toc {
+	padding-block: var(--gap);
+	padding-inline: 0 var(--gap);
+	position: sticky;
+	top: var(--header-height);
+	--_items-spacing: 0.25em;
+	@include bp(xl, max) {
+		display: none;
+	}
+}
+.toc_title {
+	margin-block: 0;
+}
+.toc_nav {
+	margin-block: var(--_items-spacing) 0;
+	font-size: 0.8rem;
+}
+.toc_nav ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.toc_nav ol ol {
+	padding-left: 1.5em;
+}
+.toc_nav a {
+	display: inline-block;
+	padding-block: var(--_items-spacing);
+	color: var(--color-transparent-3);
+	@include mixins.hover {
+		color: var(--color);
+	}
+}

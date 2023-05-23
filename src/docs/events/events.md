@@ -3,7 +3,8 @@ layout: default
 title: Events
 eleventyNavigation:
   key: Events
-  order: 3
+  parent: API
+  order: 2
 description: Swup emits bunch of events, that we can use to enable JavaScript, trigger analytics, and much more
 permalink: /events/
 ---
@@ -80,4 +81,12 @@ swup.on('contentReplaced', () => {
     // load scripts for all elements with 'selector'
   });
 });
+```
+
+### Listening to swup's DOM events
+
+```js
+document.addEventListener('swup:contentReplaced', () => {
+  // do something
+})
 ```

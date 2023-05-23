@@ -1,0 +1,249 @@
+.page {
+	padding-inline: var(--gap);
+	padding-block: var(--gap-x2) calc(var(--gap-x2) * 2);
+	width: min(80ch, 100%);
+	margin-inline: auto;
+	@include bp(m) {
+		padding-block-start: var(--gap);
+	}
+}
+.page main {
+	position: relative;
+}
+
+.text {
+	a:not([class]) {
+		text-decoration: none;
+		font-weight: 500;
+		background-image: linear-gradient(var(--link-underline-color) 0%, var(--link-underline-color) 100%);
+		background-repeat: no-repeat;
+		background-position: 0 100%;
+		background-size: calc(100% - var(--_icon-size, 0px)) 2px;
+		@include mixins.hover {
+			background-size: calc(100% - var(--_icon-size, 0px)) 4px;
+		}
+	}
+
+	> * + * {
+		margin-block: 1em 0;
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-weight: 800;
+		word-wrap: break-word;
+		line-height: 1.1;
+		a {
+			font-weight: inherit;
+		}
+	}
+
+	h2 {
+		font-size: var(--font-size-fluid-2);
+	}
+
+	h3,
+	h4,
+	h5,
+	h6 {
+		font-size: var(--font-size-fluid-1);
+	}
+
+	ul,
+	ol {
+		padding-inline-start: 1.1em;
+	}
+	li {
+		margin-block-end: 0.5em;
+	}
+
+	.iframe {
+		width: 100%;
+		aspect-ratio: 16 / 9;
+
+		iframe {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+		}
+	}
+
+	.header-anchor {
+		background: none;
+
+		--opacity: 0.3;
+		@media (hover) {
+			--opacity: 0;
+		}
+
+		@include mixins.hover {
+			--opacity: 0.3;
+		}
+
+		&::after {
+			content: '#';
+			display: inline-block;
+			margin-inline-start: 0.2em;
+			transform: scale(0.8);
+			font-weight: normal;
+			transition: opacity 100ms;
+			opacity: var(--opacity);
+		}
+	}
+}
+
+.edit-this-page {
+	margin: 50px 0;
+}
+
+.edit-this-page p {
+	margin: 0;
+}
+
+.page_body_header {
+	font-size: var(--font-size-fluid-3);
+	margin-block: 0 0.5em;
+	line-height: 1;
+	position: relative;
+	display: flex;
+	flex-direction: column-reverse;
+	align-items: flex-start;
+	gap: 1rem;
+}
+.page_body_header h1 {
+	font-size: 1em;
+	margin: 0;
+	position: relative;
+	z-index: 1;
+}
+
+@include bp(xs) {
+	.page_body_header {
+		display: block;
+	}
+	.page_body_header_buttons {
+		position: absolute;
+		top: 0;
+		right: 0;
+		z-index: 2;
+	}
+	.page_body_header_buttons + h1 {
+			margin-right: 4em;
+			top: -0.15em;
+	}
+}
+
+
+/*
+* Code Blocks
+*/
+.code-block {
+	position: relative;
+	border-radius: var(--radius-0);
+	overflow: hidden;
+}
+.code-block:after {
+	content: "";
+	display: block;
+	pointer-events: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 6rem;
+	height: 6rem;
+	background: linear-gradient(to top right, transparent 50%, 	hsl(210 12% 16% / 0.9) 70%);
+	z-index: 1;
+}
+.code-block_copy {
+	position: absolute;
+	top: 0.6rem;
+	right: 0.6rem;
+	background: rgb(0 0 0);
+	color: white;
+	font-family: var(--font-mono);
+	border-radius: var(--radius-0);
+	padding: 0 0.5em;
+	height: 1.1em;
+	display: flex;
+	align-items: center;
+	text-transform: uppercase;
+	z-index: 2;
+}
+.code-block_language {
+	font-size: 0.6rem;
+}
+.shiki {
+	width: 100%;
+	overflow: auto;
+	padding-block: 0.6rem;
+	padding-inline: 1rem 4rem;
+	font-size: 0.9rem;
+	line-height: 1.3;
+	margin: 0;
+}
+.shiki ::selection {
+	background-color: rgb(255 255 255 / 0.2) !important;
+	color: unset;
+}
+
+/*
+* Inline code blocks
+*/
+.text *:not(pre) > code {
+	font-size: 0.8em;
+	padding: 0.2rem 0.25rem;
+	background-image: linear-gradient(
+		-170deg,
+		hsla(172, 65%, 62%, 0.3) 0%,
+		hsla(172, 65%, 62%, 0.25) 100%
+	);
+	border-radius: 0.2em;
+	user-select: all;
+}
+.text a > code {
+	background-image: none;
+	padding-inline: 0;
+}
+
+/*
+* Tippy custom styles
+*/
+.tippy-box {
+	font-size: 0.8rem;
+	font-family: var(--font-mono);
+	color: rgb(0 0 0 / 0.8);
+	background: var(--swup-green);
+}
+.tippy-content {
+	padding: 0.3em 0.5em;
+}
+.tippy-arrow {
+	color: var(--swup-green);
+}
+
+/*
+* Page Nav
+*/
+.page-nav_buttons {
+	justify-content: space-between;
+}
+.page-nav_item.--next:first-child {
+	margin-inline-start: auto;
+}
+
+/*
+* Scoped style for feather icons
+*/
+.page *:not(.button) > .feather {
+	position: relative;
+	display: inline-block;
+	width: 1.2em;
+	height: 1.2em;
+	vertical-align: middle;
+	position: relative;
+	top: -0.1em;
+}

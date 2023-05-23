@@ -1,0 +1,9 @@
+<button
+  class="button button--circle"
+  x-data="ColorSchemeSwitcher"
+  x-cloak="x-cloak"
+  type="button"
+  x-on:click="switchTheme">
+  <span x-show="scheme === 'light'">{% feather "sun" %}</span>
+  <span x-show="scheme === 'dark'">{% feather "moon" %}</span>
+</button>

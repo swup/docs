@@ -42,6 +42,11 @@ If you think you're proficient in the swup ecosystem and you'd like to join the 
 
 If you'd like to support swup financially, please do so on our [Open Collective](https://opencollective.com/swup) page or through [GitHub sponsors](https://github.com/sponsors/gmrchk). Any contribution is much appreciated.
 
+<div class="buttons">
+  <a href="https://opencollective.com/swup/donate" target="_blank" class="button">Donate to Our Open Collective</a>
+  <a href="https://github.com/sponsors/gmrchk" target="_blank" class="button">Sponsor Us on GitHub</a>
+</div>
+
 ## Acknowledgements
 
 Swup logo created by [Honza Jura](https://twitter.com/honzajura).

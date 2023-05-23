@@ -1,0 +1,97 @@
+$media-direction: min; // min / max — default is min (mobile first)
+
+$breakpoints: (
+	default: '',
+	xs: 420px,
+	s: 667px,
+	m: 1024px,
+	l: 1280px,
+	xl: 1480px
+);
+
+/* --------------------------------------------------
+
+   Breakpoint Mixin
+   -------------------------------------------------- */
+
+// $breakpoint = the size you need.
+// You can also simply enter a value instead of 'xs', 's', 'm', 'l', 'xl'.
+// This makes sense if you need a special breakpoint. You don't have to put it into the sass map.
+// $direction: $media-direction = what you have set in the settings.
+@mixin bp($breakpoint, $direction: $media-direction) {
+	// If the value is present in the Sass map.
+	@if map-has-key($breakpoints, $breakpoint) {
+		// Result
+		@media (#{$direction}-width: #{map-get($breakpoints, $breakpoint)}) {
+			@content;
+		}
+	}
+
+	// If you have entered a value above, it will be checked here if you have attached a unit. If not, px will be used.
+	@else if unitless($breakpoint) {
+		$breakpoint: $breakpoint + 0px;
+
+		// Result
+		@media (#{$direction}-width: $breakpoint) {
+			@content;
+		}
+	}
+}
+
+/*
+* Hide elements based on viewport
+*/
+.xs\3ahidden {
+	@include bp(xs) {
+		display: none !important;
+	}
+}
+.xs\3amax\3ahidden {
+	@include bp(xs, max) {
+		display: none !important;
+	}
+}
+
+.s\3ahidden {
+	@include bp(s) {
+		display: none !important;
+	}
+}
+.s\3amax\3ahidden {
+	@include bp(s, max) {
+		display: none !important;
+	}
+}
+
+.m\3ahidden {
+	@include bp(m) {
+		display: none !important;
+	}
+}
+.m\3amax\3ahidden {
+	@include bp(m, max) {
+		display: none !important;
+	}
+}
+
+.l\3ahidden {
+	@include bp(l) {
+		display: none !important;
+	}
+}
+.l\3amax\3ahidden {
+	@include bp(l, max) {
+		display: none !important;
+	}
+}
+
+.xl\3ahidden {
+	@include bp(xl) {
+		display: none !important;
+	}
+}
+.xl\3amax\3ahidden {
+	@include bp(xl, max) {
+		display: none !important;
+	}
+}

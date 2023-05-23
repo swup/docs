@@ -1,0 +1,27 @@
+<div x-data="MobileNav">
+
+  <button class="button button--circle" type="button" x-on:click="isOpen = !isOpen">
+    <span class="sr-only">Menu</span>
+    {% feather "menu" %}
+  </button>
+
+  <template x-teleport="body">
+    <div
+      class="mobile-nav"
+      :class="{'is-open': isOpen}"
+      x-on:keydown.escape.prevent.stop="close"
+      x-on:click="close"
+      aria-hidden="true"
+      >
+      <div
+        class="mobile-nav_content nav nav--mobile"
+        x-html="navHTML"
+        x-trap.noscroll.inert="isOpen"
+        ></div>
+      <div
+        class="mobile-nav_backdrop"
+      ></div>
+    </div>
+  </template>
+
+</div>

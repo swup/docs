@@ -19,6 +19,9 @@
     "test:run": "swup validate -a"
   },
   "dependencies": {
+    "@alpinejs/focus": "^3.12.0",
+    "@alpinejs/persist": "^3.12.0",
+    "@swup/a11y-plugin": "^3.0.0",
     "@swup/body-class-plugin": "^2.0.1",
     "@swup/debug-plugin": "^3.0.0",
     "@swup/fade-theme": "^1.0.5",
@@ -26,8 +29,12 @@
     "@swup/preload-plugin": "^2.1.0",
     "@swup/scroll-plugin": "^2.0.2",
     "@swup/slide-theme": "^1.0.5",
+    "alpinejs": "^3.12.0",
+    "gsap": "^3.11.5",
+    "modern-normalize": "^1.1.0",
     "swup": "^3.0.6",
-    "swup-gtag-plugin": "^0.0.0"
+    "swup-gtag-plugin": "^0.0.0",
+    "tippy.js": "^6.3.7"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
@@ -41,13 +48,15 @@
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.6.0",
     "debug": "^4.3.4",
+    "eleventy-plugin-toc": "^1.1.5",
     "esbuild-loader": "^2.18.0",
     "esbuild-plugin-browserslist": "^0.6.0",
     "feather-icons": "^4.29.0",
     "http-server": "^14.1.1",
+    "jsdom": "^22.0.0",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.7",
-    "markdown-it-shiki": "^0.8.0",
+    "markdown-it-shiki": "^0.8.1",
     "mini-css-extract-plugin": "^2.5.3",
     "minimist": "^1.2.5",
     "pagefind": "^0.12.0",
