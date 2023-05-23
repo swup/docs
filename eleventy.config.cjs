@@ -97,6 +97,8 @@ async function prepareContent(content) {
 	return content;
 }
 
+const repoReadmes = new Map();
+
 /**
  * Load remote Readme if repo_link is defined
  *
@@ -121,6 +123,10 @@ async function maybeLoadRemoteReadme(content, ctx) {
 		'raw.githubusercontent.com'
 	)}/master/readme.md`;
 
+	if (repoReadmes.has(repoURL)) {
+		return repoReadmes.get(repoURL);
+	}
+
 	let result = await EleventyFetch(repoURL, {
 		duration: '60s',
 		type: 'text'
@@ -132,7 +138,10 @@ async function maybeLoadRemoteReadme(content, ctx) {
 		''
 	);
 
-	return customMarkdownIt.render(result);
+	const readmeHTML = customMarkdownIt.render(result);
+	repoReadmes.set(repoURL, readmeHTML);
+
+	return readmeHTML;
 }
 
 /**
