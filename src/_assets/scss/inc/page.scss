@@ -203,6 +203,10 @@
 	border-radius: 0.2em;
 	user-select: all;
 }
+.text a > code {
+	background-image: none;
+	padding-inline: 0;
+}
 
 /*
 * Tippy custom styles
