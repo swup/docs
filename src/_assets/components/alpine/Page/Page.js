@@ -36,11 +36,15 @@ export default () => {
 		},
 		initHeadlineLinks() {
 			document.querySelectorAll('.page_body .header-anchor').forEach((anchor) => {
-				const copiedTip = tippy(anchor, {
-					placement: 'right',
+				const target = anchor.querySelector('span');
+
+				const copiedTip = tippy(target, {
+					placement: 'bottom',
 					trigger: 'click',
 					content: 'URL copied!',
-					offset: [0, 15],
+					offset: [0, 10],
+					triggerTarget: anchor,
+					arrow: true,
 					onShow() {
 						setTimeout(copiedTip.hide, 2000)
 					}
