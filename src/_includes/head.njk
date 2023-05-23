@@ -20,15 +20,15 @@
 
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-  <meta name="Description" content="{{ description | default(site.description, true) }}">
+  <meta name="description" content="{{ description | default(site.description, true) }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta property="og:image" content="/assets/images/og.png">
 
 
   {% if title %}
-    <title>{{ title }} | {{ site.title }}</title>
+    <title>{{ title }} — {{ site.title }}</title>
   {% else %}
-    <title>Swup - complete, flexible, extensible and easy to use page transition library.</title>
+    <title>{{ site.title }} — {{ site.description }}</title>
   {% endif %}
 
   <link rel="canonical" href="{{ site.url }}{{ page.url | url }}">
