@@ -1,5 +1,5 @@
 .header {
-
+	width: 100%;
 	display: flex;
 	padding-inline: var(--gap) calc(var(--gap) * 0.5);
 	@include bp(m) {
@@ -11,7 +11,8 @@
 	align-items: center;
 	position: sticky;
 	top: 0;
-	transition: opacity 400ms 400ms;
+	transition: opacity 300ms;
+	transition-delay: 400ms;
 	z-index: 4;
 	pointer-events: none;
 
@@ -23,8 +24,9 @@
 	@at-root body.front-page & {
 		opacity: 0;
 		pointer-events: 0;
-		transition: none;
+		transition-delay: 0ms;
 		position: absolute;
+		* { pointer-events: none !important; }
 	}
 }
 .header a,

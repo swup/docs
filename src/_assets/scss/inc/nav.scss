@@ -3,13 +3,19 @@
 	position: sticky;
 	top: var(--header-height);
 	overflow: hidden;
+	transition: opacity 300ms;
+	transition-delay: 400ms;
 
 	@include bp(m, max) {
 		display: none;
 	}
 
 	@at-root body.front-page & {
-		display: none;
+		position: absolute;
+		opacity: 0;
+		transition-delay: 0ms;
+		pointer-events: 0;
+		* { pointer-events: none !important; }
 	}
 }
 
