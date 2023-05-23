@@ -24,11 +24,31 @@ When working with swup, the `DOMConentLoaded` event won't be triggered except fo
 
 2. When navigating between pages, usually there is no need to "clean up" our custom scripts, as the browser will tear down everything and start with creating the whole `window`/`document` again from scratch.
 
-There are a few alternative routes that you can take:
+There are a few routes that you can take to automatically intitialize/destroy your custom JavaScript when using swup:
 
 ## Alpine.js
 
-In our experience, swup works very well together with the framework [Alpine.js](https://alpinejs.dev/). There, every component will be initialized/destroyed automatically, without you having to do any extra work. _It just works_ ™️
+In our experience, swup works very well together with the framework [Alpine.js](https://alpinejs.dev/). There, every component will be initialized/destroyed automatically, without you having to do any extra work. _It just works_ ™️. First initialize both libraries in your JS:
+
+```js
+import Swup from 'swup';
+import Alpine from 'alpinejs';
+
+const swup = new Swup();
+Alpine.start();
+```
+...and then enjoy automatic initialization in your components:
+
+```html
+<div id="swup">
+  <div
+    x-data="{ name : 'My Component' }"
+    x-init="console.log(name + ' initialized!')"
+  >
+    My Component
+  </div>
+</div>
+```
 
 ## Gia Framework
 
