@@ -27,8 +27,7 @@
         class="search-modal"
         x-show="isOpen"
         x-on:keydown.escape.prevent.stop="close"
-        x-on:swup-transition-start.window="close"
-        x-on:swup-same-page.window="close"
+        x-on:swup:transition-start.camel.document="close"
         role="dialog"
         aria-modal="true"
     >
