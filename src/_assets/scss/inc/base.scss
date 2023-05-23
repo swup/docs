@@ -1,6 +1,11 @@
 html {
 	font-size: 17px;
 	line-height: 1.6;
+	overflow-y: scroll;
+	@supports(scrollbar-gutter: stable) {
+		overflow-y: auto;
+		scrollbar-gutter: stable;
+	}
 }
 
 body {
