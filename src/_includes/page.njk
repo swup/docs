@@ -31,9 +31,9 @@
 </article>
 <aside class="toc" aria-label="Article">
   {% if content | toc %}
-  <div x-data="TableOfContents" x-bind="bindings">
-    <h4 class="toc_title">On this page</h4>
-    {{ content | toc | safe }}
-    {% endif %}
-  </div>
+    <div x-data="TableOfContents" x-bind="bindings">
+      <h4 class="toc_title">On this page</h4>
+      {{ content | toc | safe }}
+    </div>
+  {% endif %}
 </aside>
