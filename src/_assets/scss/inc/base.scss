@@ -39,7 +39,7 @@ ul ::marker {
 
 /*
 * Don't render an outline for a focused main element
-* @see http://localhost:8080/plugins/a11y-plugin/#styling
+* @see https://swup.js.org/plugins/a11y-plugin/#styling
 */
 main[tabindex='-1'] {
 	outline: none;
