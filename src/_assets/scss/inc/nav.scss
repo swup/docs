@@ -39,10 +39,12 @@
 		transparent
 	);
 
+	--scrollbar-hack-width: 50px;
+
 	/* Hide the scroll bar */
 	@at-root .nav--desktop & {
-		width: calc(100% + 50px);
-		padding-right: 50px;
+		width: calc(100% + var(--scrollbar-hack-width));
+		padding-right: var(--scrollbar-hack-width);
 	}
 	@at-root .nav--mobile & {
 		padding: var(--gap-x2);
@@ -51,7 +53,7 @@
 
 .nav_inner ul {
 	margin: 0;
-	padding: 0;
+	padding-inline: 0 2px;
 	list-style: none;
 }
 
