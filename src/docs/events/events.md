@@ -88,5 +88,5 @@ swup.on('contentReplaced', () => {
 ```js
 document.addEventListener('swup:contentReplaced', () => {
   // do something
-})
+});
 ```

@@ -14,8 +14,10 @@
 		position: absolute;
 		opacity: 0;
 		transition-delay: 0ms;
-		pointer-events: 0;
-		* { pointer-events: none !important; }
+		pointer-events: none;
+		* {
+			pointer-events: none !important;
+		}
 	}
 }
 
@@ -39,10 +41,12 @@
 		transparent
 	);
 
+	--scrollbar-hack-width: 50px;
+
 	/* Hide the scroll bar */
 	@at-root .nav--desktop & {
-		width: calc(100% + 50px);
-		padding-right: 50px;
+		width: calc(100% + var(--scrollbar-hack-width));
+		padding-right: var(--scrollbar-hack-width);
 	}
 	@at-root .nav--mobile & {
 		padding: var(--gap-x2);
@@ -51,25 +55,20 @@
 
 .nav_inner ul {
 	margin: 0;
-	padding: 0;
+	padding-inline: 0 2px;
 	list-style: none;
 }
 
 .nav_list > li + li {
 	margin-top: 1.5em;
 }
-.nav_list > li > a {
-	display: inline-block;
-	font-weight: bold;
-}
-
 .nav_list > li > ul {
 	padding: 0;
 }
 .nav_list > li > ul a {
-	opacity: 0.6;
-	@include mixins.hover {
-		opacity: 1;
+	color: var(--color-transparent-3);
+	@include mixins.hover(true) {
+		color: var(--color);
 	}
 }
 .nav_list_item {
@@ -79,6 +78,10 @@
 	display: block;
 	padding-block: 0.2rem;
 	text-decoration: none;
+	border-radius: var(--radius-0);
+	@at-root .nav_list > li > & {
+		font-weight: bold;
+	}
 }
 
 .nav_indicator {

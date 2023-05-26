@@ -58,7 +58,7 @@ browsers. Note the `?module` query string in the first import URL.
 <!-- Import Swup as ESM -->
 
 <script type="module">
-  import Swup from "https://unpkg.com/swup@3?module";
+  import Swup from 'https://unpkg.com/swup@3?module';
   const swup = new Swup();
 </script>
 

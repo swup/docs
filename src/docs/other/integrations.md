@@ -29,10 +29,7 @@ Alpine.start();
 
 ```html
 <div id="swup">
-  <div
-    x-data="{ name : 'My Component' }"
-    x-init="console.log(name + ' initialized!')"
-  >
+  <div x-data="{ name : 'My Component' }" x-init="console.log(name + ' initialized!')">
     My Component
   </div>
 </div>
@@ -46,10 +43,7 @@ since camelCase is not supported in HTML attribute names. For example, listening
 for the `contentReplaced` event would look like this:
 
 ```html
-<div
-  x-data
-  x-on:swup:content-replaced.camel.document="console.log('content replaced!')"
->
+<div x-data x-on:swup:content-replaced.camel.document="console.log('content replaced!')">
   My Alpine Component
 </div>
 ```
