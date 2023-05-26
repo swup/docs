@@ -88,6 +88,12 @@ ul.children a[href^='http'] {
 		background-image: var(--external-link-icon);
 		background-repeat: no-repeat;
 		background-size: contain;
+		opacity: 0.6;
+	}
+	@include mixins.hover {
+		&::after {
+			opacity: 1;
+		}
 	}
 }
 ul.nav_list a[href^='http'] {
