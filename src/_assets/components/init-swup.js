@@ -70,17 +70,33 @@ export default function () {
 	setSwupTheme(new URLSearchParams(window.location.search).get('theme'));
 
 	swup.on('pageView', onSwupPageView);
+	swup.on('samePage', emulateTargetPseudoClass);
+	swup.on('samePageWithHash', emulateTargetPseudoClass);
 	onSwupPageView();
 }
 
 function onSwupPageView() {
 	selectCurrentThemeCheckbox();
 	prepareExternalLinks();
+	emulateTargetPseudoClass();
 	adjustNavIndicators(window.location.pathname);
 }
 
 function onSwupClickLink(e) {
 	adjustNavIndicators(e.target.pathname);
+}
+
+/**
+ * Adds an attribute to the element that matches the current hash, if there is one
+ */
+function emulateTargetPseudoClass() {
+	const attribute = 'data-hash-target';
+	requestAnimationFrame(() => {
+		const current = document.querySelector(`[${attribute}]`);
+		if (current) current.removeAttribute(attribute);
+		const element = window.swup.getAnchorElement(window.location.hash);
+		if (element) element.setAttribute(attribute, '');
+	})
 }
 
 /**
