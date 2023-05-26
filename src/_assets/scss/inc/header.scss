@@ -23,7 +23,7 @@
 
 	@at-root body.front-page & {
 		opacity: 0;
-		pointer-events: 0;
+		pointer-events: none;
 		transition-delay: 0ms;
 		position: absolute;
 		* {
