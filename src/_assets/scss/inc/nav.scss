@@ -45,11 +45,10 @@
 	--scrollbar-hack-width: 50px;
 
 	/* Hide the scroll bar */
-	@at-root
-		.nav--desktop &,
+	@at-root .nav--desktop &,
 		.toc & {
-			width: calc(100% + var(--scrollbar-hack-width));
-			padding-right: var(--scrollbar-hack-width);
+		width: calc(100% + var(--scrollbar-hack-width));
+		padding-right: var(--scrollbar-hack-width);
 	}
 	@at-root .nav--mobile & {
 		padding: var(--gap-x2);
