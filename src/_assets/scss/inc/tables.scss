@@ -54,3 +54,29 @@ thead {
 		border-bottom: 1px solid var(--color-transparent-1);
 	}
 }
+
+@include bp(s, max) {
+	.events-table table {
+
+		font-size: 1rem;
+		border-radius: var(--radius-0);
+
+		thead {
+			display: none;
+		}
+
+		tr, th, td {
+			display: block;
+		}
+
+		tr {
+			border-bottom: 1px solid var(--color-transparent-1);
+			padding: 0.75em 1em;
+		}
+		td {
+			border: none;
+			padding: 0;
+		}
+
+	}
+}
