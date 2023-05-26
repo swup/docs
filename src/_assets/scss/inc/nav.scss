@@ -58,11 +58,6 @@
 .nav_list > li + li {
 	margin-top: 1.5em;
 }
-.nav_list > li > a {
-	display: inline-block;
-	font-weight: bold;
-}
-
 .nav_list > li > ul {
 	padding: 0;
 }
@@ -79,6 +74,9 @@
 	display: block;
 	padding-block: 0.2rem;
 	text-decoration: none;
+	@at-root .nav_list > li > & {
+		font-weight: bold;
+	}
 }
 
 .nav_indicator {
