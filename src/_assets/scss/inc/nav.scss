@@ -64,9 +64,9 @@
 	padding: 0;
 }
 .nav_list > li > ul a {
-	opacity: 0.6;
-	@include mixins.hover {
-		opacity: 1;
+	color: var(--color-transparent-3);
+	@include mixins.hover(true) {
+		color: var(--color);
 	}
 }
 .nav_list_item {
@@ -76,6 +76,7 @@
 	display: block;
 	padding-block: 0.2rem;
 	text-decoration: none;
+	border-radius: var(--radius-0);
 	@at-root .nav_list > li > & {
 		font-weight: bold;
 	}
