@@ -35,7 +35,7 @@ document.addEventListener('swup:contentReplaced', () => {});
 
 ## List of all events
 
-<div class="events-table">
+<div class="events-table" data-table-with-anchor-links>
 
 | Event name                 | Description                                                                                                            |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------- |

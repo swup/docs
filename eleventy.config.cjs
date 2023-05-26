@@ -7,8 +7,8 @@ const Shiki = require('markdown-it-shiki').default;
 const EleventyFetch = require('@11ty/eleventy-fetch');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const feather = require('feather-icons');
-const { JSDOM } = require('jsdom');
 const MarkdownItCodeEnhancements = require('./lib/markdown-it-code-enhancements');
+const { addAnchorLinksToTable } = require('./lib/eleventy-transforms')
 const customMarkdownIt = markdownIt({
 	html: true,
 	breaks: false,
@@ -44,7 +44,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('getPreviousAndNextPage', getPreviousAndNextPage);
 	eleventyConfig.addShortcode('feather', renderFeatherIcon);
 	eleventyConfig.addShortcode('timestamp', () => Date.now());
-	eleventyConfig.addTransform('prepareEventsTable', prepareEventsTable);
+	eleventyConfig.addTransform('addAnchorLinksToTable', addAnchorLinksToTable);
 
 	// Assets will be taken care of by WebPack
 	eleventyConfig.ignores.add('./src/_assets/**');
@@ -224,37 +224,4 @@ function renderFeatherIcon(iconName) {
 		console.warn(e);
 	}
 	return result;
-}
-
-/**
- * Injects anchor links into the events table
- * @param {string} content
- * @param {string} file
- * @returns
- */
-function prepareEventsTable(content, file) {
-	// Bail early if not a HTML file
-	if (!file || !file.endsWith('.html')) return content;
-
-	const jsdom = new JSDOM(content);
-	const { document } = jsdom.window;
-
-	const tables = document.querySelectorAll('.events-table > table');
-	if (!tables.length) return content;
-
-	tables.forEach(table => {
-		table.querySelectorAll('tbody > tr > td:first-child > strong').forEach(el => {
-			const slug = slugify(el.textContent);
-			const heading = document.createElement('h3');
-			heading.id = slug;
-			const anchor = document.createElement('a');
-			anchor.href = `#${slug}`;
-			anchor.classList.add('header-anchor');
-			anchor.innerHTML = `<span>${el.textContent}</span>`;
-			heading.append(anchor);
-			el.replaceWith(heading);
-		})
-	})
-
-	return jsdom.serialize();
 }
