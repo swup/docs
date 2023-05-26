@@ -27,4 +27,3 @@ Try out the default themes here:
     <span class="button_label">Overlay theme</span>
   </label>
 </form>
-

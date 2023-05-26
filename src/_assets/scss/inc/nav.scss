@@ -15,7 +15,9 @@
 		opacity: 0;
 		transition-delay: 0ms;
 		pointer-events: 0;
-		* { pointer-events: none !important; }
+		* {
+			pointer-events: none !important;
+		}
 	}
 }
 

@@ -20,9 +20,7 @@ export default () => {
 		},
 		// Store a reference to all sections in reversed order
 		prepareSections() {
-			this.sections = [
-				...this.wrap.querySelectorAll('h2[id],h3[id],h4[id]')
-			].reverse();
+			this.sections = [...this.wrap.querySelectorAll('h2[id],h3[id],h4[id]')].reverse();
 		},
 		/**
 		 * Marks the current section with the class "is-active"
@@ -48,12 +46,14 @@ export default () => {
 			}
 			// Find the first section that is above the horizon.
 			// If no section can be found, return the first section
-			return this.sections.find((section) => {
-				const rect = section.getBoundingClientRect();
-				// ignore invisible sections
-				if (!rect.height) return false;
-				return rect.top < this.horizon;
-			}) || firstSection;
+			return (
+				this.sections.find((section) => {
+					const rect = section.getBoundingClientRect();
+					// ignore invisible sections
+					if (!rect.height) return false;
+					return rect.top < this.horizon;
+				}) || firstSection
+			);
 		}
 	};
 };

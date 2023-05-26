@@ -64,7 +64,7 @@ export default function () {
 
 	swup.on('clickLink', onSwupClickLink);
 
-	document.addEventListener('change', event => {
+	document.addEventListener('change', (event) => {
 		if (event.target.name === 'theme') changeSwupThemeWithTransition(event.target.value);
 	});
 	setSwupTheme(new URLSearchParams(window.location.search).get('theme'));
@@ -121,10 +121,8 @@ function setSwupTheme(theme) {
 	currentTheme = theme;
 }
 
-
 function adjustNavIndicators(path) {
-
-	document.querySelectorAll('.nav_indicator').forEach(indicator => {
+	document.querySelectorAll('.nav_indicator').forEach((indicator) => {
 		const wrap = indicator.closest('.nav_inner');
 		const activeLink = wrap.querySelector(`a[href="${path}"]`);
 		if (!activeLink) return;
@@ -137,9 +135,8 @@ function adjustNavIndicators(path) {
 			top,
 			ease: 'power4.out',
 			duration: 0.35
-		})
-
-	})
+		});
+	});
 
 	document.querySelectorAll('.nav a').forEach((a) => {
 		if (a.origin !== window.location.origin) return;

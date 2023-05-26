@@ -26,7 +26,9 @@
 		pointer-events: 0;
 		transition-delay: 0ms;
 		position: absolute;
-		* { pointer-events: none !important; }
+		* {
+			pointer-events: none !important;
+		}
 	}
 }
 .header a,

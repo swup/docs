@@ -2,7 +2,7 @@ html {
 	font-size: 17px;
 	line-height: 1.6;
 	overflow-y: scroll;
-	@supports(scrollbar-gutter: stable) {
+	@supports (scrollbar-gutter: stable) {
 		overflow-y: auto;
 		scrollbar-gutter: stable;
 	}
@@ -78,7 +78,7 @@ ul.nav_list a[href^='http'],
 ul.children a[href^='http'] {
 	--_icon-size: 1.2em;
 	&::after {
-		content: "";
+		content: '';
 		display: inline-block;
 		width: var(--_icon-size);
 		height: var(--_icon-size);
@@ -93,7 +93,6 @@ ul.children a[href^='http'] {
 ul.nav_list a[href^='http'] {
 	--link-underline-color: transparent;
 }
-
 
 /*
 * TOC
