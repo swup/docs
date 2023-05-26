@@ -29,11 +29,11 @@
     {% include "page-nav.njk" %}
   </footer>
 </article>
-<aside class="toc" aria-label="Article">
-  {% if content | prepareContent | toc %}
-    <div x-data="TableOfContents" x-bind="bindings">
+{% if content | prepareContent | toc %}
+  <aside class="toc" aria-label="Article" x-data="TableOfContents" x-bind="bindings">
+    <div class="toc_inner">
       <h4 class="toc_title">On this page</h4>
       {{ content | prepareContent | toc | safe }}
     </div>
-  {% endif %}
-</aside>
+  </aside>
+{% endif %}
