@@ -35,87 +35,87 @@ document.addEventListener('swup:contentReplaced', () => {});
 
 ## List of all events
 
-#### `animationInDone`
+### `animationInDone`
 
 triggers when transition of all animated elements is done (after content is replaced)
 
-#### `animationInStart`
+### `animationInStart`
 
 triggers when animation _IN_ starts (class `is-animating` is removed from html tag)
 
-#### `animationOutDone`
+### `animationOutDone`
 
 triggers when transition of all animated elements is done (after click of link and before content is replaced)
 
-#### `animationOutStart`
+### `animationOutStart`
 
 triggers when animation _OUT_ starts (class `is-animating` is added to html tag)
 
-#### `animationSkipped`
+### `animationSkipped`
 
 triggers when transition is skipped (on back/forward buttons)
 
-#### `clickLink`
+### `clickLink`
 
 triggers when link is clicked
 
-#### `contentReplaced`
+### `contentReplaced`
 
 triggers right after the content of page is replaced
 
-#### `disabled`
+### `disabled`
 
 triggers on `destroy()`
 
-#### `enabled`
+### `enabled`
 
 triggers when swup instance is created or re-enabled after call of `destroy()`
 
-#### `hoverLink`
+### `hoverLink`
 
 triggers when link is hovered
 
-#### `openPageInNewTab`
+### `openPageInNewTab`
 
 triggers when page is opened to new tab (link clicked when control key is pressed)
 
-#### `pageLoaded`
+### `pageLoaded`
 
 triggers when loading of some page is done
 
-#### `pagePreloaded`
+### `pagePreloaded`
 
 triggers when the preload of some page is done (differs from [pageLoaded](#page-loaded) only by the source of event - hover/click)
 
-#### `pageRetrievedFromCache`
+### `pageRetrievedFromCache`
 
 triggers when page is retrieved from cache and no request is necessary
 
-#### `pageView`
+### `pageView`
 
 similar to [contentReplaced](#content-replaced), except it is once triggered on load
 
-#### `popState`
+### `popState`
 
 triggers on popstate events (back/forward button)
 
-#### `samePage`
+### `samePage`
 
 triggers when link leading to the same page is clicked
 
-#### `samePageWithHash`
+### `samePageWithHash`
 
 triggers when link leading to the same page with `#someElement` in the href attribute is clicked
 
-#### `transitionStart`
+### `transitionStart`
 
 triggers when transition start (`loadPage` method is called)
 
-#### `transitionEnd`
+### `transitionEnd`
 
 triggers when transition ends (content is replaced and all animations are done
 
-#### `willReplaceContent`
+### `willReplaceContent`
 
 triggers right before the content of page is replaced
 
