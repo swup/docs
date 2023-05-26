@@ -106,6 +106,10 @@
 			transition: opacity 100ms;
 			opacity: var(--opacity);
 		}
+
+		code {
+			user-select: auto;
+		}
 	}
 }
 
@@ -228,7 +232,6 @@
 	border-radius: 0.2em;
 	user-select: all;
 }
-
 .text a > code {
 	background-image: none;
 	padding-inline: 0;
