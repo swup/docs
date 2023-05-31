@@ -1,6 +1,6 @@
 <head>
   <script>
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const colorSchemeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
     document.documentElement.classList.replace('no-js', 'js');
     // This function needs to run as early as possible to prevent a FOUC
     function getColorSchemePreference() {
@@ -8,13 +8,13 @@
       const preference = localStorage && localStorage.getItem('color-scheme');
       if (preference) return preference;
       // Second, fall back to the media query
-      return mediaQuery.matches ? 'dark' : 'light';
+      return colorSchemeMediaQuery.matches ? 'dark' : 'light';
     }
     function setColorThemeClass() {
       document.documentElement.classList.remove('light', 'dark');
       document.documentElement.classList.add(getColorSchemePreference());
     }
-    mediaQuery.addEventListener('change', setColorThemeClass);
+    colorSchemeMediaQuery.addEventListener('change', setColorThemeClass);
     setColorThemeClass();
   </script>
 

@@ -21,7 +21,8 @@
 	}
 }
 
-.nav_inner {
+.nav_inner,
+.toc_inner {
 	position: relative;
 	margin: 0;
 	padding-inline: var(--gap);
@@ -44,7 +45,8 @@
 	--scrollbar-hack-width: 50px;
 
 	/* Hide the scroll bar */
-	@at-root .nav--desktop & {
+	@at-root .nav--desktop &,
+		.toc & {
 		width: calc(100% + var(--scrollbar-hack-width));
 		padding-right: var(--scrollbar-hack-width);
 	}
