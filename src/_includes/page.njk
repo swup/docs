@@ -5,12 +5,15 @@
       {{ content | prepareContent | safe }}
     </div>
 
-    {% set children = collections.all | eleventyNavigation(eleventyNavigation.key) %}
-    {% if children | length %}
-      <div class="children text">
-        <h2>In this Section</h2>
-        {{ children | eleventyNavigationToHtml({listClass: "children"}) | safe }}
-      </div>
+    {% if (eleventyNavigation) and (eleventyNavigation.key) %}
+      Key: {{ eleventyNavigation.key }}
+      {% set children = collections.all | eleventyNavigation(eleventyNavigation.key) %}
+      {% if children | length %}
+        <div class="children text">
+          <h2>In this Section</h2>
+          {{ children | eleventyNavigationToHtml({listClass: "children"}) | safe }}
+        </div>
+      {% endif %}
     {% endif %}
   </main>
   <footer id="footer">
