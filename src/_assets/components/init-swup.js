@@ -138,20 +138,19 @@ function setSwupTheme(theme) {
 }
 
 function adjustNavIndicators(path) {
+	const duration = 0.35;
+	const ease = 'power4.out';
 	document.querySelectorAll('.nav_indicator').forEach((indicator) => {
 		const wrap = indicator.closest('.nav_inner');
 		const activeLink = wrap.querySelector(`a[href="${path}"]`);
-		if (!activeLink) return;
-
-		const wrapRect = wrap.getBoundingClientRect();
-		const rect = activeLink.getBoundingClientRect();
-		const top = rect.top + rect.height / 2 + wrap.scrollTop - wrapRect.top;
-
-		gsap.to(indicator, {
-			top,
-			ease: 'power4.out',
-			duration: 0.35
-		});
+		if (activeLink) {
+			const wrapRect = wrap.getBoundingClientRect();
+			const rect = activeLink.getBoundingClientRect();
+			const top = rect.top + rect.height / 2 + wrap.scrollTop - wrapRect.top;
+			gsap.to(indicator, { opacity: 1, top, duration, ease });
+		} else {
+			gsap.to(indicator, { opacity: 0, duration, ease });
+		}
 	});
 
 	document.querySelectorAll('.nav a').forEach((a) => {
