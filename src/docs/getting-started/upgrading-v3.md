@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Upgrading from swup 2 to 3
+eleventyNavigation: false
 description: Instructions on upgrading to swup 3
 permalink: /getting-started/upgrading-v3/
 ---
