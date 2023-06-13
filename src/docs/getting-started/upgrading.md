@@ -38,11 +38,11 @@ If you're loading swup from a CDN, update the version constraint:
 
 ### Browser support
 
-Swup 4 removes support for CSS vendor prefixes on animation and transition properties. All browsers
-released in or after 2015 are prefix-free. If you need to support browsers older than that, check
-the compatiblity tables for [transition](https://caniuse.com/?search=transition) and
-[animation](https://caniuse.com/?search=animation). Depending on the required support matrix, some
-projects might want to stick with swup 3.
+Swup 4 removes support for CSS vendor prefixes on animation and transition properties. In practical
+terms, this won't reduce browser support, but it's probably a good idea to check the compatiblity
+tables for [transitions](https://caniuse.com/?search=transition) and
+[animations](https://caniuse.com/?search=animation). In case you need to support Safari 8 or lower,
+you might want to stick with swup 3.
 
 ```diff
 .transition-page {
