@@ -21,6 +21,21 @@ Swup 4 introduces a few major changes that will require some modifications to mo
 While there is a thin compatibility layer — meaning most projects should keep running fine — it's a
 good idea to review the changes and update any calls to newly deprecated functionality.
 
+### Install the latest version
+
+Install the latest version from npm:
+
+```shell
+npm install swup@latest
+```
+
+If you're loading swup from a CDN, update the version constraint:
+
+```diff
+- <script src="https://unpkg.com/swup@3"></script>
++ <script src="https://unpkg.com/swup@4"></script>
+```
+
 ### Browser support
 
 Swup 4 removes support for CSS vendor prefixes on animation and transition properties. All browsers
