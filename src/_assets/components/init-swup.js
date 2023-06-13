@@ -64,23 +64,39 @@ export default function () {
 
 	swup.on('clickLink', onSwupClickLink);
 
-	document.addEventListener('change', event => {
+	document.addEventListener('change', (event) => {
 		if (event.target.name === 'theme') changeSwupThemeWithTransition(event.target.value);
 	});
 	setSwupTheme(new URLSearchParams(window.location.search).get('theme'));
 
 	swup.on('pageView', onSwupPageView);
+	swup.on('samePage', emulateTargetPseudoClass);
+	swup.on('samePageWithHash', emulateTargetPseudoClass);
 	onSwupPageView();
 }
 
 function onSwupPageView() {
 	selectCurrentThemeCheckbox();
 	prepareExternalLinks();
+	emulateTargetPseudoClass();
 	adjustNavIndicators(window.location.pathname);
 }
 
 function onSwupClickLink(e) {
 	adjustNavIndicators(e.target.pathname);
+}
+
+/**
+ * Adds an attribute to the element that matches the current hash, if there is one
+ */
+function emulateTargetPseudoClass() {
+	const attribute = 'data-hash-target';
+	requestAnimationFrame(() => {
+		const current = document.querySelector(`[${attribute}]`);
+		if (current) current.removeAttribute(attribute);
+		const element = window.swup.getAnchorElement(window.location.hash);
+		if (element) element.setAttribute(attribute, '');
+	})
 }
 
 /**
@@ -121,10 +137,8 @@ function setSwupTheme(theme) {
 	currentTheme = theme;
 }
 
-
 function adjustNavIndicators(path) {
-
-	document.querySelectorAll('.nav_indicator').forEach(indicator => {
+	document.querySelectorAll('.nav_indicator').forEach((indicator) => {
 		const wrap = indicator.closest('.nav_inner');
 		const activeLink = wrap.querySelector(`a[href="${path}"]`);
 		if (!activeLink) return;
@@ -137,9 +151,8 @@ function adjustNavIndicators(path) {
 			top,
 			ease: 'power4.out',
 			duration: 0.35
-		})
-
-	})
+		});
+	});
 
 	document.querySelectorAll('.nav a').forEach((a) => {
 		if (a.origin !== window.location.origin) return;

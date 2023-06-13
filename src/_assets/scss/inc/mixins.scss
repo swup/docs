@@ -1,4 +1,4 @@
-@mixin hover {
+@mixin hover($applyToFocusVisible: false) {
 	&:not(.is-disabled):not(:disabled) {
 		@media all and (hover: hover) {
 			&:hover {
@@ -10,6 +10,11 @@
 		}
 		&:active {
 			@content;
+		}
+		@if $applyToFocusVisible == true {
+			&:focus-visible {
+				@content;
+			}
 		}
 	}
 }

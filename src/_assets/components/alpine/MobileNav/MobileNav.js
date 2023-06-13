@@ -10,6 +10,6 @@ export default () => {
 		},
 		close() {
 			this.isOpen = false;
-		},
+		}
 	};
 };

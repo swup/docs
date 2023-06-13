@@ -1,5 +1,4 @@
 export default () => {
-
 	const postsPerPage = 10;
 
 	return {
@@ -23,7 +22,9 @@ export default () => {
 			this.isSearching = true;
 			const pagefind = await import(/* webpackIgnore: true */ '/_pagefind/pagefind.js');
 			const search = await pagefind.search(term);
-			const results = await Promise.all(search.results.slice(0, postsPerPage).map(r => r.data()));
+			const results = await Promise.all(
+				search.results.slice(0, postsPerPage).map((r) => r.data())
+			);
 			this.results = results;
 			this.isSearching = false;
 		}

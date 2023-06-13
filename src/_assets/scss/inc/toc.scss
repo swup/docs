@@ -1,0 +1,37 @@
+/*
+* TOC
+*/
+.toc {
+	height: calc(100svh - var(--header-height));
+	position: sticky;
+	top: var(--header-height);
+	overflow: hidden;
+	--_items-spacing: 0.25em;
+	@include bp(xl, max) {
+		display: none;
+	}
+}
+.toc_title {
+	margin-block: 0;
+}
+.toc_nav {
+	margin-block: var(--_items-spacing) 0;
+	padding-inline-end: 1rem;
+	font-size: 0.8rem;
+}
+.toc_nav ol {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.toc_nav ol ol {
+	padding-left: 1.5em;
+}
+.toc_nav a {
+	display: inline-block;
+	padding-block: var(--_items-spacing);
+	color: var(--color-transparent-3);
+	@include mixins.hover {
+		color: var(--color);
+	}
+}

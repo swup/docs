@@ -101,7 +101,7 @@ button {
 .buttons--large {
 	font-size: clamp(1rem, 3vw, 1.35rem);
 	.button {
-		padding-inline: calc( 1em + var(--button-height) * 0.3);
+		padding-inline: calc(1em + var(--button-height) * 0.3);
 		font-weight: 500;
 	}
 }

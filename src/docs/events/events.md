@@ -35,6 +35,8 @@ document.addEventListener('swup:contentReplaced', () => {});
 
 ## List of all events
 
+<div class="events-table" data-table-with-anchor-links>
+
 | Event name                 | Description                                                                                                            |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | **animationInDone**        | triggers when transition of all animated elements is done (after content is replaced)                                  |
@@ -58,6 +60,8 @@ document.addEventListener('swup:contentReplaced', () => {});
 | **transitionStart**        | triggers when transition start (`loadPage` method is called)                                                           |
 | **transitionEnd**          | triggers when transition ends (content is replaced and all animations are done                                         |
 | **willReplaceContent**     | triggers right before the content of page is replaced                                                                  |
+
+</div>
 
 ## Examples
 
@@ -88,5 +92,5 @@ swup.on('contentReplaced', () => {
 ```js
 document.addEventListener('swup:contentReplaced', () => {
   // do something
-})
+});
 ```

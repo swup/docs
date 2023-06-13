@@ -2,7 +2,7 @@ html {
 	font-size: 17px;
 	line-height: 1.6;
 	overflow-y: scroll;
-	@supports(scrollbar-gutter: stable) {
+	@supports (scrollbar-gutter: stable) {
 		overflow-y: auto;
 		scrollbar-gutter: stable;
 	}
@@ -26,7 +26,7 @@ a {
 
 :focus-visible {
 	outline-offset: 0;
-	outline: 2px solid var(--swup-red);
+	outline: 2px solid var(--swup-green);
 }
 
 ul {
@@ -78,7 +78,7 @@ ul.nav_list a[href^='http'],
 ul.children a[href^='http'] {
 	--_icon-size: 1.2em;
 	&::after {
-		content: "";
+		content: '';
 		display: inline-block;
 		width: var(--_icon-size);
 		height: var(--_icon-size);
@@ -88,46 +88,14 @@ ul.children a[href^='http'] {
 		background-image: var(--external-link-icon);
 		background-repeat: no-repeat;
 		background-size: contain;
+		opacity: 0.6;
+	}
+	@include mixins.hover {
+		&::after {
+			opacity: 1;
+		}
 	}
 }
 ul.nav_list a[href^='http'] {
 	--link-underline-color: transparent;
-}
-
-
-/*
-* TOC
-*/
-.toc {
-	padding-block: var(--gap);
-	padding-inline: 0 var(--gap);
-	position: sticky;
-	top: var(--header-height);
-	--_items-spacing: 0.25em;
-	@include bp(xl, max) {
-		display: none;
-	}
-}
-.toc_title {
-	margin-block: 0;
-}
-.toc_nav {
-	margin-block: var(--_items-spacing) 0;
-	font-size: 0.8rem;
-}
-.toc_nav ol {
-	margin: 0;
-	padding: 0;
-	list-style: none;
-}
-.toc_nav ol ol {
-	padding-left: 1.5em;
-}
-.toc_nav a {
-	display: inline-block;
-	padding-block: var(--_items-spacing);
-	color: var(--color-transparent-3);
-	@include mixins.hover {
-		color: var(--color);
-	}
 }

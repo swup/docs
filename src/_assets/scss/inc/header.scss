@@ -23,10 +23,12 @@
 
 	@at-root body.front-page & {
 		opacity: 0;
-		pointer-events: 0;
+		pointer-events: none;
 		transition-delay: 0ms;
 		position: absolute;
-		* { pointer-events: none !important; }
+		* {
+			pointer-events: none !important;
+		}
 	}
 }
 .header a,
