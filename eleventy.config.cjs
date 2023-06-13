@@ -196,6 +196,9 @@ function flatten(into, node) {
  * @returns {object}
  */
 function getPreviousAndNextPage(nodes) {
+	if (!this.ctx.eleventyNavigation) {
+		return {};
+	}
 	const key = this.ctx.eleventyNavigation.key || this.ctx.title;
 	if (!key) return {};
 	const navigation = eleventyNavigationPlugin.navigation.find(nodes);
