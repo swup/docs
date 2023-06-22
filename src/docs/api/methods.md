@@ -24,26 +24,6 @@ swup.loadPage({
 });
 ```
 
-## on/off
-
-Un/register a handler for swup events.
-
-```javascript
-const handler = (event) => console.log(event);
-
-// register event handler
-swup.on('clickLink', handler);
-
-// unregister event handler
-swup.off('clickLink', handler);
-
-// unregister all handlers for given event
-swup.off('clickLink');
-
-// unregister all handlers for all events
-swup.off();
-```
-
 ## destroy
 
 Disables swup.
@@ -81,30 +61,6 @@ This method can be overwritten to return a custom array of Promises that swup sh
 ```javascript
 await Promise.all(swup.getAnimationPromises());
 // Animations have finished now
-```
-
-## getPageData
-
-**Note:** This method is rather internal and is utilized by [custom payload plugin](/plugins/custom-payload-plugin/). Use the plugin instead.
-
-Given an XHR request object, returns an object for further use in swup. Expects HTML as return type. Can be overwritten to accept and parse other return types from server, but must always return at least the fields below.
-
-```javascript
-const json = {
-  title: 'Page title',
-  originalContent: '<html>...</html>',
-  blocks: ['<div id="swup"></div>'],
-  pageClass: 'body-class',
-  responseURL: '/redirected-url'
-};
-```
-
-## triggerEvent
-
-Trigger a swup event. Pass the event name and an optional event object of the original event that triggered it.
-
-```javascript
-swup.triggerEvent('transitionEnd', popstateEvent);
 ```
 
 ## log
