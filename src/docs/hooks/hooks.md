@@ -13,9 +13,11 @@ permalink: /hooks/
 
 Swup provides a variety of hooks that allow listening to lifecycle events,
 customizing the transition process as well as triggering custom logic at specific
-points. You can register hooks on swup's `hooks` registry:
+points.
 
-## Register a handler
+## Registering handlers
+
+You can register hooks on swup's `hooks` registry.
 
 ```javascript
 // Log to the console on each page view
@@ -24,8 +26,51 @@ swup.hooks.on('pageView', () => {
 });
 ```
 
-If a handler returns a Promise, swup will wait for that Promise to resolve before
-continuing execution:
+### Handler options
+
+Pass in an options object to customize how a handler is invoked.
+
+#### once
+
+```javascript
+// Only execute the handler once, the remove the handler
+swup.hooks.on('pageView', () => {}, { once: true });
+```
+
+#### before
+
+```javascript
+// Execute the handler before the internal default handler
+swup.hooks.on('pageView', () => {}, { before: true });
+```
+
+#### replace
+
+```javascript
+// Replace the internal default handler entirely with this handler
+swup.hooks.on('pageView', () => {}, { replace: true });
+```
+
+#### priority
+
+```javascript
+// Execute this handler before other handlers, regardless of order of registration
+swup.hooks.on('pageView', () => {}, { priority: 10 });
+```
+
+#### Shortcuts
+
+The are shortcuts available for common handler options:
+
+```javascript
+swup.hooks.once('pageView', () => {}) // { once: true }
+swup.hooks.before('pageView', () => {}) // { before: true }
+swup.hooks.replace('pageView', () => {}) // { replace: true }
+```
+
+## Pausing execution
+
+Swup will await Promises returned from handlers, allowing you to pause execution.
 
 ```javascript
 // Delay the start of the page transition by 1 second
@@ -34,7 +79,10 @@ swup.hooks.on('transitionStart', () => {
 });
 ```
 
-## Remove a handler
+> Note: Some hooks are executed without awaiting Promises if their handler needs
+> to prevent a DOM event's default action: `clickLink` and `popState`.
+
+## Removing handlers
 
 Remove a previously registered handler by passing in the function to remove.
 
