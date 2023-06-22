@@ -36,19 +36,22 @@ If you're loading swup from a CDN, update the version constraint:
 + <script src="https://unpkg.com/swup@4"></script>
 ```
 
-### Browser support
+### New hook system
 
-Swup 4 removes support for CSS vendor prefixes on animation and transition properties. In practical
-terms, this won't reduce browser support, but it's probably a good idea to check the compatiblity
-tables for [transitions](https://caniuse.com/?search=transition) and
-[animations](https://caniuse.com/?search=animation). In case you need to support Safari 8 or lower,
-you might want to stick with swup 3.
+Swup 4 comes with a new hook system that allows more flexibility and replaces the previous events
+implementation. Among other features, handlers can now pause execution by returning a Promise or
+replace the internal default handler completely. See [Hooks](/hooks/) for details and updated examples.
+
+All hook-related functions now live on the `hooks` instance of swup:
 
 ```diff
-.transition-page {
--  -webkit-transition: opacity 200ms;
-+  transition: opacity 200ms;
-}
+-  swup.on('pageView', () => {})
++  swup.hooks.on('pageView', () => {})
+```
+
+```diff
+-  swup.off('pageView', handler)
++  swup.hooks.off('pageView', handler)
 ```
 
 ### Container attributes
@@ -83,6 +86,21 @@ allow more flexibility for other more common use cases.
 ```diff
 -  swup.getPageData = (req) => JSON.parse(req.textContent);
 +  // no longer supported
+```
+
+### Browser support
+
+Swup 4 removes support for CSS vendor prefixes on animation and transition properties. In practical
+terms, this won't reduce browser support, but it's probably a good idea to check the compatiblity
+tables for [transitions](https://caniuse.com/?search=transition) and
+[animations](https://caniuse.com/?search=animation). In case you need to support Safari 8 or lower,
+you might want to stick with swup 3.
+
+```diff
+.transition-page {
+-  -webkit-transition: opacity 200ms;
++  transition: opacity 200ms;
+}
 ```
 
 ### Plugin authors
