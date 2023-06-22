@@ -1,43 +1,62 @@
 ---
 layout: default
-title: Events
+title: Hooks
 eleventyNavigation:
-  key: Events
+  key: Hooks
   parent: API
   order: 2
-description: Swup emits bunch of events, that we can use to enable JavaScript, trigger analytics, and much more
-permalink: /events/
+description: Hook into swup's lifecycle to trigger custom functionality.
+permalink: /hooks/
 ---
 
-# Events
+# Hooks
 
-As we are replacing the native lifecycle of a browser visit,
-we need events that let us imitate that lifecycle in our scripts.
+Swup provides a variety of hooks that allow listening to lifecycle events,
+customizing the transition process as well es triggering custom logic at specific
+points. You can register hooks on swup's `hooks` registry:
 
-Swup emits a list of events that can be used to implement custom logic, initialize components, trigger analytics, and much more. Listen to events using the `on()` and `off` methods.
+## Register a handler
 
 ```javascript
-// Add a new handler
-swup.on('pageView', () => {
+// Log to the console on each page view
+swup.hooks.on('pageView', () => {
   console.log('New page loaded');
 });
-
-swup.off('pageView', handler); // remove a single handler
-swup.off('pageView'); // remove all 'pageView' handlers
-swup.off(); // remove all handlers for all events
 ```
 
-For backward compatibility, all events are also triggered on the `document` with a `swup:` prefix.
+## Remove a handler
+
+Remove a previously registered handler by passing in the function to remove.
 
 ```javascript
-document.addEventListener('swup:contentReplaced', () => {});
+const handler = () => console.log('New page loaded');
+
+// Register a handler
+swup.hooks.on('pageView', handler);
+
+// Remove it again later
+swup.hooks.off('pageView', handler);
 ```
 
-## List of all events
+Remove all handlers for a specific hook by omitting the function.
+
+```javascript
+swup.hooks.off('pageView');
+```
+
+Remove all handlers for all hooks by omitting the hook name.
+
+```javascript
+swup.hooks.off();
+```
+
+## List of hooks
+
+The following hooks are exposed by swup and can be accessed as such:
 
 <div class="events-table" data-table-with-anchor-links>
 
-| Event name                 | Description                                                                                                            |
+| Hook name                  | Description                                                                                                            |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | **animationInDone**        | triggers when transition of all animated elements is done (after content is replaced)                                  |
 | **animationInStart**       | triggers when animation _IN_ starts (class `is-animating` is removed from html tag)                                    |
@@ -68,7 +87,7 @@ document.addEventListener('swup:contentReplaced', () => {});
 ### Trigger analytics page views
 
 ```javascript
-swup.on('pageView', () => {
+swup.hooks.on('pageView', () => {
   dataLayer.push({
     event: 'VirtualPageview',
     virtualPageURL: window.location.pathname,
@@ -80,17 +99,57 @@ swup.on('pageView', () => {
 ### Initialize new components on the page
 
 ```javascript
-swup.on('contentReplaced', () => {
+swup.hooks.on('contentReplaced', () => {
   swup.options.containers.forEach((selector) => {
     // load scripts for all elements with 'selector'
   });
 });
 ```
 
-### Listening to swup's DOM events
+## DOM events
 
-```js
-document.addEventListener('swup:contentReplaced', () => {
-  // do something
+All hooks are also triggered on the `document` with a `swup:` prefix.
+
+```javascript
+document.addEventListener('swup:contentReplaced', () => {});
+```
+
+## Plugin authors
+
+Plugin authors might want to create and trigger new hooks to implement additional functionality.
+
+### Creating new hooks
+
+```javascript
+swup.hooks.create('submitForm');
+```
+
+### Triggering a hook
+
+```javascript
+swup.hooks.trigger('submitForm');
+```
+
+Pass in arguments to hand them along to any registered handlers.
+
+```javascript
+swup.hooks.trigger('submitForm', { formData: 123 });
+```
+
+### Making a hook replaceable
+
+Pass in a default handler function that is executed when the hook is triggered.
+Users of swup can then replace this handler with a custom implementation.
+
+```javascript
+
+// Define a default handler that is executed and can be replaced
+swup.hooks.trigger('submitForm', {}, () => {
+  console.log('Form submitted');
+});
+
+// Replace the default handler with a custom handler
+swup.hooks.replace('submitForm', () => {
+  console.log('Custom logic to replace default handler');
 });
 ```

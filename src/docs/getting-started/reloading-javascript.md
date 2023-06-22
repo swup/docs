@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // This runs on initial load
 });
 
-swup.on('pageView', () => {
+swup.hooks.on('pageView', () => {
   // This runs after every page change
 });
 ```
@@ -81,7 +81,7 @@ if (document.readyState === 'complete') {
 }
 
 // Run after every additional navigation by swup
-swup.on('pageView', () => init());
+swup.hooks.on('pageView', () => init());
 ```
 
 ## Using component frameworks
@@ -110,7 +110,7 @@ function unload() {
   }
 }
 
-swup.on('willReplaceContent', () => unload());
+swup.hooks.on('willReplaceContent', () => unload());
 ```
 
 ## Third-party script tags
