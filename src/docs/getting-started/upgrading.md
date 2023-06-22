@@ -66,6 +66,25 @@ If you require these attributes e.g. for styling, here's a way of manually addin
 // ???
 ```
 
+### Custom payloads
+
+Going forward, only pure HTML responses are allowed from the server. Previously, swup supported
+sending and parsing custom JSON payloads by using the Custom Payload Plugin or overloading the
+`getPageData` method directly. This change was done to drastically simplify library complexity and
+allow more flexibility for other more common use cases.
+
+```diff
+-  const swup = new Swup({
+-    plugins: [new SwupCustomPayloadPlugin()]
+-  });
++  // no longer supported
+```
+
+```diff
+-  swup.getPageData = (req) => JSON.parse(req.textContent);
++  // no longer supported
+```
+
 ### Plugin authors
 
 ???
