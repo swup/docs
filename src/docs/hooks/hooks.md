@@ -12,7 +12,7 @@ permalink: /hooks/
 # Hooks
 
 Swup provides a variety of hooks that allow listening to lifecycle events,
-customizing the transition process as well es triggering custom logic at specific
+customizing the transition process as well as triggering custom logic at specific
 points. You can register hooks on swup's `hooks` registry:
 
 ## Register a handler
@@ -21,6 +21,16 @@ points. You can register hooks on swup's `hooks` registry:
 // Log to the console on each page view
 swup.hooks.on('pageView', () => {
   console.log('New page loaded');
+});
+```
+
+If a handler returns a Promise, swup will wait for that Promise to resolve before
+continuing execution:
+
+```javascript
+// Delay the start of the page transition by 1 second
+swup.hooks.on('transitionStart', () => {
+  return new Promise((res) => setTimeout(res, 1000));
 });
 ```
 
