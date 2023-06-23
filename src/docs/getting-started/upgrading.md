@@ -153,10 +153,24 @@ Creating custom hooks has changed:
 + this.swup.hooks.create('formSubmit');
 ```
 
-As has triggering a hook. If you need wait for all handlers to finish before
-continuing, `await` the trigger call.
+As has triggering a hook:
+
+```diff
+- this.swup.triggerEvent('formSubmit');
++ this.swup.hooks.trigger('formSubmit');
+```
+
+If you need wait for all handlers to finish before continuing, `await` the trigger call:
 
 ```diff
 - this.swup.triggerEvent('formSubmit');
 + await this.swup.hooks.trigger('formSubmit');
+```
+
+If you need to replace swup's internal handler for a custom implementation, don't replace the
+instance method. Instead, specify that your hook handler should replace the internal one.
+
+```diff
+- this.swup.replaceContent = () => { /* custom implementation */ };
++ this.swup.hooks.replace('replaceContent', () => { /* custom implementation */ });
 ```
