@@ -6,7 +6,6 @@
     </div>
 
     {% if (eleventyNavigation) and (eleventyNavigation.key) %}
-      Key: {{ eleventyNavigation.key }}
       {% set children = collections.all | eleventyNavigation(eleventyNavigation.key) %}
       {% if children | length %}
         <div class="children text">
