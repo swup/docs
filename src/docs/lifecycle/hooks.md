@@ -198,19 +198,31 @@ swup.hooks.trigger('submitForm', { formData: 123 });
 
 ### Making a hook replaceable
 
-Pass in a default handler function that is executed when the hook is triggered.
-Users of swup can then replace this handler with a custom implementation.
+Passing in a default handler when triggering a hook will allow users of your plugin
+to replace this default handler with a custom implementation.
+
+In the example below, the default form handler uses `fetch` to submit the form.
 
 ```javascript
+swup.hooks.trigger(
+  'submitForm',
+  // arguments passed into the hook
+  { action: url, data: new FormData() },
+  // default hook handler
+  (context, { action, data }) => {
+    fetch(action, { body: data }).then(/* */);
+  }
+);
+```
 
-// Define a default handler that is executed and can be replaced
-swup.hooks.trigger('submitForm', { action: url, data: new FormData() }, () => {
-  console.log('Submitting form');
-  fetch(action, { body: data }).then(/* */);
-});
+Consumers can now replace the default handler with a custom handler. In this example, they are
+using axios to submit the form instead.
 
-// Replace the default handler with a custom handler
-swup.hooks.replace('submitForm', ({ action, data }) => {
-  console.log('Custom logic to replace default handler');
-});
+```javascript
+swup.hooks.replace(
+  'submitForm',
+  (context, { action, data }) => {
+    axios.get(action, { params: data }).then(/* */);
+  }
+);
 ```
