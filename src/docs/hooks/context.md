@@ -11,9 +11,9 @@ permalink: /hooks/context/
 
 # Context
 
-The global context object is a key concept of swup. It contains information about the current page
-visit: the current and new URL, the element and event that triggered the visit, as well as details
-about whether this visit should be animated.
+The global context object contains information about the current page visit: the current and new
+URL, the element and event that triggered the visit, as well as details about whether this visit
+should be animated and which containers should be replaced.
 
 By manipulating the context object, you can control how swup will transition to the new page.
 
@@ -36,8 +36,10 @@ This is an example context object for a visit from `/home` to `/about#footer`.
   from: { url: '/home' },
   to: { url: '/about' },
   containers: ['#swup'],
-  animate: true,
-  transition: 'fade',
+  transition: {
+    animate: true,
+    name: 'fade'
+  },
   trigger: {
     el: /* <a> element */,
     event: /* MouseEvent */
@@ -61,7 +63,7 @@ What can we do by manipulating the context object?
 
 ```javascript
 swup.hooks.before('transitionStart', (context) => {
-  context.animate = false;
+  context.transition.animate = false;
 });
 ```
 
@@ -85,7 +87,7 @@ swup.hooks.before('transitionStart', (context) => {
 
 ```javascript
 swup.hooks.before('transitionStart', (context) => {
-  context.transition = 'slide';
+  context.transition.name = 'slide';
 });
 ```
 
