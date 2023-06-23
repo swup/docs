@@ -26,7 +26,7 @@ default, all `a` elements with an `href` attribute will receive clicks.
 
 ```javascript
 {
-  linkSelector: 'a[href]';
+  linkSelector: 'a[href]'
 }
 ```
 
@@ -37,7 +37,7 @@ append the selector:
 
 ```javascript
 {
-  linkSelector: 'a[href], area[href], svg a[*|href]';
+  linkSelector: 'a[href], area[href], svg a[*|href]'
 }
 ```
 
@@ -51,7 +51,7 @@ Note: when navigating programmatically via `swup.loadPage({ url })`, the callbac
 
 ```javascript
 {
-  ignoreVisit: (url, { el } = {}) => el?.closest('[data-no-swup]');
+  ignoreVisit: (url, { el } = {}) => el?.closest('[data-no-swup]')
 }
 ```
 
@@ -65,7 +65,7 @@ Swup will wait for all CSS transitions and keyframe animations to finish on thes
 
 ```javascript
 {
-  animationSelector: '[class*="transition-"]';
+  animationSelector: '[class*="transition-"]'
 }
 ```
 
@@ -85,7 +85,7 @@ Defaults to a single container of id `#swup`.
 
 ```javascript
 {
-  containers: ['#swup'];
+  containers: ['#swup']
 }
 ```
 
@@ -97,7 +97,7 @@ that need up-to-date responses on each request. Defaults to `true`.
 
 ```javascript
 {
-  cache: true;
+  cache: true
 }
 ```
 
@@ -129,7 +129,7 @@ The option defaults to this:
 
 ```javascript
 {
-  skipPopStateHandling: (event) => event.state?.source !== 'swup';
+  skipPopStateHandling: (event) => event.state?.source !== 'swup'
 }
 ```
 
@@ -159,7 +159,7 @@ return a relative URL as well:
       return '/projects/';
     }
     return url;
-  };
+  }
 }
 ```
 
@@ -171,7 +171,7 @@ History visits triggered by the back and forward buttons of the browser will ski
 
 ```javascript
 {
-  animateHistoryBrowsing: false;
+  animateHistoryBrowsing: false
 }
 ```
 
@@ -194,6 +194,7 @@ The default option object look like...
     'X-Requested-With': 'swup',
     'Accept': 'text/html, application/xhtml+xml'
   },
+  resolveUrl: (url) => url,
   skipPopStateHandling: (event) => event.state?.source !== 'swup'
 }
 ```
