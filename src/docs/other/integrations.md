@@ -19,7 +19,7 @@ Swup works well with [Alpine.js](https://alpinejs.dev/) for managing component
 state and automating page lifecycles. Just initialize both libraries and enjoy
 automatic initialization of your components:
 
-```js
+```javascript
 import Swup from 'swup';
 import Alpine from 'alpinejs';
 

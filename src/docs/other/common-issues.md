@@ -87,7 +87,7 @@ The good thing about this approach is that it will lead to the correct place eve
 
 Not so good thing is that some IE versions will ignore a link leading to that anchor if its parent has `overflow: hidden`. That can be fixed with something like:
 
-```js
+```javascript
 // run only for IE
 document.querySelectorAll('[href^="#"]').forEach((link) => {
   link.addEventListener('click', (event) => {

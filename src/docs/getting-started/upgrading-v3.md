@@ -57,7 +57,7 @@ URL of the current or next page, you can use the
 [Route Name Plugin](/plugins/route-name-plugin/). Setting its `paths` option will
 restore the previous behavior and add `from-*` and `to-*` classes.
 
-```js
+```javascript
 const swup = new Swup({
   plugins: [new SwupRouteNamePlugin({ paths: true })]
 });
@@ -117,7 +117,7 @@ The `Link` helper, used internally for parsing URL parts from link elements, has
 
 Use the new `Location` helper for parsing URLs instead of the old `Link` class.
 
-```js
+```javascript
 import { Location } from 'swup';
 const { url, hash } = Location.fromElement(linkEl);
 ```
@@ -143,6 +143,6 @@ Swup now bundles its event delegation library. Plugins will no longer have to in
 
 Removing delegated listeners on unmount works the same as before:
 
-```js
+```javascript
 this.swup.delegatedListeners.formSubmit.destroy();
 ```

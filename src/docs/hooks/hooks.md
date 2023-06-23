@@ -3,8 +3,7 @@ layout: default
 title: Hooks
 eleventyNavigation:
   key: Hooks
-  parent: API
-  order: 2
+  order: 1
 description: Hook into swup's lifecycle to trigger custom functionality.
 permalink: /hooks/
 ---
@@ -17,12 +16,13 @@ points.
 
 ## Registering handlers
 
-You can register hooks on swup's `hooks` registry.
+You can register hooks on swup's `hooks` registry. All handlers receive the
+[global context object](/hooks/context/) as their first argument.
 
 ```javascript
 // Log to the console on each page view
-swup.hooks.on('pageView', () => {
-  console.log('New page loaded');
+swup.hooks.on('pageView', (context) => {
+  console.log('New page loaded:', context.to.url);
 });
 ```
 
@@ -159,9 +159,9 @@ swup.hooks.on('pageView', () => {
 
 ```javascript
 swup.hooks.on('pageView', () => {
-  swup.options.containers.forEach((selector) => {
-    // load scripts for all elements with 'selector'
-  });
+  if (document.querySelector('#carousel')) {
+    const carousel = new Carousel('#carousel');
+  }
 });
 ```
 
@@ -203,12 +203,13 @@ Users of swup can then replace this handler with a custom implementation.
 ```javascript
 
 // Define a default handler that is executed and can be replaced
-swup.hooks.trigger('submitForm', {}, () => {
-  console.log('Form submitted');
+swup.hooks.trigger('submitForm', { action: url, data: new FormData() }, () => {
+  console.log('Submitting form');
+  fetch(action, { body: data }).then(/* */);
 });
 
 // Replace the default handler with a custom handler
-swup.hooks.replace('submitForm', () => {
+swup.hooks.replace('submitForm', ({ action, data }) => {
   console.log('Custom logic to replace default handler');
 });
 ```

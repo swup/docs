@@ -82,7 +82,7 @@ Swup 4 will no longer add `[data-swup]` attributes to containers.
 
 If you require these attributes e.g. for styling, here's a way of manually adding them back:
 
-```js
+```javascript
 // ???
 ```
 
