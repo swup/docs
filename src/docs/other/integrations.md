@@ -40,10 +40,10 @@ Alpine.start();
 If you want to listen to swup events inside your Alpine components, you need to
 make use of the [`.camel` modifier](https://alpinejs.dev/directives/on#camel)
 since camelCase is not supported in HTML attribute names. For example, listening
-for the `contentReplaced` event would look like this:
+for the `pageView` event would look like this:
 
 ```html
-<div x-data x-on:swup:content-replaced.camel.document="console.log('content replaced!')">
+<div x-data x-on:swup:page-view.camel.document="console.log('page view registered!')">
   My Alpine Component
 </div>
 ```

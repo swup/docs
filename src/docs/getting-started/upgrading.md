@@ -54,6 +54,23 @@ All hook-related functions now live on the `hooks` instance of swup:
 +  swup.hooks.off('pageView', handler)
 ```
 
+#### Removed hooks
+
+The old `willReplaceContent` and `contentReplaced` events are superseded by a single `replaceContent`
+hook. Since you can now register handlers to run *before* a specific hook, it serves both use cases:
+
+```diff
+// Run right before the content is replaced
+-  swup.on('willReplaceContent', () => {})
++  swup.hooks.before('replaceContent', () => {})
+```
+
+```diff
+// Run directly after the content was replaced
+-  swup.on('contentReplaced', () => {})
++  swup.hooks.on('replaceContent', () => {})
+```
+
 ### Container attributes
 
 Swup 4 will no longer add `[data-swup]` attributes to containers.

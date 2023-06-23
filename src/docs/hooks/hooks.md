@@ -33,7 +33,7 @@ Pass in an options object to customize how a handler is invoked.
 #### once
 
 ```javascript
-// Only execute the handler once, the remove the handler
+// Only execute the handler once, then remove the handler
 swup.hooks.on('pageView', () => {}, { once: true });
 ```
 
@@ -121,22 +121,23 @@ The following hooks are exposed by swup and can be accessed as such:
 | **animationOutDone**       | triggers when transition of all animated elements is done (after click of link and before content is replaced)         |
 | **animationOutStart**      | triggers when animation _OUT_ starts (class `is-animating` is added to html tag)                                       |
 | **animationSkipped**       | triggers when transition is skipped (on back/forward buttons)                                                          |
+| **awaitAnimation**         | triggers when swup starts waiting for animations to finish                                                             |
 | **clickLink**              | triggers when link is clicked                                                                                          |
-| **contentReplaced**        | triggers right after the content of page is replaced                                                                   |
-| **disabled**               | triggers on `destroy()`                                                                                                |
+| **disabled**               | triggers on `swup.destroy()`                                                                                           |
 | **enabled**                | triggers when swup instance is created or re-enabled after call of `destroy()`                                         |
 | **hoverLink**              | triggers when link is hovered                                                                                          |
 | **openPageInNewTab**       | triggers when page is opened to new tab (link clicked when control key is pressed)                                     |
 | **pageLoaded**             | triggers when loading of some page is done                                                                             |
 | **pagePreloaded**          | triggers when the preload of some page is done (differs from **pageLoaded** only by the source of event - hover/click) |
 | **pageRetrievedFromCache** | triggers when page is retrieved from cache and no request is necessary                                                 |
-| **pageView**               | similar to **contentReplaced**, except it is once triggered on load                                                    |
+| **pageView**               | triggers when a new page was loaded and the content was replaced, as well as on first load of swup                     |
 | **popState**               | triggers on popstate events (back/forward button)                                                                      |
+| **replaceContent**         | triggers right after the content of the page is replaced                                                                   |
 | **samePage**               | triggers when link leading to the same page is clicked                                                                 |
 | **samePageWithHash**       | triggers when link leading to the same page with `#someElement` in the href attribute is clicked                       |
 | **transitionStart**        | triggers when transition start (`loadPage` method is called)                                                           |
-| **transitionEnd**          | triggers when transition ends (content is replaced and all animations are done                                         |
-| **willReplaceContent**     | triggers right before the content of page is replaced                                                                  |
+| **transitionEnd**          | triggers when transition ends (content is replaced and all animations are done)                                        |
+| **urlUpdated**             | triggers when the url was updated (page load or redirect)                                                              |
 
 </div>
 
@@ -157,7 +158,7 @@ swup.hooks.on('pageView', () => {
 ### Initialize new components on the page
 
 ```javascript
-swup.hooks.on('contentReplaced', () => {
+swup.hooks.on('pageView', () => {
   swup.options.containers.forEach((selector) => {
     // load scripts for all elements with 'selector'
   });
@@ -169,7 +170,7 @@ swup.hooks.on('contentReplaced', () => {
 All hooks are also triggered on the `document` with a `swup:` prefix.
 
 ```javascript
-document.addEventListener('swup:contentReplaced', () => {});
+document.addEventListener('swup:pageView', () => {});
 ```
 
 ## Plugin authors
