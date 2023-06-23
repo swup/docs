@@ -5,7 +5,7 @@ eleventyNavigation:
   key: Reloading JavaScript
   parent: Getting Started
   order: 5
-description: Since swup removes the page reloads from site, it also removes a standard lifecycle of scripts
+description: How to trigger custom code when a new page is loaded.
 permalink: /getting-started/reloading-javascript/
 ---
 
@@ -32,8 +32,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-Instead, we can trigger code after each page change by hooking into swup's
-[events](/events/). Combining the browser event and swup events, we end up with
+Instead, we can trigger code after each page change by registering handlers for swup's
+[hooks](/hooks/). Combining the browser event and swup hooks, we end up with
 a template for reliably running code to initialize elements on the page:
 
 ```javascript
@@ -100,8 +100,7 @@ lifecycle hooks.
 Swup keeps a persistent session in memory, so objects leaking memory will not be
 cleaned up automatically as they would be on a full page refresh. While this
 should not be a problem on most sites, be aware that in special case you will
-need to clean up after yourself by hooking into swup's `willReplaceContent`
-event.
+need to clean up after yourself right before swup's `replaceContent` hook.
 
 ```javascript
 function unload() {
@@ -110,7 +109,7 @@ function unload() {
   }
 }
 
-swup.hooks.on('willReplaceContent', () => unload());
+swup.hooks.before('replaceContent', () => unload());
 ```
 
 ## Third-party script tags

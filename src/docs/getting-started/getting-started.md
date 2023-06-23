@@ -22,7 +22,7 @@ other quality-of-life improvements.
 - ✨ Auto-detects [CSS transitions](/getting-started/how-it-works/) for perfect timing
 - 🔗 Updates URLs and preserves native browser history behavior
 - 📦 Uses a [cache](/api/cache/) to speed up subsequent page loads
-- 💡 Offers [events](/events/) for hooking into the lifecycle
+- 💡 Offers [hooks](/hooks/) for customizing and extending the page load lifecycle
 - 🔌 Has a powerful [plugin system](/plugins/) and many official and third-party plugins
 - 🎨 Provides ready-to-go [themes](/themes/) to get started quickly
 
