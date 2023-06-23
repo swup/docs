@@ -3,6 +3,7 @@ layout: default
 title: Hooks
 eleventyNavigation:
   key: Hooks
+  parent: Lifecycle
   order: 1
 description: Hook into swup's lifecycle to trigger custom functionality.
 permalink: /hooks/
@@ -17,7 +18,7 @@ points.
 ## Registering handlers
 
 You can register hooks on swup's `hooks` registry. All handlers receive the
-[global context object](/hooks/context/) as their first argument.
+global [context object](/context/) as their first argument.
 
 ```javascript
 // Log to the console on each page view
@@ -79,8 +80,8 @@ swup.hooks.on('transitionStart', () => {
 });
 ```
 
-> Note: Some hooks are executed without awaiting Promises if their handler needs
-> to prevent a DOM event's default action: `clickLink` and `popState`.
+⚠️ **Note**: Some hooks are executed without awaiting Promises if their handler needs
+to prevent a DOM event's default action: `clickLink` and `popState`.
 
 ## Removing handlers
 

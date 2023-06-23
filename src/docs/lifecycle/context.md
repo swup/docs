@@ -3,10 +3,10 @@ layout: default
 title: Context
 eleventyNavigation:
   key: Context
-  parent: Hooks
+  parent: Lifecycle
   order: 2
 description:
-permalink: /hooks/context/
+permalink: /context/
 ---
 
 # Context
@@ -46,7 +46,7 @@ This is an example context object for a visit from `/home` to `/about#footer`.
   },
   history: {
     popstate: false,
-    action: 'push',
+    action: 'push'
   },
   scroll: {
     reset: true,
@@ -75,7 +75,7 @@ swup.hooks.before('transitionStart', (context) => {
 });
 ```
 
-### Change the containers about to be replaced
+### Change which containers will be replaced
 
 ```javascript
 swup.hooks.before('transitionStart', (context) => {
@@ -91,7 +91,7 @@ swup.hooks.before('transitionStart', (context) => {
 });
 ```
 
-### Access the event that triggered the visit
+### Access the event that triggered a visit
 
 ```javascript
 swup.hooks.before('transitionStart', (context) => {
@@ -99,7 +99,7 @@ swup.hooks.before('transitionStart', (context) => {
 });
 ```
 
-### Access the element that triggered the visit
+### Access the element that triggered a visit
 
 ```javascript
 swup.hooks.before('transitionStart', (context) => {

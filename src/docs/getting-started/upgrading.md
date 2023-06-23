@@ -17,9 +17,10 @@ If you're upgrading from swup 2, see [Upgrading from swup 2 to 3](/getting-start
 
 ## Upgrading from swup 3 to 4
 
-Swup 4 introduces a few major changes that will require some modifications to most websites.
-While there is a thin compatibility layer — meaning most projects should keep running fine — it's a
-good idea to review the changes and update any calls to newly deprecated functionality.
+Swup 4 introduces exciting new features that make it easier to customize and working with it
+more enjoyable. Due to their nature, some of these are breaking changes and will require
+modifications to projects using swup. While there is a thin compatibility layer, it's a
+good idea to review the changes and modify your site where necessary.
 
 ### Install the latest version
 
@@ -71,6 +72,26 @@ hook. Since you can now register handlers to run *before* a specific hook, it se
 +  swup.hooks.on('replaceContent', () => {})
 ```
 
+### Context object
+
+Along with a new hook system, Swup 4 introduces a global [context object](/context/) that holds information
+about the current page visit, such as current and next URL, the containers to replace, the element and
+event that triggered the visit, etc. It's available to all hook handlers as their first argument.
+Manipulating its properties allows modifying swup's behavior to a considerable degree.
+
+```javascript
+// Get the next URL and the link element that was clicked
+swup.hooks.on('pageView', (context) => {
+  console.log('New page: ', context.to.url);
+  console.log('Triggered by: ', context.trigger.el);
+});
+
+// Disable animations on the next visit
+swup.hooks.before('transitionStart', (context) => {
+  context.transition.animate = false;
+});
+```
+
 ### Container attributes
 
 Swup 4 will no longer add `[data-swup]` attributes to containers.
@@ -78,12 +99,6 @@ Swup 4 will no longer add `[data-swup]` attributes to containers.
 ```diff
 -  <div id="swup" class="transition-page" data-swup="0"></div>
 +  <div id="swup" class="transition-page"></div>
-```
-
-If you require these attributes e.g. for styling, here's a way of manually adding them back:
-
-```javascript
-// ???
 ```
 
 ### Custom payloads
@@ -122,4 +137,26 @@ you might want to stick with swup 3.
 
 ### Plugin authors
 
-???
+#### Hooks
+
+As mentioned above, switch from events to hooks:
+
+```diff
+-  this.swup.on('willReplaceContent', () => {})
++  this.swup.hooks.before('replaceContent', () => {})
+```
+
+Creating custom hooks has changed:
+
+```diff
+- this.swup._handlers.formSubmit = [];
++ this.swup.hooks.create('formSubmit');
+```
+
+As has triggering a hook. If you need wait for all handlers to finish before
+continuing, `await` the trigger call.
+
+```diff
+- this.swup.triggerEvent('formSubmit');
++ await this.swup.hooks.trigger('formSubmit');
+```

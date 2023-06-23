@@ -179,7 +179,7 @@ History visits triggered by the back and forward buttons of the browser will ski
 
 ## Default Options
 
-The default option object look like...
+The default options look like this:
 
 ```javascript
 {
@@ -190,11 +190,11 @@ The default option object look like...
   ignoreVisit: (href, { el } = {}) => el?.closest('[data-no-swup]'),
   linkSelector: 'a[href]',
   plugins: [],
+  resolveUrl: (url) => url,
   requestHeaders: {
     'X-Requested-With': 'swup',
     'Accept': 'text/html, application/xhtml+xml'
   },
-  resolveUrl: (url) => url,
   skipPopStateHandling: (event) => event.state?.source !== 'swup'
 }
 ```

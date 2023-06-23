@@ -4,7 +4,7 @@ title: Cache
 eleventyNavigation:
   key: Cache
   parent: API
-  order: 4
+  order: 5
 description: Swup's cache and its interface
 permalink: /api/cache/
 ---
@@ -15,22 +15,18 @@ Swup's cache is available as `swup.cache`. See below for the available methods.
 
 ## cacheUrl
 
-Creates a cache record. The `url`, `title`, `blocks` and `originalContent` properties are required.
+Create a cache record. Requies `url` and `html` properties.
 
 ```javascript
 swup.cache.cacheUrl({
-  url: '/url-to-page',
-  title: 'Page title',
-  blocks: ['<div id="swup"></div>'],
-  originalContent: '<html>...</html>',
-  pageClass: 'body-class',
-  responseURL: '/redirected-url'
+  url: '/about',
+  html: '<html>...</html>'
 });
 ```
 
 ## getPage
 
-Returns the page object if the given URL is cached. Returns `undefined` otherwise.
+Return the page object if the given URL is cached, `undefined` otherwise.
 
 ```javascript
 const page = swup.cache.getPage('/about');
@@ -38,7 +34,7 @@ const page = swup.cache.getPage('/about');
 
 ## getCurrentPage
 
-Returns the page object of the current page.
+Return the page object of the current page.
 
 ```javascript
 const page = swup.cache.getCurrentPage();
@@ -49,7 +45,7 @@ const page = swup.cache.getCurrentPage();
 Check if the given URL has been cached.
 
 ```javascript
-const isCached = swup.cache.exists('/about');
+if (swup.cache.exists('/about')) { /* */ }
 ```
 
 ## remove

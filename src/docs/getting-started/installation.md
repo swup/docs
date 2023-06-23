@@ -37,7 +37,7 @@ If you're not using a bundler and want to get started quickly, you can include
 the minified production file from a CDN:
 
 ```html
-<script src="https://unpkg.com/swup@3"></script>
+<script src="https://unpkg.com/swup@4"></script>
 ```
 
 In your main script, create a new instance:
@@ -58,13 +58,13 @@ browsers. Note the `?module` query string in the first import URL.
 <!-- Import Swup as ESM -->
 
 <script type="module">
-  import Swup from 'https://unpkg.com/swup@3?module';
+  import Swup from 'https://unpkg.com/swup@4?module';
   const swup = new Swup();
 </script>
 
 <!-- Import Swup as UMD for older browsers -->
 
-<script nomodule src="https://unpkg.com/swup@3"></script>
+<script nomodule src="https://unpkg.com/swup@4"></script>
 <script nomodule>
   const swup = new Swup();
 </script>
