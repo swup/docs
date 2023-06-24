@@ -67,7 +67,7 @@ swup.hooks.before('transitionStart', (context) => {
 });
 ```
 
-### Disable scrolling for the current visit
+### Disable scroll reset for the current visit
 
 ```javascript
 swup.hooks.before('transitionStart', (context) => {

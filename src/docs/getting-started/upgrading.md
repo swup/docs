@@ -100,6 +100,13 @@ swup.hooks.before('transitionStart', (context) => {
 });
 ```
 
+### Scrolling
+
+Swup 4 will correctly reset the scroll position after each navigation, as well as scroll to `#anchor`
+links on the same page. The scroll plugin is no longer required for recreating basic browser
+behavior. If you need animated scrolling, custom scroll offsets and other advanced customisation,
+keep using the [scroll plugin](/plugins/scroll-plugin/).
+
 ### Container attributes
 
 Swup 4 will no longer add `[data-swup]` attributes to containers.
