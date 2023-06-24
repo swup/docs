@@ -91,7 +91,7 @@ Defaults to a single container of id `#swup`.
 
 ## cache
 
-Swup has a built-in cache and will keep previously loaded pages in memory.
+Swup's built-in [cache](/api/cache/) keeps previously loaded pages in memory.
 This drastically improves speed but should be disabled for highly dynamic sites
 that need up-to-date responses on each request. Defaults to `true`.
 

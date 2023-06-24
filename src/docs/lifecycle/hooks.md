@@ -130,7 +130,7 @@ The following hooks are exposed by swup and can be accessed as such:
 | **openPageInNewTab**       | triggers when page is opened to new tab (link clicked when control key is pressed)                                     |
 | **pageLoaded**             | triggers when loading of some page is done                                                                             |
 | **pagePreloaded**          | triggers when the preload of some page is done (differs from **pageLoaded** only by the source of event - hover/click) |
-| **pageRetrievedFromCache** | triggers when page is retrieved from cache and no request is necessary                                                 |
+| **pageLoadedFromCache**    | triggers when page is loaded from the cache and no request is necessary                                                 |
 | **pageView**               | triggers when a new page was loaded and the content was replaced, as well as on first load of swup                     |
 | **popState**               | triggers on popstate events (back/forward button)                                                                      |
 | **replaceContent**         | triggers right after the content of the page is replaced                                                                   |
