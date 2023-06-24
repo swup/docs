@@ -57,8 +57,12 @@ All hook-related functions now live on the `hooks` instance of swup:
 
 #### Removed hooks
 
+Some hooks were removed or renamed.
+
+**willReplaceContent & contentReplaced**
+
 The old `willReplaceContent` and `contentReplaced` events are superseded by a single `replaceContent`
-hook. Since you can now register handlers to run *before* a specific hook, it serves both use cases:
+hook. Since swup can now register handlers to run *before* a specific hook, it serves both use cases:
 
 ```diff
 // Run right before the content is replaced
@@ -71,6 +75,10 @@ hook. Since you can now register handlers to run *before* a specific hook, it se
 -  swup.on('contentReplaced', () => {})
 +  swup.hooks.on('replaceContent', () => {})
 ```
+
+**pageRetrievedFromCache**
+
+To simplify naming, `pageRetrievedFromCache` is now called `pageLoadedFromCache`.
 
 ### Context object
 
