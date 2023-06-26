@@ -78,7 +78,14 @@ hook. Since swup can now register handlers to run *before* a specific hook, it s
 
 **pageRetrievedFromCache**
 
-To simplify naming, `pageRetrievedFromCache` is now called `pageLoadedFromCache`.
+The `pageRetrievedFromCache` hook has been removed. There is now only a single `pageLoaded` hook
+that fires whenever a page was loaded. Check its boolean `cache` parameter to know if the page was
+loaded from cache or not.
+
+```diff
+- swup.on('pageRetrievedFromCache', () => {});
++ swup.hooks.on('pageLoaded', (context, { page, cache }) => { /* cache is true or false */ });
+```
 
 ### Context object
 
