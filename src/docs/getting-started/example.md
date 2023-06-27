@@ -11,46 +11,35 @@ permalink: /getting-started/example/
 
 # Example
 
-First thing we need to do is prepare our HTML content.
-Define the elements that are being animated and elements (**containers**) that need to be replaced.
-Let's assume we want to fade in/out the content of `main` element and replace it's contents.
+Swup requires two things to work: a content container with an id and an animation class, as well
+as corresponding transition styles it can wait for when loading a page.
 
-Add `swup` [id to tell swup](/options/#containers) to replace the content of that element
-and your [animation class](/options/#animationselector) to tell swup to wait for that element to animate.
-Both are adjustable in options and are not related to each other (you can animate completely different elements than the containers).
+We'll tackle these one by one. See below for the [complete example](#complete-example) code.
+
+## 1. Content container
+
+Let's mark our main element as a [content container](/options/#containers) by adding the id `#swup`.
+
+We'll also add a special [animation class](/options/#animationselector) to let swup know that we
+want to wait for this element to finish animating whenever a new page is loaded.
 
 ```html
-<html>
-  <head>
-    <title>Homepage</title>
-  </head>
-  <body>
-    <main id="swup" class="transition-fade">
-      <h1>Homepage</h1>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-        labore et dolore magna aliqua.
-      </p>
-      <a href="/other-page/">Go to other page</a>
-    </main>
-  </body>
-</html>
+<main id="swup" class="transition-fade">
+  <h1>Homepage</h1>
+  <p>Lorem ipsum dolor sit amet.</p>
+</main>
 ```
 
-Enable swup.
+Note: these are just the defaults. Both the container selector and the animation selector are adjustable in the
+[options](/options/).
 
-```javascript
-const swup = new Swup();
-```
+## 2. Transition styles
 
-At this point your page is already enhanced as swup will stop page from reloading a replace the content.
-This is especially good with a [preload plugin](/plugins/preload-plugin/) which can make your page blazing fast.
-
-...but let's continue. Add CSS for the element animation.
+Let's define a CSS transition on the special transition class added before:
 
 ```css
 .transition-fade {
-  transition: 0.4s;
+  transition: opacity 0.4s;
   opacity: 1;
 }
 
@@ -59,9 +48,45 @@ html.is-animating .transition-fade {
 }
 ```
 
-**And believe it or not, that's it!**
-We're all set, or at least for our simple fade in/fade out example…
-Swup loads the page, handles classes for the css animation, waits for the animation to finish/page to load, replaces content and fades your content back.
-Swup also changes the title of your page to the loaded one (more in [options](/options/) or [plugins](/plugins/)).
+## 3. Initialize swup
 
-Would you like to try it out yourself? Head to the [demo page](/getting-started/demo/).
+Finally, we'll initialize swup. And we're good to go!
+
+```javascript
+const swup = new Swup();
+```
+
+## Complete example
+
+Putting it all together, this is what we get.
+
+```html
+<html>
+  <head>
+    <title>Homepage</title>
+    <style>
+      .transition-fade {
+        transition: opacity 0.4s;
+        opacity: 1;
+      }
+      html.is-animating .transition-fade {
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="swup" class="transition-fade">
+      <h1>Homepage</h1>
+      <p>Lorem ipsum dolor sit amet.</p>
+    </main>
+    <script type="module">
+      import Swup from 'https://unpkg.com/swup@4?module';
+      const swup = new Swup();
+    </script>
+  </body>
+</html>
+```
+
+## Demo
+
+Like to try it out yourself? Head to the [demo page](/getting-started/demo/).
