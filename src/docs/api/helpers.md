@@ -79,18 +79,6 @@ Make sure to remove the listener on unmount of a plugin:
 swup.delegatedListeners.formSubmit.destroy();
 ```
 
-## fetch
-
-Wrapper around swup's XHR request implementation. Receives an options object and a callback that resolves with the finished request object.
-
-```javascript
-fetch('/about', { method: 'POST', data: {} }, (req) => {
-  if (req.status !== 500) {
-    /* process response */
-  }
-});
-```
-
 ## getCurrentUrl
 
-Return the current page's url.
+Return the current page's url: pathname + query params.
