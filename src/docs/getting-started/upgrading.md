@@ -109,6 +109,19 @@ swup.hooks.before('transitionStart', (context) => {
 });
 ```
 
+The context object replaces the transition object on the swup instance.
+
+```diff
+- swup.on('transitionStart', () => {
+-   console.log('Transition to', swup.transition.to);
+-   console.log('Transition name', swup.transition.custom);
+- });
++ swup.hooks.on('transitionStart', (context) => {
++   console.log('Transition to', context.to.url);
++   console.log('Transition name', context.transition.name);
++ });
+```
+
 ### Scroll support
 
 Swup 4 will correctly reset the scroll position after each navigation, as well as scroll to `#anchor`
