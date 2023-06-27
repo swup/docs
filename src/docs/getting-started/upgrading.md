@@ -18,9 +18,11 @@ If you're upgrading from swup 2, see [Upgrading from swup 2 to 3](/getting-start
 ## Upgrading from swup 3 to 4
 
 Swup 4 introduces exciting new features that make it easier to customize and working with it
-more enjoyable. Due to their nature, some of these are breaking changes and will require
-modifications to projects using swup. While there is a thin compatibility layer, it's a
-good idea to review the changes and modify your site where necessary.
+more enjoyable. Some of the highlights are a new [hook system](#new-hook-system), a global
+[context object](#context-object) and built-in [scroll support](#scroll-support). Due to their nature,
+some of these are breaking changes and will require modifications to projects using swup. While
+there is a thin compatibility layer, it's a good idea to review the changes and modify your site
+where necessary.
 
 ### Install the latest version
 
@@ -107,12 +109,32 @@ swup.hooks.before('transitionStart', (context) => {
 });
 ```
 
-### Scrolling
+### Scroll support
 
 Swup 4 will correctly reset the scroll position after each navigation, as well as scroll to `#anchor`
 links on the same page. The scroll plugin is no longer required for recreating basic browser
 behavior. If you need animated scrolling, custom scroll offsets and other advanced customisation,
 keep using the [scroll plugin](/plugins/scroll-plugin/).
+
+### Unique container selectors
+
+Swup 4 will only match and replace a single element for each container selector. Previously, each
+selector would match as many elements as found on the page. We recommend only using id attributes or
+other unique identifiers for container selectors.
+
+```diff
+-  <div class="section">Navigation</div>
+-  <div class="section">Content</div>
++  <div id="nav" class="section">Navigation</div>
++  <div id="content" class="section">Content</div>
+```
+
+```diff
+const swup = new Swup({
+-  containers: ['.section']
++  containers: ['#nav', '#content']
+})
+```
 
 ### Container attributes
 
@@ -128,7 +150,8 @@ Swup 4 will no longer add `[data-swup]` attributes to containers.
 Going forward, only pure HTML responses are allowed from the server. Previously, swup supported
 sending and parsing custom JSON payloads by using the Custom Payload Plugin or overloading the
 `getPageData` method directly. This change was done to drastically simplify library complexity and
-allow more flexibility for other more common use cases.
+allow more flexibility for other more common use cases. If you absolutely require custom payloads,
+we recommend sticking with swup 3.
 
 ```diff
 -  const swup = new Swup({
