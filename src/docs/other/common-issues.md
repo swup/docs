@@ -83,23 +83,6 @@ Using a separate element inside of the section as an anchor. As it's a separate 
 }
 ```
 
-The good thing about this approach is that it will lead to the correct place even without JS and you can change the offset with a simple CSS media query.
-
-Not so good thing is that some IE versions will ignore a link leading to that anchor if its parent has `overflow: hidden`. That can be fixed with something like:
-
-```javascript
-// run only for IE
-document.querySelectorAll('[href^="#"]').forEach((link) => {
-  link.addEventListener('click', (event) => {
-    document.documentElement.scrollTop =
-      Math.round(document.querySelector(event.target.hash).getBoundingClientRect().top) +
-      window.pageYOffset;
-  });
-});
-```
-
-Another option is to disable swups scroll control and use it's `scrollTo` method and swup events to scroll when you want, where you want... or rewrite the `scrollTo` method altogether to include your offset.
-
 ## Canonical link in head can cause wrong site indexing
 
 Since search engines are improving and starting to simulate actual devices browsing the websites, canonical link tag in head (which is not replaced during transition by default) can cause site to be indexed incorrectly.
