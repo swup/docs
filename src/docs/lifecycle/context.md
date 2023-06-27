@@ -57,9 +57,15 @@ This is an example context object for a visit from `/home` to `/about#footer`.
 
 ## Use cases
 
-What can we do by manipulating the context object?
+What can we do by manipulating the context object? A few examples are listed below.
 
-### Disable animations for the current visit
+Note that the most convenient place to hook into is right before `transitionStart` — all the
+information about the current transition is already there, but no requests or animations have yet
+been started.
+
+### Disable animations
+
+The new page will load instantaneously without animations.
 
 ```javascript
 swup.hooks.before('transitionStart', (context) => {
@@ -67,23 +73,9 @@ swup.hooks.before('transitionStart', (context) => {
 });
 ```
 
-### Disable scroll reset for the current visit
+### Custom transition
 
-```javascript
-swup.hooks.before('transitionStart', (context) => {
-  context.scroll.reset = false;
-});
-```
-
-### Change which containers will be replaced
-
-```javascript
-swup.hooks.before('transitionStart', (context) => {
-  context.containers = ['#sidebar'];
-});
-```
-
-### Set a custom transition for the current visit
+Set a custom `.to-{name}` class on the html element to allow targeting via CSS.
 
 ```javascript
 swup.hooks.before('transitionStart', (context) => {
@@ -91,15 +83,30 @@ swup.hooks.before('transitionStart', (context) => {
 });
 ```
 
-### Access the event that triggered a visit
+### Disable scroll reset
+
+The current scroll position will be kept after the new page was loaded.
 
 ```javascript
 swup.hooks.before('transitionStart', (context) => {
-  console.log('Click event', context.trigger.event); // MouseEvent
+  context.scroll.reset = false;
 });
 ```
 
-### Access the element that triggered a visit
+### Dynamic containers
+
+Change which [content containers](/options/#containers) will be replaced on the current visit.
+
+```javascript
+swup.hooks.before('transitionStart', (context) => {
+  context.containers = ['#sidebar'];
+});
+```
+
+### Access trigger element
+
+Inspect the DOM element that triggered the current visit. Most probably a link element or undefined
+if triggered via the API.
 
 ```javascript
 swup.hooks.before('transitionStart', (context) => {
@@ -107,10 +114,25 @@ swup.hooks.before('transitionStart', (context) => {
 });
 ```
 
-### Check if the current visit is a browser history visit
+### Access trigger event
+
+Inspect the DOM event that triggered the current visit. Most probably a click event or undefined
+if triggered via the API.
 
 ```javascript
 swup.hooks.before('transitionStart', (context) => {
-  console.log('History visit?', context.history.popstate);
+  console.log('Click event', context.trigger.event); // MouseEvent
+});
+```
+
+### Identify history visit
+
+Check if the current visit was triggered by the backward/forward button of the browser.
+
+```javascript
+swup.hooks.before('transitionStart', (context) => {
+  if (context.history.popstate) {
+    console.log('History visit');
+  }
 });
 ```
