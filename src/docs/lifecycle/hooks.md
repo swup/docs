@@ -117,28 +117,27 @@ The following hooks are exposed by swup and can be accessed as such:
 
 | Hook name                  | Description                                                                                                            |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| **animationInDone**        | triggers when transition of all animated elements is done (after content is replaced)                                  |
-| **animationInStart**       | triggers when animation _IN_ starts (class `is-animating` is removed from html tag)                                    |
-| **animationOutDone**       | triggers when transition of all animated elements is done (after click of link and before content is replaced)         |
-| **animationOutStart**      | triggers when animation _OUT_ starts (class `is-animating` is added to html tag)                                       |
-| **animationSkipped**       | triggers when transition is skipped (on back/forward buttons)                                                          |
-| **awaitAnimation**         | triggers when swup starts waiting for animations to finish                                                             |
-| **clickLink**              | triggers when link is clicked                                                                                          |
-| **disabled**               | triggers on `swup.destroy()`                                                                                           |
-| **enabled**                | triggers when swup instance is created or re-enabled after call of `destroy()`                                         |
-| **hoverLink**              | triggers when link is hovered                                                                                          |
-| **openPageInNewTab**       | triggers when page is opened to new tab (link clicked when control key is pressed)                                     |
-| **pageLoaded**             | triggers when loading of some page is done                                                                             |
-| **pagePreloaded**          | triggers when the preload of some page is done (differs from **pageLoaded** only by the source of event - hover/click) |
-| **pageLoadedFromCache**    | triggers when page is loaded from the cache and no request is necessary                                                 |
-| **pageView**               | triggers when a new page was loaded and the content was replaced, as well as on first load of swup                     |
-| **popState**               | triggers on popstate events (back/forward button)                                                                      |
-| **replaceContent**         | triggers right after the content of the page is replaced                                                                   |
-| **samePage**               | triggers when link leading to the same page is clicked                                                                 |
-| **samePageWithHash**       | triggers when link leading to the same page with `#someElement` in the href attribute is clicked                       |
-| **transitionStart**        | triggers when transition start (`loadPage` method is called)                                                           |
-| **transitionEnd**          | triggers when transition ends (content is replaced and all animations are done)                                        |
-| **urlUpdated**             | triggers when the url was updated (page load or redirect)                                                              |
+| **animationOutStart**      | out-animation of current content begins: `.is-animating` is added to html                                              |
+| **animationOutDone**       | out-animation of current content finished, content is not yet replaced                                                 |
+| **animationInStart**       | in-animation of new content begins: `.is-animating` is removed from html tag                                           |
+| **animationInDone**        | in-animation of new content finished, content was replaced                                                             |
+| **animationSkipped**       | animations were skipped and page will load instantaneously: e.g. on history navigation                                 |
+| **awaitAnimation**         | swup checks which CSS animations to wait for, in or out                                                                |
+| **clickLink**              | a link was clicked                                                                                                     |
+| **enabled**                | swup instance was initialized                                                                                          |
+| **disabled**               | swup instance was [disabled](/api/methods/#destroy)                                                                    |
+| **fetchPage**              | a fetch request is sent                                                                                                |
+| **loadPage**               | a page is loaded                                                                                                       |
+| **openPageInNewTab**       | a link was opened to a new tab                                                                                         |
+| **pageLoaded**             | a page was completely loaded, whether from a request or from cache                                                     |
+| **pageView**               | transition to a new page was completed, also triggers when first enabling swup                                         |
+| **popState**               | history navigation was started: back/forward button pressed                                                            |
+| **replaceContent**         | the content of the page is replaced                                                                                    |
+| **samePage**               | a link is clicked that leads to the current page                                                                       |
+| **samePageWithHash**       | a link is clicked that jumps to an `#anchor` on the current page                                                       |
+| **transitionStart**        | begin of the transition to a new page                                                                                  |
+| **transitionEnd**          | end of the transition to a new page: content was replaced and animations have finished                                 |
+| **urlUpdated**             | the current page url was updated                                                                                       |
 
 </div>
 
