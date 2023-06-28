@@ -13,55 +13,6 @@ permalink: /other/common-issues/
 
 This is a compilation of challenges and possible solutions when integrating or extending swup.
 
-## Overused `transition-*` classes
-
-Swup will wait for any element with a `transition-*` class to finish transitioning.
-While there is an unlimited number of elements that can have this class, only one is actually
-required for swup to get its timing right. Using it on all animated elements is not required and
-often leads to bugs.
-
-It is recommended to use one element with a `transition-*` class to set the page
-transition duration and make any other transition happen independently. As long as all transitions
-share the same duration, the should be no issues with this approach.
-
-```css
-.fade {
-  transition: 0.4s;
-  opacity: 1;
-}
-html.is-animating .fade {
-  opacity: 0;
-}
-```
-
-## Libraries already using `transition-*` classes
-
-Some third-party libraries like [Foundation](https://foundation.zurb.com/) might already be using
-class names like `transition-*` for their own functionality. In this case, swup will try to wait
-for transitions on those elements, quite possibly messing up the timing of transitions.
-
-Using a stricter [animationSelector](/options/#animation-selector) fixes the issue.
-
-```javascript
-var swup = new Swup({
-  animationSelector: '[class*="swup-transition-"]'
-});
-```
-
-```html
-<main id="swup" class="swup-transition-fade"></main>
-```
-
-```css
-.swup-transition-fade {
-  transition: 0.4s;
-  opacity: 1;
-}
-html.is-animating .swup-transition-fade {
-  opacity: 0;
-}
-```
-
 ## The stylesheets of the next page are not loaded
 
 Swup doesn't automatically update the contents of the `head` tag. Any stylesheets not included in
@@ -118,6 +69,65 @@ Consider using the semi-official [morph plugin](https://github.com/daun/swup-mor
 cases. It lets you define additional containers that morph their new content into the old element,
 without a complete replacement and without resetting the scroll position of the container itself.
 
+## Canonical link tag causes indexing issues
+
+Swup doesn't automatically update the contents of the `head` tag — it only updates the document
+`title`. This can lead to issues with wrong canonical links appearing in search results since search
+engines these days simulate actual devices with enabled JS for crawling websites.
+
+The official way to solve this is using the [head-plugin](/plugins/head-plugin/) which will
+update the head tag on each visit. To tackle this at the root level, consider using XML sitemaps to
+index your site.
+
+## A library already uses `transition-*` classes
+
+Some third-party libraries like [Foundation](https://foundation.zurb.com/) might already be using
+class names like `transition-*` for their own functionality. In this case, swup will try to wait
+for transitions on those elements, quite possibly messing up the timing of transitions.
+
+Using a stricter [animationSelector](/options/#animation-selector) fixes the issue.
+
+```javascript
+var swup = new Swup({
+  animationSelector: '[class*="swup-transition-"]'
+});
+```
+
+```html
+<main id="swup" class="swup-transition-fade"></main>
+```
+
+```css
+.swup-transition-fade {
+  transition: 0.4s;
+  opacity: 1;
+}
+html.is-animating .swup-transition-fade {
+  opacity: 0;
+}
+```
+
+## Overused `transition-*` classes
+
+Swup will wait for any element with a `transition-*` class to finish transitioning.
+While there is an unlimited number of elements that can have this class, only one is actually
+required for swup to get its timing right. Using it on all animated elements is not required and
+often leads to bugs.
+
+It is recommended to use one element with a `transition-*` class to set the page
+transition duration and make any other transition happen independently. As long as all transitions
+share the same duration, the should be no issues with this approach.
+
+```css
+.fade {
+  transition: 0.4s;
+  opacity: 1;
+}
+html.is-animating .fade {
+  opacity: 0;
+}
+```
+
 ## Escaped characters inside `<noscript>`
 
 Some browsers (Safari, older versions of IE) escape characters inside of `noscript` tags when placed
@@ -128,13 +138,3 @@ a pretty creative way using `textarea` mentioned [in this thread](https://github
 or in any other way.
 
 See [this issue](https://github.com/swup/swup/issues/107) for more information.
-
-## Canonical link tag causes indexing issues
-
-Swup doesn't automatically update the contents of the `head` tag — it only updates the document
-`title`. This can lead to issues with wrong canonical links appearing in search results since search
-engines these days simulate actual devices with enabled JS for crawling websites.
-
-The official way to solve this is using the [head-plugin](/plugins/head-plugin/) which will
-update the head tag on each visit. To tackle this at the root level, consider using XML sitemaps to
-index your site.
