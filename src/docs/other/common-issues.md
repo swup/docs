@@ -73,6 +73,13 @@ If your site does require modular stylesheets per section or per template, use t
 to add the new stylesheets and configure its `awaitAssets` option to also wait for those
 stylesheets to finish loading before starting the animation to the new page.
 
+## The current and next page aren't visible at the same time
+
+Swup currently doesn't provide an official way of running both the in and out animations in parallel.
+The current and the next page's contents are never in the DOM at the same time.
+
+See [this discussion](https://github.com/orgs/swup/discussions/502#discussioncomment-3536642)
+for possible pointers using custom hooks.
 
 ## Screen readers are not informed about updated content
 
