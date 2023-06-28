@@ -11,11 +11,11 @@ permalink: /getting-started/upgrading/
 
 # Upgrading
 
-This is a guide for upgrading from swup 3 to 4.
+Upgrade your project from swup 3 to 4.
 
 If you're upgrading from swup 2, see [Upgrading from swup 2 to 3](/getting-started/upgrading-v3/).
 
-## Upgrading from swup 3 to 4
+## New features and breaking changes
 
 Swup 4 introduces exciting new features that make it easier to customize and working with it
 more enjoyable. Some of the highlights are a new [hook system](#new-hook-system), a global
@@ -24,7 +24,7 @@ some of these are breaking changes and will require modifications to projects us
 there is a thin compatibility layer, it's a good idea to review the changes and modify your site
 where necessary.
 
-### Install the latest version
+## Install the latest version
 
 Install the latest version from npm:
 
@@ -39,7 +39,7 @@ If you're loading swup from a CDN, update the version constraint:
 + <script src="https://unpkg.com/swup@4"></script>
 ```
 
-### New hook system
+## New hook system
 
 Swup 4 comes with a new hook system that allows more flexibility and replaces the previous events
 implementation. Among other features, handlers can now pause execution by returning a Promise or
@@ -57,11 +57,11 @@ All hook-related functions now live on the `hooks` instance of swup:
 +  swup.hooks.off('pageView', handler)
 ```
 
-#### Removed hooks
+### Removed hooks
 
 Some hooks were removed or renamed.
 
-**willReplaceContent & contentReplaced**
+#### willReplaceContent & contentReplaced
 
 The old `willReplaceContent` and `contentReplaced` events are superseded by a single `replaceContent`
 hook. Since swup can now register handlers to run *before* a specific hook, it serves both use cases:
@@ -78,7 +78,7 @@ hook. Since swup can now register handlers to run *before* a specific hook, it s
 +  swup.hooks.on('replaceContent', () => {})
 ```
 
-**pageRetrievedFromCache**
+#### pageRetrievedFromCache
 
 The `pageRetrievedFromCache` hook has been removed. There is now only a single `pageLoaded` hook
 that fires whenever a page was loaded. Check its boolean `cache` parameter to know if the page was
@@ -89,7 +89,7 @@ loaded from cache or not.
 + swup.hooks.on('pageLoaded', (context, { page, cache }) => { /* cache is true or false */ });
 ```
 
-### Context object
+## Context object
 
 Along with a new hook system, Swup 4 introduces a global [context object](/context/) that holds information
 about the current page visit, such as current and next URL, the containers to replace, the element and
@@ -122,14 +122,14 @@ The context object replaces the transition object on the swup instance.
 + });
 ```
 
-### Scroll support
+## Scroll support
 
 Swup 4 will correctly reset the scroll position after each navigation, as well as scroll to `#anchor`
 links on the same page. The scroll plugin is no longer required for recreating basic browser
 behavior. If you need animated scrolling, custom scroll offsets and other advanced customisation,
 keep using the [scroll plugin](/plugins/scroll-plugin/).
 
-### Unique container selectors
+## Unique container selectors
 
 Swup 4 will only match and replace a single element for each container selector. Previously, each
 selector would match as many elements as found on the page. We recommend only using id attributes or
@@ -149,7 +149,7 @@ const swup = new Swup({
 })
 ```
 
-### Container attributes
+## Container attributes
 
 Swup 4 will no longer add `[data-swup]` attributes to containers.
 
@@ -158,7 +158,7 @@ Swup 4 will no longer add `[data-swup]` attributes to containers.
 +  <div id="swup" class="transition-page"></div>
 ```
 
-### Custom payloads
+## Custom payloads
 
 Going forward, only pure HTML responses are allowed from the server. Previously, swup supported
 sending and parsing custom JSON payloads by using the Custom Payload Plugin or overloading the
@@ -178,7 +178,7 @@ we recommend sticking with swup 3.
 +  // no longer supported
 ```
 
-### Browser support
+## Browser support
 
 Swup 4 removes support for CSS vendor prefixes on animation and transition properties. In practical
 terms, this won't reduce browser support, but it's probably a good idea to check the compatiblity
@@ -193,9 +193,9 @@ you might want to stick with swup 3.
 }
 ```
 
-### Plugin authors
+## Plugin authors
 
-#### Hooks
+### Hooks
 
 As mentioned above, switch from events to hooks:
 
