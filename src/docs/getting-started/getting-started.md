@@ -18,7 +18,7 @@ other quality-of-life improvements.
 
 ## Features
 
-- ✏️ Works out of the box with [minimal markup](/getting-started/example/)
+- ✏️ Works out of the box with [minimal markup](/getting-started/example/) while loading
 - ✨ Auto-detects [CSS transitions](/getting-started/how-it-works/) for perfect timing
 - 🔗 Updates URLs and preserves native [browser history](/options/#animatehistorybrowsing)
 - 🏓 Manages scroll position between pages and anchor jump links
@@ -31,7 +31,7 @@ other quality-of-life improvements.
 
 Swup is small by design. Extended features can be added via [plugins](/plugins/):
 
-- Display a [progress bar](/plugins/progress-plugin/)
+- Display a [progress bar](/plugins/progress-plugin/) while loading
 - Enable [smooth scrolling](/plugins/scroll-plugin/) between visits
 - Update [meta tags and stylesheets](/plugins/head-plugin/) after page loads
 - Add support for [preloading pages](/plugins/preload-plugin/) in the background
