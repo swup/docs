@@ -62,6 +62,18 @@ html.is-animating .swup-transition-fade {
 }
 ```
 
+## The stylesheets of the next page are not loaded
+
+Swup doesn't automatically update the contents of the `head` tag. Any stylesheets not included in
+the current page's `head` will not be loaded.
+
+The easiest solution is using a single stylesheet for the whole website.
+
+If your site does require modular stylesheets per section or per template, use the [head-plugin](/plugins/head-plugin/)
+to add the new stylesheets and configure its `awaitAssets` option to also wait for those
+stylesheets to finish loading before starting the animation to the new page.
+
+
 ## Screen readers are not informed about updated content
 
 Since we're dynamically re-rendering parts of the page, it's recommended to add `aria-live="polite"`
@@ -101,15 +113,21 @@ without a complete replacement and without resetting the scroll position of the 
 
 ## Escaped characters inside `<noscript>`
 
-Some browsers (Safari, older versions of IE) escape characters inside of `noscript` tags when placed into the DOM with `element.innerHTML` as swup does. That is usually not an issue unless the contents of the `noscript` tags are further used in your JavaScript code. If that's the case, the characters need to be unescaped with [regex replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace), a pretty creative way using `textarea` mentioned [in this thread](https://github.com/swup/swup/issues/107) or in any other way.
+Some browsers (Safari, older versions of IE) escape characters inside of `noscript` tags when placed
+into the DOM with `element.innerHTML` as swup does. That is usually not an issue unless the contents
+of the `noscript` tags are further used in your JavaScript code. If that's the case, the characters
+need to be unescaped with [regex replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace),
+a pretty creative way using `textarea` mentioned [in this thread](https://github.com/swup/swup/issues/107)
+or in any other way.
 
 See [this issue](https://github.com/swup/swup/issues/107) for more information.
 
 ## Canonical link tag causes indexing issues
 
-Swup does not update the contents of the `head` tag after each visit — it only updates
-the document `title`. This can lead to issues with wrong canonical links appearing in search
-results since search engines these days simulate actual devices with enabled JS for crawling websites.
+Swup doesn't automatically update the contents of the `head` tag — it only updates the document
+`title`. This can lead to issues with wrong canonical links appearing in search results since search
+engines these days simulate actual devices with enabled JS for crawling websites.
 
 The official way to solve this is using the [head-plugin](/plugins/head-plugin/) which will
-update the head tag on each visit. To tackle this at the root level, consider using XML sitemaps to index your site.
+update the head tag on each visit. To tackle this at the root level, consider using XML sitemaps to
+index your site.
