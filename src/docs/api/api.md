@@ -10,6 +10,6 @@ permalink: /api/
 
 # API
 
-The swup instance returned from the constructor can be used to access additional methods and helpers.
+The swup instance can be used to call additional methods and helpers.
 
-When using the [debug plugin](/plugins/debug-plugin/), the swup instance can optionally made available as `window.swup` on the global instance.
+If installed, the [debug plugin](/plugins/debug-plugin/) can optionally expose the swup instance at `window.swup`.

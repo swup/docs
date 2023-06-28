@@ -11,8 +11,6 @@ permalink: /getting-started/installation/
 
 # Installation
 
-There are two ways to install the package.
-
 ## Bundler
 
 If you're using a bundler in your project, install swup from npm:

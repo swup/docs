@@ -21,8 +21,9 @@ const swup = new Swup({
 
 ## linkSelector
 
-Defines which link elements will trigger page visits. By
-default, all `a` elements with an `href` attribute will receive clicks.
+Defines which link elements will trigger page visits.
+
+By default, all `a` elements with an `href` attribute will receive clicks.
 
 ```javascript
 {
@@ -43,15 +44,15 @@ append the selector:
 
 ## ignoreVisit
 
-Allows ignoring specific visits through a callback. By default, swup will ignore links with a `data-no-swup` attribute on itself or any parent element. The callback receives the URL of the new page, as well as a copy of the element that triggered it, if any.
+Allows ignoring specific visits through a callback. By default, swup will ignore links with a `data-no-swup` attribute on itself or any parent element. The callback receives the URL of the new page, as well as a copy of the element and the event that triggered it, if any.
 
 The URL argument is the relative URL, excluding origin, but including any query parameters and hash.
 
-Note: when navigating programmatically via `swup.loadPage({ url })`, the callback will **not** receive the `el` argument since the visit wasn't triggered by any element.
+Element and event will be undefined when navigating via `swup.loadPage(url)`.
 
 ```javascript
 {
-  ignoreVisit: (url, { el } = {}) => el?.closest('[data-no-swup]')
+  ignoreVisit: (url, { el, event } = {}) => el?.closest('[data-no-swup]')
 }
 ```
 
@@ -59,9 +60,10 @@ Note: when navigating programmatically via `swup.loadPage({ url })`, the callbac
 
 Defines the elements that are being animated. Usually, they will have a common
 class or class prefix. The default option will select all elements with
-classNames starting with `transition-`.
+class names starting with `transition-`.
 
-Swup will wait for all CSS transitions and keyframe animations to finish on these elements before swapping in the content of the new page.
+Swup will wait for all CSS transitions and keyframe animations to finish on these elements before
+swapping in the content of the new page.
 
 ```javascript
 {
@@ -92,7 +94,7 @@ Defaults to a single container of id `#swup`.
 ## cache
 
 Swup's built-in [cache](/api/cache/) keeps previously loaded pages in memory.
-This drastically improves speed but should be disabled for highly dynamic sites
+This improves speed but should be disabled for highly dynamic sites
 that need up-to-date responses on each request. Defaults to `true`.
 
 ```javascript
@@ -103,8 +105,7 @@ that need up-to-date responses on each request. Defaults to `true`.
 
 ## requestHeaders
 
-Adjust request headers that should be sent with each swup request. Useful for returning custom
-payloads from the server or other server-side pre-processing.
+Adjust request headers that should be sent with each swup request.
 
 ```javascript
 {
@@ -117,15 +118,13 @@ payloads from the server or other server-side pre-processing.
 
 ## skipPopStateHandling
 
-Swup is built around the [History API](https://developer.mozilla.org/en-US/docs/Web/API/History), but sometimes some other tools manipulating the browser history can be used as well.
+Swup might not be the only library manipulating history state in your project. To properly identify
+visits initiated by swup, it will add a `source` property to every history state object it creates.
+Whenever the back/forward button is hit, swup will only handle visits it recognizes.
 
-For this reason, swup places a `source` property into every history `state` object it creates, so it can be identified later (swup also modifies the current history record on start, to include the `source: swup` property as well).
-On `popState` events, swup only handles the records that were created by swup.
-
-This behavior can be modified by the callback `skipPopStateHandling`, which should return a `boolean` (`false`: handle the `popState` event, `true`: do nothing).
-The callback receives one argument - the `popState` event.
-
-The option defaults to this:
+This behavior can be modified by passing in a `skipPopStateHandling` handler that returns `true` to
+handle a specific history visit or `false` to do nothing. It receives the triggered `popstate` event
+and defaults to:
 
 ```javascript
 {
@@ -135,13 +134,13 @@ The option defaults to this:
 
 ## resolveUrl
 
-This option provides a way of rewriting URLs before swup will attempt to load
-them. In practice, it's an advanced way of telling swup which visits to ignore.
-By resolving different paths to a single path, swup will treat all these
-as a single resource and ignore any visits between them. You can then
-handle any changes on the page yourself: updating content, title tag, etc.
-without swup getting in the way. Swup will also use the resolved URL for its
-cache and for restoring the scroll position if using the scroll plugin.
+Allows rewriting URLs before swup tries loading them. In practice, it's an
+advanced way of making swup ignore certain visits. By resolving different paths
+to a single path, swup will treat both as a single resource and ignore any
+visits between them. You can then handle any changes on the page yourself:
+updating content, title tag, etc., without swup getting in the way. Swup will
+also use the resolved URL for its cache and for restoring the scroll position if
+using the scroll plugin.
 
 An example use case would be a project listing with purely client-side filtering
 based on the query parameters. The server will always respond with the full list
@@ -150,7 +149,7 @@ of all projects. In that case, you'll want to handle any visits between
 nothing has changed and no fetch request to the new URL is necessary.
 
 The callback function receives a relative URL as an argument and needs to
-return a relative URL as well:
+return a relative URL as well.
 
 ```javascript
 {
@@ -167,7 +166,9 @@ The option defaults to `(url) => url`.
 
 ## animateHistoryBrowsing
 
-History visits triggered by the back and forward buttons of the browser will skip all animations to allow faster navigation. If you need animations on history visits, set this option to `true`. When enabled, swup will add the class `is-popstate` to the html tag during the transitions of those visits. The default value is `false`.
+Swup will skip animations for visits triggered by the back/forward button. If you do require
+animations on history visits, set this to `true`. Swup will add the class `is-popstate` to the html
+tag during those transitions. Defaults to `false`.
 
 ```javascript
 {
@@ -175,7 +176,9 @@ History visits triggered by the back and forward buttons of the browser will ski
 }
 ```
 
-⚠️ **Important Note**: This option was added due to popular request but should be used with caution. When enabled, swup has to disable all native browser scrolling behavior (sets [scrollRestoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration) to `manual`). We encourage you to strongly consider the consequences of doing so: The scroll positions on previous page(s) or between page reloads are **not being preserved** (but [can be implemented manually](https://github.com/swup/swup/issues/48#issuecomment-423854819), depending on the use case). Otherwise, Swup will scroll to the top/#element on `popState` as the browser would do.
+⚠️ **Important Note**: This option was added due to popular request. However, it should be used with
+caution. When activated, swup has to disable native [browser scroll restoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration).
+Scroll positions will not be preserved between visits and need to be implemented by you.
 
 ## Default Options
 
