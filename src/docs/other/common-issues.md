@@ -89,6 +89,16 @@ If you need fine-grained control over this, consider installing the
 [scroll plugin](/plugins/scroll-plugin/) which has a dedicated `offset` option to handle these
 cases.
 
+## Overflowing containers get reset on navigation
+
+Replacing a swup container will also reset its scroll position. There might be cases where you
+want the content to be updated but the scroll position to be kept, like an overflowing sidebar
+navigation that needs to mark the currently active nav item with a class name.
+
+Consider using the semi-official [morph plugin](https://github.com/daun/swup-morph-plugin) for such
+cases. It lets you define additional containers that morph their new content into the old element,
+without a complete replacement and without resetting the scroll position of the container itself.
+
 ## Escaped characters inside `<noscript>`
 
 Some browsers (Safari, older versions of IE) escape characters inside of `noscript` tags when placed into the DOM with `element.innerHTML` as swup does. That is usually not an issue unless the contents of the `noscript` tags are further used in your JavaScript code. If that's the case, the characters need to be unescaped with [regex replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace), a pretty creative way using `textarea` mentioned [in this thread](https://github.com/swup/swup/issues/107) or in any other way.
