@@ -84,11 +84,11 @@ ul.children a[href^='http'] {
 		height: var(--_icon-size);
 		vertical-align: middle;
 		position: relative;
-		top: -0.01em;
+		top: -0.05em;
 		background-image: var(--external-link-icon);
 		background-repeat: no-repeat;
 		background-size: contain;
-		opacity: 0.6;
+		opacity: 0.5;
 	}
 	@include mixins.hover {
 		&::after {

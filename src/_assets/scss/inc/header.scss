@@ -47,12 +47,12 @@
 }
 .site-title_image {
 	display: block;
-	--size: clamp(2.2rem, 4vw, 2.5rem);
+	--size: clamp(1.8rem, 3vw, 2.2rem);
 	width: var(--size);
 	height: var(--size);
 	position: relative;
 	top: 0.1em;
-	margin-inline-end: 0.5em;
+	margin-inline-end: 0.7em;
 }
 .site-title_swup {
 	font-weight: bold;
@@ -71,6 +71,8 @@
 		opacity: 0;
 	}
 	svg {
+		display: inline-block;
+		margin: 0 .15em 0 .2em;
 		width: 0.9em;
 		height: 0.9em;
 		position: relative;
