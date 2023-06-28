@@ -89,13 +89,13 @@
 .nav_indicator {
 	display: block;
 	position: absolute;
-	width: 0.6em;
-	height: 0.6em;
+	width: 0.5em;
+	height: 0.5em;
 	background: var(--swup-red);
 	border-radius: var(--radius-round);
 	top: 0;
 	left: 0;
-	transform: translate(calc(var(--gap) * 0.5 - 10%), -50%);
+	transform: translate(calc(var(--gap) * 0.5 - 40%), -50%);
 	@at-root .nav--mobile & {
 		left: calc(var(--gap) * 0.5);
 		// visibility: hidden;
