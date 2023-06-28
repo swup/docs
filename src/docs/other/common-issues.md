@@ -63,37 +63,31 @@ Some browsers (Safari, older versions of IE) escape characters inside of `noscri
 
 See [this issue](https://github.com/swup/swup/issues/107) for more information.
 
-## Scroll control offset
+## Scroll anchors are too close to the top of the viewport
 
-In certain cases, there is a need to compensate for specific layout features (fixed header, etc.) by scrolling to referenced elements with some offset. swup scroll control does not have such an option, but there are other ways to solve this:
+When jumping to an anchor on the page, the browser will scroll the page so that the targeted
+element will appear at the top of the viewport. The top part of the page might however already be
+covered with other content like a header. Effectively, we need a way to tell the browser to scroll
+to an offset point slightly above the anchor to compensate for the content on top if it.
 
-Using a separate element inside of the section as an anchor. As it's a separate element, it can be positioned relative to its parent, and so, compensate for the fixed header.
-
-```html
-<section>
-  <div id="need-to-scroll-here" class="anchor"></div>
-  ...
-</section>
-```
+In modern browsers, this is easily done via CSS:
 
 ```css
-.anchor {
-  position: relative;
-  top: -100px; /* your offset */
-}
+scroll-margin-top: var(--header-height, 100px);
 ```
 
-## Canonical link in head can cause wrong site indexing
+If you need fine-grained control over this, consider installing the
+[scroll plugin](/plugins/scroll-plugin/) which has a dedicated `offset` option to handle these
+cases.
 
-Since search engines are improving and starting to simulate actual devices browsing the websites, canonical link tag in head (which is not replaced during transition by default) can cause site to be indexed incorrectly.
+## Canonical link tag can cause wrong indexing by search engines
 
-```html
-<link rel="canonical" href="..." />
-```
+Swup does not update the contents of the `head` tag after each visit — it only updates
+the document `title`. This can lead to issues with wrong canonical links appearing in search
+results since search engines these days simulate actual devices with enabled JS for crawling websites.
 
-The **[head-plugin](/plugins/head-plugin/)** could help solve that, as well as deleting the tag from head. There are also other, more reliable alternatives to make search engines index your site correctly, like sitemap.
-
-See [this issue](https://github.com/swup/swup/issues/130) for more information.
+The official way to solve this is using the [head-plugin](/plugins/head-plugin/) which will
+update the head tag on each visit. To tackle this at the root level, consider using XML sitemaps to index your site.
 
 ## Improving accessibility
 
