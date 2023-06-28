@@ -97,18 +97,6 @@ swup.hooks.on('pageView', handler);
 swup.hooks.off('pageView', handler);
 ```
 
-Remove all handlers for a specific hook by omitting the function.
-
-```javascript
-swup.hooks.off('pageView');
-```
-
-Remove all handlers for all hooks by omitting the hook name.
-
-```javascript
-swup.hooks.off();
-```
-
 ## List of hooks
 
 The following hooks are exposed by swup and can be accessed as such:
