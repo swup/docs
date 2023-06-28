@@ -89,4 +89,4 @@ Putting it all together, this is what we get.
 
 ## Demo
 
-Like to try it out yourself? Head to the [demo page](/getting-started/demo/).
+Like to try it out yourself? Head to the [demo page](/getting-started/demos/).
