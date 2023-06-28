@@ -38,7 +38,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('prepareContent', prepareContent);
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(tableOfContents, {
-		tags: ['h2', 'h3', 'h4'],
+		tags: ['h2', 'h3'],
 		wrapperClass: 'toc_nav'
 	});
 	eleventyConfig.addFilter('getPreviousAndNextPage', getPreviousAndNextPage);
