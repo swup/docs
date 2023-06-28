@@ -21,8 +21,9 @@ other quality-of-life improvements.
 - ✏️ Works out of the box with [minimal markup](/getting-started/example/)
 - ✨ Auto-detects [CSS transitions](/getting-started/how-it-works/) for perfect timing
 - 🔗 Updates URLs and preserves native [browser history](/options/#animatehistorybrowsing)
+- 🏓 Manages scroll position between pages and anchor jump links
 - 🚀 Uses a [cache](/api/cache/) to speed up subsequent page loads
-- 🔊 Offers [hooks](/hooks/) to customize and extend the page load lifecycle
+- 📡 Offers [hooks](/hooks/) to customize and extend the page load lifecycle
 - 🔌 Has a powerful [plugin system](/plugins/) and many official and third-party plugins
 - 🎨 Provides ready-to-go [themes](/themes/) to get started quickly
 
