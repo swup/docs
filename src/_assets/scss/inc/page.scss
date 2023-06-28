@@ -132,7 +132,7 @@
 
 .page_body_header {
 	font-size: var(--font-size-fluid-3);
-	margin-block: 0 0.5em;
+	margin-block: 0 1em;
 	line-height: 1;
 	position: relative;
 	display: flex;
@@ -150,6 +150,10 @@
 
 .page_body_header + * {
 	margin-top: 0 !important;
+}
+
+.page_body + .children {
+	margin-top: 5rem;
 }
 
 @include bp(xs) {
