@@ -173,55 +173,9 @@ All hooks are also triggered on the `document` with a `swup:` prefix.
 document.addEventListener('swup:pageView', () => {});
 ```
 
-## Plugin authors
+## Custom hooks
 
 Plugin authors might want to create and trigger new hooks to implement additional functionality.
 
-### Creating new hooks
-
-```javascript
-swup.hooks.create('submitForm');
-```
-
-### Triggering a hook
-
-```javascript
-swup.hooks.trigger('submitForm');
-```
-
-Pass in arguments to hand them along to any registered handlers.
-
-```javascript
-swup.hooks.trigger('submitForm', { formData: 123 });
-```
-
-### Making a hook replaceable
-
-Passing in a default handler when triggering a hook will allow users of your plugin
-to replace this default handler with a custom implementation.
-
-In the example below, the default form handler uses `fetch` to submit the form.
-
-```javascript
-swup.hooks.trigger(
-  'submitForm',
-  // arguments passed into the hook
-  { action: url, data: new FormData() },
-  // default hook handler
-  (context, { action, data }) => {
-    fetch(action, { body: data }).then(/* */);
-  }
-);
-```
-
-Consumers can now replace the default handler with a custom handler. In this example, they are
-using axios to submit the form instead.
-
-```javascript
-swup.hooks.replace(
-  'submitForm',
-  (context, { action, data }) => {
-    axios.get(action, { params: data }).then(/* */);
-  }
-);
-```
+See the [Custom Hooks](/plugins/create-plugin/#custom-hooks) section of the Create a Plugin page
+for details.
