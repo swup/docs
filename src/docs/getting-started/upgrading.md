@@ -17,12 +17,10 @@ If you're upgrading from swup 2, see [Upgrading from swup 2 to 3](/getting-start
 
 ## New features and breaking changes
 
-Swup 4 introduces exciting new features that make it easier to customize and working with it
-more enjoyable. Some of the highlights are a new [hook system](#new-hook-system), a global
-[context object](#context-object) and built-in [scroll support](#scroll-support). Due to their nature,
-some of these are breaking changes and will require modifications to projects using swup. While
-there is a thin compatibility layer, it's a good idea to review the changes and modify your site
-where necessary.
+Swup 4 introduces new features to become more customizable and easier to work with. Some of the
+highlights are a new [hook system](#new-hook-system), a global [context object](#context-object) and
+built-in [scroll support](#scroll-support). Some of these are breaking changes and will require
+modifications to projects using swup. Please review the changes and modify your site where necessary.
 
 ## Install the latest version
 
