@@ -11,11 +11,18 @@ permalink: /other/common-issues/
 
 # Common Issues
 
-## Overusing the `transition-*` class
+This is a compilation of challenges and possible solutions when integrating or extending swup.
 
-Swup waits for any element with a `transition-[something]` class to finish the transition. While there is an unlimited number of elements that can have this class, only one is actually required. People tend to use a class with a format of `transition-[something]` on any element that is animating, which is not necessary and often leads to bugs. For example, misspelled class name would lead to styles not being defined for that element (see issue above).
+## Overused `transition-*` classes
 
-It is recommended to use one element with class with a format `transition-[something]` to set a transition duration for swup and make any other transition happen independently.
+Swup will wait for any element with a `transition-*` class to finish transitioning.
+While there is an unlimited number of elements that can have this class, only one is actually
+required for swup to get its timing right. Using it on all animated elements is not required and
+often leads to bugs.
+
+It is recommended to use one element with a `transition-*` class to set the page
+transition duration and make any other transition happen independently. As long as all transitions
+share the same duration, the should be no issues with this approach.
 
 ```css
 .fade {
@@ -27,20 +34,22 @@ html.is-animating .fade {
 }
 ```
 
-The styles in the example above will still animate the element for the transition, but swup won't wait for the elements to finish the transition. If the main transition (the transition of the one element with class `transition-*`) has at least similar timing to all the others, there should be no issue with using this approach.
+## Libraries already using `transition-*` classes
 
-## Libraries using `transition-*` classes
+Some third-party libraries like [Foundation](https://foundation.zurb.com/) might already be using
+class names like `transition-*` for their own functionality. In this case, swup will try to wait
+for transitions on those elements, quite possibly messing up the timing of transitions.
 
-Some other libraries can use a class in a form of `transition-*` for its own functionality. A great example of such a third party code is the [Foundation framework](https://foundation.zurb.com/).
-
-This can break swup, as swup will wait for all the elements with such class to finish transition before proceeding in the page transition lifecycle and get stuck.
-
-In such a case, making the [animationSelector](/options#animation-selector) option more strict fixes the issue.
+Using a stricter [animationSelector](/options/#animation-selector) fixes the issue.
 
 ```javascript
 var swup = new Swup({
   animationSelector: '[class*="swup-transition-"]'
 });
+```
+
+```html
+<main id="swup" class="swup-transition-fade"></main>
 ```
 
 ```css
@@ -53,15 +62,15 @@ html.is-animating .swup-transition-fade {
 }
 ```
 
-```html
-<main id="swup" class="swup-transition-fade">...</main>
-```
+## Screen readers are not informed about updated content
 
-## Escaped characters inside `<noscript>`
+Since we're dynamically re-rendering parts of the page, it's recommended to add `aria-live="polite"`
+to any content containers replaced by swup. This will help screen readers read out aloud any
+updates to their content. As that attribute [cannot be added dynamically](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) after page load it needs to be added manually in the html.
 
-Some browsers (Safari, older versions of IE) escape characters inside of `noscript` tags when placed into the DOM with `element.innerHTML` as swup does. That is usually not an issue unless the contents of the `noscript` tags are further used in your JavaScript code. If that's the case, the characters need to be unescaped with [regex replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace), a pretty creative way using `textarea` mentioned [in this thread](https://github.com/swup/swup/issues/107) or in any other way.
-
-See [this issue](https://github.com/swup/swup/issues/107) for more information.
+The official [accessibility plugin](/plugins/a11y-plugin/) uses an arguably better strategy: it
+reads out the title of the new document to screen readers, requiring no change to your markup. It
+will also focus the main content area for improved keyboard accessibility.
 
 ## Scroll anchors are too close to the top of the viewport
 
@@ -80,7 +89,13 @@ If you need fine-grained control over this, consider installing the
 [scroll plugin](/plugins/scroll-plugin/) which has a dedicated `offset` option to handle these
 cases.
 
-## Canonical link tag can cause wrong indexing by search engines
+## Escaped characters inside `<noscript>`
+
+Some browsers (Safari, older versions of IE) escape characters inside of `noscript` tags when placed into the DOM with `element.innerHTML` as swup does. That is usually not an issue unless the contents of the `noscript` tags are further used in your JavaScript code. If that's the case, the characters need to be unescaped with [regex replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace), a pretty creative way using `textarea` mentioned [in this thread](https://github.com/swup/swup/issues/107) or in any other way.
+
+See [this issue](https://github.com/swup/swup/issues/107) for more information.
+
+## Canonical link tag causes indexing issues
 
 Swup does not update the contents of the `head` tag after each visit — it only updates
 the document `title`. This can lead to issues with wrong canonical links appearing in search
@@ -88,8 +103,3 @@ results since search engines these days simulate actual devices with enabled JS 
 
 The official way to solve this is using the [head-plugin](/plugins/head-plugin/) which will
 update the head tag on each visit. To tackle this at the root level, consider using XML sitemaps to index your site.
-
-## Improving accessibility
-
-Since we're dynamically re-rendering parts of the page, it's ideal to add `aria-live="polite"` attribute to the swup containers for screen readers.
-Unfortunately, this attribute [cannot be added dynamically](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) after page load to work, so it needs to be added manually.
