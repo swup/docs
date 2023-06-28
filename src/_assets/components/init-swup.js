@@ -64,6 +64,7 @@ export default function () {
 
 	swup.on('clickLink', onSwupClickLink);
 
+	window.addEventListener('resize', positionNavIndicators);
 	document.addEventListener('change', (event) => {
 		if (event.target.name === 'theme') changeSwupThemeWithTransition(event.target.value);
 	});
@@ -137,20 +138,35 @@ function setSwupTheme(theme) {
 	currentTheme = theme;
 }
 
-function adjustNavIndicators(path) {
+function positionNavIndicator(indicator) {
 	const duration = 0.35;
 	const ease = 'power4.out';
+
+	const path = indicator.dataset.path || '';
+	const wrap = indicator.closest('.nav_inner');
+	const link = wrap.querySelector(`a[href="${path}"]`);
+
+	if (link) {
+		const wrapRect = wrap.getBoundingClientRect();
+		const rect = link.getBoundingClientRect();
+		const top = rect.top + rect.height / 2 + wrap.scrollTop - wrapRect.top;
+		gsap.to(indicator, { opacity: 1, top, duration, ease });
+	} else {
+		gsap.to(indicator, { opacity: 0, duration, ease });
+	}
+}
+
+
+function positionNavIndicators() {
 	document.querySelectorAll('.nav_indicator').forEach((indicator) => {
-		const wrap = indicator.closest('.nav_inner');
-		const activeLink = wrap.querySelector(`a[href="${path}"]`);
-		if (activeLink) {
-			const wrapRect = wrap.getBoundingClientRect();
-			const rect = activeLink.getBoundingClientRect();
-			const top = rect.top + rect.height / 2 + wrap.scrollTop - wrapRect.top;
-			gsap.to(indicator, { opacity: 1, top, duration, ease });
-		} else {
-			gsap.to(indicator, { opacity: 0, duration, ease });
-		}
+		positionNavIndicator(indicator);
+	});
+}
+
+function adjustNavIndicators(path) {
+	document.querySelectorAll('.nav_indicator').forEach((indicator) => {
+		indicator.dataset.path = path;
+		positionNavIndicator(indicator);
 	});
 
 	document.querySelectorAll('.nav a').forEach((a) => {
