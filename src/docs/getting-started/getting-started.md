@@ -18,7 +18,7 @@ other quality-of-life improvements.
 
 ## Features
 
-- ✏️ Works out of the box with [minimal markup](/getting-started/example/) while loading
+- ✏️ Works out of the box with [minimal markup](/getting-started/example/)
 - ✨ Auto-detects [CSS transitions](/getting-started/how-it-works/) for perfect timing
 - 🔗 Updates URLs and preserves native [browser history](/options/#animatehistorybrowsing)
 - 🏓 Manages scroll position between pages and anchor jump links
