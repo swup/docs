@@ -60,7 +60,7 @@ Enable and disable plugins.
 swup.use(new SwupScrollPlugin());
 
 // Disable plugin: accepts either name or instance
-swup.unuse('ScrollPlugin');
+swup.unuse('SwupScrollPlugin');
 ```
 
 ## findPlugin
@@ -68,7 +68,7 @@ swup.unuse('ScrollPlugin');
 Returns the plugin instance by that name, if enabled.
 
 ```javascript
-const pluginInstance = swup.findPlugin('ScrollPlugin');
+const pluginInstance = swup.findPlugin('SwupScrollPlugin');
 ```
 
 ## log
