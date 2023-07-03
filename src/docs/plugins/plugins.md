@@ -17,26 +17,26 @@ For this reason, swup has support for plugins that can, but don't have to be use
 
 ```javascript
 import Swup from 'swup';
-import ScrollPlugin from '@swup/scroll-plugin';
+import SwupScrollPlugin from '@swup/scroll-plugin';
 ```
 
 and enable plugin at initialisation of swup by including it in options:
 
 ```javascript
-const options = {
-  plugins: [new ScrollPlugin()]
-};
-const swup = new Swup(options);
+const swup = new Swup({
+  plugins: [new SwupScrollPlugin()]
+});
 ```
 
 ## Plugin Methods
 
-Alternatively, you can use swup `use`, `unuse` methods to run/remove plugins.
-Method `findPlugin` can be particularly useful for manipulating the plugin directly or using its methods.
+Alternatively, you can use swup's `use` and `unuse` methods to add and remove plugins.
+
+The `findPlugin` method can be particularly useful for manipulating plugins directly or using its methods.
 
 ```javascript
 const swup = new Swup();
-swup.use(new ScrollPlugin()); // start plugin
+swup.use(new SwupScrollPlugin());
 
-swup.findPlugin('ScrollPlugin'); // returns instance of plugin
+const pluginInstance = swup.findPlugin('SwupScrollPlugin');
 ```
