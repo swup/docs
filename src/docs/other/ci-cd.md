@@ -3,8 +3,8 @@ layout: default
 title: CI/CD
 eleventyNavigation:
   key: CI/CD
-  order: 8
-  parent: API
+  order: 9
+  parent: Other
 description: You can test your site after each deployment, or as a part of the deploy process
 permalink: /ci-cd/
 ---
