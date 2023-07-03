@@ -76,6 +76,19 @@
 .nav_list_item {
 	margin: 0;
 }
+
+// Announcements / hidden nav section heading = order: -1
+
+.nav_list_item[data-order='-1'] {
+	> .nav_list_link {
+		display: none;
+	}
+	.nav_list_item .nav_list_link {
+		font-weight: bold;
+		color: var(--color);
+	}
+}
+
 .nav_list_link {
 	display: block;
 	padding-block: 0.2rem;
