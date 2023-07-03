@@ -1,5 +1,6 @@
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
+const markdownItAttrs = require('markdown-it-attrs');
 const slugify = require('@sindresorhus/slugify');
 const tableOfContents = require('eleventy-plugin-toc');
 const { execSync } = require('child_process');
@@ -23,6 +24,7 @@ customMarkdownIt.use(markdownItAnchor, {
 	level: 2,
 	slugify: (s) => slugify(s)
 });
+customMarkdownIt.use(markdownItAttrs);
 /**
  * Code Highligting
  * @see https://github.com/antfu/markdown-it-shiki

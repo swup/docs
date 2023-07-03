@@ -31,6 +31,7 @@
     "@swup/slide-theme": "^1.0.5",
     "alpinejs": "^3.12.0",
     "gsap": "^3.11.5",
+    "markdown-it-attrs": "^4.1.6",
     "modern-normalize": "^1.1.0",
     "swup": "^3.0.6",
     "swup-gtag-plugin": "^0.0.0",
