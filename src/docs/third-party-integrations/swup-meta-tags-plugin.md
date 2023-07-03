@@ -6,5 +6,5 @@ eleventyNavigation:
   parent: 3rd Party Integrations
   order: 5
   url: https://github.com/Accudio/swup-meta-tags-plugin
-permlink: false
+permalink: false
 ---
