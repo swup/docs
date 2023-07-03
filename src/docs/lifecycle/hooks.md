@@ -80,6 +80,15 @@ swup.hooks.on('transitionStart', () => {
 });
 ```
 
+This means that `async/await` handlers are supported as well:
+
+```javascript
+// Wait for a custom function before starting the transition
+swup.hooks.on('transitionStart', async () => {
+  await myCustomFunction();
+});
+```
+
 ⚠️ **Note**: Some hooks are executed without awaiting Promises if their handler needs
 to prevent a DOM event's default action: `clickLink` and `popState`.
 
