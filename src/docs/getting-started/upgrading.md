@@ -39,9 +39,9 @@ If you're loading swup from a CDN, update the version constraint:
 
 ## New hook system
 
-Swup 4 comes with a new hook system that allows more flexibility and replaces the previous events
+Swup 4 comes with a new [hook system](/hooks/) that allows more flexibility and replaces the previous events
 implementation. Among other features, handlers can now pause execution by returning a Promise or
-replace the internal default handler completely. See [Hooks](/hooks/) for details and updated examples.
+replace the internal default handler completely. See [Hooks](/hooks/) for details and more examples.
 
 All hook-related functions now live on the `hooks` instance of swup:
 
@@ -90,9 +90,10 @@ loaded from cache or not.
 ## Context object
 
 Along with a new hook system, Swup 4 introduces a global [context object](/context/) that holds information
-about the current page visit, such as current and next URL, the containers to replace, the element and
+about the current page visit, such as previous and next URL, the containers to replace, the element and
 event that triggered the visit, etc. It's available to all hook handlers as their first argument.
 Manipulating its properties allows modifying swup's behavior to a considerable degree.
+See [Context](/context/) for details and more examples.
 
 ```javascript
 // Get the next URL and the link element that was clicked
