@@ -19,8 +19,6 @@ between the current and next page.
 
 ## What’s new in this release
 
-Swup 4 introduces new features to become more customizable, and easier to work with.
-
 - [Built-in scroll support](#scroll-support)
 - [Hook system for easier customization](#hook-system)
 - [Global context object in all callbacks](#global-context-object)
@@ -32,7 +30,7 @@ Swup 4 introduces new features to become more customizable, and easier to work w
 Some of these new features are breaking changes and will require modifications to your project.
 Please review this [migration guide](/getting-started/upgrading) for details.
 
-## New features
+## Features
 
 ### Built-in scroll support {#scroll-support}
 
@@ -43,44 +41,93 @@ feel free to keep using the [scroll plugin](/plugins/scroll-plugin/).
 
 ### Hook system for easier customization {#hook-system}
 
-Swup 4 comes with a new hook system that allows more flexibility and replaces the previous events
-implementation. Among other features, handlers can now pause execution by returning a Promise or
-replace the internal default handler completely. See [Hooks](/hooks/) for details and examples.
+Swup 4 comes with a new hook system that allows more customization and replaces the previous events
+implementation. Among other features, handlers can pause transitions by returning a Promise, they
+receive a context object to customize transitions, and they can replace the internal default handler
+completely. See [Hooks](/hooks/) for details and examples.
 
-All hook-related functions now live on the `hooks` instance of swup:
+Pausing execution is as easy as returning a `Promise` or `await`ing a custom function:
 
-```diff
--  swup.on('pageView', () => {})
-+  swup.hooks.on('pageView', () => {})
+```javascript
+swup.hooks.on('transitionStart', async () => {
+  // Delay the start of the transition until the Promise is resolved
+  await myCustomFunction();
+});
 ```
 
-```diff
--  swup.off('pageView', handler)
-+  swup.hooks.off('pageView', handler)
+Hooks can be run once, before the internal handler, or even replace the internal handler entirely:
+
+```javascript
+swup.hooks.once('animationInDone', () => {
+  // Only executes once, then removes the handler
+});
+
+swup.hooks.before('replaceContent', () => {
+  // Executes before the internal default handler
+});
+
+swup.hooks.replace('replaceContent', () => {
+  // Replaces the internal handler with a custom implementation
+});
 ```
 
 ### Global context object
 
 Along with a new hook system, Swup 4 introduces a global context object that holds information
 about the current page visit, such as previous and next URL, the containers to replace, the element and
-event that triggered the visit, etc. It's available to all hook handlers as their first argument.
-Manipulating its properties allows modifying swup's behavior to a considerable degree.
+event that triggered the visit, etc. It's available to all hook handlers as their first argument. 
+By manipulating the context object, you can control how swup will transition to the new page.
 See [Context](/context/) for details and examples.
 
-```javascript
-// Get the next URL and the link element that was clicked
-swup.hooks.on('pageView', (context) => {
-  console.log('New page: ', context.to.url);
-  console.log('Triggered by: ', context.trigger.el);
-});
+Access the current and next url from a hook:
 
-// Disable animations on the next visit
-swup.hooks.before('transitionStart', (context) => {
+```javascript
+swup.hooks.on('transitionStart', (context) => {
+  console.log('Going from', context.to.url, 'to', context.from.url);
+});
+```
+
+Access the link element and click event that triggered the current visit:
+
+```javascript
+swup.hooks.on('transitionStart', (context) => {
+  console.log('Link', context.trigger.el, 'clicked in event', context.trigger.event);
+});
+```
+
+Disable animations on the current visit:
+
+```js
+swup.hooks.on('transitionStart', (context) => {
   context.transition.animate = false;
 });
 ```
 
-## New plugins
+Change which containers will be replaced on the current visit:
+
+```javascript
+swup.hooks.on('transitionStart', (context) => {
+  context.containers = ['#sidebar'];
+});
+```
+
+
+Check if the current visit was triggered by the backward/forward button of the browser.
+
+```javascript
+swup.hooks.before('transitionStart', (context) => {
+  if (context.history.popstate) {
+    console.log('History visit');
+  }
+});
+```
+
+## Plugins
+
+All official plugins have been updated for compatibility with swup 4.
+
+Additionally, we're happy to present two new plugins that were made possible by the architectural
+changes to swup introduced in the new version. They enable rather advanced use cases.
 
 ### Fragment Plugin
 
