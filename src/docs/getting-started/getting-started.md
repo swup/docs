@@ -9,7 +9,7 @@ permalink: /getting-started/
 
 # Getting Started
 
-Swup is a versatile and extensible page transition library for server-side rendered websites.
+Swup is a versatile and extensible page transition library for server rendered websites.
 It manages the complete lifecycle of a page visit by intercepting link clicks, loading the new page
 in the background and smoothly transitioning between the old and new content.
 
