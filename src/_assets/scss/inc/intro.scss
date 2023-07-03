@@ -36,16 +36,22 @@
 }
 
 .intro_body {
-	margin-block: var(--gap-x2);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 	width: 80%;
 	max-width: 600px;
+	padding-block-start: calc(var(--gap-x2) + 1.5em);
+	padding-block-end: var(--gap-x2);
 	padding-inline: var(--size-fluid-3);
 	position: relative;
-	transform: translateY(-5%);
+	// transform: translateY(-5%);
+	min-height: 100svh;
 }
 
 .intro_body > * + * {
-	margin-top: var(--gap-x2);
+	margin-top: calc(var(--gap) * 1.5);
 }
 
 .intro_slogan {
@@ -75,4 +81,22 @@
 	display: block;
 	position: absolute;
 	fill: currentColor;
+}
+
+.intro_announcement {
+	position: fixed;
+	top: 0;
+	left: 50%;
+	width: 100%;
+	padding: var(--gap);
+	transform: translateX(-50%);
+	font-size: var(--font-size-fluid-1);
+	max-width: 500px;
+	margin-inline: auto;
+	line-height: 1.3;
+	font-weight: 500;
+	margin-top: 0 !important;
+	a {
+		font-weight: 500;
+	}
 }

@@ -48,6 +48,8 @@ export default () => {
 
 			tl.from(this.$refs.button1, fadeIn, letterDelay);
 			tl.from(this.$refs.button2, fadeIn, letterDelay);
+
+			tl.from(this.$refs.announcement, { ...popIn, y: -20 }, '<0.5');
 		},
 
 		sliceLogo() {
