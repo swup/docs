@@ -19,51 +19,12 @@ const swup = new Swup({
 });
 ```
 
-## linkSelector
-
-Defines which link elements will trigger page visits.
-
-By default, all `a` elements with an `href` attribute will receive clicks.
-
-```javascript
-{
-  linkSelector: 'a[href]'
-}
-```
-
-To allow swup to take over clicks on
-[map areas](https://www.w3schools.com/tags/tag_area.asp) or
-[SVG links](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/a),
-append the selector:
-
-```javascript
-{
-  linkSelector: 'a[href], area[href], svg a[*|href]'
-}
-```
-
-## ignoreVisit
-
-Allows ignoring specific visits through a callback. By default, swup will ignore links with a `data-no-swup` attribute on itself or any parent element. The callback receives the URL of the new page, as well as a copy of the element and the event that triggered it, if any.
-
-The URL argument is the relative URL, excluding origin, but including any query parameters and hash.
-
-Element and event will be undefined when navigating via `swup.loadPage(url)`.
-
-```javascript
-{
-  ignoreVisit: (url, { el, event } = {}) => el?.closest('[data-no-swup]')
-}
-```
-
 ## animationSelector
 
-Defines the elements that are being animated. Usually, they will have a common
-class or class prefix. The default option will select all elements with
-class names starting with `transition-`.
-
-Swup will wait for all CSS transitions and keyframe animations to finish on these elements before
-swapping in the content of the new page.
+The selector for detecting transition timing. Swup will wait for all CSS transitions and
+keyframe animations to finish on these elements before swapping in the content of the new page.
+The default option will select all elements with
+class names beginning in `transition-`.
 
 ```javascript
 {
@@ -73,15 +34,13 @@ swapping in the content of the new page.
 
 ## containers
 
-Defines the containers that have their content replaced on page visits. This option must at least include the main element with the content of the page, but can
-include any other elements that are present across all pages.
-
-This allows animating one set of elements on the page while still replacing
-other, non-animated, parts of it: a common example would be the global site
-navigation that will not animate across pages but still needs to be updated if
-the language changes.
-
+The content containers to be replaced on page visits. Usually the `<main>` element with the
+content of the page, but can include any other elements that are present across all pages.
 Defaults to a single container of id `#swup`.
+
+Adding containers here allows animating one set of elements while replacing other parts of the page
+without animation, e.g. a global site navigation that will not fade out but still needs to update
+to reflect language changes.
 
 **Note:** Only elements **inside** of the `body` tag are supported.
 
@@ -93,9 +52,9 @@ Defaults to a single container of id `#swup`.
 
 ## cache
 
-Swup's built-in [cache](/api/cache/) keeps previously loaded pages in memory.
-This improves speed but should be disabled for highly dynamic sites
-that need up-to-date responses on each request. Defaults to `true`.
+The built-in [cache](/api/cache/) keeps previously loaded pages in memory. This improves speed but
+can be disabled for highly dynamic sites that need up-to-date responses on each request. Defaults
+to `true`.
 
 ```javascript
 {
@@ -103,9 +62,43 @@ that need up-to-date responses on each request. Defaults to `true`.
 }
 ```
 
+## ignoreVisit
+
+Allows ignoring specific visits via callback. By default, swup will ignore links with a
+`data-no-swup` attribute on itself or any parent element.
+
+The callback takes a relative URL of the new page, as well as the element and event that triggered
+the visit. Note that element and event will be undefined if navigating via `swup.loadPage(url)`.
+
+```javascript
+{
+  ignoreVisit: (url, { el, event } = {}) => el?.closest('[data-no-swup]')
+}
+```
+
+## linkSelector
+
+The link elements that trigger visits. By default, all `a` elements with an `href`
+attribute will receive clicks.
+
+```javascript
+{
+  linkSelector: 'a[href]'
+}
+```
+
+To let swup take over clicks on [map areas](https://www.w3schools.com/tags/tag_area.asp) or
+[SVG links](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/a), append the selector:
+
+```javascript
+{
+  linkSelector: 'a[href], area[href], svg a[*|href]'
+}
+```
+
 ## requestHeaders
 
-Adjust request headers that should be sent with each swup request.
+The custom headers that get sent along with each swup request.
 
 ```javascript
 {
@@ -113,22 +106,6 @@ Adjust request headers that should be sent with each swup request.
     'X-Requested-With': 'swup', // identify swup requests
     'Accept': 'text/html, application/xhtml+xml' // define expected response
   }
-}
-```
-
-## skipPopStateHandling
-
-Swup might not be the only library manipulating history state in your project. To properly identify
-visits initiated by swup, it will add a `source` property to every history state object it creates.
-Whenever the back/forward button is hit, swup will only handle visits it recognizes.
-
-This behavior can be modified by passing in a `skipPopStateHandling` handler that returns `true` to
-handle a specific history visit or `false` to do nothing. It receives the triggered `popstate` event
-and defaults to:
-
-```javascript
-{
-  skipPopStateHandling: (event) => event.state?.source !== 'swup'
 }
 ```
 
@@ -163,6 +140,19 @@ return a relative URL as well.
 ```
 
 The option defaults to `(url) => url`.
+
+## skipPopStateHandling
+
+Swup will only handle backward/forward visits to history entries it has created itself. Any visits
+to entries without a custom `source` property will be ignored and handled by the browser instead.
+To modify this behavior, provide a custom callback function that receives the `popstate` event
+and returns a `boolean`.
+
+```javascript
+{
+  skipPopStateHandling: (event) => event.state?.source !== 'swup'
+}
+```
 
 ## animateHistoryBrowsing
 
