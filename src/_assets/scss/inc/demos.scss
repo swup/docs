@@ -1,0 +1,27 @@
+.demo {
+	display: block;
+	position: relative;
+	iframe {
+		width: 100%;
+		height: 500px;
+		background: transparent;
+		border: 2px solid black;
+		border-radius: var(--radius-1);
+		overflow: hidden;
+	}
+	iframe + p {
+		position: absolute;
+		bottom: 1.5rem;
+		right: 2rem;
+		margin: 0;
+		img {
+			filter: drop-shadow(0 0 1px rgba(0 0 0 / 0.4));
+		}
+	}
+}
+
+.fake-browser {
+	iframe {
+		border-radius: 0;
+	}
+}
