@@ -12,21 +12,30 @@ permalink: /getting-started/how-it-works/
 # How it works
 
 Instead of letting the browser load the next page, swup will intercept link clicks, load the new
-page in the background and manage the transition between the old and new content.
+page in the background and smoothly transition between the old and new content.
 
-## Auto-detected CSS transitions
+Read on to learn about key concepts of swup.
+
+## Containers
+
+Swup will not replace the whole body on each page load. Instead, it will only replace the actual
+[content containers](/options/#containers) on your page. One container is required, but there can
+be as many as necessary.
+
+## Automatic transition timing {#timing}
 
 Swup is built around CSS transitions. It will wait for any
 [transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) and
 [animations](https://developer.mozilla.org/en-US/docs/Web/CSS/animation) to finish before replacing
-page content. Transitions are recognized by a special type of class added to
-content containers: `transition-[name]`, where `[name]` is an arbitrary name you can assign
-to allow styling different types of transitions.
+page content. To identify transitions to wait for, swup will look for a special type of class added
+to content containers: `transition-[name]`, where `name` is an arbitrary name you can assign
+to allow styling different types of transitions. This [animation selector](/options/#animation-selector)
+can be configured.
 
 It is recommended to only add this class to a **single** element per page. All other elements
 can be transitioned independently to allow easier debugging of transitions.
 
-## Transition classes
+### Transition classes {#classes}
 
 Swup applies classes to the `html` tag to control the page transition process:
 
@@ -41,3 +50,25 @@ Swup applies classes to the `html` tag to control the page transition process:
 | `to-[transition]` | Added for links with a `[data-swup-transition]` attribute to change the animation for a specific visit. |
 
 </div>
+
+You can configure swup to [add transition classes to the containers](/options/#animation-scope) instead of the html element.
+
+## Browser history {#history}
+
+Swup will update and push to the browser history API. The current URL in the browser will always
+reflect the actual URL of the last requested page. Forward/backward visits will continue to work
+as expected. On history visits, the scroll position will be restored as well.
+
+## Scroll behavior {#scrolling}
+
+Swup emulates native browser behavior for scrolling. Between page visits, the scroll position will
+be reset to the top. Clicking on an anchor link to the same page will jump to that anchor.
+
+## Hooks
+
+To trigger custom logic or modify swup's behavior, you can register [hook handlers](/hooks/).
+
+## Plugins
+
+Swup was designed to be small but modular. Any extended functionality can be added via one of the
+many official or third-party [plugins](/plugins/).
