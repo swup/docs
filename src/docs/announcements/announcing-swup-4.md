@@ -124,7 +124,7 @@ swup.hooks.before('transitionStart', (context) => {
 
 ## Plugins
 
-All official plugins have been updated for compatibility with swup 4.
+All official [plugins](/plugins/) have been updated for compatibility with swup 4.
 
 Additionally, we're happy to present two new plugins that were made possible by the architectural
 changes to swup introduced in the new version. They enable rather advanced use cases.
