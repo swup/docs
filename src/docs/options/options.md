@@ -141,22 +141,16 @@ The custom headers that get sent along with each swup request.
 
 ## resolveUrl
 
-Allows rewriting URLs before swup tries loading them. In practice, it's an
-advanced way of making swup ignore certain visits. By resolving different paths
-to a single path, swup will treat both as a single resource and ignore any
-visits between them. You can then handle any changes on the page yourself:
-updating content, title tag, etc., without swup getting in the way. Swup will
-also use the resolved URL for its cache and for restoring the scroll position if
-using the scroll plugin.
+Rewrite URLs before loading them. An advanced way of ignoring certain visits by mapping different
+paths to a single path and treating them as one resource for fetching pages and restoring scroll
+positions. The callback receives and returns a relative URL.
 
-An example use case would be a project listing with purely client-side filtering
-based on the query parameters. The server will always respond with the full list
-of all projects. In that case, you'll want to handle any visits between
-`/projects/?sort=date` and `/projects/?sort=title` yourself, telling swup that
-nothing has changed and no fetch request to the new URL is necessary.
+An example use case would be a project listing: the server always sends the complete list of
+projects and filtering is done client-side based on query params. You'll want to handle any visits
+between `/projects/?sort=date` and `/projects/?sort=title` yourself, telling swup nothing has
+changed and no page load is necessary.
 
-The callback function receives a relative URL as an argument and needs to
-return a relative URL as well.
+
 
 ```javascript
 {
