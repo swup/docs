@@ -47,7 +47,7 @@ Themes have a few special helper methods:
 
 ### Cleaning up
 
-THemes need to clean up after themselves in the `umount` method: cancel any event listeners, undo
+Themes need to clean up after themselves in the `umount` method: cancel any event listeners, undo
 any DOM changes, etc.
 
 ### Logging
