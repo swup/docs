@@ -20,6 +20,16 @@ dynamic or doesn't need a cache for other reasons, you can disable it by modifyi
 
 Swup's cache is available at `swup.cache`. See below for all available methods.
 
+## Options
+
+Disable the cache by setting swup's `cache` option:
+
+```js
+const swup = new Swup({
+  cache: false
+});
+```
+
 ## Properties
 
 ### size
