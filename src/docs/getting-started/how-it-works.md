@@ -16,7 +16,9 @@ page in the background and manage the transition between the old and new content
 
 ## Auto-detected CSS transitions
 
-Swup is built around CSS transitions and waits for any transitions to finish before replacing
+Swup is built around CSS transitions. It will wait for any
+[transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) and
+[animations](https://developer.mozilla.org/en-US/docs/Web/CSS/animation) to finish before replacing
 page content. Transitions are recognized by a special type of class added to
 content containers: `transition-[name]`, where `[name]` is an arbitrary name you can assign
 to allow styling different types of transitions.
