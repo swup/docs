@@ -9,12 +9,16 @@ permalink: /getting-started/
 
 # Getting Started
 
+## What is swup?
+
 Swup is a versatile and extensible page transition library for server rendered websites.
 It manages the complete lifecycle of a page visit by intercepting link clicks, loading the new page
 in the background and smoothly transitioning between the old and new content.
 
 Its goal is to make it effortless to add page transitions to a site, while providing lots of
-other quality-of-life improvements.
+other quality-of-life improvements like caching, smart preloading and forms support.
+
+See [How it works](/getting-started/how-it-works/) for an overview of the key concepts.
 
 ## Features
 
@@ -26,6 +30,10 @@ other quality-of-life improvements.
 - 📡 Offers [hooks](/hooks/) to customize and extend the page load lifecycle
 - 🔌 Has a powerful [plugin system](/plugins/) and many official and third-party plugins
 - 🎨 Provides ready-to-go [themes](/themes/) to get started quickly
+
+## Try it out
+
+Explore our [interactive demos](/getting-started/demos/) to see swup in action.
 
 ## Plugins
 
@@ -55,10 +63,6 @@ Become a sponsor on [Open Collective](https://opencollective.com/swup) or suppor
   <a href="https://opencollective.com/swup/donate" target="_blank" class="button">Donate to Our Open Collective</a>
   <a href="https://github.com/sponsors/gmrchk" target="_blank" class="button">Sponsor Us on GitHub</a>
 </div>
-
-## CLI
-
-Like to make sure your site has no bugs? You can use swup's [CI/CD integration](/ci-cd/) for that, or use the official [swup CLI](/cli/) to check your site manually.
 
 ## License
 
