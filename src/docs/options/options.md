@@ -11,11 +11,28 @@ permalink: /options/
 
 # Options
 
-Swup has several options that can be passed in during initialization:
+Swup has several options that can be passed in during initialization.
+
+## Defaults
+
+These are the default options. See below for details on each option.
 
 ```javascript
 const swup = new Swup({
-  /* options */
+  animateHistoryBrowsing: false,
+  animationSelector: '[class*="transition-"]',
+  animationScope: 'html',
+  cache: true,
+  containers: ['#swup'],
+  ignoreVisit: (href, { el } = {}) => el?.closest('[data-no-swup]'),
+  linkSelector: 'a[href]',
+  plugins: [],
+  resolveUrl: (url) => url,
+  requestHeaders: {
+    'X-Requested-With': 'swup',
+    'Accept': 'text/html, application/xhtml+xml'
+  },
+  skipPopStateHandling: (event) => event.state?.source !== 'swup'
 });
 ```
 
@@ -193,26 +210,3 @@ tag during those transitions. Defaults to `false`.
 ⚠️ **Important Note**: This option was added due to popular request. However, it should be used with
 caution. When activated, swup has to disable native [browser scroll restoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration).
 Scroll positions will not be preserved between visits and need to be implemented by you.
-
-## Default Options
-
-The default options look like this:
-
-```javascript
-{
-  animateHistoryBrowsing: false,
-  animationSelector: '[class*="transition-"]',
-  animationScope: 'html',
-  cache: true,
-  containers: ['#swup'],
-  ignoreVisit: (href, { el } = {}) => el?.closest('[data-no-swup]'),
-  linkSelector: 'a[href]',
-  plugins: [],
-  resolveUrl: (url) => url,
-  requestHeaders: {
-    'X-Requested-With': 'swup',
-    'Accept': 'text/html, application/xhtml+xml'
-  },
-  skipPopStateHandling: (event) => event.state?.source !== 'swup'
-}
-```
