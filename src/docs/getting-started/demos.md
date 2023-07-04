@@ -11,9 +11,9 @@ permalink: /getting-started/demos/
 
 # Demos
 
-## Basic setup
-
-Default swup installation with two containers and a fade transition between pages.
+Looking for a demo of swup animations in action? You are in fact looking at one! These docs are built
+with swup and CSS-only page transitions. See below for more isolated examples showcasing swup's
+features and options.
 
 <!-- <div class="demo">
   <div class="fake-browser">
@@ -36,10 +36,26 @@ Default swup installation with two containers and a fade transition between page
   </div>
 </div> -->
 
+## Basic transition
+
+Default swup installation with two containers and a fade transition between pages.
+
 <div class="demo">
 
   <iframe src="https://swup-demo-basic.philippdaun.repl.co" title="Swup Demo: Basic" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
 
   [![Try with Replit](https://replit.com/badge?theme=light&caption=Try%20with%20Replit)](https://swup-demo-basic.philippdaun.repl.co/__repl)
+
+</div>
+
+## Slide transition
+
+Slide pages horizontally on page view.
+
+<div class="demo">
+
+  <iframe src="https://swup-demo-slide.philippdaun.repl.co" title="Swup Demo: Slide" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
+
+  [![Try with Replit](https://replit.com/badge?theme=light&caption=Try%20with%20Replit)](https://swup-demo-slide.philippdaun.repl.co/__repl)
 
 </div>
