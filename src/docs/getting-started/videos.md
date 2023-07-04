@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Video tutorials
+title: Tutorials
 eleventyNavigation:
-  key: Video tutorials
+  key: Tutorials
   parent: Getting Started
   order: 6
 description: A few video tutorials by people around the web
 permalink: /getting-started/videos/
 ---
 
-# Videos about swup
+# Video turorials
 
 <div class="iframe">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/eVwH3VL1EsA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
