@@ -32,6 +32,36 @@ class names beginning in `transition-`.
 }
 ```
 
+## animationScope
+
+The elements on which swup will add the [transition classes](/getting-started/how-it-works/#transition-classes)
+for styling the different phases of the in/out animation. By default, it will add those classes
+to the `html` tag. This is great for most use cases and the recommended way to use swup.
+
+```js
+{
+  animationScope: 'html'
+}
+```
+
+```html
+<html class="is-animating is-leaving">
+```
+
+Setting this option to `containers` will add the classes on the content containers themselves instead.
+
+```js
+{
+  animationScope: 'containers'
+}
+```
+
+```html
+<main id="swup" class="is-animating is-leaving">
+  Content
+</main>
+```
+
 ## containers
 
 The content containers to be replaced on page visits. Usually the `<main>` element with the
@@ -178,6 +208,7 @@ The default options look like this:
 {
   animateHistoryBrowsing: false,
   animationSelector: '[class*="transition-"]',
+  animationScope: 'html',
   cache: true,
   containers: ['#swup'],
   ignoreVisit: (href, { el } = {}) => el?.closest('[data-no-swup]'),
