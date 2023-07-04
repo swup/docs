@@ -20,6 +20,7 @@ between the current and next page.
 ## What’s new in this release
 
 - [Built-in scroll support](#scroll-support)
+- [Local animation scope](#local-animation-scope)
 - [Hook system for easier customization](#hook-system)
 - [Global context object in all callbacks](#global-context-object)
 - [Fragment plugin for dynamic container replacement](#fragment-plugin)
@@ -38,6 +39,23 @@ Swup 4 will correctly reset the scroll position after each navigation, as well a
 links on the same page. The scroll plugin is no longer required for recreating basic browser
 behavior. If you need animated scrolling, custom scroll offsets and other advanced customisation,
 feel free to keep using the [scroll plugin](/plugins/scroll-plugin/).
+
+### Local animation scope
+
+Swup 4 allows customizing on which elements the [transition classes](/getting-started/how-it-works/#transition-classes)
+are added. The default and recommended way is still adding them globally on the `html` tag.
+However, there is a new [animationScope](/options/#animation-scope) option to add the classes on
+the content containers themselves instead.
+
+```js
+const swup = new Swup({ animationScope: 'containers' });
+```
+
+```html
+<main id="swup" class="is-animating is-leaving">
+  Content
+</main>
+```
 
 ### Hook system for easier customization {#hook-system}
 
