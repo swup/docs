@@ -159,17 +159,17 @@ Swup 4 will no longer add `[data-swup]` attributes to containers.
 
 ## Custom payloads
 
-Going forward, only pure HTML responses are allowed from the server. Previously, swup supported
-sending and parsing custom JSON payloads by using the Custom Payload Plugin or overloading the
-`getPageData` method directly. This change was done to drastically simplify library complexity and
-allow more flexibility for other more common use cases. If you absolutely require custom payloads,
-we recommend sticking with swup 3.
+Going forward, only complete HTML responses are allowed from the server. Previously, swup supported
+sending custom payloads by using the Custom Payload Plugin or overloading the `getPageData` method
+directly. This change was done to drastically simplify library complexity and allow more flexibility
+for other more common use cases like dynamically setting content containers. If you absolutely
+require custom payloads, we recommend sticking with swup 3.
 
 ```diff
--  const swup = new Swup({
--    plugins: [new SwupCustomPayloadPlugin()]
--  });
+const swup = new Swup({
+-  plugins: [new SwupCustomPayloadPlugin()]
 +  // no longer supported
+});
 ```
 
 ```diff
