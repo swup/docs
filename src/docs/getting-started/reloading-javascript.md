@@ -1,15 +1,15 @@
 ---
 layout: default
-title: Reloading JavaScript
+title: Reloading Scripts
 eleventyNavigation:
-  key: Reloading JavaScript
+  key: Reloading Scripts
   parent: Getting Started
-  order: 5
+  order: 8
 description: How to trigger custom code when a new page is loaded.
 permalink: /getting-started/reloading-javascript/
 ---
 
-# Reloading JavaScript
+# Reloading Scripts
 
 Swup takes control of the page load lifecycle. Instead of having the browser
 recompile scripts between page changes, it keeps the current page instance alive
