@@ -11,25 +11,25 @@ permalink: /getting-started/
 
 ## What is swup?
 
-Swup is a versatile and extensible page transition library for server rendered websites.
+Swup is a versatile and extensible **page transition library** for server-rendered websites.
 It manages the complete lifecycle of a page visit by intercepting link clicks, loading the new page
 in the background and smoothly transitioning between the old and new content.
 
 Its goal is to make it effortless to add page transitions to a site, while providing lots of
 other quality-of-life improvements like caching, smart preloading and forms support.
 
-See [How it works](/getting-started/how-it-works/) for an overview of the key concepts.
-
 ## Features
 
 - ✏️ Works out of the box with [minimal markup](/getting-started/example/)
-- ✨ Auto-detects [CSS transitions](/getting-started/how-it-works/) for perfect timing
-- 🔗 Updates URLs and preserves native [browser history](/options/#animatehistorybrowsing)
-- 🏓 Manages scroll position between pages and anchor links
+- ✨ Auto-detects [CSS transitions](/getting-started/how-it-works/#timing) for perfect timing
+- 🔗 Updates URLs and preserves native [browser history](/getting-started/how-it-works/#history)
+- 🏓 Manages [scroll position](/getting-started/how-it-works/#scrolling) between pages and anchor links
 - 🚀 Uses a [cache](/api/cache/) to speed up subsequent page loads
 - 📡 Offers [hooks](/hooks/) to customize and extend the page load lifecycle
 - 🔌 Has a powerful [plugin system](/plugins/) and many official and third-party plugins
 - 🎨 Provides ready-to-go [themes](/themes/) to get started quickly
+
+See [How it works](/getting-started/how-it-works/) for an overview of the key concepts.
 
 ## Try it out
 
