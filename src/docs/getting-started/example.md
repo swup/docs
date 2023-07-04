@@ -50,9 +50,11 @@ html.is-animating .transition-fade {
 
 ## 3. Initialize swup
 
-Finally, we'll initialize swup. And we're good to go!
+Finally, we'll load and initialize swup. And we're good to go!
 
 ```javascript
+import Swup from 'https://unpkg.com/swup@4?module';
+
 const swup = new Swup();
 ```
 
