@@ -10,17 +10,24 @@ permalink: /plugins/
 
 # Plugins
 
-Some functionality is only necessary in certain projects.
-For this reason, swup has support for plugins that can, but don't have to be used.
+Swup is small by design. Extended features can be added via plugins.
 
-## Plugin Installation
+See below for a list of all official plugins.
+
+## Installing plugins
+
+Install and import the plugin via npm and your bundler:
+
+```shell
+npm install @swup/scroll-plugin
+```
 
 ```javascript
 import Swup from 'swup';
 import SwupScrollPlugin from '@swup/scroll-plugin';
 ```
 
-and enable plugin at initialisation of swup by including it in options:
+Enable the plugin at initialisation of swup by including it in the options:
 
 ```javascript
 const swup = new Swup({
@@ -28,15 +35,17 @@ const swup = new Swup({
 });
 ```
 
-## Plugin Methods
-
-Alternatively, you can use swup's `use` and `unuse` methods to add and remove plugins.
-
-The `findPlugin` method can be particularly useful for manipulating plugins directly or using its methods.
+Alternatively, you can use swup's `use` & `unuse` methods to add or remove plugins after intialization.
 
 ```javascript
 const swup = new Swup();
 swup.use(new SwupScrollPlugin());
+```
 
+## Accessing plugin instances
+
+Use swup's `findPlugin` method to find and manipulate plugin instances directly.
+
+```javascript
 const pluginInstance = swup.findPlugin('SwupScrollPlugin');
 ```
