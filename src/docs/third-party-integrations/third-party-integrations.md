@@ -8,10 +8,9 @@ description: List of external integrations done by awesome people around the web
 permalink: /third-party-integrations/
 ---
 
-# 3rd Party Integrations
+# Third-party Integrations
 
-Some awesome people needed more functionality, so they came up with their own integrations.
+These are projects of swup users that have created their own plugins. Keep in mind that these are
+external projects and any questions or issues need to be directed at the authors directly.
 
-Note that these are external projects, and any questions or issues need to be directed to the authors.
-
-If you'd like to list your own project here, just hit me with a link at <a href="mailto:gmarcuk@gmail.com?subject=New swup integration!">gmarcuk@gmail.com</a>.
+Create an issue or a PR to the docs repo to have your project listed here.
