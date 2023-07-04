@@ -14,7 +14,8 @@ permalink: /getting-started/example/
 Swup requires two things to work: a content container with an id and an animation class, as well
 as corresponding transition styles it can wait for when loading a page.
 
-We'll tackle these one by one. See below for the [complete example](#complete-example) code.
+We'll tackle these one by one. See below for the [complete code](#complete-example) and an
+interactive [demo](#demo).
 
 ## 1. Content container
 
@@ -25,7 +26,7 @@ want to wait for this element to finish animating whenever a new page is loaded.
 
 ```html
 <main id="swup" class="transition-fade">
-  <h1>Homepage</h1>
+  <h1>Welcome</h1>
   <p>Lorem ipsum dolor sit amet.</p>
 </main>
 ```
@@ -39,7 +40,7 @@ Let's define a CSS transition on the special transition class added before:
 
 ```css
 .transition-fade {
-  transition: opacity 0.4s;
+  transition: opacity 0.25s;
   opacity: 1;
 }
 
@@ -65,10 +66,10 @@ Putting it all together, this is what we get.
 ```html
 <html>
   <head>
-    <title>Homepage</title>
+    <title>Swup Example</title>
     <style>
       .transition-fade {
-        transition: opacity 0.4s;
+        transition: opacity 0.25s;
         opacity: 1;
       }
       html.is-animating .transition-fade {
@@ -78,7 +79,7 @@ Putting it all together, this is what we get.
   </head>
   <body>
     <main id="swup" class="transition-fade">
-      <h1>Homepage</h1>
+      <h1>Welcome</h1>
       <p>Lorem ipsum dolor sit amet.</p>
     </main>
     <script type="module">
@@ -91,4 +92,10 @@ Putting it all together, this is what we get.
 
 ## Demo
 
-Like to try it out yourself? Head to the [demo page](/getting-started/demos/).
+Basically, this is what we've just built.
+Head to the [demo page](/getting-started/demos/) for more examples.
+
+```repl
+https://swup-demo-basic.philippdaun.repl.co
+Swup Demo: Basic
+```
