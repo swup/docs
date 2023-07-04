@@ -43,22 +43,16 @@ of each demo to see the code and fork it for experimenting yourself.
 
 Default swup installation with two containers and a fade transition between pages.
 
-<div class="demo">
-
-  <iframe src="https://swup-demo-basic.philippdaun.repl.co" title="Swup Demo: Basic" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-
-  [![Try with Replit](https://replit.com/badge?theme=light&caption=Try%20with%20Replit)](https://swup-demo-basic.philippdaun.repl.co/__repl)
-
-</div>
+```repl
+https://swup-demo-basic.philippdaun.repl.co
+Swup Demo: Basic
+```
 
 ## Slide transition
 
 Slide pages horizontally on page view.
 
-<div class="demo">
-
-  <iframe src="https://swup-demo-slide.philippdaun.repl.co" title="Swup Demo: Slide" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"></iframe>
-
-  [![Try with Replit](https://replit.com/badge?theme=light&caption=Try%20with%20Replit)](https://swup-demo-slide.philippdaun.repl.co/__repl)
-
-</div>
+```repl
+https://swup-demo-slide.philippdaun.repl.co
+Swup Demo: Slide
+```
