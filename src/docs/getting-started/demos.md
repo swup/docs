@@ -15,6 +15,9 @@ Looking for a demo of swup animations in action? You are in fact looking at one!
 with swup and CSS-only page transitions. See below for more isolated examples showcasing swup's
 features and options.
 
+Click the <img src="https://replit.com/badge?theme=light&variant=small&caption=Try"> button
+of each demo to see the code and fork it for experimenting yourself.
+
 <!-- <div class="demo">
   <div class="fake-browser">
     <div class="fake-browser-header">

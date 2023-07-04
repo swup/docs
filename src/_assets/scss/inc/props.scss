@@ -41,6 +41,7 @@
 
 	--shadow-color: 239 49% 30%;
 	--shadow-strength: 10%;
+	--shadow-strength-dark: 20%;
 
 	--shadow-1: 0 -1px 3px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
 		0 1px 2px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
