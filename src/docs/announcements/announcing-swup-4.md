@@ -23,6 +23,7 @@ between the current and next page.
 - [Local animation scope](#local-animation-scope)
 - [Hook system for easier customization](#hook-system)
 - [Global context object in all callbacks](#global-context-object)
+- [Official Astro integration](#astro-integration)
 - [Fragment plugin for dynamic container replacement](#fragment-plugin)
 - [Sync plugin for combining in and out animations](#sync-plugin)
 
@@ -139,6 +140,18 @@ swup.hooks.before('transitionStart', (context) => {
   }
 });
 ```
+
+## Integrations
+
+### Official Astro integration {#astro-integration}
+
+[Astro](https://astro.build/) and swup are a great fit. Where Astro manages the rendering of your
+site, swup takes over on the client side to add smooth page transitions, smart preloading and
+caching. This has of course always been available for you to set up manually.
+
+Now there is an [official Astro integration for swup](https://github.com/swup/astro) for getting
+started quickly. It comes with fade transitions, sane default options and the most handy plugins
+for performance and accessibility out-of-the box.
 
 ## Plugins
 
