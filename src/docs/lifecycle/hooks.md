@@ -127,6 +127,7 @@ The following hooks are exposed by swup and can be accessed as such:
 | **loadPage**               | a page is loaded                                                                                                       |
 | **openPageInNewTab**       | a link was opened to a new tab                                                                                         |
 | **pageLoaded**             | a page was completely loaded, whether from a request or from cache                                                     |
+| **pageCached**             | a page was saved to the cache                                                                                          |
 | **pageView**               | transition to a new page was completed, also triggers when first enabling swup                                         |
 | **popState**               | history navigation was started: back/forward button pressed                                                            |
 | **replaceContent**         | the content of the page is replaced                                                                                    |
