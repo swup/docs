@@ -23,6 +23,7 @@ between the current and next page.
 - [Local animation scope](#local-animation-scope)
 - [Hook system for easier customization](#hook-system)
 - [Global context object in all callbacks](#global-context-object)
+- [Cache pruning strategies](#cache-pruning)
 - [Official Astro integration](#astro-integration)
 - [Fragment plugin for dynamic container replacement](#fragment-plugin)
 - [Sync plugin for combining in and out animations](#sync-plugin)
@@ -130,7 +131,6 @@ swup.hooks.on('transitionStart', (context) => {
 });
 ```
 
-
 Check if the current visit was triggered by the backward/forward button of the browser.
 
 ```javascript
@@ -140,6 +140,12 @@ swup.hooks.before('transitionStart', (context) => {
   }
 });
 ```
+
+### Cache pruning strategies {#cache-pruning}
+
+Swup's built-in cache is simple enough to not require regular cache pruning. For projects that do
+have special requirements, we now offer hooks and methods for implementing custom cache pruning
+strategies. See [cache pruning](/api/cache/#cache-pruning) for details and examples.
 
 ## Integrations
 
