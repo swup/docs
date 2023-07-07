@@ -61,7 +61,7 @@ const swup = new Swup();
 
 ## Complete example
 
-Putting it all together, this is what we get.
+Putting it all together, this is the complete code required for a basic swup setup.
 
 ```html
 <html>
@@ -92,7 +92,8 @@ Putting it all together, this is what we get.
 
 ## Demo
 
-Basically, this is what we've just built.
+Here's an interactive demo to try out the fade animation we've just built together.
+
 Head to the [demo page](/getting-started/demos/) for more examples.
 
 ```repl

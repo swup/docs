@@ -99,7 +99,7 @@ lifecycle hooks.
 
 Swup keeps a persistent session in memory, so objects leaking memory will not be
 cleaned up automatically as they would be on a full page refresh. While this
-should not be a problem on most sites, be aware that in special case you will
+should not be a problem on most sites, be aware that in special cases you will
 need to clean up after yourself right before swup's `replaceContent` hook.
 
 ```javascript
@@ -116,5 +116,5 @@ swup.hooks.before('replaceContent', () => unload());
 
 If you're not in control over the scripts included on the page, there is an
 official [scripts plugin](/plugins/scripts-plugin/) to help with reloading
-`script` tags. **Keep in mind that this is a last resort if none of the other
-options are available to you.**
+script tags.
+**This should be a last resort if none of the other options are available to you.**

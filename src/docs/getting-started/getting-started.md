@@ -13,10 +13,10 @@ permalink: /getting-started/
 
 Swup is a versatile and extensible **page transition library** for server-rendered websites.
 It manages the complete lifecycle of a page visit by intercepting link clicks, loading the new page
-in the background and smoothly transitioning between the old and new content.
+in the background, and smoothly transitioning between the old and new content.
 
-Its goal is to make it effortless to add page transitions to a site, while providing lots of
-other quality-of-life improvements like caching, smart preloading and forms support.
+Its goal is to make it effortless to add page transitions to a site, while providing many other
+quality-of-life improvements such as caching, smart preloading and form submissions.
 
 ## Features
 
@@ -48,11 +48,13 @@ Swup is small by design. Extended features can be added via [plugins](/plugins/)
 - Improve [accessibility](/plugins/a11y-plugin/) for screen readers
 - Get help in [debug mode](/plugins/debug-plugin/)
 
-Check out the list of [all official plugins](/plugins/) as well as [third-party integrations](/third-party-integrations/).
+Check out the list of [all official plugins](/plugins/) and [third-party integrations](/third-party-integrations/).
 
 ## Having trouble?
 
-If you're having trouble implementing swup, check out [Common Issues](/other/common-issues/), look at [closed issues](https://github.com/swup/swup/issues?q=is%3Aissue+is%3Aclosed) or create a [new discussion](https://github.com/swup/swup/discussions/new).
+If you're having trouble implementing swup, check out [Common Issues](/other/common-issues/), look
+at [closed issues](https://github.com/swup/swup/issues?q=is%3Aissue+is%3Aclosed), or create a
+[new discussion](https://github.com/swup/swup/discussions/new).
 
 ## Want to Contribute?
 

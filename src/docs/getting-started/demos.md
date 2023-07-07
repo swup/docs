@@ -50,7 +50,7 @@ Swup Demo: Basic
 
 ## Slide transition
 
-Slide pages horizontally on page view.
+Slide pages into view horizontally.
 
 ```repl
 https://swup-demo-slide.philippdaun.repl.co

@@ -11,8 +11,8 @@ permalink: /getting-started/how-it-works/
 
 # How it works
 
-Instead of letting the browser load the next page, swup will intercept link clicks, load the new
-page in the background and smoothly transition between the old and new content.
+Instead of letting the browser load the next page, swup intercepts link clicks, loads the new
+page in the background and smoothly transitions between the old and new content.
 
 Read on to learn about key concepts of swup.
 
@@ -44,7 +44,7 @@ Swup applies classes to the `html` tag to control the page transition process:
 | Class name                 | Description                                                                                                            |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | `is-animating` | Added before starting the transition. Removed after the content is replaced. Used for defining styles of unloaded pages. |
-| `is-changing` | Added before starting the transition. Removed after the whole transition process. Used for showing loading state. |
+| `is-changing` | Added before starting the transition. Removed after the whole transition process. Used for showing the loading state. |
 | `is-leaving` | Added before starting the transition. Removed right before the content is replaced. Used to identify the **leave** phase of the transition. Combine with `is-animating` to create differing **leave** and **enter** transitions. |
 | `is-rendering` | Added right before the content is replaced. Removed after the whole transition process. Used to identify the **enter** phase of the transition. Combine with `is-animating` to create differing **leave** and **enter** transitions. |
 | `to-[transition]` | Added for links with a `[data-swup-transition]` attribute to change the animation for a specific visit. |
@@ -55,8 +55,8 @@ You can configure swup to [add transition classes to the containers](/options/#a
 
 ## Browser history {#history}
 
-Swup will update and push to the browser history API. The current URL in the browser will always
-reflect the actual URL of the last requested page. Forward/backward visits will continue to work
+Swup will update and push to the browser history API. The current URL in the browser always reflects
+the actual URL of the last requested page. Forward/backward visits will continue to work
 as expected. On history visits, the scroll position will be restored as well.
 
 ## Scroll behavior {#scrolling}
