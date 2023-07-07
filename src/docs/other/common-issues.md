@@ -18,11 +18,11 @@ This is a compilation of challenges and possible solutions when integrating or e
 Swup doesn't automatically update the contents of the `head` tag. Any stylesheets not included in
 the current page's `head` will not be loaded.
 
-The easiest solution is using a single stylesheet for the whole website.
+The easiest solution is to use a single stylesheet for the whole website.
 
-If your site does require modular stylesheets per section or per template, use the [head-plugin](/plugins/head-plugin/)
-to add the new stylesheets and configure its `awaitAssets` option to also wait for those
-stylesheets to finish loading before starting the animation to the new page.
+If your site does require modular stylesheets per section or template, use the
+[head-plugin](/plugins/head-plugin/) to add the new stylesheets and configure its `awaitAssets`
+option to also wait for those stylesheets to finish loading before animating in the new page.
 
 ## The current and next page aren't visible at the same time
 
@@ -47,7 +47,7 @@ will also focus the main content area for improved keyboard accessibility.
 When jumping to an anchor on the page, the browser will scroll the page so that the targeted
 element will appear at the top of the viewport. The top part of the page might however already be
 covered with other content like a header. Effectively, we need a way to tell the browser to scroll
-to an offset point slightly above the anchor to compensate for the content on top if it.
+to an offset point slightly above the anchor to compensate for the content on top of it.
 
 In modern browsers, this is easily done via CSS:
 
