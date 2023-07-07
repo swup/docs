@@ -106,5 +106,6 @@ Swup will not prune the cache on its own. As it only stores simple objects with 
 work fine even across hundreds of page visits. If you still want to prune the cache, you can do so
 manually.
 
-The basic strategy is to append custom data whenever a page is cache and, later, manually prune
-the cache in regular intervals comparing that custom data to determine which pages to prune.
+The basic strategy is to append custom data with `cache.update()` whenever a page is cached. Later,
+manually prune the cache in regular intervals with `cache.prune()`, comparing the previously added
+custom data to determine which pages to prune.
