@@ -3,7 +3,7 @@ layout: default
 title: Getting Started
 eleventyNavigation:
   key: Getting Started
-  order: 1
+  order: 0
 permalink: /getting-started/
 ---
 
