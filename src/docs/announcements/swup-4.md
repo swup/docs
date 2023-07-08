@@ -22,12 +22,12 @@ any of the complexity.
 
 ## What’s new in this release
 
+- [Official Astro integration](#astro-integration)
 - [Built-in scroll support](#scroll-support)
 - [Local animation scope](#local-animation-scope)
 - [Hook system for easier customization](#hook-system)
 - [Global context object in all callbacks](#global-context-object)
 - [Cache pruning strategies](#cache-pruning)
-- [Official Astro integration](#astro-integration)
 - [Fragment Plugin for dynamic container replacement](#fragment-plugin)
 - [Parallel Plugin for combined in and out animations](#parallel-plugin)
 
@@ -35,6 +35,18 @@ any of the complexity.
 
 Some of these new features are breaking changes and will require modifications to your project.
 Please review this [migration guide](/getting-started/upgrading) for details.
+
+## Official Astro integration {#astro-integration}
+
+[Astro](https://astro.build/) and swup are a great fit. Where Astro manages the rendering of your
+site, swup takes over on the client side to add page transitions, caching and smart preloading to
+make everything feel smooth and snappy. This has of course always been available for you to set up
+manually.
+
+Now there is an [official Astro integration for swup](https://github.com/swup/astro) for getting
+started quickly. It comes with fade transitions, sane default options, and the most handy plugins
+for performance and accessibility out-of-the-box. Astro's bundling and module loading ensures we're
+not hurting performance by only loading swup once the page has finished rendering.
 
 ## Features
 
@@ -149,18 +161,6 @@ swup.hooks.before('transitionStart', (context) => {
 Swup's built-in cache is simple enough to not require regular cache pruning. For projects that do
 have special requirements, we now offer hooks and methods for implementing custom cache pruning
 strategies. See [cache pruning](/api/cache/#cache-pruning) for details and examples.
-
-## Integrations
-
-### Official Astro integration {#astro-integration}
-
-[Astro](https://astro.build/) and swup are a great fit. Where Astro manages the rendering of your
-site, swup takes over on the client side to add smooth page transitions, smart preloading, and
-caching. This has of course always been available for you to set up manually.
-
-Now there is an [official Astro integration for swup](https://github.com/swup/astro) for getting
-started quickly. It comes with fade transitions, sane default options, and the most handy plugins
-for performance and accessibility out-of-the-box.
 
 ## Plugins
 
