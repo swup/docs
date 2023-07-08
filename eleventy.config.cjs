@@ -124,19 +124,23 @@ async function maybeLoadRemoteReadme(content, ctx) {
 
 	if (!repo_link) return content;
 
-	const repoURL = `${repo_link.replace(
-		'github.com',
-		'raw.githubusercontent.com'
-	)}/master/readme.md`;
+	const repoBase = repo_link.replace('github.com', 'raw.githubusercontent.com' );
+	const repoURL = `${repoBase}/master/README.md`;
 
 	if (repoReadmes.has(repoURL)) {
 		return repoReadmes.get(repoURL);
 	}
 
-	let result = await EleventyFetch(repoURL, {
-		duration: '60s',
-		type: 'text'
-	});
+	let result;
+	try {
+		result = await EleventyFetch(repoURL, { duration: '60s', type: 'text' });
+	} catch (error) {
+		try {
+			result = await EleventyFetch(repoURL.toLowerCase(), { duration: '60s', type: 'text' });
+		} catch (error) {
+			console.error(`Could not load remote readme for ${repoURL}`);
+		}
+	}
 
 	// Honor <!-- swup-docs-ignore-start -->Ignore me!<!-- swup-docs-ignore-end -->
 	result = result.replace(
