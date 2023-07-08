@@ -6,7 +6,7 @@ eleventyNavigation:
   parent: Announcements
   order: 1
 description: Announcing the latest release of swup
-permalink: /announcements/announcing-swup-4/
+permalink: /announcements/swup-4/
 ---
 
 # Announcing swup 4
