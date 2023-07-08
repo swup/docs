@@ -19,8 +19,9 @@ Read on to learn about key concepts of swup.
 ## Containers
 
 Swup will not replace the whole body on each page load. Instead, it will only replace the actual
-[content containers](/options/#containers) on your page. One container is required, but there can
-be as many as necessary.
+[content containers](/options/#containers) on your page. By default, swup will only replace a
+container with the id `#swup` but you can configure additional containers like headers or navigation
+menus.
 
 ## Automatic transition timing {#timing}
 
