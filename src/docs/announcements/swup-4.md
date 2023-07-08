@@ -25,8 +25,8 @@ between the current and next page.
 - [Global context object in all callbacks](#global-context-object)
 - [Cache pruning strategies](#cache-pruning)
 - [Official Astro integration](#astro-integration)
-- [Fragment plugin for dynamic container replacement](#fragment-plugin)
-- [Sync plugin for combining in and out animations](#sync-plugin)
+- [Fragment Plugin for dynamic container replacement](#fragment-plugin)
+- [Parallel Plugin for combined in and out animations](#parallel-plugin)
 
 ## Upgrading
 
@@ -168,8 +168,8 @@ changes to swup introduced in the new version. They enable rather advanced use c
 
 ### Fragment Plugin
 
-TO-DO
+The new [Fragment Plugin](/plugins/fragment-plugin/) allows...
 
-### Sync Plugin
+### Parallel Plugin
 
-TO-DO
+The new [Parallel Plugin](/plugins/parallel-plugin/) allows...
