@@ -5,7 +5,7 @@ eleventyNavigation:
   key: Custom Payload Plugin
   parent: Plugins
   order: 4
-description: Plugin to allow receiving of custom payload formats from the server
+description: A swup plugin for sending custom payload formats
 permalink: /plugins/custom-payload-plugin/
 repo_link: https://github.com/swup/custom-payload-plugin
 ---

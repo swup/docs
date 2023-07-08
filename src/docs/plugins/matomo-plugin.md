@@ -4,8 +4,8 @@ title: Matomo Plugin
 eleventyNavigation:
   key: Matomo Plugin
   parent: Plugins
-  order: 12
-description: Plugin to trigger Matomo page views
+  order: 14
+description: A swup plugin for integrating Matomo analytics
 permalink: /plugins/matomo-plugin/
 repo_link: https://github.com/swup/matomo-plugin
 ---

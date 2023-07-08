@@ -4,8 +4,8 @@ title: Route Name Plugin
 eleventyNavigation:
   key: Route Name Plugin
   parent: Plugins
-  order: 15
-description: Plugin to use named routes for choosing animations
+  order: 17
+description: A swup plugin for named routes and route-based animation classes
 permalink: /plugins/route-name-plugin/
 repo_link: https://github.com/swup/route-name-plugin
 ---

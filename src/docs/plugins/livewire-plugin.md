@@ -4,7 +4,7 @@ title: Laravel Livewire Plugin
 eleventyNavigation:
   key: Laravel Livewire Plugin
   parent: Plugins
-  order: 12
+  order: 13
 description: Plguin to refresh Livewire components after swup page transition
 permalink: /plugins/livewire-plugin/
 repo_link: https://github.com/swup/livewire-plugin

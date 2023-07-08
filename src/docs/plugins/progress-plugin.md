@@ -4,8 +4,8 @@ title: Progress Bar Plugin
 eleventyNavigation:
   key: Progress Bar Plugin
   parent: Plugins
-  order: 14
-description: Plugin for displaying a loading indicator
+  order: 16
+description: A swup plugin for displaying a progress bar
 permalink: /plugins/progress-plugin/
 repo_link: https://github.com/swup/progress-plugin
 ---

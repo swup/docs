@@ -5,7 +5,7 @@ eleventyNavigation:
   key: Forms Plugin
   parent: Plugins
   order: 6
-description: Plugin to submit forms with transitions
+description: A swup plugin for submitting forms
 permalink: /plugins/forms-plugin/
 repo_link: https://github.com/swup/forms-plugin
 ---

@@ -5,7 +5,7 @@ eleventyNavigation:
   key: Accessibility Plugin
   parent: Plugins
   order: 1
-description: Plugin to enhanced accessibility
+description: A swup plugin for enhanced accessibility
 permalink: /plugins/a11y-plugin/
 repo_link: https://github.com/swup/a11y-plugin/
 ---
