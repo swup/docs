@@ -39,11 +39,13 @@ Note: these are just the defaults. Both the container selector and the animation
 Let's define a CSS transition on the special transition class added before:
 
 ```css
-.transition-fade {
+/* Define a transition duration during page visits */
+html.is-changing .transition-fade {
   transition: opacity 0.25s;
   opacity: 1;
 }
 
+/* Define the styles for the unloaded pages */
 html.is-animating .transition-fade {
   opacity: 0;
 }
@@ -68,7 +70,7 @@ Putting it all together, this is the complete code required for a basic swup set
   <head>
     <title>Swup Example</title>
     <style>
-      .transition-fade {
+      html.is-changing .transition-fade {
         transition: opacity 0.25s;
         opacity: 1;
       }

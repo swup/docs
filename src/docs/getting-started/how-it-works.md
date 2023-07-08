@@ -43,8 +43,8 @@ Swup applies classes to the `html` tag to control the page transition process:
 
 | Class name                 | Description                                                                                                            |
 | -------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `is-animating` | Added before starting the transition. Removed after the content is replaced. Used for defining styles of unloaded pages. |
 | `is-changing` | Added before starting the transition. Removed after the whole transition process. Used for showing the loading state. |
+| `is-animating` | Added before starting the transition. Removed after the content is replaced. Used for defining styles of unloaded pages. |
 | `is-leaving` | Added before starting the transition. Removed right before the content is replaced. Used to identify the **leave** phase of the transition. Combine with `is-animating` to create differing **leave** and **enter** transitions. |
 | `is-rendering` | Added right before the content is replaced. Removed after the whole transition process. Used to identify the **enter** phase of the transition. Combine with `is-animating` to create differing **leave** and **enter** transitions. |
 | `to-[transition]` | Added for links with a `[data-swup-transition]` attribute to change the animation for a specific visit. |
