@@ -12,11 +12,11 @@ permalink: /getting-started/
 ## What is swup?
 
 Swup is a versatile and extensible **page transition library** for server-rendered websites.
-It manages the complete lifecycle of a page visit by intercepting link clicks, loading the new page
-in the background, and smoothly transitioning between the old and new content.
+It manages the complete page load lifecycle and smoothly transitions between the current and next
+page. In addition, it offers many other quality-of-life improvements like **caching**, **smart preloading**,
+native browser history and enhanced **accessibility**.
 
-Its goal is to make it effortless to add page transitions to a site, while providing many other
-quality-of-life improvements such as caching, smart preloading and form submissions.
+Make your site feel like a snappy single-page app — without any of the complexity.
 
 ## Features
 

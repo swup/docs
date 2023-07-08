@@ -13,9 +13,12 @@ permalink: /announcements/swup-4/
 
 The swup team is excited to announce swup 4 🎉
 
-[Swup](https://swup.js.org/) is a versatile and extensible page transition library for
+## What is swup?
+
+[Swup](https://swup.js.org/) is a versatile and extensible **page transition library** for
 server-rendered websites. It manages the complete page load lifecycle and smoothly transitions
-between the current and next page.
+between the current and next page. Make your site feel like a snappy single-page app — without
+any of the complexity.
 
 ## What’s new in this release
 
