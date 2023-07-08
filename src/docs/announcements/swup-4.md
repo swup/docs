@@ -166,13 +166,30 @@ strategies. See [cache pruning](/api/cache/#cache-pruning) for details and examp
 
 All official [plugins](/plugins/) have been updated for compatibility with swup 4.
 
-Additionally, we're happy to present two new plugins that were made possible by the architectural
-changes to swup introduced in the new version. They enable rather advanced use cases.
+Additionally, we're happy to present two advanced new plugins that were made possible by some of the
+architectural changes to swup introduced in the new version.
 
 ### Fragment Plugin
 
-The new [Fragment Plugin](/plugins/fragment-plugin/) allows...
+The new [Fragment Plugin](/plugins/fragment-plugin/) allows selectively updating dynamic fragments
+instead of the main content containers, based on custom rules. Animating only the parts of the page
+that have actually changed is a great way of communicating context and improving orientation.
+Imagine the two scenarios below:
+
+- a filter UI that live-updates a list of results on every interaction
+- a detail overlay that pushes on top of the currently open content
+
+Both of these require updating only a small page fragment instead of doing a full page transition.
+Head over to the [plugin readme](/plugins/fragment-plugin/) to learn more about enabling fragment
+visits in these scenarios.
+
+<!-- GIF of Fragment Plugin in action -->
 
 ### Parallel Plugin
 
-The new [Parallel Plugin](/plugins/parallel-plugin/) allows...
+The new [Parallel Plugin](/plugins/parallel-plugin/) enables animating both the previous and the
+next content at the same time. It's a feature requested by many users and a valid use case for sites
+with more complex animations. Head over to the [plugin readme](/plugins/parallel-plugin/) for more
+information and example code.
+
+<!-- GIF of Parallel Plugin in action -->
