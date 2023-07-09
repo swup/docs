@@ -50,6 +50,11 @@ Swup is small by design. Extended features can be added via [plugins](/plugins/)
 
 Check out the list of [official plugins](/plugins/) and [third-party integrations](/third-party-integrations/).
 
+## Themes
+
+Get started quickly with one of three included themes: [fade](/themes/fade-theme/),
+[slide](/themes/slide-theme/), and [overlay](/themes/overlay-theme/).
+
 ## Having trouble?
 
 If you're having trouble implementing swup, check out [Common Issues](/other/common-issues/), look
