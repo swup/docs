@@ -280,6 +280,18 @@
 	color: var(--color-dimmed);
 }
 
+.text p:has(.wide-image) {
+	@include bp(l) {
+		margin-left: -3em;
+		margin-right: -3em;
+	}
+	@include bp(xl) {
+		margin-left: -4em;
+		margin-right: -10em;
+		width: auto;
+	}
+}
+
 /*
 * Page Nav
 */

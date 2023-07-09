@@ -15,3 +15,7 @@ page in the background, replace the content and animate between the old and the 
 
 - Use [hooks](/hooks/) to trigger custom logic
 - Manipulate the [context object](/context/) to customize how swup will transition to the next page
+
+
+[![Swup Lifecycle Diagram](/assets/images/swup-lifecycle.png){class="light-only wide-image"}](/assets/images/swup-lifecycle.png)
+[![Swup Lifecycle Diagram](/assets/images/swup-lifecycle-dark.png){class="dark-only wide-image"}](/assets/images/swup-lifecycle.png)
