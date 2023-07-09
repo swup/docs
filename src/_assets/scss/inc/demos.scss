@@ -1,29 +1,49 @@
 .repl {
-	display: block;
 	position: relative;
+}
+
+.repl__frame {
+	position: relative;
+	width: 100%;
+	min-width: 300px;
+	height: calc(450px + 6vh);
+	// max-height: 500px;
+	position: relative;
+	resize: both;
+	border: 1px solid var(--color-transparent-1);
+	border-radius: var(--radius-1);
+	filter: drop-shadow(0 0 5px hsl(var(--shadow-color) / var(--shadow-strength-dark)));
+	overflow: hidden;
 	iframe {
-		width: 100%;
-		height: 500px;
-		background: transparent;
-		border: 1px solid var(--color-transparent-1);
-		border-radius: var(--radius-1);
-		filter: drop-shadow(0 0 5px hsl(var(--shadow-color) / var(--shadow-strength-dark)));
-		overflow: hidden;
-	}
-	iframe + p {
 		position: absolute;
-		bottom: 1.5rem;
-		right: 2rem;
-		margin: 0;
-		a {
-			background: none !important;
-		}
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: transparent;
+	}
+}
+
+.repl__link {
+	position: absolute;
+	bottom: 1.5rem;
+	right: 2rem;
+	margin: 0;
+	a {
+		background: none !important;
 	}
 }
 
 img[src*='https://replit.com/badge'] {
 	display: inline-block;
 	margin-inline: .3em;
+	transition: opacity 150ms;
+	a & {
+		opacity: .7;
+	}
+	a:hover & {
+		opacity: 1;
+	}
 	filter:
 		drop-shadow(0 0 1px var(--color-transparent-2))
 		drop-shadow(0 0 5px hsl(var(--shadow-color) / var(--shadow-strength-dark)));
@@ -31,10 +51,4 @@ img[src*='https://replit.com/badge'] {
 
 .page_body > p > img[src*='https://replit.com/badge'] {
 	transform: translateY(.3em);
-}
-
-.fake-browser {
-	iframe {
-		border-radius: 0;
-	}
 }
