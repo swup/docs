@@ -135,7 +135,6 @@ The following hooks are exposed by swup and can be accessed as such:
 | **samePageWithHash**       | a link is clicked that jumps to an `#anchor` on the current page                                                       |
 | **transitionStart**        | begin of the transition to a new page                                                                                  |
 | **transitionEnd**          | end of the transition to a new page: content was replaced and animations have finished                                 |
-| **urlUpdated**             | the current page url was updated                                                                                       |
 
 </div>
 
