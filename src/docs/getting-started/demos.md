@@ -39,16 +39,16 @@ of each demo to see the code and fork it for experimenting yourself.
   </div>
 </div> -->
 
-## Basic transition
+## Basic animation
 
-Default swup installation with two containers and a fade transition between pages.
+Default swup installation with two containers and a fade animation between pages.
 
 ```repl
 https://swup-demo-basic.philippdaun.repl.co
 Swup Demo: Basic
 ```
 
-## Slide transition
+## Slide animation
 
 Slide pages into view horizontally.
 
@@ -57,11 +57,20 @@ https://swup-demo-slide.philippdaun.repl.co
 Swup Demo: Slide
 ```
 
-## Overlay transition
+## Overlay animation
 
 Cover content while loading the new page.
 
 ```repl
 https://swup-demo-overlay.philippdaun.repl.co
 Swup Demo: Overlay
+```
+
+## Multiple animations
+
+Use swup's animation classes for other elements than the main content containers.
+
+```repl
+https://swup-demo-multiple.philippdaun.repl.co
+Swup Demo: Mulitple animations
 ```
