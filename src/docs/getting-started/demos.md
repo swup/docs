@@ -56,3 +56,12 @@ Slide pages into view horizontally.
 https://swup-demo-slide.philippdaun.repl.co
 Swup Demo: Slide
 ```
+
+## Overlay transition
+
+Cover content while loading the new page.
+
+```repl
+https://swup-demo-overlay.philippdaun.repl.co
+Swup Demo: Overlay
+```
