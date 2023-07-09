@@ -12,7 +12,8 @@ permalink: /themes/
 
 Themes are predefined transitions to get up and running quickly.
 
-Technically, they are identical to plugins in how they're structured and used, but with a focus on adding required CSS and manipulating HTML if necessary.
+Technically, they are identical to plugins in how they're structured and used, but with a focus on
+adding any required CSS and manipulating the DOM if necessary.
 
 Try out the default themes here:
 

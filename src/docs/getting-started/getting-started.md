@@ -48,7 +48,7 @@ Swup is small by design. Extended features can be added via [plugins](/plugins/)
 - Improve [accessibility](/plugins/a11y-plugin/) for screen readers
 - Get help in [debug mode](/plugins/debug-plugin/)
 
-Check out the list of [all official plugins](/plugins/) and [third-party integrations](/third-party-integrations/).
+Check out the list of [official plugins](/plugins/) and [third-party integrations](/third-party-integrations/).
 
 ## Having trouble?
 
