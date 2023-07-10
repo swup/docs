@@ -38,9 +38,27 @@ Use swup's `log` method to output any relevant information. By default this meth
 anything. It will starting outputting information only if installed alongside the
 [debug plugin](/plugins/debug-plugin/).
 
+### Replacing swup hooks
+
+You might want to react to certain lifecycle hooks by replacing swup's internal handler completely.
+The default handler is passed to the callback as the third parameter, should you decide to let
+swup handle this hook based on some condition.
+
+```javascript
+this.swup.hooks.replace('replaceContent', (context, args, originalHandler) => {
+    if (context.someCondition) {
+      // Handle content replacement myself
+    } else {
+      // Let swup handle content replacement
+      return originalHandler(context, args);
+    }
+  }
+);
+```
+
 ### Custom hooks
 
-Create and trigger new hooks to implement additional functionality.
+You might need to create and trigger your own new hooks to implement additional functionality.
 
 Create a new hook in `mount`:
 
@@ -60,7 +78,7 @@ Pass in arguments to hand them along to any registered handlers.
 this.swup.hooks.trigger('submitForm', { formData: 123 });
 ```
 
-### Replaceable hooks
+### Making custom hooks replaceable
 
 Passing in a default handler when triggering a hook will allow users of your plugin
 to replace this default handler with a custom implementation. This is an advanced pattern to avoid
@@ -69,25 +87,17 @@ monkeypatching instance methods.
 In the example below, the default form handler uses `fetch` to submit the form.
 
 ```javascript
-swup.hooks.trigger(
-  'submitForm',
-  // arguments passed into the hook
-  { action: url, data: new FormData() },
-  // default hook handler
-  (context, { action, data }) => {
-    fetch(action, { body: data }).then(/* */);
-  }
-);
+const args = { action: url, data: new FormData() };
+this.swup.hooks.trigger('submitForm', args, (context, { action, data }) => {
+  return fetch(action, { body: data }).then(/* */);
+});
 ```
 
 Consumers can now replace the default handler with a custom handler. In this example, they are
 using axios to submit the form instead.
 
 ```javascript
-swup.hooks.replace(
-  'submitForm',
-  (context, { action, data }) => {
-    axios.get(action, { params: data }).then(/* */);
-  }
-);
+swup.hooks.replace('submitForm', (context, { action, data }) => {
+  return axios.get(action, { params: data }).then(/* */);
+});
 ```
