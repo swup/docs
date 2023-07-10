@@ -4,7 +4,7 @@ title: Preload Plugin
 eleventyNavigation:
   key: Preload Plugin
   parent: Plugins
-  order: 15
+  order: 16
 description: A swup plugin for preloading pages to speed up navigation
 permalink: /plugins/preload-plugin/
 repo_link: https://github.com/swup/preload-plugin

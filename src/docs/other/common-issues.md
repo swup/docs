@@ -26,11 +26,12 @@ option to also wait for those stylesheets to finish loading before animating in 
 
 ## The current and next page aren't visible at the same time
 
-Swup currently doesn't provide an official way of running both the in and out animations in parallel.
-The current and the next page's contents are never in the DOM at the same time.
+Out of the box, swup will completely hide the previous page, replace the content and only then
+show the next page. The old and new containers are never in the DOM at the same time.
 
-See [this discussion](https://github.com/orgs/swup/discussions/502#discussioncomment-3536642)
-for possible pointers using custom hooks.
+You can however use the official [Parallel Plugin](/plugins/parallel-plugin/) to run both the in
+and out animations in parallel. It will keep a copy of the previous content around for the duration
+of the whole transition.
 
 ## Screen readers are not informed about updated content
 

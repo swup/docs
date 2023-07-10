@@ -4,7 +4,7 @@ title: Progress Bar Plugin
 eleventyNavigation:
   key: Progress Bar Plugin
   parent: Plugins
-  order: 16
+  order: 17
 description: A swup plugin for displaying a progress bar
 permalink: /plugins/progress-plugin/
 repo_link: https://github.com/swup/progress-plugin

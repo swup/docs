@@ -187,9 +187,10 @@ visits in these scenarios.
 
 ### Parallel Plugin
 
-The new [Parallel Plugin](/plugins/parallel-plugin/) enables animating both the previous and the
-next content at the same time. It's a feature requested by many users and a valid use case for sites
-with more complex animations. Head over to the [plugin readme](/plugins/parallel-plugin/) for more
-information and example code.
+The new [Parallel Plugin](/plugins/parallel-plugin/) enables a feature requested by many users:
+running out and in animation at the same time, i.e. in parallel. To do this, the plugin will
+keep the previous container around for the duration of the transition. Complex layouts like overlays,
+stacks and side-by-side slideshows are now much easier to implement. Head over to the
+[plugin readme](/plugins/parallel-plugin/) for more information and example code.
 
 <!-- GIF of Parallel Plugin in action -->

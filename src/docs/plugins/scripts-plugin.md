@@ -4,7 +4,7 @@ title: Scripts Plugin
 eleventyNavigation:
   key: Scripts Plugin
   parent: Plugins
-  order: 18
+  order: 19
 description: A swup plugin for re-evaluating scripts
 permalink: /plugins/scripts-plugin/
 repo_link: https://github.com/swup/scripts-plugin
