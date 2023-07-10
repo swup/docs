@@ -12,7 +12,7 @@ permalink: /getting-started/demos/
 # Demos
 
 Looking for a demo of swup animations in action? You are in fact looking at one! These docs are built
-with swup and CSS-only page transitions. See below for more isolated examples showcasing swup's
+with swup and CSS-only animations. See below for more isolated examples showcasing swup's
 features and options.
 
 Click the <img src="https://replit.com/badge?theme=dark&variant=small&caption=Try"> button

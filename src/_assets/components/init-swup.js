@@ -66,7 +66,7 @@ export default function () {
 
 	window.addEventListener('resize', positionNavIndicators);
 	document.addEventListener('change', (event) => {
-		if (event.target.name === 'theme') changeSwupThemeWithTransition(event.target.value);
+		if (event.target.name === 'theme') changeSwupThemeWithAnimation(event.target.value);
 	});
 	setSwupTheme(new URLSearchParams(window.location.search).get('theme'));
 
@@ -112,11 +112,11 @@ function selectCurrentThemeCheckbox() {
 
 /**
  * Changes the current theme and reloads the page with a related query param.
- * This will show of the new theme's transition immediately
+ * This will show off the new theme's animation immediately
  *
  * @param {string} theme
  */
-function changeSwupThemeWithTransition(theme) {
+function changeSwupThemeWithAnimation(theme) {
 	setSwupTheme(theme);
 
 	const url = new URL(window.location.href);

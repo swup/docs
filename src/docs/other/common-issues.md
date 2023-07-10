@@ -23,7 +23,7 @@ If your site does require modular stylesheets per section or template, use the
 [head-plugin](/plugins/head-plugin/) to add the new stylesheets and configure its `awaitAssets`
 option to also wait for those stylesheets to finish loading before animating in the new page.
 
-## The current and next page aren't visible at the same time
+## The current and next page can not be animated at the same time
 
 Out of the box, swup will completely hide the previous page, replace the content and only then
 show the next page. The old and new containers are never in the DOM at the same time.
@@ -83,9 +83,9 @@ index your site.
 
 Some third-party libraries like [Foundation](https://foundation.zurb.com/) might already be using
 class names like `transition-*` for their own functionality. In this case, swup will try to wait
-for transitions on those elements, quite possibly messing up the timing of transitions.
+for animations on those elements, quite possibly messing up the timing of animations.
 
-Using a stricter [animationSelector](/options/#animation-selector) fixes the issue.
+Using a stricter [animation selector](/options/#animation-selector) fixes the issue.
 
 ```javascript
 var swup = new Swup({
@@ -109,14 +109,14 @@ html.is-animating .swup-transition-fade {
 
 ## Overused `transition-*` classes
 
-Swup will wait for any element with a `transition-*` class to finish transitioning.
+Swup will wait for any element with a `transition-*` class to finish animating.
 While there is an unlimited number of elements that can have this class, only one is actually
 required for swup to get its timing right. Using it on all animated elements is not required and
 often leads to bugs.
 
-It is recommended to use one element with a `transition-*` class to set the page
-transition duration and make any other transition happen independently. As long as all transitions
-share the same duration, the should be no issues with this approach.
+It is recommended to use one element with a `transition-*` class to set the animation duration and
+make any other animations happen independently. As long as all animations share the same duration,
+there should be no issues with this approach.
 
 ```css
 /* Note: no transition-* prefix */

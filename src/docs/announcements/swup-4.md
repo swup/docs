@@ -16,7 +16,7 @@ The swup team is excited to announce swup 4 🎉
 ## What is swup?
 
 [Swup](https://swup.js.org/) is a versatile and extensible **page transition library** for
-server-rendered websites. It manages the complete page load lifecycle and smoothly transitions
+server-rendered websites. It manages the complete page load lifecycle and smoothly animates
 between the current and next page. Make your site feel like a snappy single-page app — without
 any of the complexity.
 
@@ -39,12 +39,12 @@ Please review this [migration guide](/getting-started/upgrading) for details.
 ## Official Astro integration {#astro-integration}
 
 [Astro](https://astro.build/) and swup are a great fit. Where Astro manages the rendering of your
-site, swup takes over on the client side to add page transitions, caching and smart preloading to
-make everything feel smooth and snappy. This has of course always been available for you to set up
-manually.
+site, swup takes over on the client side to add animated page transitions, caching and smart
+preloading to make everything feel smooth and snappy. This has of course always been available for
+you to set up manually.
 
 Now there is an [official Astro integration for swup](https://github.com/swup/astro) for getting
-started quickly. It comes with fade transitions, sane default options, and the most handy plugins
+started quickly. It comes with fade animations, sane default options, and the most handy plugins
 for performance and accessibility out-of-the-box. Astro's bundling and module loading ensures we're
 not hurting performance by only loading swup once the page has finished rendering.
 
@@ -59,7 +59,7 @@ feel free to keep using the [scroll plugin](/plugins/scroll-plugin/).
 
 ### Local animation scope
 
-Swup 4 allows customizing which elements the [transition classes](/getting-started/how-it-works/#transition-classes)
+Swup 4 allows customizing which elements the [animation classes](/getting-started/how-it-works/#animation-classes)
 are added to. The default and recommended way is still adding them globally on the `html` tag.
 However, there is a new [animationScope](/options/#animation-scope) option to add the classes on
 the content containers themselves instead.

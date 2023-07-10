@@ -5,7 +5,7 @@ eleventyNavigation:
   key: JS Plugin
   parent: Plugins
   order: 12
-description: A swup plugin for managing transitions in JS
+description: A swup plugin for managing animations in JS
 permalink: /plugins/js-plugin/
 repo_link: https://github.com/swup/js-plugin
 ---

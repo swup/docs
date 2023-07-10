@@ -31,12 +31,12 @@ want to wait for this element to finish animating whenever a new page is loaded.
 </main>
 ```
 
-Note: these are just the defaults. Both the container selector and the animation selector are adjustable in the
-[options](/options/).
+Note: these are just the defaults. Both the container selector and the animation selector are
+adjustable in the [options](/options/).
 
-## 2. Transition styles
+## 2. Animation styles
 
-Let's define a CSS transition on the special transition class added before:
+Let's define a CSS transition on the special animation class added before:
 
 ```css
 /* Define a transition duration during page visits */
