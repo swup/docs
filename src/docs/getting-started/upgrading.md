@@ -15,12 +15,19 @@ Upgrade your project from swup 3 to 4.
 
 If you're upgrading from swup 2, see [Upgrading from swup 2 to 3](/getting-started/upgrading-v3/).
 
-## New features and breaking changes
+## New features
 
-Swup 4 introduces new features to become more customizable and easier to work with. Some of the
-highlights are a new [hook system](#new-hook-system), a global [context object](#context-object),
-and built-in [scroll support](#scroll-support). Some of these are breaking changes and will require
-modifications to projects using swup. Please review the changes and modify your site where necessary.
+Swup 4 introduces new features to become more customizable and enable advanced use cases. Some of the
+highlights are a new hook system, a global context object, and built-in scroll support.
+See the [release announcement](/announcements/swup-4/) for a full list of everything that's new.
+
+## Breaking changes
+
+There are breaking changes in this release that will require modifications to projects using
+swup. If you only use swup for simple page transitions, you might not need to touch your code.
+However, if you make use of events, custom transitions or overwrite methods on the swup instance,
+you might want to take some more time to review these changes below and modify your site where
+necessary.
 
 ## Install the latest version
 
@@ -36,6 +43,15 @@ If you're loading swup from a CDN, update the version constraint:
 - <script src="https://unpkg.com/swup@3"></script>
 + <script src="https://unpkg.com/swup@4"></script>
 ```
+
+Repeat this process for any of the plugins you are using.
+
+## Scroll support
+
+Swup 4 will correctly reset the scroll position after each navigation, as well as scroll to `#anchor`
+links on the same page. The scroll plugin is no longer required for recreating basic browser
+behavior. If you need animated scrolling, custom offsets, and other customization, keep using the
+[scroll plugin](/plugins/scroll-plugin/).
 
 ## New hook system
 
@@ -90,10 +106,8 @@ loaded from cache or not.
 ## Context object
 
 Along with a new hook system, Swup 4 introduces a global [context object](/context/) that holds
-information about the current page visit, such as the previous and next URL, the containers to
-replace, the element and event that triggered the visit, etc. It's available to all hook handlers as
-their first argument. Manipulating its properties allows modifying swup's behavior to a considerable
-degree. See [Context](/context/) for details and more examples.
+information about the current page visit, like the previous and next URL or the element and event
+that triggered the visit. See [Context](/context/) for details and more examples.
 
 ```javascript
 // Get the next URL and the link element that was clicked
@@ -108,7 +122,7 @@ swup.hooks.before('transitionStart', (context) => {
 });
 ```
 
-The context object replaces the transition object of swup 3.
+The `context` object replaces the `transition` object of swup 3.
 
 ```diff
 - swup.on('transitionStart', () => {
@@ -121,12 +135,42 @@ The context object replaces the transition object of swup 3.
 + });
 ```
 
-## Scroll support
+## Cache API
 
-Swup 4 will correctly reset the scroll position after each navigation, as well as scroll to `#anchor`
-links on the same page. The scroll plugin is no longer required for recreating basic browser
-behavior. If you need animated scrolling, custom scroll offsets, and other advanced customization,
-keep using the [scroll plugin](/plugins/scroll-plugin/).
+The cache has been simplified. It no longer requires passing in the title,
+containers, or body class of the page. Only the URL and HTML response are required. Please review
+the [Cache](/api/cache/) docs if you access it directly in your code.
+
+```diff
+- swup.cache.cacheUrl({
+-   url: '/about',
+-   title: 'About',
+-   blocks: ['<div id="swup"></div>'],
+-   originalContent: '<html>...</html>',
+-   pageClass: 'about',
+-   responseURL: '/team'
+- });
++ swup.cache.set('/about', { url: '/about', html: '<html>...</html>' });
+```
+
+## Visit method
+
+The method `swup.loadPage({ url })` has been renamed to `swup.visit(url)` for better clarity.
+
+```diff
+- swup.loadPage({ url: '/about' });
++ swup.visit('/about');
+```
+
+## Custom animation attribute
+
+To improve clarity around naming, the attribute for choosing a custom animation is now properly called
+`data-swup-animation`.
+
+```diff
+-  <a href="/about/" data-swup-transition="slide">About</a>
++  <a href="/about/" data-swup-animation="slide">About</a>
+```
 
 ## Unique container selectors
 
