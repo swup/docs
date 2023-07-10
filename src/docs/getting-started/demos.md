@@ -74,3 +74,12 @@ Use swup's animation classes for other elements than the main content containers
 https://swup-demo-multiple.philippdaun.repl.co
 Swup Demo: Mulitple animations
 ```
+
+## Animated forms
+
+Animate form submissions using the [Forms Plugin](/plugins/forms-plugin/).
+
+```repl
+https://swup-demo-forms.philippdaun.repl.co
+Swup Demo: Animated forms
+```
