@@ -36,7 +36,7 @@ This is an example context object for a visit from `/home` to `/about#footer`.
   from: { url: '/home' },
   to: { url: '/about' },
   containers: ['#swup'],
-  transition: {
+  animation: {
     animate: true,
     name: 'fade'
   },
