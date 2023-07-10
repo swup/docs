@@ -1,21 +1,21 @@
 ---
 layout: default
-title: Announcing swup 4
+title: Announcing swup 4
 eleventyNavigation:
-  title: Announcing swup 4 🎉
+  title: Announcing swup 4 🎉
   parent: Announcements
   order: 1
 description: Announcing the latest release of swup
 permalink: /announcements/swup-4/
 ---
 
-# Announcing swup 4
+# Announcing swup 4
 
-The swup team is excited to announce swup 4 🎉
+The swup team is excited to announce swup 4 🎉
 
 ## What is swup?
 
-[Swup](https://swup.js.org/) is a versatile and extensible **page transition library** for
+[Swup](https://swup.js.org/) is a versatile and extensible **page transition library** for
 server-rendered websites. It manages the complete page load lifecycle and smoothly transitions
 between the current and next page. Make your site feel like a snappy single-page app — without
 any of the complexity.

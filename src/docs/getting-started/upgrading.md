@@ -11,9 +11,9 @@ permalink: /getting-started/upgrading/
 
 # Upgrading
 
-Upgrade your project from swup 3 to 4.
+Upgrade your project from swup 3 to 4.
 
-If you're upgrading from swup 2, see [Upgrading from swup 2 to 3](/getting-started/upgrading-v3/).
+If you're upgrading from swup 2, see [Upgrading from swup 2 to 3](/getting-started/upgrading-v3/).
 
 ## New features and breaking changes
 

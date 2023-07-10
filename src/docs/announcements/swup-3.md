@@ -113,7 +113,7 @@ Our GitHub actions now run all the required checks we've previously missed, incl
 
 With the maintainer's team fairly active in developing and using Swup in production, following releases (whether minor or major) should become more frequent. The same goes for official plugin updates or new plugins altogether.
 
-Next up? We have yet to make any big immediate plans, but some ideas have popped up. The [fragments support](https://github.com/swup/swup/issues/488) discussion is ongoing, the [reCAPTCHA plugin](https://github.com/swup/swup/issues/489) has been in the plans for a while, and there are already [some ideas](https://github.com/swup/swup/issues?q=is%3Aopen+is%3Aissue+label%3Aswup%40v4) on what should be included in version 4.
+Next up? We have yet to make any big immediate plans, but some ideas have popped up. The [fragments support](https://github.com/swup/swup/issues/488) discussion is ongoing, the [reCAPTCHA plugin](https://github.com/swup/swup/issues/489) has been in the plans for a while, and there are already [some ideas](https://github.com/swup/swup/issues?q=is%3Aopen+is%3Aissue+label%3Aswup%40v4) on what should be included in version 4.
 
 We're also playing with the idea of revamping the documentation site to make it clearer how to use Swup to the fullest, but mainly because it should be fun, and we want to make it pretty. 🤭
 
