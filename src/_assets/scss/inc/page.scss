@@ -69,12 +69,12 @@
 		font-size: var(--font-size-fluid-0);
 	}
 
-	ul,
-	ol {
+	ul:not([class]),
+	ol:not([class]) {
 		padding-inline-start: 1.1em;
 	}
 
-	li {
+	li:not([class]) {
 		margin-block-end: 0.5em;
 	}
 

@@ -11,7 +11,7 @@ permalink: /getting-started/
 
 ## What is swup?
 
-Swup is a versatile and extensible **page transition library** for server-rendered websites.
+Swup is a versafeature and extensible **page transition library** for server-rendered websites.
 It manages the complete page load lifecycle and smoothly transitions between the current and next
 page. In addition, it offers many other quality-of-life improvements like **caching**, **smart preloading**,
 native browser history and enhanced **accessibility**.
@@ -20,14 +20,65 @@ Make your site feel like a snappy single-page app — without any of the complex
 
 ## Features
 
-- ✏️ Works out of the box with [minimal markup](/getting-started/example/)
-- ✨ Auto-detects [CSS transitions](/getting-started/how-it-works/#timing) for perfect timing
-- 🔗 Updates URLs and preserves native [browser history](/getting-started/how-it-works/#history)
-- 🏓 Manages [scroll position](/getting-started/how-it-works/#scrolling) between pages and anchor links
-- 🚀 Uses a [cache](/api/cache/) to speed up subsequent page loads
-- 📡 Offers [hooks](/hooks/) to customize and extend the page load lifecycle
-- 🔌 Has a powerful [plugin system](/plugins/) and many official and third-party plugins
-- 🎨 Provides ready-to-go [themes](/themes/) to get started quickly
+<ul class="features">
+
+  <li class="feature">
+    <span class="feature_icon">✏️</span>
+    <span class="feature_text">
+      Works out of the box with <a href="/getting-started/example/">minimal markup</a>
+    </span>
+  </li>
+
+  <li class="feature">
+    <span class="feature_icon">✨</span>
+    <span class="feature_text">
+      Auto-detects <a href="/getting-started/how-it-works/#timing">CSS transitions</a> for perfect timing
+    </span>
+  </li>
+
+  <li class="feature">
+    <span class="feature_icon">🔗</span>
+    <span class="feature_text">
+      Updates URLs and preserves native <a href="/getting-started/how-it-works/#history">browser history</a>
+    </span>
+  </li>
+
+  <li class="feature">
+    <span class="feature_icon">🏓</span>
+    <span class="feature_text">
+      Manages <a href="/getting-started/how-it-works/#scrolling">scroll position</a> between pages and anchor links
+    </span>
+  </li>
+
+  <li class="feature">
+    <span class="feature_icon">🚀</span>
+    <span class="feature_text">
+      Uses a <a href="/api/cache/">cache</a> to speed up subsequent page loads
+    </span>
+  </li>
+
+  <li class="feature">
+    <span class="feature_icon">📡</span>
+    <span class="feature_text">
+      Offers <a href="/hooks/">hooks</a> to customize and extend the page load lifecycle
+    </span>
+  </li>
+
+  <li class="feature">
+    <span class="feature_icon">🔌</span>
+    <span class="feature_text">
+      Has a powerful <a href="/plugins/">plugin system</a> and many official and third-party plugins
+    </span>
+  </li>
+
+  <li class="feature">
+    <span class="feature_icon">🎨</span>
+    <span class="feature_text">
+      Provides ready-to-go <a href="/themes/">themes</a> to get started quickly
+    </span>
+  </li>
+
+</ul>
 
 See [How it works](/getting-started/how-it-works/) for an overview of the key concepts.
 
