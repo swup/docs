@@ -134,7 +134,7 @@ Disable animations on the current visit:
 
 ```js
 swup.hooks.on('transitionStart', (context) => {
-  context.transition.animate = false;
+  context.animation.animate = false;
 });
 ```
 

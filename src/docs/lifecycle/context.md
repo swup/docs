@@ -69,7 +69,7 @@ The new page will load instantaneously without animations.
 
 ```javascript
 swup.hooks.before('transitionStart', (context) => {
-  context.transition.animate = false;
+  context.animation.animate = false;
 });
 ```
 
@@ -79,7 +79,7 @@ Set a custom `.to-{name}` class on the html element to allow targeting via CSS.
 
 ```javascript
 swup.hooks.before('transitionStart', (context) => {
-  context.transition.name = 'slide';
+  context.animation.name = 'slide';
 });
 ```
 

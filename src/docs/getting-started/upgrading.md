@@ -104,7 +104,7 @@ swup.hooks.on('pageView', (context) => {
 
 // Disable animations on the next visit
 swup.hooks.before('transitionStart', (context) => {
-  context.transition.animate = false;
+  context.animation.animate = false;
 });
 ```
 
@@ -117,7 +117,7 @@ The context object replaces the transition object of swup 3.
 - });
 + swup.hooks.on('transitionStart', (context) => {
 +   console.log('Visit to', context.to.url);
-+   console.log('Animation name', context.transition.name);
++   console.log('Animation name', context.animation.name);
 + });
 ```
 
