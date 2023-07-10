@@ -11,14 +11,13 @@ permalink: /hooks/
 
 # Hooks
 
-Swup provides a variety of hooks that allow listening to lifecycle events,
-customizing the transition process as well as triggering custom logic at specific
-points.
+Swup provides a variety of hooks that allow listening to lifecycle events, customizing the
+transition process as well as triggering custom logic at specific points.
 
 ## Registering handlers
 
-You can register hooks on swup's `hooks` registry. All handlers receive the
-global [context object](/context/) as their first argument.
+You can register hooks on swup's `hooks` registry. All handlers receive the global
+[context object](/context/) as their first argument.
 
 ```javascript
 // Log to the console on each page view
@@ -128,7 +127,7 @@ The following hooks are exposed by swup and can be accessed as such:
 | **openPageInNewTab**       | a link was opened to a new tab                                                                                         |
 | **pageLoaded**             | a page was completely loaded, whether from a request or from cache                                                     |
 | **pageCached**             | a page was saved to the cache                                                                                          |
-| **pageView**               | transition to a new page was completed, also triggers when first enabling swup                                         |
+| **pageView**               | visit to a new page was completed, also triggers when first enabling swup                                         |
 | **popState**               | history navigation was started: back/forward button pressed                                                            |
 | **replaceContent**         | the content of the page is replaced                                                                                    |
 | **samePage**               | a link is clicked that leads to the current page                                                                       |

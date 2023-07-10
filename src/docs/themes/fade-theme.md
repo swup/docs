@@ -5,7 +5,7 @@ eleventyNavigation:
   key: Fade Theme
   parent: Themes
   order: 1
-description: Theme to fade pages on the transition
+description: A swup theme for fade animations
 permalink: /themes/fade-theme/
 repo_link: https://github.com/swup/fade-theme
 ---

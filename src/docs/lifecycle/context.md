@@ -60,8 +60,8 @@ This is an example context object for a visit from `/home` to `/about#footer`.
 What can we do by manipulating the context object? A few examples are listed below.
 
 Note that the most convenient place to hook into is right before `transitionStart` — all the
-information about the current transition is already there, but no requests or animations have yet
-been started.
+information about the current visit is already there, but no requests or animations have started
+yet.
 
 ### Disable animations
 
@@ -73,7 +73,7 @@ swup.hooks.before('transitionStart', (context) => {
 });
 ```
 
-### Custom transition
+### Custom animation
 
 Set a custom `.to-{name}` class on the html element to allow targeting via CSS.
 

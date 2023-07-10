@@ -38,10 +38,9 @@ const swup = new Swup({
 
 ## animationSelector
 
-The selector for detecting transition timing. Swup will wait for all CSS transitions and
+The selector for detecting animation timing. Swup will wait for all CSS transitions and
 keyframe animations to finish on these elements before swapping in the content of the new page.
-The default option will select all elements with
-class names beginning in `transition-`.
+The default option will select all elements with class names beginning in `transition-`.
 
 ```javascript
 {
@@ -51,7 +50,7 @@ class names beginning in `transition-`.
 
 ## animationScope
 
-The elements on which swup will add the [transition classes](/getting-started/how-it-works/#transition-classes)
+The elements on which swup will add the [animation classes](/getting-started/how-it-works/#animation-classes)
 for styling the different phases of the in/out animation. By default, it will add those classes
 to the `html` tag. This is great for most use cases and the recommended way to use swup.
 
@@ -199,7 +198,7 @@ and returns a `boolean`.
 
 Swup will skip animations for visits triggered by the back/forward button. If you do require
 animations on history visits, set this to `true`. Swup will add the class `is-popstate` to the html
-tag during those transitions. Defaults to `false`.
+tag during those animations. Defaults to `false`.
 
 ```javascript
 {
@@ -208,5 +207,5 @@ tag during those transitions. Defaults to `false`.
 ```
 
 ⚠️ **Important Note**: This option was added due to popular request. However, it should be used with
-caution. When activated, swup has to disable native [browser scroll restoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration).
-Scroll positions will not be preserved between visits and need to be implemented by you.
+caution. When activated, swup has to disable native [browser scroll restoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration). Scroll positions will not be preserved between visits and need to
+be implemented by you.

@@ -16,7 +16,8 @@ skipping additional server requests, resulting in faster navigation and smoother
 the users.
 
 The cache is enabled automatically and needs no further customization. If your site is highly
-dynamic or doesn't need a cache for other reasons, you can disable it by modifying swup's [cache option](/options/#cache).
+dynamic or doesn't need a cache for other reasons, you can disable it by modifying swup's
+[cache option](/options/#cache).
 
 Swup's cache is available at `swup.cache`. See below for all available methods.
 

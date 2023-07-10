@@ -108,16 +108,16 @@ swup.hooks.before('transitionStart', (context) => {
 });
 ```
 
-The context object replaces the transition object on the swup instance.
+The context object replaces the transition object of swup 3.
 
 ```diff
 - swup.on('transitionStart', () => {
--   console.log('Transition to', swup.transition.to);
--   console.log('Transition name', swup.transition.custom);
+-   console.log('Visit to', swup.transition.to);
+-   console.log('Animation name', swup.transition.custom);
 - });
 + swup.hooks.on('transitionStart', (context) => {
-+   console.log('Transition to', context.to.url);
-+   console.log('Transition name', context.transition.name);
++   console.log('Visit to', context.to.url);
++   console.log('Animation name', context.transition.name);
 + });
 ```
 

@@ -31,7 +31,7 @@ export default {
   },
   //  setup of your validation
   validate: {
-    stylesExpectedToChange: ['opacity', 'transform'], // styles which are animated on your animated elements (checks that at least one is changed during transition)
+    stylesExpectedToChange: ['opacity', 'transform'], // styles which are animated on your animated elements (checks that at least one is changed during animation)
     sitemap: 'public/sitemap.xml', // path or link to your sitemap
     urls: [], // set of URL - if set, swup CLI will check these URLs only (alternative to sitemap)
     baseUrl: '', // baseUrl of your site - if set, swup CLI will crawl the site for you, so you don't need to define URL manually (not referenced pages like 404 won't be checked)

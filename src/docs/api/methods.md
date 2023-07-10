@@ -31,7 +31,7 @@ Disable animations for this visit:
 swup.loadPage(url, { animate: false });
 ```
 
-Set a custom transition name:
+Set a custom animation name:
 
 ```javascript
 swup.loadPage(url, { transition: 'custom' });
