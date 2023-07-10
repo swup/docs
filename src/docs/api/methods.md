@@ -79,39 +79,3 @@ Accepts two arguments, the content of message and an optional log object which g
 ```javascript
 swup.log('Something happened', { lorem: 'ipsum' });
 ```
-
-## Methods added by plugins
-
-These methods are not present on swup by default, but will require installing the mentioned plugins to become available.
-
-### preloadPage
-
-Added by the [preload plugin](/plugins/preload-plugin/).
-Preload a page and save it into the cache.
-
-```javascript
-swup.preloadPage('/page-url');
-```
-
-### preloadPages
-
-Added by the [preload plugin](/plugins/preload-plugin/).
-Finds all links on the page with a `data-swup-preload` attribute and preloads the URLs they point to.
-
-```javascript
-swup.preloadPages();
-```
-
-### scrollTo
-
-Added by the [scroll plugin](/plugins/scroll-plugin/).
-Smoothly scroll to the requested position. Accepts either the amount in pixels or the element you want to scroll to.
-Currently only supports vertical scrolling.
-
-```javascript
-// scroll vertically to 2000px
-swup.scrollTo(2000);
-
-// scroll vertically to an element
-swup.scrollTo(document.querySelector('#footer'));
-```
