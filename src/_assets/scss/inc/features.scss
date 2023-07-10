@@ -14,13 +14,16 @@
 	margin: 0;
 	position: relative;
 	display: flex;
-
+	flex-direction: column;
+	text-align: center;
 	gap: var(--gap-small);
 	align-items: center;
 	padding: 1em;
-	@include bp(xs, max) {
-		flex-direction: column;
-		text-align: center;
+	@include bp(xs) {
+		padding: 0.3rem;
+		flex-direction: row;
+		text-align: start;
+		gap: 0;
 	}
 }
 .feature + .feature {
@@ -37,4 +40,7 @@
 	height: var(--icon-size);
 	flex: none;
 	border-radius: var(--radius-round);
+	@include bp(xs) {
+		border: none;
+	}
 }
