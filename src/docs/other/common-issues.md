@@ -16,9 +16,8 @@ This is a compilation of challenges and possible solutions when integrating or e
 ## The stylesheets of the next page are not loaded
 
 Swup doesn't automatically update the contents of the `head` tag. Any stylesheets not included in
-the current page's `head` will not be loaded.
-
-The easiest solution is to use a single stylesheet for the whole website.
+the current page's `head` will not be loaded. The easiest solution is to use a single stylesheet
+for the whole website.
 
 If your site does require modular stylesheets per section or template, use the
 [head-plugin](/plugins/head-plugin/) to add the new stylesheets and configure its `awaitAssets`
@@ -35,11 +34,11 @@ of the whole transition.
 
 ## Screen readers are not informed about updated content
 
-Since we're dynamically re-rendering parts of the page, it's recommended to add `aria-live="polite"`
-to any content containers replaced by swup. This will help screen readers read out aloud any
-updates to their content. As that attribute [cannot be added dynamically](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) after page load it needs to be added manually in the html.
+We're dynamically updating parts of the page, so it's recommended to add `aria-live="polite"`
+to any content containers replaced by swup. This allows screen readers to announce updates to their
+content. Note: the attribute [cannot be added dynamically](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) and needs to be added manually in the html.
 
-The official [accessibility plugin](/plugins/a11y-plugin/) uses an arguably better strategy: it
+The official [accessibility plugin](/plugins/a11y-plugin/) makes this very easy to implement: it
 reads out the title of the new document to screen readers, requiring no change to your markup. It
 will also focus the main content area for improved keyboard accessibility.
 
@@ -66,7 +65,7 @@ Replacing a swup container will also reset its scroll position. There might be c
 want the content to be updated but the scroll position to be kept, like an overflowing sidebar
 navigation that needs to mark the currently active nav item with a class name.
 
-Consider using the semi-official [morph plugin](https://github.com/daun/swup-morph-plugin) for such
+Consider using the [Morph Plugin](https://github.com/daun/swup-morph-plugin) for such
 cases. It lets you define additional containers that morph their new content into the old element,
 without a complete replacement and without resetting the scroll position of the container itself.
 
@@ -99,7 +98,7 @@ var swup = new Swup({
 ```
 
 ```css
-.swup-transition-fade {
+html.is-changing .swup-transition-fade {
   transition: 0.4s;
   opacity: 1;
 }
@@ -120,11 +119,12 @@ transition duration and make any other transition happen independently. As long 
 share the same duration, the should be no issues with this approach.
 
 ```css
-.fade {
+/* Note: no transition-* prefix */
+html.is-changing .logo {
   transition: 0.4s;
   opacity: 1;
 }
-html.is-animating .fade {
+html.is-animating .logo {
   opacity: 0;
 }
 ```
