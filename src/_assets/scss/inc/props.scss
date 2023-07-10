@@ -28,6 +28,7 @@
 	--ease-squish-5: cubic-bezier(0.5, -0.9, 0.1, 1.5);
 
 	--gap: clamp(1rem, 2vw, 2rem);
+	--gap-small: calc(var(--gap) * 0.5);
 	--gap-x2: calc(var(--gap) * 2);
 
 	--spacer: clamp(1rem, 2vw, 2rem);
