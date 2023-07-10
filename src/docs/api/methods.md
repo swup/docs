@@ -11,36 +11,36 @@ permalink: /api/methods/
 
 # Methods
 
-## loadPage
+## visit
 
 Navigate and transition to a URL. Pass an options object to configure the page load.
 
 ```javascript
-swup.loadPage(url);
+swup.visit(url);
 ```
 
 Send a POST request with form data:
 
 ```javascript
-swup.loadPage(url, { method: 'POST', data: new FormData() });
+swup.visit(url, { method: 'POST', data: new FormData() });
 ```
 
 Disable animations for this visit:
 
 ```javascript
-swup.loadPage(url, { animate: false });
+swup.visit(url, { animate: false });
 ```
 
 Set a custom animation name:
 
 ```javascript
-swup.loadPage(url, { transition: 'custom' });
+swup.visit(url, { animation: 'custom' });
 ```
 
 Replace the current history entry instead of creating a new one:
 
 ```javascript
-swup.loadPage(url, { history: 'replace' });
+swup.visit(url, { history: 'replace' });
 ```
 
 ## destroy

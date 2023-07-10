@@ -114,7 +114,7 @@ Allows ignoring specific visits via callback. By default, swup will ignore links
 `data-no-swup` attribute on itself or any parent element.
 
 The callback takes a relative URL of the new page, as well as the element and event that triggered
-the visit. Note that element and event will be undefined if navigating via `swup.loadPage(url)`.
+the visit. Note that element and event will be undefined if navigating via `swup.visit(url)`.
 
 ```javascript
 {
