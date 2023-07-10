@@ -52,7 +52,7 @@ Check out the list of [official plugins](/plugins/) and [third-party integration
 
 ## Themes
 
-Get started quickly with one of three included themes: [fade](/themes/fade-theme/),
+Get started quickly with one of three official themes: [fade](/themes/fade-theme/),
 [slide](/themes/slide-theme/), and [overlay](/themes/overlay-theme/).
 
 ## Having trouble?
