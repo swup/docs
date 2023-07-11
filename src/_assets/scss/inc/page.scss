@@ -205,7 +205,7 @@
 
 .code-block_copy {
 	position: absolute;
-	top: 0.6rem;
+	top: 0.7rem;
 	right: 0.6rem;
 	background: transparent;
 	color: var(--code-block-text);
@@ -227,19 +227,27 @@
 	margin: 0;
 }
 
+.code-block pre {
+	white-space-collapse: unset;
+}
+
 .shiki {
 	width: 100%;
 	overflow: auto;
 	padding-block: 0.6rem;
-	padding-inline: 1rem 4rem;
+	padding-inline: 0;
 	font-size: 0.85rem;
 	line-height: 1.4;
 	margin: 0;
 }
 
+.shiki .line {
+	display: block;
+	padding-inline: 1rem 4rem;
+}
+
 .shiki-container .shiki {
 	padding-block: 0.6rem;
-	padding-inline: 1rem 4rem;
 }
 
 .shiki ::selection {
@@ -249,6 +257,14 @@
 
 .shiki.github-light {
 	background-color: var(--code-block-bg) !important;
+}
+
+.shiki .diff-light.remove {
+	background-color: rgba(255, 0, 0, 0.2);
+}
+
+.shiki .diff-light.add {
+	background-color: rgba(0, 255, 0, 0.2);
 }
 
 html.dark .shiki-container .github-light {
