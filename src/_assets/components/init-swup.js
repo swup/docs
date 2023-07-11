@@ -32,6 +32,7 @@ let swup;
 export default function () {
 	swup = new Swup({
 		containers: ['#swup', '#breadcrumb'],
+		ignoreVisit: (url, { el } = {}) => el?.closest('[data-no-swup]') || url.match(/\.(png|svg)$/i),
 		plugins: [
 			// new SwupDebugPlugin(),
 
