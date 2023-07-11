@@ -48,21 +48,22 @@
 	}
 }
 
-img[src*='https://replit.com/badge'] {
+img[src*='https://replit.com/badge']
+{
 	display: inline-block;
-	margin-inline: .3em;
+	margin-inline: 0.3em;
 	transition: opacity 150ms;
 	a & {
-		opacity: .7;
+		opacity: 0.7;
 	}
 	a:hover & {
 		opacity: 1;
 	}
-	filter:
-		drop-shadow(0 0 1px var(--color-transparent-2))
+	filter: drop-shadow(0 0 1px var(--color-transparent-2))
 		drop-shadow(0 0 5px hsl(var(--shadow-color) / var(--shadow-strength-dark)));
 }
 
-.page_body > p > img[src*='https://replit.com/badge'] {
-	transform: translateY(.3em);
+.page_body > p > img[src*='https://replit.com/badge']
+{
+	transform: translateY(0.3em);
 }

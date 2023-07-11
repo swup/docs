@@ -46,14 +46,13 @@ swup handle this hook based on some condition.
 
 ```javascript
 this.swup.hooks.replace('replaceContent', (context, args, originalHandler) => {
-    if (context.someCondition) {
-      // Handle content replacement myself
-    } else {
-      // Let swup handle content replacement
-      return originalHandler(context, args);
-    }
+  if (context.someCondition) {
+    // Handle content replacement myself
+  } else {
+    // Let swup handle content replacement
+    return originalHandler(context, args);
   }
-);
+});
 ```
 
 ### Custom hooks

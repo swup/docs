@@ -63,9 +63,9 @@ swup.hooks.on('pageView', () => {}, { priority: 10 });
 The are shortcuts available for common handler options:
 
 ```javascript
-swup.hooks.once('pageView', () => {}) // { once: true }
-swup.hooks.before('pageView', () => {}) // { before: true }
-swup.hooks.replace('pageView', () => {}) // { replace: true }
+swup.hooks.once('pageView', () => {}); // { once: true }
+swup.hooks.before('pageView', () => {}); // { before: true }
+swup.hooks.replace('pageView', () => {}); // { replace: true }
 ```
 
 ## Pausing execution
@@ -111,29 +111,29 @@ The following hooks are exposed by swup and can be accessed as such:
 
 <div class="events-table" data-table-with-anchor-links>
 
-| Hook name                  | Description                                                                                                            |
-| -------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| **animationOutStart**      | out-animation of current content begins: `.is-animating` is added to html                                              |
-| **animationOutDone**       | out-animation of current content finished, content is not yet replaced                                                 |
-| **animationInStart**       | in-animation of new content begins: `.is-animating` is removed from html tag                                           |
-| **animationInDone**        | in-animation of new content finished, content was replaced                                                             |
-| **animationSkipped**       | animations were skipped and page will load instantaneously: e.g. on history navigation                                 |
-| **awaitAnimation**         | swup checks which CSS animations to wait for, in or out                                                                |
-| **clickLink**              | a link was clicked                                                                                                     |
-| **enabled**                | swup instance was initialized                                                                                          |
-| **disabled**               | swup instance was [disabled](/api/methods/#destroy)                                                                    |
-| **fetchPage**              | a fetch request is sent                                                                                                |
-| **loadPage**               | a page is loaded                                                                                                       |
-| **openPageInNewTab**       | a link was opened to a new tab                                                                                         |
-| **pageLoaded**             | a page was completely loaded, whether from a request or from cache                                                     |
-| **pageCached**             | a page was saved to the cache                                                                                          |
-| **pageView**               | visit to a new page was completed, also triggers when first enabling swup                                         |
-| **popState**               | history navigation was started: back/forward button pressed                                                            |
-| **replaceContent**         | the content of the page is replaced                                                                                    |
-| **samePage**               | a link is clicked that leads to the current page                                                                       |
-| **samePageWithHash**       | a link is clicked that jumps to an `#anchor` on the current page                                                       |
-| **transitionStart**        | begin of the transition to a new page                                                                                  |
-| **transitionEnd**          | end of the transition to a new page: content was replaced and animations have finished                                 |
+| Hook name             | Description                                                                            |
+| --------------------- | -------------------------------------------------------------------------------------- |
+| **animationOutStart** | out-animation of current content begins: `.is-animating` is added to html              |
+| **animationOutDone**  | out-animation of current content finished, content is not yet replaced                 |
+| **animationInStart**  | in-animation of new content begins: `.is-animating` is removed from html tag           |
+| **animationInDone**   | in-animation of new content finished, content was replaced                             |
+| **animationSkipped**  | animations were skipped and page will load instantaneously: e.g. on history navigation |
+| **awaitAnimation**    | swup checks which CSS animations to wait for, in or out                                |
+| **clickLink**         | a link was clicked                                                                     |
+| **enabled**           | swup instance was initialized                                                          |
+| **disabled**          | swup instance was [disabled](/api/methods/#destroy)                                    |
+| **fetchPage**         | a fetch request is sent                                                                |
+| **loadPage**          | a page is loaded                                                                       |
+| **openPageInNewTab**  | a link was opened to a new tab                                                         |
+| **pageLoaded**        | a page was completely loaded, whether from a request or from cache                     |
+| **pageCached**        | a page was saved to the cache                                                          |
+| **pageView**          | visit to a new page was completed, also triggers when first enabling swup              |
+| **popState**          | history navigation was started: back/forward button pressed                            |
+| **replaceContent**    | the content of the page is replaced                                                    |
+| **samePage**          | a link is clicked that leads to the current page                                       |
+| **samePageWithHash**  | a link is clicked that jumps to an `#anchor` on the current page                       |
+| **transitionStart**   | begin of the transition to a new page                                                  |
+| **transitionEnd**     | end of the transition to a new page: content was replaced and animations have finished |
 
 </div>
 

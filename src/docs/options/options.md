@@ -30,7 +30,7 @@ const swup = new Swup({
   resolveUrl: (url) => url,
   requestHeaders: {
     'X-Requested-With': 'swup',
-    'Accept': 'text/html, application/xhtml+xml'
+    Accept: 'text/html, application/xhtml+xml'
   },
   skipPopStateHandling: (event) => event.state?.source !== 'swup'
 });
@@ -44,7 +44,7 @@ The default option will select all elements with class names beginning in `trans
 
 ```javascript
 {
-  animationSelector: '[class*="transition-"]'
+  animationSelector: '[class*="transition-"]';
 }
 ```
 
@@ -56,26 +56,24 @@ to the `html` tag. This is great for most use cases and the recommended way to u
 
 ```js
 {
-  animationScope: 'html'
+  animationScope: 'html';
 }
 ```
 
 ```html
-<html class="is-animating is-leaving">
+<html class="is-animating is-leaving"></html>
 ```
 
 Setting this option to `containers` will add the classes on the content containers themselves instead.
 
 ```js
 {
-  animationScope: 'containers'
+  animationScope: 'containers';
 }
 ```
 
 ```html
-<main id="swup" class="is-animating is-leaving">
-  Content
-</main>
+<main id="swup" class="is-animating is-leaving">Content</main>
 ```
 
 ## containers
@@ -92,7 +90,7 @@ to reflect language changes.
 
 ```javascript
 {
-  containers: ['#swup']
+  containers: ['#swup'];
 }
 ```
 
@@ -104,7 +102,7 @@ to `true`.
 
 ```javascript
 {
-  cache: true
+  cache: true;
 }
 ```
 
@@ -118,7 +116,7 @@ the visit. Note that element and event will be undefined if navigating via `swup
 
 ```javascript
 {
-  ignoreVisit: (url, { el, event } = {}) => el?.closest('[data-no-swup]')
+  ignoreVisit: (url, { el, event } = {}) => el?.closest('[data-no-swup]');
 }
 ```
 
@@ -129,7 +127,7 @@ attribute will receive clicks.
 
 ```javascript
 {
-  linkSelector: 'a[href]'
+  linkSelector: 'a[href]';
 }
 ```
 
@@ -138,7 +136,7 @@ To let swup take over clicks on [map areas](https://www.w3schools.com/tags/tag_a
 
 ```javascript
 {
-  linkSelector: 'a[href], area[href], svg a[*|href]'
+  linkSelector: 'a[href], area[href], svg a[*|href]';
 }
 ```
 
@@ -166,8 +164,6 @@ projects and filtering is done client-side based on query params. You'll want to
 between `/projects/?sort=date` and `/projects/?sort=title` yourself, telling swup nothing has
 changed and no page load is necessary.
 
-
-
 ```javascript
 {
   resolveUrl: (url) => {
@@ -175,7 +171,7 @@ changed and no page load is necessary.
       return '/projects/';
     }
     return url;
-  }
+  };
 }
 ```
 
@@ -190,7 +186,7 @@ and returns a `boolean`.
 
 ```javascript
 {
-  skipPopStateHandling: (event) => event.state?.source !== 'swup'
+  skipPopStateHandling: (event) => event.state?.source !== 'swup';
 }
 ```
 
@@ -202,7 +198,7 @@ tag during those animations. Defaults to `false`.
 
 ```javascript
 {
-  animateHistoryBrowsing: false
+  animateHistoryBrowsing: false;
 }
 ```
 

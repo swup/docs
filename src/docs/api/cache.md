@@ -64,7 +64,9 @@ const page = swup.cache.get('/about');
 Check if the given URL has been cached.
 
 ```javascript
-if (swup.cache.has('/about')) { /* */ }
+if (swup.cache.has('/about')) {
+  /* */
+}
 ```
 
 ### update
