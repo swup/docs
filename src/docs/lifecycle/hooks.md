@@ -88,7 +88,7 @@ swup.hooks.on('transitionStart', async () => {
 });
 ```
 
-⚠️ **Note**: Some hooks are executed without awaiting Promises if their handler needs
+> **Note** Some hooks are executed without awaiting Promises if their handler needs
 to prevent a DOM event's default action: `clickLink` and `popState`.
 
 ## Removing handlers
