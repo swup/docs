@@ -211,8 +211,8 @@ payloads, we recommend sticking with swup 3.
 
 ```js
 const swup = new Swup({
-plugins: [new SwupCustomPayloadPlugin()] // [!code --]
-// no longer supported // [!code ++]
+  plugins: [new SwupCustomPayloadPlugin()] // [!code --]
+  // no longer supported // [!code ++]
 });
 ```
 

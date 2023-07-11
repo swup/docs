@@ -32,7 +32,11 @@ customMarkdownIt.use(markdownItAttrs);
  * @see https://github.com/antfu/markdown-it-shiki
  */
 customMarkdownIt.use(Shiki, {
-	theme: 'github-dark',
+	// theme: 'github-dark',
+	theme: {
+    dark: 'github-dark',
+    light: 'github-light'
+  },
 	highlightLines: true
 });
 customMarkdownIt.use(MarkdownItCodeEnhancements);
