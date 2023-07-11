@@ -40,10 +40,10 @@ Please review this [migration guide](/getting-started/upgrading) for details.
 
 ## Official Astro integration {#astro-integration}
 
-[Astro](https://astro.build/) and swup are a great fit. Where Astro manages the rendering of your
-site, swup takes over on the client side to add animated page transitions, caching and smart
-preloading to make everything feel smooth and snappy. This has of course always been available for
-you to set up manually.
+[Astro](https://astro.build/) and swup are a great fit for multi-page apps. Where Astro manages the
+rendering of your site, swup takes over on the client side to provide animated page transitions,
+caching and smart preloading to make everything feel smooth and snappy. This has of course always
+been available for you to set up manually.
 
 Now there is an [official Astro integration for swup](https://github.com/swup/astro) for getting
 started quickly. It comes with fade animations, sane default options, and the most handy plugins
