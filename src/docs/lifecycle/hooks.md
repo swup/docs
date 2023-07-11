@@ -147,7 +147,7 @@ The following hooks are exposed by swup and can be accessed as such:
 ```javascript
 swup.hooks.on('page:view', () => {
   dataLayer.push({
-    event: 'Virtualpage:view',
+    event: 'VirtualPageview',
     virtualPageURL: window.location.pathname,
     virtualPageTitle: document.title
   });
