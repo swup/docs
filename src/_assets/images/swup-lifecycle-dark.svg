@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920px" height="1080px" viewBox="0 0 1920 1080" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>lifecycle-v3-dark</title>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="309.382253" height="247" rx="13"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="309.382253" height="247" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+        <rect id="path-3" x="0" y="0" width="309.382253" height="247" rx="13"></rect>
+        <mask id="mask-4" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="309.382253" height="247" fill="white">
+            <use xlink:href="#path-3"></use>
+        </mask>
+        <rect id="path-5" x="0" y="0" width="309.382253" height="247" rx="13"></rect>
+        <mask id="mask-6" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="309.382253" height="247" fill="white">
+            <use xlink:href="#path-5"></use>
+        </mask>
+        <rect id="path-7" x="0" y="0" width="309.382253" height="247" rx="13"></rect>
+        <mask id="mask-8" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="309.382253" height="247" fill="white">
+            <use xlink:href="#path-7"></use>
+        </mask>
+    </defs>
+    <g id="lifecycle-v3-dark" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Background" fill-opacity="0.17" fill="#FFFFFF" x="983" y="111" width="924" height="954" rx="16"></rect>
+        <rect id="Background-Copy" fill-opacity="0.17" fill="#FFFFFF" x="14" y="111" width="924" height="954" rx="16"></rect>
+        <text id="Leave" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="32" font-weight="500" fill="#FFFFFF">
+            <tspan x="439.476143" y="68">Leave</tspan>
+        </text>
+        <g id="Group" transform="translate(50.000000, 177.000000)">
+            <text id="transitionStart" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#FFFFFF" fill-opacity="0.3">
+                <tspan x="192" y="53">transitionStart</tspan>
+            </text>
+            <text id="pageLoaded" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#FFFFFF" fill-opacity="0.3">
+                <tspan x="442" y="53">pageLoaded</tspan>
+            </text>
+            <text id="transitionEnd" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#FFFFFF" fill-opacity="0.3">
+                <tspan x="1651.24121" y="53">transitionEnd</tspan>
+            </text>
+            <text id="animationOutStart" fill-rule="nonzero" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#FFFFFF" fill-opacity="0.3">
+                <tspan x="265" y="180">animationOutStart</tspan>
+            </text>
+            <text id="animationInStart" fill-rule="nonzero" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#FFFFFF" fill-opacity="0.3">
+                <tspan x="1000" y="180">animationInStart</tspan>
+            </text>
+            <text id="animationOutDone" fill-rule="nonzero" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#FFFFFF" fill-opacity="0.3">
+                <tspan x="622" y="183">animationOutDone</tspan>
+            </text>
+            <text id="animationInDone" fill-rule="nonzero" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#FFFFFF" fill-opacity="0.3">
+                <tspan x="1557" y="178">animationInDone</tspan>
+            </text>
+            <text id="clickLink" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#FFFFFF" fill-opacity="0.3">
+                <tspan x="4" y="53">clickLink</tspan>
+            </text>
+            <text id="replaceContent" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#FFFFFF" fill-opacity="0.3">
+                <tspan x="838" y="48">replaceContent</tspan>
+            </text>
+            <text id="Content-replaced" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#FE5D6D">
+                <tspan x="838" y="23">Content replaced</tspan>
+            </text>
+            <text id="Link-clicked" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#FE5D6D">
+                <tspan x="4" y="23">Link clicked</tspan>
+            </text>
+            <text id="Transition-starts" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#FE5D6D">
+                <tspan x="192" y="23">Transition starts</tspan>
+            </text>
+            <text id="Page-loaded" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#FE5D6D">
+                <tspan x="442" y="23">Page loaded</tspan>
+            </text>
+            <text id="Transition-ends" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#FE5D6D">
+                <tspan x="1655.91844" y="23">Transition ends</tspan>
+            </text>
+            <text id="Animation-out-starts" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#686AFF">
+                <tspan x="265" y="150">Animation out starts</tspan>
+            </text>
+            <text id="Animation-in-starts" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#686AFF">
+                <tspan x="1000" y="150">Animation in starts</tspan>
+            </text>
+            <text id="Animation-out-ends" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#686AFF">
+                <tspan x="622" y="153">Animation out ends</tspan>
+            </text>
+            <text id="Animation-in-ends" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#686AFF">
+                <tspan x="1557" y="147">Animation in ends</tspan>
+            </text>
+            <line x1="12" y1="97" x2="1809" y2="96" id="Line-3" stroke-opacity="0.5" stroke="#FFFFFF" stroke-width="3"></line>
+            <circle id="Oval" stroke="#303030" stroke-width="4" fill="#FE5D6D" cx="12.5" cy="96.5" r="12.5"></circle>
+            <circle id="Oval-Copy-2" stroke="#303030" stroke-width="4" fill="#FE5D6D" cx="198.5" cy="96.5" r="12.5"></circle>
+            <circle id="Oval-Copy-8" stroke="#303030" stroke-width="4" fill="#FE5D6D" cx="448.5" cy="96.5" r="12.5"></circle>
+            <circle id="Oval-Copy-4" stroke="#303030" stroke-width="4" fill="#686AFF" cx="271.5" cy="96.5" r="8.5"></circle>
+            <circle id="Oval-Copy-6" stroke="#303030" stroke-width="4" fill="#686AFF" cx="1006.5" cy="96.5" r="8.5"></circle>
+            <circle id="Oval-Copy-5" stroke="#303030" stroke-width="4" fill="#686AFF" cx="820.5" cy="96.5" r="8.5"></circle>
+            <circle id="Oval-Copy-7" stroke="#303030" stroke-width="4" fill="#686AFF" cx="1755.5" cy="96.5" r="8.5"></circle>
+            <circle id="Oval-Copy-3" stroke="#303030" stroke-width="4" fill="#FE5D6D" cx="1812.5" cy="96.5" r="12.5"></circle>
+            <circle id="Oval-Copy" stroke="#000000" stroke-width="4" fill="#FE5D6D" cx="910.5" cy="97.5" r="12.5"></circle>
+        </g>
+        <g id="Group-3" transform="translate(86.000000, 813.000000)" fill="#FFFFFF">
+            <text id="html.is-changing" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="24" font-weight="400">
+                <tspan x="24" y="153">html.is-changing</tspan>
+            </text>
+            <text id="html.is-animating" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="24" font-weight="400">
+                <tspan x="24" y="88">html.is-animating</tspan>
+            </text>
+            <text id="html.is-leaving" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="24" font-weight="400">
+                <tspan x="24" y="23">html.is-leaving</tspan>
+            </text>
+            <path id="Line" d="M1,38 L1,43 L783,43 L783,38 L785,38 L785,50 L783,50 L783,45 L1,45 L1,50 L-1,50 L-1,38 L1,38 Z" fill-rule="nonzero"></path>
+            <path id="Line-Copy-3" d="M972,38 L972,43 L1745,43 L1745,38 L1747,38 L1747,50 L1745,50 L1745,45 L972,45 L972,50 L970,50 L970,38 L972,38 Z" fill-rule="nonzero"></path>
+            <path id="Line-Copy" d="M1,102 L1,107 L970,107 L970,102 L972,102 L972,114 L970,114 L970,109 L1,109 L1,114 L-1,114 L-1,102 L1,102 Z" fill-rule="nonzero"></path>
+            <path id="Line-Copy-2" d="M1,167 L1,172 L1745,172 L1745,167 L1747,167 L1747,179 L1745,179 L1745,174 L1,174 L1,179 L-1,179 L-1,167 L1,167 Z" fill-rule="nonzero"></path>
+            <text id="html.is-rendering" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="24" font-weight="400">
+                <tspan x="993" y="24">html.is-rendering</tspan>
+            </text>
+        </g>
+        <g id="Group-2" transform="translate(86.000000, 443.500000)">
+            <text id="opacity:-1;" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="24" font-weight="400" fill="#FFFFFF">
+                <tspan x="25" y="290.5">opacity: 1;</tspan>
+            </text>
+            <g id="Group-4-Copy" transform="translate(1271.000000, 106.500000)" fill="#FFFFFF">
+                <text id="CSS" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="21" font-weight="500">
+                    <tspan x="62.4386953" y="20">CSS</tspan>
+                </text>
+                <path id="Line-2-Copy" d="M127.135319,27.3271134 L127.240261,27.3784245 L139.240261,34.1284245 C139.882154,34.4894894 139.917815,35.3823847 139.347243,35.8025419 L139.240261,35.8715755 L127.240261,42.6215755 C126.758903,42.8923393 126.149188,42.7216191 125.878424,42.2402612 C125.627001,41.7932861 125.756245,41.2356355 126.161393,40.941463 L126.259739,40.8784245 L134.932,36 L28,36 C27.4477153,36 27,35.5522847 27,35 C27,34.4871642 27.3860402,34.0644928 27.8833789,34.0067277 L28,34 L134.932,34 L126.259739,29.1215755 C125.812764,28.870152 125.633634,28.3264695 125.827113,27.8646812 L125.878424,27.7597388 C126.129848,27.3127636 126.673531,27.1336341 127.135319,27.3271134 Z" fill-rule="nonzero"></path>
+            </g>
+            <g id="Group-4-Copy-2" transform="translate(309.000000, 106.500000)" fill="#FFFFFF">
+                <text id="CSS" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="21" font-weight="500">
+                    <tspan x="62.4386953" y="20">CSS</tspan>
+                </text>
+                <path id="Line-2-Copy" d="M127.135319,27.3271134 L127.240261,27.3784245 L139.240261,34.1284245 C139.882154,34.4894894 139.917815,35.3823847 139.347243,35.8025419 L139.240261,35.8715755 L127.240261,42.6215755 C126.758903,42.8923393 126.149188,42.7216191 125.878424,42.2402612 C125.627001,41.7932861 125.756245,41.2356355 126.161393,40.941463 L126.259739,40.8784245 L134.932,36 L28,36 C27.4477153,36 27,35.5522847 27,35 C27,34.4871642 27.3860402,34.0644928 27.8833789,34.0067277 L28,34 L134.932,34 L126.259739,29.1215755 C125.812764,28.870152 125.633634,28.3264695 125.827113,27.8646812 L125.878424,27.7597388 C126.129848,27.3127636 126.673531,27.1336341 127.135319,27.3271134 Z" fill-rule="nonzero"></path>
+            </g>
+            <text id="opacity:-0;" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="24" font-weight="400" fill="#FFFFFF">
+                <tspan x="989" y="290.5">opacity: 0;</tspan>
+            </text>
+            <text id="opacity:-0;" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="24" font-weight="400" fill="#FFFFFF">
+                <tspan x="500" y="290.5">opacity: 0;</tspan>
+            </text>
+            <text id="opacity:-1;" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="24" font-weight="400" fill="#FFFFFF">
+                <tspan x="1464" y="290.5">opacity: 1;</tspan>
+            </text>
+            <g id="previous-visible">
+                <rect id="Rectangle" fill="#2D2E82" x="0" y="0" width="309.382253" height="247" rx="13"></rect>
+                <path d="M21.9878387,18.5460751 L65.6845163,18.5460751 C67.4675538,18.5460751 68.1141262,18.7317263 68.7659781,19.0803405 C69.4178299,19.4289547 69.9294071,19.9405318 70.2780213,20.5923837 C70.6266355,21.2442355 70.8122867,21.890808 70.8122867,23.6738455 L70.8122867,32.8073832 C70.8122867,34.5904207 70.6266355,35.2369931 70.2780213,35.888845 C69.9294071,36.5406968 69.4178299,37.052274 68.7659781,37.4008882 C68.1141262,37.7495024 67.4675538,37.9351536 65.6845163,37.9351536 L21.9878387,37.9351536 C20.2048012,37.9351536 19.5582287,37.7495024 18.9063769,37.4008882 C18.254525,37.052274 17.7429479,36.5406968 17.3943337,35.888845 C17.0457195,35.2369931 16.8600683,34.5904207 16.8600683,32.8073832 L16.8600683,23.6738455 C16.8600683,21.890808 17.0457195,21.2442355 17.3943337,20.5923837 C17.7429479,19.9405318 18.254525,19.4289547 18.9063769,19.0803405 C19.5582287,18.7317263 20.2048012,18.5460751 21.9878387,18.5460751 Z" id="Rectangle" fill="#FFFFFF"></path>
+                <path d="M21.7750562,166.746075 L214.265899,166.746075 C215.793598,166.746075 216.482727,166.931726 217.134579,167.28034 C217.786431,167.628955 218.298008,168.140532 218.646622,168.792384 C218.995236,169.444236 219.180887,170.133364 219.180887,171.661063 L219.180887,173.295934 C219.180887,174.823632 218.995236,175.512761 218.646622,176.164613 C218.298008,176.816465 217.786431,177.328042 217.134579,177.676656 C216.482727,178.02527 215.793598,178.210922 214.265899,178.210922 L21.7750562,178.210922 C20.2473577,178.210922 19.5582287,178.02527 18.9063769,177.676656 C18.254525,177.328042 17.7429479,176.816465 17.3943337,176.164613 C17.0457195,175.512761 16.8600683,174.823632 16.8600683,173.295934 L16.8600683,171.661063 C16.8600683,170.133364 17.0457195,169.444236 17.3943337,168.792384 C17.7429479,168.140532 18.254525,167.628955 18.9063769,167.28034 C19.5582287,166.931726 20.2473577,166.746075 21.7750562,166.746075 Z" id="Rectangle-Copy-4" fill="#FFFFFF"></path>
+                <path d="M21.7750562,142.636177 L214.265899,142.636177 C215.793598,142.636177 216.482727,142.821829 217.134579,143.170443 C217.786431,143.519057 218.298008,144.030634 218.646622,144.682486 C218.995236,145.334338 219.180887,146.023467 219.180887,147.551165 L219.180887,149.186036 C219.180887,150.713734 218.995236,151.402863 218.646622,152.054715 C218.298008,152.706567 217.786431,153.218144 217.134579,153.566758 C216.482727,153.915373 215.793598,154.101024 214.265899,154.101024 L21.7750562,154.101024 C20.2473577,154.101024 19.5582287,153.915373 18.9063769,153.566758 C18.254525,153.218144 17.7429479,152.706567 17.3943337,152.054715 C17.0457195,151.402863 16.8600683,150.713734 16.8600683,149.186036 L16.8600683,147.551165 C16.8600683,146.023467 17.0457195,145.334338 17.3943337,144.682486 C17.7429479,144.030634 18.254525,143.519057 18.9063769,143.170443 C19.5582287,142.821829 20.2473577,142.636177 21.7750562,142.636177 Z" id="Rectangle-Copy-3" fill="#FFFFFF"></path>
+                <path d="M21.7750562,118.52628 L214.265899,118.52628 C215.793598,118.52628 216.482727,118.711931 217.134579,119.060545 C217.786431,119.409159 218.298008,119.920737 218.646622,120.572588 C218.995236,121.22444 219.180887,121.913569 219.180887,123.441268 L219.180887,125.076138 C219.180887,126.603837 218.995236,127.292966 218.646622,127.944818 C218.298008,128.59667 217.786431,129.108247 217.134579,129.456861 C216.482727,129.805475 215.793598,129.991126 214.265899,129.991126 L21.7750562,129.991126 C20.2473577,129.991126 19.5582287,129.805475 18.9063769,129.456861 C18.254525,129.108247 17.7429479,128.59667 17.3943337,127.944818 C17.0457195,127.292966 16.8600683,126.603837 16.8600683,125.076138 L16.8600683,123.441268 C16.8600683,121.913569 17.0457195,121.22444 17.3943337,120.572588 C17.7429479,119.920737 18.254525,119.409159 18.9063769,119.060545 C19.5582287,118.711931 20.2473577,118.52628 21.7750562,118.52628 Z" id="Rectangle-Copy-2" fill="#FFFFFF"></path>
+                <path d="M21.7750562,94.4163823 L122.378527,94.4163823 C123.906226,94.4163823 124.595355,94.6020335 125.247207,94.9506477 C125.899059,95.2992618 126.410636,95.810839 126.75925,96.4626908 C127.107864,97.1145427 127.293515,97.8036717 127.293515,99.3313702 L127.293515,100.966241 C127.293515,102.493939 127.107864,103.183068 126.75925,103.83492 C126.410636,104.486772 125.899059,104.998349 125.247207,105.346963 C124.595355,105.695577 123.906226,105.881229 122.378527,105.881229 L21.7750562,105.881229 C20.2473577,105.881229 19.5582287,105.695577 18.9063769,105.346963 C18.254525,104.998349 17.7429479,104.486772 17.3943337,103.83492 C17.0457195,103.183068 16.8600683,102.493939 16.8600683,100.966241 L16.8600683,99.3313702 C16.8600683,97.8036717 17.0457195,97.1145427 17.3943337,96.4626908 C17.7429479,95.810839 18.254525,95.2992618 18.9063769,94.9506477 C19.5582287,94.6020335 20.2473577,94.4163823 21.7750562,94.4163823 Z" id="Rectangle-Copy" fill="#FFFFFF"></path>
+                <path d="M21.7750562,191.193174 L54.095251,191.193174 C55.6229495,191.193174 56.3120785,191.378825 56.9639303,191.727439 C57.6157822,192.076054 58.1273593,192.587631 58.4759735,193.239483 C58.8245877,193.891335 59.0102389,194.580463 59.0102389,196.108162 L59.0102389,197.743033 C59.0102389,199.270731 58.8245877,199.95986 58.4759735,200.611712 C58.1273593,201.263564 57.6157822,201.775141 56.9639303,202.123755 C56.3120785,202.472369 55.6229495,202.65802 54.095251,202.65802 L21.7750562,202.65802 C20.2473577,202.65802 19.5582287,202.472369 18.9063769,202.123755 C18.254525,201.775141 17.7429479,201.263564 17.3943337,200.611712 C17.0457195,199.95986 16.8600683,199.270731 16.8600683,197.743033 L16.8600683,196.108162 C16.8600683,194.580463 17.0457195,193.891335 17.3943337,193.239483 C17.7429479,192.587631 18.254525,192.076054 18.9063769,191.727439 C19.5582287,191.378825 20.2473577,191.193174 21.7750562,191.193174 Z" id="Rectangle-Copy-5" fill="#FFFFFF"></path>
+                <path d="M75.7272746,191.193174 L100.460439,191.193174 C101.988137,191.193174 102.677266,191.378825 103.329118,191.727439 C103.98097,192.076054 104.492547,192.587631 104.841161,193.239483 C105.189775,193.891335 105.375427,194.580463 105.375427,196.108162 L105.375427,197.743033 C105.375427,199.270731 105.189775,199.95986 104.841161,200.611712 C104.492547,201.263564 103.98097,201.775141 103.329118,202.123755 C102.677266,202.472369 101.988137,202.65802 100.460439,202.65802 L75.7272746,202.65802 C74.1995761,202.65802 73.5104471,202.472369 72.8585953,202.123755 C72.2067434,201.775141 71.6951663,201.263564 71.3465521,200.611712 C70.9979379,199.95986 70.8122867,199.270731 70.8122867,197.743033 L70.8122867,196.108162 C70.8122867,194.580463 70.9979379,193.891335 71.3465521,193.239483 C71.6951663,192.587631 72.2067434,192.076054 72.8585953,191.727439 C73.5104471,191.378825 74.1995761,191.193174 75.7272746,191.193174 Z" id="Rectangle-Copy-6" fill="#FFFFFF"></path>
+            </g>
+            <g id="previous-visible-copy" transform="translate(962.000000, 0.000000)">
+                <use id="Rectangle" stroke="#2D2E82" mask="url(#mask-2)" stroke-width="4" fill-opacity="0.15" fill="#FFFFFF" stroke-dasharray="8,9" xlink:href="#path-1"></use>
+                <use id="Rectangle" stroke="#2D2E82" mask="url(#mask-4)" stroke-width="4" fill-opacity="0.2" fill="#2D2E82" stroke-dasharray="8,9" xlink:href="#path-3"></use>
+                <path d="M21.9878387,18.5460751 L65.6845163,18.5460751 C67.4675538,18.5460751 68.1141262,18.7317263 68.7659781,19.0803405 C69.4178299,19.4289547 69.9294071,19.9405318 70.2780213,20.5923837 C70.6266355,21.2442355 70.8122867,21.890808 70.8122867,23.6738455 L70.8122867,32.8073832 C70.8122867,34.5904207 70.6266355,35.2369931 70.2780213,35.888845 C69.9294071,36.5406968 69.4178299,37.052274 68.7659781,37.4008882 C68.1141262,37.7495024 67.4675538,37.9351536 65.6845163,37.9351536 L21.9878387,37.9351536 C20.2048012,37.9351536 19.5582287,37.7495024 18.9063769,37.4008882 C18.254525,37.052274 17.7429479,36.5406968 17.3943337,35.888845 C17.0457195,35.2369931 16.8600683,34.5904207 16.8600683,32.8073832 L16.8600683,23.6738455 C16.8600683,21.890808 17.0457195,21.2442355 17.3943337,20.5923837 C17.7429479,19.9405318 18.254525,19.4289547 18.9063769,19.0803405 C19.5582287,18.7317263 20.2048012,18.5460751 21.9878387,18.5460751 Z" id="Rectangle" fill="#FFFFFF"></path>
+            </g>
+            <g id="previous-visible" transform="translate(474.950248, 0.000000)">
+                <use id="Rectangle" stroke="#2D2E82" mask="url(#mask-6)" stroke-width="4" fill-opacity="0.15" fill="#FFFFFF" stroke-dasharray="8,9" xlink:href="#path-5"></use>
+                <use id="Rectangle" stroke="#2D2E82" mask="url(#mask-8)" stroke-width="4" fill-opacity="0.2" fill="#2D2E82" stroke-dasharray="8,9" xlink:href="#path-7"></use>
+                <path d="M21.9878387,18.5460751 L65.6845163,18.5460751 C67.4675538,18.5460751 68.1141262,18.7317263 68.7659781,19.0803405 C69.4178299,19.4289547 69.9294071,19.9405318 70.2780213,20.5923837 C70.6266355,21.2442355 70.8122867,21.890808 70.8122867,23.6738455 L70.8122867,32.8073832 C70.8122867,34.5904207 70.6266355,35.2369931 70.2780213,35.888845 C69.9294071,36.5406968 69.4178299,37.052274 68.7659781,37.4008882 C68.1141262,37.7495024 67.4675538,37.9351536 65.6845163,37.9351536 L21.9878387,37.9351536 C20.2048012,37.9351536 19.5582287,37.7495024 18.9063769,37.4008882 C18.254525,37.052274 17.7429479,36.5406968 17.3943337,35.888845 C17.0457195,35.2369931 16.8600683,34.5904207 16.8600683,32.8073832 L16.8600683,23.6738455 C16.8600683,21.890808 17.0457195,21.2442355 17.3943337,20.5923837 C17.7429479,19.9405318 18.254525,19.4289547 18.9063769,19.0803405 C19.5582287,18.7317263 20.2048012,18.5460751 21.9878387,18.5460751 Z" id="Rectangle" fill="#FFFFFF"></path>
+            </g>
+            <g id="previous-visible-copy-2" transform="translate(1436.950248, 0.000000)">
+                <rect id="Rectangle" fill="#2D2E82" x="0" y="0" width="309.382253" height="247" rx="13"></rect>
+                <path d="M21.9878387,18.5460751 L65.6845163,18.5460751 C67.4675538,18.5460751 68.1141262,18.7317263 68.7659781,19.0803405 C69.4178299,19.4289547 69.9294071,19.9405318 70.2780213,20.5923837 C70.6266355,21.2442355 70.8122867,21.890808 70.8122867,23.6738455 L70.8122867,32.8073832 C70.8122867,34.5904207 70.6266355,35.2369931 70.2780213,35.888845 C69.9294071,36.5406968 69.4178299,37.052274 68.7659781,37.4008882 C68.1141262,37.7495024 67.4675538,37.9351536 65.6845163,37.9351536 L21.9878387,37.9351536 C20.2048012,37.9351536 19.5582287,37.7495024 18.9063769,37.4008882 C18.254525,37.052274 17.7429479,36.5406968 17.3943337,35.888845 C17.0457195,35.2369931 16.8600683,34.5904207 16.8600683,32.8073832 L16.8600683,23.6738455 C16.8600683,21.890808 17.0457195,21.2442355 17.3943337,20.5923837 C17.7429479,19.9405318 18.254525,19.4289547 18.9063769,19.0803405 C19.5582287,18.7317263 20.2048012,18.5460751 21.9878387,18.5460751 Z" id="Rectangle" fill="#FFFFFF"></path>
+                <path d="M21.7750562,166.746075 L185.603783,166.746075 C187.131482,166.746075 187.820611,166.931726 188.472463,167.28034 C189.124315,167.628955 189.635892,168.140532 189.984506,168.792384 C190.33312,169.444236 190.518771,170.133364 190.518771,171.661063 L190.518771,173.295934 C190.518771,174.823632 190.33312,175.512761 189.984506,176.164613 C189.635892,176.816465 189.124315,177.328042 188.472463,177.676656 C187.820611,178.02527 187.131482,178.210922 185.603783,178.210922 L21.7750562,178.210922 C20.2473577,178.210922 19.5582287,178.02527 18.9063769,177.676656 C18.254525,177.328042 17.7429479,176.816465 17.3943337,176.164613 C17.0457195,175.512761 16.8600683,174.823632 16.8600683,173.295934 L16.8600683,171.661063 C16.8600683,170.133364 17.0457195,169.444236 17.3943337,168.792384 C17.7429479,168.140532 18.254525,167.628955 18.9063769,167.28034 C19.5582287,166.931726 20.2473577,166.746075 21.7750562,166.746075 Z" id="Rectangle-Copy-4" fill="#FFFFFF"></path>
+                <path d="M21.7750562,191.193174 L169.586719,191.193174 C171.114417,191.193174 171.803546,191.378825 172.455398,191.727439 C173.10725,192.076054 173.618827,192.587631 173.967441,193.239483 C174.316055,193.891335 174.501706,194.580463 174.501706,196.108162 L174.501706,197.743033 C174.501706,199.270731 174.316055,199.95986 173.967441,200.611712 C173.618827,201.263564 173.10725,201.775141 172.455398,202.123755 C171.803546,202.472369 171.114417,202.65802 169.586719,202.65802 L21.7750562,202.65802 C20.2473577,202.65802 19.5582287,202.472369 18.9063769,202.123755 C18.254525,201.775141 17.7429479,201.263564 17.3943337,200.611712 C17.0457195,199.95986 16.8600683,199.270731 16.8600683,197.743033 L16.8600683,196.108162 C16.8600683,194.580463 17.0457195,193.891335 17.3943337,193.239483 C17.7429479,192.587631 18.254525,192.076054 18.9063769,191.727439 C19.5582287,191.378825 20.2473577,191.193174 21.7750562,191.193174 Z" id="Rectangle-Copy-5" fill="#FFFFFF"></path>
+                <path d="M21.7750562,142.636177 L125.750541,142.636177 C127.27824,142.636177 127.967369,142.821829 128.61922,143.170443 C129.271072,143.519057 129.782649,144.030634 130.131264,144.682486 C130.479878,145.334338 130.665529,146.023467 130.665529,147.551165 L130.665529,149.186036 C130.665529,150.713734 130.479878,151.402863 130.131264,152.054715 C129.782649,152.706567 129.271072,153.218144 128.61922,153.566758 C127.967369,153.915373 127.27824,154.101024 125.750541,154.101024 L21.7750562,154.101024 C20.2473577,154.101024 19.5582287,153.915373 18.9063769,153.566758 C18.254525,153.218144 17.7429479,152.706567 17.3943337,152.054715 C17.0457195,151.402863 16.8600683,150.713734 16.8600683,149.186036 L16.8600683,147.551165 C16.8600683,146.023467 17.0457195,145.334338 17.3943337,144.682486 C17.7429479,144.030634 18.254525,143.519057 18.9063769,143.170443 C19.5582287,142.821829 20.2473577,142.636177 21.7750562,142.636177 Z" id="Rectangle-Copy-3" fill="#FFFFFF"></path>
+                <path d="M21.7750562,118.52628 L145.13962,118.52628 C146.667318,118.52628 147.356447,118.711931 148.008299,119.060545 C148.660151,119.409159 149.171728,119.920737 149.520342,120.572588 C149.868956,121.22444 150.054608,121.913569 150.054608,123.441268 L150.054608,125.076138 C150.054608,126.603837 149.868956,127.292966 149.520342,127.944818 C149.171728,128.59667 148.660151,129.108247 148.008299,129.456861 C147.356447,129.805475 146.667318,129.991126 145.13962,129.991126 L21.7750562,129.991126 C20.2473577,129.991126 19.5582287,129.805475 18.9063769,129.456861 C18.254525,129.108247 17.7429479,128.59667 17.3943337,127.944818 C17.0457195,127.292966 16.8600683,126.603837 16.8600683,125.076138 L16.8600683,123.441268 C16.8600683,121.913569 17.0457195,121.22444 17.3943337,120.572588 C17.7429479,119.920737 18.254525,119.409159 18.9063769,119.060545 C19.5582287,118.711931 20.2473577,118.52628 21.7750562,118.52628 Z" id="Rectangle-Copy-2" fill="#FFFFFF"></path>
+                <path d="M21.7750562,94.4163823 L162.842691,94.4163823 C164.37039,94.4163823 165.059519,94.6020335 165.711371,94.9506477 C166.363222,95.2992618 166.8748,95.810839 167.223414,96.4626908 C167.572028,97.1145427 167.757679,97.8036717 167.757679,99.3313702 L167.757679,100.966241 C167.757679,102.493939 167.572028,103.183068 167.223414,103.83492 C166.8748,104.486772 166.363222,104.998349 165.711371,105.346963 C165.059519,105.695577 164.37039,105.881229 162.842691,105.881229 L21.7750562,105.881229 C20.2473577,105.881229 19.5582287,105.695577 18.9063769,105.346963 C18.254525,104.998349 17.7429479,104.486772 17.3943337,103.83492 C17.0457195,103.183068 16.8600683,102.493939 16.8600683,100.966241 L16.8600683,99.3313702 C16.8600683,97.8036717 17.0457195,97.1145427 17.3943337,96.4626908 C17.7429479,95.810839 18.254525,95.2992618 18.9063769,94.9506477 C19.5582287,94.6020335 20.2473577,94.4163823 21.7750562,94.4163823 Z" id="Rectangle-Copy" fill="#FFFFFF"></path>
+            </g>
+        </g>
+        <text id="Enter" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="32" font-weight="500" fill="#FFFFFF">
+            <tspan x="1398.52225" y="68">Enter</tspan>
+        </text>
+    </g>
+</svg>
