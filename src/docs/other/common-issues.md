@@ -34,13 +34,11 @@ of the whole transition.
 
 ## Screen readers are not informed about updated content
 
-We're dynamically updating parts of the page, so it's recommended to add `aria-live="polite"`
-to any content containers replaced by swup. This allows screen readers to announce updates to their
-content. Note: the attribute [cannot be added dynamically](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Live_Regions) and needs to be added manually in the html.
-
-The official [accessibility plugin](/plugins/a11y-plugin/) makes this very easy to implement: it
-reads out the title of the new document to screen readers, requiring no change to your markup. It
-will also focus the main content area for improved keyboard accessibility.
+We're dynamically updating parts of the page, so it's recommended to let screen readers announce
+changes to its content. While you can add the `aria-live="polite"` to content containers yourself,
+it's recommended to use the official [Accessibility Plugin](/plugins/a11y-plugin/) which makes this
+very easy to implement. It reads out the title of the new document to screen readers, requiring no
+change to your markup. It will also focus the main content area for improved keyboard accessibility.
 
 ## Scroll anchors are too close to the top of the viewport
 
