@@ -86,13 +86,12 @@ Adding containers here allows animating one set of elements while replacing othe
 without animation, e.g. a global site navigation that will not fade out but still needs to update
 to reflect language changes.
 
-**Note:** Only elements **inside** of the `body` tag are supported.
-
 ```javascript
 {
   containers: ['#swup'];
 }
 ```
+> **Note** Only elements **inside** of the `body` tag are supported.
 
 ## cache
 
