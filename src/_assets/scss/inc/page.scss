@@ -178,9 +178,16 @@
 * Code Blocks
 */
 .code-block {
+	--code-block-bg: var(--color-transparent-0);
+	--code-block-fade: transparent;
+	--code-block-text: var(--color-dimmed);
 	position: relative;
 	border-radius: var(--radius-1);
 	overflow: hidden;
+	.dark & {
+		--code-block-bg: hsl(210 12% 16% / 0.9);
+		--code-block-fade: hsl(210 12% 16% / 0.9);
+	}
 }
 
 .code-block:after {
@@ -192,7 +199,7 @@
 	top: 0;
 	width: 6rem;
 	height: 6rem;
-	background: linear-gradient(to top right, transparent 50%, hsl(210 12% 16% / 0.9) 70%);
+	background: linear-gradient(to top right, transparent 50%, var(--code-block-fade) 70%);
 	z-index: 1;
 }
 
@@ -201,12 +208,11 @@
 	top: 0.6rem;
 	right: 0.6rem;
 	background: transparent;
-	color: white;
+	color: var(--code-block-text);
 	font-family: var(--font-mono);
 	border-radius: var(--radius-0);
 	padding: 0 0.3em;
 	height: 1.1em;
-	opacity: 0.5;
 	display: flex;
 	align-items: center;
 	text-transform: uppercase;
@@ -215,6 +221,10 @@
 
 .code-block_language {
 	font-size: 0.6rem;
+}
+
+.code-block pre:not(.shiki) {
+	margin: 0;
 }
 
 .shiki {
@@ -227,9 +237,26 @@
 	margin: 0;
 }
 
+.shiki-container .shiki {
+	padding-block: 0.6rem;
+	padding-inline: 1rem 4rem;
+}
+
 .shiki ::selection {
 	background-color: rgb(255 255 255 / 0.2) !important;
 	color: unset;
+}
+
+.shiki.github-light {
+	background-color: var(--code-block-bg) !important;
+}
+
+html.dark .shiki-container .github-light {
+  display: none;
+}
+
+html:not(.dark) .shiki-container .github-dark {
+  display: none;
 }
 
 /*
