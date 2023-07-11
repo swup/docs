@@ -7,6 +7,7 @@
 	position: relative;
 	width: 100%;
 	min-width: 300px;
+	max-width: 100%;
 	height: calc((500px + 6vh) * var(--repl-scale));
 	// max-height: 500px;
 	position: relative;
@@ -31,17 +32,15 @@
 
 @include bp(s) {
 	.repl {
-		--repl-scale: 0.667;
+		--repl-scale: 1;
 	}
-	.repl__frame {
-		width: 80%;
-	}
+
 }
 
 .repl__link {
 	position: absolute;
-	bottom: 1.5rem;
-	right: 2rem;
+	bottom: 0.5rem;
+	right: 0.8rem;
 	margin: 0;
 	a {
 		background: none !important;
