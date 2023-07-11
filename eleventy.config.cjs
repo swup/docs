@@ -9,7 +9,7 @@ const EleventyFetch = require('@11ty/eleventy-fetch');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const feather = require('feather-icons');
 const MarkdownItCodeEnhancements = require('./lib/markdown-it-code-enhancements');
-const { prepareTablesWithAnchorLinks } = require('./lib/eleventy-transforms')
+const { prepareTablesWithAnchorLinks, prepareInfoBlocks } = require('./lib/eleventy-transforms')
 const customMarkdownIt = markdownIt({
 	html: true,
 	breaks: false,
@@ -47,6 +47,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addShortcode('feather', renderFeatherIcon);
 	eleventyConfig.addShortcode('timestamp', () => Date.now());
 	eleventyConfig.addTransform('prepareTablesWithAnchorLinks', prepareTablesWithAnchorLinks);
+	eleventyConfig.addTransform('prepareInfoBlocks', prepareInfoBlocks);
 
 	// Assets will be taken care of by WebPack
 	eleventyConfig.ignores.add('./src/_assets/**');

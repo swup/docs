@@ -56,6 +56,7 @@
     "esbuild-plugin-browserslist": "^0.6.0",
     "feather-icons": "^4.29.0",
     "http-server": "^14.1.1",
+    "jsdom": "^22.1.0",
     "markdown-it": "^13.0.1",
     "markdown-it-anchor": "^8.6.7",
     "markdown-it-shiki": "^0.8.1",
