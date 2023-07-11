@@ -32,7 +32,8 @@ let swup;
 export default function () {
 	swup = new Swup({
 		containers: ['#swup', '#breadcrumb'],
-		ignoreVisit: (url, { el } = {}) => el?.closest('[data-no-swup]') || url.match(/\.(png|svg)$/i),
+		ignoreVisit: (url, { el } = {}) =>
+			el?.closest('[data-no-swup]') || url.match(/\.(png|svg)$/i),
 		plugins: [
 			// new SwupDebugPlugin(),
 
@@ -98,7 +99,7 @@ function emulateTargetPseudoClass() {
 		if (current) current.removeAttribute(attribute);
 		const element = window.swup.getAnchorElement(window.location.hash);
 		if (element) element.setAttribute(attribute, '');
-	})
+	});
 }
 
 /**
@@ -156,7 +157,6 @@ function positionNavIndicator(indicator) {
 		gsap.to(indicator, { opacity: 0, duration, ease });
 	}
 }
-
 
 function positionNavIndicators() {
 	document.querySelectorAll('.nav_indicator').forEach((indicator) => {

@@ -71,9 +71,7 @@ const swup = new Swup({ animationScope: 'containers' });
 ```
 
 ```html
-<main id="swup" class="is-animating is-leaving">
-  Content
-</main>
+<main id="swup" class="is-animating is-leaving">Content</main>
 ```
 
 ### Hook system for easier customization {#hook-system}

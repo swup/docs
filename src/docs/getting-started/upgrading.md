@@ -78,7 +78,7 @@ Some hooks were removed or renamed.
 #### willReplaceContent & contentReplaced
 
 The old `willReplaceContent` and `contentReplaced` events are superseded by a single `replaceContent`
-hook. Since swup can now register handlers to run *before* a specific hook, it serves both use cases:
+hook. Since swup can now register handlers to run _before_ a specific hook, it serves both use cases:
 
 ```diff
 // Run right before the content is replaced
