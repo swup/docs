@@ -1,13 +1,13 @@
--------------------  ---------  ----  ------  ---------  ---  -------  ------  --------------
-layout:              default
-title:               Hooks
+---
+layout: default
+title: Hooks
 eleventyNavigation:
-key:                 Hooks
-parent:              Lifecycle
-order:               1
-description:         Hook       into  swup's  lifecycle  to   trigger  custom  functionality.
-permalink:           /hooks/
--------------------  ---------  ----  ------  ---------  ---  -------  ------  --------------
+  key: Hooks
+  parent: Lifecycle
+  order: 1
+description: Hook into swup's lifecycle to trigger custom functionality.
+permalink: /hooks/
+---
 
 # Hooks
 
