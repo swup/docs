@@ -84,8 +84,8 @@ completely. See [Hooks](/hooks/) for details and examples.
 Pausing execution is as easy as returning a `Promise` or `await`ing a custom function:
 
 ```javascript
-swup.hooks.on('transitionStart', async () => {
-  // Delay the start of the transition until the Promise is resolved
+swup.hooks.on('visit:start', async () => {
+  // Delay the start of the page transition until a Promise resolves
   await myCustomFunction();
 });
 ```
@@ -93,16 +93,16 @@ swup.hooks.on('transitionStart', async () => {
 Hooks can be run once, before the internal handler, or even replace the internal handler entirely:
 
 ```javascript
-swup.hooks.once('animationInDone', () => {
-  // Only executes once, then removes the handler
+swup.hooks.once('page:view', () => {
+  // Execute on next page view, then remove the handler
 });
 
-swup.hooks.before('replaceContent', () => {
-  // Executes before the internal default handler
+swup.hooks.before('content:replace', () => {
+  // Execute before swup replaces the content
 });
 
-swup.hooks.replace('replaceContent', () => {
-  // Replaces the internal handler with a custom implementation
+swup.hooks.replace('fetch:request', () => {
+  // Execute a custom fetch request instead of swup's internal handler
 });
 ```
 
@@ -117,7 +117,7 @@ the new page. See [Context](/context/) for details and examples.
 Access the current and next url from a hook:
 
 ```javascript
-swup.hooks.on('transitionStart', (context) => {
+swup.hooks.on('visit:start', (context) => {
   console.log('Going from', context.to.url, 'to', context.from.url);
 });
 ```
@@ -125,7 +125,7 @@ swup.hooks.on('transitionStart', (context) => {
 Access the link element and click event that triggered the current visit:
 
 ```javascript
-swup.hooks.on('transitionStart', (context) => {
+swup.hooks.on('visit:start', (context) => {
   console.log('Link', context.trigger.el, 'clicked in event', context.trigger.event);
 });
 ```
@@ -133,7 +133,7 @@ swup.hooks.on('transitionStart', (context) => {
 Disable animations on the current visit:
 
 ```js
-swup.hooks.on('transitionStart', (context) => {
+swup.hooks.on('visit:start', (context) => {
   context.animation.animate = false;
 });
 ```
@@ -141,7 +141,7 @@ swup.hooks.on('transitionStart', (context) => {
 Change which containers will be replaced on the current visit:
 
 ```javascript
-swup.hooks.on('transitionStart', (context) => {
+swup.hooks.on('visit:start', (context) => {
   context.containers = ['#sidebar'];
 });
 ```
@@ -149,7 +149,7 @@ swup.hooks.on('transitionStart', (context) => {
 Check if the current visit was triggered by the backward/forward button of the browser.
 
 ```javascript
-swup.hooks.before('transitionStart', (context) => {
+swup.hooks.before('visit:start', (context) => {
   if (context.history.popstate) {
     console.log('History visit');
   }

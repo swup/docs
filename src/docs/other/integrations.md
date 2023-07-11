@@ -53,15 +53,13 @@ Alpine.start();
 </div>
 ```
 
-### Listening to swup events
+### Handling swup hooks
 
-If you want to listen to swup events inside your Alpine components, you need to
-make use of the [`.camel` modifier](https://alpinejs.dev/directives/on#camel)
-since camelCase is not supported in HTML attribute names. For example, listening
-for the `pageView` event would look like this:
+To register handlers for swup's hooks inside your Alpine components, you need to
+prepend `swup` to all hook names. For example, hooking into `page:view` would look like this:
 
 ```html
-<div x-data x-on:swup:page-view.camel.document="console.log('page view registered!')">
+<div x-data x-on:swup:page:view.camel.document="console.log('page view registered!')">
   My Alpine Component
 </div>
 ```

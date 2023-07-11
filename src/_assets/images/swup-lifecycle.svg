@@ -26,47 +26,47 @@
             <tspan x="439.476143" y="68">Leave</tspan>
         </text>
         <g id="Group" transform="translate(50.000000, 177.000000)">
-            <text id="transitionStart" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#000000" fill-opacity="0.3">
-                <tspan x="192" y="53">transitionStart</tspan>
+            <text id="visit:start" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#000000" fill-opacity="0.3">
+                <tspan x="192" y="53">visit:start</tspan>
             </text>
-            <text id="pageLoaded" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#000000" fill-opacity="0.3">
-                <tspan x="442" y="53">pageLoaded</tspan>
+            <text id="page:load" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#000000" fill-opacity="0.3">
+                <tspan x="442" y="53">page:load</tspan>
             </text>
-            <text id="transitionEnd" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#000000" fill-opacity="0.3">
-                <tspan x="1651.24121" y="53">transitionEnd</tspan>
+            <text id="visit:end" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#000000" fill-opacity="0.3">
+                <tspan x="1702" y="53">visit:end</tspan>
             </text>
-            <text id="animationOutStart" fill-opacity="0.3" fill="#000000" fill-rule="nonzero" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400">
-                <tspan x="265" y="180">animationOutStart</tspan>
+            <text id="animation:out:start" fill-opacity="0.3" fill="#000000" fill-rule="nonzero" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400">
+                <tspan x="265" y="180">animation:out:start</tspan>
             </text>
-            <text id="animationInStart" fill-opacity="0.3" fill="#000000" fill-rule="nonzero" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400">
-                <tspan x="1000" y="180">animationInStart</tspan>
+            <text id="animation:in:start" fill-opacity="0.3" fill="#000000" fill-rule="nonzero" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400">
+                <tspan x="1000" y="180">animation:in:start</tspan>
             </text>
-            <text id="animationOutDone" fill-opacity="0.3" fill="#000000" fill-rule="nonzero" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400">
-                <tspan x="622" y="183">animationOutDone</tspan>
+            <text id="animation:out:end" fill-opacity="0.3" fill="#000000" fill-rule="nonzero" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400">
+                <tspan x="612" y="183">animation:out:end</tspan>
             </text>
-            <text id="animationInDone" fill-opacity="0.3" fill="#000000" fill-rule="nonzero" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400">
-                <tspan x="1557" y="178">animationInDone</tspan>
+            <text id="animation:in:end" fill-opacity="0.3" fill="#000000" fill-rule="nonzero" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400">
+                <tspan x="1557" y="178">animation:in:end</tspan>
             </text>
-            <text id="clickLink" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#000000" fill-opacity="0.3">
-                <tspan x="4" y="53">clickLink</tspan>
+            <text id="link:click" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#000000" fill-opacity="0.3">
+                <tspan x="4" y="53">link:click</tspan>
             </text>
-            <text id="replaceContent" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#000000" fill-opacity="0.3">
-                <tspan x="838" y="48">replaceContent</tspan>
+            <text id="content:replace" font-family="ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono', 'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro', 'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace" font-size="21" font-weight="400" fill="#000000" fill-opacity="0.3">
+                <tspan x="818" y="48">content:replace</tspan>
             </text>
             <text id="Content-replaced" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#E13344">
-                <tspan x="838" y="23">Content replaced</tspan>
+                <tspan x="818" y="23">Content replaced</tspan>
             </text>
             <text id="Link-clicked" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#E13344">
                 <tspan x="4" y="23">Link clicked</tspan>
             </text>
-            <text id="Transition-starts" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#E13344">
-                <tspan x="192" y="23">Transition starts</tspan>
+            <text id="Visit-starts" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#E13344">
+                <tspan x="192" y="23">Visit starts</tspan>
             </text>
             <text id="Page-loaded" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#E13344">
                 <tspan x="442" y="23">Page loaded</tspan>
             </text>
-            <text id="Transition-ends" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#E13344">
-                <tspan x="1655.91844" y="23">Transition ends</tspan>
+            <text id="Visit-ends" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#E13344">
+                <tspan x="1715" y="23">Visit ends</tspan>
             </text>
             <text id="Animation-out-starts" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#2D2E82">
                 <tspan x="265" y="150">Animation out starts</tspan>
@@ -75,10 +75,10 @@
                 <tspan x="1000" y="150">Animation in starts</tspan>
             </text>
             <text id="Animation-out-ends" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#2D2E82">
-                <tspan x="622" y="153">Animation out ends</tspan>
+                <tspan x="628" y="153">Animation out ends</tspan>
             </text>
             <text id="Animation-in-ends" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', Arial, sans-serif" font-size="24" font-weight="400" fill="#2D2E82">
-                <tspan x="1557" y="147">Animation in ends</tspan>
+                <tspan x="1575" y="147">Animation in ends</tspan>
             </text>
             <line x1="12" y1="97" x2="1809" y2="96" id="Line-3" stroke-opacity="0.5" stroke="#000000" stroke-width="3"></line>
             <circle id="Oval" stroke="#FFFFFF" stroke-width="4" fill="#FE5D6D" cx="12.5" cy="96.5" r="12.5"></circle>

@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // This runs on initial load
 });
 
-swup.hooks.on('pageView', () => {
+swup.hooks.on('page:view', () => {
   // This runs after every page change
 });
 ```
@@ -81,7 +81,7 @@ if (document.readyState === 'complete') {
 }
 
 // Run after every additional navigation by swup
-swup.hooks.on('pageView', () => init());
+swup.hooks.on('page:view', () => init());
 ```
 
 ## Using component frameworks
@@ -100,7 +100,7 @@ lifecycle hooks.
 Swup keeps a persistent session in memory, so objects leaking memory will not be
 cleaned up automatically as they would be on a full page refresh. While this
 should not be a problem on most sites, be aware that in special cases you will
-need to clean up after yourself right before swup's `replaceContent` hook.
+need to clean up after yourself right before swup's `content:replace` hook.
 
 ```javascript
 function unload() {
@@ -109,7 +109,7 @@ function unload() {
   }
 }
 
-swup.hooks.before('replaceContent', () => unload());
+swup.hooks.before('content:replace', () => unload());
 ```
 
 ## Third-party script tags

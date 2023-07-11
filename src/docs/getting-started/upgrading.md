@@ -63,44 +63,53 @@ All hook-related functions now live on the `hooks` instance of swup:
 
 ```diff
 -  swup.on('pageView', () => {})
-+  swup.hooks.on('pageView', () => {})
++  swup.hooks.on('page:view', () => {})
 ```
 
 ```diff
 -  swup.off('pageView', handler)
-+  swup.hooks.off('pageView', handler)
++  swup.hooks.off('page:view', handler)
 ```
 
-### Removed hooks
+### Hook names
 
-Some hooks were removed or renamed.
+For easier grouping, hook names are consistently namespaced and in present tense:
 
-#### willReplaceContent & contentReplaced
+- `pageView` → `page:view`
+- `clickLink` → `link:click`
+- `contentReplaced` → `content:replace`
+- `serverError` → `fetch:error`
+- etc.
 
-The old `willReplaceContent` and `contentReplaced` events are superseded by a single `replaceContent`
+To clarify the lifecycle, the transition hooks have been renamed to visit:
+
+- `transitionStart` → `visit:start`
+- `transitionEnd` → `visit:end`
+
+Some hooks were removed entirely:
+
+The old `willReplaceContent` and `contentReplaced` events are superseded by a single `content:replace`
 hook. Since swup can now register handlers to run _before_ a specific hook, it serves both use cases:
 
 ```diff
 // Run right before the content is replaced
 -  swup.on('willReplaceContent', () => {})
-+  swup.hooks.before('replaceContent', () => {})
++  swup.hooks.before('content:replace', () => {})
 ```
 
 ```diff
 // Run directly after the content was replaced
 -  swup.on('contentReplaced', () => {})
-+  swup.hooks.on('replaceContent', () => {})
++  swup.hooks.on('content:replace', () => {})
 ```
 
-#### pageRetrievedFromCache
-
-The `pageRetrievedFromCache` hook has been removed. There is now only a single `pageLoaded` hook
+The `pageRetrievedFromCache` event has been removed. There is now only a single `page:load` hook
 that fires whenever a page was loaded. Check its boolean `cache` parameter to know if the page was
 loaded from cache or not.
 
 ```diff
 - swup.on('pageRetrievedFromCache', () => {});
-+ swup.hooks.on('pageLoaded', (context, { page, cache }) => { /* cache is true or false */ });
++ swup.hooks.on('page:load', (context, { page, cache }) => { /* cache is true or false */ });
 ```
 
 ## Context object
@@ -111,13 +120,13 @@ that triggered the visit. See [Context](/context/) for details and more examples
 
 ```javascript
 // Get the next URL and the link element that was clicked
-swup.hooks.on('pageView', (context) => {
+swup.hooks.on('page:view', (context) => {
   console.log('New page: ', context.to.url);
   console.log('Triggered by: ', context.trigger.el);
 });
 
 // Disable animations on the next visit
-swup.hooks.before('transitionStart', (context) => {
+swup.hooks.on('visit:start', (context) => {
   context.animation.animate = false;
 });
 ```
@@ -129,28 +138,10 @@ The `context` object replaces the `transition` object of swup 3.
 -   console.log('Visit to', swup.transition.to);
 -   console.log('Animation name', swup.transition.custom);
 - });
-+ swup.hooks.on('transitionStart', (context) => {
++ swup.hooks.on('visit:start', (context) => {
 +   console.log('Visit to', context.to.url);
 +   console.log('Animation name', context.animation.name);
 + });
-```
-
-## Cache API
-
-The cache has been simplified. It no longer requires passing in the title,
-containers, or body class of the page. Only the URL and HTML response are required. Please review
-the [Cache](/api/cache/) docs if you access it directly in your code.
-
-```diff
-- swup.cache.cacheUrl({
--   url: '/about',
--   title: 'About',
--   blocks: ['<div id="swup"></div>'],
--   originalContent: '<html>...</html>',
--   pageClass: 'about',
--   responseURL: '/team'
-- });
-+ swup.cache.set('/about', { url: '/about', html: '<html>...</html>' });
 ```
 
 ## Visit method
@@ -190,6 +181,24 @@ const swup = new Swup({
 -  containers: ['.section']
 +  containers: ['#nav', '#content']
 })
+```
+
+## Cache API
+
+The cache has been simplified. It no longer requires passing in the title,
+containers, or body class of the page. Only the URL and HTML response are required. Please review
+the [Cache](/api/cache/) docs if you access it directly in your code.
+
+```diff
+- swup.cache.cacheUrl({
+-   url: '/about',
+-   title: 'About',
+-   blocks: ['<div id="swup"></div>'],
+-   originalContent: '<html>...</html>',
+-   pageClass: 'about',
+-   responseURL: '/team'
+- });
++ swup.cache.set('/about', { url: '/about', html: '<html>...</html>' });
 ```
 
 ## Container attributes
@@ -244,28 +253,28 @@ As mentioned above, switch from events to hooks:
 
 ```diff
 -  this.swup.on('willReplaceContent', () => {})
-+  this.swup.hooks.before('replaceContent', () => {})
++  this.swup.hooks.before('content:replace', () => {})
 ```
 
 Creating custom hooks has changed:
 
 ```diff
 - this.swup._handlers.formSubmit = [];
-+ this.swup.hooks.create('formSubmit');
++ this.swup.hooks.create('form:submit');
 ```
 
 As has triggering a hook:
 
 ```diff
 - this.swup.triggerEvent('formSubmit');
-+ this.swup.hooks.trigger('formSubmit');
++ this.swup.hooks.trigger('form:submit');
 ```
 
 If you need wait for all handlers to finish before continuing, `await` the trigger call:
 
 ```diff
 - this.swup.triggerEvent('formSubmit');
-+ await this.swup.hooks.trigger('formSubmit');
++ await this.swup.hooks.trigger('form:submit');
 ```
 
 If you need to replace swup's internal handler for a custom implementation, don't replace the
@@ -273,5 +282,5 @@ instance method. Instead, specify that your hook handler should replace the inte
 
 ```diff
 - this.swup.replaceContent = () => { /* custom implementation */ };
-+ this.swup.hooks.replace('replaceContent', () => { /* custom implementation */ });
++ this.swup.hooks.replace('content:replace', () => { /* custom implementation */ });
 ```
