@@ -291,16 +291,29 @@
 	background-color: var(--code-block-bg) !important;
 }
 
-.shiki .line.remove {
-	background-color: rgba(255, 0, 0, 0.15);
+.shiki .line.remove,
+.shiki .line.add {
+	position: relative;
+	// background-color: rgba(255, 0, 0, 0.1);
 	&:before {
 		content: '-';
 		color: rgba(159, 45, 45, 0.6);
 	}
+	&::after {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255, 0, 0, 0.1);
+	}
 }
 
 .shiki .line.add {
-	background-color: rgba(0, 255, 0, 0.15);
+	&::after {
+		background-color: rgba(0, 255, 0, 0.1);
+	}
 	&:before {
 		content: '+';
 		color: rgba(33, 127, 33, 0.6);
