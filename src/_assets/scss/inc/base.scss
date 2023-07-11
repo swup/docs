@@ -75,7 +75,7 @@ main[tabindex='-1'] {
 * External Links
 */
 ul.nav_list a[href^='http'],
-ul.children a[href^='http'] {
+.in-this-section ul a[href^='http'] {
 	--_icon-size: 1.2em;
 	&::after {
 		content: '';

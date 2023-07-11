@@ -8,9 +8,9 @@
     {% if (eleventyNavigation) and (eleventyNavigation.key) %}
       {% set children = collections.all | eleventyNavigation(eleventyNavigation.key) %}
       {% if children | length %}
-        <div class="children text">
+        <div class="in-this-section text">
           <h2>In this Section</h2>
-          {{ children | eleventyNavigationToHtml({listClass: "children"}) | safe }}
+          {{ children | eleventyNavigationToHtml() | safe }}
         </div>
       {% endif %}
     {% endif %}
