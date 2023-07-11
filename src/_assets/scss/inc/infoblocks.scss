@@ -29,6 +29,9 @@
 	background: var(--info-color);
 	z-index: -1;
 	opacity: 0.2;
+	@at-root .dark & {
+		opacity: 0.3;
+	}
 }
 .infoblock_header {
 	display: flex;
