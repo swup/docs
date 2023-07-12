@@ -45,11 +45,11 @@ The default handler is passed to the callback as the third parameter, should you
 swup handle this hook based on some condition.
 
 ```javascript
-this.swup.hooks.replace('replaceContent', (context, args, originalHandler) => {
+this.swup.hooks.replace('animation:await', (context, args, originalHandler) => {
   if (context.someCondition) {
-    // Handle content replacement myself
+    // Detect animation timing ourselves
   } else {
-    // Let swup handle content replacement
+    // Let swup handle animation timing
     return originalHandler(context, args);
   }
 });

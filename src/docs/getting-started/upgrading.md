@@ -63,44 +63,53 @@ All hook-related functions now live on the `hooks` instance of swup:
 
 ```js
 swup.on('pageView', () => {}) // [!code --]
-swup.hooks.on('pageView', () => {}) // [!code ++]
+swup.hooks.on('page:view', () => {}) // [!code ++]
 ```
 
 ```js
 swup.off('pageView', handler) // [!code --]
-swup.hooks.off('pageView', handler) // [!code ++]
+swup.hooks.off('page:view', handler) // [!code ++]
 ```
 
-### Removed hooks
+### Hook names
 
-Some hooks were removed or renamed.
+For easier grouping, hook names are consistently namespaced and in present tense:
 
-#### willReplaceContent & contentReplaced
+- `pageView` → `page:view`
+- `clickLink` → `link:click`
+- `contentReplaced` → `content:replace`
+- `serverError` → `fetch:error`
+- etc.
 
-The old `willReplaceContent` and `contentReplaced` events are superseded by a single `replaceContent`
+To clarify the lifecycle, the transition hooks have been renamed to visit:
+
+- `transitionStart` → `visit:start`
+- `transitionEnd` → `visit:end`
+
+Some hooks were removed entirely:
+
+The old `willReplaceContent` and `contentReplaced` events are superseded by a single `content:replace`
 hook. Since swup can now register handlers to run _before_ a specific hook, it serves both use cases:
 
 ```js
 // Run right before the content is replaced
 swup.on('willReplaceContent', () => {}) // [!code --]
-swup.hooks.before('replaceContent', () => {}) // [!code ++]
+swup.hooks.before('content:replace', () => {}) // [!code ++]
 ```
 
 ```js
 // Run directly after the content was replaced
 swup.on('contentReplaced', () => {}) // [!code --]
-swup.hooks.on('replaceContent', () => {}) // [!code ++]
+swup.hooks.on('content:replace', () => {}) // [!code ++]
 ```
 
-#### pageRetrievedFromCache
-
-The `pageRetrievedFromCache` hook has been removed. There is now only a single `pageLoaded` hook
+The `pageRetrievedFromCache` event has been removed. There is now only a single `page:load` hook
 that fires whenever a page was loaded. Check its boolean `cache` parameter to know if the page was
 loaded from cache or not.
 
 ```js
 swup.on('pageRetrievedFromCache', () => {}); // [!code --]
-swup.hooks.on('pageLoaded', (context, { page, cache }) => { /* cache is true or false */ }); // [!code ++]
+swup.hooks.on('page:load', (context, { page, cache }) => { /* cache is true or false */ }); // [!code ++]
 ```
 
 ## Context object
@@ -111,13 +120,13 @@ that triggered the visit. See [Context](/context/) for details and more examples
 
 ```javascript
 // Get the next URL and the link element that was clicked
-swup.hooks.on('pageView', (context) => {
+swup.hooks.on('page:view', (context) => {
   console.log('New page: ', context.to.url);
   console.log('Triggered by: ', context.trigger.el);
 });
 
 // Disable animations on the next visit
-swup.hooks.before('transitionStart', (context) => {
+swup.hooks.on('visit:start', (context) => {
   context.animation.animate = false;
 });
 ```
@@ -129,7 +138,7 @@ swup.on('transitionStart', () => { // [!code --]
   console.log('Visit to', swup.transition.to); // [!code --]
   console.log('Animation name', swup.transition.custom); // [!code --]
 }); // [!code --]
-swup.hooks.on('transitionStart', (context) => { // [!code ++]
+swup.hooks.on('visit:start', (context) => { // [!code ++]
   console.log('Visit to', context.to.url); // [!code ++]
   console.log('Animation name', context.animation.name); // [!code ++]
 }); // [!code ++]
@@ -244,28 +253,28 @@ As mentioned above, switch from events to hooks:
 
 ```js
 this.swup.on('willReplaceContent', () => {}); // [!code --]
-this.swup.hooks.before('replaceContent', () => {}); // [!code ++]
+this.swup.hooks.before('content:replace', () => {}); // [!code ++]
 ```
 
 Creating custom hooks has changed:
 
 ```js
 this.swup._handlers.formSubmit = []; // [!code --]
-this.swup.hooks.create('formSubmit'); // [!code ++]
+this.swup.hooks.create('form:submit'); // [!code ++]
 ```
 
 As has triggering a hook:
 
 ```js
 this.swup.triggerEvent('formSubmit'); // [!code --]
-this.swup.hooks.trigger('formSubmit'); // [!code ++]
+this.swup.hooks.trigger('form:submit'); // [!code ++]
 ```
 
 If you need wait for all handlers to finish before continuing, `await` the trigger call:
 
 ```js
 this.swup.triggerEvent('formSubmit'); // [!code --]
-await this.swup.hooks.trigger('formSubmit'); // [!code ++]
+await this.swup.hooks.trigger('form:submit'); // [!code ++]
 ```
 
 If you need to replace swup's internal handler for a custom implementation, don't replace the
@@ -273,5 +282,5 @@ instance method. Instead, specify that your hook handler should replace the inte
 
 ```js
 this.swup.replaceContent = () => { /* custom implementation */ }; // [!code --]
-this.swup.hooks.replace('replaceContent', () => { /* custom implementation */ }); // [!code ++]
+this.swup.hooks.replace('content:replace', () => { /* custom implementation */ }); // [!code ++]
 ```
