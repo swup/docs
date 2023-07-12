@@ -123,6 +123,8 @@ The following hooks are exposed by swup and can be accessed as such:
 | **cache:clear**         | the cache is cleared completely                                                             |
 | **content:replace**     | the content of the page is replaced                                                         |
 | **content:scroll**      | the scroll position is reset after replacing the content                                    |
+| **enable**              | swup instance is created                                                                    |
+| **disable**             | swup instance is [disabled](/api/methods/#destroy)                                          |
 | **fetch:error**         | a fetch request is rejected because of a server error                                       |
 | **fetch:request**       | a fetch request is sent                                                                     |
 | **history:popstate**    | history navigation is started: back/forward button pressed                                  |
@@ -133,8 +135,6 @@ The following hooks are exposed by swup and can be accessed as such:
 | **page:request**        | a page is requested, either from a fetch request or the cache                               |
 | **page:load**           | a page is completely loaded, via fetch request or cache                                     |
 | **page:view**           | the next page is visible after replacing the content, also triggers when instantiating swup |
-| **enable**              | swup instance is created                                                               |
-| **disable**             | swup instance is [disabled](/api/methods/#destroy)                                          |
 | **visit:start**         | begin of the transition to a new page                                                       |
 | **visit:end**           | end of the transition to a new page: all content was replaced and animations have finished  |
 
