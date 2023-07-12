@@ -32,30 +32,40 @@ Pass in an options object to customize how a handler is invoked.
 
 #### once
 
+Execute the handler once, then remove it.
+
 ```javascript
-// Only execute the handler once, then remove the handler
 swup.hooks.on('page:view', () => {}, { once: true });
 ```
 
 #### before
 
+Execute the handler before the internal default handler.
+
 ```javascript
-// Execute the handler before the internal default handler
 swup.hooks.on('content:replace', () => {}, { before: true });
 ```
 
 #### replace
 
+Replace the internal default handler entirely with a custom function.
+
 ```javascript
-// Replace the internal default handler entirely with this handler
 swup.hooks.on('fetch:request', () => {}, { replace: true });
 ```
 
 #### priority
 
+Influence the order in which this handler is run in relation to other handlers for the same hook,
+regardless of order of registration. The default priority is `0`: negative values make the handler
+execute earlier, positive values make it execute later.
+
 ```javascript
-// Execute this handler before other handlers, regardless of order of registration
-swup.hooks.on('visit:start', () => {}, { priority: 10 });
+// Execute before other handlers
+swup.hooks.on('visit:start', () => {}, { priority: -100 });
+
+// Execute after other handlers
+swup.hooks.on('visit:start', () => {}, { priority: 100 });
 ```
 
 #### Shortcuts
