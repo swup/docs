@@ -40,8 +40,12 @@
 
 .repl__link {
 	position: absolute;
-	bottom: 1.5rem;
-	right: 2rem;
+	bottom: 0.2rem;
+	right: 0.4rem;
+	@include bp(s) {
+		bottom: 0.5rem;
+		right: 0.7rem;
+	}
 	margin: 0;
 	a {
 		background: none !important;

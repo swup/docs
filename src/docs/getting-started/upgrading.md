@@ -39,9 +39,9 @@ npm install swup@latest
 
 If you're loading swup from a CDN, update the version constraint:
 
-```diff
-- <script src="https://unpkg.com/swup@3"></script>
-+ <script src="https://unpkg.com/swup@4"></script>
+```html
+<script src="https://unpkg.com/swup@3"></script> // [!code --]
+<script src="https://unpkg.com/swup@4"></script> // [!code ++]
 ```
 
 Repeat this process for any of the plugins you are using.
@@ -61,14 +61,14 @@ replace the internal default handler completely. See [Hooks](/hooks/) for detail
 
 All hook-related functions now live on the `hooks` instance of swup:
 
-```diff
--  swup.on('pageView', () => {})
-+  swup.hooks.on('page:view', () => {})
+```js
+swup.on('pageView', () => {}) // [!code --]
+swup.hooks.on('page:view', () => {}) // [!code ++]
 ```
 
-```diff
--  swup.off('pageView', handler)
-+  swup.hooks.off('page:view', handler)
+```js
+swup.off('pageView', handler) // [!code --]
+swup.hooks.off('page:view', handler) // [!code ++]
 ```
 
 ### Hook names
@@ -91,25 +91,25 @@ Some hooks were removed entirely:
 The old `willReplaceContent` and `contentReplaced` events are superseded by a single `content:replace`
 hook. Since swup can now register handlers to run _before_ a specific hook, it serves both use cases:
 
-```diff
+```js
 // Run right before the content is replaced
--  swup.on('willReplaceContent', () => {})
-+  swup.hooks.before('content:replace', () => {})
+swup.on('willReplaceContent', () => {}) // [!code --]
+swup.hooks.before('content:replace', () => {}) // [!code ++]
 ```
 
-```diff
+```js
 // Run directly after the content was replaced
--  swup.on('contentReplaced', () => {})
-+  swup.hooks.on('content:replace', () => {})
+swup.on('contentReplaced', () => {}) // [!code --]
+swup.hooks.on('content:replace', () => {}) // [!code ++]
 ```
 
 The `pageRetrievedFromCache` event has been removed. There is now only a single `page:load` hook
 that fires whenever a page was loaded. Check its boolean `cache` parameter to know if the page was
 loaded from cache or not.
 
-```diff
-- swup.on('pageRetrievedFromCache', () => {});
-+ swup.hooks.on('page:load', (context, { page, cache }) => { /* cache is true or false */ });
+```js
+swup.on('pageRetrievedFromCache', () => {}); // [!code --]
+swup.hooks.on('page:load', (context, { page, cache }) => { /* cache is true or false */ }); // [!code ++]
 ```
 
 ## Context object
@@ -133,24 +133,42 @@ swup.hooks.on('visit:start', (context) => {
 
 The `context` object replaces the `transition` object of swup 3.
 
-```diff
-- swup.on('transitionStart', () => {
--   console.log('Visit to', swup.transition.to);
--   console.log('Animation name', swup.transition.custom);
-- });
-+ swup.hooks.on('visit:start', (context) => {
-+   console.log('Visit to', context.to.url);
-+   console.log('Animation name', context.animation.name);
-+ });
+```js
+swup.on('transitionStart', () => { // [!code --]
+  console.log('Visit to', swup.transition.to); // [!code --]
+  console.log('Animation name', swup.transition.custom); // [!code --]
+}); // [!code --]
+swup.hooks.on('visit:start', (context) => { // [!code ++]
+  console.log('Visit to', context.to.url); // [!code ++]
+  console.log('Animation name', context.animation.name); // [!code ++]
+}); // [!code ++]
+```
+
+## Cache API
+
+The cache has been simplified. It no longer requires passing in the title,
+containers, or body class of the page. Only the URL and HTML response are required. Please review
+the [Cache](/api/cache/) docs if you access it directly in your code.
+
+```js
+swup.cache.cacheUrl({ // [!code --]
+  url: '/about', // [!code --]
+  title: 'About', // [!code --]
+  blocks: ['<div id="swup"></div>'], // [!code --]
+  originalContent: '<html>...</html>', // [!code --]
+  pageClass: 'about', // [!code --]
+  responseURL: '/team' // [!code --]
+}); // [!code --]
+swup.cache.set('/about', { url: '/about', html: '<html>...</html>' }); // [!code ++]
 ```
 
 ## Visit method
 
 The method `swup.loadPage({ url })` has been renamed to `swup.visit(url)` for better clarity.
 
-```diff
-- swup.loadPage({ url: '/about' });
-+ swup.visit('/about');
+```js
+swup.loadPage({ url: '/about' }); // [!code --]
+swup.visit('/about'); // [!code ++]
 ```
 
 ## Custom animation attribute
@@ -158,9 +176,9 @@ The method `swup.loadPage({ url })` has been renamed to `swup.visit(url)` for be
 To improve clarity around naming, the attribute for choosing a custom animation is now properly called
 `data-swup-animation`.
 
-```diff
--  <a href="/about/" data-swup-transition="slide">About</a>
-+  <a href="/about/" data-swup-animation="slide">About</a>
+```html
+<a href="/about/" data-swup-transition="slide">About</a> // [!code --]
+<a href="/about/" data-swup-animation="slide">About</a> // [!code ++]
 ```
 
 ## Unique container selectors
@@ -169,17 +187,17 @@ Swup 4 will only match and replace a single element for each container selector.
 selector would match as many elements as found on the page. We recommend only using id attributes or
 other unique identifiers for container selectors.
 
-```diff
--  <div class="section">Navigation</div>
--  <div class="section">Content</div>
-+  <div id="nav" class="section">Navigation</div>
-+  <div id="content" class="section">Content</div>
+```html
+<div class="section">Navigation</div> // [!code --]
+<div class="section">Content</div> // [!code --]
+<div id="nav" class="section">Navigation</div> // [!code ++]
+<div id="content" class="section">Content</div> // [!code ++]
 ```
 
-```diff
+```js
 const swup = new Swup({
--  containers: ['.section']
-+  containers: ['#nav', '#content']
+  containers: ['.section'] // [!code --]
+  containers: ['#nav', '#content'] // [!code ++]
 })
 ```
 
@@ -205,9 +223,9 @@ the [Cache](/api/cache/) docs if you access it directly in your code.
 
 Swup 4 will no longer add `[data-swup]` attributes to containers.
 
-```diff
--  <div id="swup" class="transition-page" data-swup="0"></div>
-+  <div id="swup" class="transition-page"></div>
+```html
+<div id="swup" class="transition-page" data-swup="0"></div> // [!code --]
+<div id="swup" class="transition-page"></div> // [!code ++]
 ```
 
 ## Custom payloads
@@ -218,16 +236,16 @@ directly. This change was done to drastically simplify library complexity and al
 for other more common use cases like dynamically setting content containers. If you require custom
 payloads, we recommend sticking with swup 3.
 
-```diff
+```js
 const swup = new Swup({
--  plugins: [new SwupCustomPayloadPlugin()]
-+  // no longer supported
+  plugins: [new SwupCustomPayloadPlugin()] // [!code --]
+  // no longer supported // [!code ++]
 });
 ```
 
-```diff
--  swup.getPageData = (req) => JSON.parse(req.textContent);
-+  // no longer supported
+```js
+swup.getPageData = (req) => JSON.parse(req.textContent); // [!code --]
+// no longer supported // [!code ++]
 ```
 
 ## Browser support
@@ -238,10 +256,10 @@ tables for [transitions](https://caniuse.com/?search=transition) and
 [animations](https://caniuse.com/?search=animation). In case you need to support Safari 8 or lower,
 you might want to stick with swup 3.
 
-```diff
+```css
 .transition-page {
--  -webkit-transition: opacity 200ms;
-+  transition: opacity 200ms;
+  -webkit-transition: opacity 200ms; // [!code --]
+  transition: opacity 200ms; // [!code ++]
 }
 ```
 
@@ -251,36 +269,36 @@ you might want to stick with swup 3.
 
 As mentioned above, switch from events to hooks:
 
-```diff
--  this.swup.on('willReplaceContent', () => {})
-+  this.swup.hooks.before('content:replace', () => {})
+```js
+this.swup.on('willReplaceContent', () => {}); // [!code --]
+this.swup.hooks.before('content:replace', () => {}); // [!code ++]
 ```
 
 Creating custom hooks has changed:
 
-```diff
-- this.swup._handlers.formSubmit = [];
-+ this.swup.hooks.create('form:submit');
+```js
+this.swup._handlers.formSubmit = []; // [!code --]
+this.swup.hooks.create('form:submit'); // [!code ++]
 ```
 
 As has triggering a hook:
 
-```diff
-- this.swup.triggerEvent('formSubmit');
-+ this.swup.hooks.trigger('form:submit');
+```js
+this.swup.triggerEvent('formSubmit'); // [!code --]
+this.swup.hooks.trigger('form:submit'); // [!code ++]
 ```
 
 If you need wait for all handlers to finish before continuing, `await` the trigger call:
 
-```diff
-- this.swup.triggerEvent('formSubmit');
-+ await this.swup.hooks.trigger('form:submit');
+```js
+this.swup.triggerEvent('formSubmit'); // [!code --]
+await this.swup.hooks.trigger('form:submit'); // [!code ++]
 ```
 
 If you need to replace swup's internal handler for a custom implementation, don't replace the
 instance method. Instead, specify that your hook handler should replace the internal one.
 
-```diff
-- this.swup.replaceContent = () => { /* custom implementation */ };
-+ this.swup.hooks.replace('content:replace', () => { /* custom implementation */ });
+```js
+this.swup.replaceContent = () => { /* custom implementation */ }; // [!code --]
+this.swup.hooks.replace('content:replace', () => { /* custom implementation */ }); // [!code ++]
 ```
