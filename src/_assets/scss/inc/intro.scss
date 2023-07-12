@@ -9,9 +9,6 @@
 	@at-root .light & {
 		--color: var(--swup-blue);
 	}
-	@at-root .dark & {
-		// --color: var(--swup-green);
-	}
 	color: var(--color);
 }
 
@@ -58,8 +55,8 @@
 	font-weight: 500;
 	line-height: 1.3;
 	@include bp(m) {
-		font-size: var(--font-size-fluid-2);
-		margin-block: var(--gap);
+		font-size: 1.6rem;
+		margin-block: calc(var(--gap) * 1.25);
 	}
 }
 
