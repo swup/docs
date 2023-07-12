@@ -4,7 +4,8 @@ const markdownItAttrs = require('markdown-it-attrs');
 const slugify = require('@sindresorhus/slugify');
 const tableOfContents = require('eleventy-plugin-toc');
 const { execSync } = require('child_process');
-const Shiki = require('markdown-it-shiki').default;
+// const Shiki = require('markdown-it-shiki').default;
+const Shiki = require('./lib/packages/markdown-it-shiki-extra/index').default;
 const EleventyFetch = require('@11ty/eleventy-fetch');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const feather = require('feather-icons');
@@ -15,6 +16,7 @@ const customMarkdownIt = markdownIt({
 	breaks: false,
 	linkify: true
 });
+
 /**
  * Anchors for headings lower then H1 (H2, H3, ...)
  * @see https://github.com/valeriangalliat/markdown-it-anchor
@@ -30,7 +32,11 @@ customMarkdownIt.use(markdownItAttrs);
  * @see https://github.com/antfu/markdown-it-shiki
  */
 customMarkdownIt.use(Shiki, {
-	theme: 'github-dark',
+	// theme: 'github-dark',
+	theme: {
+		dark: 'github-dark',
+		light: 'github-light'
+	},
 	highlightLines: true
 });
 customMarkdownIt.use(MarkdownItCodeEnhancements);
