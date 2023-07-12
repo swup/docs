@@ -57,7 +57,7 @@ swup.hooks.on('fetch:request', () => {}, { replace: true });
 #### priority
 
 Influence the order in which this handler is run in relation to other handlers for the same hook,
-regardless of order of registration. The default priority is `0`: negative values make the handler
+regardless of order of registration. The default priority is `0` — negative values make the handler
 execute earlier, positive values make it execute later.
 
 ```javascript
@@ -70,7 +70,7 @@ swup.hooks.on('visit:start', () => {}, { priority: 100 });
 
 #### Shortcuts
 
-The are shortcuts available for common handler options:
+There are shortcuts available for common handler options:
 
 ```javascript
 swup.hooks.once('page:view', () => {}); // once: true
