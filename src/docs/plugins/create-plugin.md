@@ -62,19 +62,19 @@ You might need to create and trigger your own new hooks to implement additional 
 Create a new hook in `mount`:
 
 ```javascript
-this.swup.hooks.create('submitForm');
+this.swup.hooks.create('form:submit');
 ```
 
 Trigger the hook whenever makes sense:
 
 ```javascript
-this.swup.hooks.trigger('submitForm');
+this.swup.hooks.trigger('form:submit');
 ```
 
 Pass in arguments to hand them along to any registered handlers.
 
 ```javascript
-this.swup.hooks.trigger('submitForm', { formData: 123 });
+this.swup.hooks.trigger('form:submit', { formData: 123 });
 ```
 
 ### Making custom hooks replaceable
@@ -87,7 +87,7 @@ In the example below, the default form handler uses `fetch` to submit the form.
 
 ```javascript
 const args = { action: url, data: new FormData() };
-this.swup.hooks.trigger('submitForm', args, (context, { action, data }) => {
+this.swup.hooks.trigger('form:submit', args, (context, { action, data }) => {
   return fetch(action, { body: data }).then(/* */);
 });
 ```
@@ -96,7 +96,7 @@ Consumers can now replace the default handler with a custom handler. In this exa
 using axios to submit the form instead.
 
 ```javascript
-swup.hooks.replace('submitForm', (context, { action, data }) => {
+swup.hooks.replace('form:submit', (context, { action, data }) => {
   return axios.get(action, { params: data }).then(/* */);
 });
 ```
