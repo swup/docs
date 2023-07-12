@@ -201,24 +201,6 @@ const swup = new Swup({
 })
 ```
 
-## Cache API
-
-The cache has been simplified. It no longer requires passing in the title,
-containers, or body class of the page. Only the URL and HTML response are required. Please review
-the [Cache](/api/cache/) docs if you access it directly in your code.
-
-```diff
-- swup.cache.cacheUrl({
--   url: '/about',
--   title: 'About',
--   blocks: ['<div id="swup"></div>'],
--   originalContent: '<html>...</html>',
--   pageClass: 'about',
--   responseURL: '/team'
-- });
-+ swup.cache.set('/about', { url: '/about', html: '<html>...</html>' });
-```
-
 ## Container attributes
 
 Swup 4 will no longer add `[data-swup]` attributes to containers.
