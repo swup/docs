@@ -178,7 +178,7 @@
 * Code Blocks
 */
 .code-block {
-	--code-block-bg: var(--color-transparent-0);
+	--code-block-bg: rgb(0 0 0 / 0.05);
 	--code-block-fade: transparent;
 	--code-block-text: var(--color-dimmed);
 	position: relative;
