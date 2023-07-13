@@ -127,9 +127,9 @@ swup.hooks.on('visit:start', (context) => {
 
 ### Identify history visits
 
-Check if the current visit was triggered by the backward/forward button of the browser. The
+Check if the current visit was triggered by the back/forward button of the browser. The
 `popstate` key is a boolean indicating a history visit. The `direction` key holds information
-about the direction of travel: `forward`, `backward`, or undefined.
+about the direction of travel: `forwards`, `backwards`, or `undefined`.
 
 ```javascript
 swup.hooks.on('visit:start', (context) => {
