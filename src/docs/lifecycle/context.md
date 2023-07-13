@@ -45,8 +45,9 @@ This is an example context object for a visit from `/home` to `/about#footer`.
     event: /* MouseEvent */
   },
   history: {
+    action: 'push',
     popstate: false,
-    action: 'push'
+    direction: undefined
   },
   scroll: {
     reset: true,
@@ -124,14 +125,16 @@ swup.hooks.on('visit:start', (context) => {
 });
 ```
 
-### Identify history visit
+### Identify history visits
 
-Check if the current visit was triggered by the backward/forward button of the browser.
+Check if the current visit was triggered by the backward/forward button of the browser. The
+`popstate` key is a boolean indicating a history visit. The `direction` key holds information
+about the direction of travel: `forward`, `backward`, or undefined.
 
 ```javascript
 swup.hooks.on('visit:start', (context) => {
   if (context.history.popstate) {
-    console.log('History visit');
+    console.log('History visit', context.history.direction);
   }
 });
 ```
