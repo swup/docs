@@ -20,8 +20,8 @@ more examples, we also recommend looking for more
 
 > All it takes is a single library called Swup and a few CSS styles and your entire web application will have smooth animations.
 
-<div class="iframe">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/eVwH3VL1EsA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-embed">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/eVwH3VL1EsA" loading="lazy" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 © Web Dev Simplified
@@ -30,8 +30,8 @@ more examples, we also recommend looking for more
 
 > Swup gives you the ability to easily integrate page transition animations and provides you with a lot of control and flexibility by defining the animations yourself in CSS.
 
-<div class="iframe">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/mWeYMyN5-oo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-embed">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/mWeYMyN5-oo" loading="lazy" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 © DesignCourse
@@ -40,8 +40,8 @@ more examples, we also recommend looking for more
 
 > Content in Spanish
 
-<div class="iframe">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/mJIQ9621VUs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-embed">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/mJIQ9621VUs" loading="lazy" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 © AnimatiCSS
@@ -50,8 +50,8 @@ more examples, we also recommend looking for more
 
 > Content in French
 
-<div class="iframe">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/sNCgfwQJdTM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-embed">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/sNCgfwQJdTM" loading="lazy" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 © Grafikart.fr
@@ -60,8 +60,8 @@ more examples, we also recommend looking for more
 
 > Content in Italian
 
-<div class="iframe">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/AuBgXR1OC94" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-embed">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/AuBgXR1OC94" loading="lazy" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 © Marchetti Design
@@ -70,8 +70,8 @@ more examples, we also recommend looking for more
 
 > Content in German
 
-<div class="iframe">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/uWitjqeGfh8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="video-embed">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/uWitjqeGfh8" loading="lazy" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </div>
 
 © Programmieren mit Mario
