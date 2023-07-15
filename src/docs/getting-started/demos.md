@@ -18,27 +18,6 @@ features and options.
 Click the <img src="https://replit.com/badge?theme=dark&variant=small&caption=Try%20with%20Replit"> button
 of each demo to see the code and fork it for experimenting yourself.
 
-<!-- <div class="demo">
-  <div class="fake-browser">
-    <div class="fake-browser-header">
-      <div class="action-btns">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-      <div class="address-bar">
-        swup-demo-basic.philippdaun.repl.co
-      </div>
-      <div class="setting-more">
-        <span class="more-btn"></span>
-      </div>
-    </div>
-    <div class="fake-window-body">
-      <iframe src="https://codepen.io" frameborder="0"></iframe>
-    </div>
-  </div>
-</div> -->
-
 ## Basic animation
 
 Default swup installation with two containers and a fade animation between pages.
