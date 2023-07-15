@@ -20,9 +20,7 @@ more examples, we also recommend looking for more
 
 > All it takes is a single library called Swup and a few CSS styles and your entire web application will have smooth animations.
 
-<div class="video-embed">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/eVwH3VL1EsA" loading="lazy" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+@[youtube](http://youtu.be/eVwH3VL1EsA)
 
 © Web Dev Simplified
 
@@ -30,9 +28,7 @@ more examples, we also recommend looking for more
 
 > Swup gives you the ability to easily integrate page transition animations and provides you with a lot of control and flexibility by defining the animations yourself in CSS.
 
-<div class="video-embed">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/mWeYMyN5-oo" loading="lazy" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+@[youtube](http://youtu.be/mWeYMyN5-oo)
 
 © DesignCourse
 
@@ -40,9 +36,7 @@ more examples, we also recommend looking for more
 
 > Content in Spanish
 
-<div class="video-embed">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/mJIQ9621VUs" loading="lazy" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+@[youtube](http://youtu.be/mJIQ9621VUs)
 
 © AnimatiCSS
 
@@ -50,9 +44,7 @@ more examples, we also recommend looking for more
 
 > Content in French
 
-<div class="video-embed">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/sNCgfwQJdTM" loading="lazy" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+@[youtube](http://youtu.be/sNCgfwQJdTM)
 
 © Grafikart.fr
 
@@ -60,9 +52,7 @@ more examples, we also recommend looking for more
 
 > Content in Italian
 
-<div class="video-embed">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/AuBgXR1OC94" loading="lazy" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+@[youtube](http://youtu.be/AuBgXR1OC94)
 
 © Marchetti Design
 
@@ -70,8 +60,6 @@ more examples, we also recommend looking for more
 
 > Content in German
 
-<div class="video-embed">
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/uWitjqeGfh8" loading="lazy" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</div>
+@[youtube](http://youtu.be/uWitjqeGfh8)
 
 © Programmieren mit Mario

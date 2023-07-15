@@ -1,6 +1,7 @@
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
 const markdownItAttrs = require('markdown-it-attrs');
+const markdownItVideo = require('markdown-it-video');
 const slugify = require('@sindresorhus/slugify');
 const tableOfContents = require('eleventy-plugin-toc');
 const { execSync } = require('child_process');
@@ -10,7 +11,8 @@ const EleventyFetch = require('@11ty/eleventy-fetch');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const feather = require('feather-icons');
 const MarkdownItCodeEnhancements = require('./lib/markdown-it-code-enhancements');
-const { prepareTablesWithAnchorLinks, prepareInfoBlocks } = require('./lib/eleventy-transforms')
+const { prepareTablesWithAnchorLinks, prepareInfoBlocks } = require('./lib/eleventy-transforms');
+
 const customMarkdownIt = markdownIt({
 	html: true,
 	breaks: false,
@@ -26,7 +28,19 @@ customMarkdownIt.use(markdownItAnchor, {
 	level: 2,
 	slugify: (s) => slugify(s)
 });
+
+/**
+ * Customize attrs via {attr=value} syntax, e.g. for heading IDs
+ * @see https://github.com/arve0/markdown-it-attrs
+ */
 customMarkdownIt.use(markdownItAttrs);
+
+/**
+ * Embed external videos as iframes
+ * @see https://github.com/CenterForOpenScience/markdown-it-video
+ */
+customMarkdownIt.use(markdownItVideo);
+
 /**
  * Code Highligting
  * @see https://github.com/antfu/markdown-it-shiki
