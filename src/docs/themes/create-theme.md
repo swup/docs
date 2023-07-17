@@ -31,11 +31,11 @@ The swup instance is automatically assigned to the plugin instance and can be ac
 
 Swup themes automatically set the `animationSelector` option to `[class*="swup-transition-"]` to prevent bugs related to other libraries using the same classes. Use `swup-transition-*` for your theme classes.
 
-### Preprocessors
+### Bundled styles
 
-You can use `.css`/`.styl`/`.scss` files to manage your styles.
+Use `.css` files to manage your styles. Import the styles directly into the JS bundle and
+apply it with `this.applyStyles(css)`;
 
-Unlike plugins, themes need bundling to include CSS files in the bundle. For this reason, the `npm run build` command is used for building both the npm version (/lib) and the standalone version (/dist).
 
 ### Helpers
 
