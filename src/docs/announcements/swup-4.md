@@ -32,6 +32,7 @@ Make your site feel like a snappy single-page app — without any of the complex
 - [Cache pruning strategies](#cache-pruning)
 - [Fragment Plugin for dynamic container replacement](#fragment-plugin)
 - [Parallel Plugin for combined in and out animations](#parallel-plugin)
+- [Easier customization of official themes](#themes)
 
 ## Upgrading
 
@@ -194,3 +195,16 @@ stacks and side-by-side slideshows are now much easier to implement. Head over t
 [plugin readme](/plugins/parallel-plugin/) for more information and example code.
 
 <!-- GIF of Parallel Plugin in action -->
+
+## Easier customization of official themes {#themes}
+
+All official [themes](/themes/) have been updated to use CSS custom properties. That should make it
+much easier to customize their built-in animations to fit your website. For example, for overwriting
+the transition duration and the offset of the [slide theme](/themes/slide-theme/):
+
+```css
+body {
+  --swup-slide-theme-translate: 20px;
+  --swup-slide-theme-duration-slide: .2s;
+}
+```
