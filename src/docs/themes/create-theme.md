@@ -36,6 +36,20 @@ Swup themes automatically set the `animationSelector` option to `[class*="swup-t
 Use `.css` files to manage your styles. Import the styles directly into the JS bundle and
 apply it with `this.applyStyles(css)`;
 
+### Customization
+
+The recommended way to make themes configurable is by using CSS custom properties that can be
+overridden by the users of the theme. Namespace them with the theme name to avoid collisions.
+
+```css
+html {
+  --swup-custom-theme-duration: .6s;
+  --swup-custom-theme-color: red;
+}
+```
+
+Another way of configuring themes is by passing in an options object into the constructor, as is
+usual for plugins.
 
 ### Helpers
 
