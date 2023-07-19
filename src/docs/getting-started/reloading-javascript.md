@@ -1,10 +1,7 @@
 ---
 layout: default
 title: Reloading Scripts
-eleventyNavigation:
-  key: Reloading Scripts
-  parent: Getting Started
-  order: 8
+eleventyNavigation: false
 description: How to trigger custom code when a new page is loaded.
 permalink: /getting-started/reloading-javascript/
 ---
