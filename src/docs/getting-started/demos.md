@@ -56,8 +56,8 @@ Swup Demo: Mulitple animations
 
 ## Slideshow animation
 
-Animate between pages as a horizontal slideshow. Uses the [Parallel Plugin](/plugins/parallel-plugin/)
-to show both the old and the new page at the same time.
+Animate between pages as a horizontal slideshow.  
+Uses the [Parallel Plugin](/plugins/parallel-plugin/) to show both pages at the same time.
 
 ```repl
 https://swup-demo-slideshow.philippdaun.repl.co
@@ -66,8 +66,8 @@ Swup Demo: Slideshow
 
 ## Reveal animation
 
-Reveal the next page using masks and gradients. Uses the [Parallel Plugin](/plugins/parallel-plugin/)
-to show both the old and the new page at the same time.
+Reveal the next page using masks and gradients.  
+Uses the [Parallel Plugin](/plugins/parallel-plugin/) to show both pages at the same time.
 
 ```repl
 https://swup-demo-reveal.philippdaun.repl.co
