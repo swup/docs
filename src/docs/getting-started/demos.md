@@ -64,6 +64,16 @@ https://swup-demo-slideshow.philippdaun.repl.co
 Swup Demo: Slideshow
 ```
 
+## Reveal animation
+
+Reveal the next page using masks and gradients. Uses the [Parallel Plugin](/plugins/parallel-plugin/)
+to show both the old and the new page at the same time.
+
+```repl
+https://swup-demo-reveal.philippdaun.repl.co
+Swup Demo: Reveal
+```
+
 ## Animated forms
 
 Animate form submissions using the [Forms Plugin](/plugins/forms-plugin/).
