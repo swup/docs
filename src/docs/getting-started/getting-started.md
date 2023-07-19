@@ -108,7 +108,7 @@ Get started quickly with one of three official themes: [fade](/themes/fade-theme
 
 ## Having trouble?
 
-If you're having trouble implementing swup, check out [Common Issues](/other/common-issues/), look
+If you're having trouble implementing swup, check out [Common Issues](/getting-started/common-issues/), look
 at [closed issues](https://github.com/swup/swup/issues?q=is%3Aissue+is%3Aclosed), or create a
 [new discussion](https://github.com/swup/swup/discussions/new).
 

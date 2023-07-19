@@ -3,27 +3,36 @@ layout: default
 title: Common Issues
 eleventyNavigation:
   key: Common Issues
-  parent: Other
-  order: 2
+  parent: Getting Started
+  order: 8
 description: Description of common issue or caveats people encounter
-permalink: /other/common-issues/
+permalink: /getting-started/common-issues/
 ---
 
 # Common Issues
 
-This is a compilation of challenges and possible solutions when integrating or extending swup.
+This is a compilation of challenges and suggested solutions when integrating or extending swup.
 
-## The stylesheets of the next page are not loaded
+## Scripts on the next page are not executed
+
+Swup doesn't insert new script tags by default. To run code after a page visit, you have a few
+options that are explained in the section on [Reloading Scripts](/getting-started/reloading-javascript/).
+
+- [Trigger custom code](/getting-started/reloading-javascript/#triggering-custom-code) using hooks
+- Use the [Head Plugin](/plugins/head-plugin/) to load new script files into the current head element
+- Use the [Scripts Plugin](/plugins/scripts-plugin/) to re-evaluate new scripts in either head or body
+
+## Stylesheets of the next page are not loaded
 
 Swup doesn't automatically update the contents of the `head` tag. Any stylesheets not included in
 the current page's `head` will not be loaded. The easiest solution is to use a single stylesheet
 for the whole website.
 
 If your site does require modular stylesheets per section or template, use the
-[head-plugin](/plugins/head-plugin/) to add the new stylesheets and configure its `awaitAssets`
+[Head Plugin](/plugins/head-plugin/) to add the new stylesheets and configure its `awaitAssets`
 option to also wait for those stylesheets to finish loading before animating in the new page.
 
-## The current and next page can not be animated at the same time
+## Current and next page are not visible at the same time
 
 Out of the box, swup will completely hide the previous page, replace the content and only then
 show the next page. The old and new containers are never in the DOM at the same time.
