@@ -188,7 +188,7 @@ document.addEventListener('swup:page:view', ({ detail: { context } }) => {
 
 ## Custom hooks
 
-Plugin authors might want to create and trigger new hooks to implement additional functionality.
+Plugin authors might want to create new hooks to implement additional functionality.
 
 See the [Custom Hooks](/plugins/create-plugin/#custom-hooks) section of the Create a Plugin page
 for details.

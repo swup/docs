@@ -57,7 +57,7 @@ this.swup.hooks.replace('animation:await', (context, args, originalHandler) => {
 
 ### Custom hooks
 
-You might need to create and trigger your own new hooks to implement additional functionality.
+You might need to create your own new hooks to implement additional functionality.
 
 Create a new hook in `mount`:
 
@@ -65,21 +65,21 @@ Create a new hook in `mount`:
 this.swup.hooks.create('form:submit');
 ```
 
-Trigger the hook whenever makes sense:
+Call the hook whenever makes sense:
 
 ```javascript
-this.swup.hooks.trigger('form:submit');
+this.swup.hooks.call('form:submit');
 ```
 
 Pass in arguments to hand them along to any registered handlers.
 
 ```javascript
-this.swup.hooks.trigger('form:submit', { formData: 123 });
+this.swup.hooks.call('form:submit', { formData: 123 });
 ```
 
 ### Making custom hooks replaceable
 
-Passing in a default handler when triggering a hook will allow users of your plugin
+Passing in a default handler when calling a hook will allow users of your plugin
 to replace this default handler with a custom implementation. This is an advanced pattern to avoid
 monkeypatching instance methods.
 
@@ -87,7 +87,7 @@ In the example below, the default form handler uses `fetch` to submit the form.
 
 ```javascript
 const args = { action: url, data: new FormData() };
-this.swup.hooks.trigger('form:submit', args, (context, { action, data }) => {
+this.swup.hooks.call('form:submit', args, (context, { action, data }) => {
   return fetch(action, { body: data }).then(/* */);
 });
 ```

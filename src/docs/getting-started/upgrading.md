@@ -267,14 +267,14 @@ As has triggering a hook:
 
 ```js
 this.swup.triggerEvent('formSubmit'); // [!code --]
-this.swup.hooks.trigger('form:submit'); // [!code ++]
+this.swup.hooks.call('form:submit'); // [!code ++]
 ```
 
-If you need wait for all handlers to finish before continuing, `await` the trigger call:
+If you need wait for all handlers to finish before continuing, `await` the call:
 
 ```js
 this.swup.triggerEvent('formSubmit'); // [!code --]
-await this.swup.hooks.trigger('form:submit'); // [!code ++]
+await this.swup.hooks.call('form:submit'); // [!code ++]
 ```
 
 If you need to replace swup's internal handler for a custom implementation, don't replace the
