@@ -46,14 +46,6 @@ Execute the handler before the internal default handler.
 swup.hooks.on('content:replace', () => {}, { before: true });
 ```
 
-#### replace
-
-Replace the internal default handler entirely with a custom function.
-
-```javascript
-swup.hooks.on('fetch:request', () => {}, { replace: true });
-```
-
 #### priority
 
 Influence the order in which this handler is run in relation to other handlers for the same hook,
@@ -75,7 +67,6 @@ There are shortcuts available for common handler options:
 ```javascript
 swup.hooks.once('page:view', () => {}); // once: true
 swup.hooks.before('content:replace', () => {}); // before: true
-swup.hooks.replace('fetch:request', () => {}); // replace: true
 ```
 
 ## Pausing execution

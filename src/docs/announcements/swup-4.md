@@ -78,9 +78,8 @@ const swup = new Swup({ animationScope: 'containers' });
 ### Hook system for easier customization {#hook-system}
 
 Swup 4 comes with a new hook system that allows more customization and replaces the previous events
-implementation. Among other features, handlers can pause transitions by returning a Promise, they
-receive a context object to customize transitions, and they can replace the internal default handler
-completely. See [Hooks](/hooks/) for details and examples.
+implementation. Hook handlers can pause transitions by returning a Promise and they receive a
+context object to customize transitions. See [Hooks](/hooks/) for details and examples.
 
 Pausing execution is as easy as returning a `Promise` or `await`ing a custom function:
 
@@ -91,19 +90,19 @@ swup.hooks.on('visit:start', async () => {
 });
 ```
 
-Hooks can be run once, before the internal handler, or even replace the internal handler entirely:
+Hooks can be run once:
 
 ```javascript
 swup.hooks.once('page:view', () => {
   // Execute on next page view, then remove the handler
 });
+```
 
+Or before the internal handler:
+
+```javascript
 swup.hooks.before('content:replace', () => {
   // Execute before swup replaces the content
-});
-
-swup.hooks.replace('fetch:request', () => {
-  // Execute a custom fetch request instead of swup's internal handler
 });
 ```
 

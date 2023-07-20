@@ -45,12 +45,12 @@ The default handler is passed to the callback as the third parameter, should you
 swup handle this hook based on some condition.
 
 ```javascript
-this.swup.hooks.replace('animation:await', (context, args, originalHandler) => {
+this.swup.hooks.replace('animation:await', (context, args, defaultHandler) => {
   if (context.someCondition) {
     // Detect animation timing ourselves
   } else {
     // Let swup handle animation timing
-    return originalHandler(context, args);
+    return defaultHandler(context, args);
   }
 });
 ```
