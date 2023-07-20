@@ -16,13 +16,13 @@ transition process as well as triggering custom logic at specific points.
 
 ## Registering handlers
 
-You can register hooks on swup's `hooks` registry. All handlers receive the global
-[context object](/context/) as their first argument.
+You can register hooks on swup's `hooks` registry. All handlers receive the [visit object](/visit/)
+with information about the current visit as their first argument.
 
 ```javascript
 // Log to the console on each page view
-swup.hooks.on('page:view', (context) => {
-  console.log('New page loaded:', context.to.url);
+swup.hooks.on('page:view', (visit) => {
+  console.log('New page loaded:', visit.to.url);
 });
 ```
 
@@ -169,11 +169,11 @@ swup.hooks.on('page:view', () => {
 ## DOM events
 
 All hooks are also triggered on the `document` with a `swup:` prefix. They receive the hook name
-and the global context object inside the detail key of the event.
+and the visit object inside the detail key of the event.
 
 ```javascript
-document.addEventListener('swup:page:view', ({ detail: { context } }) => {
-  console.log('Going to', context.to.url);
+document.addEventListener('swup:page:view', ({ detail: { visit } }) => {
+  console.log('Going to', visit.to.url);
 });
 ```
 

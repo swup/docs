@@ -1,35 +1,35 @@
 ---
 layout: default
-title: Context
+title: Visit
 eleventyNavigation:
-  key: Context
+  key: Visit
   parent: Lifecycle
   order: 2
 description:
-permalink: /context/
+permalink: /visit/
 ---
 
-# Context
+# Visit
 
-The global context object contains information about the current page visit: the current and new
+The visit object contains information about the current page visit: the current and new
 URL, the element and event that triggered the visit, as well as details about whether this visit
 should be animated and which containers should be replaced.
 
-By manipulating the context object, you can control how swup will transition to the new page.
+By manipulating the visit object, you can control how swup will navigate to the new page.
 
-## Accessing the context object
+## Accessing the visit object
 
-The context object is available in all hook handlers.
+The visit object is available in all hook handlers.
 
 ```javascript
-swup.hooks.on('page:view', (context) => {
-  console.log('New page: ', context.to.url);
+swup.hooks.on('page:view', (visit) => {
+  console.log('New page: ', visit.to.url);
 });
 ```
 
-## Shape of the context object
+## Shape of the visit object
 
-This is an example context object for a visit from `/home` to `/about#footer`.
+This is an example visit object for a navigation from `/home` to `/about#footer`.
 
 ```javascript
 {
@@ -58,7 +58,7 @@ This is an example context object for a visit from `/home` to `/about#footer`.
 
 ## Use cases
 
-What can we do by manipulating the context object? A few examples are listed below.
+What can we do by manipulating the visit object? A few examples are listed below.
 
 Note that the most convenient place to hook into is on `visit:start` — all the information about the
 current visit is already there, but no requests or animations have started yet.
@@ -68,8 +68,8 @@ current visit is already there, but no requests or animations have started yet.
 The new page will load instantaneously without animations.
 
 ```javascript
-swup.hooks.on('visit:start', (context) => {
-  context.animation.animate = false;
+swup.hooks.on('visit:start', (visit) => {
+  visit.animation.animate = false;
 });
 ```
 
@@ -78,8 +78,8 @@ swup.hooks.on('visit:start', (context) => {
 Set a custom `.to-{name}` class on the html element to allow targeting via CSS.
 
 ```javascript
-swup.hooks.on('visit:start', (context) => {
-  context.animation.name = 'slide';
+swup.hooks.on('visit:start', (visit) => {
+  visit.animation.name = 'slide';
 });
 ```
 
@@ -88,8 +88,8 @@ swup.hooks.on('visit:start', (context) => {
 The current scroll position will be kept after the new page was loaded.
 
 ```javascript
-swup.hooks.on('visit:start', (context) => {
-  context.scroll.reset = false;
+swup.hooks.on('visit:start', (visit) => {
+  visit.scroll.reset = false;
 });
 ```
 
@@ -98,8 +98,8 @@ swup.hooks.on('visit:start', (context) => {
 Change which [content containers](/options/#containers) will be replaced on the current visit.
 
 ```javascript
-swup.hooks.on('visit:start', (context) => {
-  context.containers = ['#sidebar'];
+swup.hooks.on('visit:start', (visit) => {
+  visit.containers = ['#sidebar'];
 });
 ```
 
@@ -109,8 +109,8 @@ Inspect the DOM element that triggered the current visit. Most probably a link e
 if triggered via the API.
 
 ```javascript
-swup.hooks.on('visit:start', (context) => {
-  console.log('Clicked link', context.trigger.el); // HTMLAnchorElement
+swup.hooks.on('visit:start', (visit) => {
+  console.log('Clicked link', visit.trigger.el); // HTMLAnchorElement
 });
 ```
 
@@ -120,8 +120,8 @@ Inspect the DOM event that triggered the current visit. Most probably a click ev
 if triggered via the API.
 
 ```javascript
-swup.hooks.on('visit:start', (context) => {
-  console.log('Click event', context.trigger.event); // MouseEvent
+swup.hooks.on('visit:start', (visit) => {
+  console.log('Click event', visit.trigger.event); // MouseEvent
 });
 ```
 
@@ -132,9 +132,9 @@ Check if the current visit was triggered by the back/forward button of the brows
 about the direction of travel: `forwards`, `backwards`, or `undefined`.
 
 ```javascript
-swup.hooks.on('visit:start', (context) => {
-  if (context.history.popstate) {
-    console.log('History visit', context.history.direction);
+swup.hooks.on('visit:start', (visit) => {
+  if (visit.history.popstate) {
+    console.log('History visit', visit.history.direction);
   }
 });
 ```

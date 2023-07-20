@@ -45,12 +45,12 @@ The default handler is passed to the callback as the third parameter, should you
 swup handle this hook based on some condition.
 
 ```javascript
-this.swup.hooks.replace('animation:await', (context, args, defaultHandler) => {
-  if (context.someCondition) {
+this.swup.hooks.replace('animation:await', (visit, args, defaultHandler) => {
+  if (someCondition) {
     // Detect animation timing ourselves
   } else {
     // Let swup handle animation timing
-    return defaultHandler(context, args);
+    return defaultHandler(visit, args);
   }
 });
 ```
@@ -87,7 +87,7 @@ In the example below, the default form handler uses `fetch` to submit the form.
 
 ```javascript
 const args = { action: url, data: new FormData() };
-this.swup.hooks.call('form:submit', args, (context, { action, data }) => {
+this.swup.hooks.call('form:submit', args, (visit, { action, data }) => {
   return fetch(action, { body: data }).then(/* */);
 });
 ```
@@ -96,7 +96,7 @@ Consumers can now replace the default handler with a custom handler. In this exa
 using axios to submit the form instead.
 
 ```javascript
-swup.hooks.replace('form:submit', (context, { action, data }) => {
+swup.hooks.replace('form:submit', (visit, { action, data }) => {
   return axios.get(action, { params: data }).then(/* */);
 });
 ```

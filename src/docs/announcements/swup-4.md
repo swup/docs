@@ -28,10 +28,10 @@ Make your site feel like a snappy single-page app — without any of the complex
 - [Built-in scroll support](#scroll-support)
 - [Local animation scope](#local-animation-scope)
 - [Hook system for easier customization](#hook-system)
-- [Global context object in all callbacks](#global-context-object)
+- [Visit info in all callbacks](#visit-object)
 - [Cache pruning strategies](#cache-pruning)
 - [Fragment Plugin for dynamic container replacement](#fragment-plugin)
-- [Parallel Plugin for combined in and out animations](#parallel-plugin)
+- [Parallel Plugin for combined in/out animation](#parallel-plugin)
 - [Easier customization of official themes](#themes)
 
 ## Upgrading
@@ -79,7 +79,7 @@ const swup = new Swup({ animationScope: 'containers' });
 
 Swup 4 comes with a new hook system that allows more customization and replaces the previous events
 implementation. Hook handlers can pause transitions by returning a Promise and they receive a
-context object to customize transitions. See [Hooks](/hooks/) for details and examples.
+visit object to customize transitions. See [Hooks](/hooks/) for details and examples.
 
 Pausing execution is as easy as returning a `Promise` or `await`ing a custom function:
 
@@ -106,51 +106,51 @@ swup.hooks.before('content:replace', () => {
 });
 ```
 
-### Global context object
+### Visit object {#visit-object}
 
-Along with a new hook system, Swup 4 introduces a global context object that holds information
+Along with a new hook system, Swup 4 introduces a visit object that holds information
 about the current page visit, such as the previous and next URL, the containers to replace, the
 element and event that triggered the visit, etc. It's available to all hook handlers as their
-first argument. By manipulating the context object, you can control how swup will transition to
-the new page. See [Context](/context/) for details and examples.
+first argument. By manipulating the visit object, you can control how swup will transition to
+the new page. See [Visit](/visit/) for details and examples.
 
 Access the current and next url from a hook:
 
 ```javascript
-swup.hooks.on('visit:start', (context) => {
-  console.log('Going from', context.to.url, 'to', context.from.url);
+swup.hooks.on('visit:start', (visit) => {
+  console.log('Going from', visit.to.url, 'to', visit.from.url);
 });
 ```
 
 Access the link element and click event that triggered the current visit:
 
 ```javascript
-swup.hooks.on('visit:start', (context) => {
-  console.log('Link', context.trigger.el, 'clicked in event', context.trigger.event);
+swup.hooks.on('visit:start', (visit) => {
+  console.log('Link', visit.trigger.el, 'clicked in event', visit.trigger.event);
 });
 ```
 
 Disable animations on the current visit:
 
 ```js
-swup.hooks.on('visit:start', (context) => {
-  context.animation.animate = false;
+swup.hooks.on('visit:start', (visit) => {
+  visit.animation.animate = false;
 });
 ```
 
 Change which containers will be replaced on the current visit:
 
 ```javascript
-swup.hooks.on('visit:start', (context) => {
-  context.containers = ['#sidebar'];
+swup.hooks.on('visit:start', (visit) => {
+  visit.containers = ['#sidebar'];
 });
 ```
 
 Check if the current visit was triggered by the backward/forward button of the browser.
 
 ```javascript
-swup.hooks.before('visit:start', (context) => {
-  if (context.history.popstate) {
+swup.hooks.before('visit:start', (visit) => {
+  if (visit.history.popstate) {
     console.log('History visit');
   }
 });

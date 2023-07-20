@@ -18,7 +18,7 @@ If you're upgrading from swup 2, see [Upgrading from swup 2 to 3](/getting-s
 ## New features
 
 Swup 4 introduces new features to become more customizable and enable advanced use cases. Some of the
-highlights are a new hook system, a global context object, and built-in scroll support.
+highlights are a new hook system, a visit object available in hook handlers, and built-in scroll support.
 See the [release announcement](/announcements/swup-4/) for a full list of everything that's new.
 
 ## Breaking changes
@@ -109,38 +109,38 @@ loaded from cache or not.
 
 ```js
 swup.on('pageRetrievedFromCache', () => {}); // [!code --]
-swup.hooks.on('page:load', (context, { page, cache }) => { /* cache is true or false */ }); // [!code ++]
+swup.hooks.on('page:load', (_, { page, cache }) => { /* cache is true or false */ }); // [!code ++]
 ```
 
-## Context object
+## Visit object
 
-Along with a new hook system, Swup 4 introduces a global [context object](/context/) that holds
+Along with a new hook system, Swup 4 introduces a [visit object](/visit/) that holds
 information about the current page visit, like the previous and next URL or the element and event
-that triggered the visit. See [Context](/context/) for details and more examples.
+that triggered the visit. See [Visit](/visit/) for details and more examples.
 
 ```javascript
 // Get the next URL and the link element that was clicked
-swup.hooks.on('page:view', (context) => {
-  console.log('New page: ', context.to.url);
-  console.log('Triggered by: ', context.trigger.el);
+swup.hooks.on('page:view', (visit) => {
+  console.log('New page: ', visit.to.url);
+  console.log('Triggered by: ', visit.trigger.el);
 });
 
-// Disable animations on the next visit
-swup.hooks.on('visit:start', (context) => {
-  context.animation.animate = false;
+// Disable animations on the upcoming visit
+swup.hooks.on('visit:start', (visit) => {
+  visit.animation.animate = false;
 });
 ```
 
-The `context` object replaces the `transition` object of swup 3.
+The `visit` object replaces the `transition` object of swup 3.
 
 ```js
 swup.on('transitionStart', () => { // [!code --]
   console.log('Visit to', swup.transition.to); // [!code --]
   console.log('Animation name', swup.transition.custom); // [!code --]
 }); // [!code --]
-swup.hooks.on('visit:start', (context) => { // [!code ++]
-  console.log('Visit to', context.to.url); // [!code ++]
-  console.log('Animation name', context.animation.name); // [!code ++]
+swup.hooks.on('visit:start', (visit) => { // [!code ++]
+  console.log('Visit to', visit.to.url); // [!code ++]
+  console.log('Animation name', visit.animation.name); // [!code ++]
 }); // [!code ++]
 ```
 
@@ -162,13 +162,13 @@ swup.cache.cacheUrl({ // [!code --]
 swup.cache.set('/about', { url: '/about', html: '<html>...</html>' }); // [!code ++]
 ```
 
-## Visit method
+## Navigation method
 
-The method `swup.loadPage({ url })` has been renamed to `swup.visit(url)` for better clarity.
+The method `swup.loadPage({ url })` has been renamed to `swup.navigate(url)` for clarity.
 
 ```js
 swup.loadPage({ url: '/about' }); // [!code --]
-swup.visit('/about'); // [!code ++]
+swup.navigate('/about'); // [!code ++]
 ```
 
 ## Custom animation attribute
