@@ -124,10 +124,11 @@ The following hooks are exposed by swup and can be accessed as such:
 |        Hook name        |                                         Description                                         |
 | ----------------------- | ------------------------------------------------------------------------------------------- |
 | **animation:out:start** | out-animation of current content begins: `.is-animating` is added to html                   |
+| **animation:out:await** | swup waits for CSS animations on the page before replacing the content                      |
 | **animation:out:end**   | out-animation of current content finishes, content not yet replaced                         |
 | **animation:in:start**  | in-animation of new content begins: `.is-animating` is removed from html tag                |
-| **animation:in:end**    | in-animation of new content finishes, content was replaced                                  |
-| **animation:await**     | swup waits for CSS animations on the page, either in or out                                 |
+| **animation:in:await**  | swup waits for CSS animations on the page before finishing the visit                        |
+| **animation:in:end**    | in-animation of new content finishes                                                        |
 | **animation:skip**      | animations are skipped and page will load instantaneously: e.g. on history navigation       |
 | **cache:set**           | a page is saved to the cache                                                                |
 | **cache:clear**         | the cache is cleared completely                                                             |
