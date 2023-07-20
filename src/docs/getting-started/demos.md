@@ -23,7 +23,7 @@ of each demo to see the code and fork it for experimenting yourself.
 Default swup installation with two containers and a fade animation between pages.
 
 ```repl
-https://swup-demo-basic.philippdaun.repl.co
+https://swup-demo-basic.swupjs.repl.co
 Swup Demo: Basic
 ```
 
@@ -32,7 +32,7 @@ Swup Demo: Basic
 Slide pages into view horizontally.
 
 ```repl
-https://swup-demo-slide.philippdaun.repl.co
+https://swup-demo-slide.swupjs.repl.co
 Swup Demo: Slide
 ```
 
@@ -41,7 +41,7 @@ Swup Demo: Slide
 Cover content while loading the new page.
 
 ```repl
-https://swup-demo-overlay.philippdaun.repl.co
+https://swup-demo-overlay.swupjs.repl.co
 Swup Demo: Overlay
 ```
 
@@ -50,27 +50,27 @@ Swup Demo: Overlay
 Use swup's animation classes for other elements than the main content containers.
 
 ```repl
-https://swup-demo-multiple.philippdaun.repl.co
+https://swup-demo-multiple.swupjs.repl.co
 Swup Demo: Mulitple animations
 ```
 
 ## Slideshow animation
 
-Animate between pages as a horizontal slideshow.  
+Animate between pages as a horizontal slideshow.
 Uses the [Parallel Plugin](/plugins/parallel-plugin/) to show both pages at the same time.
 
 ```repl
-https://swup-demo-slideshow.philippdaun.repl.co
+https://swup-demo-slideshow.swupjs.repl.co
 Swup Demo: Slideshow
 ```
 
 ## Reveal animation
 
-Reveal the next page using masks and gradients.  
+Reveal the next page using masks and gradients.
 Uses the [Parallel Plugin](/plugins/parallel-plugin/) to show both pages at the same time.
 
 ```repl
-https://swup-demo-reveal.philippdaun.repl.co
+https://swup-demo-reveal.swupjs.repl.co
 Swup Demo: Reveal
 ```
 
@@ -79,6 +79,6 @@ Swup Demo: Reveal
 Animate form submissions using the [Forms Plugin](/plugins/forms-plugin/).
 
 ```repl
-https://swup-demo-forms.philippdaun.repl.co
+https://swup-demo-forms.swupjs.repl.co
 Swup Demo: Animated forms
 ```
