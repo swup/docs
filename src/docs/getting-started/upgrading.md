@@ -252,8 +252,8 @@ you might want to stick with swup 3.
 As mentioned above, switch from events to hooks:
 
 ```js
-this.swup.on('willReplaceContent', () => {}); // [!code --]
-this.swup.hooks.before('content:replace', () => {}); // [!code ++]
+this.swup.on('contentReplaced', () => {}); // [!code --]
+this.swup.hooks.on('content:replace', () => {}); // [!code ++]
 ```
 
 Creating custom hooks has changed:
