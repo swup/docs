@@ -19,8 +19,8 @@ Swup doesn't insert new script tags by default. To run code after a page visit, 
 options that are explained in the section on [Reloading Scripts](/getting-started/reloading-javascript/).
 
 - [Trigger custom code](/getting-started/reloading-javascript/#triggering-custom-code) using hooks
-- Use the [Head Plugin](/plugins/head-plugin/) to load new script files into the current head element
-- Use the [Scripts Plugin](/plugins/scripts-plugin/) to re-evaluate new scripts in either head or body
+- Use the [Head Plugin](/plugins/head-plugin/) to insert new scripts into the head
+- Use the [Scripts Plugin](/plugins/scripts-plugin/) to run existing and new scripts in head or body
 
 ## Stylesheets of the next page are not loaded
 
