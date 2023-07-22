@@ -149,7 +149,7 @@ swup.hooks.on('visit:start', (visit) => {
 Check if the current visit was triggered by the backward/forward button of the browser.
 
 ```javascript
-swup.hooks.before('visit:start', (visit) => {
+swup.hooks.on('visit:start', (visit) => {
   if (visit.history.popstate) {
     console.log('History visit');
   }
