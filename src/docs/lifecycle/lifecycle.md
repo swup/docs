@@ -18,5 +18,7 @@ To change how swup will transition to the new page, you can:
 - use [hooks](/hooks/) to trigger custom code
 - update the [visit object](/visit/) to custimize the current transition
 
+## Lifecycle Diagram
+
 [![Swup Lifecycle Diagram](/assets/images/swup-lifecycle.svg){class="light-only wide-image"}](/assets/images/swup-lifecycle.svg)
 [![Swup Lifecycle Diagram](/assets/images/swup-lifecycle-dark.svg){class="dark-only wide-image"}](/assets/images/swup-lifecycle.svg)
