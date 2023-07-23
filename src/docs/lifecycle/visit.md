@@ -15,7 +15,7 @@ The visit object contains information about the current page visit: the current 
 URL, the element and event that triggered the visit, as well as details about whether this visit
 should be animated and which containers should be replaced.
 
-By manipulating the visit object, you can control how swup will navigate to the new page.
+Manipulate the visit object to control how swup will transition to the new page.
 
 ## Accessing the visit object
 
