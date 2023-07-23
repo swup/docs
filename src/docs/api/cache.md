@@ -117,11 +117,14 @@ Limit the amount of pages in the cache by adding an index.
 ```js
 const maxPages = 20;
 
-swup.hooks.on('pageCached', (_, { page }) => {
+swup.hooks.on('cache:set', (visit, { page }) => {
   // Whenever a page is cached, append an incrementing index
   swup.cache.update(page.url, { index: swup.cache.size });
   // Remove all pages with an index above the max number
-  swup.cache.prune((url, page) => page.index > maxPages);
+  const prune = [...swup.cache.all.keys()].reverse().slice(maxPages);
+  swup.cache.prune((url) => prune.includes(url));
+  // Re-index all pages with up-to-date indexes
+  swup.cache.all.forEach((page, url) => swup.cache.update(url, { index: swup.cache.size }));
 });
 ```
 
