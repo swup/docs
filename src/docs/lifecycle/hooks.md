@@ -114,33 +114,33 @@ hooks are called.
 
 <div class="events-table" data-table-with-anchor-links>
 
-|        Hook name        |                                         Description                                         |
-| ----------------------- | ------------------------------------------------------------------------------------------- |
-| **animation:out:start** | out-animation of current content begins: `.is-animating` is added to html                   |
-| **animation:out:await** | swup waits for CSS animations on the page before replacing the content                      |
-| **animation:out:end**   | out-animation of current content finishes, content not yet replaced                         |
-| **animation:in:start**  | in-animation of new content begins: `.is-animating` is removed from html tag                |
-| **animation:in:await**  | swup waits for CSS animations on the page before finishing the visit                        |
-| **animation:in:end**    | in-animation of new content finishes                                                        |
-| **animation:skip**      | animations are skipped and page will load instantaneously: e.g. on history navigation       |
-| **cache:set**           | a page is saved to the cache                                                                |
-| **cache:clear**         | the cache is cleared completely                                                             |
-| **content:replace**     | the content of the page is replaced                                                         |
-| **content:scroll**      | the scroll position is reset after replacing the content                                    |
-| **enable**              | swup instance is created                                                                    |
-| **disable**             | swup instance is [disabled](/api/methods/#destroy)                                          |
-| **fetch:error**         | a fetch request is rejected because of a server error                                       |
-| **fetch:request**       | a fetch request is sent                                                                     |
-| **history:popstate**    | history navigation is started: back/forward button pressed                                  |
-| **link:click**          | a link is clicked                                                                           |
-| **link:self**           | a link is clicked that leads to the current page                                            |
-| **link:anchor**         | a link is clicked that jumps to an `#anchor` on the current page                            |
-| **link:newtab**         | a link is opened to a new tab                                                               |
-| **page:request**        | a page is requested, either from a fetch request or the cache                               |
-| **page:load**           | a page is completely loaded, via fetch request or cache                                     |
-| **page:view**           | the next page is visible after replacing the content                                        |
-| **visit:start**         | begin of the transition to a new page                                                       |
-| **visit:end**           | end of the transition to a new page: all content was replaced and animations have finished  |
+|        Hook name        |                                      Description                                      |
+| ----------------------- | ------------------------------------------------------------------------------------- |
+| **animation:out:start** | Current content starts animating out. Class `.is-animating` is added.                 |
+| **animation:out:await** | Swup waits for CSS animations to finish before replacing the content.                 |
+| **animation:out:end**   | Current content finishes animating out. Content is not yet replaced.                  |
+| **animation:in:start**  | New content starts animating in. Class `.is-animating` is removed.                    |
+| **animation:in:await**  | Swup waits for CSS animations to finish before finishing the visit.                   |
+| **animation:in:end**    | New content finishes animating out.                                                   |
+| **animation:skip**      | Page will load at once without animations, e.g. on history navigation.                |
+| **cache:set**           | Page is saved to the cache.                                                           |
+| **cache:clear**         | The cache is cleared completely.                                                      |
+| **content:replace**     | The old content of the page is replaced by the new content.                           |
+| **content:scroll**      | The scroll position is reset after replacing the content.                             |
+| **enable**              | Swup instance is created.                                                             |
+| **disable**             | Swup instance is [disabled](/api/methods/#destroy).                                   |
+| **fetch:error**         | Fetch request is rejected because of a server error.                                  |
+| **fetch:request**       | Fetch request is sent.                                                                |
+| **history:popstate**    | History navigation is started: back/forward button was pressed.                       |
+| **link:click**          | Link is clicked.                                                                      |
+| **link:self**           | Link is clicked that leads to the current page.                                       |
+| **link:anchor**         | Link is clicked that jumps to an `#anchor` on the current page.                       |
+| **link:newtab**         | Link is clicked that opens to a new tab.                                              |
+| **page:request**        | Page is requested to load, either from a fetch request or the cache.                  |
+| **page:load**           | Page is completely loaded, via fetch request or cache.                                |
+| **page:view**           | New content is visible after replacing the content.                                   |
+| **visit:start**         | Transition to a new page begins.                                                      |
+| **visit:end**           | Transition ends. All content is replaced, animations have finished.                   |
 
 </div>
 
