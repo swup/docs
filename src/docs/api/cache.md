@@ -112,3 +112,34 @@ manually.
 The basic strategy is to append custom data with `cache.update()` whenever a page is cached. Later,
 manually prune the cache in regular intervals with `cache.prune()`, comparing the previously added
 custom data to determine which pages to prune.
+
+### Page limit
+
+Limit the amount of pages in the cache.
+
+```js
+const maxCacheEntries = 20;
+
+swup.hooks.on('cache:set', () => {
+  const prune = [...swup.cache.all.keys()].reverse().slice(maxCacheEntries);
+  swup.cache.prune((url) => prune.includes(url));
+});
+```
+
+### TTL
+
+Limit how long pages are cached by adding a timestamp and pruning before requests.
+
+```js
+const ttl = 5 * 60_000; // 5 minutes
+
+// When a page is cached, append the current timestamp and time-to-live
+swup.hooks.on('cache:set', (visit, { page }) => {
+  swup.cache.update(page.url, { created: Date.now(), ttl });
+});
+
+// Before each request, remove all invalid entries by timestamp
+swup.hooks.before('page:request', () => {
+  swup.cache.prune((url, { created, ttl }) => Date.now() > created + ttl);
+});
+```
