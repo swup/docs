@@ -11,8 +11,8 @@ permalink: /hooks/
 
 # Hooks
 
-Hooks allow listening to lifecycle events and triggering custom code at specific points. Read on
-to learn about [registering handlers](#registering-handlers) or jump straight to the
+Lifecycle hooks allow triggering custom code at each step of the page transition process. Read on to
+learn about [registering handlers](#registering-handlers) or jump straight to the
 [list of available hooks](#list).
 
 ## Registering handlers
@@ -21,7 +21,6 @@ You can register handlers on swup's `hooks` registry. All handlers receive the [
 with information about the current visit as their first argument.
 
 ```javascript
-// Log to the console on each page view
 swup.hooks.on('page:view', (visit) => {
   console.log('New page loaded:', visit.to.url);
 });
@@ -109,7 +108,9 @@ swup.hooks.off('page:view', handler);
 
 ## List of hooks {#list}
 
-The following hooks are exposed by swup and can be accessed as such:
+The following hooks are exposed by swup and can be listened to. Refer to the
+[lifecycle diagram](/lifecycle/#lifecycle-diagram) for a visual overview of when the most important
+hooks are called.
 
 <div class="events-table" data-table-with-anchor-links>
 
