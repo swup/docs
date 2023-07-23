@@ -166,6 +166,17 @@ swup.hooks.on('page:view', () => {
 });
 ```
 
+### Display loading indicator during transitions
+
+```javascript
+swup.hooks.on('animation:out:start', () => {
+  document.querySelector('#loader').hidden = false;
+});
+swup.hooks.on('animation:in:end', () => {
+  document.querySelector('#loader').hidden = true;
+});
+```
+
 ## DOM events
 
 All hooks are also triggered on the `document` with a `swup:` prefix. They receive the hook name
