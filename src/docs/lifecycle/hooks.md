@@ -137,7 +137,7 @@ The following hooks are exposed by swup and can be accessed as such:
 | **link:newtab**         | a link is opened to a new tab                                                               |
 | **page:request**        | a page is requested, either from a fetch request or the cache                               |
 | **page:load**           | a page is completely loaded, via fetch request or cache                                     |
-| **page:view**           | the next page is visible after replacing the content, also triggers when instantiating swup |
+| **page:view**           | the next page is visible after replacing the content                                        |
 | **visit:start**         | begin of the transition to a new page                                                       |
 | **visit:end**           | end of the transition to a new page: all content was replaced and animations have finished  |
 
