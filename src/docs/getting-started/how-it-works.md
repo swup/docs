@@ -38,7 +38,7 @@ can be animated independently to allow easier debugging of animations.
 
 ### Animation classes {#classes}
 
-Swup applies classes to the `html` tag to control the page transition process:
+Swup applies classes to the `html` element to control the page transition process:
 
 <div class="events-table" data-table-with-anchor-links>
 
@@ -54,6 +54,11 @@ Swup applies classes to the `html` tag to control the page transition process:
 
 You can configure swup to [add animation classes to the containers](/options/#animation-scope)
 instead of the html element.
+
+## Other animation methods
+
+Use the official [JS Plugin](/plugins/js-plugin/) to perform animations yourself in JS or with a
+popular animation library like GSAP.
 
 ## Browser history {#history}
 
