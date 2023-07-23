@@ -15,7 +15,7 @@ page in the background, replace the content and animate between the old and the 
 
 To change how swup will transition to the new page, you can:
 
-- use [hooks](/hooks/) to trigger custom code
+- use lifecycle [hooks](/hooks/) to trigger custom code
 - update the [visit object](/visit/) to custimize the current transition
 
 ## Lifecycle Diagram
