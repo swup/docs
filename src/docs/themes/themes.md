@@ -10,12 +10,11 @@ permalink: /themes/
 
 # Themes
 
-Themes are predefined transitions to get up and running quickly.
+Themes are special plugins with predefined animations to get up and running quickly.
 
-Technically, they are identical to plugins in how they're structured and used, but with a focus on
-adding any required CSS and manipulating the DOM if necessary.
+## Try them out
 
-Try out the default themes here:
+Get a live preview of the official themes by clicking the buttons below.
 
 <form class="theme-selector buttons">
   <label class="button"><input type="radio" name="theme" value="SlideTheme" class="sr-only">
