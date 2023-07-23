@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Laravel Livewire Plugin
+title: Livewire Plugin
 eleventyNavigation:
-  key: Laravel Livewire Plugin
+  key: Livewire Plugin
   parent: Plugins
   order: 13
 description: A swup plugin for integrating Laravel Livewire
