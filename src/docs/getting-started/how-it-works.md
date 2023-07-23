@@ -1,6 +1,6 @@
 ---
 layout: default
-title: How it works
+title: How It Works
 eleventyNavigation:
   key: How it works
   parent: Getting Started
@@ -9,7 +9,7 @@ description: A simple explanation of how swup gets things done
 permalink: /getting-started/how-it-works/
 ---
 
-# How it works
+# How It Works
 
 Instead of letting the browser load the next page, swup intercepts link clicks, loads the new
 page in the background and smoothly animates between the old and new content.

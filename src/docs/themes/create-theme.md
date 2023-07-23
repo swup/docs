@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Create a Theme 🎉
+title: Create a theme 🎉
 eleventyNavigation:
-  key: Create a Theme 🎉
+  key: Create a theme 🎉
   parent: Themes
   order: 4
 description: Create your own theme

@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Create a Plugin 🎉
+title: Create a plugin 🎉
 eleventyNavigation:
-  key: Create a Plugin 🎉
+  key: Create a plugin 🎉
   parent: Plugins
   order: 100
 description: Create your own plugin

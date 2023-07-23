@@ -2,7 +2,7 @@
 layout: default
 title: Browser Support
 eleventyNavigation:
-  key: Browser Support
+  key: Browser support
   parent: Other
   order: 2
 description:

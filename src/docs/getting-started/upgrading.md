@@ -49,9 +49,9 @@ Repeat this process for any of the plugins you are using.
 ## Scroll support
 
 Swup 4 will correctly reset the scroll position after each navigation, as well as scroll to `#anchor`
-links on the same page. The scroll plugin is no longer required for recreating basic browser
+links on the same page. The Scroll Plugin is no longer required for recreating basic browser
 behavior. If you need animated scrolling, custom offsets, and other customization, keep using the
-[scroll plugin](/plugins/scroll-plugin/).
+[Scroll Plugin](/plugins/scroll-plugin/).
 
 ## New hook system
 

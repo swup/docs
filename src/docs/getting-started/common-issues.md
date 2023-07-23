@@ -2,7 +2,7 @@
 layout: default
 title: Common Issues
 eleventyNavigation:
-  key: Common Issues
+  key: Common issues
   parent: Getting Started
   order: 8
 description: Description of common issue or caveats people encounter

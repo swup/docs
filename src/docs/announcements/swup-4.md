@@ -58,7 +58,7 @@ not hurting performance by only loading swup once the page has finished renderin
 Swup 4 will correctly reset the scroll position after each navigation, as well as scroll to `#anchor`
 links on the same page. The scroll plugin is no longer required for recreating basic browser
 behavior. If you need animated scrolling, custom scroll offsets, and other advanced customization,
-feel free to keep using the [scroll plugin](/plugins/scroll-plugin/).
+feel free to keep using the [Scroll Plugin](/plugins/scroll-plugin/).
 
 ### Local animation scope
 
@@ -199,7 +199,7 @@ stacks and side-by-side slideshows are now much easier to implement. Head over t
 
 All official [themes](/themes/) have been updated to use CSS custom properties. That should make it
 much easier to customize their built-in animations to fit your website. For example, for overwriting
-the transition duration and the offset of the [slide theme](/themes/slide-theme/):
+the transition duration and the offset of the [Slide Theme](/themes/slide-theme/):
 
 ```css
 body {
