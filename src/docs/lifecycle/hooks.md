@@ -150,11 +150,9 @@ hooks are called.
 
 ```javascript
 swup.hooks.on('page:view', () => {
-  dataLayer.push({
-    event: 'VirtualPageview',
-    virtualPageURL: window.location.pathname,
-    virtualPageTitle: document.title
-  });
+  ga('set', 'title', document.title);
+  ga('set', 'page', window.location.pathname);
+  ga('send', 'pageview');
 });
 ```
 
