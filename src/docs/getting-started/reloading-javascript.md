@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 swup.hooks.on('page:view', () => {
-  // This runs after every page change
+  // This runs after every page change by swup
 });
 ```
 
