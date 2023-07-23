@@ -11,12 +11,13 @@ permalink: /hooks/
 
 # Hooks
 
-Swup provides a variety of hooks that allow listening to lifecycle events, customizing the
-transition process as well as triggering custom logic at specific points.
+Hooks allow listening to lifecycle events and triggering custom code at specific points. Read on
+to learn about [registering handlers](#registering-handlers) or jump straight to the
+[list of available hooks](#list).
 
 ## Registering handlers
 
-You can register hooks on swup's `hooks` registry. All handlers receive the [visit object](/visit/)
+You can register handlers on swup's `hooks` registry. All handlers receive the [visit object](/visit/)
 with information about the current visit as their first argument.
 
 ```javascript
@@ -106,7 +107,7 @@ swup.hooks.on('page:view', handler);
 swup.hooks.off('page:view', handler);
 ```
 
-## List of hooks
+## List of hooks {#list}
 
 The following hooks are exposed by swup and can be accessed as such:
 
@@ -176,10 +177,3 @@ document.addEventListener('swup:page:view', ({ detail: { visit } }) => {
   console.log('Going to', visit.to.url);
 });
 ```
-
-## Custom hooks
-
-Plugin authors might want to create new hooks to implement additional functionality.
-
-See the [Custom Hooks](/plugins/create-plugin/#custom-hooks) section of the Create a Plugin page
-for details.
