@@ -63,9 +63,9 @@ Note the `?module` query string in the first import URL.
 
 ## Next steps
 
-Congratulations! You're now ready to start building with swup by exploring these topics:
+You're now ready to start building with swup by exploring these topics:
 
-- Create a first [example site](/getting-started/example/) for setting up swup
+- Create a first [example site](/getting-started/example/) to get to know swup
 - Look at [interactive demos](/getting-started/demos/) to see swup in action
-- Learn about [options](/options/) to customize how swup loads the next page
+- Learn about [options](/options/) and [hooks](/hooks/) to customize how swup works
 - Install [plugins](/plugins/) and [themes](/themes/) for extended functionality
