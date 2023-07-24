@@ -50,6 +50,7 @@ module.exports = function (eleventyConfig) {
 
 	// Assets will be taken care of by WebPack
 	eleventyConfig.ignores.add('./src/_assets/**');
+	eleventyConfig.ignores.add('./src/_remote-readmes/**');
 
 	/**
 	 * Use or own markdown version, to be able to also use it
