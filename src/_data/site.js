@@ -8,12 +8,12 @@ module.exports = function () {
 		currentVersion: 'v4',
 		versions: [
 			{
-				label: 'swup 4 (current)',
+				label: 'swup v4 (current)',
 				url: process.env.SITE_URL || 'https://swup.js.org',
 				isCurrent: true
 			},
 			{
-				label: 'swup 3',
+				label: 'swup v3',
 				url: 'https://v3.swup.js.org',
 			},
 		]
