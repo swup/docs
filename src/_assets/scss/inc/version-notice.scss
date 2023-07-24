@@ -23,7 +23,8 @@
 	text-decoration: underline;
 	font-weight: bold;
 }
-.version-notice_dismiss {
+.version-notice_dismiss,
+.version-notice_dismiss .feather {
 	grid-column: close;
 	min-width: 25px;
 }
