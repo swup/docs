@@ -6,10 +6,10 @@
 	--font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco,
 		Droid Sans Mono, Source Code Pro, monospace;
 
-	--font-size-fluid-0: clamp(1rem, 3vw, 1.5rem);
-	--font-size-fluid-1: clamp(1.25rem, 3vw, 2rem);
-	--font-size-fluid-2: clamp(1.5rem, 3vw, 2.7rem);
-	--font-size-fluid-3: clamp(2rem, 5vw, 3.5rem);
+	--font-size-fluid-0: clamp(1rem, 2vw, 1.15rem);
+	--font-size-fluid-1: clamp(1.15rem, 3vw, 1.35rem);
+	--font-size-fluid-2: clamp(1.35rem, 4vw, 1.7rem);
+	--font-size-fluid-3: clamp(1.7rem, 5vw, 2.2rem);
 
 	--ease-out-1: cubic-bezier(0, 0, 0.75, 1);
 	--ease-out-2: cubic-bezier(0, 0, 0.5, 1);
@@ -28,18 +28,22 @@
 	--ease-squish-5: cubic-bezier(0.5, -0.9, 0.1, 1.5);
 
 	--gap: clamp(1rem, 2vw, 2rem);
+	--gap-small: calc(var(--gap) * 0.5);
 	--gap-x2: calc(var(--gap) * 2);
+
+	--spacer: clamp(1rem, 2vw, 2rem);
 
 	--header-height: calc(var(--gap) * 2 + 2rem);
 
 	--border: 2px solid;
 	--radius-round: 1000px;
 	--radius-0: 0.2em;
-	--radius-1: 0.5em;
-	--radius-2: 0.7em;
+	--radius-1: 0.4em;
+	--radius-2: 0.6em;
 
 	--shadow-color: 239 49% 30%;
 	--shadow-strength: 10%;
+	--shadow-strength-dark: 20%;
 
 	--shadow-1: 0 -1px 3px 0 hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
 		0 1px 2px -5px hsl(var(--shadow-color) / calc(var(--shadow-strength) + 2%)),
