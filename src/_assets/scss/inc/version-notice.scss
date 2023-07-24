@@ -23,8 +23,9 @@
 	text-decoration: underline;
 	font-weight: bold;
 }
-.version-notice button {
+.version-notice_dismiss {
 	grid-column: close;
+	min-width: 25px;
 }
 
 @include bp(s) {
