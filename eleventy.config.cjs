@@ -103,6 +103,8 @@ async function prepareContent(content) {
 	return content;
 }
 
+const repoReadmes = new Map();
+
 /**
  * Load remote Readme if repo_link is defined
  *
@@ -127,11 +129,22 @@ async function maybeLoadRemoteReadme(content, ctx) {
 		ctx.page.inputPath.replace(/^\.\/src\/docs\//, './src/_remote-readmes/')
 	);
 
-	// return the file from disc if present.
-	// If we ever want to re-fetch one of the remote readmes, we just have to delete
-	// it from the folder "./src/_remote-readmes/" and run build again
+	// Return the cached version if present
+	if (repoReadmes.has(repo_link)) {
+		return repoReadmes.get(repo_link);
+	}
+
+	/*
+	 * Return the local file from disc if present.
+	 * If we ever want to re-fetch one of the remote readmes, we just have to delete
+	 * it from the folder "./src/_remote-readmes/" and run build again
+	 */
 	if (fs.existsSync(localPath)) {
-		return customMarkdownIt.render(fs.readFileSync(localPath, { encoding: 'utf8' }));
+		const localReadmeHTML = customMarkdownIt.render(
+			fs.readFileSync(localPath, { encoding: 'utf8' })
+		);
+		repoReadmes.set(repo_link, localReadmeHTML);
+		return localReadmeHTML;
 	}
 
 	const repoURL = `${repo_link.replace(
@@ -156,7 +169,10 @@ async function maybeLoadRemoteReadme(content, ctx) {
 	}
 	fs.writeFileSync(localPath, result);
 
-	return customMarkdownIt.render(result);
+	const remoteReadmeHTML = customMarkdownIt.render(result);
+	repoReadmes.set(repo_link, remoteReadmeHTML);
+
+	return readmeHTML;
 }
 
 /**
