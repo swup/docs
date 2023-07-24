@@ -8,7 +8,9 @@ const EleventyFetch = require('@11ty/eleventy-fetch');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const feather = require('feather-icons');
 const MarkdownItCodeEnhancements = require('./lib/markdown-it-code-enhancements');
-const { prepareTablesWithAnchorLinks } = require('./lib/eleventy-transforms')
+const { prepareTablesWithAnchorLinks } = require('./lib/eleventy-transforms');
+const { resolve, basename, dirname } = require('path');
+const fs = require('fs');
 const customMarkdownIt = markdownIt({
 	html: true,
 	breaks: false,
@@ -101,8 +103,6 @@ async function prepareContent(content) {
 	return content;
 }
 
-const repoReadmes = new Map();
-
 /**
  * Load remote Readme if repo_link is defined
  *
@@ -122,14 +122,20 @@ async function maybeLoadRemoteReadme(content, ctx) {
 
 	if (!repo_link) return content;
 
+	const localPath = resolve(
+		__dirname,
+		ctx.page.inputPath.replace(/^\.\/src\/docs\//, './src/_remote-readmes/')
+	);
+
+	// return the file from disc if present
+	if (fs.existsSync(localPath)) {
+		return customMarkdownIt.render(fs.readFileSync(localPath, { encoding: 'utf8' }));
+	}
+
 	const repoURL = `${repo_link.replace(
 		'github.com',
 		'raw.githubusercontent.com'
 	)}/master/readme.md`;
-
-	if (repoReadmes.has(repoURL)) {
-		return repoReadmes.get(repoURL);
-	}
 
 	let result = await EleventyFetch(repoURL, {
 		duration: '60s',
@@ -142,10 +148,13 @@ async function maybeLoadRemoteReadme(content, ctx) {
 		''
 	);
 
-	const readmeHTML = customMarkdownIt.render(result);
-	repoReadmes.set(repoURL, readmeHTML);
+	// write the file to disc
+	if (!fs.existsSync(dirname(localPath))) {
+		fs.mkdirSync(dirname(localPath), { recursive: true });
+	}
+	fs.writeFileSync(localPath, result);
 
-	return readmeHTML;
+	return customMarkdownIt.render(result);
 }
 
 /**
