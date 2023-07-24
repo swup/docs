@@ -139,7 +139,7 @@ swup.hooks.on('cache:set', (visit, { page }) => {
 });
 
 // Before each request, remove all invalid entries by timestamp
-swup.hooks.before('page:request', () => {
+swup.hooks.before('page:load', () => {
   swup.cache.prune((url, { created, ttl }) => Date.now() > created + ttl);
 });
 ```

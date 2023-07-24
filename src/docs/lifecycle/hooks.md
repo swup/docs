@@ -136,8 +136,7 @@ hooks are called.
 | **link:self**           | Link is clicked that leads to the current page.                                       |
 | **link:anchor**         | Link is clicked that jumps to an anchor on the current page.                          |
 | **link:newtab**         | Link is clicked that opens to a new tab.                                              |
-| **page:request**        | Page is requested to load, either from a fetch request or the cache.                  |
-| **page:load**           | Page is completely loaded, via fetch request or cache.                                |
+| **page:load**           | Page is loaded from cache or via fetch request.                                       |
 | **page:view**           | New content is visible after replacing the content.                                   |
 | **scroll:top**          | Scroll to the top of the page.                                                        |
 | **scroll:anchor**       | Scroll to an anchor on the current page.                                              |
