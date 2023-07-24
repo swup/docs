@@ -12,6 +12,9 @@ svg {
 iframe {
 	display: block;
 	background: transparent;
+	border-radius: var(--radius-1);
+	overflow: hidden;
+	border: 0;
 }
 
 /*
@@ -24,4 +27,9 @@ iframe {
 	width: 1px !important;
 	height: 1px !important;
 	overflow: hidden !important;
+}
+
+html.dark .light-only,
+html.light .dark-only {
+	display: none;
 }
