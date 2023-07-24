@@ -1,6 +1,6 @@
 module.exports = function () {
 	return {
-		title: 'Docs Archive for swup 3',
+		title: 'swup 3 archived docs',
 		description:
 			'Versatile and extensible page transition library for server-rendered websites',
 		url: process.env.SITE_URL || 'https://v3.swup.js.org',
