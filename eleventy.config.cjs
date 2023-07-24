@@ -127,7 +127,9 @@ async function maybeLoadRemoteReadme(content, ctx) {
 		ctx.page.inputPath.replace(/^\.\/src\/docs\//, './src/_remote-readmes/')
 	);
 
-	// return the file from disc if present
+	// return the file from disc if present.
+	// If we ever want to re-fetch one of the remote readmes, we just have to delete
+	// it from the folder "./src/_remote-readmes/" and run build again
 	if (fs.existsSync(localPath)) {
 		return customMarkdownIt.render(fs.readFileSync(localPath, { encoding: 'utf8' }));
 	}
