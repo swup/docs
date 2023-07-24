@@ -134,11 +134,13 @@ hooks are called.
 | **history:popstate**    | History navigation is started: back/forward button was pressed.                       |
 | **link:click**          | Link is clicked.                                                                      |
 | **link:self**           | Link is clicked that leads to the current page.                                       |
-| **link:anchor**         | Link is clicked that jumps to an `#anchor` on the current page.                       |
+| **link:anchor**         | Link is clicked that jumps to an anchor on the current page.                          |
 | **link:newtab**         | Link is clicked that opens to a new tab.                                              |
 | **page:request**        | Page is requested to load, either from a fetch request or the cache.                  |
 | **page:load**           | Page is completely loaded, via fetch request or cache.                                |
 | **page:view**           | New content is visible after replacing the content.                                   |
+| **scroll:top**          | Scroll to the top of the page.                                                        |
+| **scroll:anchor**       | Scroll to an anchor on the current page.                                              |
 | **visit:start**         | Transition to a new page begins.                                                      |
 | **visit:end**           | Transition ends. All content is replaced, animations have finished.                   |
 
