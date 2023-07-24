@@ -1,9 +1,13 @@
 
 .version-select_label {
-	font-size: 0.8rem;
+	font-size: 0.95rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	font-weight: 500;
+	@include bp(m) {
+		font-size: 0.8rem;
+	}
 	.feather {
 		width: 0.9em;
 		margin-right: -0.3em;
@@ -21,7 +25,7 @@
 		white-space: nowrap;
 		font-size: 0.9em;
 		@include mixins.hover {
-			background: var(--color-transparent-1);
+			background: rgb(0 0 0 / 0.1);
 		}
 	}
 }

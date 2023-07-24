@@ -365,17 +365,17 @@ html:not(.dark) .shiki-container .github-dark {
 .tippy-box {
 	font-size: 0.8rem;
 	font-family: var(--font-mono);
-	background: var(--background);
+	background: white;
 	filter: drop-shadow(0 0 5px hsl(var(--shadow-color) / var(--shadow-strength-dark)));
 }
 
 .tippy-content {
 	padding: 0.3em 0.5em;
-	color: var(--color);
+	color: black;
 }
 
 .tippy-arrow {
-	color: var(--background);
+	color: white;
 }
 
 /*
