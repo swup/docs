@@ -1,0 +1,27 @@
+
+.version-select_label {
+	font-size: 0.8rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	.feather {
+		width: 0.9em;
+		margin-right: -0.3em;
+	}
+}
+
+.version-select_options {
+	margin-block: 0.2em;
+	margin-inline: -0.5em;
+	padding: 0;
+	list-style: none;
+	a {
+		display: block;
+		padding: 0.5em 1em;
+		white-space: nowrap;
+		font-size: 0.9em;
+		@include mixins.hover {
+			background: var(--color-transparent-1);
+		}
+	}
+}
