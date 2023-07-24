@@ -1,6 +1,6 @@
 .page {
 	padding-inline: var(--gap);
-	padding-block: var(--gap-x2) calc(var(--gap-x2) * 2);
+	padding-block: var(--gap-x2) calc(var(--gap-x2) * 2 + var(--version-notice-height, 0));
 	width: min(80ch, 100%);
 	margin-inline: auto;
 
