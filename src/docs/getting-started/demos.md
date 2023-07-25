@@ -74,13 +74,21 @@ https://swup-demo-reveal.swupjs.repl.co
 Swup Demo: Reveal
 ```
 
-## Modal overlay
+## Fragment Support: Modal
 
 Load sub-pages as modals.
 Uses the [Fragment Plugin](/plugins/fragment-plugin/) to dynamically select containers based on route.
 
 ```repl
 https://swup-demo-modal-overlay.swupjs.repl.co/
+```
+
+## Fragment Support: List
+
+Uses the [Fragment Plugin](/plugins/fragment-plugin/) to replace only the items of a list when applying filters.
+
+```repl
+https://swup-demo-filter-a-list.swupjs.repl.co/
 ```
 
 ## Animated forms
