@@ -110,7 +110,8 @@ swup.hooks.off('page:view', handler);
 
 The following hooks are exposed by swup and can be listened to. Refer to the
 [lifecycle diagram](/lifecycle/#lifecycle-diagram) for a visual overview of when the most important
-hooks are called.
+hooks are called. Install the [Debug Plugin](/plugins/debug-plugin) to log triggered hooks to the
+browser console as they are happening.
 
 <div class="events-table" data-table-with-anchor-links>
 
