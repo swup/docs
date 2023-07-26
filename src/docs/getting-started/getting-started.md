@@ -18,6 +18,12 @@ native **browser history** and enhanced **accessibility**.
 
 Make your site feel like a snappy single-page app — without any of the complexity.
 
+<div data-video data-screencast>
+
+/assets/images/swup-demos.mp4
+
+</div>
+
 ## Features
 
 <ul class="features">
