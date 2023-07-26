@@ -12,6 +12,8 @@ import SwupThemeSwitcher from './alpine/SwupThemeSwitcher/SwupThemeSwitcher.js';
 import MobileNav from './alpine/MobileNav/MobileNav.js';
 import SearchUI from './alpine/SearchUI/SearchUI.js';
 import TableOfContents from './alpine/TableOfContents/TableOfContents.js';
+import VersionSelect from './alpine/VersionSelect/VersionSelect.js';
+
 
 export default function () {
 	window.Alpine = Alpine;
@@ -23,5 +25,6 @@ export default function () {
 	Alpine.data('SwupThemeSwitcher', SwupThemeSwitcher);
 	Alpine.data('MobileNav', MobileNav);
 	Alpine.data('TableOfContents', TableOfContents);
+	Alpine.data('VersionSelect', VersionSelect);
 	Alpine.start();
 }

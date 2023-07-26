@@ -1,19 +1,24 @@
 const markdownIt = require('markdown-it');
 const markdownItAnchor = require('markdown-it-anchor');
+const markdownItAttrs = require('markdown-it-attrs');
+const markdownItVideo = require('markdown-it-video');
 const slugify = require('@sindresorhus/slugify');
 const tableOfContents = require('eleventy-plugin-toc');
 const { execSync } = require('child_process');
-const Shiki = require('markdown-it-shiki').default;
+// const Shiki = require('markdown-it-shiki').default;
+const Shiki = require('./lib/packages/markdown-it-shiki-extra/index').default;
 const EleventyFetch = require('@11ty/eleventy-fetch');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const feather = require('feather-icons');
 const MarkdownItCodeEnhancements = require('./lib/markdown-it-code-enhancements');
-const { prepareTablesWithAnchorLinks } = require('./lib/eleventy-transforms')
+const { prepareTablesWithAnchorLinks, prepareInfoBlocks } = require('./lib/eleventy-transforms');
+
 const customMarkdownIt = markdownIt({
 	html: true,
 	breaks: false,
 	linkify: true
 });
+
 /**
  * Anchors for headings lower then H1 (H2, H3, ...)
  * @see https://github.com/valeriangalliat/markdown-it-anchor
@@ -23,12 +28,29 @@ customMarkdownIt.use(markdownItAnchor, {
 	level: 2,
 	slugify: (s) => slugify(s)
 });
+
+/**
+ * Customize attrs via {attr=value} syntax, e.g. for heading IDs
+ * @see https://github.com/arve0/markdown-it-attrs
+ */
+customMarkdownIt.use(markdownItAttrs);
+
+/**
+ * Embed external videos as iframes
+ * @see https://github.com/CenterForOpenScience/markdown-it-video
+ */
+customMarkdownIt.use(markdownItVideo);
+
 /**
  * Code Highligting
  * @see https://github.com/antfu/markdown-it-shiki
  */
 customMarkdownIt.use(Shiki, {
-	theme: 'github-dark',
+	// theme: 'github-dark',
+	theme: {
+		dark: 'github-dark',
+		light: 'github-light'
+	},
 	highlightLines: true
 });
 customMarkdownIt.use(MarkdownItCodeEnhancements);
@@ -38,13 +60,14 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addFilter('prepareContent', prepareContent);
 	eleventyConfig.addPlugin(eleventyNavigationPlugin);
 	eleventyConfig.addPlugin(tableOfContents, {
-		tags: ['h2', 'h3', 'h4'],
+		tags: ['h2', 'h3'],
 		wrapperClass: 'toc_nav'
 	});
 	eleventyConfig.addFilter('getPreviousAndNextPage', getPreviousAndNextPage);
 	eleventyConfig.addShortcode('feather', renderFeatherIcon);
 	eleventyConfig.addShortcode('timestamp', () => Date.now());
 	eleventyConfig.addTransform('prepareTablesWithAnchorLinks', prepareTablesWithAnchorLinks);
+	eleventyConfig.addTransform('prepareInfoBlocks', prepareInfoBlocks);
 
 	// Assets will be taken care of by WebPack
 	eleventyConfig.ignores.add('./src/_assets/**');
@@ -122,19 +145,23 @@ async function maybeLoadRemoteReadme(content, ctx) {
 
 	if (!repo_link) return content;
 
-	const repoURL = `${repo_link.replace(
-		'github.com',
-		'raw.githubusercontent.com'
-	)}/master/readme.md`;
+	const repoBase = repo_link.replace('github.com', 'raw.githubusercontent.com' );
+	const repoURL = `${repoBase}/master/README.md`;
 
 	if (repoReadmes.has(repoURL)) {
 		return repoReadmes.get(repoURL);
 	}
 
-	let result = await EleventyFetch(repoURL, {
-		duration: '60s',
-		type: 'text'
-	});
+	let result;
+	try {
+		result = await EleventyFetch(repoURL, { duration: '60s', type: 'text' });
+	} catch (error) {
+		try {
+			result = await EleventyFetch(repoURL.toLowerCase(), { duration: '60s', type: 'text' });
+		} catch (error) {
+			console.error(`Could not load remote readme for ${repoURL}`);
+		}
+	}
 
 	// Honor <!-- swup-docs-ignore-start -->Ignore me!<!-- swup-docs-ignore-end -->
 	result = result.replace(
@@ -196,6 +223,9 @@ function flatten(into, node) {
  * @returns {object}
  */
 function getPreviousAndNextPage(nodes) {
+	if (!this.ctx.eleventyNavigation) {
+		return {};
+	}
 	const key = this.ctx.eleventyNavigation.key || this.ctx.title;
 	if (!key) return {};
 	const navigation = eleventyNavigationPlugin.navigation.find(nodes);

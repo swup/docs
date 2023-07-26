@@ -1,0 +1,49 @@
+.infoblock {
+	--info-color: var(--swup-green);
+	--link-underline-color: var(--info-color);
+	overflow: hidden;
+	position: relative;
+	padding: var(--gap);
+	@include bp(l) {
+		padding: var(--gap-small);
+	}
+	border-radius: var(--radius-1);
+}
+.infoblock.is--warning {
+	--info-color: var(--swup-red);
+}
+.infoblock:before {
+	content: '';
+	display: block;
+	position: absolute;
+	inset-block: 0;
+	left: 0;
+	border-left: 3px solid var(--info-color);
+}
+.infoblock:after {
+	content: '';
+	pointer-events: none;
+	position: absolute;
+	display: block;
+	inset: 0;
+	background: var(--info-color);
+	z-index: -1;
+	opacity: 0.2;
+	@at-root .dark & {
+		opacity: 0.3;
+	}
+}
+.infoblock_header {
+	display: flex;
+	gap: 0.3em;
+	padding-bottom: 0.5em;
+}
+.infoblock_header strong {
+	font-weight: inherit;
+}
+.infoblock_body > * {
+	margin: 0;
+}
+.infoblock_body > * + * {
+	margin-top: var(--gap-small);
+}

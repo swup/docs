@@ -11,143 +11,276 @@ permalink: /getting-started/upgrading/
 
 # Upgrading
 
-## Upgrading from swup 2 to 3
+Upgrade your project from swup 3 to 4.
 
-Swup 3 is mostly backward-compatible. Most projects should keep running fine after upgrading. However, there's a few situations where you will have to make changes.
+If you're upgrading from swup 2, see [Upgrading from swup 2 to 3](/getting-started/upgrading-v3/).
 
-### Multiple CSS transitions
+## New features
 
-Swup 3 will wait for the longest CSS transition to finish before replacing the page content. Previously, swup would only wait for the first transitioned property before continuing. This is a breaking change if you're combining transitions of differing durations in a single container.
+Swup 4 introduces new features to become more customizable and enable advanced use cases. Some of the
+highlights are a new hook system, a visit object available in hook handlers, and built-in scroll support.
+See the [release announcement](/announcements/swup-4/) for a full list of everything that's new.
 
-```diff
+## Breaking changes
+
+There are breaking changes in this release that will require modifications to projects using
+swup. If you only use swup for simple page transitions, you might not need to touch your code.
+However, if you make use of events, custom transitions or overwrite methods on the swup instance,
+you might want to take some more time to review these changes below and modify your site where
+necessary.
+
+## Install the latest version
+
+Install the latest version from npm:
+
+```shell
+npm install swup@latest
+```
+
+If you're loading swup from a CDN, update the version constraint:
+
+```html
+<script src="https://unpkg.com/swup@3"></script> // [!code --]
+<script src="https://unpkg.com/swup@4"></script> // [!code ++]
+```
+
+Repeat this process for any of the plugins you are using.
+
+## Scroll support
+
+Swup 4 will correctly reset the scroll position after each navigation, as well as scroll to `#anchor`
+links on the same page. The Scroll Plugin is no longer required for recreating basic browser
+behavior. If you need animated scrolling, custom offsets, and other customization, keep using the
+[Scroll Plugin](/plugins/scroll-plugin/).
+
+## New hook system
+
+Swup 4 comes with a new [hook system](/hooks/) that allows more flexibility and replaces the previous events
+implementation. Among other features, handlers can now pause execution by returning a Promise, or
+replace the internal default handler completely. See [Hooks](/hooks/) for details and more examples.
+
+All hook-related functions now live on the `hooks` instance of swup:
+
+```js
+swup.on('pageView', () => {}) // [!code --]
+swup.hooks.on('page:view', () => {}) // [!code ++]
+```
+
+```js
+swup.off('pageView', handler) // [!code --]
+swup.hooks.off('page:view', handler) // [!code ++]
+```
+
+### Hook names
+
+For easier grouping, hook names are consistently namespaced and in present tense:
+
+- `pageView` → `page:view`
+- `clickLink` → `link:click`
+- `contentReplaced` → `content:replace`
+- `serverError` → `fetch:error`
+- etc.
+
+To clarify the lifecycle, the transition hooks have been renamed to visit:
+
+- `transitionStart` → `visit:start`
+- `transitionEnd` → `visit:end`
+
+Some hooks were removed entirely:
+
+The old `willReplaceContent` and `contentReplaced` events are superseded by a single `content:replace`
+hook. Since swup can now register handlers to run _before_ a specific hook, it serves both use cases:
+
+```js
+// Run right before the content is replaced
+swup.on('willReplaceContent', () => {}) // [!code --]
+swup.hooks.before('content:replace', () => {}) // [!code ++]
+```
+
+```js
+// Run directly after the content was replaced
+swup.on('contentReplaced', () => {}) // [!code --]
+swup.hooks.on('content:replace', () => {}) // [!code ++]
+```
+
+The `pageRetrievedFromCache` event has been removed. There is now only a single `page:load` hook
+that fires whenever a page was loaded. Check its boolean `cache` parameter to know if the page was
+loaded from cache or not.
+
+```js
+swup.on('pageRetrievedFromCache', () => {}); // [!code --]
+swup.hooks.on('page:load', (_, { page, cache }) => { /* cache is true or false */ }); // [!code ++]
+```
+
+## Visit object
+
+Along with a new hook system, Swup 4 introduces a [visit object](/visit/) that holds
+information about the current page visit, like the previous and next URL or the element and event
+that triggered the visit. See [Visit](/visit/) for details and more examples.
+
+```javascript
+// Get the next URL and the link element that was clicked
+swup.hooks.on('page:view', (visit) => {
+  console.log('New page: ', visit.to.url);
+  console.log('Triggered by: ', visit.trigger.el);
+});
+
+// Disable animations on the upcoming visit
+swup.hooks.on('visit:start', (visit) => {
+  visit.animation.animate = false;
+});
+```
+
+The `visit` object replaces the `transition` object of swup 3.
+
+```js
+swup.on('transitionStart', () => { // [!code --]
+  console.log('Visit to', swup.transition.to); // [!code --]
+  console.log('Animation name', swup.transition.custom); // [!code --]
+}); // [!code --]
+swup.hooks.on('visit:start', (visit) => { // [!code ++]
+  console.log('Visit to', visit.to.url); // [!code ++]
+  console.log('Animation name', visit.animation.name); // [!code ++]
+}); // [!code ++]
+```
+
+## Cache API
+
+The cache has been simplified. It no longer requires passing in the title,
+containers, or body class of the page. Only the URL and HTML response are required. Please review
+the [Cache](/api/cache/) docs if you access it directly in your code.
+
+```js
+swup.cache.cacheUrl({ // [!code --]
+  url: '/about', // [!code --]
+  title: 'About', // [!code --]
+  blocks: ['<div id="swup"></div>'], // [!code --]
+  originalContent: '<html>...</html>', // [!code --]
+  pageClass: 'about', // [!code --]
+  responseURL: '/team' // [!code --]
+}); // [!code --]
+swup.cache.set('/about', { url: '/about', html: '<html>...</html>' }); // [!code ++]
+```
+
+## Navigation method
+
+The method `swup.loadPage({ url })` has been renamed to `swup.navigate(url)` for clarity.
+
+```js
+swup.loadPage({ url: '/about' }); // [!code --]
+swup.navigate('/about'); // [!code ++]
+```
+
+## Custom animation attribute
+
+To improve clarity around naming, the attribute for choosing a custom animation is now properly called
+`data-swup-animation`.
+
+```html
+<a href="/about/" data-swup-transition="slide">About</a> // [!code --]
+<a href="/about/" data-swup-animation="slide">About</a> // [!code ++]
+```
+
+## Unique container selectors
+
+Swup 4 will only match and replace a single element for each container selector. Previously, each
+selector would match as many elements as found on the page. We recommend only using id attributes or
+other unique identifiers for container selectors.
+
+```html
+<div class="section">Navigation</div> // [!code --]
+<div class="section">Content</div> // [!code --]
+<div id="nav" class="section">Navigation</div> // [!code ++]
+<div id="content" class="section">Content</div> // [!code ++]
+```
+
+```js
+const swup = new Swup({
+  containers: ['.section'] // [!code --]
+  containers: ['#nav', '#content'] // [!code ++]
+})
+```
+
+## Container attributes
+
+Swup 4 will no longer add `[data-swup]` attributes to containers.
+
+```html
+<div id="swup" class="transition-page" data-swup="0"></div> // [!code --]
+<div id="swup" class="transition-page"></div> // [!code ++]
+```
+
+## Custom payloads
+
+Going forward, only complete HTML responses are allowed from the server. Previously, swup supported
+sending custom payloads by using the Custom Payload Plugin or overloading the `getPageData` method
+directly. This change was done to drastically simplify library complexity and allow more flexibility
+for other more common use cases like dynamically setting content containers. If you require custom
+payloads, we recommend sticking with swup 3.
+
+```js
+const swup = new Swup({
+  plugins: [new SwupCustomPayloadPlugin()] // [!code --]
+  // no longer supported // [!code ++]
+});
+```
+
+```js
+swup.getPageData = (req) => JSON.parse(req.textContent); // [!code --]
+// no longer supported // [!code ++]
+```
+
+## Browser support
+
+Swup 4 removes support for CSS vendor prefixes on animation and transition properties. In practical
+terms, this won't reduce browser support, but it's probably a good idea to check the compatibility
+tables for [transitions](https://caniuse.com/?search=transition) and
+[animations](https://caniuse.com/?search=animation). In case you need to support Safari 8 or lower,
+you might want to stick with swup 3.
+
+```css
 .transition-page {
--  /* completes after 500ms in swup 2 */
-+  /* completes after 1000ms in swup 3 */
-  transition: opacity 1000ms, color 500ms;
+  -webkit-transition: opacity 200ms; // [!code --]
+  transition: opacity 200ms; // [!code ++]
 }
 ```
 
-### Link selector
+## Plugin authors
 
-Swup 3 added a new option for ignoring links via callback function. If you have previously modified the link selector to ignore specific links, you should move those customizations into the new `ignoreVisit` callback and remove the `linkSelector` option.
+### Hooks
 
-The `location.origin` check is no longer required as swup will now ensure matching origins itself.
-
-```diff
-// Example: ignore links to PDF files
-const swup = new Swup({
--  linkSelector: `
--    a[href^="${window.location.origin}"]:not([data-no-swup]):not([href$=".pdf"]),
--    a[href^="/"]:not([data-no-swup]):not([href$=".pdf"]),
--    a[href^="#"]:not([data-no-swup])
--  `
-+  ignoreVisit: (url, { el } = {}) => (
-+    el?.matches('[data-no-swup], [href$=".pdf"]')
-+  )
-});
-```
-
-### HTML classnames
-
-Swup 3 will no longer by default add `to-*` classnames to the html tag
-representing the URL of the new page.
-
-```diff
--  <html class="is-animating to-about">
-+  <html class="is-animating">
-```
-
-If your site requires those classnames to choose between animations based on the
-URL of the current or next page, you can use the
-[Route Name Plugin](/plugins/route-name-plugin/). Setting its `paths` option will
-restore the previous behavior and add `from-*` and `to-*` classes.
+As mentioned above, switch from events to hooks:
 
 ```js
-const swup = new Swup({
-  plugins: [new SwupRouteNamePlugin({ paths: true })]
-});
+this.swup.on('contentReplaced', () => {}); // [!code --]
+this.swup.hooks.on('content:replace', () => {}); // [!code ++]
 ```
 
-```html
-<html class="is-animating from-homepage to-about"></html>
-```
-
-### Script import
-
-If you're including the UMD version of swup in a script tag, you'll need to update the path.
-
-```diff
-- <script src="./dist/swup.js"></script>
-+ <script src="./dist/Swup.umd.js"></script>
-```
-
-Same for the CDN version:
-
-```diff
-- <script src="https://unpkg.com/swup@2/dist/swup.min.js"></script>
-+ <script src="https://unpkg.com/swup@3"></script>
-```
-
-### Helper imports
-
-Swup 3 exports ESM modules and defines named exports. If you have been importing swup helpers or utils from the `lib` folder directly, you need to update the import paths:
-
-```diff
-- import { getPageData } from 'swup/lib/helpers';
-+ import { getPageData } from 'swup';
-```
-
-#### Removed helpers
-
-Some helpers have been removed entirely, some replaced by new ones.
-
-The `Link` helper, used internally for parsing URL parts from link elements, has been removed in favor of a new `Location` helper.
-
-```diff
-- import { Link } from 'swup/lib/helpers';
-- const url = new Link(linkEl.href).getAddress();
-- const hash = new Link(linkEl.href).getHash();
-+ import { Location } from 'swup';
-+ const { url, hash } = Location.fromElement(linkEl);
-```
-
-### Plugin authors
-
-#### Update import paths of helpers and utils
-
-- `swup/lib/helpers` → `swup`
-- `swup/lib/utils` → `swup`
-
-#### Switch to `Location` helper
-
-Use the new `Location` helper for parsing URLs instead of the old `Link` class.
+Creating custom hooks has changed:
 
 ```js
-import { Location } from 'swup';
-const { url, hash } = Location.fromElement(linkEl);
+this.swup._handlers.formSubmit = []; // [!code --]
+this.swup.hooks.create('form:submit'); // [!code ++]
 ```
 
-#### Use event delegation helper
-
-Swup now bundles its event delegation library. Plugins will no longer have to install and bundle `delegate-it` or similar packages. Instead, use the `delegateEvent` helper on the swup instance. The delegate parent `document` is assumed.
-
-```diff
-- import delegate from 'delegate-it';
-- this.swup.delegatedListeners.formSubmit = delegate(
--   document,
--   this.options.formSelector,
--   'submit',
--   this.onFormSubmit.bind(this)
-- );
-+ this.swup.delegatedListeners.formSubmit = this.swup.delegateEvent(
-+   this.options.formSelector,
-+   'submit',
-+   this.onFormSubmit.bind(this)
-+ );
-```
-
-Removing delegated listeners on unmount works the same as before:
+As has triggering a hook:
 
 ```js
-this.swup.delegatedListeners.formSubmit.destroy();
+this.swup.triggerEvent('formSubmit'); // [!code --]
+this.swup.hooks.call('form:submit'); // [!code ++]
+```
+
+If you need wait for all handlers to finish before continuing, `await` the call:
+
+```js
+this.swup.triggerEvent('formSubmit'); // [!code --]
+await this.swup.hooks.call('form:submit'); // [!code ++]
+```
+
+If you need to replace swup's internal handler for a custom implementation, don't replace the
+instance method. Instead, specify that your hook handler should replace the internal one.
+
+```js
+this.swup.replaceContent = () => { /* custom implementation */ }; // [!code --]
+this.swup.hooks.replace('content:replace', () => { /* custom implementation */ }); // [!code ++]
 ```

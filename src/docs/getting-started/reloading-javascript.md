@@ -1,15 +1,12 @@
 ---
 layout: default
-title: Reloading JavaScript
-eleventyNavigation:
-  key: Reloading JavaScript
-  parent: Getting Started
-  order: 5
-description: Since swup removes the page reloads from site, it also removes a standard lifecycle of scripts
+title: Reloading Scripts
+eleventyNavigation: false
+description: How to trigger custom code when a new page is loaded.
 permalink: /getting-started/reloading-javascript/
 ---
 
-# Reloading JavaScript
+# Reloading Scripts
 
 Swup takes control of the page load lifecycle. Instead of having the browser
 recompile scripts between page changes, it keeps the current page instance alive
@@ -32,8 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 ```
 
-Instead, we can trigger code after each page change by hooking into swup's
-[events](/events/). Combining the browser event and swup events, we end up with
+Instead, we can trigger code after each page change by registering handlers for swup's
+[hooks](/hooks/). Combining the browser event and swup hooks, we end up with
 a template for reliably running code to initialize elements on the page:
 
 ```javascript
@@ -41,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // This runs on initial load
 });
 
-swup.on('pageView', () => {
-  // This runs after every page change
+swup.hooks.on('page:view', () => {
+  // This runs after every page change by swup
 });
 ```
 
@@ -81,7 +78,7 @@ if (document.readyState === 'complete') {
 }
 
 // Run after every additional navigation by swup
-swup.on('pageView', () => init());
+swup.hooks.on('page:view', () => init());
 ```
 
 ## Using component frameworks
@@ -99,9 +96,8 @@ lifecycle hooks.
 
 Swup keeps a persistent session in memory, so objects leaking memory will not be
 cleaned up automatically as they would be on a full page refresh. While this
-should not be a problem on most sites, be aware that in special case you will
-need to clean up after yourself by hooking into swup's `willReplaceContent`
-event.
+should not be a problem on most sites, be aware that in special cases you will
+need to clean up after yourself right before swup's `content:replace` hook.
 
 ```javascript
 function unload() {
@@ -110,12 +106,12 @@ function unload() {
   }
 }
 
-swup.on('willReplaceContent', () => unload());
+swup.hooks.before('content:replace', () => unload());
 ```
 
 ## Third-party script tags
 
 If you're not in control over the scripts included on the page, there is an
 official [scripts plugin](/plugins/scripts-plugin/) to help with reloading
-`script` tags. **Keep in mind that this is a last resort if none of the other
-options are available to you.**
+script tags.
+**This should be a last resort if none of the other options are available to you.**

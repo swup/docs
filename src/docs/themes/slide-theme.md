@@ -5,7 +5,7 @@ eleventyNavigation:
   key: Slide Theme
   parent: Themes
   order: 2
-description: Theme to slide and fade pages on the transition
+description: A swup theme for slide and fade animations
 permalink: /themes/slide-theme/
 repo_link: https://github.com/swup/slide-theme
 ---

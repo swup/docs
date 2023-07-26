@@ -11,57 +11,36 @@ permalink: /options/
 
 # Options
 
-Swup has several options that can be passed in during initialization:
+Swup has several options that can be passed in during initialization.
+
+## Defaults
+
+These are the default options. See below for details on each option.
 
 ```javascript
 const swup = new Swup({
-  /* options */
+  animateHistoryBrowsing: false,
+  animationSelector: '[class*="transition-"]',
+  animationScope: 'html',
+  cache: true,
+  containers: ['#swup'],
+  ignoreVisit: (href, { el } = {}) => el?.closest('[data-no-swup]'),
+  linkSelector: 'a[href]',
+  plugins: [],
+  resolveUrl: (url) => url,
+  requestHeaders: {
+    'X-Requested-With': 'swup',
+    Accept: 'text/html, application/xhtml+xml'
+  },
+  skipPopStateHandling: (event) => event.state?.source !== 'swup'
 });
-```
-
-## linkSelector
-
-Defines which link elements will trigger page visits. By
-default, all `a` elements with an `href` attribute will receive clicks.
-
-```javascript
-{
-  linkSelector: 'a[href]';
-}
-```
-
-To allow swup to take over clicks on
-[map areas](https://www.w3schools.com/tags/tag_area.asp) or
-[SVG links](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/a),
-append the selector:
-
-```javascript
-{
-  linkSelector: 'a[href], area[href], svg a[*|href]';
-}
-```
-
-## ignoreVisit
-
-Allows ignoring specific visits through a callback. By default, swup will ignore links with a `data-no-swup` attribute on itself or any parent element. The callback receives the URL of the new page, as well as a copy of the element that triggered it, if any.
-
-The URL argument is the relative URL, excluding origin, but including any query parameters and hash.
-
-Note: when navigating programmatically via `swup.loadPage({ url })`, the callback will **not** receive the `el` argument since the visit wasn't triggered by any element.
-
-```javascript
-{
-  ignoreVisit: (url, { el } = {}) => el?.closest('[data-no-swup]');
-}
 ```
 
 ## animationSelector
 
-Defines the elements that are being animated. Usually, they will have a common
-class or class prefix. The default option will select all elements with
-classNames starting with `transition-`.
-
-Swup will wait for all CSS transitions and keyframe animations to finish on these elements before swapping in the content of the new page.
+The selector for detecting animation timing. Swup will wait for all CSS transitions and
+keyframe animations to finish on these elements before swapping in the content of the new page.
+The default option will select all elements with class names beginning in `transition-`.
 
 ```javascript
 {
@@ -69,31 +48,56 @@ Swup will wait for all CSS transitions and keyframe animations to finish on thes
 }
 ```
 
+## animationScope
+
+The elements on which swup will add the [animation classes](/getting-started/how-it-works/#animation-classes)
+for styling the different phases of the in/out animation. By default, it will add those classes
+to the `html` tag. This is great for most use cases and the recommended way to use swup.
+
+```js
+{
+  animationScope: 'html';
+}
+```
+
+```html
+<html class="is-animating is-leaving"></html>
+```
+
+Setting this option to `containers` will add the classes on the content containers themselves instead.
+
+```js
+{
+  animationScope: 'containers';
+}
+```
+
+```html
+<main id="swup" class="is-animating is-leaving">Content</main>
+```
+
 ## containers
 
-Defines the containers that have their content replaced on page visits. This option must at least include the main element with the content of the page, but can
-include any other elements that are present across all pages.
-
-This allows animating one set of elements on the page while still replacing
-other, non-animated, parts of it: a common example would be the global site
-navigation that will not animate across pages but still needs to be updated if
-the language changes.
-
+The content containers to be replaced on page visits. Usually the `<main>` element with the
+content of the page, but can include any other elements that are present across all pages.
 Defaults to a single container of id `#swup`.
 
-**Note:** Only elements **inside** of the `body` tag are supported.
+Adding containers here allows animating one set of elements while replacing other parts of the page
+without animation, e.g. a global site navigation that will not fade out but still needs to update
+to reflect language changes.
 
 ```javascript
 {
   containers: ['#swup'];
 }
 ```
+> **Note** Only elements **inside** of the `body` tag are supported.
 
 ## cache
 
-Swup has a built-in cache and will keep previously loaded pages in memory.
-This drastically improves speed but should be disabled for highly dynamic sites
-that need up-to-date responses on each request. Defaults to `true`.
+The built-in [cache](/api/cache/) keeps previously loaded pages in memory. This improves speed but
+can be disabled for highly dynamic sites that need up-to-date responses on each request. Defaults
+to `true`.
 
 ```javascript
 {
@@ -101,10 +105,43 @@ that need up-to-date responses on each request. Defaults to `true`.
 }
 ```
 
+## ignoreVisit
+
+Allows ignoring specific visits via callback. By default, swup will ignore links with a
+`data-no-swup` attribute on itself or any parent element.
+
+The callback takes a relative URL of the new page, as well as the element and event that triggered
+the visit. Note that element and event will be undefined if navigating via `swup.navigate(url)`.
+
+```javascript
+{
+  ignoreVisit: (url, { el, event } = {}) => el?.closest('[data-no-swup]');
+}
+```
+
+## linkSelector
+
+The link elements that trigger visits. By default, all `a` elements with an `href`
+attribute will receive clicks.
+
+```javascript
+{
+  linkSelector: 'a[href]';
+}
+```
+
+To let swup take over clicks on [map areas](https://www.w3schools.com/tags/tag_area.asp) or
+[SVG links](https://developer.mozilla.org/en-US/docs/Web/SVG/Element/a), append the selector:
+
+```javascript
+{
+  linkSelector: 'a[href], area[href], svg a[*|href]';
+}
+```
+
 ## requestHeaders
 
-Adjust request headers that should be sent with each swup request. Useful for returning custom
-payloads from the server or other server-side pre-processing.
+The custom headers that get sent along with each swup request.
 
 ```javascript
 {
@@ -115,42 +152,16 @@ payloads from the server or other server-side pre-processing.
 }
 ```
 
-## skipPopStateHandling
-
-Swup is built around the [History API](https://developer.mozilla.org/en-US/docs/Web/API/History), but sometimes some other tools manipulating the browser history can be used as well.
-
-For this reason, swup places a `source` property into every history `state` object it creates, so it can be identified later (swup also modifies the current history record on start, to include the `source: swup` property as well).
-On `popState` events, swup only handles the records that were created by swup.
-
-This behavior can be modified by the callback `skipPopStateHandling`, which should return a `boolean` (`false`: handle the `popState` event, `true`: do nothing).
-The callback receives one argument - the `popState` event.
-
-The option defaults to this:
-
-```javascript
-{
-  skipPopStateHandling: (event) => event.state?.source !== 'swup';
-}
-```
-
 ## resolveUrl
 
-This option provides a way of rewriting URLs before swup will attempt to load
-them. In practice, it's an advanced way of telling swup which visits to ignore.
-By resolving different paths to a single path, swup will treat all these
-as a single resource and ignore any visits between them. You can then
-handle any changes on the page yourself: updating content, title tag, etc.
-without swup getting in the way. Swup will also use the resolved URL for its
-cache and for restoring the scroll position if using the scroll plugin.
+Rewrite URLs before loading them. An advanced way of ignoring certain visits by mapping different
+paths to a single path and treating them as one resource for fetching pages and restoring scroll
+positions. The callback receives and returns a relative URL.
 
-An example use case would be a project listing with purely client-side filtering
-based on the query parameters. The server will always respond with the full list
-of all projects. In that case, you'll want to handle any visits between
-`/projects/?sort=date` and `/projects/?sort=title` yourself, telling swup that
-nothing has changed and no fetch request to the new URL is necessary.
-
-The callback function receives a relative URL as an argument and needs to
-return a relative URL as well:
+An example use case would be a project listing: the server always sends the complete list of
+projects and filtering is done client-side based on query params. You'll want to handle any visits
+between `/projects/?sort=date` and `/projects/?sort=title` yourself, telling swup nothing has
+changed and no page load is necessary.
 
 ```javascript
 {
@@ -165,9 +176,24 @@ return a relative URL as well:
 
 The option defaults to `(url) => url`.
 
+## skipPopStateHandling
+
+Swup will only handle backward/forward visits to history entries it has created itself. Any visits
+to entries without a custom `source` property will be ignored and handled by the browser instead.
+To modify this behavior, provide a custom callback function that receives the `popstate` event
+and returns a `boolean`.
+
+```javascript
+{
+  skipPopStateHandling: (event) => event.state?.source !== 'swup';
+}
+```
+
 ## animateHistoryBrowsing
 
-History visits triggered by the back and forward buttons of the browser will skip all animations to allow faster navigation. If you need animations on history visits, set this option to `true`. When enabled, swup will add the class `is-popstate` to the html tag during the transitions of those visits. The default value is `false`.
+Swup will skip animations for visits triggered by the back/forward button. If you do require
+animations on history visits, set this to `true`. Swup will add the class `is-popstate` to the html
+tag during those animations. Defaults to `false`.
 
 ```javascript
 {
@@ -175,25 +201,6 @@ History visits triggered by the back and forward buttons of the browser will ski
 }
 ```
 
-⚠️ **Important Note**: This option was added due to popular request but should be used with caution. When enabled, swup has to disable all native browser scrolling behavior (sets [scrollRestoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration) to `manual`). We encourage you to strongly consider the consequences of doing so: The scroll positions on previous page(s) or between page reloads are **not being preserved** (but [can be implemented manually](https://github.com/swup/swup/issues/48#issuecomment-423854819), depending on the use case). Otherwise, Swup will scroll to the top/#element on `popState` as the browser would do.
-
-## Default Options
-
-The default option object look like...
-
-```javascript
-{
-  animateHistoryBrowsing: false,
-  animationSelector: '[class*="transition-"]',
-  cache: true,
-  containers: ['#swup'],
-  ignoreVisit: (href, { el } = {}) => el?.closest('[data-no-swup]'),
-  linkSelector: 'a[href]',
-  plugins: [],
-  requestHeaders: {
-    'X-Requested-With': 'swup',
-    'Accept': 'text/html, application/xhtml+xml'
-  },
-  skipPopStateHandling: (event) => event.state?.source !== 'swup'
-}
-```
+> **Warning** This option was added due to popular request. However, it should be used with
+> caution. When activated, swup has to disable native [browser scroll restoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration). Scroll positions will not be preserved between visits and need to
+> be implemented by you.

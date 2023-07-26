@@ -4,8 +4,8 @@ title: Scroll Plugin
 eleventyNavigation:
   key: Scroll Plugin
   parent: Plugins
-  order: 17
-description: Plugin to control scroll position of the page
+  order: 20
+description: A swup plugin for smooth scrolling
 permalink: /plugins/scroll-plugin/
 repo_link: https://github.com/swup/scroll-plugin
 ---

@@ -23,7 +23,10 @@ button {
 	display: inline-block;
 	border-radius: var(--radius-round);
 	background: var(--color-transparent-0);
-	--button-height: 2.6em;
+	--button-height: 2.4em;
+	@include bp(m) {
+		--button-height: 2.6em;
+	}
 	--button-max-width: calc(100vw - var(--gap-x2));
 	--button-padding: 1.2em;
 	@at-root .dark & {

@@ -3,15 +3,30 @@
   aria-label="Main navigation"
   class="nav nav--desktop">
   <div class="nav_inner" x-ref="navInner">
-    {{ collections.all | eleventyNavigation | eleventyNavigationToHtml({
-      listClass: "nav_list",
-      listItemClass: "nav_list_item",
-      listItemHasChildrenClass: "--has-children",
-      activeListItemClass: "",
-      anchorClass: "nav_list_link",
-      activeAnchorClass: "is-active",
-      activeKey: eleventyNavigation.key
-    }) | safe }}
+
+    {% set navPages = collections.all | eleventyNavigation %}
+
+    {% macro renderNavListItem(entry) -%}
+      <li class="nav_list_item {% if entry.url == page.url %}is-active{% endif %}" data-order="{{ entry.order }}">
+        <a href="{{ entry.url }}" class="nav_list_link">
+          {{ entry.title }}
+        </a>
+        {%- if entry.children.length -%}
+          <ul>
+            {%- for child in entry.children %}
+              {{ renderNavListItem(child) }}
+            {% endfor -%}
+          </ul>
+        {%- endif -%}
+      </li>
+    {%- endmacro %}
+
+    <ul class="nav_list">
+      {%- for entry in navPages %}
+        {{ renderNavListItem(entry) }}
+      {%- endfor -%}
+    </ul>
+
     <i aria-hidden="true" class="nav_indicator"></i>
   </div>
 </nav>

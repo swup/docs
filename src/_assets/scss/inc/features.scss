@@ -1,0 +1,46 @@
+.features {
+	--min-column-width: 200px;
+	--icon-size: 2.5rem;
+	--border-style: 1px solid var(--color-transparent-1);
+	margin-block: var(--gap) !important;
+	list-style: none;
+	padding: 0;
+	gap: var(--gap-small);
+	border: var(--border-style);
+	border-radius: var(--radius-1);
+}
+.feature {
+	position: relative;
+	margin: 0;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	gap: var(--gap-small);
+	align-items: center;
+	padding: 1em;
+	@include bp(xs) {
+		padding: 0.3rem;
+		flex-direction: row;
+		text-align: start;
+		gap: 0;
+	}
+}
+.feature + .feature {
+	border-top: var(--border-style);
+}
+.feature_icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: calc(var(--icon-size) * 0.45);
+	background: var(--background);
+	border: var(--border-style);
+	width: var(--icon-size);
+	height: var(--icon-size);
+	flex: none;
+	border-radius: var(--radius-round);
+	@include bp(xs) {
+		border: none;
+	}
+}

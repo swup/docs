@@ -1,6 +1,6 @@
 ---
 layout: default
-title: How it works
+title: How It Works
 eleventyNavigation:
   key: How it works
   parent: Getting Started
@@ -9,19 +9,73 @@ description: A simple explanation of how swup gets things done
 permalink: /getting-started/how-it-works/
 ---
 
-# How it works
+# How It Works
 
-Think of swup as being pjax on steroids. The concepts are similar to those used in barba.js or other transition libraries, but swup pays more attention to ease of use and flexibility.
+Instead of letting the browser load the next page, swup intercepts link clicks, loads the new
+page in the background and smoothly animates between the old and new content.
 
-Apart from loading the contents of the new page and replacing the required parts in the DOM, swup is built around CSS transitions.
-The main thing that needs to be done is defining a hidden state in CSS.
+Read on to learn about key concepts of swup.
 
-When a user navigates your website, swup waits for all elements on the current page that contain the class `transition-[something]` to finish their animation, before switching the container contents and animating your page back in. We recommend that you set the `transition-[something]` class on **only one element** for each page. All other elements you want to animate during page transitions should be animated independently (without using a separate `transition-[something]` class for each of them).
+## Containers
 
-For the animations based on CSS to be possible, swup uses several classes that are assigned to the `html` tag through the process of a page transition:
+Swup will not replace the whole body on each page load. Instead, it will only replace the actual
+[content containers](/options/#containers) on your page. By default, swup will only replace a
+container with the id `#swup` but you can configure additional containers like headers or navigation
+menus.
 
-- `is-animating` — Assigned once a link is clicked. Removed after the page content is replaced. Used for defining styles of unloaded pages.
-- `is-changing` — Assigned once a link is clicked. Removed after the whole transition process. Used for showing loading state.
-- `is-leaving` — Assigned once a link is clicked. Removed right before the content is replaced. Used to identify the **leave** phase of the transition. Combine with `is-animating` to create differing **leave** and **enter** transitions.
-- `is-rendering` — Assigned right before the content is replaced. Removed after the whole transition process. Used to identify the **enter** phase of the transition. Combine with `is-animating` to create differing **leave** and **enter** transitions.
-- `to-[custom-transition]` — Assigned if the clicked link has a `[data-swup-transition]` attribute. Can be used to change the animation for a specific URL.
+## Automatic animation timing {#timing}
+
+Swup is built around CSS animations. It will wait for any
+[transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) and
+[animations](https://developer.mozilla.org/en-US/docs/Web/CSS/animation) to finish before replacing
+page content. To identify animations to wait for, swup will look for a special type of class added
+to content containers: `transition-[name]`, where `name` is an arbitrary name you can assign
+to allow styling different types of animations. This [animation selector](/options/#animation-selector)
+can be freely configured.
+
+It is recommended to only add this class to a **single** element per page. All other elements
+can be animated independently to allow easier debugging of animations.
+
+### Animation classes {#classes}
+
+Swup applies classes to the `html` element to control the page transition process:
+
+<div class="events-table" data-table-with-anchor-links>
+
+| Class name            | Description                                                                                                                                                                                                                       |
+| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `is-changing`         | Added before starting the animation. Removed after the whole animation process. Used for showing the loading state.                                                                                                               |
+| `is-animating`        | Added before starting the animation. Removed after the content is replaced. Used for defining styles of unloaded pages.                                                                                                           |
+| `is-leaving`          | Added before starting the animation. Removed right before the content is replaced. Used to identify the **leave** phase of the animation. Combine with `is-animating` to create differing **leave** and **enter** animations.     |
+| `is-rendering`        | Added right before the content is replaced. Removed after the whole animation process. Used to identify the **enter** phase of the animation. Combine with `is-animating` to create differing **leave** and **enter** animations. |
+| `to-[animation-name]` | Added for links with a `[data-swup-animation="{{animation-name}}"]` attribute to change the animation for a specific visit.                                                                                                       |
+
+</div>
+
+You can configure swup to [add animation classes to the containers](/options/#animation-scope)
+instead of the html element.
+
+## Other animation methods
+
+Use the official [JS Plugin](/plugins/js-plugin/) to perform animations yourself in JS or with a
+popular animation library like GSAP.
+
+## Browser history {#history}
+
+Swup will update and push to the browser history API. The current URL in the browser always reflects
+the actual URL of the last requested page. Forward/backward visits will continue to work
+as expected. On history visits, the scroll position will be restored as well.
+
+## Scroll behavior {#scrolling}
+
+Swup emulates native browser behavior for scrolling. Between page visits, the scroll position will
+be reset to the top. Clicking on an anchor link to the same page will jump to that anchor.
+
+## Hooks
+
+To trigger custom logic or modify swup's behavior, you can register [hook handlers](/hooks/).
+
+## Plugins
+
+Swup was designed to be small but modular. Any extended functionality can be added via one of the
+many official or third-party [plugins](/plugins/).

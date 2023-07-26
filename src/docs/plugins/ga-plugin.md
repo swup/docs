@@ -4,8 +4,8 @@ title: GA Plugin
 eleventyNavigation:
   key: GA Plugin
   parent: Plugins
-  order: 7
-description: Plugin to trigger GA page views
+  order: 8
+description: A swup plugin for integrating Google Analytics
 permalink: /plugins/google-analytics-plugin/
 repo_link: https://github.com/swup/ga-plugin
 ---

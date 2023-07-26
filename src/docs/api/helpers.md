@@ -4,7 +4,7 @@ title: Helpers
 eleventyNavigation:
   key: Helpers
   parent: API
-  order: 5
+  order: 4
 description: Helpers that can be used for developing plugins, themes or anything else around swup
 permalink: /api/helpers/
 ---
@@ -79,27 +79,6 @@ Make sure to remove the listener on unmount of a plugin:
 swup.delegatedListeners.formSubmit.destroy();
 ```
 
-## fetch
-
-Wrapper around swup's XHR request implementation. Receives an options object and a callback that resolves with the finished request object.
-
-```javascript
-fetch({ url: '/about', method: 'POST', data: {} }, (req) => {
-  if (req.status !== 500) {
-    /* process response */
-  }
-});
-```
-
 ## getCurrentUrl
 
-Return the current page's url.
-
-## getDataFromHtml
-
-Given a string of HTML returned by the server as well as a list of [container selectors](/options#containers), this method extracts the data required by swup to transition to and render this page.
-
-```javascript
-// Returns { title, blocks, originalContent, pageClass }
-const pageObject = getDataFromHtml(html, swup.options.containers);
-```
+Return the current page's url: pathname + query params.

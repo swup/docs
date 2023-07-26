@@ -1,0 +1,16 @@
+<div class="version-select" x-data="VersionSelect">
+  <button x-ref="button" class="button button--circle version-select_button" type="button">
+    <span class="version-select_label">
+      {{ site.currentVersion }}
+    </span>
+  </button>
+  <template x-ref="options">
+    <ul class="version-select_options">
+      {% for version in site.versions %}
+        <li>
+          <a class="{% if version.isCurrent %}is-active{% endif %}" href="{{ version.url }}">{{ version.label }}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </template>
+</div>

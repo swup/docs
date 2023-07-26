@@ -1,5 +1,9 @@
 <main
-    class="intro" x-data="Intro" x-cloak="x-cloak">
+    class="intro"
+    x-data="Intro"
+    x-on:keydown.escape.window="cancelAnimation"
+    x-cloak="x-cloak"
+>
     <div class="intro_background"></div>
     <div class="intro_body">
         <a class="intro_logo swup-logo-link" x-ref="link" href="/getting-started/">
@@ -46,5 +50,8 @@
                 <a class="button" href="https://github.com/swup/swup"><span>GitHub</span></a>
             </span>
         </div>
+    </div>
+    <div class="intro_announcement" x-ref="announcement">
+        <a href="/announcements/swup-4/">Announcing swup 4  🎉</a>
     </div>
 </main>

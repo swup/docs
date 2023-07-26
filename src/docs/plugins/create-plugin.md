@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Create a Plugin 🎉
+title: Create a plugin 🎉
 eleventyNavigation:
-  key: Create a Plugin 🎉
+  key: Create a plugin 🎉
   parent: Plugins
   order: 100
 description: Create your own plugin
@@ -11,15 +11,92 @@ permalink: /plugins/create-plugin/
 
 # Create a Plugin
 
-Anyone can create and publish swup plugins.
-To create new plugin, install [swup CLI](/cli/) which can create one from a template for you.
-
-Alternatively you can head over to [this template repo](https://github.com/swup/plugin-template) and follow the instructions there.
+Anyone can create and publish swup plugins. To create a new plugin, install the [swup CLI](/cli/)
+and let it create one from a template. Or head over directly to the
+[plugin template repo](https://github.com/swup/plugin-template) and follow the instructions there.
 
 ## Tips
 
-- Checkout existing plugins before creating one.
-- Swup instance is automatically assigned to the plugin instance and can be accessed under `this.swup` in `mount`/`unmount` methods.
-- If you feel like this should be an official swup plugin (under npm `@swup` organization) and the world could use a thing like this, contact me at gmarcuk@gmail.com.
-- Use swups `log` method to output any relevant information. By default the method doesn't do anything, but swup does output any calls in case [debug plugin](/plugins/debug-plugin/) is used.
-- All plugins should clean up any changes to swup/event listeners in `umount` method.
+- Check out existing plugins before creating one. Maybe the desired functionality can be integrated into an existing plugin?
+- If you think your new plugin should be an official swup plugin and live under the `@swup/*` npm namespace, get in touch at gmarcuk@gmail.com.
+
+## Developing plugins
+
+### Accessing swup
+
+The swup instance is automatically assigned to the plugin instance and can be accessed as
+`this.swup` in the `mount` and `unmount` methods.
+
+### Cleaning up
+
+Plugins need to clean up after themselves in the `umount` method: cancel any event listeners, undo
+any DOM changes, etc.
+
+### Logging
+
+Use swup's `log` method to output any relevant information. By default this method doesn't do
+anything. It will starting outputting information only if installed alongside the
+[debug plugin](/plugins/debug-plugin/).
+
+### Replacing swup hooks
+
+You might want to react to certain lifecycle hooks by replacing swup's internal handler completely.
+The default handler is passed to the callback as the third parameter, should you decide to let
+swup handle this hook based on some condition.
+
+```javascript
+this.swup.hooks.replace('animation:await', (visit, args, defaultHandler) => {
+  if (someCondition) {
+    // Detect animation timing ourselves
+  } else {
+    // Let swup handle animation timing
+    return defaultHandler(visit, args);
+  }
+});
+```
+
+### Custom hooks
+
+You might need to create your own new hooks to implement additional functionality.
+
+Create a new hook in `mount`:
+
+```javascript
+this.swup.hooks.create('form:submit');
+```
+
+Call the hook whenever makes sense:
+
+```javascript
+this.swup.hooks.call('form:submit');
+```
+
+Pass in arguments to hand them along to any registered handlers.
+
+```javascript
+this.swup.hooks.call('form:submit', { formData: 123 });
+```
+
+### Making custom hooks replaceable
+
+Passing in a default handler when calling a hook will allow users of your plugin
+to replace this default handler with a custom implementation. This is an advanced pattern to avoid
+monkeypatching instance methods.
+
+In the example below, the default form handler uses `fetch` to submit the form.
+
+```javascript
+const args = { action: url, data: new FormData() };
+this.swup.hooks.call('form:submit', args, (visit, { action, data }) => {
+  return fetch(action, { body: data }).then(/* */);
+});
+```
+
+Consumers can now replace the default handler with a custom handler. In this example, they are
+using axios to submit the form instead.
+
+```javascript
+swup.hooks.replace('form:submit', (visit, { action, data }) => {
+  return axios.get(action, { params: data }).then(/* */);
+});
+```

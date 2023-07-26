@@ -11,7 +11,25 @@ permalink: /other/integrations/
 
 # Integrations
 
-This is a collection of snippets for integrating swup with other popular tools.
+This is a collection of solutions for integrating swup with other popular tools.
+
+## Astro
+
+Astro and swup are a great fit. Where Astro manages the rendering of your site, swup takes over
+and adds smooth page transitions, smart preloading and caching on the client side.
+
+Check out the [official Astro integration for swup](https://github.com/swup/astro)
+for getting started quickly.
+
+```js
+// astro.config.mjs
+import { defineConfig } from 'astro/config';
+import swup from '@swup/astro';
+
+export default defineConfig({
+  integrations: [swup()]
+});
+```
 
 ## Alpine.js
 
@@ -19,7 +37,7 @@ Swup works well with [Alpine.js](https://alpinejs.dev/) for managing component
 state and automating page lifecycles. Just initialize both libraries and enjoy
 automatic initialization of your components:
 
-```js
+```javascript
 import Swup from 'swup';
 import Alpine from 'alpinejs';
 
@@ -35,15 +53,13 @@ Alpine.start();
 </div>
 ```
 
-### Listening to swup events
+### Handling swup hooks
 
-If you want to listen to swup events inside your Alpine components, you need to
-make use of the [`.camel` modifier](https://alpinejs.dev/directives/on#camel)
-since camelCase is not supported in HTML attribute names. For example, listening
-for the `contentReplaced` event would look like this:
+To register handlers for swup's hooks inside your Alpine components, you need to
+prepend `swup` to all hook names. For example, hooking into `page:view` would look like this:
 
 ```html
-<div x-data x-on:swup:content-replaced.camel.document="console.log('content replaced!')">
+<div x-data x-on:swup:page:view.camel.document="console.log('page view registered!')">
   My Alpine Component
 </div>
 ```

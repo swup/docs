@@ -4,8 +4,8 @@ title: JS Plugin
 eleventyNavigation:
   key: JS Plugin
   parent: Plugins
-  order: 11
-description: Plugin to use JS animations instead of CSS
+  order: 12
+description: A swup plugin for managing animations in JS
 permalink: /plugins/js-plugin/
 repo_link: https://github.com/swup/js-plugin
 ---

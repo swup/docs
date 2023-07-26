@@ -32,6 +32,8 @@ let swup;
 export default function () {
 	swup = new Swup({
 		containers: ['#swup', '#breadcrumb'],
+		ignoreVisit: (url, { el } = {}) =>
+			el?.closest('[data-no-swup]') || url.match(/\.(png|svg)$/i),
 		plugins: [
 			// new SwupDebugPlugin(),
 
@@ -64,8 +66,9 @@ export default function () {
 
 	swup.on('clickLink', onSwupClickLink);
 
+	window.addEventListener('resize', positionNavIndicators);
 	document.addEventListener('change', (event) => {
-		if (event.target.name === 'theme') changeSwupThemeWithTransition(event.target.value);
+		if (event.target.name === 'theme') changeSwupThemeWithAnimation(event.target.value);
 	});
 	setSwupTheme(new URLSearchParams(window.location.search).get('theme'));
 
@@ -96,7 +99,7 @@ function emulateTargetPseudoClass() {
 		if (current) current.removeAttribute(attribute);
 		const element = window.swup.getAnchorElement(window.location.hash);
 		if (element) element.setAttribute(attribute, '');
-	})
+	});
 }
 
 /**
@@ -111,11 +114,11 @@ function selectCurrentThemeCheckbox() {
 
 /**
  * Changes the current theme and reloads the page with a related query param.
- * This will show of the new theme's transition immediately
+ * This will show off the new theme's animation immediately
  *
  * @param {string} theme
  */
-function changeSwupThemeWithTransition(theme) {
+function changeSwupThemeWithAnimation(theme) {
 	setSwupTheme(theme);
 
 	const url = new URL(window.location.href);
@@ -137,21 +140,34 @@ function setSwupTheme(theme) {
 	currentTheme = theme;
 }
 
+function positionNavIndicator(indicator) {
+	const duration = 0.35;
+	const ease = 'power4.out';
+
+	const path = indicator.dataset.path || '';
+	const wrap = indicator.closest('.nav_inner');
+	const link = wrap.querySelector(`a[href="${path}"]`);
+
+	if (link) {
+		const wrapRect = wrap.getBoundingClientRect();
+		const rect = link.getBoundingClientRect();
+		const top = rect.top + rect.height / 2 + wrap.scrollTop - wrapRect.top;
+		gsap.to(indicator, { opacity: 1, top, duration, ease });
+	} else {
+		gsap.to(indicator, { opacity: 0, duration, ease });
+	}
+}
+
+function positionNavIndicators() {
+	document.querySelectorAll('.nav_indicator').forEach((indicator) => {
+		positionNavIndicator(indicator);
+	});
+}
+
 function adjustNavIndicators(path) {
 	document.querySelectorAll('.nav_indicator').forEach((indicator) => {
-		const wrap = indicator.closest('.nav_inner');
-		const activeLink = wrap.querySelector(`a[href="${path}"]`);
-		if (!activeLink) return;
-
-		const wrapRect = wrap.getBoundingClientRect();
-		const rect = activeLink.getBoundingClientRect();
-		const top = rect.top + rect.height / 2 + wrap.scrollTop - wrapRect.top;
-
-		gsap.to(indicator, {
-			top,
-			ease: 'power4.out',
-			duration: 0.35
-		});
+		indicator.dataset.path = path;
+		positionNavIndicator(indicator);
 	});
 
 	document.querySelectorAll('.nav a').forEach((a) => {

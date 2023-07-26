@@ -3,53 +3,116 @@ layout: default
 title: Getting Started
 eleventyNavigation:
   key: Getting Started
-  order: 1
+  order: 0
 permalink: /getting-started/
 ---
 
 # Getting Started
 
-Swup is an extensible and easy-to-use page transition library for server-side rendered websites. It
-handles the complete lifecycle of a page visit by intercepting link clicks, loading the new page in the
-background, replacing the content and transitioning between the old and the new page.
+## What is swup?
 
-Its goal is to make adding transitions to a site as simple as possible, while providing lots of
-other quality-of-life improvements.
+Swup is a versatile and extensible **page transition library** for server-rendered websites.
+It manages the complete page load lifecycle and smoothly animates between the current and next
+page. In addition, it offers many other quality-of-life improvements like **caching**, **smart preloading**,
+native **browser history** and enhanced **accessibility**.
+
+Make your site feel like a snappy single-page app — without any of the complexity.
 
 ## Features
 
-- 🎯 Extremely [easy to use](/getting-started/example/), even for beginners
-- ✨ Auto-detects [CSS transitions](/getting-started/how-it-works/) for perfect timing
-- 🔗 Updates URLs and preserves native browser history behavior
-- 📦 Uses a [cache](/api/cache/) to speed up subsequent page loads
-- 💡 Offers [events](/events/) for hooking into the lifecycle
-- 🔌 Has a powerful [plugin system](/plugins/) and many official and third-party plugins
-- 🎨 Provides ready-to-go [themes](/themes/) to get started quickly
+<ul class="features">
+
+  <li class="feature">
+    <span class="feature_icon">✏️</span>
+    <span class="feature_text">
+      Works out of the box with <a href="/getting-started/example/">minimal markup</a>
+    </span>
+  </li>
+
+  <li class="feature">
+    <span class="feature_icon">✨</span>
+    <span class="feature_text">
+      Auto-detects <a href="/getting-started/how-it-works/#timing">CSS transitions</a> & animations for perfect timing
+    </span>
+  </li>
+
+  <li class="feature">
+    <span class="feature_icon">🔗</span>
+    <span class="feature_text">
+      Updates URLs and preserves native <a href="/getting-started/how-it-works/#history">browser history</a>
+    </span>
+  </li>
+
+  <li class="feature">
+    <span class="feature_icon">🏓</span>
+    <span class="feature_text">
+      Manages <a href="/getting-started/how-it-works/#scrolling">scroll position</a> between pages and anchor links
+    </span>
+  </li>
+
+  <li class="feature">
+    <span class="feature_icon">🚀</span>
+    <span class="feature_text">
+      Uses a <a href="/api/cache/">cache</a> to speed up subsequent page loads
+    </span>
+  </li>
+
+  <li class="feature">
+    <span class="feature_icon">📡</span>
+    <span class="feature_text">
+      Offers <a href="/hooks/">hooks</a> to customize and extend the page load lifecycle
+    </span>
+  </li>
+
+  <li class="feature">
+    <span class="feature_icon">🔌</span>
+    <span class="feature_text">
+      Has a powerful <a href="/plugins/">plugin system</a> and many official and third-party plugins
+    </span>
+  </li>
+
+  <li class="feature">
+    <span class="feature_icon">🎨</span>
+    <span class="feature_text">
+      Provides ready-to-go <a href="/themes/">themes</a> to get started quickly
+    </span>
+  </li>
+
+</ul>
+
+See [How it works](/getting-started/how-it-works/) for an overview of the key concepts.
+
+## Try it out
+
+Explore our [interactive demos](/getting-started/demos/) to see swup in action.
 
 ## Plugins
 
-Swup's core is very small by design. All extended features can be added via [plugins](/plugins/). Some examples:
+Swup is small by design. Extended features can be added via [plugins](/plugins/):
 
-- Install a [progress bar](/plugins/progress-plugin/)
+- Display a [progress bar](/plugins/progress-plugin/) while loading
 - Enable [smooth scrolling](/plugins/scroll-plugin/) between visits
 - Update [meta tags and stylesheets](/plugins/head-plugin/) after page loads
 - Add support for [preloading pages](/plugins/preload-plugin/) in the background
 - Perform your [animations in JS](/plugins/js-plugin/) instead of CSS transitions
 - Animate [form submissions](/plugins/forms-plugin/)
-- Improve [screen reader accessibility](/plugins/a11y-plugin/)
+- Improve [accessibility](/plugins/a11y-plugin/) for screen readers
 - Get help in [debug mode](/plugins/debug-plugin/)
 
-Check out the list of [all official plugins](/plugins/) as well as [third-party integrations](/third-party-integrations/).
+Check out the list of [official plugins](/plugins/) and [third-party plugins](/third-party-plugins/).
+
+## Themes
+
+Get started quickly with one of three official themes: [fade](/themes/fade-theme/),
+[slide](/themes/slide-theme/), and [overlay](/themes/overlay-theme/).
 
 ## Having trouble?
 
-If you're having trouble implementing swup, check out [Common Issues](/other/common-issues/), look at [closed issues](https://github.com/swup/swup/issues?q=is%3Aissue+is%3Aclosed) or create a [new discussion](https://github.com/swup/swup/discussions/new).
+If you're having trouble implementing swup, check out [Common Issues](/getting-started/common-issues/), look
+at [closed issues](https://github.com/swup/swup/issues?q=is%3Aissue+is%3Aclosed), or create a
+[new discussion](https://github.com/swup/swup/discussions/new).
 
-## CLI
-
-Like to make sure your site has no bugs? You can use swup's [CI/CD integration](/ci-cd/) for that, or use the official [swup CLI](/cli/) to check your site manually.
-
-## Want to Contribute?
+## Want to contribute?
 
 Become a sponsor on [Open Collective](https://opencollective.com/swup) or support development through
 [GitHub sponsors](https://github.com/sponsors/gmrchk).
