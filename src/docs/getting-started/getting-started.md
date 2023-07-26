@@ -112,7 +112,7 @@ If you're having trouble implementing swup, check out [Common Issues](/getting-s
 at [closed issues](https://github.com/swup/swup/issues?q=is%3Aissue+is%3Aclosed), or create a
 [new discussion](https://github.com/swup/swup/discussions/new).
 
-## Want to Contribute?
+## Want to contribute?
 
 Become a sponsor on [Open Collective](https://opencollective.com/swup) or support development through
 [GitHub sponsors](https://github.com/sponsors/gmrchk).
