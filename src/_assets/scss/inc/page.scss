@@ -122,6 +122,7 @@
 		height: var(--size);
 		background: var(--color-transparent-3);
 		border-radius: var(--radius-round);
+		top: -0.05rem;
 	}
 	.screencast_header_dots:before,
 	.screencast_header_dots:after {
