@@ -93,8 +93,8 @@
 	[data-video] {
 		border-radius: var(--radius-1);
 		overflow: hidden;
-		box-shadow: var(--shadow-1);
-		border: 1px solid var(--color-transparent-2);
+		box-shadow: var(--shadow-4);
+		border: 0.5px solid var(--color-transparent-2);
 		margin-block: var(--gap);
 	}
 	[data-video] video {
