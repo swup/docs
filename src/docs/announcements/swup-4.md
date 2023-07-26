@@ -24,15 +24,21 @@ Make your site feel like a snappy single-page app — without any of the complex
 
 ## What’s new in this release
 
-- [Official Astro integration](#astro-integration)
-- [Built-in scroll support](#scroll-support)
-- [Local animation scope](#local-animation-scope)
-- [Hook system for easier customization](#hook-system)
-- [Visit info in all callbacks](#visit-object)
-- [Cache pruning strategies](#cache-pruning)
-- [Fragment Plugin for dynamic container replacement](#fragment-plugin)
-- [Parallel Plugin for combined in/out animation](#parallel-plugin)
-- [Easier customization of official themes](#themes)
+- [Announcing swup 4](#announcing-swup4)
+  - [What is swup?](#what-is-swup)
+  - [What’s new in this release](#whats-new-in-this-release)
+  - [Upgrading](#upgrading)
+  - [Official Astro integration {#astro-integration}](#official-astro-integration-astro-integration)
+  - [Features](#features)
+    - [Built-in scroll support {#scroll-support}](#built-in-scroll-support-scroll-support)
+    - [Local animation scope](#local-animation-scope)
+    - [Hook system for easier customization {#hook-system}](#hook-system-for-easier-customization-hook-system)
+    - [Visit object {#visit-object}](#visit-object-visit-object)
+    - [Cache pruning strategies {#cache-pruning}](#cache-pruning-strategies-cache-pruning)
+  - [Plugins](#plugins)
+    - [Fragment Plugin](#fragment-plugin)
+    - [Parallel Plugin](#parallel-plugin)
+  - [Easier customization of official themes {#themes}](#easier-customization-of-official-themes-themes)
 
 ## Upgrading
 
@@ -183,7 +189,11 @@ Both of these require updating only a small page fragment instead of doing a ful
 Head over to the [plugin readme](/plugins/fragment-plugin/) to learn more about enabling fragment
 visits in these scenarios.
 
-<!-- GIF of Fragment Plugin in action -->
+<div data-video data-screencast>
+
+https://user-images.githubusercontent.com/869813/256012207-1d12f061-2a9c-443b-9bf0-e37a7e559852.mp4
+
+</div>
 
 ### Parallel Plugin
 
@@ -204,6 +214,6 @@ the transition duration and the offset of the [Slide Theme](/themes/slide-theme/
 ```css
 body {
   --swup-slide-theme-translate: 20px;
-  --swup-slide-theme-duration-slide: .2s;
+  --swup-slide-theme-duration-slide: 0.2s;
 }
 ```
