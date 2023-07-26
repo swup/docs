@@ -90,6 +90,12 @@
 		}
 	}
 
+	[x-data="Video"] {
+		border-radius: var(--radius-1);
+		overflow: hidden;
+		border: 1px solid var(--color-transparent-0);
+	}
+
 	.header-anchor {
 		background: none;
 		font-weight: inherit;
