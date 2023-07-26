@@ -13,7 +13,6 @@ import MobileNav from './alpine/MobileNav/MobileNav.js';
 import SearchUI from './alpine/SearchUI/SearchUI.js';
 import TableOfContents from './alpine/TableOfContents/TableOfContents.js';
 import VersionSelect from './alpine/VersionSelect/VersionSelect.js';
-import Video from './alpine/Video/Video.js';
 
 
 export default function () {
@@ -27,6 +26,5 @@ export default function () {
 	Alpine.data('MobileNav', MobileNav);
 	Alpine.data('TableOfContents', TableOfContents);
 	Alpine.data('VersionSelect', VersionSelect);
-	Alpine.data('Video', Video);
 	Alpine.start();
 }

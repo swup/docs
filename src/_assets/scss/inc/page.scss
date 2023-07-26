@@ -90,6 +90,54 @@
 		}
 	}
 
+	[data-video] {
+		border-radius: var(--radius-1);
+		overflow: hidden;
+		box-shadow: var(--shadow-4);
+		border: 0.5px solid var(--color-transparent-2);
+		margin-block: var(--gap);
+	}
+	[data-video] video {
+		display: block;
+		max-width: none;
+		width: calc(100% + 2px);
+		height: calc(100% + 2px);
+		margin: -1px;
+	}
+
+	.screencast_header {
+		background: var(--color-transparent-2);
+		height: 1.5rem;
+		display: flex;
+		align-items: center;
+		padding-inline: 0.5rem;
+	}
+	.screencast_header_dots,
+	.screencast_header_dots:before,
+	.screencast_header_dots:after {
+		position: relative;
+		display: block;
+		--size: 0.5rem;
+		width: var(--size);
+		height: var(--size);
+		background: var(--color-transparent-3);
+		border-radius: var(--radius-round);
+		top: -0.05rem;
+	}
+	.screencast_header_dots:before,
+	.screencast_header_dots:after {
+		content: "";
+		position: absolute;
+		top: 0;
+	}
+	.screencast_header_dots:before {
+		left: calc(var(--size) * 1.5);
+	}
+
+	.screencast_header_dots:after {
+		left: calc(var(--size) * 3);
+	}
+
 	.header-anchor {
 		background: none;
 		font-weight: inherit;

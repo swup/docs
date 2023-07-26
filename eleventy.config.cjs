@@ -11,7 +11,11 @@ const EleventyFetch = require('@11ty/eleventy-fetch');
 const eleventyNavigationPlugin = require('@11ty/eleventy-navigation');
 const feather = require('feather-icons');
 const MarkdownItCodeEnhancements = require('./lib/markdown-it-code-enhancements');
-const { prepareTablesWithAnchorLinks, prepareInfoBlocks } = require('./lib/eleventy-transforms');
+const {
+	prepareTablesWithAnchorLinks,
+	prepareInfoBlocks,
+	prepareVideos
+} = require('./lib/eleventy-transforms');
 
 const customMarkdownIt = markdownIt({
 	html: true,
@@ -68,6 +72,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addShortcode('timestamp', () => Date.now());
 	eleventyConfig.addTransform('prepareTablesWithAnchorLinks', prepareTablesWithAnchorLinks);
 	eleventyConfig.addTransform('prepareInfoBlocks', prepareInfoBlocks);
+	eleventyConfig.addTransform('prepareVideos', prepareVideos);
 
 	// Assets will be taken care of by WebPack
 	eleventyConfig.ignores.add('./src/_assets/**');
@@ -145,7 +150,7 @@ async function maybeLoadRemoteReadme(content, ctx) {
 
 	if (!repo_link) return content;
 
-	const repoBase = repo_link.replace('github.com', 'raw.githubusercontent.com' );
+	const repoBase = repo_link.replace('github.com', 'raw.githubusercontent.com');
 	const repoURL = `${repoBase}/master/README.md`;
 
 	if (repoReadmes.has(repoURL)) {
