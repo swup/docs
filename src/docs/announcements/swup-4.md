@@ -24,21 +24,15 @@ Make your site feel like a snappy single-page app — without any of the complex
 
 ## What’s new in this release
 
-- [Announcing swup 4](#announcing-swup4)
-  - [What is swup?](#what-is-swup)
-  - [What’s new in this release](#whats-new-in-this-release)
-  - [Upgrading](#upgrading)
-  - [Official Astro integration {#astro-integration}](#official-astro-integration-astro-integration)
-  - [Features](#features)
-    - [Built-in scroll support {#scroll-support}](#built-in-scroll-support-scroll-support)
-    - [Local animation scope](#local-animation-scope)
-    - [Hook system for easier customization {#hook-system}](#hook-system-for-easier-customization-hook-system)
-    - [Visit object {#visit-object}](#visit-object-visit-object)
-    - [Cache pruning strategies {#cache-pruning}](#cache-pruning-strategies-cache-pruning)
-  - [Plugins](#plugins)
-    - [Fragment Plugin](#fragment-plugin)
-    - [Parallel Plugin](#parallel-plugin)
-  - [Easier customization of official themes {#themes}](#easier-customization-of-official-themes-themes)
+- [Official Astro integration](#astro-integration)
+- [Built-in scroll support](#scroll-support)
+- [Local animation scope](#local-animation-scope)
+- [Hook system for easier customization](#hook-system)
+- [Visit info in all callbacks](#visit-object)
+- [Cache pruning strategies](#cache-pruning)
+- [Fragment Plugin for dynamic container replacement](#fragment-plugin)
+- [Parallel Plugin for combined in/out animation](#parallel-plugin)
+- [Easier customization of official themes](#themes)
 
 ## Upgrading
 
