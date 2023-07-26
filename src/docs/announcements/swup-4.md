@@ -197,7 +197,11 @@ keep the previous container around for the duration of the transition. Complex l
 stacks and side-by-side slideshows are now much easier to implement. Head over to the
 [plugin readme](/plugins/parallel-plugin/) for more information and example code.
 
-<!-- GIF of Parallel Plugin in action -->
+<div data-video data-screencast>
+
+https://github.com/swup/parallel-plugin/assets/22225348/aff0a235-d9aa-472b-9967-1e9fa0e67313
+
+</div>
 
 ## Easier customization of official themes {#themes}
 
