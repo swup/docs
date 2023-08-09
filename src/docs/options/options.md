@@ -26,6 +26,7 @@ const swup = new Swup({
   containers: ['#swup'],
   ignoreVisit: (href, { el } = {}) => el?.closest('[data-no-swup]'),
   linkSelector: 'a[href]',
+  linkToSelf: 'scroll',
   plugins: [],
   resolveUrl: (url) => url,
   requestHeaders: {
@@ -136,6 +137,18 @@ To let swup take over clicks on [map areas](https://www.w3schools.com/tags/tag_a
 ```javascript
 {
   linkSelector: 'a[href], area[href], svg a[*|href]';
+}
+```
+
+## linkToSelf
+
+How swup handles links that lead to the currently active URL. By default, it will `scroll` to the
+top without actually performing a navigation. Pass in `navigate` to treat these links like any
+other link and perform a regular navigation.
+
+```javascript
+{
+  linkToSelf: 'navigate'
 }
 ```
 
