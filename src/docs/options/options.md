@@ -26,6 +26,7 @@ const swup = new Swup({
   containers: ['#swup'],
   ignoreVisit: (href, { el } = {}) => el?.closest('[data-no-swup]'),
   linkSelector: 'a[href]',
+  linkToSelf: 'scroll',
   plugins: [],
   resolveUrl: (url) => url,
   requestHeaders: {
@@ -44,7 +45,7 @@ The default option will select all elements with class names beginning in `trans
 
 ```javascript
 {
-  animationSelector: '[class*="transition-"]';
+  animationSelector: '[class*="transition-"]'
 }
 ```
 
@@ -56,7 +57,7 @@ to the `html` tag. This is great for most use cases and the recommended way to u
 
 ```js
 {
-  animationScope: 'html';
+  animationScope: 'html'
 }
 ```
 
@@ -68,7 +69,7 @@ Setting this option to `containers` will add the classes on the content containe
 
 ```js
 {
-  animationScope: 'containers';
+  animationScope: 'containers'
 }
 ```
 
@@ -88,9 +89,10 @@ to reflect language changes.
 
 ```javascript
 {
-  containers: ['#swup'];
+  containers: ['#swup']
 }
 ```
+
 > **Note** Only elements **inside** of the `body` tag are supported.
 
 ## cache
@@ -101,7 +103,7 @@ to `true`.
 
 ```javascript
 {
-  cache: true;
+  cache: true
 }
 ```
 
@@ -115,7 +117,7 @@ the visit. Note that element and event will be undefined if navigating via `swup
 
 ```javascript
 {
-  ignoreVisit: (url, { el, event } = {}) => el?.closest('[data-no-swup]');
+  ignoreVisit: (url, { el, event } = {}) => el?.closest('[data-no-swup]')
 }
 ```
 
@@ -126,7 +128,7 @@ attribute will receive clicks.
 
 ```javascript
 {
-  linkSelector: 'a[href]';
+  linkSelector: 'a[href]'
 }
 ```
 
@@ -135,7 +137,19 @@ To let swup take over clicks on [map areas](https://www.w3schools.com/tags/tag_a
 
 ```javascript
 {
-  linkSelector: 'a[href], area[href], svg a[*|href]';
+  linkSelector: 'a[href], area[href], svg a[*|href]'
+}
+```
+
+## linkToSelf
+
+How swup handles links that lead to the currently active URL. By default, it will `scroll` to the
+top without actually performing a navigation. Pass in `navigate` to treat these links like any
+other link and perform a regular navigation.
+
+```javascript
+{
+  linkToSelf: 'navigate'
 }
 ```
 
@@ -170,7 +184,7 @@ changed and no page load is necessary.
       return '/projects/';
     }
     return url;
-  };
+  }
 }
 ```
 
@@ -185,7 +199,7 @@ and returns a `boolean`.
 
 ```javascript
 {
-  skipPopStateHandling: (event) => event.state?.source !== 'swup';
+  skipPopStateHandling: (event) => event.state?.source !== 'swup'
 }
 ```
 
@@ -197,10 +211,10 @@ tag during those animations. Defaults to `false`.
 
 ```javascript
 {
-  animateHistoryBrowsing: false;
+  animateHistoryBrowsing: false
 }
 ```
 
 > **Warning** This option was added due to popular request. However, it should be used with
-> caution. When activated, swup has to disable native [browser scroll restoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration). Scroll positions will not be preserved between visits and need to
-> be implemented by you.
+> caution. When activated, swup has to disable native [browser scroll restoration](https://developers.google.com/web/updates/2015/09/history-api-scroll-restoration).
+> Scroll positions will not be preserved between visits and need to be implemented by you.
