@@ -45,7 +45,7 @@ The default option will select all elements with class names beginning in `trans
 
 ```javascript
 {
-  animationSelector: '[class*="transition-"]';
+  animationSelector: '[class*="transition-"]'
 }
 ```
 
@@ -57,7 +57,7 @@ to the `html` tag. This is great for most use cases and the recommended way to u
 
 ```js
 {
-  animationScope: 'html';
+  animationScope: 'html'
 }
 ```
 
@@ -69,7 +69,7 @@ Setting this option to `containers` will add the classes on the content containe
 
 ```js
 {
-  animationScope: 'containers';
+  animationScope: 'containers'
 }
 ```
 
@@ -89,9 +89,10 @@ to reflect language changes.
 
 ```javascript
 {
-  containers: ['#swup'];
+  containers: ['#swup']
 }
 ```
+
 > **Note** Only elements **inside** of the `body` tag are supported.
 
 ## cache
@@ -102,7 +103,7 @@ to `true`.
 
 ```javascript
 {
-  cache: true;
+  cache: true
 }
 ```
 
@@ -116,7 +117,7 @@ the visit. Note that element and event will be undefined if navigating via `swup
 
 ```javascript
 {
-  ignoreVisit: (url, { el, event } = {}) => el?.closest('[data-no-swup]');
+  ignoreVisit: (url, { el, event } = {}) => el?.closest('[data-no-swup]')
 }
 ```
 
@@ -127,7 +128,7 @@ attribute will receive clicks.
 
 ```javascript
 {
-  linkSelector: 'a[href]';
+  linkSelector: 'a[href]'
 }
 ```
 
@@ -136,7 +137,7 @@ To let swup take over clicks on [map areas](https://www.w3schools.com/tags/tag_a
 
 ```javascript
 {
-  linkSelector: 'a[href], area[href], svg a[*|href]';
+  linkSelector: 'a[href], area[href], svg a[*|href]'
 }
 ```
 
@@ -183,7 +184,7 @@ changed and no page load is necessary.
       return '/projects/';
     }
     return url;
-  };
+  }
 }
 ```
 
@@ -198,7 +199,7 @@ and returns a `boolean`.
 
 ```javascript
 {
-  skipPopStateHandling: (event) => event.state?.source !== 'swup';
+  skipPopStateHandling: (event) => event.state?.source !== 'swup'
 }
 ```
 
@@ -210,7 +211,7 @@ tag during those animations. Defaults to `false`.
 
 ```javascript
 {
-  animateHistoryBrowsing: false;
+  animateHistoryBrowsing: false
 }
 ```
 
