@@ -164,7 +164,11 @@ strategies. See [cache pruning](/api/cache/#cache-pruning) for details and examp
 
 ## Plugins
 
-All official [plugins](/plugins/) have been updated for compatibility with swup 4.
+All official [plugins](/plugins/) have been updated for compatibility with swup 4. Notable new
+features include:
+
+- The [Forms Plugin](/plugins/forms-plugin/) now supports [submitting forms inline](/plugins/forms-plugin/#inline-forms) without full page navigations
+- The [JS Plugin](/plugins/js-plugin/) now has [first-class Promise support](/js-plugin/#promises-and-async-await) for easier timing
 
 Additionally, we're happy to present two advanced new plugins that were made possible by some of the
 architectural changes to swup introduced in the new version.
