@@ -24,14 +24,14 @@ const swup = new Swup({
   animationScope: 'html',
   cache: true,
   containers: ['#swup'],
-  ignoreVisit: (href, { el } = {}) => el?.closest('[data-no-swup]'),
+  ignoreVisit: (url, { el } = {}) => el?.closest('[data-no-swup]'),
   linkSelector: 'a[href]',
   linkToSelf: 'scroll',
   plugins: [],
   resolveUrl: (url) => url,
   requestHeaders: {
     'X-Requested-With': 'swup',
-    Accept: 'text/html, application/xhtml+xml'
+    'Accept': 'text/html, application/xhtml+xml'
   },
   skipPopStateHandling: (event) => event.state?.source !== 'swup'
 });
