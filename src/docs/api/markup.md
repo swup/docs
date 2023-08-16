@@ -53,18 +53,18 @@ html.is-changing.to-slide .transition-page {
 
 ## Persist element state
 
-Some elements need to keep their state between page loads, e.g. autoplay videos, animations,
-countdowns, etc. Swup will move an element over to the next page — with all its content, events
-and state — if it has a `data-swup-persist` attribute and a matching element is found on the
+Some elements need to keep their state between page loads, e.g. autoplay videos, animations or
+countdowns. Swup will transfer an element to the next page — preserving its content, data and
+event listeners — if it has a `data-swup-persist` attribute and a matching element is found on the
 next page. Elements are matched using the unique value of the persist attribute.
 
 ```html
 <video src="/video.mp4" autoplay data-swup-persist="unique-key">
 ```
 
-While in many cases it is enough to have persistent elements outside of any
+While this can also be achieved by having persistent elements outside of any
 [containers](/options/#containers) replaced by swup, this attribute is meant for
-elements inside replaced containers.
+elements inside replaced containers that cannot be moved outside.
 
 ## Replace history entry
 
