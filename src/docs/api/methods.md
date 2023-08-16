@@ -43,6 +43,12 @@ Send a POST request with form data:
 swup.navigate(url, { method: 'POST', data: new FormData() });
 ```
 
+Disable the cache for this request:
+
+```javascript
+swup.navigate(url, { cache: { read: false, write: true } });
+```
+
 ## destroy
 
 Disables swup.
