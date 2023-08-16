@@ -29,12 +29,17 @@ swup.hooks.on('page:view', (visit) => {
 
 ## Shape of the visit object
 
-This is an example visit object for a navigation from `/home` to `/about#footer`.
+This is an example visit object for a navigation from `/home` to `/about#anchor`.
 
 ```javascript
 {
-  from: { url: '/home' },
-  to: { url: '/about' },
+  from: {
+    url: '/home'
+  },
+  to: {
+    url: '/about',
+    hash: '#anchor'
+  },
   containers: ['#swup'],
   animation: {
     animate: true,
@@ -44,6 +49,10 @@ This is an example visit object for a navigation from `/home` to `/about#footer`
     el: /* <a> element */,
     event: /* MouseEvent */
   },
+  cache: {
+    read: true,
+    write: true
+  },
   history: {
     action: 'push',
     popstate: false,
@@ -51,7 +60,7 @@ This is an example visit object for a navigation from `/home` to `/about#footer`
   },
   scroll: {
     reset: true,
-    target: '#footer'
+    target: '#anchor'
   }
 }
 ```
@@ -136,5 +145,26 @@ swup.hooks.on('visit:start', (visit) => {
   if (visit.history.popstate) {
     console.log('History visit', visit.history.direction);
   }
+});
+```
+
+### Replace history entry
+
+Tell swup to replace the current history entry, instead of creating a new one.
+
+```javascript
+swup.hooks.on('visit:start', (visit) => {
+  visit.history.action = 'replace';
+});
+```
+
+### Disable cache
+
+Control whether swup will check for existing pages in the cache or save the newly loaded page
+to the cache. Overwrites the behavior set in the [cache option](/options/#cache).
+
+```javascript
+swup.hooks.on('visit:start', (visit) => {
+  visit.cache.read = false;
 });
 ```
