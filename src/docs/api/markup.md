@@ -26,7 +26,7 @@ ancestors with `data-no-swup`:
 </nav>
 ```
 
-## Set custom animation
+## Set a custom animation
 
 Adding a `data-swup-animation` attribute on a link will change the animation for a
 specific visit.
@@ -35,7 +35,7 @@ specific visit.
 <a href="/" data-swup-animation="slide">
 ```
 
-Technically, this will add a `.to-{animation}` class on the HTML element you can
+This will add a `.to-{animation}` class on the HTML element during the visit you can
 use to specify custom transition styles:
 
 ```html
@@ -53,7 +53,7 @@ html.is-changing.to-slide .transition-page {
 
 ## Persist element state
 
-Some elements need to keep their state between page loads, e.g. autoplay videos, animations or
+Some elements need to keep their state between page loads, e.g. autoplaying videos, animations or
 countdowns. Swup will transfer an element to the next page — preserving its content, data and
 event listeners — if it has a `data-swup-persist` attribute and a matching element is found on the
 next page. Elements are matched using the unique value of the persist attribute.
