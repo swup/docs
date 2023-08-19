@@ -20,7 +20,7 @@ These are plugins developed and maintained by the swup core team.
 
 |                        Plugin                         |                    Features                    |
 | ----------------------------------------------------- | ---------------------------------------------- |
-| [Accessibility Plugin](/plugins/accessibility-plugin) | Enhance accessibility                          |
+| [Accessibility Plugin](/plugins/a11y-plugin) | Enhance accessibility                          |
 | [Body Class Plugin](/plugins/body-class-plugin)       | Update the body classname                      |
 | [Debug Plugin](/plugins/debug-plugin)                 | Debug and get help in development              |
 | [Forms Plugin](/plugins/forms-plugin)                 | Submit forms with animations                   |
