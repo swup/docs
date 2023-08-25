@@ -25,6 +25,7 @@
     "@swup/body-class-plugin": "^3.0.0",
     "@swup/debug-plugin": "^4.0.0",
     "@swup/fade-theme": "^2.0.0",
+    "@swup/forms-plugin": "^3.3.0",
     "@swup/ga-plugin": "^2.0.0",
     "@swup/overlay-theme": "^2.0.0",
     "@swup/preload-plugin": "^3.0.0",

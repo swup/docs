@@ -7,6 +7,7 @@ import Swup from 'swup';
 // Swup Plugins
 import SwupA11yPlugin from '@swup/a11y-plugin';
 import SwupDebugPlugin from '@swup/debug-plugin';
+import SwupFormsPlugin from '@swup/forms-plugin';
 import SwupScrollPlugin from '@swup/scroll-plugin';
 import SwupBodyClassPlugin from '@swup/body-class-plugin';
 import SwupGaPlugin from '@swup/ga-plugin';
@@ -40,6 +41,7 @@ export default function () {
 
 			new SwupA11yPlugin(),
 
+			new SwupFormsPlugin(),
 			new SwupScrollPlugin({
 				animateScroll: {
 					betweenPages: false,
@@ -69,8 +71,8 @@ export default function () {
 	swup.hooks.on('visit:start', onSwupVisitStart);
 
 	window.addEventListener('resize', positionNavIndicators);
-	document.addEventListener('change', (event) => {
-		if (event.target.name === 'theme') changeSwupThemeWithAnimation(event.target.value);
+	document.addEventListener('submit', (event) => {
+		if (event?.submitter?.name === 'theme') changeSwupThemeWithAnimation(event.submitter.value);
 	});
 	setSwupTheme(new URLSearchParams(window.location.search).get('theme'));
 
@@ -83,19 +85,18 @@ function onSwupVisitStart(visit) {
 }
 
 function onSwupPageView() {
-	selectCurrentThemeCheckbox();
+	selectCurrentThemeButton();
 	prepareExternalLinks();
 	adjustNavIndicators(window.location.pathname);
 }
 
 /**
- * Select the current theme's checkbox
+ * Select the current theme's button
  */
-function selectCurrentThemeCheckbox() {
-	const radio = document.querySelector(`input[name="theme"][value="${currentTheme}"]`);
-	if (!radio) return;
-	radio.checked = true;
-	radio.closest('.button').classList.add('is-active');
+function selectCurrentThemeButton() {
+	const button = document.querySelector(`button[name="theme"][value="${currentTheme}"]`);
+	if (!button) return;
+	button.classList.add('is-active');
 }
 
 /**
