@@ -34,6 +34,7 @@ export default function () {
 		containers: ['#swup', '#breadcrumb'],
 		ignoreVisit: (url, { el } = {}) =>
 			el?.closest('[data-no-swup]') || url.match(/\.(png|svg)$/i),
+		linkToSelf: 'navigate',
 		plugins: [
 			// new SwupDebugPlugin(),
 
