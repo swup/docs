@@ -45,6 +45,7 @@ export default function () {
 					samePageWithHash: true,
 					samePage: true
 				},
+				markScrollTarget: true,
 				offset: () => {
 					const navPaddingTop = parseInt(
 						getComputedStyle(document.querySelector('.nav .nav_inner')).paddingTop,
@@ -72,8 +73,6 @@ export default function () {
 	});
 	setSwupTheme(new URLSearchParams(window.location.search).get('theme'));
 
-	swup.on('samePage', emulateTargetPseudoClass);
-	swup.on('samePageWithHash', emulateTargetPseudoClass);
 	swup.hooks.on('page:view', onSwupPageView);
 	onSwupPageView();
 }
@@ -85,21 +84,7 @@ function onSwupVisitStart(visit) {
 function onSwupPageView() {
 	selectCurrentThemeCheckbox();
 	prepareExternalLinks();
-	emulateTargetPseudoClass();
 	adjustNavIndicators(window.location.pathname);
-}
-
-/**
- * Adds an attribute to the element that matches the current hash, if there is one
- */
-function emulateTargetPseudoClass() {
-	const attribute = 'data-hash-target';
-	requestAnimationFrame(() => {
-		const current = document.querySelector(`[${attribute}]`);
-		if (current) current.removeAttribute(attribute);
-		const element = window.swup.getAnchorElement(window.location.hash);
-		if (element) element.setAttribute(attribute, '');
-	});
 }
 
 /**

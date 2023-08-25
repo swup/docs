@@ -32,7 +32,7 @@ td {
 tr:last-child td {
 	border-bottom: 0;
 }
-tr[data-hash-target] {
+tr[data-swup-scroll-target] {
 	background: var(--color-transparent-0);
 }
 tr:first-child th:first-child,
