@@ -37,7 +37,7 @@ export default function () {
 			el?.closest('[data-no-swup]') || url.match(/\.(png|svg)$/i),
 		linkToSelf: 'navigate',
 		plugins: [
-			// new SwupDebugPlugin(),
+			new SwupDebugPlugin(),
 
 			new SwupA11yPlugin(),
 
@@ -68,20 +68,25 @@ export default function () {
 
 	window.swup = swup;
 
-	swup.hooks.on('visit:start', onSwupVisitStart);
-
+	// Adjust nav indicators on visit starts and window resize
 	window.addEventListener('resize', positionNavIndicators);
-	document.addEventListener('submit', (event) => {
-		if (event?.submitter?.name === 'theme') changeSwupThemeWithAnimation(event.submitter.value);
+	swup.hooks.on('visit:start', (visit) => adjustNavIndicators(visit.to.url));
+
+	// Set swup theme on form submit and once on page load
+	const theme = new URLSearchParams(window.location.search).get('theme');
+	setSwupTheme(theme);
+	swup.hooks.on('form:submit', (visit, { event }) => {
+		if (event?.submitter?.name === 'theme') {
+			setSwupTheme(event.submitter.value);
+			swup.hooks.once('visit:start', ({ id }) => {
+				if (id !== visit.id) return;
+				return new Promise((resolve) => setTimeout(resolve, 50));
+			});
+		}
 	});
-	setSwupTheme(new URLSearchParams(window.location.search).get('theme'));
 
 	swup.hooks.on('page:view', onSwupPageView);
 	onSwupPageView();
-}
-
-function onSwupVisitStart(visit) {
-	adjustNavIndicators(visit.to.url);
 }
 
 function onSwupPageView() {
@@ -97,20 +102,6 @@ function selectCurrentThemeButton() {
 	const button = document.querySelector(`button[name="theme"][value="${currentTheme}"]`);
 	if (!button) return;
 	button.classList.add('is-active');
-}
-
-/**
- * Changes the current theme and reloads the page with a related query param.
- * This will show off the new theme's animation immediately
- *
- * @param {string} theme
- */
-function changeSwupThemeWithAnimation(theme) {
-	setSwupTheme(theme);
-
-	const url = new URL(window.location.href);
-	url.searchParams.set('theme', theme);
-	setTimeout(() => swup.navigate(url.href), 0);
 }
 
 /**
