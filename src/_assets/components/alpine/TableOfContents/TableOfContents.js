@@ -28,6 +28,7 @@ export default () => {
 		 */
 		markCurrentSection() {
 			const currentSection = this.getCurrentSection();
+			if (!currentSection) return;
 			this.$root.querySelector('a.is-active')?.classList.remove('is-active');
 			this.$root.querySelector(`a[href="#${currentSection.id}"]`)?.classList.add('is-active');
 		},

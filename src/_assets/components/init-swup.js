@@ -7,9 +7,10 @@ import Swup from 'swup';
 // Swup Plugins
 import SwupA11yPlugin from '@swup/a11y-plugin';
 import SwupDebugPlugin from '@swup/debug-plugin';
+import SwupFormsPlugin from '@swup/forms-plugin';
 import SwupScrollPlugin from '@swup/scroll-plugin';
 import SwupBodyClassPlugin from '@swup/body-class-plugin';
-import SwupGtagPlugin from 'swup-gtag-plugin';
+import SwupGaPlugin from '@swup/ga-plugin';
 import SwupPreloadPlugin from '@swup/preload-plugin';
 
 // Swup Themes
@@ -34,17 +35,20 @@ export default function () {
 		containers: ['#swup', '#breadcrumb'],
 		ignoreVisit: (url, { el } = {}) =>
 			el?.closest('[data-no-swup]') || url.match(/\.(png|svg)$/i),
+		linkToSelf: 'navigate',
 		plugins: [
 			// new SwupDebugPlugin(),
 
 			new SwupA11yPlugin(),
 
+			new SwupFormsPlugin(),
 			new SwupScrollPlugin({
 				animateScroll: {
 					betweenPages: false,
 					samePageWithHash: true,
 					samePage: true
 				},
+				markScrollTarget: true,
 				offset: () => {
 					const navPaddingTop = parseInt(
 						getComputedStyle(document.querySelector('.nav .nav_inner')).paddingTop,
@@ -56,7 +60,7 @@ export default function () {
 			new SwupSlideTheme(),
 			new SwupBodyClassPlugin(),
 			new SwupPreloadPlugin(),
-			new SwupGtagPlugin({
+			new SwupGaPlugin({
 				gaMeasurementId: window.GA_MEASURE_ID
 			})
 		]
@@ -64,66 +68,40 @@ export default function () {
 
 	window.swup = swup;
 
-	swup.on('clickLink', onSwupClickLink);
-
+	// Adjust nav indicators on visit starts and window resize
 	window.addEventListener('resize', positionNavIndicators);
-	document.addEventListener('change', (event) => {
-		if (event.target.name === 'theme') changeSwupThemeWithAnimation(event.target.value);
-	});
-	setSwupTheme(new URLSearchParams(window.location.search).get('theme'));
+	swup.hooks.on('visit:start', (visit) => adjustNavIndicators(visit.to.url));
 
-	swup.on('pageView', onSwupPageView);
-	swup.on('samePage', emulateTargetPseudoClass);
-	swup.on('samePageWithHash', emulateTargetPseudoClass);
+	// Set swup theme on form submit and once on page load
+	const theme = new URLSearchParams(window.location.search).get('theme');
+	setSwupTheme(theme);
+	swup.hooks.on('form:submit', (visit, { event }) => {
+		if (event?.submitter?.name === 'theme') {
+			setSwupTheme(event.submitter.value);
+			swup.hooks.once('visit:start', ({ id }) => {
+				if (id !== visit.id) return;
+				return new Promise((resolve) => setTimeout(resolve, 50));
+			});
+		}
+	});
+
+	swup.hooks.on('page:view', onSwupPageView);
 	onSwupPageView();
 }
 
 function onSwupPageView() {
-	selectCurrentThemeCheckbox();
+	selectCurrentThemeButton();
 	prepareExternalLinks();
-	emulateTargetPseudoClass();
 	adjustNavIndicators(window.location.pathname);
 }
 
-function onSwupClickLink(e) {
-	adjustNavIndicators(e.target.pathname);
-}
-
 /**
- * Adds an attribute to the element that matches the current hash, if there is one
+ * Select the current theme's button
  */
-function emulateTargetPseudoClass() {
-	const attribute = 'data-hash-target';
-	requestAnimationFrame(() => {
-		const current = document.querySelector(`[${attribute}]`);
-		if (current) current.removeAttribute(attribute);
-		const element = window.swup.getAnchorElement(window.location.hash);
-		if (element) element.setAttribute(attribute, '');
-	});
-}
-
-/**
- * Select the current theme's checkbox
- */
-function selectCurrentThemeCheckbox() {
-	const radio = document.querySelector(`input[name="theme"][value="${currentTheme}"]`);
-	if (!radio) return;
-	radio.checked = true;
-	radio.closest('.button').classList.add('is-active');
-}
-
-/**
- * Changes the current theme and reloads the page with a related query param.
- * This will show off the new theme's animation immediately
- *
- * @param {string} theme
- */
-function changeSwupThemeWithAnimation(theme) {
-	setSwupTheme(theme);
-
-	const url = new URL(window.location.href);
-	url.searchParams.set('theme', theme);
-	setTimeout(() => swup.loadPage({ url }), 0);
+function selectCurrentThemeButton() {
+	const button = document.querySelector(`button[name="theme"][value="${currentTheme}"]`);
+	if (!button) return;
+	button.classList.add('is-active');
 }
 
 /**
@@ -136,7 +114,7 @@ function setSwupTheme(theme) {
 	if (!themes.hasOwnProperty(theme)) return;
 	swup.unuse(currentTheme);
 	swup.use(new themes[theme]());
-	swup.cache.empty();
+	swup.cache.clear();
 	currentTheme = theme;
 }
 

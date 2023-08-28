@@ -51,6 +51,10 @@ let config = {
 				test: /\.(js|ts)x?$/,
 				loader: 'esbuild-loader',
 				// exclude: /(node_modules)/,
+				resolve: {
+					// fix an issue with preload-plugin 3.2.*
+					fullySpecified: false
+				},
 				options: {
 					loader: 'ts',
 					target: settings.target
