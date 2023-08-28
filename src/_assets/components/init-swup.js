@@ -37,7 +37,7 @@ export default function () {
 			el?.closest('[data-no-swup]') || url.match(/\.(png|svg)$/i),
 		linkToSelf: 'navigate',
 		plugins: [
-			new SwupDebugPlugin(),
+			// new SwupDebugPlugin(),
 
 			new SwupA11yPlugin(),
 
