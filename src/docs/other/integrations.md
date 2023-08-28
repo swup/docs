@@ -56,10 +56,12 @@ Alpine.start();
 ### Handling swup hooks
 
 To register handlers for swup's hooks inside your Alpine components, you need to
-prepend `swup` to all hook names. For example, hooking into `page:view` would look like this:
+prepend `swup` to all hook names. You can access swup's visit object using the
+`detail` property on Alpine's `$event` magic. For example, hooking into `page:view`
+would look like this:
 
 ```html
-<div x-data x-on:swup:page:view.camel.document="console.log('page view registered!')">
+<div x-data x-on:swup:page:view.document="console.log('Visit new page', $event.detail.visit.to.url)">
   My Alpine Component
 </div>
 ```
