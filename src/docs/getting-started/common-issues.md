@@ -66,6 +66,14 @@ If you need fine-grained control over this, consider installing the
 [scroll plugin](/plugins/scroll-plugin/) which has a dedicated `offset` option to handle these
 cases.
 
+## History navigations are ignored & never update the page
+
+Swup only handles backward/forward visits to history entries it has created itself. If you or
+other scripts on the site are creating or modifying history entries, there are two options:
+
+- Ensure that history entries are only created by the provided [history helpers](/api/helpers/#create-history-record)
+- Modify swup's [skipPopStateHandling](/options/#skip-pop-state-handling) option to make it accept all history entries
+
 ## Overflowing containers get reset on navigation
 
 Replacing a swup container will also reset its scroll position. There might be cases where you
