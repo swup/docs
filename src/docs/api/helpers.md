@@ -65,18 +65,18 @@ updateHistoryRecord(null, { custom: 'data' });
 
 ## delegateEvent
 
-Install a delegated event listener on the document using `delegate-it`.
+Install a delegated event listener on the document using [delegate-it](https://github.com/fregante/delegate-it).
 
 ```javascript
-swup.delegatedListeners.formSubmit = delegateEvent('form', 'submit', (event) =>
-  console.log('Form submitted')
-);
+const delegation = delegateEvent('form', 'submit', (event) => {
+  console.log('Form submitted');
+});
 ```
 
-Make sure to remove the listener on unmount of a plugin:
+To stop listening for events, e.g. when unmounting a plugin:
 
 ```javascript
-swup.delegatedListeners.formSubmit.destroy();
+delegation.destroy();
 ```
 
 ## getCurrentUrl
