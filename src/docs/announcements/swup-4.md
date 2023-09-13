@@ -168,7 +168,7 @@ All official [plugins](/plugins/) have been updated for compatibility with swup 
 features include:
 
 - The [Forms Plugin](/plugins/forms-plugin/) now supports [submitting forms inline](/plugins/forms-plugin/#inline-forms) without full page navigations
-- The [JS Plugin](/plugins/js-plugin/) now has [first-class Promise support](/js-plugin/#promises-and-async-await) for easier timing
+- The [JS Plugin](/plugins/js-plugin/) now has [first-class Promise support](/plugins/js-plugin/#promises-and-async-await) for easier timing
 
 Additionally, we're happy to present two advanced new plugins that were made possible by some of the
 architectural changes to swup introduced in the new version.

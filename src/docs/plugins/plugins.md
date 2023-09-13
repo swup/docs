@@ -20,19 +20,19 @@ These are plugins developed and maintained by the swup core team.
 
 |                        Plugin                         |                    Features                    |
 | ----------------------------------------------------- | ---------------------------------------------- |
-| [Accessibility Plugin](/plugins/a11y-plugin) | Enhance accessibility                          |
-| [Body Class Plugin](/plugins/body-class-plugin)       | Update the body classname                      |
-| [Debug Plugin](/plugins/debug-plugin)                 | Debug and get help in development              |
-| [Forms Plugin](/plugins/forms-plugin)                 | Submit forms with animations                   |
-| [Fragment Plugin](/plugins/fragment-plugin)           | Dynamically replace containers based on rules  |
-| [Head Plugin](/plugins/head-plugin)                   | Update the contents of the head tag            |
-| [JS Plugin](/plugins/js-plugin)                       | Manage animations in JS                        |
-| [Parallel Plugin](/plugins/parallel-plugin)           | Animate the previous and next page in parallel |
-| [Preload Plugin](/plugins/preload-plugin)             | Preload pages to speed up navigation           |
-| [Progress Bar Plugin](/plugins/progress-bar-plugin)   | Display a progress bar                         |
-| [Route Name Plugin](/plugins/route-name-plugin)       | Named routes and route-based animations        |
-| [Scripts Plugin](/plugins/scripts-plugin)             | Re-evaluate scripts                            |
-| [Scroll Plugin](/plugins/scroll-plugin)               | Smooth scrolling                               |
+| [Accessibility Plugin](/plugins/a11y-plugin/)         | Enhance accessibility                          |
+| [Body Class Plugin](/plugins/body-class-plugin/)      | Update the body classname                      |
+| [Debug Plugin](/plugins/debug-plugin/)                | Debug and get help in development              |
+| [Forms Plugin](/plugins/forms-plugin/)                | Submit forms with animations                   |
+| [Fragment Plugin](/plugins/fragment-plugin/)          | Dynamically replace containers based on rules  |
+| [Head Plugin](/plugins/head-plugin/)                  | Update the contents of the head tag            |
+| [JS Plugin](/plugins/js-plugin/)                      | Manage animations in JS                        |
+| [Parallel Plugin](/plugins/parallel-plugin/)          | Animate the previous and next page in parallel |
+| [Preload Plugin](/plugins/preload-plugin/)            | Preload pages to speed up navigation           |
+| [Progress Bar Plugin](/plugins/progress-plugin/)      | Display a progress bar                         |
+| [Route Name Plugin](/plugins/route-name-plugin/)      | Named routes and route-based animations        |
+| [Scripts Plugin](/plugins/scripts-plugin/)            | Re-evaluate scripts                            |
+| [Scroll Plugin](/plugins/scroll-plugin/)              | Smooth scrolling                               |
 
 ## Official integrations
 
