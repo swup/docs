@@ -21,7 +21,7 @@ If you have a question, suggestion, or feature request, feel free to
 
 ## Pull Requests
 
-If you would like to see a new feature in swup, we encourage you to fork swup and create a [pull request](<[url](https://github.com/swup/swup/pulls)>)!
+If you would like to see a new feature in swup, we encourage you to fork swup and create a [pull request](https://github.com/swup/swup/pulls)!
 
 Please make sure to run the swup tests locally before creating your PR on GitHub:
 
