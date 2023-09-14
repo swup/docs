@@ -6,7 +6,7 @@ eleventyNavigation:
   parent: Plugins
   order: 8
 description: A swup plugin for integrating Google Analytics
-permalink: /plugins/google-analytics-plugin/
+permalink: /plugins/ga-plugin/
 repo_link: https://github.com/swup/ga-plugin
 ---
 
