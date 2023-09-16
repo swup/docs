@@ -20,7 +20,7 @@ export default () => {
 				return;
 			}
 			this.isSearching = true;
-			const pagefind = await import(/* webpackIgnore: true */ '/_pagefind/pagefind.js');
+			const pagefind = await import(/* webpackIgnore: true */ '/pagefind/pagefind.js');
 			const search = await pagefind.search(term);
 			const results = await Promise.all(
 				search.results.slice(0, postsPerPage).map((r) => r.data())
