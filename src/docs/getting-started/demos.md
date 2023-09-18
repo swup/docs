@@ -99,3 +99,12 @@ Animate form submissions using the [Forms Plugin](/plugins/forms-plugin/).
 https://swup-demo-forms.swupjs.repl.co
 Swup Demo: Animated forms
 ```
+
+## Inline forms
+
+Submit simple forms in place without full page loads using the [Forms Plugin](/plugins/forms-plugin/).
+
+```repl
+https://swup-demo-inline-forms.swupjs.repl.co
+Swup Demo: Inline forms
+```
