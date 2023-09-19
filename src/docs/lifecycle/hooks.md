@@ -132,6 +132,7 @@ browser console as they are happening.
 | **disable**             | Swup instance is [disabled](/api/methods/#destroy).                                   |
 | **fetch:error**         | Fetch request is rejected because of a server error.                                  |
 | **fetch:request**       | Fetch request is sent.                                                                |
+| **fetch:timeout**       | Fetch request has timed out.                                                          |
 | **history:popstate**    | History navigation is started: back/forward button was pressed.                       |
 | **link:click**          | Link is clicked.                                                                      |
 | **link:self**           | Link is clicked that leads to the current page.                                       |
