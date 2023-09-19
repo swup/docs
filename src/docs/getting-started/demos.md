@@ -108,3 +108,12 @@ Submit simple forms in place without full page loads using the [Forms Plugin](/p
 https://swup-demo-inline-forms.swupjs.repl.co
 Swup Demo: Inline forms
 ```
+
+## Infinite Scroll Cache
+
+Persist items loaded with infinite scroll between page visits.
+
+```repl
+https://swup-demo-infinite-scroll-cache.swupjs.repl.co/
+Swup Demo: Infinite Scroll Cache
+```
