@@ -53,7 +53,6 @@ export default () => {
 			tl.from(this.$refs.dot1, { ...popIn, y: -20 }, '<0.3');
 			tl.from(this.$refs.dot2, { ...popIn, y: -20 }, letterDelay);
 
-
 			tl.from(this.$refs.slogan, fadeIn, '<0.3');
 
 			tl.from(this.$refs.button1, fadeIn, letterDelay);
