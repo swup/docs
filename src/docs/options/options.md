@@ -33,7 +33,8 @@ const swup = new Swup({
     'X-Requested-With': 'swup',
     'Accept': 'text/html, application/xhtml+xml'
   },
-  skipPopStateHandling: (event) => event.state?.source !== 'swup'
+  skipPopStateHandling: (event) => event.state?.source !== 'swup',
+  timeout: 0
 });
 ```
 
@@ -200,6 +201,17 @@ and returns a `boolean`.
 ```javascript
 {
   skipPopStateHandling: (event) => event.state?.source !== 'swup'
+}
+```
+
+## timeout
+
+Swup allows setting a fetch timeout in milliseconds. If a page takes longer to load than specified,
+swup triggers a `fetch:timeout` hook and defers to a standard browser page load. Disabled by default.
+
+```javascript
+{
+  timeout: 10_000
 }
 ```
 
