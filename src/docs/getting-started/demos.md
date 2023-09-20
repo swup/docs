@@ -109,7 +109,7 @@ https://swup-demo-inline-forms.swupjs.repl.co
 Swup Demo: Inline forms
 ```
 
-## Infinite Scroll Cache
+## Infinite scroll cache
 
 Persist items loaded with infinite scroll between page visits.
 
