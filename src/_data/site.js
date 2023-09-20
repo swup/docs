@@ -14,8 +14,8 @@ module.exports = function () {
 			},
 			{
 				label: 'swup v3',
-				url: 'https://v3.swup.js.org',
-			},
+				url: 'https://v3.swup.js.org'
+			}
 		]
 	};
 };

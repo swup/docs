@@ -14,7 +14,6 @@ import SearchUI from './alpine/SearchUI/SearchUI.js';
 import TableOfContents from './alpine/TableOfContents/TableOfContents.js';
 import VersionSelect from './alpine/VersionSelect/VersionSelect.js';
 
-
 export default function () {
 	window.Alpine = Alpine;
 	Alpine.data('Intro', Intro);

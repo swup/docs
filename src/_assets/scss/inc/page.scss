@@ -126,7 +126,7 @@
 	}
 	.screencast_header_dots:before,
 	.screencast_header_dots:after {
-		content: "";
+		content: '';
 		position: absolute;
 		top: 0;
 	}
@@ -294,7 +294,7 @@
 
 .shiki {
 	--shiki-padding-block: 0.5rem;
-	--shiki-padding-inline: .8rem;
+	--shiki-padding-inline: 0.8rem;
 	width: 100%;
 	overflow: auto;
 	padding-block: var(--shiki-padding-block);
@@ -314,7 +314,7 @@
 	&:before {
 		content: ' ';
 		display: inline-block;
-		transform: translateX(calc(-1 * var(--shiki-padding-inline) + .5em));
+		transform: translateX(calc(-1 * var(--shiki-padding-inline) + 0.5em));
 	}
 }
 
@@ -385,7 +385,7 @@
 
 html.dark .shiki-container .github-light,
 html:not(.dark) .shiki-container .github-dark {
-  display: none;
+	display: none;
 }
 
 /*
