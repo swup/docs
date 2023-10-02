@@ -11,7 +11,7 @@ export default () => {
 				if (!this.isOpen) return;
 				await this.$nextTick();
 				this.$refs.input.focus();
-			})
+			});
 		},
 		reset() {
 			this.results = [];
