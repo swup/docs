@@ -472,3 +472,15 @@ html:not(.dark) .shiki-container .github-dark {
 	position: relative;
 	top: -0.1em;
 }
+
+/*
+* Shields (in use on /cli/)
+* Expects a <div.shields> around a <p> containing a group of links
+*/
+.shields {
+	display: flex;
+	gap: 0.5em;
+}
+.shields p {
+	display: contents;
+}
