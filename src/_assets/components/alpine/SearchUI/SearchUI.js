@@ -7,6 +7,11 @@ export default () => {
 		isSearching: false,
 		init() {
 			this.$watch('term', this.search.bind(this));
+			Alpine.effect(async () => {
+				if (!this.isOpen) return;
+				await this.$nextTick();
+				this.$refs.input.focus();
+			})
 		},
 		reset() {
 			this.results = [];
