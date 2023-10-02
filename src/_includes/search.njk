@@ -57,7 +57,7 @@
                 >
                   <form class="search_ui_form" x-on:click.stop>
                     {% feather "search" %}
-                    <input class="search_ui_input" type="text" x-model="term"></input>
+                    <input x-ref="input" class="search_ui_input" type="text" x-model="term"></input>
                   </form>
 
                   <template x-if="term.length > 1 && !isSearching && !results.length">
