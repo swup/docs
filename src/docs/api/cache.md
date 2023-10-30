@@ -19,6 +19,8 @@ The cache is enabled automatically and needs no further customization. If your s
 dynamic or doesn't need a cache for other reasons, you can disable it by modifying swup's
 [cache option](/options/#cache).
 
+> **Note** The cache **only lives in-memory** and does not make us of localStorage or sessionStorage. A simple browser reload will always clear it.
+
 Swup's cache is available at `swup.cache`. See below for all available methods.
 
 ## Options
