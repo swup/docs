@@ -12,7 +12,7 @@
 .infoblock.is--warning {
 	--info-color: var(--swup-red);
 }
-.infoblock:before {
+.infoblock::before {
 	content: '';
 	display: block;
 	position: absolute;
@@ -20,14 +20,14 @@
 	left: 0;
 	border-left: 3px solid var(--info-color);
 }
-.infoblock:after {
+.infoblock::after {
 	content: '';
 	pointer-events: none;
 	position: absolute;
 	display: block;
 	inset: 0;
-	background: var(--info-color);
-	z-index: -1;
+	background-color: var(--info-color);
+	z-index: 0;
 	opacity: 0.2;
 	@at-root .dark & {
 		opacity: 0.3;
