@@ -85,7 +85,7 @@ module.exports = function (eleventyConfig) {
 
 	// Run PageFind after every regeneration
 	eleventyConfig.on('eleventy.after', () => {
-		execSync(`npx pagefind --source _site`, {
+		execSync(`npx pagefind --site _site`, {
 			encoding: 'utf-8'
 		});
 	});
