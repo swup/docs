@@ -30,7 +30,7 @@ const customMarkdownIt = markdownIt({
 customMarkdownIt.use(markdownItAnchor, {
 	permalink: markdownItAnchor.permalink.headerLink({ safariReaderFix: true }),
 	level: 2,
-	slugify: (s) => slugify(s)
+	slugify: (s) => slugify(s.toLowerCase())
 });
 
 /**
