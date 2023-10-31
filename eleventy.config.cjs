@@ -30,7 +30,7 @@ const customMarkdownIt = markdownIt({
 customMarkdownIt.use(markdownItAnchor, {
 	permalink: markdownItAnchor.permalink.headerLink({ safariReaderFix: true }),
 	level: 2,
-	slugify: (s) => slugify(s)
+	slugify: (s) => slugify(s.toLowerCase())
 });
 
 /**
@@ -85,7 +85,7 @@ module.exports = function (eleventyConfig) {
 
 	// Run PageFind after every regeneration
 	eleventyConfig.on('eleventy.after', () => {
-		execSync(`npx pagefind --source _site`, {
+		execSync(`npx pagefind --site _site`, {
 			encoding: 'utf-8'
 		});
 	});
