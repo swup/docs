@@ -66,7 +66,7 @@
 	display: block;
 	margin-inline: auto;
 	width: 100%;
-	aspect-ratio: 16 / 6.9;
+	@include mixins.aspectRatio(16, 6.9);
 	position: relative;
 	@at-root .dark & {
 		filter: drop-shadow(4px 4px 1px rgba(0 0 0 / 0.4));

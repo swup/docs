@@ -24,3 +24,12 @@
 		@content;
 	}
 }
+
+@mixin aspectRatio($width, $height) {
+	width: 100%;
+	padding-bottom: calc(100% / (#{$width} / #{$height}));
+	@supports (aspect-ratio: 1 / 1) {
+		padding-bottom: 0;
+		aspect-ratio: #{$width} / #{$height};
+	}
+}

@@ -81,7 +81,7 @@
 	.video-embed,
 	.embed-responsive {
 		width: 100%;
-		aspect-ratio: 16 / 9;
+		@include mixins.aspectRatio(16, 9);
 
 		iframe {
 			width: 100%;
