@@ -4,6 +4,7 @@
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	min-height: 100vh;
 	min-height: 100svh;
 
 	@at-root .light & {
@@ -44,6 +45,7 @@
 	padding-inline: var(--size-fluid-3);
 	position: relative;
 	// transform: translateY(-5%);
+	min-height: 100vh;
 	min-height: 100svh;
 }
 
