@@ -14,8 +14,18 @@
       document.documentElement.classList.remove('light', 'dark');
       document.documentElement.classList.add(getColorSchemePreference());
     }
-    colorSchemeMediaQuery.addEventListener('change', setColorThemeClass);
     setColorThemeClass();
+
+    try {
+      colorSchemeMediaQuery.addEventListener('change', setColorThemeClass);
+    } catch (e1) {
+      try {
+        // Safari < 14 fallback
+        colorSchemeMediaQuery.addListener(setColorThemeClass);
+      } catch (e2) {
+        console.error(e2);
+      }
+    }
   </script>
 
   <meta charset="UTF-8">

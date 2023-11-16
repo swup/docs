@@ -1,4 +1,5 @@
 .nav--desktop {
+	height: calc(100vh - var(--header-height));
 	height: calc(100svh - var(--header-height));
 	position: sticky;
 	top: var(--header-height);

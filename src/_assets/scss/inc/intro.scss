@@ -4,6 +4,7 @@
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	min-height: 100vh;
 	min-height: 100svh;
 
 	@at-root .light & {
@@ -44,6 +45,7 @@
 	padding-inline: var(--size-fluid-3);
 	position: relative;
 	// transform: translateY(-5%);
+	min-height: 100vh;
 	min-height: 100svh;
 }
 
@@ -64,7 +66,7 @@
 	display: block;
 	margin-inline: auto;
 	width: 100%;
-	aspect-ratio: 16 / 6.9;
+	@include mixins.aspectRatio(16, 6.9);
 	position: relative;
 	@at-root .dark & {
 		filter: drop-shadow(4px 4px 1px rgba(0 0 0 / 0.4));
