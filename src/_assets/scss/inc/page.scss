@@ -80,10 +80,14 @@
 
 	.video-embed,
 	.embed-responsive {
+		position: relative;
 		width: 100%;
 		@include mixins.aspectRatio(16, 9);
 
 		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
 			width: 100%;
 			height: 100%;
 			margin: 0;
