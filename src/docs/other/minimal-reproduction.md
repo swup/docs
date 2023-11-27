@@ -14,7 +14,7 @@ faster.
 
 ## What is a minimal reproduction?
 
-A minimal reproduction is a simplified version of your code to demonstrate a problem. It should use
+A minimal reproduction is a **simplified version of your code to demonstrate a problem**. It should use
 the smallest amount of code and configuration needed to clearly show the problem. All features and
 dependencies not related to the issue should be removed.
 
@@ -32,9 +32,10 @@ By creating a minimal reproduction, you enables us to:
 
 1. Create a new project. See below for suggested services for hosting it.
 2. Install swup and any plugins needed to demonstrate the problem.
-3. Add the code needed to recreate the error you’re seeing. Strip away unrelated code to focus solely on the issue.
-4. Confirm that the error can be consistently reproduced with your provided code.
-5. Publish the project and provide a link to it when creating an issue.
+3. Add the code needed to recreate the error you’re seeing.
+4. Strip away unrelated code to focus solely on the issue.
+5. Confirm that the error can be consistently reproduced with your provided code.
+6. Publish the project and provide a link to it when creating an issue.
 
 ## Where to host a minimal reproduction
 
