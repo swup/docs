@@ -8,7 +8,7 @@ permalink: /other/minimal-reproduction/
 
 # How to Create a Minimal Reproduction
 
-The swup maintainers may ask you to create a "minimal reproduction" or "reproducible test case" when
+The swup maintainers may ask you to create a "minimal reproduction" or "reduced test case" when
 asking for help or reporting an issue. This page explains what that is and how it lets you get help
 faster.
 
