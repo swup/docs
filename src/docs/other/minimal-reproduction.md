@@ -22,7 +22,7 @@ A minimal reproduction is the best way to help people that want to help *you*.
 
 ## Why you should create a minimal reproduction
 
-By creating a minimal reproduction, you enables us to:
+By creating a minimal reproduction, you enable us to:
 
 - Fix your bug faster
 - Work on your feature request faster
