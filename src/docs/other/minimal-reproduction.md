@@ -40,7 +40,7 @@ By creating a minimal reproduction, you enable us to:
 ## Where to host a minimal reproduction
 
 You can use one of the many available online IDEs to create a reproduction, e.g.
-[CodeSandbox](https://codesandbox.io/s/swup-test-case-template-5dqcgs),
+[CodeSandbox](https://codesandbox.io/p/sandbox/swup-4-minimal-reproduction-template-n6kgnp),
 [Replit](https://replit.com/@swupjs/Swup-Test-Case-Template), or
 [StackBlitz](https://stackblitz.com/). The important part is that it's easily accessible to
 maintainers and doesn't require manual setup.
