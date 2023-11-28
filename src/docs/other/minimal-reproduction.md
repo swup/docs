@@ -11,7 +11,7 @@ permalink: /other/minimal-reproduction/
 The swup maintainers may ask you to create a "minimal reproduction" or "reduced test case" when
 asking for help or reporting an issue.
 
-**Issues without a reproduction may be temporarily closed**. Here's why:
+> **Info** Issues without a reproduction may be temporarily closed.
 
 ## Why you should create a minimal reproduction
 
