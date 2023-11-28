@@ -9,8 +9,19 @@ permalink: /other/minimal-reproduction/
 # How to Create a Minimal Reproduction
 
 The swup maintainers may ask you to create a "minimal reproduction" or "reduced test case" when
-asking for help or reporting an issue. This page explains what that is and how it lets you get help
-faster.
+asking for help or reporting an issue.
+
+**Issues without a reproduction may be temporarily closed**. Here's why:
+
+## Why you should create a minimal reproduction
+
+Providing a minimal reproduction means **everyone puts in a fair amount of effort**.
+
+By creating a minimal reproduction, you enable us to:
+
+- Fix your bug faster
+- Work on your feature request faster
+- Confirm the cause of the behavior
 
 ## What is a minimal reproduction?
 
@@ -19,14 +30,6 @@ the smallest amount of code and configuration needed to clearly show the problem
 dependencies not related to the issue should be removed.
 
 A minimal reproduction is the best way to help people that want to help *you*.
-
-## Why you should create a minimal reproduction
-
-By creating a minimal reproduction, you enable us to:
-
-- Fix your bug faster
-- Work on your feature request faster
-- Confirm the cause of the behavior
 
 ## How to create a minimal reproduction
 
@@ -45,15 +48,15 @@ You can use one of the many available online IDEs to create a reproduction, e.g.
 [StackBlitz](https://stackblitz.com/). The important part is that it's easily accessible to
 maintainers and doesn't require manual setup.
 
-## "But it's too much work to create a minimal reproduction"
+## Even better, submit a test case or a solution!
 
-It’s almost impossible to fix a bug without first being able to reproduce it. If someone else can
-reproduce your problem, they often have a good chance of fixing it. That's why we prioritize working
-on issues with a minimal reproduction, as they allow us to spend our time efficiently.
+As Rich Harris [points out](https://gist.github.com/Rich-Harris/88c5fc2ac6dc941b22e7996af05d70ff#better-still-file-a-test-case-or-a-fix), maintainers appreciate it when you **contribute test cases and solutions through pull requests**. Straightforward fixes (that meet the project's code standards and pass the CI) are highly valued.
 
-Issues without a reproduction may be closed unfixed.
+## ”But it's too much work to create a minimal reproduction“ 🥵
 
-## "But I already described everything in the issue"
+**It’s almost impossible to fix a bug without first being able to reliably reproduce it**. That's why we prioritize working on issues with a minimal reproduction, as they allow us to spend our time more efficiently.
 
-We appreciate you describing the issue in detail! However, a minimal reproduction will make sure
-that your description matches the actual behavior, by removing everything but the necessary code.
+## “But I already described everything in the issue” 😒
+
+We appreciate you describing the issue in detail! However, **a minimal reproduction will make sure
+that your description matches the actual behavior**, by removing everything but the necessary code.
