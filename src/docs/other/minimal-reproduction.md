@@ -1,8 +1,8 @@
 ---
 layout: default
-title: How to Create a Minimal Reproduction
+title: Minimal Reproductions
 eleventyNavigation: false
-description: How to Create a Minimal Reproduction
+description: Please include a Minimal Reproduction
 permalink: /other/minimal-reproduction/
 ---
 
