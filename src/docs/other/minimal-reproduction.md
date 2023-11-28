@@ -3,7 +3,7 @@ layout: default
 title: Minimal Reproductions
 eleventyNavigation: false
 description: Please include a Minimal Reproduction
-permalink: /other/minimal-reproduction/
+permalink: /other/minimal-reproductions/
 ---
 
 # How to Create a Minimal Reproduction
