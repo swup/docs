@@ -4,7 +4,7 @@ title: Demos
 eleventyNavigation:
   key: Demos
   parent: Getting Started
-  order: 4
+  order: 5
 description: Demonstrations
 permalink: /getting-started/demos/
 ---
