@@ -73,6 +73,8 @@ If you need to choose between different animations based on the URL, or if you h
 complex requirements, you can look into the official [JS Plugin](/plugins/js-plugin/).
 
 ```js
+import gsap from 'gsap';
+
 swup.hooks.replace('animation:out:await', async () => {
   await gsap.to('.transition-fade', { opacity: 0, duration: 0.25 });
 });
