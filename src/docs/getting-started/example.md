@@ -50,6 +50,9 @@ html.is-animating .transition-fade {
 }
 ```
 
+For this example, we're using CSS to animate our page transition. Swup also supports JS animations
+and native View Transitions. [Learn more about defining animations](/getting-started/animations/).
+
 ## 3. Initialize swup
 
 Finally, we'll load and initialize swup. And we're good to go!
