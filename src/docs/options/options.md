@@ -159,7 +159,7 @@ other link and perform a regular navigation.
 
 Enable native animations using the [View Transitions](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API)
 API. This will toggle the class `swup-native` on the HTML element if View Transitions are supported
-by the user's browsers.
+by the user's browsers. Learn more about [native view transitions](/getting-started/animations/#native-animations).
 
 ## requestHeaders
 
