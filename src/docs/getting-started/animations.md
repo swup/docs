@@ -11,8 +11,8 @@ permalink: /getting-started/animations/
 
 # Defining Animations
 
-Swup can be used with a variety of animation methods. It supports **CSS animations**, custom
-**JS animations**, as well as **native animations** using the View Transitions API.
+Swup can be used with a variety of animation methods. It supports **CSS animations**, custom
+**JS animations**, as well as **native animations** using the View Transitions API.
 
 All code examples below assume the page markup from our [example setup](/getting-started/example/).
 
@@ -46,9 +46,7 @@ html.is-animating .transition-fade {
 }
 ```
 
-### Animation classes {#classes}
-
-Swup applies classes to the `html` element to control the page transition process:
+Swup applies the following classes to the `html` element to control the page transition process:
 
 <div class="events-table" data-table-with-anchor-links>
 
@@ -133,7 +131,7 @@ html.is-animating:not(.swup-native) .transition-fade {
 }
 ```
 
-## Usage without animations
+## No animations
 
 Swup works perfectly fine if none of your elements is animated. You might see a console warning
 "no CSS animation duration defined", which is safe to ignore. If it bothers you, set the
