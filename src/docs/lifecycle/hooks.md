@@ -142,8 +142,9 @@ browser console as they are happening.
 | **page:view**           | New content is visible after replacing the content.                                   |
 | **scroll:top**          | Scroll to the top of the page.                                                        |
 | **scroll:anchor**       | Scroll to an anchor on the current page.                                              |
-| **visit:start**         | Transition to a new page begins.                                                      |
-| **visit:end**           | Transition ends. All content is replaced, animations have finished.                   |
+| **visit:start**         | Visit started: transition to a new page begins.                                       |
+| **visit:end**           | Visit ended: all content is replaced, animations have finished.                       |
+| **visit:abort**         | Visit aborted: a new link was clicked before the current transition has finished.     |
 
 </div>
 
