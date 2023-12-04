@@ -30,6 +30,11 @@
 		}
 	}
 
+	// Images wrapped in links: remove underline
+	a:has(img:only-child) {
+		background-image: none;
+	}
+
 	> * + * {
 		margin-block: 1em 0;
 	}
