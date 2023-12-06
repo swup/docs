@@ -31,8 +31,7 @@ want to wait for this element to finish animating whenever a new page is loaded.
 </main>
 ```
 
-> **Note** These are just the defaults. Both the container selector and the animation selector are
-adjustable in the [options](/options/).
+> **Note** The container selector and animation selector are defaults and can be adjusted in the [options](/options/).
 
 ## 2. Animation styles
 
@@ -50,6 +49,9 @@ html.is-animating .transition-fade {
   opacity: 0;
 }
 ```
+
+For this example, we're using CSS to animate our page transition. Swup also supports JS animations
+and native View Transitions. Learn more about [defining animations](/getting-started/animations/).
 
 ## 3. Initialize swup
 

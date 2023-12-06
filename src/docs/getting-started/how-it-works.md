@@ -25,40 +25,9 @@ menus.
 
 ## Automatic animation timing {#timing}
 
-Swup is built around CSS animations. It will wait for any
-[transitions](https://developer.mozilla.org/en-US/docs/Web/CSS/transition) and
-[animations](https://developer.mozilla.org/en-US/docs/Web/CSS/animation) to finish before replacing
-page content. To identify animations to wait for, swup will look for a special type of class added
-to content containers: `transition-[name]`, where `name` is an arbitrary name you can assign
-to allow styling different types of animations. This [animation selector](/options/#animation-selector)
-can be freely configured.
-
-It is recommended to only add this class to a **single** element per page. All other elements
-can be animated independently to allow easier debugging of animations.
-
-### Animation classes {#classes}
-
-Swup applies classes to the `html` element to control the page transition process:
-
-<div class="events-table" data-table-with-anchor-links>
-
-| Class name            | Description                                                                                                                                                                                                                       |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `is-changing`         | Added before starting the animation. Removed after the whole animation process. Used for showing the loading state.                                                                                                               |
-| `is-animating`        | Added before starting the animation. Removed after the content is replaced. Used for defining styles of unloaded pages.                                                                                                           |
-| `is-leaving`          | Added before starting the animation. Removed right before the content is replaced. Used to identify the **leave** phase of the animation. Combine with `is-animating` to create differing **leave** and **enter** animations.     |
-| `is-rendering`        | Added right before the content is replaced. Removed after the whole animation process. Used to identify the **enter** phase of the animation. Combine with `is-animating` to create differing **leave** and **enter** animations. |
-| `to-[animation-name]` | Added for links with a `[data-swup-animation="{{animation-name}}"]` attribute to change the animation for a specific visit.                                                                                                       |
-
-</div>
-
-You can configure swup to [add animation classes to the containers](/options/#animation-scope)
-instead of the html element.
-
-## Other animation methods
-
-Use the official [JS Plugin](/plugins/js-plugin/) to perform animations yourself in JS or with a
-popular animation library like GSAP.
+Swup is built around animations and will wait for CSS animations, JS animations, and native
+View Transitions before updating the page with the new content. See
+[Defining animations](/getting-started/animations/) for details and examples.
 
 ## Browser history {#history}
 

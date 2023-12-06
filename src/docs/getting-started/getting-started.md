@@ -38,7 +38,7 @@ Make your site feel like a snappy single-page app — without any of the complex
   <li class="feature">
     <span class="feature_icon">✨</span>
     <span class="feature_text">
-      Auto-detects <a href="/getting-started/how-it-works/#timing">CSS transitions</a> & animations for perfect timing
+      Auto-detects <a href="/getting-started/how-it-works/#timing">animations</a> for perfect timing
     </span>
   </li>
 

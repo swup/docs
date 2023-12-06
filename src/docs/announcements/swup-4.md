@@ -25,6 +25,7 @@ Make your site feel like a snappy single-page app — without any of the complex
 ## What’s new in this release
 
 - [Official Astro integration](#astro-integration)
+- [Native View Transition support](#view-transitions)
 - [Built-in scroll support](#scroll-support)
 - [Local animation scope](#local-animation-scope)
 - [Hook system for easier customization](#hook-system)
@@ -52,6 +53,39 @@ for performance and accessibility out-of-the-box. Astro's bundling and module lo
 not hurting performance by only loading swup once the page has finished rendering.
 
 ## Features
+
+### Native View Transition support {#view-transitions}
+
+The new [View Transitions](https://developer.mozilla.org/en-US/docs/Web/API/View_Transitions_API)
+browser API provides a native and performant mechanism for managing the visual transition of
+elements from one state to another. This is great for page transition animations.
+
+Use swup's new `native` option to start definining your page transitions as native View Transitions.
+In addition, swup still supports CSS animations and JS animations. Learn more about
+[supported animation methods](/getting-started/animations/).
+
+```js
+const swup = new Swup({ native: true });
+```
+
+```css
+html.is-changing .transition-fade {
+  view-transition-name: main;
+}
+
+::view-transition-old(main) {
+  animation: fade 0.5s ease-in-out both;
+}
+
+::view-transition-new(main) {
+  animation: fade 0.5s ease-in-out both reverse;
+}
+
+@keyframes fade {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+```
 
 ### Built-in scroll support {#scroll-support}
 
