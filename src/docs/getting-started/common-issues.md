@@ -68,11 +68,17 @@ cases.
 
 ## History navigations are ignored & never update the page
 
-Swup only handles backward/forward visits to history entries it has created itself. If you or
-other scripts on the site are creating or modifying history entries, there are two options:
+Swup is designed to manage only the history entries it has generated itself. This approach allows
+for custom development, where you can create and manage your own history entries without
+interference from swup. However, if your site's scripts are creating or modifying history entries
+and you want swup to handle them, consider these two strategies:
 
-- Ensure that history entries are only created by the provided [history helpers](/api/helpers/#create-history-record)
-- Modify swup's [skipPopStateHandling](/options/#skip-pop-state-handling) option to make it accept all history entries
+- Use swup's [history helpers](/api/helpers/#createhistoryrecord) for creating history entries it will recognize
+- Configure swup to [accept all history entries](/options/#skippopstatehandling)
+
+Swup may also ignore certain history navigations if your [link selector](/options/#linkselector)
+doesn't include all page links. In such cases, the browser will process these links independently,
+creating history entries that swup does not recognize and will not handle.
 
 ## Overflowing containers get reset on navigation
 
@@ -100,7 +106,7 @@ Some third-party libraries like [Foundation](https://foundation.zurb.com/) might
 class names like `transition-*` for their own functionality. In this case, swup will try to wait
 for animations on those elements, quite possibly messing up the timing of animations.
 
-Using a stricter [animation selector](/options/#animation-selector) fixes the issue.
+Using a stricter [animation selector](/options/#animationselector) fixes the issue.
 
 ```javascript
 var swup = new Swup({
