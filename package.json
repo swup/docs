@@ -73,7 +73,7 @@
     "sass": "^1.62.0",
     "sass-loader": "^12.6.0",
     "shiki": "^0.14.1",
-    "start-server-and-test": "^1.15.4",
+    "start-server-and-test": "^2.0.3",
     "ts-loader": "^9.2.6",
     "url-loader": "^4.1.1",
     "webpack": "^5.75.0",
