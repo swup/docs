@@ -23,7 +23,7 @@ of each demo to see the code and fork it for experimenting yourself.
 Default swup installation with two containers and a fade animation between pages.
 
 ```repl
-https://swup-demo-basic.swupjs.repl.co
+https://swup-demo-basic-temp.replit.app
 Swup Demo: Basic
 ```
 
@@ -32,7 +32,7 @@ Swup Demo: Basic
 Slide pages into view horizontally.
 
 ```repl
-https://swup-demo-slide.swupjs.repl.co
+https://swup-demo-slide-temp.replit.app
 Swup Demo: Slide
 ```
 
@@ -41,7 +41,7 @@ Swup Demo: Slide
 Cover content while loading the new page.
 
 ```repl
-https://swup-demo-overlay.swupjs.repl.co
+https://swup-demo-overlay-temp.replit.app
 Swup Demo: Overlay
 ```
 
@@ -50,7 +50,7 @@ Swup Demo: Overlay
 Use swup's animation classes for other elements than the main content containers.
 
 ```repl
-https://swup-demo-multiple.swupjs.repl.co
+https://swup-demo-multiple-temp.replit.app
 Swup Demo: Mulitple animations
 ```
 
@@ -60,7 +60,7 @@ Animate between pages as a horizontal slideshow.
 Uses the [Parallel Plugin](/plugins/parallel-plugin/) to show both pages at the same time.
 
 ```repl
-https://swup-demo-slideshow.swupjs.repl.co
+https://swup-demo-slideshow-temp.replit.app
 Swup Demo: Slideshow
 ```
 
@@ -70,7 +70,7 @@ Reveal the next page using masks and gradients.
 Uses the [Parallel Plugin](/plugins/parallel-plugin/) to show both pages at the same time.
 
 ```repl
-https://swup-demo-reveal.swupjs.repl.co
+https://swup-demo-reveal-temp.replit.app
 Swup Demo: Reveal
 ```
 
@@ -80,7 +80,7 @@ Load sub-pages as modals.
 Uses the [Fragment Plugin](/plugins/fragment-plugin/) to dynamically select containers based on route.
 
 ```repl
-https://swup-demo-modal-overlay.swupjs.repl.co/
+https://swup-demo-modal-overlay-temp.replit.app/
 ```
 
 ## Fragment support: list
@@ -88,7 +88,7 @@ https://swup-demo-modal-overlay.swupjs.repl.co/
 Uses the [Fragment Plugin](/plugins/fragment-plugin/) to replace only the items of a list when applying filters.
 
 ```repl
-https://swup-demo-filter-a-list.swupjs.repl.co/
+https://swup-demo-filter-a-list-temp.replit.app/
 ```
 
 ## Animated forms
@@ -96,7 +96,7 @@ https://swup-demo-filter-a-list.swupjs.repl.co/
 Animate form submissions using the [Forms Plugin](/plugins/forms-plugin/).
 
 ```repl
-https://swup-demo-forms.swupjs.repl.co
+https://swup-demo-forms-temp.replit.app
 Swup Demo: Animated forms
 ```
 
@@ -105,7 +105,7 @@ Swup Demo: Animated forms
 Submit simple forms in place without full page loads using the [Forms Plugin](/plugins/forms-plugin/).
 
 ```repl
-https://swup-demo-inline-forms.swupjs.repl.co
+https://swup-demo-inline-forms-temp.replit.app
 Swup Demo: Inline forms
 ```
 
@@ -114,6 +114,6 @@ Swup Demo: Inline forms
 Persist items loaded with infinite scroll between page visits.
 
 ```repl
-https://swup-demo-infinite-scroll-cache.swupjs.repl.co/
+https://swup-demo-infinite-scroll-cache-temp.replit.app
 Swup Demo: Infinite Scroll Cache
 ```
