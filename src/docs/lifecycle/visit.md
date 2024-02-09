@@ -173,7 +173,7 @@ swup.hooks.on('visit:start', (visit) => {
 
 ### Do something with the incoming document
 
-As soon as the next page is loaded, you can access the `document` of that page and do something with it. For example, you could make sure the correct `lang` tag is always set on your `<html>`:
+As soon as the next page is loaded, you can access the `document` of that page and do something with it. For example, you could make sure the `lang` tag is being updated on your `<html>` element:
 
 ```javascript
 swup.hooks.on('content:replace', (visit) => {
