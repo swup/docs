@@ -33,6 +33,12 @@ Including polyfills for modern browser APIs using a service like [polyfill.io](h
 will significantly increase browser support. Since it's a moving target that depends on the browsers
 of your visitors, you're encouraged to do some research of your own here.
 
+## Improved support with previous versions
+
+If you absolutely need to support older browsers like IE 11, downgrading to
+[swup v3](https://v3.swup.js.org/other/browser-support/) will get you much closer to that goal, at
+the sacrifice of some of the newer features introduced in v4.
+
 ## Plugins
 
 This support matrix is valid for swup itself — plugins may differ in the list of supported browsers.
