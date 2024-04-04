@@ -21,6 +21,9 @@
               <li><a href="{{ credit.url }}" target="_blank" rel="external">{{ credit.name }}</a></li>
             {%- endfor -%}
           </ul>
+          <figure>
+            <img src="{{ '/showcase/' + site.fileSlug + '.png'  | url }}" alt="Screenshot of {{ site.data.title }}">
+          </figure>
           <a href="{{ site.data.url }}" target="_blank" rel="external" tabindex="-1" aria-hidden="true">
             {{ site.data.title }}
           </a>
