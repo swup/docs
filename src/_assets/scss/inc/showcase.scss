@@ -2,7 +2,7 @@
 	margin-block: var(--gap);
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-	gap: var(--gap-small);
+	gap: var(--gap);
 	border: var(--border-style);
 	border-radius: var(--radius-1);
 }
