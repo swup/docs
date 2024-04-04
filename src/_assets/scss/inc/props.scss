@@ -6,6 +6,7 @@
 	--font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace, SF Mono, Monaco,
 		Droid Sans Mono, Source Code Pro, monospace;
 
+	--font-size-fluid-0-B: clamp(.8rem, 1.5vw, .8rem);
 	--font-size-fluid-0: clamp(1rem, 2vw, 1.15rem);
 	--font-size-fluid-1: clamp(1.15rem, 3vw, 1.35rem);
 	--font-size-fluid-2: clamp(1.35rem, 4vw, 1.7rem);

@@ -5,24 +5,20 @@
       {{ content | prepareContent | safe }}
     </div>
 
-    <section class="site-grid">
+    <section class="showcase-grid">
       {%- for site in collections.showcase | reverse -%}
-        <article>
+        <article class="showcase-item">
           <header>
             <h2>
               <a href="{{ site.data.url }}" target="_blank" rel="external">
                 {{ site.data.title }}
               </a>
             </h2>
-            <span aria-hidden="true">Open</span>
+            {% feather "external-link" %}
           </header>
           <ul>
             {%- for credit in site.data.credits -%}
-              <li>
-                <a href="{{ credit.url }}" target="_blank" rel="external">
-                  {{ credit.name }}
-                </a>
-              </li>
+              <li><a href="{{ credit.url }}" target="_blank" rel="external">{{ credit.name }}</a></li>
             {%- endfor -%}
           </ul>
           <a href="{{ site.data.url }}" target="_blank" rel="external" tabindex="-1" aria-hidden="true">
