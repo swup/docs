@@ -1,7 +1,7 @@
 ---
 title: Kat Petroschkat
 url: https://katpetroschkat.net/
-date: 2023-11-17
+date: 2023-11-19
 credits:
   -
     name: Rasso Hilber
