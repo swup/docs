@@ -1,7 +1,7 @@
 # Add Your Site to the Swup Showcase
 
 Have you created a site you want to share with the swup community? Great! Adding it to the Showcase
-will highlight your site and encourage others with its design and implementation.
+will highlight your project and encourage others with its design and implementation.
 
 ## A Few Guidelines
 
