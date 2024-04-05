@@ -1,4 +1,4 @@
-.showcase-grid {
+.showcase_grid {
 	margin-block: var(--gap);
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -7,7 +7,7 @@
 	border-radius: var(--radius-1);
 }
 
-.showcase-item {
+.showcase_item {
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -15,45 +15,6 @@
 	border-radius: var(--radius-1);
 	overflow: hidden;
 	padding-bottom: .8rem;
-	header {
-		display: flex;
-		justify-content: space-between;
-		align-items: baseline;
-		padding: .8rem 1rem 0;
-		border-top: 1px solid var(--color-transparent-1);
-		svg {
-			position: relative;
-			top: 0.2em !important;
-			color: var(--color-transparent-2);
-		}
-	}
-	h2 {
-		padding-right: 1.5em;
-		font-size: inherit;
-		font-weight: bold;
-		margin: 0;
-		a {
-			font-weight: bold;
-		}
-	}
-	ul {
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		margin-top: .25em;
-		padding: 0 1rem;
-		display: flex;
-		flex-wrap: wrap;
-		font-size: var(--font-size-fluid-0-B);
-		li:not(:last-child)::after {
-			content: '•';
-			margin-inline: 0.5em;
-			color: var(--color-transparent-3);
-		}
-		a {
-			color: var(--color-transparent-3);
-		}
-	}
 	a {
 		position: relative;
 		z-index: 2;
@@ -68,22 +29,65 @@
 		user-select: none;
 		z-index: 1;
 	}
-	figure {
+}
+
+header.showcase_header {
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	padding: .8rem 1rem 0;
+	border-top: 1px solid var(--color-transparent-1);
+	svg {
 		position: relative;
-		order: -1;
+		top: 0.2em !important;
+		color: var(--color-transparent-2);
+	}
+}
+
+h2.showcase_title {
+	padding-right: 1.5em;
+	font-size: inherit;
+	font-weight: bold;
+	margin: 0;
+	a {
+		font-weight: bold;
+	}
+}
+
+ul.showcase_credits {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	margin-top: .25em;
+	padding: 0 1rem;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: var(--font-size-fluid-0-B);
+	> :not(:last-child)::after {
+		content: '•';
+		margin-inline: 0.5em;
+		color: var(--color-transparent-3);
+	}
+	a {
+		color: var(--color-transparent-3);
+	}
+}
+
+figure.showcase_image {
+	position: relative;
+	order: -1;
+	width: 100%;
+	height: 0;
+	margin: 0;
+	overflow: hidden;
+	padding-bottom: 75%;
+	img {
+		position: absolute;
+		top: 0;
+		left: 0;
 		width: 100%;
-		height: 0;
-		margin: 0;
-		overflow: hidden;
-		padding-bottom: 75%;
-		img {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			object-position: top left;
-		}
+		height: 100%;
+		object-fit: cover;
+		object-position: top left;
 	}
 }
