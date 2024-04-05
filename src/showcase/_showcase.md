@@ -1,7 +1,7 @@
 ---
 title: Example Showcase
 url: https://example.net
-date: 2024-XX-XX
+date: 2024-04-05
 credits:
   -
     name: Freelancer
