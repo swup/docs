@@ -1,0 +1,35 @@
+<article class="page">
+  <main>
+
+    <div class="page_body text" data-pagefind-body>
+      {{ content | prepareContent | safe }}
+    </div>
+
+    <section class="showcase_grid">
+      {%- for site in collections.showcase | reverse -%}
+        <article class="showcase_item">
+          <header class="showcase_header">
+            <h2 class="showcase_title">
+              <a href="{{ site.data.url }}" target="_blank" rel="external">
+                {{ site.data.title }}
+              </a>
+            </h2>
+            {% feather "external-link" %}
+          </header>
+          <ul class="showcase_credits">
+            {%- for credit in site.data.credits -%}
+              <li><a href="{{ credit.url }}" target="_blank" rel="external">{{ credit.name }}</a></li>
+            {%- endfor -%}
+          </ul>
+          <figure class="showcase_image">
+            <img src="{{ '/showcase/' + site.fileSlug + '.png'  | url }}" alt="Screenshot of {{ site.data.title }}">
+          </figure>
+          <a href="{{ site.data.url }}" target="_blank" rel="external" tabindex="-1" aria-hidden="true">
+            {{ site.data.title }}
+          </a>
+        </article>
+      {%- endfor -%}
+    </section>
+
+  </main>
+</article>

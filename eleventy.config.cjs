@@ -90,6 +90,11 @@ module.exports = function (eleventyConfig) {
 		});
 	});
 
+	// Bundle showcase images
+	eleventyConfig.addPassthroughCopy({
+		'src/showcase/**/*.png': 'showcase'
+	});
+
 	return {
 		dir: {
 			input: 'src',
