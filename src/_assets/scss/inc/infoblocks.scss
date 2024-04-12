@@ -9,7 +9,8 @@
 	}
 	border-radius: var(--radius-1);
 }
-.infoblock.is--warning {
+.infoblock.is--warning,
+.infoblock.is--caution {
 	--info-color: var(--swup-red);
 }
 .infoblock::before {
