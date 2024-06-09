@@ -6,7 +6,4 @@ credits:
   -
     name: Rasso Hilber
     url: https://rassohilber.com
-  -
-    name: Basics09
-    url: https://basics09.de
 ---
