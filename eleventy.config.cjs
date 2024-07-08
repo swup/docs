@@ -24,6 +24,13 @@ const customMarkdownIt = markdownIt({
 });
 
 /**
+ * Prevents things like `rule.to` to be converted to links
+ */
+customMarkdownIt.linkify.set({
+	fuzzyLink: false
+});
+
+/**
  * Anchors for headings lower then H1 (H2, H3, ...)
  * @see https://github.com/valeriangalliat/markdown-it-anchor
  */
