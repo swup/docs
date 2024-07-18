@@ -33,8 +33,10 @@ This is an example visit object for a navigation from `/home` to `/about#anchor`
 
 ```javascript
 {
+  id: 1042739, /* A unique ID to identify this visit */
   from: {
-    url: '/home'
+    url: '/home',
+    hash: ''
   },
   to: {
     url: '/about',
@@ -42,7 +44,9 @@ This is an example visit object for a navigation from `/home` to `/about#anchor`
     html: undefined, /* The HTML string of /about, when it's loaded */,
     document: undefined /* The parsed document of /about, when it's loaded */,
   },
-  containers: ['#swup'],
+  containers: [
+    '#swup'
+  ],
   animation: {
     animate: true,
     name: 'fade'
