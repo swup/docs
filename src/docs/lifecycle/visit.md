@@ -183,6 +183,6 @@ it. For example, you could make sure the `lang` attribute is updated on your `<h
 ```javascript
 swup.hooks.on('content:replace', (visit) => {
   const lang = visit.to.document?.documentElement.getAttribute('lang');
-  document.documentElement.setAttribute('lang', lang);
+  if (lang) document.documentElement.setAttribute('lang', lang);
 });
 ```
