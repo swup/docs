@@ -33,8 +33,10 @@ This is an example visit object for a navigation from `/home` to `/about#anchor`
 
 ```javascript
 {
+  id: 1042739, /* A unique ID to identify this visit */
   from: {
-    url: '/home'
+    url: '/home',
+    hash: ''
   },
   to: {
     url: '/about',
@@ -42,7 +44,9 @@ This is an example visit object for a navigation from `/home` to `/about#anchor`
     html: undefined, /* The HTML string of /about, when it's loaded */,
     document: undefined /* The parsed document of /about, when it's loaded */,
   },
-  containers: ['#swup'],
+  containers: [
+    '#swup'
+  ],
   animation: {
     animate: true,
     name: 'fade'
@@ -173,11 +177,12 @@ swup.hooks.on('visit:start', (visit) => {
 
 ### Do something with the incoming document
 
-As soon as the next page is loaded, you can access the `document` of that page and do something with it. For example, you could make sure the `lang` tag is being updated on your `<html>` element:
+As soon as the next page is loaded, you can access the `document` of that page and do something with
+it. For example, you could make sure the `lang` attribute is updated on your `<html>` element:
 
 ```javascript
 swup.hooks.on('content:replace', (visit) => {
-  const langAttr = visit.to.document?.documentElement.getAttribute('lang');
-  if (langAttr) document.documentElement.setAttribute('lang', langAttr);
+  const lang = visit.to.document?.documentElement.getAttribute('lang');
+  if (lang) document.documentElement.setAttribute('lang', lang);
 });
 ```

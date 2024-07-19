@@ -15,21 +15,24 @@ Control swup's behavior using specific DOM attributes on links and other element
 
 ## Ignore links
 
-Swup can be disabled on a per-link basis by annotating a link or any of its
-ancestors with `data-no-swup`:
+Swup can be disabled on a per-link basis by annotating a link with `data-no-swup`.
 
 ```html
 <a href="/" data-no-swup>Ignored</a>
+```
 
-<nav data-no-swup>
+Add the attribute to a common container to ignore all links within.
+
+```html
+<section data-no-swup>
   <a href="/">Ignored</a>
-</nav>
+  <a href="/">Ignored</a>
+</section>
 ```
 
 ## Set a custom animation
 
-Adding a `data-swup-animation` attribute on a link will change the animation for a
-specific visit.
+Set a custom animation for a specific link by adding a `data-swup-animation` attribute.
 
 ```html
 <a href="/" data-swup-animation="slide">
@@ -49,6 +52,17 @@ html.is-changing .transition-page {
 html.is-changing.to-slide .transition-page {
   /* slide transition styles */
 }
+```
+
+Add the attribute to a common container to set an animation for all links within. Animations defined
+on a link take precedence over animations defined on a parent.
+
+```html
+<section data-swup-animation="slide">
+  <a href="/">Slide</a>
+  <a href="/">Slide</a>
+  <a href="/" data-swup-animation="fade">Fade</a>
+</section>
 ```
 
 ## Persist element state
@@ -73,4 +87,15 @@ adding a `data-swup-history` attribute with the value `replace` to a link:
 
 ```html
 <a href="/" data-swup-history="replace">
+```
+
+Add the attribute to a common container to set history mode for all links within. Settings defined
+on a link take precedence over settings defined on a parent.
+
+```html
+<section data-swup-history="replace">
+  <a href="/">Replace</a>
+  <a href="/">Replace</a>
+  <a href="/" data-swup-history="push">Push</a>
+</section>
 ```
