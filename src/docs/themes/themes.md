@@ -3,7 +3,7 @@ layout: default
 title: Themes
 eleventyNavigation:
   key: Themes
-  order: 5
+  order: 6
 description: List of official themes
 permalink: /themes/
 ---

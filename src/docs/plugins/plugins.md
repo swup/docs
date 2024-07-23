@@ -16,7 +16,7 @@ See below for details on [installing and enabling plugins](#installing-plugins).
 
 ## Official plugins
 
-These are plugins developed and maintained by the swup core team.
+Plugins extending swup's functionality, developed and maintained by the core team.
 
 |                        Plugin                         |                    Features                    |
 | ----------------------------------------------------- | ---------------------------------------------- |
@@ -36,10 +36,11 @@ These are plugins developed and maintained by the swup core team.
 
 ## Official integrations
 
-These are plugins connecting swup with other frameworks or services.
+Plugins or libraries connecting swup with other frameworks or services.
 
 |                   Plugin                    |     Integrates with     |
 | ------------------------------------------- | ----------------------- |
+| [Astro Integration](/integrations/astro)    | Astro.js                |
 | [GA Plugin](/plugins/ga-plugin)             | Google Analytics        |
 | [Gia Plugin](/plugins/gia-plugin)           | Gia frontend components |
 | [GTM Plugin](/plugins/gtm-plugin)           | Google Tag Manager      |

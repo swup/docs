@@ -3,8 +3,8 @@ layout: default
 title: Third-Party Plugins
 eleventyNavigation:
   key: Third-Party Plugins
-  order: 6
-description: List of external plugins done by awesome people around the web
+  order: 7
+description: List of external plugins created by awesome people around the web
 permalink: /third-party-plugins/
 ---
 
