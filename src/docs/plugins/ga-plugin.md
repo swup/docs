@@ -3,8 +3,8 @@ layout: default
 title: GA Plugin
 eleventyNavigation:
   key: GA Plugin
-  parent: Plugins
-  order: 8
+  parent: Integrations
+  order: 3
 description: A swup plugin for integrating Google Analytics
 permalink: /plugins/ga-plugin/
 repo_link: https://github.com/swup/ga-plugin

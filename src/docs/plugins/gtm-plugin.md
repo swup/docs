@@ -3,8 +3,8 @@ layout: default
 title: GTM Plugin
 eleventyNavigation:
   key: GTM Plugin
-  parent: Plugins
-  order: 10
+  parent: Integrations
+  order: 5
 description: Plugin to trigger GTM page view events
 permalink: /plugins/gtm-plugin/
 repo_link: https://github.com/swup/gtm-plugin

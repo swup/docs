@@ -3,8 +3,8 @@ layout: default
 title: Gia Plugin
 eleventyNavigation:
   key: Gia Plugin
-  parent: Plugins
-  order: 9
+  parent: Integrations
+  order: 4
 description: A swup plugin for integrating Gia frontend components
 permalink: /plugins/gia-plugin/
 repo_link: https://github.com/swup/gia-plugin

@@ -1,37 +1,15 @@
 ---
 layout: default
-title: Integrations
+title: Integrating Alpine.js
 eleventyNavigation:
-  key: Integrations
-  parent: Other
-  order: 1
-description: Integrating swup with other tools
-permalink: /other/integrations/
+  key: Alpine.js
+  parent: Integrations
+  order: 2
+description: How to integrate Alpine and swup
+permalink: /integrations/alpine/
 ---
 
-# Integrations
-
-This is a collection of solutions for integrating swup with other popular tools.
-
-## Astro
-
-Astro and swup are a great fit. Where Astro manages the rendering of your site, swup takes over
-and adds smooth page transitions, smart preloading and caching on the client side.
-
-Check out the [official Astro integration for swup](https://github.com/swup/astro)
-for getting started quickly.
-
-```js
-// astro.config.mjs
-import { defineConfig } from 'astro/config';
-import swup from '@swup/astro';
-
-export default defineConfig({
-  integrations: [swup()]
-});
-```
-
-## Alpine.js
+# Integrating Alpine.js
 
 Swup works well with [Alpine.js](https://alpinejs.dev/) for managing component
 state and automating page lifecycles. Just initialize both libraries and enjoy
@@ -53,7 +31,7 @@ Alpine.start();
 </div>
 ```
 
-### Handling swup hooks
+## Handling swup hooks
 
 To register handlers for swup's hooks inside your Alpine components, you need to
 prepend `swup` to all hook names. You can access swup's visit object using the
