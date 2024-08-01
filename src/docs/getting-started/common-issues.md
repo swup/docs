@@ -165,7 +165,7 @@ See [this issue](https://github.com/swup/swup/issues/107) for more information.
 
 A hard page visit can be caused by various issues. These are the most common scenarios and suggested steps to solve them:
 
-1. There is a [containers](https://swup.js.org/options/#containers) mismatch between the old and the new page
+1. One of the [containers](https://swup.js.org/options/#containers) is missing in the old or new page
 
    - In your browser console, activate the option "Preserve Log" and see if there are any errors being thrown as you navigate
 
@@ -176,4 +176,4 @@ A hard page visit can be caused by various issues. These are the most common sce
 
 3. The propagation of the click event is [being stopped](https://github.com/swup/swup/issues/236#issuecomment-1203786475) and thus never reaches swup
 
-   - Check if on the link that doesn't trigger a swup visit you are [stopping the event propagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation)
+   - Check if you are [stopping click event propagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) on the link or any of it's parents
