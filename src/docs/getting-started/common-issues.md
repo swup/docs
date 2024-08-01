@@ -13,6 +13,9 @@ permalink: /getting-started/common-issues/
 
 This is a compilation of challenges and suggested solutions when integrating or extending swup.
 
+Consider installing the official [Debug Plugin](/plugins/debug-plugin/) during
+development to get warnings and suggestions for some common mistakes.
+
 ## Scripts on the next page are not executed
 
 Swup doesn't insert new script tags by default. To run code after a page visit, you have a few
