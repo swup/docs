@@ -170,13 +170,14 @@ A hard page visit can be caused by various issues. These are the most common sce
 
 1. One of the [containers](https://swup.js.org/options/#containers) is missing in the old or new page
 
-   - In your browser console, activate the option "Preserve Log" and see if there are any errors being thrown as you navigate
+   - Enable your browser devtools' [Preserve Log](https://developer.chrome.com/docs/devtools/console/reference#persist) option
+     and check for errors thrown during navigation
 
-2. You have told swup to [ignore the visit](https://swup.js.org/options/#ignorevisit)
+2. Swup is configured to [ignore the visit](https://swup.js.org/options/#ignorevisit)
 
    - Check if you have customized `ignoreVisit`. If so, see if it helps to disable it.
    - Check if the link or any of its parent elements has the attribute `data-no-swup`
 
-3. The propagation of the click event is [being stopped](https://github.com/swup/swup/issues/236#issuecomment-1203786475) and thus never reaches swup
+3. The click event is [stopped from propagating](https://github.com/swup/swup/issues/236#issuecomment-1203786475) and never reaches swup
 
    - Check if you are [stopping click event propagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) on the link or any of it's parents
