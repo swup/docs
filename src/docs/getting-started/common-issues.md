@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Common Issues
+title: Common Issues & Troubleshooting
 eleventyNavigation:
   key: Common issues
   parent: Getting Started
@@ -9,9 +9,12 @@ description: Description of common issue or caveats people encounter
 permalink: /getting-started/common-issues/
 ---
 
-# Common Issues
+# Common Issues & Troubleshooting
 
 This is a compilation of challenges and suggested solutions when integrating or extending swup.
+
+Consider installing the official [Debug Plugin](/plugins/debug-plugin/) during
+development to get warnings and suggestions for some common mistakes.
 
 ## Scripts on the next page are not executed
 
@@ -160,3 +163,21 @@ a pretty creative way using `textarea` mentioned [in this thread](https://github
 or in any other way.
 
 See [this issue](https://github.com/swup/swup/issues/107) for more information.
+
+## The browser performs a hard visit instead of a swup transition
+
+A hard page visit can be caused by various issues. These are the most common scenarios and suggested steps to solve them:
+
+1. One of the [containers](https://swup.js.org/options/#containers) is missing in the old or new page
+
+   - Enable your browser devtools' [Preserve Log](https://developer.chrome.com/docs/devtools/console/reference#persist) option
+     and check for errors thrown during navigation
+
+2. Swup is configured to [ignore the visit](https://swup.js.org/options/#ignorevisit)
+
+   - Check if you have customized `ignoreVisit`. If so, see if it helps to disable it.
+   - Check if the link or any of its parent elements has the attribute `data-no-swup`
+
+3. The click event is [stopped from propagating](https://github.com/swup/swup/issues/236#issuecomment-1203786475) and never reaches swup
+
+   - Check if you are [stopping click event propagation](https://developer.mozilla.org/en-US/docs/Web/API/Event/stopPropagation) on the link or any of it's parents
