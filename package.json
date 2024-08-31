@@ -43,7 +43,7 @@
     "@11ty/eleventy-fetch": "^4.0.0",
     "@11ty/eleventy-navigation": "^0.3.5",
     "@sindresorhus/slugify": "^1.1.0",
-    "@swup/cli": "^4.0.3",
+    "@swup/cli": "^5.0.3",
     "autoprefixer": "^10.4.2",
     "browserslist": "^4.21.4",
     "child_process": "^1.0.2",
@@ -76,7 +76,7 @@
     "start-server-and-test": "^2.0.3",
     "ts-loader": "^9.2.6",
     "url-loader": "^4.1.1",
-    "webpack": "^5.75.0",
+    "webpack": "^5.94.0",
     "webpack-cli": "^4.9.2",
     "webpack-livereload-plugin": "^3.0.2",
     "webpack-remove-empty-scripts": "^0.7.3"
