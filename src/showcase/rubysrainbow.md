@@ -1,7 +1,7 @@
 ---
 title: Ruby's Rainbow
 url: https://rubysrainbow.org/
-date: 2024-30-07
+date: 2024-07-30
 credits:
   -
     name: Terra HQ
