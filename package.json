@@ -17,7 +17,7 @@
     "test": "start-server-and-test test:start http://127.0.0.1:7987 test:run",
     "test:serve": "http-server --port 7987 --silent _site",
     "test:start": "SITE_URL=http://127.0.0.1:7987 npm run build && npm run test:serve",
-    "test:run": "swup validate -a"
+    "test:run": "swup validate -p"
   },
   "dependencies": {
     "@alpinejs/focus": "^3.12.0",
