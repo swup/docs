@@ -22,7 +22,7 @@
             {%- endfor -%}
           </ul>
           <figure class="showcase_image">
-            <img src="{{ '/showcase/' + site.fileSlug + '.png'  | url }}" alt="Screenshot of {{ site.data.title }}">
+            <img src="{{ '/showcase/' + site.fileSlug + '.png'  | url }}" alt="Screenshot of {{ site.data.title }}" loading="lazy">
           </figure>
           <a href="{{ site.data.url }}" target="_blank" rel="external" tabindex="-1" aria-hidden="true">
             {{ site.data.title }}
