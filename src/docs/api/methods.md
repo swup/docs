@@ -49,6 +49,13 @@ Disable the cache for this request:
 swup.navigate(url, { cache: { read: false, write: true } });
 ```
 
+Send along [custom metadata](/visit/#pass-along-custom-metadata) available in all hooks:
+
+```javascript
+swup.navigate(url, { meta: { lorem: 'ipsum' } })
+```
+
+
 ## destroy
 
 Disables swup.
