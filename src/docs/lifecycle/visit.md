@@ -67,7 +67,8 @@ This is an example visit object for a navigation from `/home` to `/about#anchor`
   scroll: {
     reset: true,
     target: '#anchor'
-  }
+  },
+  meta: {}
 }
 ```
 
@@ -185,4 +186,25 @@ swup.hooks.on('content:replace', (visit) => {
   const lang = visit.to.document?.documentElement.getAttribute('lang');
   if (lang) document.documentElement.setAttribute('lang', lang);
 });
+```
+
+### Pass along custom metadata
+
+Each visit has an empty `meta` object you can use to store arbitrary data with that visit. The data
+will now be available in every hook handler along the way.
+
+```javascript
+swup.hooks.on('visit:start', (visit) => {
+  visit.meta.lorem = 'ipsum';
+});
+
+swup.hooks.on('page:view', (visit) => {
+  console.log(visit.meta.lorem); // 'ipsum'
+});
+```
+
+When initiating a visit from the navigation API, you can pass in a custom metadata object as well:
+
+```javascript
+swup.navigate(url, { meta: { lorem: 'ipsum' } })
 ```
