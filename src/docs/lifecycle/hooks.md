@@ -181,6 +181,33 @@ swup.hooks.on('animation:in:end', () => {
 });
 ```
 
+## Set all hook handlers at once
+
+When creating a swup instance, you can register all your hook handlers at once by passing a keyed
+object into the instance options.
+
+```javascript
+const swup = new Swup({
+  hooks: {
+    'visit:start': () => console.log('starting visit'),
+    'page:load': () => console.log('loaded page'),
+    'visit:end': () => console.log('finished visit')
+  }
+})
+```
+
+Hook handler options like `once` or `before` can be set by appending them to the hook name,
+separated by a dot: `content:replace.before`, `fetch:error.once`, etc.
+
+```javascript
+const swup = new Swup({
+  hooks: {
+    'visit:start.once': () => console.log('triggers once'),
+    'content:replace.before': () => console.log('triggers before hook')
+  }
+})
+```
+
 ## DOM events
 
 All hooks are also triggered on the `document` with a `swup:` prefix. They receive the hook name

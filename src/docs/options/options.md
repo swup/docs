@@ -24,6 +24,7 @@ const swup = new Swup({
   animationScope: 'html',
   cache: true,
   containers: ['#swup'],
+  hooks: {},
   ignoreVisit: (url, { el } = {}) => el?.closest('[data-no-swup]'),
   linkSelector: 'a[href]',
   linkToSelf: 'scroll',
@@ -106,6 +107,20 @@ to `true`.
 ```javascript
 {
   cache: true
+}
+```
+
+## hooks
+
+An object of [hook handlers](/hooks/) to register. For details and a few more examples,
+see the section on [registering all hooks handlers at once](http://localhost:8080/hooks/#set-all-hook-handlers-at-once).
+
+```javascript
+{
+  hooks: {
+    'visit:start': () => console.log('start'),
+    'visit:end': () => console.log('end')
+  }
 }
 ```
 
