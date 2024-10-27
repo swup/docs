@@ -23,7 +23,7 @@ of each demo to see the code and fork it for experimenting yourself.
 Default swup installation with two containers and a fade animation between pages.
 
 ```glitch
-https://pricey-spiritual-anorak.glitch.me
+https://swup-demo-basic.glitch.me
 Swup Demo: Basic
 ```
 
