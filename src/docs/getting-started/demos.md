@@ -106,8 +106,8 @@ Swup Demo: Animated forms
 
 Submit simple forms in place without full page loads using the [Forms Plugin](/plugins/forms-plugin/).
 
-```repl
-https://swup-demo-inline-forms-temp.replit.app
+```glitch
+https://swup-demo-inline-forms.glitch.me
 Swup Demo: Inline forms
 ```
 
