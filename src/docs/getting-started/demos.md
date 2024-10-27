@@ -15,15 +15,15 @@ Looking for a demo of swup animations in action? You are in fact looking at one!
 with swup and CSS-only animations. See below for more isolated examples showcasing swup's
 features and options.
 
-Click the <img src="https://replit.com/badge?theme=dark&variant=small&caption=Try%20with%20Replit"> button
+Click the <span class="glitch__pill glitch__pill--dummy">Edit on Glitch</span> button
 of each demo to see the code and fork it for experimenting yourself.
 
 ## Basic animation
 
 Default swup installation with two containers and a fade animation between pages.
 
-```repl
-https://swup-demo-basic-temp.replit.app
+```glitch
+https://pricey-spiritual-anorak.glitch.me
 Swup Demo: Basic
 ```
 
