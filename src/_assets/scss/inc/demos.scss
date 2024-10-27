@@ -52,12 +52,14 @@
 	display: inline-block;
 	line-height: 1;
 	white-space: nowrap;
-	padding: 0.4em 0.5em;
-	background: var(--color);
-	color: var(--background);
+	padding: 0.5em 0.8em;
+	background: black;
+	color: white;
 	font-size: 0.7rem;
-	border-radius: 0.3em;
-	border: 1px solid rgb(0 0 0 / 0.1);
+	border-radius: 0.5em;
+	border: 1px solid rgb(255 255 255 / 0.2);
+	--shadow-color: 239 80% 90%;
+	box-shadow: var(--shadow-4);
 	vertical-align: middle;
 }
 .glitch__pill--dummy {
