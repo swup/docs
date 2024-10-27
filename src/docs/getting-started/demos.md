@@ -90,6 +90,7 @@ Uses the [Fragment Plugin](/plugins/fragment-plugin/) to replace only the items 
 
 ```glitch
 https://swup-demo-fragment-list.glitch.me
+Swup Fragment Demo: List
 ```
 
 ## Animated forms
