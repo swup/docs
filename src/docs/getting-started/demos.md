@@ -40,8 +40,8 @@ Swup Demo: Slide
 
 Cover content while loading the new page.
 
-```repl
-https://swup-demo-overlay-temp.replit.app
+```glitch
+https://swup-demo-overlay.glitch.me
 Swup Demo: Overlay
 ```
 
