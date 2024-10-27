@@ -49,8 +49,8 @@ Swup Demo: Overlay
 
 Use swup's animation classes for other elements than the main content containers.
 
-```repl
-https://swup-demo-multiple-temp.replit.app
+```glitch
+https://swup-demo-multiple.glitch.me
 Swup Demo: Mulitple animations
 ```
 
