@@ -79,8 +79,9 @@ Swup Demo: Reveal
 Load sub-pages as modals.
 Uses the [Fragment Plugin](/plugins/fragment-plugin/) to dynamically select containers based on route.
 
-```repl
-https://swup-demo-modal-overlay-temp.replit.app/
+```glitch
+https://swup-demo-modal-overlay.glitch.me
+Swup Demo: Modal Overlay
 ```
 
 ## Fragment support: list
