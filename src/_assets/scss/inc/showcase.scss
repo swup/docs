@@ -14,7 +14,7 @@
 	border: 1px solid var(--color-transparent-1);
 	border-radius: var(--radius-1);
 	overflow: hidden;
-	padding-bottom: .8rem;
+	padding-bottom: 0.8rem;
 	a {
 		position: relative;
 		z-index: 2;
@@ -35,7 +35,7 @@ header.showcase_header {
 	display: flex;
 	justify-content: space-between;
 	align-items: baseline;
-	padding: .8rem 1rem 0;
+	padding: 0.8rem 1rem 0;
 	border-top: 1px solid var(--color-transparent-1);
 	svg {
 		position: relative;
@@ -58,7 +58,7 @@ ul.showcase_credits {
 	list-style: none;
 	padding: 0;
 	margin: 0;
-	margin-top: .25em;
+	margin-top: 0.25em;
 	padding: 0 1rem;
 	display: flex;
 	flex-wrap: wrap;
