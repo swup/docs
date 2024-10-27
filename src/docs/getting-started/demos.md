@@ -80,8 +80,8 @@ Load sub-pages as modals.
 Uses the [Fragment Plugin](/plugins/fragment-plugin/) to dynamically select containers based on route.
 
 ```glitch
-https://swup-demo-modal-overlay.glitch.me
-Swup Demo: Modal Overlay
+https://swup-demo-fragment-modal.glitch.me
+Swup Fragment Demo: Modal
 ```
 
 ## Fragment support: list
