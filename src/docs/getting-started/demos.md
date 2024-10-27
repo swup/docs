@@ -88,7 +88,7 @@ Swup Fragment Demo: Modal
 
 Uses the [Fragment Plugin](/plugins/fragment-plugin/) to replace only the items of a list when applying filters.
 
-```repl
+```glitch
 https://swup-demo-fragment-list.glitch.me
 ```
 
