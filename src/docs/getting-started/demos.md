@@ -56,11 +56,11 @@ Swup Demo: Mulitple animations
 
 ## Slideshow animation
 
-Animate between pages as a horizontal slideshow.
-Uses the [Parallel Plugin](/plugins/parallel-plugin/) to show both pages at the same time.
+Animate between pages as a horizontal slideshow. Uses the [Parallel Plugin](/plugins/parallel-plugin/) to show both pages at the same time
+and the [Preload Plugin](/plugins/preload-plugin/) to preload the slides.
 
-```repl
-https://swup-demo-slideshow-temp.replit.app
+```glitch
+https://swup-demo-slideshow.glitch.me
 Swup Demo: Slideshow
 ```
 
