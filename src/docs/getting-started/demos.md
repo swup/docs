@@ -31,8 +31,8 @@ Swup Demo: Basic
 
 Slide pages into view horizontally.
 
-```repl
-https://swup-demo-slide-temp.replit.app
+```glitch
+https://swup-demo-slide.glitch.me
 Swup Demo: Slide
 ```
 
