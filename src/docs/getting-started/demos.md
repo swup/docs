@@ -97,8 +97,8 @@ Swup Fragment Demo: List
 
 Animate form submissions using the [Forms Plugin](/plugins/forms-plugin/).
 
-```repl
-https://swup-demo-forms-temp.replit.app
+```glitch
+https://swup-demo-forms.glitch.me
 Swup Demo: Animated forms
 ```
 
