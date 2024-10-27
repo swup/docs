@@ -69,8 +69,8 @@ Swup Demo: Slideshow
 Reveal the next page using masks and gradients.
 Uses the [Parallel Plugin](/plugins/parallel-plugin/) to show both pages at the same time.
 
-```repl
-https://swup-demo-reveal-temp.replit.app
+```glitch
+https://swup-demo-reveal.glitch.me
 Swup Demo: Reveal
 ```
 
