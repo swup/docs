@@ -115,7 +115,7 @@ Swup Demo: Inline forms
 
 Persist items loaded with infinite scroll between page visits.
 
-```repl
-https://swup-demo-infinite-scroll-cache-temp.replit.app
+```glitch
+https://swup-demo-infinite-scroll-cache.glitch.me
 Swup Demo: Infinite Scroll Cache
 ```
