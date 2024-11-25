@@ -113,7 +113,7 @@ to `true`.
 ## hooks
 
 An object of [hook handlers](/hooks/) to register. For details and a few more examples,
-see the section on [registering all hooks handlers at once](http://localhost:8080/hooks/#set-all-hook-handlers-at-once).
+see the section on [registering all hook handlers at once](/hooks/#set-all-hook-handlers-at-once).
 
 ```javascript
 {
