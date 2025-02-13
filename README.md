@@ -30,3 +30,9 @@ Your terminal will print the exact `localhost` URL where you can preview your wo
 ```sh
 npm run build
 ```
+
+## Deploy targets
+
+- https://swup.js.org is hosted on GitHub pages
+- PR previews for the current docs version are being generated via Netlify
+- https://v3.swup.js.org is hosted on Netlify: https://app.netlify.com/sites/swup-v3-docs/overview
