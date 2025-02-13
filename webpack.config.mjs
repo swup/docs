@@ -7,7 +7,7 @@ import RemoveEmptyScriptsPlugin from 'webpack-remove-empty-scripts';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import LiveReloadPlugin from 'webpack-livereload-plugin';
 import CopyPlugin from 'copy-webpack-plugin';
-import { ESBuildMinifyPlugin } from 'esbuild-loader';
+import { EsbuildPlugin } from 'esbuild-loader';
 import { resolveToEsbuildTarget } from 'esbuild-plugin-browserslist';
 import browserslist from 'browserslist';
 
@@ -96,7 +96,7 @@ let config = {
 	optimization: {
 		usedExports: true,
 		minimizer: [
-			new ESBuildMinifyPlugin({
+			new EsbuildPlugin({
 				target: settings.target
 			})
 		]
