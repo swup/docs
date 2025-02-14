@@ -31,8 +31,7 @@ Your terminal will print the exact `localhost` URL where you can preview your wo
 npm run build
 ```
 
-## Deploy targets
+## Deploys
 
-- https://swup.js.org is hosted on GitHub pages
-- PR previews for the current docs version are being generated via Netlify
-- https://v3.swup.js.org is hosted on Netlify: https://app.netlify.com/sites/swup-v3-docs/overview
+- https://swup.js.org is hosted on GitHub pages via the [deploy workflow](./.github/workflows/deploy.yml)
+- https://v3.swup.js.org as well as deploy previews for PRs against the default branch are managed via the Netlify account of @hirasso
