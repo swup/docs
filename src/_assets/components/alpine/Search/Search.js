@@ -3,8 +3,8 @@ export default () => {
 		isOpen: false,
 		metaKey: navigator.platform.indexOf('Mac') === 0 ? '⌘' : 'Ctrl+',
 		onKeyDown(e) {
-			if (e.key === '/') return this.open();
-			if (e.key === 'k' && (e.ctrlKey || e.metaKey)) {
+			if (e.key === '/' || (e.key === 'k' && (e.ctrlKey || e.metaKey))) {
+				e.preventDefault();
 				this.open();
 			}
 		},
