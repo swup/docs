@@ -16,7 +16,7 @@ For this you can use [swup cli](/cli/), which now has a `validate` command with 
 
 Note that `validate` command runs test against a live site, while checking the pages in a headless browser.
 This means the site needs to be running on some domain, or can be temporarily started just for checks.
-You can use this docs site as an example, which is using a [CircleCI pipeline](https://github.com/swup/docs/blob/master/.circleci/config.yml) with [http-server package](https://github.com/swup/docs/blob/master/package.json#L20) to start a server and validate site on each PR.
+You can use this docs site as an example, which is using a [CircleCI pipeline](https://github.com/swup/docs/blob/main/.circleci/config.yml) with [http-server package](https://github.com/swup/docs/blob/main/package.json#L20) to start a server and validate site on each PR.
 
 Instead of using the [command line options](/cli/), you can also define the options in a `swup.config.js` file in the root of your project.
 This file needs to default export an object, similar to the one below.

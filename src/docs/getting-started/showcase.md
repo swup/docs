@@ -14,4 +14,4 @@ permalink: /getting-started/showcase/
 A small selection of sites using swup to enhance their navigation experience.
 
 Want to share a site you've built?
-[Submit it to the showcase](https://github.com/swup/docs/blob/master/src/showcase/README.md).
+[Submit it to the showcase](https://github.com/swup/docs/blob/main/src/showcase/README.md).

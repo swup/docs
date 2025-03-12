@@ -2,9 +2,9 @@ name: Deploy to GH pages
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [main]
   repository_dispatch:
-    types: [ "redeploy_docs" ]
+    types: [redeploy_docs]
   workflow_dispatch:
 
 permissions:
