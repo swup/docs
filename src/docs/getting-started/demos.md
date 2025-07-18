@@ -15,15 +15,15 @@ Looking for a demo of swup animations in action? You are in fact looking at one!
 with swup and CSS-only animations. See below for more isolated examples showcasing swup's
 features and options.
 
-Click the <span class="glitch__pill glitch__pill--dummy">Edit on Glitch</span> button
+Click the <span class="swupdemo__pill swupdemo__pill--dummy">View Source</span> button
 of each demo to see the code and fork it for experimenting yourself.
 
 ## Basic animation
 
 Default swup installation with two containers and a fade animation between pages.
 
-```glitch
-https://swup-demo-basic.glitch.me
+```swupdemo
+https://swup-demos.onrender.com/basic/
 Swup Demo: Basic
 ```
 
@@ -31,8 +31,8 @@ Swup Demo: Basic
 
 Slide pages into view horizontally.
 
-```glitch
-https://swup-demo-slide.glitch.me
+```swupdemo
+https://swup-demos.onrender.com/slide/
 Swup Demo: Slide
 ```
 
@@ -40,8 +40,8 @@ Swup Demo: Slide
 
 Cover content while loading the new page.
 
-```glitch
-https://swup-demo-overlay.glitch.me
+```swupdemo
+https://swup-demos.onrender.com/overlay/
 Swup Demo: Overlay
 ```
 
@@ -49,8 +49,8 @@ Swup Demo: Overlay
 
 Use swup's animation classes for other elements than the main content containers.
 
-```glitch
-https://swup-demo-multiple.glitch.me
+```swupdemo
+https://swup-demos.onrender.com/multiple/
 Swup Demo: Mulitple animations
 ```
 
@@ -59,8 +59,8 @@ Swup Demo: Mulitple animations
 Animate between pages as a horizontal slideshow. Uses the [Parallel Plugin](/plugins/parallel-plugin/) to show both pages at the same time
 and the [Preload Plugin](/plugins/preload-plugin/) to preload the slides.
 
-```glitch
-https://swup-demo-slideshow.glitch.me
+```swupdemo
+https://swup-demos.onrender.com/slideshow/
 Swup Demo: Slideshow
 ```
 
@@ -69,8 +69,8 @@ Swup Demo: Slideshow
 Reveal the next page using masks and gradients.
 Uses the [Parallel Plugin](/plugins/parallel-plugin/) to show both pages at the same time.
 
-```glitch
-https://swup-demo-reveal.glitch.me
+```swupdemo
+https://swup-demos.onrender.com/reveal/
 Swup Demo: Reveal
 ```
 
@@ -79,8 +79,8 @@ Swup Demo: Reveal
 Load sub-pages as modals.
 Uses the [Fragment Plugin](/plugins/fragment-plugin/) to dynamically select containers based on route.
 
-```glitch
-https://swup-demo-fragment-modal.glitch.me
+```swupdemo
+https://swup-demos.onrender.com/fragment-modal/
 Swup Fragment Demo: Modal
 ```
 
@@ -88,8 +88,8 @@ Swup Fragment Demo: Modal
 
 Uses the [Fragment Plugin](/plugins/fragment-plugin/) to replace only the items of a list when applying filters.
 
-```glitch
-https://swup-demo-fragment-list.glitch.me
+```swupdemo
+https://swup-demos.onrender.com/fragment-list/
 Swup Fragment Demo: List
 ```
 
@@ -97,8 +97,8 @@ Swup Fragment Demo: List
 
 Animate form submissions using the [Forms Plugin](/plugins/forms-plugin/).
 
-```glitch
-https://swup-demo-forms.glitch.me
+```swupdemo
+https://swup-demos.onrender.com/forms/
 Swup Demo: Animated forms
 ```
 
@@ -106,8 +106,8 @@ Swup Demo: Animated forms
 
 Submit simple forms in place without full page loads using the [Forms Plugin](/plugins/forms-plugin/).
 
-```glitch
-https://swup-demo-inline-forms.glitch.me
+```swupdemo
+https://swup-demos.onrender.com/inline-forms/
 Swup Demo: Inline forms
 ```
 
@@ -115,7 +115,7 @@ Swup Demo: Inline forms
 
 Persist items loaded with infinite scroll between page visits.
 
-```glitch
-https://swup-demo-infinite-scroll-cache.glitch.me
+```swupdemo
+https://swup-demos.onrender.com/infinite-scroll-cache/
 Swup Demo: Infinite Scroll Cache
 ```

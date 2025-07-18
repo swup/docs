@@ -100,7 +100,7 @@ Here's an interactive demo to try out the fade animation we've just built togeth
 
 Head to the [demo page](/getting-started/demos/) for more examples.
 
-```repl
-https://swup-demo-basic-temp.replit.app
+```swupdemo
+https://swup-demos.onrender.com/basic/
 Swup Demo: Basic
 ```
