@@ -207,6 +207,7 @@ async function loadGitHubRepoFile(repoLink, filePath, type = 'text') {
 	repoLink = repoLink.replace(/\/$/, '');
 
 	const defaultBranch = await getDefaultBranch(repoLink);
+	console.log({ repoLink, defaultBranch });
 
 	const rawBase = repoLink.replace('//github.com', '//raw.githubusercontent.com');
 	const repoURL = `${rawBase}/${defaultBranch}/${filePath}`;
