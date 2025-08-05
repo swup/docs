@@ -17,8 +17,8 @@ Adding your site to the Swup Showcase is straightforward.
     - This will copy the repository to your account, allowing you to make changes.
 
 2. **Prepare Your Showcase File**:
-    - Navigate to the [`showcase/`](https://github.com/swup/docs/tree/master/src/showcase) directory.
-    - Make a copy of the [`_showcase.md`](https://github.com/swup/docs/tree/master/src/showcase/_showcase.md) example file.
+    - Navigate to the [`showcase/`](https://github.com/swup/docs/tree/main/src/showcase) directory.
+    - Make a copy of the [`_showcase.md`](https://github.com/swup/docs/tree/main/src/showcase/_showcase.md) example file.
     - Rename your copy to something descriptive of your site (e.g., `your-site-name.md`).
     - Edit the file to include information about your website, following the template.
 

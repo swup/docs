@@ -130,4 +130,4 @@ Become a sponsor on [Open Collective](https://opencollective.com/swup) or suppor
 
 ## License
 
-Swup is released under the [MIT license](https://github.com/swup/swup/blob/master/LICENSE).
+Swup is released under the [MIT license](https://github.com/swup/swup/blob/main/LICENSE).
