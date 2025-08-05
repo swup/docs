@@ -16,6 +16,7 @@ const {
 	prepareInfoBlocks,
 	prepareVideos
 } = require('./lib/eleventy-transforms');
+const { getDefaultBranch } = require('./lib/helpers');
 
 const customMarkdownIt = markdownIt({
 	html: true,
@@ -202,8 +203,14 @@ async function maybeLoadPackageInfo(ctx) {
  * @param {string} type
  */
 async function loadGitHubRepoFile(repoLink, filePath, type = 'text') {
-	const repoBase = repoLink.replace('github.com', 'raw.githubusercontent.com');
-	const repoURL = `${repoBase}/master/${filePath}`;
+	/** Remove the trailing slash */
+	repoLink = repoLink.replace(/\/$/, '');
+
+	const defaultBranch = await getDefaultBranch(repoLink);
+	console.log({ repoLink, defaultBranch });
+
+	const rawBase = repoLink.replace('//github.com', '//raw.githubusercontent.com');
+	const repoURL = `${rawBase}/${defaultBranch}/${filePath}`;
 
 	try {
 		return await EleventyFetch(repoURL, { duration: '60s', type });
@@ -211,7 +218,7 @@ async function loadGitHubRepoFile(repoLink, filePath, type = 'text') {
 		try {
 			return await EleventyFetch(repoURL.toLowerCase(), { duration: '60s', type });
 		} catch (error) {
-			console.error(`Erro loading ${filePath} from ${repoURL}: ${error.message}`);
+			console.error(`Error loading ${filePath} from ${repoURL}: ${error.message}`);
 			return null;
 		}
 	}
