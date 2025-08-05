@@ -211,7 +211,7 @@ async function loadGitHubRepoFile(repoLink, filePath, type = 'text') {
 		try {
 			return await EleventyFetch(repoURL.toLowerCase(), { duration: '60s', type });
 		} catch (error) {
-			console.error(`Erro loading ${filePath} from ${repoURL}: ${error.message}`);
+			console.error(`Error loading ${filePath} from ${repoURL}: ${error.message}`);
 			return null;
 		}
 	}
