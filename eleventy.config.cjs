@@ -54,7 +54,7 @@ customMarkdownIt.use(markdownItAttrs);
 customMarkdownIt.use(markdownItVideo);
 
 /**
- * Code Highligting
+ * Code Highlighting
  * @see https://github.com/antfu/markdown-it-shiki
  */
 customMarkdownIt.use(Shiki, {

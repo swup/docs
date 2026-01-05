@@ -8,5 +8,5 @@ credits:
     url: https://cydstumpel.nl
   -
     name: Stu Stu Studio
-    url: hhttps://www.stustu.studio
+    url: https://www.stustu.studio
 ---

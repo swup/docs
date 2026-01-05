@@ -60,7 +60,7 @@ The new [View Transitions](https://developer.mozilla.org/en-US/docs/Web/API/View
 browser API provides a native and performant mechanism for managing the visual transition of
 elements from one state to another. This is great for page transition animations.
 
-Use swup's new `native` option to start definining your page transitions as native View Transitions.
+Use swup's new `native` option to start defining your page transitions as native View Transitions.
 In addition, swup still supports CSS animations and JS animations. Learn more about
 [supported animation methods](/getting-started/animations/).
 

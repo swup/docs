@@ -51,7 +51,7 @@ Use swup's animation classes for other elements than the main content containers
 
 ```swupdemo
 https://swup-demos.onrender.com/multiple/
-Swup Demo: Mulitple animations
+Swup Demo: Multiple animations
 ```
 
 ## Slideshow animation
