@@ -68,7 +68,7 @@ const swup = new Swup({
 });
 ```
 
-Alternatively, you can use swup's `use` & `unuse` methods to add or remove plugins after intialization.
+Alternatively, you can use swup's `use` & `unuse` methods to add or remove plugins after initialization.
 
 ```javascript
 const swup = new Swup();
