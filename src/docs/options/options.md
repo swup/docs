@@ -44,13 +44,19 @@ const swup = new Swup({
 
 The selector for detecting animation timing. Swup will wait for all CSS transitions and
 keyframe animations to finish on these elements before swapping in the content of the new page.
-The default option will select all elements with class names beginning in `transition-`.
+The default option will select all elements with class names containing `transition-`.
 
 ```javascript
 {
   animationSelector: '[class*="transition-"]'
 }
 ```
+
+> [!NOTE] Note about class matching
+> Technically, the `*=` comparison in the selector will include classes containing the
+> pattern at any position, such as `my-transition-class`. To avoid this, consider using a stricter
+> selector, e.g. `class^="transition-"]` which would require the transition class to come at the
+> beginning of the class attribute, or `class~="transition-fade"` to target a specific transition class.
 
 ## animationScope
 
