@@ -328,12 +328,18 @@ body.typedoc {
 			margin: 0 1em;
 		}
 
+		.type-index {
+			a {
+				@include mixins.standardLink;
+			}
+		}
+
 		a {
-			color: var(--color-link);
+			// color: var(--color-link);
 			text-decoration: none;
 		}
 		a:hover {
-			text-decoration: underline;
+			// text-decoration: underline;
 		}
 		a.external[target='_blank'] {
 			background-image: var(--external-icon);
@@ -1127,6 +1133,7 @@ body.typedoc {
 	.tsd-sources a {
 		color: var(--color-text-aside);
 		text-decoration: underline;
+		text-underline-offset: .2em;
 	}
 	.tsd-sources ul {
 		list-style: none;

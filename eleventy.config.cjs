@@ -261,7 +261,8 @@ function modifyMainTitle(content, ctx) {
 		: '';
 
 	const headerHTML = /* html */ `<div class="page_body_header">${sectionLabelHTML}${headerLinkHTML}<h1>${title}</h1></div>`;
-	return content.trim().replace(/^<h1.*?>(.+?)<\/h1>/, headerHTML);
+
+	return content.trim().replace(/^<h1.*?>(.+?)<\/h1>/i, headerHTML);
 }
 
 /**

@@ -15,19 +15,7 @@
 
 .text {
 	a:not([class]) {
-		text-decoration: none;
-		font-weight: 500;
-		background-image: linear-gradient(
-			var(--link-underline-color) 0%,
-			var(--link-underline-color) 100%
-		);
-		background-repeat: no-repeat;
-		background-position: 0 100%;
-		background-size: calc(100% - var(--_icon-size, 0px)) 2px;
-
-		@include mixins.hover {
-			background-size: calc(100% - var(--_icon-size, 0px)) 4px;
-		}
+		@include mixins.standardLink;
 	}
 
 	// Images wrapped in links: remove underline
