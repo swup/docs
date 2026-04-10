@@ -78,7 +78,7 @@ function extractFromHtml(filePath, kindDir, kindLabel) {
 	const sourceUrl = contents.querySelector('.tsd-sources a')?.href ?? '';
 
 	// Remove the breadcrumb and h1 — Eleventy layout renders its own title
-	contents.querySelector('.tsd-page-title')?.remove();
+	// contents.querySelector('.tsd-page-title')?.remove();
 
 	// Rewrite relative TypeDoc links to absolute Eleventy URLs
 	rewriteLinks(contents, kindDir);
