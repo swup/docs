@@ -112,6 +112,11 @@ module.exports = function (eleventyConfig) {
 		'src/showcase/**/*.png': 'showcase'
 	});
 
+	// Copy TypeDoc SVG sprite so embedded HTML can reference it at /api/types/assets/icons.svg
+	eleventyConfig.addPassthroughCopy({
+		'tmp/typedoc-html/assets/icons.svg': 'api/types/assets/icons.svg'
+	});
+
 	return {
 		dir: {
 			input: 'src',

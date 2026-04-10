@@ -58,18 +58,24 @@ main[tabindex='-1'] {
 * Container
 */
 @include bp(m) {
-	.default .container,
-	.showcase .container {
-		display: grid;
-		grid-template-columns: 250px minmax(0, 1fr);
+	body.default,
+	body.showcase,
+	body.typedoc {
+		.container {
+			display: grid;
+			grid-template-columns: 250px minmax(0, 1fr);
+		}
 	}
 }
 @include bp(xl) {
-	.default #swup,
-	.showcase #swup {
-		display: grid;
-		grid-template-columns: minmax(0, 1fr) 250px;
-		align-items: start;
+	body.default,
+	body.showcase,
+	body.typedoc {
+		#swup {
+			display: grid;
+			grid-template-columns: minmax(0, 1fr) 250px;
+			align-items: start;
+		}
 	}
 }
 

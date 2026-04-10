@@ -1,0 +1,20 @@
+<article class="page" x-data="Page">
+  <main>
+
+    <div class="page_body" data-pagefind-body>
+      {{ content | prepareContent | safe }}
+    </div>
+
+  </main>
+  <footer id="footer">
+    {% include "page-nav.njk" %}
+  </footer>
+</article>
+{% if content | prepareContent | toc %}
+  <aside class="toc" aria-label="Article" x-data="TableOfContents" x-bind="bindings">
+    <div class="toc_inner">
+      <h4 class="toc_title">On this page</h4>
+      {{ content | prepareContent | toc | safe }}
+    </div>
+  </aside>
+{% endif %}

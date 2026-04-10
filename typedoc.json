@@ -2,7 +2,7 @@
 	"$schema": "https://typedoc.org/schema.json",
 	"entryPoints": ["./tmp/swup-src/src/index.ts"],
 	"tsconfig": "./tmp/swup-src/tsconfig.json",
-	"json": "./src/_data/typedoc.json",
+	"out": "./tmp/typedoc-html",
 	"skipErrorChecking": true,
 	"excludePrivate": true,
 	"excludeProtected": true,

@@ -1,6 +1,6 @@
 ---
 pagination:
-  data: swupTypes
+  data: types
   size: 1
   alias: type
 eleventyComputed:
@@ -8,84 +8,9 @@ eleventyComputed:
   description: '{{ type.summary }}'
 section_label: Types
 section_url: /api/types/
-permalink: '/api/types/{{ type.slug }}/'
-layout: default
+permalink: '/api/types/{{ type.kindDir }}/{{ type.slug }}/'
+layout: typedoc
 generated: true
 ---
 
-<h1>{{ type.name }}</h1>
-
-{% if type.summary %}
-<p>{{ type.summary }}</p>
-{% endif %}
-
-{% if type.sourceFile %}
-<p class="source-link">Defined in <a href="{{ type.sourceUrl }}" target="_blank" rel="noopener"><code>{{ type.sourceFile }}</code></a></p>
-{% endif %}
-
-{# ── Type alias: simple type expression ──────────────────────────────────── #}
-{% if type.typeExpr %}
-<h2>Type</h2>
-<pre><code class="language-typescript">type {{ type.name }} = {{ type.typeExpr }}</code></pre>
-{% endif %}
-
-{# ── Type alias / interface / class: object members ─────────────────────── #}
-{% if type.members.length %}
-{% set membersWithDesc = type.members | selectattr("summary") %}
-<h2>Properties</h2>
-<table>
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th>Type</th>
-      {% if membersWithDesc.length %}<th>Description</th>{% endif %}
-    </tr>
-  </thead>
-  <tbody>
-    {% for member in type.members %}
-    <tr>
-      <td>
-        <code>{{ member.name }}{% if member.optional %}?{% endif %}</code>
-        {% if member.isReadonly %}<small> readonly</small>{% endif %}
-      </td>
-      <td><code>{{ member.type | escape }}</code></td>
-      {% if membersWithDesc.length %}<td>{{ member.summary }}</td>{% endif %}
-    </tr>
-    {% endfor %}
-  </tbody>
-</table>
-{% endif %}
-
-{# ── Function: signatures ────────────────────────────────────────────────── #}
-{% if type.signatures.length %}
-<h2>Signature</h2>
-{% for sig in type.signatures %}
-  {% if sig.summary %}<p>{{ sig.summary }}</p>{% endif %}
-
-  {% if sig.params.length %}
-  {% set paramsWithDesc = sig.params | selectattr("summary") %}
-  <h3>Parameters</h3>
-  <table>
-    <thead>
-      <tr>
-        <th>Parameter</th>
-        <th>Type</th>
-        {% if paramsWithDesc.length %}<th>Description</th>{% endif %}
-      </tr>
-    </thead>
-    <tbody>
-      {% for param in sig.params %}
-      <tr>
-        <td><code>{{ param.name }}{% if param.optional %}?{% endif %}</code></td>
-        <td><code>{{ param.type | escape }}</code></td>
-        {% if paramsWithDesc.length %}<td>{{ param.summary }}</td>{% endif %}
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-  {% endif %}
-
-  <h3>Returns</h3>
-  <p><code>{{ sig.returns | escape }}</code></p>
-{% endfor %}
-{% endif %}
+{{ type.content | safe }}

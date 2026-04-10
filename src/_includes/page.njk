@@ -19,9 +19,7 @@
 
     <div class="edit-this-page text">
       <p>
-        {% if generated %}
-          <!-- <a href="https://github.com/swup/swup/tree/master/src" target="_blank">View swup source on GitHub</a> -->
-        {% elif repo_link %}
+        {% if repo_link %}
           {% feather "edit" %} <a href="{{ repo_link }}/blob/master/README.md" target="_blank">Suggest changes to this page</a>
         {% else %}
           {% feather "edit" %} <a href="https://github.com/swup/docs/blob/master/src{{ page.filePathStem }}.md" target="_blank">Suggest changes to this page</a>
