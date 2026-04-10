@@ -10,6 +10,7 @@
     {% include "page-nav.njk" %}
   </footer>
 </article>
+
 {% if content | prepareContent | toc %}
   <aside class="toc" aria-label="Article" x-data="TableOfContents" x-bind="bindings">
     <div class="toc_inner">

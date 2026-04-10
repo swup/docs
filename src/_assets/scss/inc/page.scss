@@ -55,6 +55,9 @@
 		+ :is(h1, h2, h3, h4, h5, h6) {
 			margin-top: 1em !important;
 		}
+		&:is(summary *) {
+			margin: 0 !important;
+		}
 	}
 
 	h2 {
@@ -232,20 +235,24 @@
 	}
 }
 
+:root {
+	--code-block-bg: rgb(0 0 0 / 0.05);
+	--code-block-fade: transparent;
+	--code-block-text: var(--color-dimmed);
+}
+
+.dark {
+	--code-block-bg: hsl(210 12% 16% / 0.9);
+	--code-block-fade: hsl(210 12% 16% / 0.9);
+}
+
 /*
 * Code Blocks
 */
 .code-block {
-	--code-block-bg: rgb(0 0 0 / 0.05);
-	--code-block-fade: transparent;
-	--code-block-text: var(--color-dimmed);
 	position: relative;
 	border-radius: var(--radius-1);
 	overflow: hidden;
-	.dark & {
-		--code-block-bg: hsl(210 12% 16% / 0.9);
-		--code-block-fade: hsl(210 12% 16% / 0.9);
-	}
 }
 
 .code-block:after {

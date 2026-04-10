@@ -393,25 +393,6 @@ body.typedoc {
 			max-width: 100%;
 		}
 
-		* {
-			scrollbar-width: thin;
-			scrollbar-color: var(--color-accent) var(--color-icon-background);
-		}
-
-		*::-webkit-scrollbar {
-			width: 0.75rem;
-		}
-
-		*::-webkit-scrollbar-track {
-			background: var(--color-icon-background);
-		}
-
-		*::-webkit-scrollbar-thumb {
-			background-color: var(--color-accent);
-			border-radius: 999rem;
-			border: 0.25rem solid var(--color-icon-background);
-		}
-
 		dialog {
 			border: none;
 			outline: none;
@@ -585,8 +566,9 @@ body.typedoc {
 	code.tsd-tag {
 		padding: 0.25em 0.4em;
 		border: 0.1em solid var(--color-accent);
-		margin-right: 0.25em;
-		font-size: 70%;
+		margin-right: 0.5em;
+		font-size: .7rem;
+		font-weight: normal;
 	}
 	h1 code.tsd-tag:first-of-type {
 		margin-left: 0.25em;
@@ -904,10 +886,8 @@ body.typedoc {
 		width: calc(100% - 1.5rem);
 	}
 	.tsd-accordion-summary > * {
-		margin-top: 0;
-		margin-bottom: 0;
-		padding-top: 0;
-		padding-bottom: 0;
+		margin-block: 0 !important;
+		padding-block: 0 !important;
 	}
 	/*
      * We need to be careful to target the arrow indicating whether the accordion
@@ -1080,11 +1060,12 @@ body.typedoc {
 
 	.tsd-signature {
 		margin: 0 0 1rem 0;
-		padding: 1rem 0.5rem;
-		border: 1px solid var(--color-accent);
+		padding: 1rem;
 		font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
 		font-size: 14px;
 		overflow-x: auto;
+		background-color: var(--code-block-bg);
+		border-radius: var(--radius-1);
 	}
 
 	.tsd-signature-keyword {
@@ -1474,4 +1455,8 @@ body.typedoc {
 			top: calc(var(--dim-header-height) + var(--dim-container-main-margin-y));
 		}
 	}
+}
+
+.tsd-signature {
+	@extend .shiki;
 }
