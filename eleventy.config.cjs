@@ -16,6 +16,7 @@ const {
 	prepareInfoBlocks,
 	prepareVideos
 } = require('./lib/eleventy-transforms');
+const { buildTypes } = require('./lib/build-typedoc.js');
 
 const customMarkdownIt = markdownIt({
 	html: true,
@@ -89,6 +90,15 @@ module.exports = function (eleventyConfig) {
 	 * further down in maybeLoadRemoteReadme()
 	 */
 	eleventyConfig.setLibrary('md', customMarkdownIt);
+
+	// Generate TypeDoc JSON once per process (build + first run of watch)
+	let typesGenerated = false;
+	eleventyConfig.on('eleventy.before', () => {
+		if (!typesGenerated) {
+			typesGenerated = true;
+			buildTypes();
+		}
+	});
 
 	// Run PageFind after every regeneration
 	eleventyConfig.on('eleventy.after', () => {
@@ -225,7 +235,7 @@ async function loadGitHubRepoFile(repoLink, filePath, type = 'text') {
  * @returns {string}
  */
 function modifyMainTitle(content, ctx) {
-	const { title, repo_link, package_info } = ctx;
+	const { title, repo_link, package_info, section_label, section_url } = ctx;
 	const label = package_info?.version ? `v${package_info?.version}` : title;
 
 	const repoLinkHTML = repo_link
@@ -241,7 +251,11 @@ function modifyMainTitle(content, ctx) {
 		? /* html */ `<div class="buttons page_body_header_buttons">${repoLinkHTML.trim()}</div>`
 		: '';
 
-	const headerHTML = /* html */ `<div class="page_body_header">${headerLinkHTML}<h1>${title}</h1></div>`;
+	const sectionLabelHTML = section_label
+		? /* html */ `<p class="page_body_header_section"><a href="${section_url || '#'}">${section_label}</a></p>`
+		: '';
+
+	const headerHTML = /* html */ `<div class="page_body_header">${sectionLabelHTML}${headerLinkHTML}<h1>${title}</h1></div>`;
 	return content.trim().replace(/^<h1.*?>(.+?)<\/h1>/, headerHTML);
 }
 

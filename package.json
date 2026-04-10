@@ -10,6 +10,7 @@
     "watch": "concurrently npm:watch:*",
     "build:eleventy": "npx @11ty/eleventy --quiet",
     "build:assets": "webpack --mode=production  --progress --stats minimal",
+    "build:types": "node lib/build-typedoc.js",
     "build": "npm run build:eleventy && npm run build:assets",
     "clean": "rm -rf _site",
     "lint": "prettier 'src/' --check",

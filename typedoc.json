@@ -1,0 +1,13 @@
+{
+	"$schema": "https://typedoc.org/schema.json",
+	"entryPoints": ["./tmp/swup-src/src/index.ts"],
+	"tsconfig": "./tmp/swup-src/tsconfig.json",
+	"json": "./src/_data/typedoc.json",
+	"skipErrorChecking": true,
+	"excludePrivate": true,
+	"excludeProtected": true,
+	"excludeInternal": true,
+	"excludeExternals": true,
+	"readme": "none",
+	"name": "swup"
+}
