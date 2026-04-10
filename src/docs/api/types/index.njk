@@ -1,0 +1,29 @@
+---
+layout: default
+title: Types
+eleventyNavigation:
+  key: Types
+  parent: API
+  order: 7
+description: TypeScript type definitions exported by swup
+permalink: /api/types/
+generated: true
+---
+
+<h1>Types</h1>
+
+<p>Complete reference of TypeScript types exported by swup, listed alphabetically.</p>
+
+{% if swupTypes.length %}
+<ul class="type-index">
+{%- for type in swupTypes %}
+  <li>
+    <a href="/api/types/{{ type.slug }}/">{{ type.name }}</a>
+    <code class="type-kind">{{ type.kindLabel }}</code>
+    {%- if type.summary %}<span class="type-summary"> — {{ type.summary }}</span>{% endif %}
+  </li>
+{%- endfor %}
+</ul>
+{% else %}
+<p>Type documentation unavailable. Run <code>npm run build:types</code> to generate it.</p>
+{% endif %}
