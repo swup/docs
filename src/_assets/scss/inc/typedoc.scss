@@ -34,30 +34,31 @@ body.typedoc {
 	--light-color-link: #1f70c2;
 	--light-color-focus-outline: #3584e4;
 
-	--light-color-ts-keyword: #056bd6;
-	--light-color-ts-project: #b111c9;
+	// GitHub Light token colors
+	--light-color-ts-keyword: #d73a49;    // keyword, storage.type
+	--light-color-ts-project: #6f42c1;   // entity.name
 	--light-color-ts-module: var(--light-color-ts-project);
 	--light-color-ts-namespace: var(--light-color-ts-project);
-	--light-color-ts-enum: #7e6f15;
-	--light-color-ts-enum-member: var(--light-color-ts-enum);
-	--light-color-ts-variable: #4760ec;
-	--light-color-ts-function: #572be7;
-	--light-color-ts-class: #1f70c2;
-	--light-color-ts-interface: #108024;
+	--light-color-ts-enum: #22863a;       // entity.name.tag
+	--light-color-ts-enum-member: #005cc5; // constant
+	--light-color-ts-variable: #e36209;   // variable
+	--light-color-ts-function: #6f42c1;   // entity.name
+	--light-color-ts-class: #6f42c1;      // entity.name
+	--light-color-ts-interface: #22863a;  // entity.name.tag
 	--light-color-ts-constructor: var(--light-color-ts-class);
-	--light-color-ts-property: #9f5f30;
-	--light-color-ts-method: #be3989;
-	--light-color-ts-reference: #ff4d82;
+	--light-color-ts-property: #e36209;   // variable
+	--light-color-ts-method: #6f42c1;     // entity.name
+	--light-color-ts-reference: #005cc5;  // constant / support
 	--light-color-ts-call-signature: var(--light-color-ts-method);
 	--light-color-ts-index-signature: var(--light-color-ts-property);
 	--light-color-ts-constructor-signature: var(--light-color-ts-constructor);
 	--light-color-ts-parameter: var(--light-color-ts-variable);
 	/* type literal not included as links will never be generated to it */
-	--light-color-ts-type-parameter: #a55c0e;
-	--light-color-ts-accessor: #c73c3c;
+	--light-color-ts-type-parameter: #d73a49; // keyword / storage.type
+	--light-color-ts-accessor: #d73a49;   // keyword-like
 	--light-color-ts-get-signature: var(--light-color-ts-accessor);
 	--light-color-ts-set-signature: var(--light-color-ts-accessor);
-	--light-color-ts-type-alias: #d51270;
+	--light-color-ts-type-alias: #d73a49; // storage.type
 	/* reference not included as links will be colored with the kind that it points to */
 	--light-color-document: #000000;
 
@@ -92,30 +93,31 @@ body.typedoc {
 	--dark-color-link: #00aff4;
 	--dark-color-focus-outline: #4c97f2;
 
-	--dark-color-ts-keyword: #3399ff;
-	--dark-color-ts-project: #e358ff;
+	// GitHub Dark token colors
+	--dark-color-ts-keyword: #f97583;     // keyword, storage.type
+	--dark-color-ts-project: #b392f0;    // entity.name
 	--dark-color-ts-module: var(--dark-color-ts-project);
 	--dark-color-ts-namespace: var(--dark-color-ts-project);
-	--dark-color-ts-enum: #f4d93e;
-	--dark-color-ts-enum-member: var(--dark-color-ts-enum);
-	--dark-color-ts-variable: #798dff;
-	--dark-color-ts-function: #a280ff;
-	--dark-color-ts-class: #8ac4ff;
-	--dark-color-ts-interface: #6cff87;
+	--dark-color-ts-enum: #85e89d;        // entity.name.tag
+	--dark-color-ts-enum-member: #79b8ff; // constant
+	--dark-color-ts-variable: #ffab70;    // variable
+	--dark-color-ts-function: #b392f0;    // entity.name
+	--dark-color-ts-class: #b392f0;       // entity.name
+	--dark-color-ts-interface: #85e89d;   // entity.name.tag
 	--dark-color-ts-constructor: var(--dark-color-ts-class);
-	--dark-color-ts-property: #ff984d;
-	--dark-color-ts-method: #ff4db8;
-	--dark-color-ts-reference: #ff4d82;
+	--dark-color-ts-property: #ffab70;    // variable
+	--dark-color-ts-method: #b392f0;      // entity.name
+	--dark-color-ts-reference: #79b8ff;   // constant / support
 	--dark-color-ts-call-signature: var(--dark-color-ts-method);
 	--dark-color-ts-index-signature: var(--dark-color-ts-property);
 	--dark-color-ts-constructor-signature: var(--dark-color-ts-constructor);
 	--dark-color-ts-parameter: var(--dark-color-ts-variable);
 	/* type literal not included as links will never be generated to it */
-	--dark-color-ts-type-parameter: #e07d13;
-	--dark-color-ts-accessor: #ff6060;
+	--dark-color-ts-type-parameter: #f97583;  // keyword / storage.type
+	--dark-color-ts-accessor: #f97583;    // keyword-like
 	--dark-color-ts-get-signature: var(--dark-color-ts-accessor);
 	--dark-color-ts-set-signature: var(--dark-color-ts-accessor);
-	--dark-color-ts-type-alias: #ff6492;
+	--dark-color-ts-type-alias: #f97583;  // storage.type
 	/* reference not included as links will be colored with the kind that it points to */
 	--dark-color-document: #ffffff;
 
