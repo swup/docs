@@ -16,6 +16,14 @@ provide step-by-step guidance and in-depth explanations of advanced features. If
 more examples, we also recommend looking for more
 [swup content on YouTube](https://www.youtube.com/results?search_query=swup).
 
+## Official Swup Tutorial: Beautiful Page Transitions with Astro
+
+> Learn how to build smooth, premium page transitions with Swup and Astro from scratch, including real-world animations, best practices, and common pitfalls.
+
+@[youtube](https://www.youtube.com/watch?v=bWeAwXkflbY)
+
+© Kevin Kopp
+
 ## Build Amazing Page Transitions In Only 12 Minutes
 
 > All it takes is a single library called Swup and a few CSS styles and your entire web application will have smooth animations.
