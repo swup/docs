@@ -18,7 +18,7 @@
     "test:serve": "http-server _site --port 7987 --silent",
     "test:start": "SITE_URL=http://127.0.0.1:7987 npm run build && npm run test:serve",
     "test:run": "npm run test:validate && npm run test:e2e",
-    "test:validate": "swup validate --parallel --sitemap=_site/sitemap.xml",
+    "test:validate": "swup validate --sitemap=_site/sitemap.xml",
     "test:e2e": "playwright test"
   },
   "dependencies": {
