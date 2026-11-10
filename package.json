@@ -15,9 +15,11 @@
     "lint": "prettier 'src/' --check",
     "format": "prettier 'src/' --write",
     "test": "start-server-and-test test:start http://127.0.0.1:7987 test:run",
-    "test:serve": "http-server --port 7987 --silent _site",
+    "test:serve": "http-server _site --port 7987 --silent",
     "test:start": "SITE_URL=http://127.0.0.1:7987 npm run build && npm run test:serve",
-    "test:run": "swup validate --parallel --sitemap=_site/sitemap.xml"
+    "test:run": "npm run test:validate && npm run test:e2e",
+    "test:validate": "swup validate --parallel --sitemap=_site/sitemap.xml",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "@alpinejs/focus": "^3.12.0",
@@ -42,8 +44,10 @@
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-fetch": "^4.0.0",
     "@11ty/eleventy-navigation": "^0.3.5",
+    "@playwright/test": "^1.64.1",
     "@sindresorhus/slugify": "^1.1.0",
-    "@swup/cli": "^5.0.3",
+    "@swup/cli": "^5.0.5",
+    "@swup/prettier-config": "^1.1.0",
     "autoprefixer": "^10.4.2",
     "browserslist": "^4.21.4",
     "child_process": "^1.0.2",
