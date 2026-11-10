@@ -1,7 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["schedule:daily"],
-  "timezone": "Europe/Berlin",
   "enabledManagers": ["npm"],
   "rangeStrategy": "update-lockfile",
   "packageRules": [
