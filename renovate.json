@@ -1,0 +1,34 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["schedule:daily"],
+  "timezone": "Europe/Berlin",
+  "enabledManagers": ["npm"],
+  "rangeStrategy": "update-lockfile",
+  "packageRules": [
+    {
+      "description": "Only update runtime swup packages (core, plugins, themes)",
+      "matchPackageNames": ["*"],
+      "enabled": false
+    },
+    {
+      "matchDepTypes": ["dependencies"],
+      "matchPackageNames": ["swup", "@swup/**"],
+      "enabled": true
+    },
+    {
+      "description": "One rolling PR for patch/minor updates, merged once tests pass",
+      "matchDepTypes": ["dependencies"],
+      "matchPackageNames": ["swup", "@swup/**"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "swup",
+      "automerge": true
+    },
+    {
+      "description": "Major updates get their own PRs and need a manual review",
+      "matchDepTypes": ["dependencies"],
+      "matchPackageNames": ["swup", "@swup/**"],
+      "matchUpdateTypes": ["major"],
+      "automerge": false
+    }
+  ]
+}
