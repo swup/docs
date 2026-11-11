@@ -18,7 +18,8 @@
       "matchDepTypes": ["dependencies"],
       "matchPackageNames": ["swup", "@swup/**"],
       "matchUpdateTypes": ["minor", "patch"],
-      "groupName": "swup",
+      "groupName": "minor and patch releases of `swup` and `@swup/` packages",
+      "groupSlug": "swup-core-and-plugins",
       "automerge": true
     },
     {
