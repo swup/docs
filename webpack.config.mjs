@@ -1,3 +1,5 @@
+// @ts-check
+
 /**
  * Imports
  */
@@ -16,7 +18,7 @@ import browserslist from 'browserslist';
  */
 const settings = {
 	entryPoints: {
-		docs: ['./src/_assets/docs.js']
+		docs: ['./src/_assets/docs.ts']
 	},
 	outputPath: './_site/assets',
 	target: resolveToEsbuildTarget(browserslist(), {
@@ -30,6 +32,7 @@ const settings = {
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+/** @type {import('webpack').Configuration} */
 let config = {
 	entry: settings.entryPoints,
 	output: {
@@ -80,6 +83,7 @@ let config = {
 		]
 	},
 	resolve: {
+		extensions: ['.ts', '.js'],
 		extensionAlias: {
 			'.js': ['.ts', '.js'],
 			'.mjs': ['.mts', '.mjs']
@@ -110,16 +114,16 @@ let config = {
 /**
  * Adjust the config depending on the --mode
  * @see https://webpack.js.org/configuration/mode/
- * @param {object} env  set via --env flag
- * @param {object} argv
- * @returns
+ * @param {Record<string, unknown>} env  set via --env flag
+ * @param {{ mode: import('webpack').Configuration['mode'] }} argv
+ * @returns {import('webpack').Configuration}
  */
 export default (env, argv) => {
 	config.mode = argv.mode;
 
 	if (argv.mode === 'development') {
 		config.devtool = 'cheap-source-map';
-		config.plugins.push(
+		config.plugins?.push(
 			new LiveReloadPlugin({
 				useSourceHash: true,
 				appendScriptTag: true

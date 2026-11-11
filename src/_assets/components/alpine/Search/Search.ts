@@ -1,8 +1,10 @@
-export default () => {
-	return {
+import { defineComponent } from '~/utils';
+
+export default () =>
+	defineComponent({
 		isOpen: false,
 		metaKey: navigator.platform.indexOf('Mac') === 0 ? '⌘' : 'Ctrl+',
-		onKeyDown(e) {
+		onKeyDown(e: KeyboardEvent) {
 			if (e.key === '/' || (e.key === 'k' && (e.ctrlKey || e.metaKey))) {
 				e.preventDefault();
 				this.open();
@@ -15,5 +17,4 @@ export default () => {
 		close() {
 			this.isOpen = false;
 		}
-	};
-};
+	});

@@ -1,9 +1,11 @@
+import { defineComponent } from '~/utils';
+
 export default () => {
-	return {
-		wrap: null,
+	return defineComponent({
+		wrap: null as HTMLElement | null,
 		lastChild: null,
 		horizon: 150,
-		sections: [],
+		sections: [] as HTMLElement[],
 		async init() {
 			await this.$nextTick();
 			this.wrap = document.querySelector('.page_body');
@@ -20,7 +22,10 @@ export default () => {
 		},
 		// Store a reference to all sections in reversed order
 		prepareSections() {
-			this.sections = [...this.wrap.querySelectorAll('h2[id],h3[id],h4[id]')].reverse();
+			if (!this.wrap) return;
+			this.sections = [
+				...this.wrap.querySelectorAll<HTMLElement>('h2[id],h3[id],h4[id]')
+			].reverse();
 		},
 		/**
 		 * Marks the current section with the class "is-active"
@@ -56,5 +61,5 @@ export default () => {
 				}) || firstSection
 			);
 		}
-	};
+	});
 };

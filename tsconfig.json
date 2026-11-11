@@ -26,6 +26,6 @@
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/_assets/**/*", "tests/**/*", "*.mjs"],
+  "include": ["src/_assets/**/*", "tests/**/*", "types/**/*", "*.ts", "*.mjs"],
   "exclude": ["node_modules", "_site"]
 }

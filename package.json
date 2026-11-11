@@ -19,7 +19,8 @@
     "test:start": "SITE_URL=http://127.0.0.1:7987 npm run build && npm run test:serve",
     "test:run": "npm run test:validate && npm run test:e2e",
     "test:validate": "swup validate --parallel --sitemap=_site/sitemap.xml",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "typecheck": "tsc"
   },
   "dependencies": {
     "@alpinejs/focus": "^3.12.0",
@@ -49,6 +50,9 @@
     "@swup/cli": "^5.0.5",
     "@swup/prettier-config": "^1.1.0",
     "@types/alpinejs": "^3.17.0",
+    "@types/alpinejs__focus": "^3.13.4",
+    "@types/alpinejs__persist": "^3.17.0",
+    "@types/node": "^24.19.2",
     "browserslist": "^4.21.4",
     "concurrently": "^8.0.1",
     "copy-webpack-plugin": "^11.0.0",
