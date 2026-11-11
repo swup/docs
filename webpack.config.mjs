@@ -41,11 +41,6 @@ let config = {
 		chunkFilename: '[name].chunk.js?v=[contenthash]'
 	},
 	module: {
-		parser: {
-			javascript: {
-				importMeta: false
-			}
-		},
 		rules: [
 			{
 				test: /\.(js|ts)x?$/,

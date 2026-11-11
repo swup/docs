@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    /* Type-check only: esbuild-loader (webpack) does the transpiling */
+    "noEmit": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+
+    /* Browser bundle */
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "paths": {
+      "~/*": ["./src/_assets/*"]
+    },
+
+    /* Allow gradual migration from .js */
+    "allowJs": true,
+    "checkJs": false,
+
+    /* Strictness */
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["src/_assets/**/*", "tests/**/*", "*.mjs"],
+  "exclude": ["node_modules", "_site"]
+}
