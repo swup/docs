@@ -2,7 +2,7 @@ name: tests
 
 on:
   push:
-    branches: ["main", "next"]
+    branches: ['main', 'next']
   pull_request:
   workflow_dispatch:
 
@@ -20,5 +20,5 @@ jobs:
         run: npm ci
       - name: playwright install
         run: npx playwright install
-      - name: Run swup validate tests
+      - name: Run `swup validate` and smoke tests
         run: npm run test
