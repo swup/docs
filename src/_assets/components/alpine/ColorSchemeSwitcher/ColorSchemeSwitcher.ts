@@ -1,5 +1,7 @@
-export default function () {
-	return {
+import { defineComponent } from '~/utils';
+
+export default () =>
+	defineComponent({
 		// Find this function in `head.njk`
 		scheme: window.getColorSchemePreference(),
 		switchTheme() {
@@ -8,5 +10,4 @@ export default function () {
 			document.documentElement.classList.remove('dark', 'light');
 			document.documentElement.classList.add(this.scheme);
 		}
-	};
-}
+	});
