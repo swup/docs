@@ -1,0 +1,3 @@
+[build]
+  # Production is hosted on GitHub Pages; Netlify provides PR previews only.
+  ignore = 'test "$CONTEXT" = "production"'
