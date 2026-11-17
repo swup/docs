@@ -27,14 +27,15 @@ const themes = {
 	SlideTheme: SwupSlideTheme,
 	OverlayTheme: SwupOverlayTheme
 };
-let currentTheme = 'SlideTheme';
-let swup;
+type ThemeName = keyof typeof themes;
+let currentTheme: ThemeName = 'SlideTheme';
+let swup: Swup;
 
 export default function () {
 	swup = new Swup({
 		containers: ['#swup', '#breadcrumb'],
 		ignoreVisit: (url, { el } = {}) =>
-			el?.closest('[data-no-swup]') || url.match(/\.(png|svg)$/i),
+			Boolean(el?.closest('[data-no-swup]') || url.match(/\.(png|svg)$/i)),
 		linkToSelf: 'navigate',
 		plugins: [
 			// new SwupDebugPlugin(),
@@ -51,10 +52,12 @@ export default function () {
 				markScrollTarget: true,
 				offset: () => {
 					const navPaddingTop = parseInt(
-						getComputedStyle(document.querySelector('.nav .nav_inner')).paddingTop,
+						getComputedStyle(document.querySelector('.nav .nav_inner')!).paddingTop,
 						10
 					);
-					return document.querySelector('.header').offsetHeight + navPaddingTop;
+					return (
+						document.querySelector<HTMLElement>('.header')!.offsetHeight + navPaddingTop
+					);
 				}
 			}),
 			new SwupSlideTheme(),
@@ -76,8 +79,9 @@ export default function () {
 	const theme = new URLSearchParams(window.location.search).get('theme');
 	setSwupTheme(theme);
 	swup.hooks.on('form:submit', (visit, { event }) => {
-		if (event?.submitter?.name === 'theme') {
-			setSwupTheme(event.submitter.value);
+		const submitter = event?.submitter as HTMLButtonElement | null | undefined;
+		if (submitter?.name === 'theme') {
+			setSwupTheme(submitter.value);
 			swup.hooks.once('visit:start', ({ id }) => {
 				if (id !== visit.id) return;
 				return new Promise((resolve) => setTimeout(resolve, 50));
@@ -104,26 +108,29 @@ function selectCurrentThemeButton() {
 	button.classList.add('is-active');
 }
 
+function isThemeName(name: string): name is ThemeName {
+	return Object.hasOwn(themes, name);
+}
+
 /**
  * Set the swup theme, based on it's name
- * @param {string} theme
- * @returns
  */
-function setSwupTheme(theme) {
+function setSwupTheme(theme: string | null) {
 	if (!theme || theme === currentTheme) return;
-	if (!themes.hasOwnProperty(theme)) return;
+	if (!isThemeName(theme)) return;
 	swup.unuse(currentTheme);
 	swup.use(new themes[theme]());
 	swup.cache.clear();
 	currentTheme = theme;
 }
 
-function positionNavIndicator(indicator) {
+function positionNavIndicator(indicator: HTMLElement) {
 	const duration = 0.35;
 	const ease = 'power4.out';
 
 	const path = indicator.dataset.path || '';
 	const wrap = indicator.closest('.nav_inner');
+	if (!wrap) return;
 	const link = wrap.querySelector(`a[href="${path}"]`);
 
 	if (link) {
@@ -137,18 +144,18 @@ function positionNavIndicator(indicator) {
 }
 
 function positionNavIndicators() {
-	document.querySelectorAll('.nav_indicator').forEach((indicator) => {
+	document.querySelectorAll<HTMLElement>('.nav_indicator').forEach((indicator) => {
 		positionNavIndicator(indicator);
 	});
 }
 
-function adjustNavIndicators(path) {
-	document.querySelectorAll('.nav_indicator').forEach((indicator) => {
+function adjustNavIndicators(path: string) {
+	document.querySelectorAll<HTMLElement>('.nav_indicator').forEach((indicator) => {
 		indicator.dataset.path = path;
 		positionNavIndicator(indicator);
 	});
 
-	document.querySelectorAll('.nav a').forEach((a) => {
+	document.querySelectorAll<HTMLAnchorElement>('.nav a').forEach((a) => {
 		if (a.origin !== window.location.origin) return;
 		a.classList.toggle('is-active', a.pathname === window.location.pathname);
 	});
@@ -158,8 +165,10 @@ function prepareExternalLinks() {
 	// Don't do anything on touch devices
 	if (isTouch()) return;
 	// Open external links in a new tab for very specific contexts, only
-	document.querySelectorAll('.nav_list a[href], .main-content ul a[href]').forEach((el) => {
-		if (el.origin === window.location.origin) return;
-		el.target = '_blank';
-	});
+	document
+		.querySelectorAll<HTMLAnchorElement>('.nav_list a[href], .main-content ul a[href]')
+		.forEach((el) => {
+			if (el.origin === window.location.origin) return;
+			el.target = '_blank';
+		});
 }

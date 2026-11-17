@@ -1,4 +1,5 @@
 import { gsap } from 'gsap';
+import { defineComponent } from '~/utils';
 
 export default () => {
 	const tl = gsap.timeline({ delay: 0.5 });
@@ -29,7 +30,7 @@ export default () => {
 
 	const letterDelay = '<0.1';
 
-	return {
+	return defineComponent({
 		async init() {
 			this.$root.style.visibility = 'hidden';
 
@@ -68,14 +69,14 @@ export default () => {
 		sliceLogo() {
 			const refs = ['s', 'w', 'u', 'p', 'dot1', 'dot2'];
 			const paths = this.$refs.logo.querySelectorAll('path');
-			const parentNode = this.$refs.logo.parentNode;
+			const parentNode = this.$refs.logo.parentNode!;
 			paths.forEach((path, index) => {
-				const clone = this.$refs.logo.cloneNode();
+				const clone = this.$refs.logo.cloneNode() as Element;
 				clone.setAttribute('x-ref', refs[index]);
 				clone.append(path.cloneNode());
 				parentNode.append(clone);
 			});
 			this.$refs.logo.remove();
 		}
-	};
+	});
 };

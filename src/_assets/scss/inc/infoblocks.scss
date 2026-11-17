@@ -1,3 +1,5 @@
+@use 'breakpoints' as *;
+
 .infoblock {
 	--info-color: var(--swup-green);
 	--link-underline-color: var(--info-color);

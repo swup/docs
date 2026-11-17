@@ -1,3 +1,6 @@
+@use 'breakpoints' as *;
+@use 'mixins';
+
 .version-select_label {
 	font-size: 0.95rem;
 	display: flex;

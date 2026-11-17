@@ -1,4 +1,12 @@
-import { test as base, expect } from '@playwright/test';
+import { test as base, expect, type Page } from '@playwright/test';
+
+/** Markers set by the tests on the page's window */
+declare global {
+	interface Window {
+		noReload?: boolean;
+		pageViews: number;
+	}
+}
 
 /**
  * Fail on uncaught JavaScript errors and keep the tests hermetic
@@ -6,10 +14,10 @@ import { test as base, expect } from '@playwright/test';
  */
 const test = base.extend({
 	page: async ({ page, baseURL }, use) => {
-		const errors = [];
+		const errors: string[] = [];
 		page.on('pageerror', (error) => errors.push(error.message));
 
-		const { origin } = new URL(baseURL);
+		const { origin } = new URL(baseURL!);
 		await page.route(
 			(url) => url.origin !== origin,
 			(route) => route.abort()
@@ -26,7 +34,7 @@ const test = base.extend({
  * - count swup page views
  * - set a marker on window that is lost on a full page reload
  */
-async function load(page, path) {
+async function load(page: Page, path: string) {
 	await page.goto(path);
 	await page.waitForFunction(() => window.swup);
 	await page.evaluate(() => {
@@ -40,7 +48,7 @@ async function load(page, path) {
  * Wait for swup to finish the nth page view since load(),
  * and make sure it didn't happen through a full page reload
  */
-async function expectSwupPageView(page, count) {
+async function expectSwupPageView(page: Page, count: number) {
 	await page.waitForFunction((count) => !window.noReload || window.pageViews === count, count);
 	expect(await page.evaluate(() => window.noReload), 'No full page reload').toBe(true);
 	await expect(page.locator('html')).not.toHaveClass(/is-(changing|animating)/);

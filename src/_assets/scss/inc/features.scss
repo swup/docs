@@ -1,3 +1,5 @@
+@use 'breakpoints' as *;
+
 .features {
 	--min-column-width: 200px;
 	--icon-size: 2.5rem;
